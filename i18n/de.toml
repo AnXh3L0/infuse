@@ -1,0 +1,100 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+[login]
+other = "Login"
+
+[translations]
+other = "Übersetzungen"
+
+[postAvailable]
+other = "Wechsle auf"
+
+[skipLink]
+other = "Zum Inhalt springen"
+
+[404Title]
+other = "Hier gibt es nichts zu sehen. Noch nicht."
+
+[next]
+other = "Weiter"
+
+[contact]
+other = "Kontakt"
+
+[toggle]
+other = "Hohen Kontrast umschalten"
+
+[seeOur]
+other = "Siehe unser"
+
+[work]
+other = "Arbeiten"
+
+[clients]
+other = "Kunden"
+
+# Contact
+[getinTouch]
+other = "Kontakt aufnehmen"
+[contactTeam]
+other = "Hast Du eine Herausforderung für uns? Setze Dich mit unserem Team in Verbindung, um zu sehen, wie wir helfen können."
+[preferCall]
+other = "Möchtest Du lieber ein persönliches Gespräch?"
+[scheduleCall]
+other = "Einen Anruf vereinbaren"
+[helpProject]
+other = "Können wir Dir bei Deinem Projekt helfen?"
+[contactUs]
+other = "Kontakt"
+[weareOn]
+other = "Wir sind auf"
+
+# Footer
+[letsTalk]
+other = "Lass uns reden"
+
+# Works
+[allWorks]
+other = "Alle Arbeiten"
+[ourWork]
+other = "Unsere Arbeiten"
+[workTagged]
+other = "Arbeiten getaggt als"
+
+# 404.html
+[archives]
+other = "Posts"
+
+[home]
+other = "Startseite"
+
+[notFound]
+other = "Ups, Seite nicht gefunden..."
+
+# Blog 
+[newerPosts]
+other = "Neuere Beiträge"
+[olderPosts]
+other = "Ältere Beiträge"
+[allPosts]
+other = "Alle Beiträge"
+
+# posts/single.html
+[readingTime]
+one   = "1 min lesen"
+other = "{{ .Count }} min lesen"
+
+[tableOfContents]
+other = "Inhaltsverzeichnis"
+
+[wordCount]
+one   = "Ein wort"
+other = "{{ .Count }} wörter"
+
+[publishDate]
+other = "Veröffentlicht am"
+
+[updatedOn]
+other = "zuletzt aktualisiert am"

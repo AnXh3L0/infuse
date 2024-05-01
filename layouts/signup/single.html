@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="h-full bg-gray-50" lang="{{ .Site.Language }}" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body class="h-full">
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
+
+    <div id="content" class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+            <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
+            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create a new
+                account
+            </h2>
+        </div>
+
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
+            <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+                <form id="SignupForm" class="space-y-6" method="dialog">
+                    <div>
+                        <label for="SignupUsername"
+                            class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                        <div class="mt-2">
+                            <input id="SignupUsername" name="SignupUsername" type="text" autocomplete="" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="SignupName" class="block text-sm font-medium leading-6 text-gray-900">Full
+                            name</label>
+                        <div class="mt-2">
+                            <input id="SignupName" name="SignupName" type="text" autocomplete="" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="block text-sm font-medium leading-6 text-gray-900">Profile picture</p>
+                        <div class="mt-2 flex items-center gap-x-3">
+                            <img id="avatarUpload" class="h-8 w-8 rounded-full object-cover"
+                                src="/media/images/user-pfp.svg" alt="User profile photo">
+                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only" required>
+                            <label for="SignupPhoto"
+                                class="block text-sm font-medium leading-6 text-gray-900 rounded-md bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer">Upload</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="SignupPassword"
+                            class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                        <div class="mt-2">
+                            <input id="SignupPassword" name="SignupPassword" type="password" minlength="6"
+                                autocomplete="current-password" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="SignupRepeatPassword"
+                            class="block text-sm font-medium leading-6 text-gray-900">Repeat Password</label>
+                        <div class="mt-2">
+                            <input id="SignupRepeatPassword" name="SignupRepeatPassword" type="password" minlength="6"
+                                autocomplete="current-password" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Sign
+                            up</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <p class="mt-10 text-center text-sm text-gray-500">
+                Have an existing account?
+                <label class="font-semibold leading-6 text-green-600 hover:text-green-500 cursor-pointer" for="importInput">
+                    Import your data</label>
+                <input type="file" class="sr-only" id="importInput" accept=".json">
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Event listener for signup form submission
+        document
+            .getElementById("SignupForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+                const username = document.getElementById("SignupUsername").value;
+                const name = document.getElementById("SignupName").value;
+                const avatar = document.getElementById("SignupPhoto").files[0];
+                const password = document.getElementById("SignupPassword").value;
+                const repeatPassword = document.getElementById("SignupRepeatPassword").value;
+
+                if (password !== repeatPassword) {
+                    alert("Passwords do not match. Please re-enter your password.");
+                    return;
+                }
+
+                // Encrypt the password using MD5
+                const encryptedPassword = CryptoJS.MD5(password).toString();
+
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const avatarData = event.target.result;
+
+                    // Check if username already exists
+                    if (localStorage.getItem(username)) {
+                        alert("Username already exists. Please choose a different username.");
+                    } else {
+                        const userData = {
+                            username: username,
+                            name: name,
+                            password: encryptedPassword,
+                            avatar: avatarData,
+                        };
+                        localStorage.setItem(username, JSON.stringify(userData));
+                        handleSuccessfulSignup(username);
+                    }
+                }
+                reader.readAsDataURL(avatar);
+            });
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                const imageUploaded = document.getElementById('avatarUpload');
+                imageUploaded.src = reader.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        // Add event listener to file input
+        const fileInput = document.getElementById('SignupPhoto');
+        fileInput.addEventListener('change', handleFileUpload);
+
+        // Function to import user data from JSON
+        function importUserData(file) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const jsonData = event.target.result;
+                const userData = JSON.parse(jsonData);
+                for (const key in userData) {
+                    localStorage.setItem(key, userData[key]);
+                }
+                window.location.href = "/"; // Reload the page after import to update the UI
+            };
+            reader.readAsText(file);
+        }
+
+        // Event listener for import input change
+        document
+            .getElementById("importInput")
+            .addEventListener("change", function (event) {
+                const file = event.target.files[0];
+                importUserData(file);
+            });
+
+        // Function to handle successful signup
+        function handleSuccessfulSignup(username) {
+            localStorage.setItem("loggedInUser", username);
+            window.location.href = "/"; // Reload the page after signup to update the username placeholder
+        }
+    </script>
+
+    {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+</body>

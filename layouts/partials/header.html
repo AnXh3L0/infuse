@@ -1,0 +1,50 @@
+<header class="">
+
+    {{ partial "nav.html" . }}
+
+    <div id="modal" class="hidden fixed top-0 left-0 w-full h-full bg-gray-700 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded shadow-md w-100 relative">
+
+            <button id="closeModalBtn" class="absolute top-3 right-8 bg-red-500 text-white px-4 py-2 mt-5 rounded hover:bg-red-600">Close</button>
+
+            <h2 id="modalTitle" class="text-2xl mb-4">Login</h2>
+            <form id="modalLoginForm">
+                <div class="mb-4">
+                    <label for="modalUsername" class="block text-gray-700">Username:</label>
+                    <input type="text" id="modalUsername" name="modalUsername" class="mt-1 p-2 w-full border border-gray-300 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="modalPassword" class="block text-gray-700">Password:</label>
+                    <input type="password" id="modalPassword" name="modalPassword" class="mt-1 p-2 w-full border border-gray-300 rounded">
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</button>
+            </form>
+
+            <h2 id="modalTitleExportImport" class="text-2xl mb-4 mt-10">Export/Import Account</h2>
+
+            <button id="exportBtn" class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600">Export Data</button>
+        </div>
+    </div>
+
+    <!-- <div class="px-6 py-8 sm:py-12 lg:px-8">
+        <div class="mx-auto max-w-4xl text-center relative z-10">
+            <h1 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">This is Rust for critical systems.
+            </h1>
+            <p class="my-6 lg:mx-0 text-lg sm:text-xl leading-7 sm:leading-8 text-gray-600">Ferrocene is the open-source
+                qualified Rust compiler toolchain for safety- and mission-critical. Qualified for automotive and
+                industrial development.
+            </p>
+            <div class="mt-8 sm:flex block md:mt-0 justify-center">
+                <a href="https://github.com/ferrocene" target="_blank" rel="noopener noreferrer"
+                    class="sm:flex block sm:w-auto w-full text-center items-center rounded-md bg-white px-6 py-4 sm:mb-0 mb-3 text-md font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">GitHub</a>
+                <a href="#pricing"
+                    class="sm:flex block sm:w-auto w-full sm:ml-3 text-center items-center rounded-md bg-primary-600 px-6 py-4 text-md font-medium text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Buy
+                    now</a>
+            </div>
+        </div> 
+    </div>-->
+</header>
+
+
+
+  

@@ -1,0 +1,716 @@
+{{ define "main" }}
+<main>
+
+    <div>
+        <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+        <div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
+            <!--
+        Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+  
+        Entering: "transition-opacity ease-linear duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "transition-opacity ease-linear duration-300"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+            <div class="fixed inset-0 bg-gray-900/80"></div>
+
+            <div class="fixed inset-0 flex">
+                <!--
+          Off-canvas menu, show/hide based on off-canvas menu state.
+  
+          Entering: "transition ease-in-out duration-300 transform"
+            From: "-translate-x-full"
+            To: "translate-x-0"
+          Leaving: "transition ease-in-out duration-300 transform"
+            From: "translate-x-0"
+            To: "-translate-x-full"
+        -->
+                <div class="relative mr-16 flex w-full max-w-xs flex-1">
+                    <!--
+            Close button, show/hide based on off-canvas menu state.
+  
+            Entering: "ease-in-out duration-300"
+              From: "opacity-0"
+              To: "opacity-100"
+            Leaving: "ease-in-out duration-300"
+              From: "opacity-100"
+              To: "opacity-0"
+          -->
+                    <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+                        <button type="button" class="-m-2.5 p-2.5">
+                            <span class="sr-only">Close sidebar</span>
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Sidebar component, swap this element with another sidebar if you like -->
+                    <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
+                        <div class="flex h-16 shrink-0 items-center">
+                            <img class="h-8 w-auto me-3"
+                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                                alt="Your Company">
+                            <h1 class="text-xl">Infuse</h1>
+                        </div>
+                        <nav class="flex flex-1 flex-col">
+                            <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                                <li>
+                                    <ul role="list" class="-mx-2 space-y-1">
+                                        <li>
+                                            <!-- Current: "bg-gray-50 text-indigo-600", Default: "text-gray-700 hover:text-indigo-600 hover:bg-gray-50" -->
+                                            <a href="#"
+                                                class="bg-gray-50 text-indigo-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <svg class="h-6 w-6 shrink-0 text-indigo-600" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                                </svg>
+                                                Dashboard
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                                </svg>
+                                                Team
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                                                </svg>
+                                                Projects
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                                                </svg>
+                                                Calendar
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                                </svg>
+                                                Documents
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                                </svg>
+                                                Reports
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
+                                    <ul role="list" class="-mx-2 mt-2 space-y-1">
+                                        <li>
+                                            <!-- Current: "bg-gray-50 text-indigo-600", Default: "text-gray-700 hover:text-indigo-600 hover:bg-gray-50" -->
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <span
+                                                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600">H</span>
+                                                <span class="truncate">Heroicons</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <span
+                                                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600">T</span>
+                                                <span class="truncate">Tailwind Labs</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                                                <span
+                                                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600">W</span>
+                                                <span class="truncate">Workcation</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mt-auto">
+                                    <a href="#"
+                                        class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600">
+                                        <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        Settings
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="">
+            <!-- <div
+                class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+
+                <div class="h-6 w-px bg-gray-200 lg:hidden" aria-hidden="true"></div>
+
+                <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
+                    <form class="relative flex flex-1" action="#" method="GET">
+                        <label for="search-field" class="sr-only">Search</label>
+                        <svg class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
+                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <input id="search-field"
+                            class="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+                            placeholder="Search..." type="search" name="search">
+                    </form>
+                    <div class="flex items-center gap-x-4 lg:gap-x-6">
+                        <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
+                            <span class="sr-only">View notifications</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                            </svg>
+                        </button>
+
+                        <div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" aria-hidden="true"></div>
+
+                    </div>
+                </div>
+            </div> -->
+
+            <main class="py-10">
+                <div class="px-4 sm:px-6 lg:px-8">
+
+                    <div class="overflow-hidden">
+                        <div class="mx-auto max-w-7xl px-16 pb-32 pt-20 sm:pt-30 lg:px-8 lg:pt-16">
+                            <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                                <div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
+                                    <h1 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
+                                        Elevating Expertise for Digital Protectors</h1>
+                                    <p class="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">Infuse is
+                                        a project to do explanation here. An overview what you can expect. A project by
+                                        Internews.. explanation here.</p>
+                                    <div class="mt-10 flex items-center gap-x-3">
+                                        <div id="signupButtonCTA" class="hidden">
+                                            <a href="/en/signup"
+                                                class="rounded-md bg-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">{{
+                                                i18n "signup" }}</a>
+                                        </div>
+                                        <div id="loginButtonCTA" class="hidden">
+                                            <a id="signupButtonCTA" href="/en/login"
+                                                class="rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">{{
+                                                i18n "login" }}</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-14 flex justify-end gap-30 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                                    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-0 lg:max-w-4xl">
+                                        <dl
+                                            class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-1 lg:gap-y-16">
+                                            <div class="relative pl-16">
+                                                <dt class="text-base font-semibold leading-7 text-gray-900">
+                                                    <div
+                                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-200">
+                                                        <svg class="h-6 w-6 text-green-700" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                            aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                                                        </svg>
+                                                    </div>
+                                                    Feature 1
+                                                </dt>
+                                                <dd class="mt-2 text-base leading-7 text-gray-600">Morbi viverra dui mi
+                                                    arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio
+                                                    urna massa nunc massa.</dd>
+                                            </div>
+                                            <div class="relative pl-16">
+                                                <dt class="text-base font-semibold leading-7 text-gray-900">
+                                                    <div
+                                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-200">
+                                                        <svg class="h-6 w-6 text-green-700" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                            aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                                        </svg>
+                                                    </div>
+                                                    Feature 2
+                                                </dt>
+                                                <dd class="mt-2 text-base leading-7 text-gray-600">Sit quis amet rutrum
+                                                    tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida
+                                                    quam turpis enim lacus amet.</dd>
+                                            </div>
+                                            <div class="relative pl-16">
+                                                <dt class="text-base font-semibold leading-7 text-gray-900">
+                                                    <div
+                                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-200">
+                                                        <svg class="h-6 w-6 text-green-700" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                            aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                        </svg>
+                                                    </div>
+                                                    Feature 3
+                                                </dt>
+                                                <dd class="mt-2 text-base leading-7 text-gray-600">Quisque est vel
+                                                    vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor
+                                                    congue commodo diam neque.</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mx-auto max-w-7xl lg:px-8 lg:pt-16">
+                    <div class="border-b border-gray-200 pb-5">
+                        <h3 class="text-base font-semibold leading-6 text-gray-900">Learning Paths</h3>
+                        <p class="mt-2 max-w-4xl text-sm text-gray-500">Lorem ipsum dolor sit amet blah blah.</p>
+                    </div>
+                </div>
+
+                <div class="mx-auto max-w-7xl px-16 pb-32 pt-20 sm:pt-30 lg:px-8 lg:pt-16 grid-cols-1 lg:grid-cols-3">
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                        <div
+                            class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
+                            <article class="flex flex-col items-start justify-between">
+                                <div class="relative w-full">
+                                    <img src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
+                                        alt=""
+                                        class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
+                                    <div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"></div>
+                                </div>
+                                <div class="max-w-xl">
+                                    <div class="mt-4 flex items-center gap-x-4 text-xs">
+                                        <p
+                                            class="relative z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
+                                            Marketing</p>
+                                    </div>
+                                    <div class="group relative">
+                                        <h3
+                                            class="mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                                            <a href="#">
+                                                <span class="absolute inset-0"></span>
+                                                Detecting, Investigating and Tracking Malicious Infrastructure
+                                            </a>
+                                        </h3>
+                                        <p class="text-green-600 font-semibold mt-3">10 Modules</p>
+                                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">Sorem ipsum dolor
+                                            sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est
+                                            a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem
+                                            sollicitudin lacus, ut interdum tellus elit sed risus..</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+
+                <nav class="flex mb-5" aria-label="Breadcrumb">
+                    <ol role="list" class="flex items-center space-x-4">
+                        <li>
+                            <div>
+                                <a href="#" class="text-gray-400 hover:text-gray-500">
+                                    <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="sr-only">Home</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 flex-shrink-0 text-gray-300" fill="currentColor" viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                                </svg>
+                                <a href="#"
+                                    class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Projects</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 flex-shrink-0 text-gray-300" fill="currentColor" viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                                </svg>
+                                <a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                                    aria-current="page">Project Nero</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+
+
+
+
+
+        </div>
+</main>
+</div>
+</div>
+
+
+<!-- <section id="industries" class="py-12">
+        <div class="mx-auto max-w-2xl flex justify-center">
+            <div class="sm:flex sm:justify-center lg:justify-start">
+                <p
+                    class="flex items-center rounded-full bg-primary-50 py-1 px-2 text-primary-600 border-2 border-primary-200 sm:text-base lg:text-sm xl:text-base">
+                    <span class="text-md font-medium">Industries</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="px-6 py-4 sm:py-4 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center">
+                <h2 class="text-3xl font-bold tracking-tighttext-gray-900 sm:text-4xl">Rust is industry
+                    ready with Ferrocene.</h2>
+                <p class="my-6 sm:text-lg text-md sm:leading-8 leading-7 text-gray-600">Ferrocene enables Rust to be a
+                    first-class
+                    language for mission-critical- and functional-safety systems at the highest security levels.</p>
+            </div>
+            <div class="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-7xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                    {{ range where .Site.RegularPages "Type" "industries" }}
+                    <div class="flex flex-col">
+                        <dt class="text-xl font-semibold leading-7text-gray-900">
+                            <div
+                                class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-white border-2 border-gray-200 drop-shadow-sm">
+                                {{ with .Page.Params.icon }}
+                                <span class="h-6 w-6 flex align-content-center justify-content-center text-primary-600">
+                                    {{ partial "fontawesome.html" . }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ .Page.Params.name }}
+                        </dt>
+                        <dd class="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                            <p class="flex-auto sm:text-lg text-md">{{ .Page.Params.description }}</p>
+                        </dd>
+                    </div>
+                    {{ end }}
+                </dl>
+            </div>
+        </div>
+    </section> -->
+
+<!-- <section id="pricing" class="py-12">
+        <div class="mx-auto max-w-2xl flex justify-center">
+            <div class="sm:flex sm:justify-center lg:justify-start">
+                <p
+                    class="flex items-center rounded-full bg-primary-50 py-1 px-2 text-primary-600 border-2 border-primary-200 sm:text-base lg:text-sm xl:text-base">
+                    <span class="text-md font-medium">Pricing</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="px-4 py-4 sm:py-4 lg:px-8">
+            <div class="mx-auto max-w-5xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Accessible innovation through
+                    conscientious pricing.</h2>
+                <p class="my-6 sm:text-lg text-md sm:leading-8 leading-7 text-gray-600">With Ferrocene, you can develop
+                    high-assurance software from the starting point – without a massive upfront invest.</p>
+            </div>
+            <div class="mx-auto mt-8 sm:mt-20 lg:mt-12 lg:max-w-4xl">
+
+                <div class="mt-2 flex justify-center">
+                    <fieldset
+                        class="grid grid-cols-2 gap-x-1 rounded-lg p-1.5 text-center text-md font-semibold leading-5 bg-gray-100 ring-1 ring-inset ring-gray-200">
+                        <legend class="sr-only">Payment frequency</legend>
+                        <label
+                            class="cursor-pointer rounded-md px-4 py-2 text-gray-600 has-[:checked]:drop-shadow-sm has-[:checked]:bg-white has-[:checked]:text-gray-900 has-[:checked]:ring-indigo-200">
+                            <input id="firstopen" type="radio" name="frequency" value="monthly" class="sr-only"
+                                onclick="service(event, 'tab-monthly')">
+                            <span>Monthly billing</span>
+                        </label>
+                        <label
+                            class="cursor-pointer rounded-md px-4 py-2 text-gray-600 has-[:checked]:drop-shadow-sm has-[:checked]:bg-white has-[:checked]:text-gray-900 has-[:checked]:ring-indigo-200">
+                            <input type="radio" name="frequency" value="annually" class="sr-only"
+                                onclick="service(event, 'tab-annually')">
+                            <span>Annual billing</span>
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div id="tab-monthly"
+                    class="tab isolate hidden mx-auto mt-10 max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                    {{ range where .Site.RegularPages "Type" "monthly" }}
+                    <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200 mb-6">
+                        <h3 id="tier-individual" class="text-lg font-semibold leading-8 text-gray-600">{{
+                            .Page.Params.Title }}</h3>
+                        <p class="mt-6 mb-5 flex items-baseline gap-x-2">
+                            <span class="text-5xl font-semibold tracking-tight text-gray-900">{{ .Page.Params.price
+                                }}</span>
+                            {{ with .Page.Params.period }} <span
+                                class="text-sm font-semibold leading-6 text-gray-600">{{ . }}</span>{{ end }}
+                        </p>
+                        <p class="mt-4 text-md leading-6  text-gray-600">{{ .Page.Params.description }}
+                        </p>
+
+                        {{ if eq .Page.Params.button "normal" }}
+                        <a href="{{ .Page.Params.link }}" aria-describedby="tier-individual"
+                            class="mt-6 block rounded-md py-3 px-3 text-center text-md font-medium leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-primary-600 text-white shadow-sm hover:bg-primary-700 focus-visible:outline-primary-600">{{
+                            .Page.Params.text }}</a>
+                        {{ else if eq .Page.Params.button "ghost" }}
+                        <a href="{{ .Page.Params.link }}" aria-describedby="tier-individual"
+                            class="mt-6 block rounded-md py-3 px-3 text-center text-md font-medium leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-gray-200 bg-white text-gray-700 shadow-sm hover:border-gray-300 focus-visible:border-gray-300">{{
+                            .Page.Params.text }}</a>
+                        {{ end }}
+                        <hr class="h-px my-6 bg-gray-200 border-1 dark:bg-gray-700">
+                        <p class="font-semibold text-md text-uppercase">FEATURES</p>
+                        <ul role="list" class="mt-5 space-y-3 text-sm leading-6 xl:mt-5 text-gray-600">
+                            {{ range .Param "features" }}
+                            <li class="flex gap-x-3 items-center">
+                                <span class="w-5 h-5 text-green-700 flex align-content-center justify-content-center">
+                                    {{ partial "fontawesome.html" "regular/circle-check" }}
+                                </span>
+                                {{ . }}
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                </div>
+
+                <div id="tab-annually"
+                    class="tab hidden isolate mx-auto mt-10 max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                    {{ range where .Site.RegularPages "Type" "annually" }}
+                    <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200 mb-6">
+                        <h3 id="tier-individual" class="text-lg font-semibold leading-8 text-gray-600">{{
+                            .Page.Params.Title }}</h3>
+                        <p class="mt-6 mb-5 flex items-baseline gap-x-2">
+                            <span class="text-5xl font-semibold tracking-tight text-gray-900">{{ .Page.Params.price
+                                }}</span>
+                            {{ with .Page.Params.period }} <span
+                                class="text-sm font-semibold leading-6 text-gray-600">{{ . }}</span>{{ end }}
+                        </p>
+                        <p class="mt-4 text-md leading-6  text-gray-600">{{ .Page.Params.description }}
+                        </p>
+
+                        {{ if eq .Page.Params.button "normal" }}
+                        <a href="{{ .Page.Params.link }}" aria-describedby="tier-individual"
+                            class="mt-6 block rounded-md py-3 px-3 text-center text-md font-medium leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-primary-600 text-white shadow-sm hover:bg-primary-700 focus-visible:outline-primary-600">{{
+                            .Page.Params.text }}</a>
+                        {{ else if eq .Page.Params.button "ghost" }}
+                        <a href="{{ .Page.Params.link }}" aria-describedby="tier-individual"
+                            class="mt-6 block rounded-md py-3 px-3 text-center text-md font-medium leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-gray-200 bg-white text-gray-700 shadow-sm hover:border-gray-300 focus-visible:border-gray-300">{{
+                            .Page.Params.text }}</a>
+                        {{ end }}
+                        <hr class="h-px my-6 bg-gray-200 border-1 dark:bg-gray-700">
+                        <p class="font-semibold text-md text-uppercase">FEATURES</p>
+                        <ul role="list" class="mt-5 space-y-3 text-sm leading-6 xl:mt-5 text-gray-600">
+                            {{ range .Param "features" }}
+                            <li class="flex gap-x-3 items-center">
+                                <span class="w-5 h-5 text-green-700 flex align-content-center justify-content-center">
+                                    {{ partial "fontawesome.html" "regular/circle-check" }}
+                                </span>
+                                {{ . }}
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                </div>
+
+                <script>
+                    document.getElementById("firstopen").click();
+
+                    function service(evt, type) {
+                        // Declare all variables
+                        var i, tabcontentservice, tablinkservice;
+
+                        // Get all elements with class="tabcontentservice" and hide them
+                        tabcontentservice = document.getElementsByClassName("tab");
+                        for (i = 0; i < tabcontentservice.length; i++) {
+                            tabcontentservice[i].style.display = "none";
+                        }
+
+                        // Get all elements with class="tablinkservice" and remove the class "active"
+                        tablinkservice = document.getElementsByClassName("radio");
+                        for (i = 0; i < tablinkservice.length; i++) {
+                            tablinkservice[i].setAttribute("aria-selected", "false");
+                        }
+
+                        // Show the current tab, and add an "active" class to the button that opened the tab
+                        document.getElementById(type).style.display = "grid";
+                        evt.currentTarget.setAttribute("aria-selected", "true");
+                    }
+                </script>
+
+                <p class="my-6 text-lg  text-center leading-7 text-gray-600">We also help businesses harness
+                    the power of Rust
+                    for their individual needs. Ferrous Systems is a trusted partner in certifying the Ferrocene
+                    toolchain
+                    for a new platform or industry.</p>
+            </div>
+        </div>
+    </section> -->
+<!-- 
+    <section id="cta" class="flex justify-center lg:py-12 py-6">
+        <div class="bg-primary-50 rounded-md max-w-7xl lg:w-100">
+            <div class="mx-auto px-6 py-12 sm:py-22 lg:flex lg:items-center lg:justify-between lg:px-16">
+                <h2 class="text-4xl font-semibold  tracking-tight text-gray-900 sm:text-3xl">We know Ferrocene
+                    best and are happy to help.</h2>
+                <div class="mt-4 lg:mt-0">
+                    <p class=" text-md text-gray-600">Reach out to us if you’re not sure Ferrocene meets your
+                        industry standards and requirements.</p>
+                </div>
+                <div class="mt-6 flex items-center lg:mt-0 lg:flex-shrink-0">
+                    <a href="https://ferrous-systems.com/contact/#ferrocene" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center rounded-md bg-primary-600 px-5 py-3 text-md font-medium text-white shadow-md hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Get
+                        in touch</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<!-- <section id="features" class="py-12">
+        <div class="mx-auto max-w-2xl flex justify-center">
+            <div class="sm:flex sm:justify-center lg:justify-start">
+                <p
+                    class="flex items-center rounded-full bg-primary-50 py-1 px-2 text-primary-600 border-2 border-primary-200 sm:text-base lg:text-sm xl:text-base">
+                    <span class="text-md font-medium">Features</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="px-6 py-4 sm:py-4 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Ferrocene</h2>
+                <p class="my-6 sm:text-lg text-md sm:leading-8 leading-7 text-gray-600">Ferrocene is ready-to-use Rust
+                    for
+                    embedded systems.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                    {{ range where .Site.RegularPages "Type" "features" }}
+                    <div class="relative pl-20">
+                        <dt class="text-xl font-semibold leading-7 text-gray-900">
+                            <div
+                                class="absolute left-0 top-0 flex h-14 w-14 items-center justify-center rounded-lg bg-white border-2 border-gray-200 drop-shadow-sm text-primary-600">
+                                {{ with .Page.Params.icon }}
+                                <span class="h-6 w-6 flex align-content-center justify-content-center">
+                                    {{ partial "fontawesome.html" . }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ .Page.Params.name }}
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">{{
+                            .Page.Params.description | markdownify }}</dd>
+                    </div>
+                    {{ end }}
+                </dl>
+            </div>
+        </div>
+    </section> -->
+
+<!-- <section id="ferrous" class="flex justify-center lg:py-12 py-6">
+        <div class="bg-primary-50 rounded-md max-w-7xl lg:w-100">
+            <div class="mx-auto px-6 py-12 sm:py-22 lg:flex lg:items-center lg:justify-between lg:px-16">
+                <div class="max-w-6xl">
+                    <h2 class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Ferrocene is qualified
+                        and maintained by Ferrous Systems</h2>
+                    <p class="mt-4 text-md text-gray-600">We’re a globally leading Rust company with more than 100
+                        years collective experience in <a class="text-primary-600 underline hover:no-underline"
+                            href="https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages"
+                            target="_blank" rel="noopener noreferrer">“the most admired programming language”</a>.</p>
+                </div>
+                <div class="mt-10 flex items-center sm:w-max w-52 lg:mt-0 lg:ml-32 lg:flex-shrink-0">
+                    <img src="/media/images/ferrous.svg" alt="Ferrous Systems logo">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<!-- <section id="trial">
+        <div class="bg-primary-50">
+            <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+                <div class="mx-auto max-w-3xl text-center">
+                    <h2 class="text-3xl font-bold tracking-tighttext-gray-900 sm:text-4xl">Ferrocene is open source</h2>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg leading-7 text-gray-600">The source code of Ferrocene is
+                        fully open source under the MIT OR Apache-2.0 license, including the full qualification
+                        documents.</p>
+                    <div class="mt-10 flex items-center justify-center">
+                        <a href="https://public-docs.ferrocene.dev/main/index.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center rounded-md bg-white px-6 py-3 text-md font-medium text-gray-900 shadow-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Read
+                            Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+    }
+</script>
+
+</main>
+{{ end }}

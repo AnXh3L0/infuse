@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body>
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
+
+    {{ partial "header.html" . }}
+
+    <main id="content" class="content">
+        {{ block "main" . }}
+
+        <div class="px-4 py-16 sm:py-12 lg:px-8">
+            <div class="mx-auto max-w-3xl">
+                {{ .Content | markdownify }}
+            </div>
+        </div>
+
+        {{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+</body>
