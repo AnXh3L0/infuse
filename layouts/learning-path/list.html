@@ -55,6 +55,7 @@
             <section id="modules" class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 grid-cols-1">
                 <div class="grid grid-cols-1 gap-8 max-w-3xl">
                     <span class="hidden" id="moduleCount">{{ len .RegularPagesRecursive }}</span>
+
                     {{ range .RegularPagesRecursive }}
                     <div
                         class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
@@ -76,16 +77,30 @@
                                     </h3>
                                     <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{
                                         .Page.Params.description }}</p>
+
                                     <div class="flex items-center gap-x-2 mt-4 text-md">
-                                        <p
-                                            class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
-                                            {{ i18n "todo" }}</p>
-                                        <p
+
+                                        {{ $permalink := .Permalink }}
+                                        {{ $parts := split $permalink "/" }}
+                                        {{ $lastTwoParts := index $parts (sub (len $parts) 3) }}
+                                        {{ $lastPart := index $parts (sub (len $parts) 2) }}
+                                        {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
+
+                                        <span class="hidden" id="urlValue">{{ $url }}</span>
+
+                                        <div x-data="learningPath" x-init="init()">
+                                            <p x-show="isModuleCompleted('{{ $url }}')"
                                             class="relative z-10 rounded-full bg-green-50 border-solid border-2 border-green-200 px-3 py-0.5 font-medium text-sm text-green-700">
                                             {{ i18n "done" }}</p>
+                                        <p x-show="isModuleNotCompleted('{{ $url }}')"
+                                            class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
+                                            {{ i18n "todo" }}</p>
+                                        </div>
+                                        
                                     </div>
 
                                 </div>
+
                             </div>
                         </article>
                     </div>
@@ -145,6 +160,28 @@
                 },
             }
         }
+
+        const learningPath = () => {
+        return {
+            init() {
+                // Retrieve the username from localStorage
+                this.username = localStorage.getItem("loggedInUser");
+
+                // Initialize module completion states for the current user from localStorage
+                this.moduleCompletionStates = this.username ? JSON.parse(localStorage.getItem(this.username)) || {} : {};
+
+                const urlValue = document.getElementById('urlValue').innerHTML
+            },
+            isModuleCompleted(urlValue) {
+                // Check if the module is completed based on its ID
+                return this.moduleCompletionStates[urlValue] === true;
+            },
+            isModuleNotCompleted(urlValue) {
+                // Check if the module is completed based on its ID
+                return this.moduleCompletionStates[urlValue] === false;
+            }
+        };
+    };
     </script>
 
     {{ block "footer" . }}
