@@ -110,6 +110,10 @@ other = "Your profile"
 [sign-out]
 other = "Sign out"
 
+[modules]
+one = "Module"
+other = "Modules"
+
 [translations]
 other = "Translations"
 
