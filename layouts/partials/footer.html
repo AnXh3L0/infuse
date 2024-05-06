@@ -1,61 +1,11 @@
-<!-- <footer class="bg-primary-800" aria-labelledby="footer-heading">
-    <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto max-w-7xl px-6 py-16 sm:pt-24 lg:px-8">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img class="h-10" src="/media/images/ferrous-systems-logo.svg" alt="Ferrous Systems logo">
-            <div class="mt-16 grid lg:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                <div class="md:grid md:grid-cols-2 md:gap-8">
-                    <div>
-                        <ul role="list" class="space-y-3">
-                            {{ if len .Site.Menus }}
-                            {{- range .Site.Menus.footer -}}
-                            <li>
-                                <a href="{{ .URL }}" class="text-md leading-6 text-white hover:underline"
-                                    target="_blank" rel="noopener noreferrer">{{ .Name |
-                                    upper }}</a>
-                            </li>
-                            {{ end }}
-                            {{ end }}
-                        </ul>
-                    </div>
-                    <div class="mt-10 md:mt-0">
-                        <ul role="list" class="space-y-3">
-                            {{ with .Site.Params.social }}
-                            {{ range . }}
-                            <li>
-                                <a href="{{ .url }}" class="text-md leading-6 text-white hover:underline" target="_blank" rel="noopener noreferrer">{{ .name |
-                                    upper }}</a>
-                            </li>
-                            {{ end }}
-                            {{ end }}
-                        </ul>
-                    </div>
-                </div>
-                <div class="md:grid md:grid-cols-2 md:gap-8">
-                    <div>
-                        <ul role="list" class="space-y-3">
-                            <li>
-                                <a href="https://ferrous-systems.com/contact/#ferrocene" class="text-md leading-6 text-white uppercase hover:underline" target="_blank" rel="noopener noreferrer">Get in touch</a>
-                            </li>
-                            <li>
-                                <a href="https://ferrous-systems.com/imprint/" class="text-md leading-6 text-white uppercase hover:underline" target="_blank" rel="noopener noreferrer">Imprint</a>
-                            </li>
-                            <li>
-                                <a href="https://ferrous-systems.com/privacy/" class="text-md leading-6 text-white uppercase hover:underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-10 md:mt-0">
-                        <img src="/media/images/tuv.png" alt="TUV logo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer> -->
-
+<footer></footer>
 {{ partial "javascript.html" . }}
 
 {{ $instant := resources.Get "js/instantpage.js" }}
 {{ $instantpage := slice $instant | resources.Concat "instant.js" | resources.Minify }}
+
+{{ $crypto := resources.Get "js/crypto-js.min.js" }}
+{{ $crypto := slice $crypto | resources.Concat "crypto-js.min.js" | resources.Minify }}
+
 <script type="module" defer src="{{ $instantpage.RelPermalink }}"></script>
+<script defer src="{{ $crypto.RelPermalink }}"></script>
