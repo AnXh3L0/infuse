@@ -1,7 +1,10 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> -->
 
 {{ $main := resources.Get "js/main.js" }}
-{{ $secureJS := slice $main | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
+{{ $instant := resources.Get "js/instantpage.js" }}
+{{ $crypto := resources.Get "js/crypto-js.min.js" }}
+{{ $alpine := resources.Get "js/alpine.min.js" }}
+{{ $secureJS := slice $main $instant $crypto $alpine | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
 <script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
 {{ range $val := $.Site.Params.customJS }}

@@ -1,100 +1,188 @@
-# Translations for English
+# Translations for German
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
-# Generic
+# Signup and login
+[createAccount]
+other = "Create a new account"
+
+[username]
+other = "Username"
+
+[fullname]
+other = "Full name"
+
+[profilephoto]
+other = "Profile picture"
+
+[upload]
+other = "Upload"
+
+[password]
+other = "Password"
+
+[repeatpassword]
+other = "Repeat Password"
+
+[signup]
+other = "Sign up"
+
+[existingAccount]
+other = "Have an existing account?"
+
+[importData]
+other = "Import your data"
+
+[loginHeader]
+other = "Log in to your account"
+
+[loginSubheader]
+other = "Welcome back! Please enter your details."
+
+[signin]
+other = "Sign in"
+
+[noAccount]
+other = "Don't have an account?"
+
 [login]
-other = "Login"
+other = "Log in"
+
+[profileInformation]
+other = "Your profile information"
+
+[editDetails]
+other = "You can view or edit your details below"
+
+[profile]
+other = "Profile"
+
+[profileWarning]
+other = "This information can be accessed by other users on this computer, so be careful what you share."
+
+[unlock]
+other = "Unlock and edit profile"
+
+[change]
+other = "Change"
+
+[saveChanges]
+other = "Save Changes"
+
+[exportInformation]
+other = "Export your information"
+
+[exportDetails]
+other = "You can export your current progress and import it into another device if you wish to continue learning on-the-go or if you have a new device."
+
+[info]
+other = "Information"
+
+[infoExport]
+other = "The JSON file produced by this export is NOT encrypted, apart from the user profile password."
+
+[exportIncludes]
+other = "This export includes ALL your profile information and progress made on the modules."
+
+[exportData]
+other = "Export Data"
+
+[deleteInformation]
+other = "Delete your information"
+
+[deleteDetails]
+other = "You can delete your current account and all your progress from the following section."
+
+[warning]
+other = "Warning"
+
+[warningDelete]
+other = "This process is not reversible and all your data will be lost forever unless you have a backup."
+
+[finalConfirmation]
+other = "The following action will request a final confirmation."
+
+[deleteAccount]
+other = "Delete Account"
+
+[your-profile]
+other = "Your profile"
+
+[sign-out]
+other = "Sign out"
 
 [translations]
-other = "Übersetzungen"
+other = "Translations"
 
 [postAvailable]
-other = "Wechsle auf"
+other = "Also available in"
 
 [skipLink]
-other = "Zum Inhalt springen"
-
-[404Title]
-other = "Hier gibt es nichts zu sehen. Noch nicht."
+other = "Skip to content"
 
 [next]
-other = "Weiter"
+other = "Next"
 
 [contact]
-other = "Kontakt"
-
-[toggle]
-other = "Hohen Kontrast umschalten"
+other = "Contact"
 
 [seeOur]
-other = "Siehe unser"
-
-[work]
-other = "Arbeiten"
+other = "See our"
 
 [clients]
-other = "Kunden"
+other = "Clients"
 
 # Contact
 [getinTouch]
-other = "Kontakt aufnehmen"
+other = "Get in touch"
 [contactTeam]
-other = "Hast Du eine Herausforderung für uns? Setze Dich mit unserem Team in Verbindung, um zu sehen, wie wir helfen können."
+other = "Have a challenge? Get in touch with our team to discuss how we can help."
 [preferCall]
-other = "Möchtest Du lieber ein persönliches Gespräch?"
+other = "Prefer to talk over a call?"
 [scheduleCall]
-other = "Einen Anruf vereinbaren"
+other = "Schedule a call"
 [helpProject]
-other = "Können wir Dir bei Deinem Projekt helfen?"
+other = "Can we help on your project?"
 [contactUs]
-other = "Kontakt"
+other = "Contact us"
 [weareOn]
-other = "Wir sind auf"
+other = "We are on"
 
 # Footer
 [letsTalk]
-other = "Lass uns reden"
-
-# Works
-[allWorks]
-other = "Alle Arbeiten"
-[ourWork]
-other = "Unsere Arbeiten"
-[workTagged]
-other = "Arbeiten getaggt als"
+other = "Let's talk"
 
 # 404.html
 [archives]
 other = "Posts"
 
 [home]
-other = "Startseite"
+other = "Home"
 
 [notFound]
-other = "Ups, Seite nicht gefunden..."
+other = "Oops, page not found…"
 
 # Blog 
 [newerPosts]
-other = "Neuere Beiträge"
+other = "Newer post"
 [olderPosts]
-other = "Ältere Beiträge"
+other = "Older post"
 [allPosts]
-other = "Alle Beiträge"
+other = "All Posts"
 
 # posts/single.html
 [readingTime]
-one   = "1 min lesen"
-other = "{{ .Count }} min lesen"
+one   = "1 min read"
+other = "{{ .Count }} min read"
 
 [tableOfContents]
-other = "Inhaltsverzeichnis"
+other = "Table of Contents"
 
 [wordCount]
-one   = "Ein wort"
-other = "{{ .Count }} wörter"
+one   = "One Word"
+other = "{{ .Count }} Words"
 
 [publishDate]
-other = "Veröffentlicht am"
+other = "Published on"
 
 [updatedOn]
-other = "zuletzt aktualisiert am"
+other = "last updated on"

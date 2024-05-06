@@ -1,12 +1,114 @@
 # Translations for English
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
-# Generic
-[login]
-other = "Log in"
+# Signup and login
+[createAccount]
+other = "Create a new account"
+
+[username]
+other = "Username"
+
+[fullname]
+other = "Full name"
+
+[profilephoto]
+other = "Profile picture"
+
+[upload]
+other = "Upload"
+
+[password]
+other = "Password"
+
+[repeatpassword]
+other = "Repeat Password"
 
 [signup]
 other = "Sign up"
+
+[existingAccount]
+other = "Have an existing account?"
+
+[importData]
+other = "Import your data"
+
+[loginHeader]
+other = "Log in to your account"
+
+[loginSubheader]
+other = "Welcome back! Please enter your details."
+
+[signin]
+other = "Sign in"
+
+[noAccount]
+other = "Don't have an account?"
+
+[login]
+other = "Log in"
+
+[profileInformation]
+other = "Your profile information"
+
+[editDetails]
+other = "You can view or edit your details below"
+
+[profile]
+other = "Profile"
+
+[profileWarning]
+other = "This information can be accessed by other users on this computer, so be careful what you share."
+
+[unlock]
+other = "Unlock and edit profile"
+
+[change]
+other = "Change"
+
+[saveChanges]
+other = "Save Changes"
+
+[exportInformation]
+other = "Export your information"
+
+[exportDetails]
+other = "You can export your current progress and import it into another device if you wish to continue learning on-the-go or if you have a new device."
+
+[info]
+other = "Information"
+
+[infoExport]
+other = "The JSON file produced by this export is NOT encrypted, apart from the user profile password."
+
+[exportIncludes]
+other = "This export includes ALL your profile information and progress made on the modules."
+
+[exportData]
+other = "Export Data"
+
+[deleteInformation]
+other = "Delete your information"
+
+[deleteDetails]
+other = "You can delete your current account and all your progress from the following section."
+
+[warning]
+other = "Warning"
+
+[warningDelete]
+other = "This process is not reversible and all your data will be lost forever unless you have a backup."
+
+[finalConfirmation]
+other = "The following action will request a final confirmation."
+
+[deleteAccount]
+other = "Delete Account"
+
+[your-profile]
+other = "Your profile"
+
+[sign-out]
+other = "Sign out"
 
 [translations]
 other = "Translations"
@@ -28,7 +130,6 @@ other = "See our"
 
 [clients]
 other = "Clients"
-
 
 # Contact
 [getinTouch]
