@@ -54,6 +54,7 @@
 
             <section id="modules" class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 grid-cols-1">
                 <div class="grid grid-cols-1 gap-8 max-w-3xl">
+                    <span class="hidden" id="moduleCount">{{ len .RegularPagesRecursive }}</span>
                     {{ range .RegularPagesRecursive }}
                     <div
                         class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
@@ -110,17 +111,31 @@
                 circumference: 60 * 2 * Math.PI,
                 percent: 0,
                 updateLearningPathProgress() {
-                    const moduleCount = 1; // Total number of modules in the learning path
+
+                    const permalinkParts = window.location.pathname.split("/"); // Split the URL by "/"
+                    const lastItem = permalinkParts[permalinkParts.length - 1]; // Get the last item in the URL
+
                     let completedModules = 0;
 
+                    // Retrieve the username from localStorage
+                    const username = localStorage.getItem("loggedInUser");
+
+                    // Retrieve the userData object from localStorage
+                    const userDataString = localStorage.getItem(username);
+                    const userData = JSON.parse(userDataString);
+
                     // Loop through all modules and count completed ones
-                    for (let i = 1; i <= moduleCount; i++) {
-                        const moduleId = `module${i}`;
-                        const completionState = localStorage.getItem(moduleId);
-                        if (completionState === "true") {
-                            completedModules++;
+                    for (let [key, value] of Object.entries(userData)) {
+                        // Check if the key starts with the last item in the URL
+                        if (key.startsWith(lastItem)) {
+                            // Use the value directly instead of retrieving it again from localStorage
+                            if (value === true) {
+                                completedModules++;
+                            }
                         }
                     }
+
+                    const moduleCount = document.getElementById("moduleCount").innerHTML; // Total number of modules in the learning path
 
                     // Calculate progress percentage
                     const progressPercentage = (completedModules / moduleCount) * 100;
