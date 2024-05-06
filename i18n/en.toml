@@ -114,6 +114,24 @@ other = "Sign out"
 one = "Module"
 other = "Modules"
 
+[what-learn]
+other = "What you'll learn"
+
+[modules-description]
+other = "Lorem ipsum dolor sit amet blah blah."
+
+[todo]
+other = "To do"
+
+[done]
+other = "Done"
+
+[objective]
+other = "Objective"
+
+[usecase]
+other = "Use Case"
+
 [translations]
 other = "Translations"
 

@@ -1,6 +1,6 @@
 +++
 title = "Detecting, Investigating and Tracking Malicious Infrastructure"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-icon = ""
+description = "This course provides a comprehensive overview of investigating phishing attacks targeting NGOs, focusing on identifying and analyzing malicious infrastructure. Emphasis is placed on safety measures and collaboration with affected parties to mitigate risks effectively. Case studies highlight successful investigations conducted by NGOs."
+icon = "sharp-solid/shield-check"
 categories = ['design','research','presentation']
 +++
