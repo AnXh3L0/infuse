@@ -13,8 +13,7 @@
     <main id="content" class="content">
         {{ partial "breadcrumbs.html" . }}
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-            <section
-                class="mx-auto max-w-4xl w-full px-8 flex-col lg:flex lg:items-center lg:justify-between lg:px-8">
+            <section class="mx-auto max-w-4xl w-full px-8 flex-col lg:flex lg:items-center lg:justify-between lg:px-8">
 
                 <article class="w-full flex flex-col items-start justify-between border-b border-gray-300 pb-8 mb-5">
                     <p class="text-sm text-gray-500">Module 1</p>
@@ -32,6 +31,29 @@
 
                 <section class="markdown w-full flex flex-col items-start justify-between">
                     {{ .Content | markdownify }}
+                </section>
+
+                <section class="w-full flex flex-col items-start justify-between">
+                    <input type="checkbox" id="{{ .Page.Params.title }}Checkbox">
+                    <label for="{{ .Page.Params.title }}Checkbox">Mark as Complete</label>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            // Generate a unique module ID based on the URL of the module page
+                            const moduleId = window.location.pathname.replace(/\//g, "_");
+
+                            const checkbox = document.getElementById("{{ .Page.Params.title }}Checkbox");
+
+                            // Retrieve the completion state from localStorage and update the checkbox state accordingly
+                            const completionState = localStorage.getItem(moduleId) === "true";
+                            checkbox.checked = completionState;
+
+                            // Add an event listener to the checkbox to store the completion state in localStorage when it changes
+                            checkbox.addEventListener("change", function () {
+                                localStorage.setItem(moduleId, this.checked); // Store completion state in localStorage
+                            });
+                        });
+                    </script>
                 </section>
 
             </section>
