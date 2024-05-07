@@ -9,7 +9,7 @@ backend:
   # repo: OpenInternet/saferjourno
   # branch: main
 
-local_backend: true
+local_backend: false
 
 publish_mode: editorial_workflow
 media_folder: static/media/uploads
