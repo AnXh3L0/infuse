@@ -35,20 +35,21 @@
 
                 <section class="w-full flex flex-col items-start justify-between">
                     <div
-                        class="relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400">
-                        <article class="flex flex-col items-start justify-between">
-                            <div class=" w-full">
-                                <div class="relative flex items-start space-x-3 py-3 px-4 rounded-xl border-2 border-gray-300 bg-gray-100">
-                                    <div class="flex h-6 items-center">
-                                      <input id="{{ .Page.Params.title }}Checkbox" aria-describedby="checkbox-description" name="checkbox" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600">
-                                    </div>
-                                    <div class="ml-3 text-sm leading-6">
-                                      <label for="{{ .Page.Params.title }}Checkbox" class="font-medium text-gray-900">{{ i18n "markAsComplete" }}</label>
-                                      <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n "markAsCompleteARIA" }}</p>
-                                    </div>
-                                </div>
+                        class="w-full relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400">
+                        <div
+                            class="relative w-full flex items-start space-x-3 py-3 px-4 rounded-xl border-2 border-gray-300 bg-gray-100">
+                            <div class="flex h-6 items-center">
+                                <input id="{{ .Page.Params.title }}Checkbox" aria-describedby="checkbox-description"
+                                    name="checkbox" type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600">
                             </div>
-                        </article>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="{{ .Page.Params.title }}Checkbox" class="font-medium text-gray-900">{{ i18n
+                                    "markAsComplete" }}</label>
+                                <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n "markAsCompleteARIA"
+                                    }}</p>
+                            </div>
+                        </div>
                     </div>
 
                 </section>
