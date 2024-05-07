@@ -193,7 +193,7 @@
                 },
                 isModuleNotCompleted(urlValue) {
                     // Check if the module is not completed based on its ID
-                    return this.moduleCompletionStates[urlValue] === false;
+                    return this.moduleCompletionStates[urlValue] === false || this.moduleCompletionStates[urlValue] === null || this.moduleCompletionStates[urlValue] === '' || !this.moduleCompletionStates[urlValue];
                 },
                 calculateRemainingModules() {
                     let remaining = -4;

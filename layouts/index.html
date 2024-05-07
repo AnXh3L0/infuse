@@ -11,12 +11,12 @@
                         Internews.. explanation here.</p>
                     <div class="mt-10 flex items-center gap-x-3">
                         <div id="signupButtonCTA" class="hidden">
-                            <a href="/en/signup"
+                            <a href="{{ "/signup" | relLangURL }}"
                                 class="rounded-md bg-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">{{
                                 i18n "signup" }}</a>
                         </div>
                         <div id="loginButtonCTA" class="hidden">
-                            <a id="signupButtonCTA" href="/en/login"
+                            <a id="signupButtonCTA" href="{{ "/login" | relLangURL }}"
                                 class="rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">{{
                                 i18n "login" }}</a>
                         </div>
@@ -95,11 +95,10 @@
                 class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                 <article class="flex flex-col items-start justify-between">
                     <div class="relative w-full">
-                        
-                                <img src="/media/images/pattern.png"
-                            alt="Pattern"
+
+                        <img src="/media/images/pattern.png" alt="Pattern"
                             class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
-                                    <!-- {{ with .Page.Params.icon }} {{ partial "fontawesome.html" . }} {{ end }} -->
+                        <!-- {{ with .Page.Params.icon }} {{ partial "fontawesome.html" . }} {{ end }} -->
                     </div>
                     <div class="max-w-xl">
                         <div class="mt-4 flex items-center gap-x-2 text-xs">
@@ -115,7 +114,8 @@
                                     {{ .Title }}
                                 </a>
                             </h3>
-                            <p class="text-green-600 font-semibold mt-3">{{ where .RegularPagesRecursive "Section" "learning-path" | len }} {{ i18n "modules" }}</p>
+                            <p class="text-green-600 font-semibold mt-3">{{ where .RegularPagesRecursive "Section"
+                                "learning-path" | len }} {{ i18n "modules" }}</p>
                             <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{{
                                 .Page.Params.description }}</p>
                         </div>
