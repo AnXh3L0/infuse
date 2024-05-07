@@ -1,5 +1,5 @@
 locale: "en"
-logo_url: https://xxx/images/cms-logo.svg
+logo_url: ./cms-logo.svg
 
 site_url: https://xxx
 display_url: https://xxx

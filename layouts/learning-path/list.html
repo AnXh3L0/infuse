@@ -52,8 +52,8 @@
                 </div>
             </section>
 
-            <section id="modules" class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 flex justify-between grid-cols-1">
-                <div class="grid grid-cols-1 gap-8 max-w-4xl">
+            <section id="modules" class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 flex flex-col lg:flex-row justify-between grid-cols-1">
+                <div class="grid order-last lg:order-first grid-cols-1 gap-8 max-w-4xl">
                     <span class="hidden" id="moduleCount">{{ len .RegularPagesRecursive }}</span>
 
                     {{ range .RegularPagesRecursive }}
@@ -86,7 +86,7 @@
                                         {{ $lastPart := index $parts (sub (len $parts) 2) }}
                                         {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
 
-                                        <span class="hidden" id="urlValue">{{ $url }}</span>
+                                        <span class="hidden urlValue">{{ $url }}</span>
 
                                         <div x-data="learningPath" x-init="init()">
                                             <p x-show="isModuleCompleted('{{ $url }}')"
@@ -109,11 +109,12 @@
 
                 <!-- Badge -->
                 <div
-                    class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-16 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
+                    class="relative lg:order-first h-max mb-8 flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-16 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
                     <div class="grid place-items-center" x-data="learningPath" x-init="init()">
                         <img class="mb-5" src="/media/images/placeholder-badge.svg" alt="Placeholder Badge Image"
                             x-show="showBadge" />
-                        <img class="mb-5" src="/media/images/full-badge.svg" alt="Full Badge Image" x-show="fullBadge" />
+                        <img class="mb-5" src="/media/images/full-badge.svg" alt="Full Badge Image"
+                            x-show="fullBadge" />
                         <p class="text-md font-semibold" x-text="completionMessage"></p>
                     </div>
                 </div>
@@ -182,7 +183,17 @@
                     // Initialize module completion states for the current user from localStorage
                     this.moduleCompletionStates = this.username ? JSON.parse(localStorage.getItem(this.username)) || {} : {};
 
-                    const urlValue = document.getElementById('urlValue').innerHTML;
+                    // Retrieve all elements with the specified class
+                    const urlElements = document.querySelectorAll('.urlValue');
+
+                    // Iterate over each element and extract the URL value
+                    urlElements.forEach(element => {
+                        const urlValue = element.innerHTML;
+                        // Perform any necessary operations with the urlValue
+                        console.log(urlValue);
+                    });
+
+                    // const urlValue = document.getElementById('urlValue').innerHTML;
 
                     // Calculate the number of remaining incomplete modules
                     this.remainingModules = this.calculateRemainingModules();
