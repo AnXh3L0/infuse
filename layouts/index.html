@@ -90,20 +90,16 @@
 
     <section class="mx-auto max-w-7xl px-8 pb-32 pt-10 grid-cols-1 lg:grid-cols-3">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            {{ range where .Site.Pages "Type" "learning-path" }}
+            {{ range where (where .Site.Pages "Section" "learning-path" ) "Params.type" "=" "learning-path" }}
             <div
                 class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                 <article class="flex flex-col items-start justify-between">
                     <div class="relative w-full">
                         
-                            <div class="relative w-full">
                                 <img src="/media/images/pattern.png"
                             alt="Pattern"
                             class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
-
                                     <!-- {{ with .Page.Params.icon }} {{ partial "fontawesome.html" . }} {{ end }} -->
-
-                        
                     </div>
                     <div class="max-w-xl">
                         <div class="mt-4 flex items-center gap-x-2 text-xs">
