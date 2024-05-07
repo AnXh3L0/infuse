@@ -107,6 +107,12 @@ other = "Delete Account"
 [your-profile]
 other = "Your profile"
 
+[badges]
+other = "Badges"
+
+[settings]
+other = "Settings"
+
 [sign-out]
 other = "Sign out"
 

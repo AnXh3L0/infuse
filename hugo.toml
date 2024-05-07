@@ -86,15 +86,6 @@ pluralizeListTitles = false
   [languages.en.params]
     languageName = "English"
   [[languages.en.menu.main]]
-    identifier = "learning-paths"
-    name       = "Learning Paths"
-    url        = "/learning-paths/"
-    weight     = "1"
-  [[languages.en.menu.main]]
-    identifier = "badges"
-    name       = "Badges"
-    url        = "/badges/"
-    weight     = "2"
 
   [languages.de]
   weight    = 2
@@ -102,15 +93,6 @@ pluralizeListTitles = false
   [languages.de.params]
     languageName = "Deutsch"
   [[languages.de.menu.main]]
-    identifier = "learning-paths"
-    name       = "Learning Paths"
-    url        = "/learning-paths/"
-    weight     = "1"
-  [[languages.de.menu.main]]
-    identifier = "badges"
-    name       = "Badges"
-    url        = "/badges/"
-    weight     = "2"
 
 [privacy]
   [privacy.instagram]

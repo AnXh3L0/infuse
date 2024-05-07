@@ -52,8 +52,8 @@
                 </div>
             </section>
 
-            <section id="modules" class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 grid-cols-1">
-                <div class="grid grid-cols-1 gap-8 max-w-3xl">
+            <section id="modules" class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 flex justify-between grid-cols-1">
+                <div class="grid grid-cols-1 gap-8 max-w-4xl">
                     <span class="hidden" id="moduleCount">{{ len .RegularPagesRecursive }}</span>
 
                     {{ range .RegularPagesRecursive }}
@@ -90,13 +90,13 @@
 
                                         <div x-data="learningPath" x-init="init()">
                                             <p x-show="isModuleCompleted('{{ $url }}')"
-                                            class="relative z-10 rounded-full bg-green-50 border-solid border-2 border-green-200 px-3 py-0.5 font-medium text-sm text-green-700">
-                                            {{ i18n "done" }}</p>
-                                        <p x-show="isModuleNotCompleted('{{ $url }}')"
-                                            class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
-                                            {{ i18n "todo" }}</p>
+                                                class="relative z-10 rounded-full bg-green-50 border-solid border-2 border-green-200 px-3 py-0.5 font-medium text-sm text-green-700">
+                                                {{ i18n "done" }}</p>
+                                            <p x-show="isModuleNotCompleted('{{ $url }}')"
+                                                class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
+                                                {{ i18n "todo" }}</p>
                                         </div>
-                                        
+
                                     </div>
 
                                 </div>
@@ -106,6 +106,18 @@
                     </div>
                     {{ end }}
                 </div>
+
+                <!-- Badge -->
+                <div
+                    class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-16 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
+                    <div class="grid place-items-center" x-data="learningPath" x-init="init()">
+                        <img class="mb-5" src="/media/images/placeholder-badge.svg" alt="Placeholder Badge Image"
+                            x-show="showBadge" />
+                        <img class="mb-5" src="/media/images/full-badge.svg" alt="Full Badge Image" x-show="fullBadge" />
+                        <p class="text-md font-semibold" x-text="completionMessage"></p>
+                    </div>
+                </div>
+
             </section>
 
         </div>
@@ -128,7 +140,7 @@
                 updateLearningPathProgress() {
 
                     const permalinkParts = window.location.pathname.split("/"); // Split the URL by "/"
-                    const lastItem = permalinkParts[permalinkParts.length - 1]; // Get the last item in the URL
+                    const lastItem = "/" + permalinkParts[permalinkParts.length - 2]; // Get the pre-last item in the URL
 
                     let completedModules = 0;
 
@@ -162,26 +174,50 @@
         }
 
         const learningPath = () => {
-        return {
-            init() {
-                // Retrieve the username from localStorage
-                this.username = localStorage.getItem("loggedInUser");
+            return {
+                init() {
+                    // Retrieve the username from localStorage
+                    this.username = localStorage.getItem("loggedInUser");
 
-                // Initialize module completion states for the current user from localStorage
-                this.moduleCompletionStates = this.username ? JSON.parse(localStorage.getItem(this.username)) || {} : {};
+                    // Initialize module completion states for the current user from localStorage
+                    this.moduleCompletionStates = this.username ? JSON.parse(localStorage.getItem(this.username)) || {} : {};
 
-                const urlValue = document.getElementById('urlValue').innerHTML
-            },
-            isModuleCompleted(urlValue) {
-                // Check if the module is completed based on its ID
-                return this.moduleCompletionStates[urlValue] === true;
-            },
-            isModuleNotCompleted(urlValue) {
-                // Check if the module is completed based on its ID
-                return this.moduleCompletionStates[urlValue] === false;
-            }
+                    const urlValue = document.getElementById('urlValue').innerHTML;
+
+                    // Calculate the number of remaining incomplete modules
+                    this.remainingModules = this.calculateRemainingModules();
+                },
+                isModuleCompleted(urlValue) {
+                    // Check if the module is completed based on its ID
+                    return this.moduleCompletionStates[urlValue] === true;
+                },
+                isModuleNotCompleted(urlValue) {
+                    // Check if the module is not completed based on its ID
+                    return this.moduleCompletionStates[urlValue] === false;
+                },
+                calculateRemainingModules() {
+                    let remaining = -4;
+                    // Loop through all modules and count incomplete ones
+                    for (const urlValue in this.moduleCompletionStates) {
+                        if (!this.isModuleCompleted(urlValue)) {
+                            remaining++;
+                        }
+                    }
+                    return remaining;
+                },
+                get completionMessage() {
+                    if (this.remainingModules > 0) {
+                        return `Finish ${this.remainingModules} more modules to earn your badge`;
+                    } else {
+                        this.fullBadge = true; // Show the full badge image when all modules are completed
+                        this.showBadge = false; // Hide the placeholder when there are missing modules
+                        return "Congratulations! You've earned your badge";
+                    }
+                },
+                showBadge: true, // Initially show the placeholder badge image
+                fullBadge: false // Initially hide the full badge image
+            };
         };
-    };
     </script>
 
     {{ block "footer" . }}
