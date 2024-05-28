@@ -207,7 +207,7 @@
                     return this.moduleCompletionStates[urlValue] === false || this.moduleCompletionStates[urlValue] === null || this.moduleCompletionStates[urlValue] === '' || !this.moduleCompletionStates[urlValue];
                 },
                 calculateRemainingModules() {
-                    let remaining = -4;
+                    let remaining = 0;
                     // Loop through all modules and count incomplete ones
                     for (const urlValue in this.moduleCompletionStates) {
                         if (!this.isModuleCompleted(urlValue)) {

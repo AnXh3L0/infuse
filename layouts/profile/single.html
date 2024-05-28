@@ -101,20 +101,6 @@
                                     <input class="sr-only" type="file" id="profileAvatar" accept="image/*" disabled>
                                 </div>
                             </div>
-    
-                            <div class="sm:col-span-4">
-                                <label for="profilePassword" class="block text-sm font-medium leading-6 text-gray-900">{{
-                                    i18n "password"
-                                    }}</label>
-                                <div class="mt-2">
-                                    <div
-                                        class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-green-600 sm:max-w-md">
-                                        <input type="password" name="profilePassword" id="profilePassword" autocomplete=""
-                                            class="block flex-1 border-0 bg-transparent py-1.5 pl-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:leading-6"
-                                            disabled>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="mt-6 flex items-center justify-start gap-x-6">
                             <button type="button"
@@ -224,7 +210,6 @@
                 const profileUsername = document.getElementById("profileUsername").value;
                 const profileName = document.getElementById("profileName").value;
                 const profileAvatar = document.getElementById("profileAvatar").files[0];
-                const profilePassword = document.getElementById("profilePassword").value;
 
                 // Retrieve the currently logged-in user
                 const loggedInUser = localStorage.getItem("loggedInUser");

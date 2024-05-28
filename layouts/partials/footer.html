@@ -4,8 +4,4 @@
 {{ $instant := resources.Get "js/instantpage.js" }}
 {{ $instantpage := slice $instant | resources.Concat "instant.js" | resources.Minify }}
 
-{{ $crypto := resources.Get "js/crypto-js.min.js" }}
-{{ $crypto := slice $crypto | resources.Concat "crypto-js.min.js" | resources.Minify }}
-
 <script type="module" defer src="{{ $instantpage.RelPermalink }}"></script>
-<script defer src="{{ $crypto.RelPermalink }}"></script>

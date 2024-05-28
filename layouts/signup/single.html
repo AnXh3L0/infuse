@@ -41,30 +41,9 @@
                         <div class="mt-2 flex items-center gap-x-3">
                             <img id="avatarUpload" class="h-8 w-8 rounded-full object-cover"
                                 src="/media/images/user-pfp.svg" alt="User profile photo">
-                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only"
-                                required>
+                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only">
                             <label for="SignupPhoto"
                                 class="block text-sm font-medium leading-6 text-gray-900 rounded-md bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer">{{ i18n "upload" }}</label>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="SignupPassword"
-                            class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "password" }}</label>
-                        <div class="mt-2">
-                            <input id="SignupPassword" name="SignupPassword" type="password" minlength="6"
-                                autocomplete="current-password" required
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="SignupRepeatPassword"
-                            class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "repeatpassword" }}</label>
-                        <div class="mt-2">
-                            <input id="SignupRepeatPassword" name="SignupRepeatPassword" type="password" minlength="6"
-                                autocomplete="current-password" required
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
                         </div>
                     </div>
 
@@ -95,16 +74,6 @@
                 const username = document.getElementById("SignupUsername").value;
                 const name = document.getElementById("SignupName").value;
                 const avatar = document.getElementById("SignupPhoto").files[0];
-                const password = document.getElementById("SignupPassword").value;
-                const repeatPassword = document.getElementById("SignupRepeatPassword").value;
-
-                if (password !== repeatPassword) {
-                    alert("Passwords do not match. Please re-enter your password.");
-                    return;
-                }
-
-                // Encrypt the password using MD5
-                const encryptedPassword = CryptoJS.MD5(password).toString();
 
                 const reader = new FileReader();
                 reader.onload = function (event) {
@@ -117,7 +86,6 @@
                         const userData = {
                             username: username,
                             name: name,
-                            password: encryptedPassword,
                             avatar: avatarData,
                         };
                         localStorage.setItem(username, JSON.stringify(userData));
