@@ -44,6 +44,15 @@ other = "Don't have an account?"
 [login]
 other = "Log in"
 
+[tab_profile]
+other = "Profile data"
+
+[tab_export]
+other = "Export data"
+
+[tab_delete]
+other = "Delete data"
+
 [profileInformation]
 other = "Your profile information"
 
