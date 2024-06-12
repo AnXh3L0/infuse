@@ -84,7 +84,7 @@ other = "You can export your current progress and import it into another device 
 other = "Information"
 
 [infoExport]
-other = "The JSON file produced by this export is NOT encrypted, apart from the user profile password."
+other = "The JSON file produced by this export is NOT encrypted."
 
 [exportIncludes]
 other = "This export includes ALL your profile information and progress made on the modules."
