@@ -6,22 +6,19 @@
 other = "Create a new account"
 
 [username]
-other = "Username"
+other = "Username*"
 
 [fullname]
-other = "Full name"
+other = "Full name*"
 
 [profilephoto]
-other = "Profile picture"
+other = "Avatar image"
 
 [upload]
 other = "Upload"
 
-[password]
-other = "Password"
-
-[repeatpassword]
-other = "Repeat Password"
+[required]
+other = "Items marked with * are required"
 
 [signup]
 other = "Sign up"

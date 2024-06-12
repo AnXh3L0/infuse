@@ -17,11 +17,8 @@ other = "Profile picture"
 [upload]
 other = "Upload"
 
-[password]
-other = "Password"
-
-[repeatpassword]
-other = "Repeat Password"
+[required]
+other = "Items marked with * are required"
 
 [signup]
 other = "Sign up"
