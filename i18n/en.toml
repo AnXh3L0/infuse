@@ -147,6 +147,15 @@ other = "Mark module as complete"
 [markAsCompleteARIA]
 other = "Marks the current module as completed and saves the progress for the user."
 
+[only_one_module_left]
+other = "Only 1 module left to earn your badge"
+
+[multiple_modules_left]
+other = "Finish 'count' more modules to earn your badge"
+
+[badge_completed]
+other = "You've earned your 'badge_name' badge!"
+
 [translations]
 other = "Translations"
 

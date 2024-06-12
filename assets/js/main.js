@@ -27,11 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("userLabel").textContent = loggedInUser;
     document.getElementById("signupButton").style.display = "none";
     document.getElementById("userProfile").style.display = "flex";
+    document.getElementById("progress-bar").style.display = "inline-flex";
+    document.getElementById("badge-card").style.display = "flex";
+    document.getElementById("mark-complete").style.display = "flex";
   } else {
     document.getElementById("signupButton").style.display = "flex";
     document.getElementById("loginButton").style.display = "flex";
     document.getElementById("signupButtonCTA").style.display = "flex";
     document.getElementById("loginButtonCTA").style.display = "flex";
+    document.getElementById("mark-complete").style.display = "none";
   }
 });
 

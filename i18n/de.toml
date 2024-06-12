@@ -107,8 +107,54 @@ other = "Delete Account"
 [your-profile]
 other = "Your profile"
 
+[badges]
+other = "Badges"
+
+[settings]
+other = "Settings"
+
 [sign-out]
 other = "Sign out"
+
+[modules]
+one = "Module"
+other = "Modules"
+
+[what-learn]
+other = "What you'll learn"
+
+[modules-description]
+other = "Lorem ipsum dolor sit amet blah blah."
+
+[todo]
+other = "To do"
+
+[done]
+other = "Done"
+
+[objective]
+other = "Objective"
+
+[usecase]
+other = "Use Case"
+
+[skillcheck]
+other = "Skill Check"
+
+[markAsComplete]
+other = "Mark module as complete"
+
+[markAsCompleteARIA]
+other = "Marks the current module as completed and saves the progress for the user."
+
+[only_one_module_left]
+other = "Only 1 module left to earn your badge"
+
+[multiple_modules_left]
+other = "Finish 'count' more modules to earn your badge"
+
+[badge_completed]
+other = "You've earned your 'badge_name' badge!"
 
 [translations]
 other = "Translations"

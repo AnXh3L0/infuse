@@ -33,7 +33,7 @@
                     {{ .Content | markdownify }}
                 </section>
 
-                <section class="w-full flex flex-col items-start justify-between">
+                <section id="mark-complete" class="w-full flex-col items-start justify-between">
                     <div
                         class="w-full relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400">
                         <div
@@ -101,7 +101,5 @@
         </div>
     </main>
 
-    {{ block "footer" . }}
     {{ partial "footer.html" . }}
-    {{ end }}
 </body>
