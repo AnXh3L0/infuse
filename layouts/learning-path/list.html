@@ -53,15 +53,15 @@
             </section>
 
             <section id="modules"
-                class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 flex flex-col lg:flex-row justify-between grid-cols-1">
-                <div class="grid order-last lg:order-first grid-cols-1 gap-8 max-w-4xl">
+                class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 flex flex-col lg:flex-row justify-between grid-cols-1 gap-8">
+                <div class="grid order-last lg:order-first grid-cols-1 gap-8 w-full">
                     <span class="hidden" id="moduleCount" data-count="{{ len .RegularPagesRecursive }}"></span>
 
                     {{ range .RegularPagesRecursive }}
                     <div
                         class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                         <article class="flex flex-col items-start justify-between">
-                            <div class="max-w-xl">
+                            <div class="w-full">
                                 <div class="flex mb-3 items-center gap-x-2 text-md">
                                     {{ range .Page.Params.categories }}
                                     <p class="relative z-10 font-semibold text-green-600">
@@ -127,7 +127,7 @@
                         <p id="badgeCompleted" class="hidden">{{ i18n "badge_completed" }}</p>
                         <p id="badgeName" class="hidden">{{ .Page.Params.badge }}</p>
 
-                        <p class="text-md font-semibold" x-text="completionMessage"></p>
+                        <p class="text-md text-center font-semibold" x-text="completionMessage"></p>
                     </div>
                 </div>
 
