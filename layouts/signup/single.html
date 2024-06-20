@@ -11,7 +11,7 @@
     <div id="content" class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
-            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n
+            <h2 class="mt-6 mb-3 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n
                 "createAccount" }}
             </h2>
         </div>
@@ -19,34 +19,45 @@
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
             <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
                 <form id="SignupForm" class="space-y-6" method="dialog">
+
                     <div>
                         <label for="SignupUsername" class="block text-sm font-medium leading-6 text-gray-900">{{ i18n
                             "username" }}</label>
                         <div class="mt-2">
-                            <input id="SignupUsername" name="SignupUsername" type="text" autocomplete="" required
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                            <input type="text" name="SignupUsername" id="SignupUsername" autocomplete="" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                aria-describedby="username-description">
                         </div>
+                        <p class="mt-2 text-xs text-gray-500" id="username-description">{{ i18n
+                            "username-description" }}</p>
                     </div>
 
                     <div>
                         <label for="SignupName" class="block text-sm font-medium leading-6 text-gray-900">{{ i18n
                             "fullname" }}</label>
                         <div class="mt-2">
-                            <input id="SignupName" name="SignupName" type="text" autocomplete="" required
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                            <input type="text" name="SignupName" id="SignupName" autocomplete="" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                aria-describedby="name-description">
                         </div>
+                        <p class="mt-2 text-xs text-gray-500" id="name-description">{{ i18n
+                            "name-description" }}</p>
                     </div>
+
+                    <p class="text-sm text-gray-600">{{ i18n "nopassword" | markdownify }}</p>
 
                     <div>
                         <p class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "profilephoto" }}</p>
                         <div class="mt-2 flex items-center gap-x-3">
                             <img id="avatarUpload" class="h-8 w-8 rounded-full object-cover"
                                 src="/media/images/user-pfp.svg" alt="Avatar image">
-                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only">
+                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only" aria-describedby="avatar-description">
                             <label for="SignupPhoto"
                                 class="block text-sm font-medium leading-6 text-gray-900 rounded-md bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer">{{
                                 i18n "upload" }}</label>
                         </div>
+                        <p class="mt-2 text-xs text-gray-500" id="avatar-description">{{ i18n
+                            "avatar-description" }}</p>
                     </div>
 
                     <div>
@@ -59,14 +70,6 @@
                 </form>
 
             </div>
-
-            <p class="mt-10 text-center text-sm text-gray-500">
-                {{ i18n "existingAccount" }}
-                <label class="font-semibold leading-6 text-green-600 hover:text-green-500 cursor-pointer"
-                    for="importInput">
-                    {{ i18n "importData" }}</label>
-                <input type="file" class="sr-only" id="importInput" accept=".json">
-            </p>
         </div>
     </div>
 
@@ -126,28 +129,6 @@
         // Add event listener to file input
         const fileInput = document.getElementById('SignupPhoto');
         fileInput.addEventListener('change', handleFileUpload);
-
-        // Function to import user data from JSON
-        function importUserData(file) {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                const jsonData = event.target.result;
-                const userData = JSON.parse(jsonData);
-                for (const key in userData) {
-                    localStorage.setItem(key, userData[key]);
-                }
-                window.location.href = "/"; // Reload the page after import to update the UI
-            };
-            reader.readAsText(file);
-        }
-
-        // Event listener for import input change
-        document
-            .getElementById("importInput")
-            .addEventListener("change", function (event) {
-                const file = event.target.files[0];
-                importUserData(file);
-            });
 
         // Function to handle successful signup
         function handleSuccessfulSignup(username) {
