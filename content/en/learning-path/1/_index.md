@@ -6,5 +6,4 @@ weight = 1
 thumbnail = "1"
 icon = "forensics-fanatic"
 badge = "Forensics Fanatic"
-categories = ['design','research','presentation']
 +++

@@ -156,12 +156,6 @@ other = "To do"
 [done]
 other = "Done"
 
-[objective]
-other = "Objective"
-
-[usecase]
-other = "Use Case"
-
 [skillcheck]
 other = "Skill Check"
 

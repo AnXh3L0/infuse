@@ -26,21 +26,22 @@ To better support both the person you’re helping and the greater community, it
 
 Lastly, it is important to recognize up-front that many of the investigation techniques in this learning path can alert an attacker that they are being investigated, or even place the investigator—or the wider community— at risk. We divide the techniques into passive and active methods. Use caution when considering active methods of investigation, and first talk to the recipient individual/organization before doing so in order to discuss their threat model and allow them to make an informed choice about proceeding with investigations.
 
-- Passive (appropriate in all cases)
+Passive (appropriate in all cases)
 
-  - Uses information that has already been delivered to the targeted person
-  - Does not involve communication with the attacker’s infrastructure
-  - Generally easier
-  - Does not generally alert the attacker that they are under investigation
-  - Safer
+- Uses information that has already been delivered to the targeted person
+- Does not involve communication with the attacker’s infrastructure
+- Generally easier
+- Does not generally alert the attacker that they are under investigation
+- Safer
 
-- Active
-  - Generally only used for malware delivery and command-and-control servers
-  - Investigator will interact with the attacker’s infrastructure
-  - Often requires more skill and deeper investigation
-    - “Cat-and-mouse game” with the attacker
-  - May alert the attacker that they are being investigated
-  - Risk that the investigator may become compromised or targeted
+Active
+
+- Generally only used for malware delivery and command-and-control servers
+- Investigator will interact with the attacker’s infrastructure
+- Often requires more skill and deeper investigation
+  - “Cat-and-mouse game” with the attacker
+- May alert the attacker that they are being investigated
+- Risk that the investigator may become compromised or targeted
 
 ## Objective
 
@@ -84,3 +85,76 @@ Skills in investigating, tacking, and detecting malicious infrastructure can hel
 ## Related learning paths
 
 This learning path offers a fantastic introduction to other ones. After completing this one, we would recommend that learners work on either Detecting Malware or Web Security Fundamentals.
+
+## Other resources and links
+
+<table>
+  <tr>
+   <td>Title
+
+   </td>
+   <td>Description
+
+   </td>
+   <td>Language
+
+   </td>
+   <td>Cost
+
+   </td>
+   <td>URL
+
+   </td>
+  </tr>
+  <tr>
+   <td>Helpdesk Workflow: Client Receives a Suspicious/Phishing Email
+
+   </td>
+   <td>Access Now helpline community documentation for responding to suspicious/phishing emails
+
+   </td>
+   <td>English
+
+   </td>
+   <td>Free
+
+   </td>
+   <td>[Client Receives a Suspicious/Phishing Email | Access Now Digital Security Helpline Public Documentation (accessnowhelpline.gitlab.io)](https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#)
+
+   </td>
+  </tr>
+  <tr>
+   <td>List of all DNS record types
+
+   </td>
+   <td>Includes (almost?) all DNS record types.
+
+   </td>
+   <td>English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French
+
+   </td>
+   <td>Free
+
+   </td>
+   <td>[https://en.wikipedia.org/wiki/List_of_DNS_record_types](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
+
+   </td>
+  </tr>
+  <tr>
+   <td>Amnesty reports on phishing campaigns
+
+   </td>
+   <td>A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks
+
+   </td>
+   <td>Multiple, depending on the report
+
+   </td>
+   <td>Free
+
+   </td>
+   <td>[https://www.amnesty.org/en/search/phishing/](https://www.amnesty.org/en/search/phishing/)
+
+   </td>
+  </tr>
+</table>

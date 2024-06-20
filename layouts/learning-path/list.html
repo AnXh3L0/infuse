@@ -58,7 +58,7 @@
                     {{ range where .RegularPagesRecursive "Params.style" "=" "introduction" }}
                     <div
                         class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-                        <article class="flex flex-col items-start justify-between">
+                        <article class="flex flex-col items-start justify-between w-full">
                             <div class="w-full">
                                 <div class="flex mb-3 items-center gap-x-2 text-md">
                                     {{ range .Page.Params.categories }}
@@ -77,7 +77,7 @@
                                     <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{
                                         .Page.Params.description }}</p>
 
-                                    <div class="flex items-center gap-x-2 mt-4 text-md">
+                                    <div class="completion-status hidden items-center gap-x-2 mt-4 text-md">
 
                                         {{ $permalink := .Permalink }}
                                         {{ $parts := split $permalink "/" }}
@@ -117,7 +117,7 @@
                     {{ range where .RegularPagesRecursive "Params.style" "=" "module" }}
                     <div
                         class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-                        <article class="flex flex-col items-start justify-between">
+                        <article class="flex flex-col items-start justify-between w-full">
                             <div class="w-full">
                                 <div class="flex mb-3 items-center gap-x-2 text-md">
                                     {{ range .Page.Params.categories }}
@@ -136,7 +136,7 @@
                                     <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{
                                         .Page.Params.description }}</p>
 
-                                    <div class="flex items-center gap-x-2 mt-4 text-md">
+                                    <div class="completion-status hidden items-center gap-x-2 mt-4 text-md">
 
                                         {{ $permalink := .Permalink }}
                                         {{ $parts := split $permalink "/" }}

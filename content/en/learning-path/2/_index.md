@@ -1,8 +1,9 @@
 +++
 type = "learning-path"
 title = "Detecting Malware"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-thumbnail = "2"
+description = "This learning path covers intermediate-level knowledge and skills needed to detect and identify malware either from a given sample, or actively operating on a device on a variety of device platforms."
 weight = 2
-categories = ['design','research','presentation']
+thumbnail = "2"
+icon = "virus-vanquisher"
+badge = "Virus Vanquisher"
 +++

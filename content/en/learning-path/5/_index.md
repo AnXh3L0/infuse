@@ -1,7 +1,9 @@
 +++
 type = "learning-path"
-title = "Detecting, Investigating and Tracking Malicious Infrastructure"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
+title = "Web Application Security Fundamentals"
+description = "Web applications are critical infrastructure used by media organizations and civil society to disseminate free flow of information as well as to provide functionalities to their stakeholders."
+weight = 5
 thumbnail = "5"
-categories = ['design','research','presentation']
+icon = "exploit-explorer"
+badge = "Exploit Explorer"
 +++

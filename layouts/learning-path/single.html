@@ -11,10 +11,11 @@
     {{ partial "header.html" . }}
 
     <main id="content" class="content">
+        {{ partial "breadcrumbs.html" . }}
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-            <section class="mx-auto max-w-3xl w-full px-8 flex-col lg:flex lg:items-center lg:justify-between lg:px-8">
+            <section class="prose mx-auto max-w-3xl w-full px-8 flex-col lg:flex lg:items-center lg:justify-between lg:px-8">
 
-                <article class="w-full flex flex-col items-start justify-between border-b border-gray-300 pb-8 mb-5">
+                <article class="w-full flex flex-col items-start justify-between border-b border-gray-300">
                     {{ if eq .Page.Params.style "introduction" }}
                     {{ else }}
                     <p class="text-sm text-gray-500">Module {{ .Page.Params.weight }}</p>
@@ -24,22 +25,11 @@
                     </h1>
                 </article>
 
-
-                {{ if eq .Page.Params.style "module" }}
-                <section class="w-full flex flex-col items-start justify-between border-gray-300 border-b pb-8 mb-7">
-                    <h2 class="text-2xl font-semibold mb-4">{{ i18n "objective" }}</h2>
-                    <p class="text-gray-600 mb-7">{{ .Page.Params.objective }}</p>
-                    <h2 class="text-2xl font-semibold mb-4">{{ i18n "usecase" }}</h2>
-                    <p class="text-gray-600">{{ .Page.Params.usecase }}</p>
-                </section>
-                {{ else }}
-                {{ end }}
-
-                <section class="markdown w-full flex flex-col items-start justify-between">
+                <article class="w-full flex flex-col items-start justify-between">
                     {{ .Content | markdownify }}
-                </section>
+                </article>
 
-                <section id="mark-complete" class="w-full flex-col items-start justify-between">
+                <section id="mark-complete" class="hidden w-full flex-col items-start justify-between">
                     <div
                         class="w-full relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400">
                         <div
@@ -49,11 +39,18 @@
                                     name="checkbox" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600">
                             </div>
-                            <div class="ml-3 text-sm leading-6">
+                            <div class="ml-3 text-sm leading-6 w-full">
+                                {{ if eq .Page.Params.style "introduction" }}
+                                <label class="block cursor-pointer" for="{{ .Page.Params.title }}Checkbox" class="font-medium text-gray-900">{{ i18n
+                                    "markIntroAsComplete" }}</label>
+                                <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n "markIntroAsCompleteARIA"
+                                    }}</p>
+                                {{ else }}
                                 <label for="{{ .Page.Params.title }}Checkbox" class="font-medium text-gray-900">{{ i18n
                                     "markAsComplete" }}</label>
                                 <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n "markAsCompleteARIA"
                                     }}</p>
+                                {{ end }}
                             </div>
                         </div>
                     </div>

@@ -93,7 +93,7 @@
             {{ range where (where .Site.Pages "Section" "learning-path" ) "Params.type" "=" "learning-path" }}
             <div
                 class="relative flex space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-                <article class="flex flex-col items-start justify-between">
+                <article class="flex flex-col items-start">
                     <div class="relative w-full">
 
                         <img src="/media/thumbnails/{{ .Page.Params.thumbnail }}.png" alt="{{ .Page.Params.title }}"
@@ -113,8 +113,7 @@
                                     {{ .Title }}
                                 </a>
                             </h3>
-                            <p class="text-green-600 font-semibold mt-3">{{ where .RegularPagesRecursive "Section"
-                                "learning-path" | len }} {{ i18n "modules" }}</p>
+                            <p class="text-green-600 font-semibold mt-3">{{ len (where .RegularPagesRecursive ".Params.style" "eq" "module") }} {{ i18n "modules" }}</p>
                             <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{{
                                 .Page.Params.description }}</p>
                         </div>

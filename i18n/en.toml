@@ -156,20 +156,20 @@ other = "To do"
 [done]
 other = "Done"
 
-[objective]
-other = "Objective"
-
-[usecase]
-other = "Use Case"
-
 [skillcheck]
 other = "Skill Check"
 
 [markAsComplete]
 other = "Mark module as complete"
 
+[markIntroAsComplete]
+other = "Mark introduction as complete"
+
 [markAsCompleteARIA]
 other = "Marks the current module as completed and saves the progress for the user."
+
+[markIntroAsCompleteARIA]
+other = "Marks the introduction as completed and saves the progress for the user."
 
 [only_one_module_left]
 other = "Only 1 module left to earn your badge"
