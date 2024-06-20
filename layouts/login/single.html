@@ -9,15 +9,18 @@
   <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
 
   <div id="content" class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
-      <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n "loginHeader" }}
-      </h2>
-      <p class="text-center test-sm text-gray-600">{{ i18n "loginSubheader" }}</p>
-    </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
       <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+
+        <div class="sm:mx-auto sm:w-full sm:max-w-md mb-8">
+          <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
+          <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n "loginHeader"
+            }}
+          </h2>
+          <p class="text-center test-sm text-gray-600">{{ i18n "loginSubheader" }}</p>
+        </div>
+
         <form id="LoginForm" class="space-y-6" method="dialog">
           <div>
             <label for="LoginUsername" class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "username"
@@ -46,7 +49,7 @@
 
       <p class="mt-0 text-center text-sm text-gray-500">
         {{ i18n "noAccount" }}
-        <a href="{{ "/signup" | absLangURL }}" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
+        <a href="{{ " /signup" | absLangURL }}" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
           i18n "signup" }}</a>
       </p>
     </div>

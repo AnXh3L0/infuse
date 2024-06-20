@@ -30,7 +30,7 @@ other = "Upload"
 other = "Items marked with * are required"
 
 [nopassword]
-other = "**Note**: We do not use password authentication because all information is stored locally in your browser and is not transmitted to any 1st or 3rd party sources."
+other = "We do not use password authentication because all information is stored locally in your browser and is not transmitted to any 1st or 3rd party sources."
 
 [signup]
 other = "Sign up"
@@ -140,6 +140,12 @@ other = "Modules"
 
 [what-learn]
 other = "What you'll learn"
+
+[introduction]
+other = "Introduction"
+
+[introduction-description]
+other = "Lorem ipsum dolor sit amet blah blah."
 
 [modules-description]
 other = "Lorem ipsum dolor sit amet blah blah."

@@ -45,19 +45,76 @@
 
             </section>
 
-            <section class="mx-auto max-w-7xl w-full px-8 lg:flex lg:items-center lg:justify-between lg:px-8">
-                <div class="flex flex-col">
-                    <p class="mt-10 font-semibold text-xl leading-6">{{ i18n "modules" }}</p>
-                    <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "modules-description" }}</p>
-                </div>
-            </section>
-
             <section id="modules"
                 class="mx-auto max-w-7xl w-full px-8 pb-32 pt-10 flex flex-col lg:flex-row justify-between grid-cols-1 gap-8">
                 <div class="grid order-last lg:order-first grid-cols-1 gap-8 w-full">
                     <span class="hidden" id="moduleCount" data-count="{{ len .RegularPagesRecursive }}"></span>
 
-                    {{ range .RegularPagesRecursive }}
+                    <div class="flex flex-col">
+                        <p class="font-semibold text-xl leading-6">{{ i18n "introduction" }}</p>
+                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "introduction-description" }}</p>
+                    </div>
+
+                    {{ range where .RegularPagesRecursive "Params.style" "=" "introduction" }}
+                    <div
+                        class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
+                        <article class="flex flex-col items-start justify-between">
+                            <div class="w-full">
+                                <div class="flex mb-3 items-center gap-x-2 text-md">
+                                    {{ range .Page.Params.categories }}
+                                    <p class="relative z-10 font-semibold text-green-600">
+                                        {{ . | humanize }}</p>
+                                    {{ end }}
+                                </div>
+                                <div class="group relative">
+                                    <h3
+                                        class="text-2xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                                        <a href="{{ .Permalink }}">
+                                            <span class="absolute inset-0"></span>
+                                            {{ .Page.Params.title }}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{
+                                        .Page.Params.description }}</p>
+
+                                    <div class="flex items-center gap-x-2 mt-4 text-md">
+
+                                        {{ $permalink := .Permalink }}
+                                        {{ $parts := split $permalink "/" }}
+                                        {{ $lastTwoParts := index $parts (sub (len $parts) 3) }}
+                                        {{ $lastPart := index $parts (sub (len $parts) 2) }}
+                                        {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
+
+                                        <span class="hidden urlValue">{{ $url }}</span>
+
+                                        <div>
+                                            <div x-show="isModuleCompleted('{{ $url }}')">
+                                                <p
+                                                    class="relative z-10 rounded-full bg-green-50 border-solid border-2 border-green-200 px-3 py-0.5 font-medium text-sm text-green-700">
+                                                    {{ i18n "done" }}</p>
+                                            </div>
+                                            <div x-show="isModuleNotCompleted('{{ $url }}')">
+                                                <p
+                                                    class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
+                                                    {{ i18n "todo" }}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </article>
+                    </div>
+                    {{ end }}
+
+                    <div class="flex flex-col">
+                        <p class="mt-10 font-semibold text-xl leading-6">{{ i18n "modules" }}</p>
+                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "modules-description" }}</p>
+                    </div>
+
+                    {{ range where .RegularPagesRecursive "Params.style" "=" "module" }}
                     <div
                         class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                         <article class="flex flex-col items-start justify-between">

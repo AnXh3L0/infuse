@@ -9,15 +9,19 @@
     <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
 
     <div id="content" class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-        <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
-            <h2 class="mt-6 mb-3 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n
-                "createAccount" }}
-            </h2>
-        </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
             <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+
+                <div class="sm:mx-auto sm:w-full sm:max-w-md mb-4">
+                    <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
+                    <h2 class="mt-6 mb-3 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n
+                        "createAccount" }}
+                    </h2>
+                    <p class="text-xs text-gray-500">{{ i18n "nopassword" | markdownify }}</p>
+                </div>
+
+
                 <form id="SignupForm" class="space-y-6" method="dialog">
 
                     <div>
@@ -44,17 +48,16 @@
                             "name-description" }}</p>
                     </div>
 
-                    <p class="text-xs text-gray-500">{{ i18n "nopassword" | markdownify }}</p>
-
                     <div>
                         <p class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "profilephoto" }}</p>
                         <div class="mt-2 flex items-center gap-x-3">
+                            <label for="SignupPhoto"
+                                class="block text-sm font-normal leading-6 text-gray-900 rounded-md bg-white px-3 py-1 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer">{{
+                                i18n "upload" }}</label>
                             <img id="avatarUpload" class="h-8 w-8 rounded-full object-cover"
                                 src="/media/images/user-pfp.svg" alt="Avatar image">
                             <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only" aria-describedby="avatar-description">
-                            <label for="SignupPhoto"
-                                class="block text-sm font-medium leading-6 text-gray-900 rounded-md bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer">{{
-                                i18n "upload" }}</label>
+                            
                         </div>
                         <p class="mt-2 text-xs text-gray-500" id="avatar-description">{{ i18n
                             "avatar-description" }}</p>
