@@ -22,7 +22,6 @@
             <nav class="flex flex-col mt-10 px-6 lg:px-3" aria-label="Sidebar">
                 <ul role="list" class="space-y-1">
                     <li>
-                        <!-- Current: "bg-gray-50 text-green-600", Default: "text-gray-700 hover:text-green-600 hover:bg-gray-50" -->
                         <button x-on:click="openTab = 1" :class="{ 'bg-gray-50 text-green-600': openTab === 1 }"
                             class="text-gray-700 hover:text-green-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                             <svg :class="{ 'text-green-600' : openTab===1 }" class="h-6 w-6 shrink-0 text-gray-400"

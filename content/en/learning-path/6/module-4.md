@@ -17,11 +17,7 @@ After completing this subtopic, the practitioner should be able to do the follow
 
 ---
 
-   <td colspan="2" >
-
-### Body
-
-#### Identifying a hacking incident
+## Identifying a hacking incident
 
 For most victims of a hacking incident, the delay between the initial compromise and detection can be months or even years. Compromise is often detected by an engineer thinking that something “seems odd.” Some signs of compromise can include:
 
@@ -33,7 +29,7 @@ For most victims of a hacking incident, the delay between the initial compromise
 
 When signs of potential compromise occur, it’s quite natural to want to explain them away. Nobody wants to face the prospect that their website has been hacked. To be fair, most websites are never broken into, so there likely is a perfectly reasonable explanation. However, it’s important to detect and investigate a compromise as quickly as possible.
 
-#### Moving from an IoC to initial compromise
+## Moving from an IoC to initial compromise
 
 Once you have established that the site has been hacked through one or more IoCs (indicators of compromise), the next step is to work backwards to find the source of the initial compromise. This serves two purposes:
 
@@ -68,11 +64,11 @@ If you find an interesting log entry that may indicate a source of compromise or
 
 Through a mix of less-directing searching through logs and trying to connect the links of an attack chain, hopefully you can find the initial source of a compromise. Note that most attackers do not go through great lengths to hide their tracks. It’s a good strategy to start out looking for the most obvious thing first, and only after that fails to look for clever evasion techniques. For instance, if you find HTTP requests from the attacker, looking for more requests from the same IP address and/or the same user-agent is likely to be successful.
 
-#### Tracking an attacker forward
+## Tracking an attacker forward
 
 Once you have found the initial compromise, the next obvious step is to follow the attacker forward to see what they’ve done. The goals of this process are to determine what information the attacker has likely compromised and to prepare to evict them. The process of tracing the attacker’s steps forward is similar to, but easier than, tracing their steps backwards. Be sure to look for artifacts on disk and their metadata, in addition to logs. Comparing the files on the web server to what’s in the source code repository can be helpful with this. Also bear in mind that attackers will frequently attempt to expand their access to other servers, so maintain alert to attempts at horizontal movement. Finally, be sure to look for persistence mechanisms such as changes to cron files and the like.
 
-#### Evicting the attacker
+## Evicting the attacker
 
 Once you’re pretty sure what systems the attacker has access to (e.g., via exploits, backdoors, etc.), you can try to cut off their access. This is something you should try to do quickly and all at once. You’ll want to fix any vulnerabilities and remove any backdoors that you are aware of. Also note that most attackers, especially nation-state actors, work a regular schedule. Especially if the attacker doesn’t know that they’ve been detected, it’s best to evict them while they’re asleep.
 
@@ -80,16 +76,13 @@ The ideal way to evict the attacker is to tear down any servers that they might 
 
 In the worst case, if the site’s infrastructure is completely overrun, or it looks as if the attacker is on the verge of getting a devastating level of access, it may be sensible to simply turn off the servers and replace the site with a static page.
 
-#### Recovering from the hack
+## Recovering from the hack
 
 If you believe the attacker has been evicted, you may be wrong. Even if the attacker has been evicted, they will likely be looking for another way in. It’s important to be actively looking for attacker activity. Additionally, if the attacker exploited a website vulnerability to get in, there are likely other exploitable vulnerabilities in the site. It’s a good idea to perform a security assessment on the site. See the Web Application Security Assessment learning path for more on this. It’s also probably a good idea to perform the site hardening processes described in Subtopic 1 of this learning path. Lastly, you probably identified some issues with the site, infrastructure, logging, etc. Now would be a good time to make a plan for addressing those issues.
 
 If user data was compromised, the site owner may be legally and/or morally required to disclose the breach. Managing that is beyond the scope of this learning path, but [here’s an article to get started](https://discernibleinc.com/blog/-mailbag-reader-question-truthful-communication-legal-exposure).
 
-   </td>
-   <td colspan="2" >
-
-### Learning Resources
+## Learning Resources
 
 <table>
   <tr>
@@ -130,20 +123,13 @@ If user data was compromised, the site owner may be legally and/or morally requi
   </tr>
 </table>
 
-   </td>
-   <td colspan="2" >
-
-### Practice
+## Practice
 
 Offers a collection of exercises which allow the practitioner to use the tools and practice the skills outlined above. If relevant, this section also links to samples of malware or malicious content which the practitioner can interact with while practicing the skill.
 
 - Complete the [Log Analysis – Compromised WordPress](https://blueteamlabs.online/home/challenge/log-analysis-compromised-wordpress-ce000f5b59) on Blue Team Labs Online (free account required). If you’re having trouble, [a write-up](https://cyberjunnkie.medium.com/log-analysis-wordpress-incidentresponse-blueteamlabsonline-fdf211899782) is available.
 - Complete the [WebStrike Blue Team Challenge](https://cyberdefenders.org/blueteam-ctf-challenges/149#nav-overview) on CyberDefenders (free account required). Although this challenge involved the use of PCAP files instead of web logs, the principles are the same.
-   </td>
-   <td colspan="2" >
 
-### Skill Check
+## Skill Check
 
 Independently (or with a mentor), complete the [Tomcat Takeover Blue Team Challenge](https://cyberdefenders.org/blueteam-ctf-challenges/135#nav-overview) at CyberDefenders (free account required). Although this challenge involved the use of PCAP files instead of web logs, it represents an end-to-end attack scenario.
-
-   </td>

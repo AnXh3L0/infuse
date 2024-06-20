@@ -195,6 +195,9 @@ other = "See our"
 [clients]
 other = "Clients"
 
+[faq]
+other = "Frequently Asked Questions"
+
 # Contact
 [getinTouch]
 other = "Get in touch"
