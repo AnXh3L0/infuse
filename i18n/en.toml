@@ -75,7 +75,7 @@ other = "You can view or edit your details below"
 other = "Profile"
 
 [profileWarning]
-other = "This information can be accessed by other users on this computer, so be careful what you share."
+other = "This information can be accessed by other users on this computer, so be mindful of what you share."
 
 [unlock]
 other = "Unlock and edit profile"
@@ -90,7 +90,7 @@ other = "Save Changes"
 other = "Export your information"
 
 [exportDetails]
-other = "You can export your current progress and import it into another device if you wish to continue learning on-the-go or if you have a new device."
+other = "You can export your profile along with your current progress and import it onto another device, for seamless learning on the go."
 
 [info]
 other = "Information"
@@ -99,7 +99,7 @@ other = "Information"
 other = "The JSON file produced by this export is NOT encrypted."
 
 [exportIncludes]
-other = "This export includes ALL your profile information and progress made on the modules."
+other = "This export includes ALL your profile information and progress across modules."
 
 [exportData]
 other = "Export Data"
@@ -108,16 +108,16 @@ other = "Export Data"
 other = "Delete your information"
 
 [deleteDetails]
-other = "You can delete your current account and all your progress from the following section."
+other = "You can delete your current account and all associated progress in the following section."
 
 [warning]
 other = "Warning"
 
 [warningDelete]
-other = "This process is not reversible and all your data will be lost forever unless you have a backup."
+other = "This action is NOT reversible, and all your data will be permanently lost unless you have a backup."
 
 [finalConfirmation]
-other = "The following action will request a final confirmation."
+other = "You will be prompted for final confirmation before proceeding."
 
 [deleteAccount]
 other = "Delete Account"
