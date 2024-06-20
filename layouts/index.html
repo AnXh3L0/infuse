@@ -92,11 +92,11 @@
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
             {{ range where (where .Site.Pages "Section" "learning-path" ) "Params.type" "=" "learning-path" }}
             <div
-                class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
+                class="relative flex space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                 <article class="flex flex-col items-start justify-between">
                     <div class="relative w-full">
 
-                        <img src="/media/images/pattern.png" alt="Pattern"
+                        <img src="/media/thumbnails/{{ .Page.Params.thumbnail }}.png" alt="{{ .Page.Params.title }}"
                             class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
                         <!-- {{ with .Page.Params.icon }} {{ partial "fontawesome.html" . }} {{ end }} -->
                     </div>
