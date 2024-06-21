@@ -1,5 +1,5 @@
 <section id="breadcrumb" class="mx-auto max-w-7xl px-8 lg:px-8 lg:pt-16">
-    <nav class="flex mb-5" aria-label="Breadcrumb">
+    <nav class="flex justify-center mb-5" aria-label="Breadcrumb">
         <ol role="list" class="flex items-center space-x-4" itemscope itemtype="https://schema.org/BreadcrumbList">
             {{- $data := newScratch }}
             {{- range $index, $value := .Ancestors.Reverse }}
