@@ -10,10 +10,3 @@
         </a>
     </div>
 </footer>
-
-{{ partial "javascript.html" . }}
-
-{{ $instant := resources.Get "js/instantpage.js" }}
-{{ $instantpage := slice $instant | resources.Concat "instant.js" | resources.Minify }}
-
-<script type="module" defer src="{{ $instantpage.RelPermalink }}"></script>

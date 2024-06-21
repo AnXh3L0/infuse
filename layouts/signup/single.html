@@ -56,8 +56,9 @@
                                 i18n "upload" }}</label>
                             <img id="avatarUpload" class="h-8 w-8 rounded-full object-cover"
                                 src="/media/images/user-pfp.svg" alt="Avatar image">
-                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only" aria-describedby="avatar-description">
-                            
+                            <input id="SignupPhoto" name="SignupPhoto" type="file" accept="image/*" class="sr-only"
+                                aria-describedby="avatar-description">
+
                         </div>
                         <p class="mt-2 text-xs text-gray-500" id="avatar-description">{{ i18n
                             "avatar-description" }}</p>
@@ -140,8 +141,6 @@
         }
     </script>
 
-    {{ block "footer" . }}
-    {{ partial "footer.html" . }}
-    {{ end }}
+    {{ partial "javascript.html" . }}
 
 </body>

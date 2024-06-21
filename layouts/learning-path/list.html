@@ -57,7 +57,7 @@
 
                     {{ range where .RegularPagesRecursive "Params.style" "=" "introduction" }}
                     <div
-                        class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
+                        class="relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 transition-shadow transition-200 shadow-3xl hover:shadow-none focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                         <article class="flex flex-col items-start justify-between w-full">
                             <div class="w-full">
                                 <div class="flex mb-3 items-center gap-x-2 text-md">
@@ -116,7 +116,7 @@
 
                     {{ range where .RegularPagesRecursive "Params.style" "=" "module" }}
                     <div
-                        class="relative flex items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
+                        class="relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 transition-shadow transition-200 shadow-3xl hover:shadow-none focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
                         <article class="flex flex-col items-start justify-between w-full">
                             <div class="w-full">
                                 <div class="flex mb-3 items-center gap-x-2 text-md">
@@ -171,7 +171,7 @@
 
                 <!-- Badge -->
                 <div id="badge-card"
-                    class="hidden relative lg:order-first h-max mb-8 items-center space-x-3 rounded-3xl border border-gray-300 bg-white px-16 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
+                    class="hidden relative lg:order-first h-max mb-8 items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-16 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
                     <div class="grid place-items-center" x-data="learningPathComponent()" x-init="init()">
                         <img class="mb-5 w-36" src="/media/badges/{{ .Page.Params.icon }}-badge-incomplete.svg"
                             alt="Incomplete Badge Image" x-show="showBadge" />
@@ -271,5 +271,6 @@
     </script>
 
     {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
 
 </body>

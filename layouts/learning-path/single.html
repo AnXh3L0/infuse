@@ -13,7 +13,8 @@
     <main id="content" class="content">
         {{ partial "breadcrumbs.html" . }}
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-            <section class="prose mx-auto max-w-3xl w-full px-8 flex-col lg:flex lg:items-center lg:justify-between lg:px-8">
+            <section
+                class="prose mx-auto max-w-3xl w-full px-8 flex-col lg:flex lg:items-center lg:justify-between lg:px-8">
 
                 <article class="w-full flex flex-col items-start justify-between border-b border-gray-300">
                     {{ if eq .Page.Params.style "introduction" }}
@@ -33,76 +34,107 @@
                     <div
                         class="w-full relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400">
                         <div
-                            class="relative w-full flex items-start space-x-3 py-3 px-4 rounded-xl border-2 border-gray-300 bg-gray-100">
-                            <div class="flex h-6 items-center">
-                                <input id="{{ .Page.Params.title }}Checkbox" aria-describedby="checkbox-description"
-                                    name="checkbox" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6 w-full">
+                            class="relative w-full flex items-start space-x-3 py-3 px-4 rounded-xl border-2 border-gray-200 bg-gray-50 peer-checked:bg-green-100">
+                            <div class="text-sm leading-6 w-full">
                                 {{ if eq .Page.Params.style "introduction" }}
-                                <label class="block cursor-pointer" for="{{ .Page.Params.title }}Checkbox" class="font-medium text-gray-900">{{ i18n
+                                <label for="{{ .Page.Params.title }}Checkbox"
+                                    class="block cursor-pointer font-medium text-gray-900">{{ i18n
                                     "markIntroAsComplete" }}</label>
-                                <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n "markIntroAsCompleteARIA"
+                                <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n
+                                    "markIntroAsCompleteARIA"
                                     }}</p>
                                 {{ else }}
-                                <label for="{{ .Page.Params.title }}Checkbox" class="font-medium text-gray-900">{{ i18n
+                                <label for="{{ .Page.Params.title }}Checkbox"
+                                    class="block cursor-pointer font-medium text-gray-900">{{ i18n
                                     "markAsComplete" }}</label>
                                 <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n "markAsCompleteARIA"
                                     }}</p>
                                 {{ end }}
                             </div>
+                            <div class="flex h-6 items-center">
+                                <input id="{{ .Page.Params.title }}Checkbox" aria-describedby="checkbox-description"
+                                    name="checkbox" type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600 peer">
+                            </div>
                         </div>
                     </div>
-
                 </section>
 
-                <section class="w-full flex flex-col items-start justify-between">
+                {{ if eq .Page.Params.style "introduction" }}
+                {{ else }}
+                <nav class="w-full flex items-center {{ if not .NextInSection }}justify-end{{ else }}justify-between{{ end }} px-4 pt-6 sm:px-6" aria-label="Pagination">
+                    {{ with .NextInSection }}
+                    <a href="{{ .Permalink }}"
+                        class="relative flex items-center justify-start rounded-md bg-white px-3 py-2 text-sm font-semibold no-underline text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
+                        <span class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 me-2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                            </svg>
+                            {{
+                            i18n "previous-module" }}</span>
+                    </a>
+                    {{ end }}
+                    {{ with .PrevInSection }}
+                    <a href="{{ .Permalink }}"
+                        class="relative flex items-center justify-end rounded-md bg-white px-3 py-2 text-sm font-semibold no-underline text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
+                        <span class="flex items-center">
+                            {{ i18n "next-module" }}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 ms-2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3" />
+                              </svg>
+                        </span>
+                        </a>
+                    {{ end }}
+                </nav>
+                {{ end }}
 
-                    {{ $permalink := .Permalink }}
-                    {{ $parts := split $permalink "/" }}
-                    {{ $lastTwoParts := index $parts (sub (len $parts) 3) }}
-                    {{ $lastPart := index $parts (sub (len $parts) 2) }}
-                    {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
+                {{ $permalink := .Permalink }}
+                {{ $parts := split $permalink "/" }}
+                {{ $lastTwoParts := index $parts (sub (len $parts) 3) }}
+                {{ $lastPart := index $parts (sub (len $parts) 2) }}
+                {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
 
-                    <span id="moduleId" class="hidden">{{ $url }}</span>
+                <span id="moduleId" class="hidden">{{ $url }}</span>
 
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            // Retrieve the moduleId from the URL or any other consistent source
-                            const moduleId = document.getElementById("moduleId").innerHTML;
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        // Retrieve the moduleId from the URL or any other consistent source
+                        const moduleId = document.getElementById("moduleId").innerHTML;
 
-                            // Retrieve the checkbox element
-                            const checkbox = document.getElementById("{{ .Page.Params.title }}Checkbox");
+                        // Retrieve the checkbox element
+                        const checkbox = document.getElementById("{{ .Page.Params.title }}Checkbox");
 
-                            // Retrieve the username from localStorage
-                            const username = localStorage.getItem("loggedInUser");
+                        // Retrieve the username from localStorage
+                        const username = localStorage.getItem("loggedInUser");
 
-                            // Retrieve the userData object from localStorage
-                            const userDataString = localStorage.getItem(username);
-                            const userData = userDataString ? JSON.parse(userDataString) : {};
+                        // Retrieve the userData object from localStorage
+                        const userDataString = localStorage.getItem(username);
+                        const userData = userDataString ? JSON.parse(userDataString) : {};
 
-                            // Retrieve the checkbox state from the userData object
-                            const completionState = userData[moduleId] === true;
+                        // Retrieve the checkbox state from the userData object
+                        const completionState = userData[moduleId] === true;
 
-                            // Set the checkbox state
-                            checkbox.checked = completionState;
+                        // Set the checkbox state
+                        checkbox.checked = completionState;
 
-                            // Add an event listener to the checkbox to store the completion state in localStorage when it changes
-                            checkbox.addEventListener("change", function () {
-                                // Update userData with moduleId and its completion state
-                                userData[moduleId] = this.checked;
+                        // Add an event listener to the checkbox to store the completion state in localStorage when it changes
+                        checkbox.addEventListener("change", function () {
+                            // Update userData with moduleId and its completion state
+                            userData[moduleId] = this.checked;
 
-                                // Store updated userData back in localStorage
-                                localStorage.setItem(username, JSON.stringify(userData));
-                            });
+                            // Store updated userData back in localStorage
+                            localStorage.setItem(username, JSON.stringify(userData));
                         });
-                    </script>
-                </section>
+                    });
+                </script>
 
             </section>
         </div>
     </main>
 
     {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
+
 </body>

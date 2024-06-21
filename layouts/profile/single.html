@@ -36,7 +36,8 @@
                     <li>
                         <button x-on:click="openTab = 2" :class="{ 'bg-gray-50 text-green-600': openTab === 2 }"
                             class="text-gray-700 hover:text-green-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                            <svg :class="{ 'text-green-600' : openTab===2 }" class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-green-600" fill="none"
+                            <svg :class="{ 'text-green-600' : openTab===2 }"
+                                class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-green-600" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
@@ -47,7 +48,8 @@
                     <li>
                         <button x-on:click="openTab = 3"
                             class="text-gray-700 hover:text-green-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                            <svg :class="{ 'text-green-600' : openTab===3 }" class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-green-600" fill="none"
+                            <svg :class="{ 'text-green-600' : openTab===3 }"
+                                class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-green-600" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
@@ -104,11 +106,11 @@
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "profilephoto"
                                     }}</p>
                                 <div class="mt-2 flex items-center gap-x-3">
-                                    <img id="avatarPreview" class="h-12 w-12 rounded-full"
-                                        src="/media/images/user-pfp.svg" alt="Avatar">
                                     <label for="profileAvatar"
                                         class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 cursor-pointer">{{
                                         i18n "change" }}</label>
+                                    <img id="avatarPreview" class="h-10 w-10 rounded-full"
+                                        src="/media/images/user-pfp.svg" alt="Avatar">
                                     <input class="sr-only" type="file" id="profileAvatar" accept="image/*" disabled>
                                 </div>
                             </div>
@@ -185,184 +187,187 @@
 
             </div>
         </div>
+    </div>
 
-        <script>
-            // Function to populate profile page with user information
-            function populateProfile() {
-                const loggedInUser = localStorage.getItem("loggedInUser");
-                if (!loggedInUser) {
-                    console.error("No logged-in user found.");
-                    return;
-                }
-
-                const userDataString = localStorage.getItem(loggedInUser);
-                if (!userDataString) {
-                    console.error("User data not found in LocalStorage for logged-in user.");
-                    return;
-                }
-
-                const userData = JSON.parse(userDataString);
-                document.getElementById("profileUsername").value = userData.username;
-                document.getElementById("profileName").value = userData.name;
-                document.getElementById("avatarPreview").src = userData.avatar;
+    <script>
+        // Function to populate profile page with user information
+        function populateProfile() {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (!loggedInUser) {
+                console.error("No logged-in user found.");
+                return;
             }
 
-            // Function to enable editing of profile fields
-            function editProfile() {
-                const profileInputs = document.querySelectorAll("#profilePage input");
-                profileInputs.forEach(input => {
-                    input.disabled = false;
-                });
+            const userDataString = localStorage.getItem(loggedInUser);
+            if (!userDataString) {
+                console.error("User data not found in LocalStorage for logged-in user.");
+                return;
             }
 
-            // Function to save changes made to the profile
-            function saveProfile() {
-                event.preventDefault();
-                const profileUsername = document.getElementById("profileUsername").value;
-                const profileName = document.getElementById("profileName").value;
-                const profileAvatar = document.getElementById("profileAvatar").files[0];
+            const userData = JSON.parse(userDataString);
+            document.getElementById("profileUsername").value = userData.username;
+            document.getElementById("profileName").value = userData.name;
+            document.getElementById("avatarPreview").src = userData.avatar;
+        }
 
-                // Retrieve the currently logged-in user
-                const loggedInUser = localStorage.getItem("loggedInUser");
-                if (!loggedInUser) {
-                    alert("No logged-in user found.");
-                    return;
-                }
+        // Function to enable editing of profile fields
+        function editProfile() {
+            const profileInputs = document.querySelectorAll("#profilePage input");
+            profileInputs.forEach(input => {
+                input.disabled = false;
+            });
+        }
 
-                // Retrieve user data from LocalStorage
-                const userDataString = localStorage.getItem(loggedInUser);
-                if (!userDataString) {
-                    alert("User data not found in LocalStorage for logged-in user.");
-                    return;
-                }
+        // Function to save changes made to the profile
+        function saveProfile() {
+            event.preventDefault();
+            const profileUsername = document.getElementById("profileUsername").value;
+            const profileName = document.getElementById("profileName").value;
+            const profileAvatar = document.getElementById("profileAvatar").files[0];
 
-                // Parse user data
-                const userData = JSON.parse(userDataString);
+            // Retrieve the currently logged-in user
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (!loggedInUser) {
+                alert("No logged-in user found.");
+                return;
+            }
 
-                // Check if the new username already exists in LocalStorage
-                if (profileUsername !== loggedInUser && localStorage.getItem(profileUsername)) {
-                    alert("Username already exists. Please choose a different username.");
-                    return;
-                }
+            // Retrieve user data from LocalStorage
+            const userDataString = localStorage.getItem(loggedInUser);
+            if (!userDataString) {
+                alert("User data not found in LocalStorage for logged-in user.");
+                return;
+            }
 
-                // Remove the current username key/value pair from localStorage
-                localStorage.removeItem(loggedInUser);
+            // Parse user data
+            const userData = JSON.parse(userDataString);
 
-                // Update user data with new values
-                userData.username = profileUsername;
-                userData.name = profileName;
-                if (profileAvatar) {
-                    const reader = new FileReader();
-                    reader.onload = function (event) {
-                        userData.avatar = event.target.result;
-                        document.getElementById("avatarPreview").src = userData.avatar;
-                        localStorage.setItem(profileUsername, JSON.stringify(userData)); // Update user data with new username
-                        localStorage.setItem("loggedInUser", profileUsername); // Update loggedInUser with new username
-                    };
-                    reader.readAsDataURL(profileAvatar);
-                    location.reload();
-                } else {
+            // Check if the new username already exists in LocalStorage
+            if (profileUsername !== loggedInUser && localStorage.getItem(profileUsername)) {
+                alert("Username already exists. Please choose a different username.");
+                return;
+            }
+
+            // Remove the current username key/value pair from localStorage
+            localStorage.removeItem(loggedInUser);
+
+            // Update user data with new values
+            userData.username = profileUsername;
+            userData.name = profileName;
+            if (profileAvatar) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    userData.avatar = event.target.result;
+                    document.getElementById("avatarPreview").src = userData.avatar;
                     localStorage.setItem(profileUsername, JSON.stringify(userData)); // Update user data with new username
                     localStorage.setItem("loggedInUser", profileUsername); // Update loggedInUser with new username
-                    location.reload();
-                }
-
-                // Disable profile inputs after saving
-                const profileInputs = document.querySelectorAll("#profilePage input");
-                profileInputs.forEach(input => {
-                    input.disabled = true;
-                });
-            }
-
-            // Populate profile page with user information on page load
-            window.addEventListener("load", function () {
-                populateProfile();
-            });
-
-            // Function to handle file input change and update image preview
-            function handleFileUpload(event) {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-
-                reader.onload = function () {
-                    const imagePreview = document.getElementById('avatarPreview');
-                    imagePreview.src = reader.result;
                 };
-
-                reader.readAsDataURL(file);
+                reader.readAsDataURL(profileAvatar);
+                location.reload();
+            } else {
+                localStorage.setItem(profileUsername, JSON.stringify(userData)); // Update user data with new username
+                localStorage.setItem("loggedInUser", profileUsername); // Update loggedInUser with new username
+                location.reload();
             }
 
-            // Add event listener to file input
-            const fileInput = document.getElementById('profileAvatar');
-            fileInput.addEventListener('change', handleFileUpload);
-
-            // Function to export user data as JSON
-            function exportUserData() {
-                event.preventDefault();
-                const loggedInUser = localStorage.getItem("loggedInUser");
-                if (!loggedInUser) {
-                    alert("No logged-in user found.");
-                    return;
-                }
-
-                const userDataKey = loggedInUser; // Use the username as the key for the user data
-                const userDataString = localStorage.getItem(userDataKey);
-                if (!userDataString) {
-                    alert("User data not found in LocalStorage for logged-in user.");
-                    return;
-                }
-
-                const userData = {
-                    loggedInUser: loggedInUser, // Include the logged-in user key
-                    [userDataKey]: userDataString // Include the user data
-                };
-                const jsonData = JSON.stringify(userData);
-
-                const blob = new Blob([jsonData], { type: "application/json" });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = "infuse-account-userdata.json";
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }
-
-            // Event listener for export button click
-            document.getElementById("exportButton").addEventListener("click", function () {
-                exportUserData();
+            // Disable profile inputs after saving
+            const profileInputs = document.querySelectorAll("#profilePage input");
+            profileInputs.forEach(input => {
+                input.disabled = true;
             });
+        }
 
-            // Function to delete user data from localStorage
-            function deleteUser() {
-                const loggedInUser = localStorage.getItem("loggedInUser");
-                if (!loggedInUser) {
-                    alert("No logged-in user found.");
-                    return;
-                }
+        // Populate profile page with user information on page load
+        window.addEventListener("load", function () {
+            populateProfile();
+        });
 
-                // Remove user data from localStorage
-                localStorage.removeItem(loggedInUser);
+        // Function to handle file input change and update image preview
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
 
-                // Clear the loggedInUser value
-                localStorage.removeItem("loggedInUser");
+            reader.onload = function () {
+                const imagePreview = document.getElementById('avatarPreview');
+                imagePreview.src = reader.result;
+            };
 
-                // Redirect the user to the homepage
-                window.location.href = "/";
+            reader.readAsDataURL(file);
+        }
+
+        // Add event listener to file input
+        const fileInput = document.getElementById('profileAvatar');
+        fileInput.addEventListener('change', handleFileUpload);
+
+        // Function to export user data as JSON
+        function exportUserData() {
+            event.preventDefault();
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (!loggedInUser) {
+                alert("No logged-in user found.");
+                return;
             }
 
-            // Add event listener to the delete button
-            document.getElementById("deleteButton").addEventListener("click", function () {
-                event.preventDefault();
-                if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
-                    deleteUser();
-                }
-            });
-        </script>
+            const userDataKey = loggedInUser; // Use the username as the key for the user data
+            const userDataString = localStorage.getItem(userDataKey);
+            if (!userDataString) {
+                alert("User data not found in LocalStorage for logged-in user.");
+                return;
+            }
 
-        {{ block "footer" . }}
-        {{ partial "footer.html" . }}
-        {{ end }}
+            const userData = {
+                loggedInUser: loggedInUser, // Include the logged-in user key
+                [userDataKey]: userDataString // Include the user data
+            };
+            const jsonData = JSON.stringify(userData);
+
+            const blob = new Blob([jsonData], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "infuse-account-userdata.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Event listener for export button click
+        document.getElementById("exportButton").addEventListener("click", function () {
+            exportUserData();
+        });
+
+        // Function to delete user data from localStorage
+        function deleteUser() {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (!loggedInUser) {
+                alert("No logged-in user found.");
+                return;
+            }
+
+            // Remove user data from localStorage
+            localStorage.removeItem(loggedInUser);
+
+            // Clear the loggedInUser value
+            localStorage.removeItem("loggedInUser");
+
+            // Redirect the user to the homepage
+            window.location.href = "/";
+        }
+
+        // Add event listener to the delete button
+        document.getElementById("deleteButton").addEventListener("click", function () {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+                deleteUser();
+            }
+        });
+    </script>
+
+    {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ partial "javascript.html" . }}
 
 </body>

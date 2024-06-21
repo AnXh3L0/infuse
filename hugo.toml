@@ -81,16 +81,18 @@ pluralizeListTitles = false
 
 [languages]
   [languages.en]
+  languageName = "English"
   weight    = 1
   contentDir = "content/en"
   [languages.en.params]
     languageName = "English"
 
-  [languages.de]
+  [languages.fr]
+  languageName = "French"
   weight    = 2
-  contentDir = "content/de"
-  [languages.de.params]
-    languageName = "Deutsch"
+  contentDir = "content/fr"
+  [languages.fr.params]
+    languageName = "French"
 
 [privacy]
   [privacy.instagram]

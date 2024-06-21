@@ -204,6 +204,18 @@ other = "Clients"
 [faq]
 other = "Frequently Asked Questions"
 
+[ariaLanguage]
+other = "Current language is "
+
+[ariaTranslation]
+other = "Translated in "
+
+[previous-module]
+other = "Previous module"
+
+[next-module]
+other = "Next module"
+
 # Contact
 [getinTouch]
 other = "Get in touch"

@@ -49,7 +49,7 @@
 
       <p class="mt-0 text-center text-sm text-gray-500">
         {{ i18n "noAccount" }}
-        <a href="{{ " /signup" | absLangURL }}" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
+        <a href="{{ "/signup" | absLangURL }}" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
           i18n "signup" }}</a>
       </p>
     </div>
@@ -106,8 +106,6 @@
     }
   </script>
 
-  {{ block "footer" . }}
-  {{ partial "footer.html" . }}
-  {{ end }}
+  {{ partial "javascript.html" . }}
 
 </body>
