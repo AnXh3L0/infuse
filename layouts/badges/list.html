@@ -45,8 +45,6 @@
                             <img class="w-20 flex-none" :src="badgeIcon('{{ .Page.Params.icon }}', '{{ .Permalink }}')"
                                 alt="Badge Icon" />
 
-                            <p class="hidden LearningPathName">{{ .Title }}</p>
-
                             <div class="min-w-0">
                                 <p class="text-sm font-semibold text-gray-900">{{ i18n "badges" 1 }}</p>
                                 <p class="text-2xl font-semibold text-gray-900">{{ .Page.Params.badge }}</p>
@@ -88,12 +86,15 @@
                                         <p class="text-2xl font-semibold text-gray-900 lg:text-start text-center badgeName"
                                             id="modal-title">{{
                                             .Page.Params.badge }}</p>
+                                        <p class="hidden LearningPathName">{{ .Title }}</p>
+                                        <p class="hidden badgeIconColor">{{ .Page.Params.color }}</p>
 
                                         <div class="sm:flex sm:items-start border-t border-b border-gray-400 mt-4">
                                             <article class="block lg:flex w-full gap-x-12 py-5">
                                                 <p class="text-md font-semibold text-gray-900 mb-4">{{ i18n "modules" 2
                                                     }}
                                                 </p>
+
                                                 <div class="w-full">
                                                     <ol class="list-decimal list-inside space-y-1">
                                                         {{ range where .RegularPagesRecursive "Params.style" "="
@@ -113,7 +114,7 @@
                             </div>
                             <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                                 <button type="button"
-                                    @click="generatePDF('{{ .Page.Params.icon }}', '{{ .Permalink }}')"
+                                    @click="generatePDF('{{ .Page.Params.icon }}', '{{ .Permalink }}', $event)"
                                     class="flex w-full justify-center items-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700 sm:ml-3 sm:w-auto">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="size-5 me-2" aria-hidden="true">
@@ -197,7 +198,7 @@
                         },
 
                         // Function to generate PDF for the badge
-                        async generatePDF(icon, permalink) {
+                        async generatePDF(icon, permalink, event) {
                             // Retrieve fullName from localStorage
                             const username = localStorage.getItem("loggedInUser");
                             const userDataString = localStorage.getItem(username);
@@ -206,15 +207,25 @@
                             // Retrieve name from userData
                             const fullName = userData.name;
 
-                            // Retrieve badgeName and learningpathName from DOM elements
-                            const badgeNameElement = document.querySelector('.badgeName');
-                            const learningpathNameElement = document.querySelector('.LearningPathName');
+                            // Find the parent container of the clicked button
+                            const parentContainer = event.target.closest('.relative'); // Replace with your actual parent container class
+
+                            // Retrieve badgeName and learningpathName from specific elements within the parent container
+                            const badgeNameElement = parentContainer.querySelector('.badgeName');
+                            const learningpathNameElement = parentContainer.querySelector('.LearningPathName');
 
                             // Use fallback values if elements are not found
                             const badgeName = badgeNameElement ? badgeNameElement.textContent.trim() : "Badge Name";
                             const learningpathName = learningpathNameElement ? learningpathNameElement.textContent.trim() : "Learning Path";
 
-                            const today = new Date().toLocaleDateString();
+                            const badgeIconColor = parentContainer.querySelector('.badgeIconColor').textContent;
+
+                            // Format today's date as "Month Date, Year"
+                            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                            const today = new Date().toLocaleDateString('en-US', options);
+
+                            // Generate PDF filename
+                            const filename = `Infuse-Certificate-${fullName}-${learningpathName}-${today}.pdf`;
 
                             // Retrieve SVG content and modify it with dynamic data
                             const svgTemplate = document.getElementById("badgeTemplate");
@@ -225,6 +236,7 @@
                                 .replace('FULL_NAME_PLACEHOLDER', fullName)
                                 .replace('BADGE_NAME_PLACEHOLDER', badgeName)
                                 .replace('LEARNING_PATH_NAME_PLACEHOLDER', learningpathName)
+                                .replace('BADGE_COLOR_PLACEHOLDER', badgeIconColor)
                                 .replace('DATE_PLACEHOLDER', today);
 
                             // Create a canvas element to convert SVG to image
@@ -263,7 +275,7 @@
                                 pdf.addImage(imageDataURL, 'PNG', 0, 0);
 
                                 // Save PDF
-                                pdf.save("badge.pdf");
+                                pdf.save(filename);
                             };
                             img.src = url;
                         },
