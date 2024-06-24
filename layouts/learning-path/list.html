@@ -170,10 +170,7 @@
                     class="hidden relative lg:order-first h-max lg:w-1/3 mb-8 items-center justify-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-16 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
                     <div class="grid place-items-center" x-data="learningPathComponent()" x-init="init()">
 
-                        <img class="w-36" src="/media/badges/{{ .Page.Params.icon }}-badge-incomplete.svg"
-                            alt="Incomplete Badge Image" x-show="showBadge" />
-                        <img class="w-36" src="/media/badges/{{ .Page.Params.icon }}-badge.svg"
-                            alt="Full Badge Image" x-show="fullBadge" />
+                        <img class="w-36" :src="badgeImageUrl('{{ .Page.Params.icon }}')" :alt="badgeAltText()" alt=""/>
 
                         <p id="onlyOneModuleLeft" class="hidden">{{ i18n "only_one_module_left" }}</p>
                         <p id="multipleModulesLeft" class="hidden">{{ i18n "multiple_modules_left" }}</p>
@@ -205,9 +202,9 @@
                 circumference: 70 * 2 * Math.PI,
                 percent: 0,
                 remainingModules: 0,
+                moduleCompletionStates: {},
                 showBadge: true,
                 fullBadge: false,
-                moduleCompletionStates: {},
 
                 init() {
                     this.updateLearningPathProgress();
@@ -228,9 +225,7 @@
 
                     for (let [key, value] of Object.entries(userData)) {
                         if (key.startsWith(lastItem)) {
-                            // Update module completion states
                             this.moduleCompletionStates[key] = value;
-                            // Count completed modules
                             if (value === true) {
                                 completedModules++;
                             }
@@ -241,7 +236,6 @@
                     this.percent = ((completedModules / moduleCount) * 100).toFixed(0);
                     this.remainingModules = moduleCount - completedModules;
 
-                    // Save progress to userData
                     userData[`progress_${lastItem}`] = this.percent;
                     localStorage.setItem(username, JSON.stringify(userData));
 
@@ -258,14 +252,15 @@
                 },
 
                 updateBadgeVisibility() {
+                    const badgeBanner = document.getElementById("badge-banner");
                     if (this.remainingModules > 0) {
                         this.showBadge = true;
                         this.fullBadge = false;
-                        document.getElementById("badge-banner").style.display = "none";
+                        badgeBanner.style.display = "none";
                     } else {
                         this.showBadge = false;
                         this.fullBadge = true;
-                        document.getElementById("badge-banner").style.display = "block";
+                        badgeBanner.style.display = "block";
                     }
                 },
 
@@ -280,20 +275,25 @@
                     }
                 },
 
+                badgeImageUrl(icon) {
+                    return `/media/badges/${icon}-${this.fullBadge ? 'badge' : 'badge-incomplete'}.svg`;
+                },
+
+                badgeAltText() {
+                    return this.fullBadge ? "Full Badge Image" : "Incomplete Badge Image";
+                },
+
                 get completionMessage() {
                     if (this.remainingModules === 1) {
                         return document.getElementById("onlyOneModuleLeft").innerText;
-                    } else
-                        if (this.remainingModules > 1) {
-                            return document.getElementById("multipleModulesLeft").innerText.replace("'count'", this.remainingModules);
-                        } else {
-                            const badgeName = document.getElementById("badgeName").innerText;
-                            return document.getElementById("badgeCompleted").innerText;
-                            //return document.getElementById("badgeCompleted").innerText.replace("'badge_name'", badgeName);
-                        }
+                    } else if (this.remainingModules > 1) {
+                        return document.getElementById("multipleModulesLeft").innerText.replace("'count'", this.remainingModules);
+                    } else {
+                        return document.getElementById("badgeCompleted").innerText;
+                    }
                 }
-            }
-        }
+            };
+        };
     </script>
 
     {{ partial "footer.html" . }}

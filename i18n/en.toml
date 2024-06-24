@@ -126,6 +126,7 @@ other = "Delete Account"
 other = "Your profile"
 
 [badges]
+one = "Badge"
 other = "Badges"
 
 [settings]
@@ -170,6 +171,10 @@ other = "Only 1 module left to earn your badge"
 
 [multiple_modules_left]
 other = "Finish 'count' more modules to earn your badge"
+
+[modules_left]
+one = "1 module left to earn your badge"
+other = "'count' more modules to earn your badge"
 
 [badge_completed]
 other = "You've earned the badge!"
