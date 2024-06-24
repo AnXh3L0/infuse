@@ -12,8 +12,7 @@
 
     <main id="content" class="content">
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-            <section
-                class="mx-auto max-w-7xl px-8 lg:flex lg:items-center lg:justify-between lg:px-8 pb-8">
+            <section class="mx-auto max-w-7xl px-8 lg:flex lg:items-center lg:justify-between lg:px-8 pb-8">
 
                 <article class="flex flex-col items-start justify-between">
                     <h3 class="mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
@@ -32,22 +31,100 @@
                 </article>
             </section>
 
+            {{ partial "certificate.html" }}
+
             <section class="mx-auto max-w-7xl px-8 pb-32 pt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
                 {{ range where (where .Site.Pages "Section" "learning-path" ) "Params.type" "=" "learning-path" }}
-                <div
-                    class="relative flex space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-
+                <div x-data="{ isOpen: false, isClickable: false }" class="relative">
+                    <!-- Badge Card -->
+                    <div x-on:click="isClickable && (isOpen = true)" role="button" tabindex="0"
+                        :class="{ 'opacity-70 cursor-not-allowed': !isClickable }"
+                        class="relative flex space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400 cursor-pointer">
                         <article class="flex gap-x-4 py-5">
                             <!-- Dynamic badge icon based on completion progress -->
-                            <img class="w-20 flex-none" :src="badgeIcon('{{ .Page.Params.icon }}', '{{ .Permalink }}')" alt="Badge Icon" />
+                            <img class="w-20 flex-none" :src="badgeIcon('{{ .Page.Params.icon }}', '{{ .Permalink }}')"
+                                alt="Badge Icon" />
+
+                            <p class="hidden LearningPathName">{{ .Title }}</p>
 
                             <div class="min-w-0">
                                 <p class="text-sm font-semibold text-gray-900">{{ i18n "badges" 1 }}</p>
                                 <p class="text-2xl font-semibold text-gray-900">{{ .Page.Params.badge }}</p>
-                                <p class="text-xs font-semibold mt-2 py-1.5 px-2 inline-block text-gray-800 bg-yellow-100 rounded-md" x-text="completionMessage('{{ .Permalink }}')"></p>
+                                <p class="text-xs font-semibold mt-2 py-1.5 px-2 inline-block text-gray-800 bg-yellow-100 rounded-md"
+                                    x-text="completionMessage('{{ .Permalink }}')"></p>
                             </div>
                         </article>
+                    </div>
 
+                    <!-- Modal -->
+                    <div x-show="isOpen" class="fixed inset-0 z-50 flex items-center justify-center">
+                        <!-- Background backdrop, show/hide based on modal state -->
+                        <div @click="isOpen = false" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+                        </div>
+
+                        <!-- Modal panel, show/hide based on modal state -->
+                        <div x-show.transition.opacity.duration.300ms="isOpen" @click.away="isOpen = false"
+                            class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6">
+                            <div class="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
+                                <button @click="isOpen = false" type="button"
+                                    class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                    <span class="sr-only">Close</span>
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="sm:flex sm:items-start">
+                                <article class="block lg:flex w-full gap-x-4 py-5">
+                                    <!-- Dynamic badge icon based on completion progress -->
+                                    <img class="w-20 flex-none mb-auto mx-auto"
+                                        :src="badgeIcon('{{ .Page.Params.icon }}', '{{ .Permalink }}')"
+                                        alt="Badge Icon" />
+
+                                    <div class="w-full">
+                                        <p class="text-sm font-semibold text-gray-900 lg:text-start text-center">{{ i18n
+                                            "badges" 1 }}</p>
+                                        <p class="text-2xl font-semibold text-gray-900 lg:text-start text-center badgeName"
+                                            id="modal-title">{{
+                                            .Page.Params.badge }}</p>
+
+                                        <div class="sm:flex sm:items-start border-t border-b border-gray-400 mt-4">
+                                            <article class="block lg:flex w-full gap-x-12 py-5">
+                                                <p class="text-md font-semibold text-gray-900 mb-4">{{ i18n "modules" 2
+                                                    }}
+                                                </p>
+                                                <div class="w-full">
+                                                    <ol class="list-decimal list-inside space-y-1">
+                                                        {{ range where .RegularPagesRecursive "Params.style" "="
+                                                        "module" }}
+                                                        <li class="text-sm font-normal text-gray-900">
+                                                            <a href="{{ .Permalink }}"
+                                                                class="underline hover:no-underline">{{ .Title }}</a>
+                                                        </li>
+                                                        {{ end }}
+                                                    </ol>
+                                                </div>
+                                            </article>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                                <button type="button"
+                                    @click="generatePDF('{{ .Page.Params.icon }}', '{{ .Permalink }}')"
+                                    class="flex w-full justify-center items-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700 sm:ml-3 sm:w-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5 me-2" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                    </svg>
+                                    Download badge
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {{ end }}
             </section>
@@ -60,44 +137,13 @@
                             const username = localStorage.getItem("loggedInUser");
                             const userDataString = localStorage.getItem(username);
                             const userData = JSON.parse(userDataString);
-        
-                            const lastItem = permalink.split("/").slice(-2, -1)[0]; // Extract last part of permalink for key in localStorage
-                            const badgeKey = `/${lastItem}`;
-        
-                            let completedModules = 0;
-                            let modulesCount = 0;
-        
-                            for (let [key, value] of Object.entries(userData)) {
-                                if (key.startsWith(badgeKey)) {
-                                    modulesCount++; // Count total modules in the learning path
-                                    if (value === true) {
-                                        completedModules++; // Count completed modules
-                                    }
-                                }
-                            }
-        
-                            const remainingModules = modulesCount - completedModules;
-        
-                            // Decide which badge icon to show based on completion progress
-                            if (remainingModules === 0) {
-                                return `/media/badges/${icon}-badge.svg`; // Fully completed badge icon
-                            } else {
-                                return `/media/badges/${icon}-badge-incomplete.svg`; // Incomplete badge icon
-                            }
-                        },
-        
-                        // Function to calculate completion progress message
-                        completionMessage(permalink) {
-                            const username = localStorage.getItem("loggedInUser");
-                            const userDataString = localStorage.getItem(username);
-                            const userData = JSON.parse(userDataString);
-        
+
                             const lastItem = permalink.split("/").slice(-2, -1)[0]; // Extract last part of permalink for key in localStorage
                             const badgeKey = `/${lastItem}`;
 
                             let completedModules = 0;
                             let modulesCount = 0;
-        
+
                             for (let [key, value] of Object.entries(userData)) {
                                 if (key.startsWith(badgeKey)) {
                                     modulesCount++; // Count total modules in the learning path
@@ -106,9 +152,41 @@
                                     }
                                 }
                             }
-        
+
+                            // Decide whether the badge is clickable based on completion progress
+                            this.isClickable = completedModules === modulesCount;
+
+                            // Decide which badge icon to show based on completion progress
+                            if (completedModules === modulesCount) {
+                                return `/media/badges/${icon}-badge.svg`; // Fully completed badge icon
+                            } else {
+                                return `/media/badges/${icon}-badge-incomplete.svg`; // Incomplete badge icon
+                            }
+                        },
+
+                        // Function to calculate completion progress message
+                        completionMessage(permalink) {
+                            const username = localStorage.getItem("loggedInUser");
+                            const userDataString = localStorage.getItem(username);
+                            const userData = JSON.parse(userDataString);
+
+                            const lastItem = permalink.split("/").slice(-2, -1)[0]; // Extract last part of permalink for key in localStorage
+                            const badgeKey = `/${lastItem}`;
+
+                            let completedModules = 0;
+                            let modulesCount = 0;
+
+                            for (let [key, value] of Object.entries(userData)) {
+                                if (key.startsWith(badgeKey)) {
+                                    modulesCount++; // Count total modules in the learning path
+                                    if (value === true) {
+                                        completedModules++; // Count completed modules
+                                    }
+                                }
+                            }
+
                             const remainingModules = modulesCount - completedModules;
-        
+
                             if (remainingModules === 1) {
                                 return '{{ i18n "modules_left" 1 }}';
                             } else if (remainingModules > 1) {
@@ -117,12 +195,119 @@
                                 return '{{ i18n "badge_completed" }}';
                             }
                         },
-        
+
+                        // Function to generate PDF for the badge
+                        async generatePDF(icon, permalink) {
+                            // Retrieve fullName from localStorage
+                            const username = localStorage.getItem("loggedInUser");
+                            const userDataString = localStorage.getItem(username);
+                            const userData = JSON.parse(userDataString);
+
+                            // Retrieve name from userData
+                            const fullName = userData.name;
+
+                            // Retrieve badgeName and learningpathName from DOM elements
+                            const badgeNameElement = document.querySelector('.badgeName');
+                            const learningpathNameElement = document.querySelector('.LearningPathName');
+
+                            // Use fallback values if elements are not found
+                            const badgeName = badgeNameElement ? badgeNameElement.textContent.trim() : "Badge Name";
+                            const learningpathName = learningpathNameElement ? learningpathNameElement.textContent.trim() : "Learning Path";
+
+                            const today = new Date().toLocaleDateString();
+
+                            // Retrieve SVG content and modify it with dynamic data
+                            const svgTemplate = document.getElementById("badgeTemplate");
+                            const svgString = new XMLSerializer().serializeToString(svgTemplate);
+
+                            // Replace placeholders in SVG with dynamic data
+                            const updatedSvgString = svgString
+                                .replace('FULL_NAME_PLACEHOLDER', fullName)
+                                .replace('BADGE_NAME_PLACEHOLDER', badgeName)
+                                .replace('LEARNING_PATH_NAME_PLACEHOLDER', learningpathName)
+                                .replace('DATE_PLACEHOLDER', today);
+
+                            // Create a canvas element to convert SVG to image
+                            const canvas = document.createElement('canvas');
+                            const ctx = canvas.getContext('2d');
+                            const DOMURL = window.URL || window.webkitURL || window;
+
+                            canvas.width = svgTemplate.getAttribute('width');
+                            canvas.height = svgTemplate.getAttribute('height');
+
+                            // Load SVG blob
+                            const svgBlob = new Blob([updatedSvgString], { type: 'image/svg+xml;charset=utf-8' });
+                            const url = DOMURL.createObjectURL(svgBlob);
+
+                            // Create image element
+                            const img = new Image();
+                            img.onload = async function () {
+                                // Set canvas size to SVG size
+                                canvas.width = img.width;
+                                canvas.height = img.height;
+                                // Draw SVG on canvas
+                                ctx.drawImage(img, 0, 0);
+
+                                // Convert canvas to Data URL
+                                const imageDataURL = canvas.toDataURL('image/png');
+
+                                // Initialize jsPDF
+                                const pdf = new window.jspdf.jsPDF(
+                                    {
+                                        orientation: 'landscape', // Adjust orientation as needed
+                                        unit: 'px', // Units: px
+                                    }
+                                );
+
+                                // Add image to PDF
+                                pdf.addImage(imageDataURL, 'PNG', 0, 0);
+
+                                // Save PDF
+                                pdf.save("badge.pdf");
+                            };
+                            img.src = url;
+                        },
+
                         init() {
                         }
                     };
                 };
             </script>
+
+            {{ $jspdf := resources.Get "js/jspdf.min.js" }}
+            {{ $jspdf := slice $jspdf | resources.Concat "jspdf.min.js" | resources.Minify }}
+
+            <script type="module" src="{{ $jspdf.RelPermalink }}"></script>
+            <!-- 
+            <script>
+            // Retrieve information from localStorage
+            const fullName = localStorage.getItem("fullName") || "John Doe";
+            const badgeName = localStorage.getItem("badgeName") || "Badge Name";
+            const learningpathName = localStorage.getItem("learningpathName") || "Learning Path";
+            // Retrieve badge image URL or other relevant data from localStorage
+            const today = new Date().toLocaleDateString();
+
+            // Update SVG with retrieved information
+            document.getElementById("fullNameText").textContent = fullName;
+            document.getElementById("badgeNameText").textContent = badgeName;
+            //document.getElementById("learningNameText").textContent = learningpathName;
+            // Update other SVG elements as needed
+
+            // Handle PDF generation
+            document.getElementById("generatePdfButton").addEventListener("click", () => {
+                var svgUrl = 'data:image/svg+xml;base64,' + btoa(new XMLSerializer().serializeToString(document.getElementById('badgeTemplate')));
+                //const svgContent = document.getElementById('badgeTemplate').outerHTML;
+                const svgString = new XMLSerializer().serializeToString(document.getElementById("badgeTemplate"));
+
+                // Convert SVG to PDF
+                const pdf = new window.jspdf.jsPDF();
+                pdf.addSvgAsImage(svgUrl, 10, 10, 180, 100);
+                // Add more text or images to the PDF as needed
+
+                // Download the PDF
+                pdf.save("badge.pdf");
+            });
+            </script> -->
 
         </div>
     </main>
