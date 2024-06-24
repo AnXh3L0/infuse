@@ -100,27 +100,20 @@
                             class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
                     </div>
                     <div class="max-w-xl mb-auto">
-                        <div class="mt-4 flex items-center gap-x-2 text-xs">
-                            {{ range .Page.Params.categories }}
-                            <p class="relative z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
-                                {{ . | humanize }}</p>
-                            {{ end }}
-                        </div>
                         <div class="group mb-auto relative">
-                            <h3 class="flex justify-between items-center mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                            <h3 class="justify-between items-center mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
                                 <a href="{{ .Permalink }}">
                                     <span class="absolute inset-0"></span>
                                     {{ .Title }}
                                 </a>
-                            <!-- Radial Progress Bar -->
-                            <!-- <div class="hidden progress-container">
-                                <svg class="w-[80px] h-[80px]">
-                                    <circle class="text-gray-300" stroke-width="8" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
-                                    <circle class="text-green-600" stroke-width="8" :stroke-dasharray="circumference" :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
-                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="text-sm font-semibold text-gray-800 progress-text"></text>
-                                </svg>
-                            </div> -->
                             </h3>
+
+                            <div class="mt-4 gap-x-2 text-xs">
+                                {{ range .Page.Params.categories }}
+                                <p class="relative inline-block z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
+                                    {{ . | humanize }}</p>
+                                {{ end }}
+                            </div>
 
                             <div class="hidden progress-container mt-4 w-full">
                                 <div class="progress-bar w-full h-3 bg-gray-200 rounded-full">

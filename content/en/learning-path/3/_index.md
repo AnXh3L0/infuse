@@ -6,4 +6,5 @@ weight = 3
 thumbnail = "3"
 icon = "infrastructure-inspector"
 badge = "Infrastructure Inspector"
+color = "#B3B8DB"
 +++

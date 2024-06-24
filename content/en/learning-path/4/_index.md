@@ -6,4 +6,5 @@ weight = 4
 thumbnail = "4"
 icon = "security-sage"
 badge = "Security Sage"
+color = "#7CD4FD"
 +++

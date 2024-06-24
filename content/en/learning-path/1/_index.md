@@ -6,4 +6,5 @@ weight = 1
 thumbnail = "1"
 icon = "forensics-fanatic"
 badge = "Forensics Fanatic"
+color = "#FDA29B"
 +++

@@ -6,4 +6,5 @@ weight = 6
 thumbnail = "6"
 icon = "gateway-guardian"
 badge = "Gateway Guardian"
+color = "#BDB4FE"
 +++
