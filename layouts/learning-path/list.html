@@ -32,7 +32,7 @@
                         .Page.Params.description }}</p>
                 </article>
 
-                <div id="progress-bar" class="hidden items-center justify-center">
+                <div id="progress-bar" class="hidden lg:flex items-center justify-center">
                     <svg class="w-[160px] h-[160px]">
                         <circle class="text-gray-300" stroke-width="16" stroke="currentColor" fill="transparent" r="60"
                             cx="80" cy="80" />
@@ -41,6 +41,13 @@
                             stroke="currentColor" fill="transparent" r="60" cx="80" cy="80" />
                     </svg>
                     <span class="absolute text-xl font-semibold text-gray-800" x-text="`${percent}%`"></span>
+                </div>
+
+                <div class="hidden lg:hidden progress-container mt-4 w-full">
+                    <div class="progress-bar w-full h-3 bg-gray-200 rounded-full">
+                        <div class="progress bg-green-600 h-full rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <p class="progress-text mt-1 text-sm font-semibold text-gray-500"></p>
                 </div>
 
             </section>
@@ -52,7 +59,8 @@
 
                     <div class="flex flex-col">
                         <p class="font-semibold text-xl leading-6">{{ i18n "introduction" }}</p>
-                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "introduction-description" }}</p>
+                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "introduction-description"
+                            }}</p>
                     </div>
 
                     {{ range where .RegularPagesRecursive "Params.style" "=" "introduction" }}
@@ -111,7 +119,8 @@
 
                     <div class="flex flex-col">
                         <p class="mt-10 font-semibold text-xl leading-6">{{ i18n "modules" }}</p>
-                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "modules-description" }}</p>
+                        <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "modules-description" }}
+                        </p>
                     </div>
 
                     {{ range where .RegularPagesRecursive "Params.style" "=" "module" }}
@@ -126,6 +135,8 @@
                                     {{ end }}
                                 </div>
                                 <div class="group relative">
+                                    <p class="text-sm font-bold mb-1 text-green-700">{{ i18n "modules" 1 }} {{
+                                        .Page.Params.weight }}</p>
                                     <h3
                                         class="text-2xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
                                         <a href="{{ .Permalink }}">
@@ -133,8 +144,11 @@
                                             {{ .Page.Params.title }}
                                         </a>
                                     </h3>
-                                    <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{
-                                        .Page.Params.description }}</p>
+
+                                    {{ with .Page.Params.description }}
+                                    <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{ . }}
+                                    </p>
+                                    {{ end }}
 
                                     <div class="completion-status hidden items-center gap-x-2 mt-4 text-md">
 
@@ -212,6 +226,7 @@
 
                 updateLearningPathProgress() {
                     const permalinkParts = window.location.pathname.split("/");
+                    //const lastItem = permalinkParts[permalinkParts.length - 2];
                     const lastItem = "/" + permalinkParts[permalinkParts.length - 2];
 
                     let completedModules = 0;
@@ -234,6 +249,12 @@
                     const moduleCount = parseInt(document.getElementById("moduleCount").getAttribute("data-count"));
                     this.percent = ((completedModules / moduleCount) * 100).toFixed(0);
                     this.remainingModules = moduleCount - completedModules;
+
+                    // Save progress to userData
+                    userData[`progress_${lastItem}`] = this.percent;
+                    localStorage.setItem(username, JSON.stringify(userData));
+
+                    this.updateProgressContainers();
                     this.updateBadgeVisibility();
                 },
 
@@ -252,6 +273,17 @@
                     } else {
                         this.showBadge = false;
                         this.fullBadge = true;
+                    }
+                },
+
+                updateProgressContainers() {
+                    const progressBar = document.querySelector('.progress-container .progress');
+                    const progressText = document.querySelector('.progress-container .progress-text');
+                    if (progressBar) {
+                        progressBar.style.width = `${this.percent}%`;
+                    }
+                    if (progressText) {
+                        progressText.innerText = `${this.percent}%`;
                     }
                 },
 

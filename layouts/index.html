@@ -99,30 +99,95 @@
                         <img src="/media/thumbnails/{{ .Page.Params.thumbnail }}.png" alt="{{ .Page.Params.title }}"
                             class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
                     </div>
-                    <div class="max-w-xl">
+                    <div class="max-w-xl mb-auto">
                         <div class="mt-4 flex items-center gap-x-2 text-xs">
                             {{ range .Page.Params.categories }}
                             <p class="relative z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
                                 {{ . | humanize }}</p>
                             {{ end }}
                         </div>
-                        <div class="group relative">
-                            <h3 class="mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                        <div class="group mb-auto relative">
+                            <h3 class="flex justify-between items-center mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
                                 <a href="{{ .Permalink }}">
                                     <span class="absolute inset-0"></span>
                                     {{ .Title }}
                                 </a>
+                            <!-- Radial Progress Bar -->
+                            <!-- <div class="hidden progress-container">
+                                <svg class="w-[80px] h-[80px]">
+                                    <circle class="text-gray-300" stroke-width="8" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
+                                    <circle class="text-green-600" stroke-width="8" :stroke-dasharray="circumference" :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="text-sm font-semibold text-gray-800 progress-text"></text>
+                                </svg>
+                            </div> -->
                             </h3>
-                            <p class="text-green-600 font-semibold mt-3">{{ len (where .RegularPagesRecursive ".Params.style" "eq" "module") }} {{ i18n "modules" }}</p>
+
+                            <div class="hidden progress-container mt-4 w-full">
+                                <div class="progress-bar w-full h-3 bg-gray-200 rounded-full">
+                                    <div class="progress bg-green-600 h-full rounded-full" style="width: 0%;"></div>
+                                </div>
+                                <p class="progress-text mt-1 text-sm font-semibold text-gray-500"></p>
+                            </div>
+
+                            <p class="text-green-600 font-semibold mt-3">{{ len (where .RegularPagesRecursive
+                                ".Params.style" "eq" "module") }} {{ i18n "modules" }}</p>
                             <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{{
                                 .Page.Params.description }}</p>
                         </div>
                     </div>
+
                 </article>
             </div>
             {{ end }}
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.progress-container').forEach((container) => {
+                const learningPathUrl = container.closest('article').querySelector('a').getAttribute('href');
+                const permalinkParts = learningPathUrl.split('/');
+                const lastItem = "/" + permalinkParts[permalinkParts.length - 2];
+                const progressKey = `progress_${lastItem}`;
+    
+                const username = localStorage.getItem("loggedInUser");
+                const userDataString = localStorage.getItem(username);
+                const userData = JSON.parse(userDataString) || {};
+    
+                const progressPercent = userData[progressKey] || 0;
+                container.querySelector('.progress').style.width = `${progressPercent}%`;
+                container.querySelector('.progress-text').innerText = `${progressPercent}% completed`;
+            });
+        });
+    </script>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.progress-container').forEach((container) => {
+                const learningPathUrl = container.closest('article').querySelector('a').getAttribute('href');
+                const permalinkParts = learningPathUrl.split('/');
+                const lastItem = "/" + permalinkParts[permalinkParts.length - 2];
+                const progressKey = `progress_${lastItem}`;
+    
+                const username = localStorage.getItem("loggedInUser");
+                const userDataString = localStorage.getItem(username);
+                const userData = JSON.parse(userDataString) || {};
+    
+                const progressPercent = userData[progressKey] || 0;
+                console.log(`Loading progress: ${progressKey} = ${progressPercent}%`);
+    
+                const circumference = 30 * 2 * Math.PI;
+                const offset = circumference - (progressPercent / 100) * circumference;
+    
+                const progressCircle = container.querySelector('circle.text-green-600');
+                progressCircle.style.strokeDasharray = `${circumference}`;
+                progressCircle.style.strokeDashoffset = `${offset}`;
+    
+                const progressText = container.querySelector('.progress-text');
+                progressText.textContent = `${progressPercent}%`;
+            });
+        });
+    </script> -->
 
     {{ partial "faq.html" . }}
 

@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setElementDisplayById("badge-card", "flex");
     setElementDisplayById("mark-complete", "flex");
     setElementDisplayByClass("completion-status", "flex");
+    setElementDisplayByClass("progress-container", "block");
   } else {
     setElementDisplayById("signupButton", "flex");
     setElementDisplayById("loginButton", "flex");
