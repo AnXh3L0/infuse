@@ -83,11 +83,13 @@
                                     <div class="w-full">
                                         <p class="text-sm font-semibold text-gray-900 lg:text-start text-center">{{ i18n
                                             "badges" 1 }}</p>
-                                        <p class="text-2xl font-semibold text-gray-900 lg:text-start text-center badgeName"
+                                        <p class="text-2xl font-semibold text-gray-900 lg:text-start text-center"
                                             id="modal-title">{{
                                             .Page.Params.badge }}</p>
+
                                         <p class="hidden LearningPathName">{{ .Title }}</p>
                                         <p class="hidden badgeIconColor">{{ .Page.Params.color }}</p>
+                                        <p class="hidden badgeName">{{ .Page.Params.badge | upper }}</p>
 
                                         <div class="sm:flex sm:items-start border-t border-b border-gray-400 mt-4">
                                             <article class="block lg:flex w-full gap-x-12 py-5">
@@ -244,8 +246,13 @@
                             const ctx = canvas.getContext('2d');
                             const DOMURL = window.URL || window.webkitURL || window;
 
-                            canvas.width = svgTemplate.getAttribute('width');
-                            canvas.height = svgTemplate.getAttribute('height');
+                            // Get SVG dimensions
+                            const svgWidth = parseInt(svgTemplate.getAttribute('width'));
+                            const svgHeight = parseInt(svgTemplate.getAttribute('height'));
+
+                            // Set canvas dimensions to match SVG
+                            canvas.width = svgWidth;
+                            canvas.height = svgHeight;
 
                             // Load SVG blob
                             const svgBlob = new Blob([updatedSvgString], { type: 'image/svg+xml;charset=utf-8' });
@@ -258,7 +265,7 @@
                                 canvas.width = img.width;
                                 canvas.height = img.height;
                                 // Draw SVG on canvas
-                                ctx.drawImage(img, 0, 0);
+                                ctx.drawImage(img, 0, 0, svgWidth, svgHeight);
 
                                 // Convert canvas to Data URL
                                 const imageDataURL = canvas.toDataURL('image/png');
@@ -268,11 +275,12 @@
                                     {
                                         orientation: 'landscape', // Adjust orientation as needed
                                         unit: 'px', // Units: px
+                                        format: [svgWidth, svgHeight] // Set PDF format to match SVG dimensions
                                     }
                                 );
 
                                 // Add image to PDF
-                                pdf.addImage(imageDataURL, 'PNG', 0, 0);
+                                pdf.addImage(imageDataURL, 'PNG', 0, 0, svgWidth, svgHeight);
 
                                 // Save PDF
                                 pdf.save(filename);
