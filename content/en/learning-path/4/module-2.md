@@ -363,62 +363,11 @@ For a bit more on shell injection, see [the OWASP guide on it](https://owasp.org
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>OWASP guides to vulnerabilities
-   </td>
-   <td>Great overviews of different vulnerabilities, including examples
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>SQL injection: <a href="https://owasp.org/www-community/attacks/SQL_Injection">https://owasp.org/www-community/attacks/SQL_Injection</a>
-<p>
-XSS: <a href="https://owasp.org/www-community/attacks/xss/">https://owasp.org/www-community/attacks/xss/</a>
-<p>
-Path traversal: <a href="https://owasp.org/www-community/attacks/Path_Traversal">https://owasp.org/www-community/attacks/Path_Traversal</a> 
-<p>
-Command injection: <a href="https://owasp.org/www-community/attacks/Command_Injection">https://owasp.org/www-community/attacks/Command_Injection</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OS command injection cheat sheet
-   </td>
-   <td>A quick overview of different OS commands which could be abused for injection
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Web shells
-   </td>
-   <td>A quick overview of what a web shell is and how it could be used in attacks
-   </td>
-   <td>English, Kurdish, Chinese, Korean, French, Lombard, Hindi, Malayalam
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Web_shell">https://en.wikipedia.org/wiki/Web_shell</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="OWASP guides to vulnerabilities" languages="English" cost="Free" description="Great overviews of different vulnerabilities, including examples." url="https://owasp.org/www-community/attacks/SQL_Injection" url2="https://owasp.org/www-community/attacks/xss/" url3="https://owasp.org/www-community/attacks/Path_Traversal" url4="https://owasp.org/www-community/attacks/Command_Injection" %}}
+
+{{% resource title="OS command injection cheat sheet" languages="English" cost="Free" description="Quick overview of different OS commands which could be abused for injection." url="https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html" %}}
+
+{{% resource title="Web shells" languages="English, Kurdish, Chinese, Korean, French, Lombard, Hindi, Malayalam" cost="Free" description="Overview of what a web shell is and how it could be used in attacks." url="https://en.wikipedia.org/wiki/Web_shell" %}}
 
 ## Skill Check
 
@@ -445,39 +394,36 @@ If possible, discuss your answers to those questions with a peer or mentor who w
 
 What is a common consequence of failing to implement proper data validation in a web application?
 
-A) Increased server performance \
-B) Enhanced user experience \
-C) Vulnerability to SQL injection attacks \
+A) Increased server performance\
+B) Enhanced user experience\
+C) Vulnerability to SQL injection attacks\
 D) Improved data integrity
 
 **Question 2**
 
 Which of the following is an effective mechanism for preventing cross-site scripting (XSS) attacks in web applications?
 
-A) Using plaintext for storing sensitive data \
-B) Escaping user input before displaying it \
-C) Storing user passwords in plain text \
+A) Using plaintext for storing sensitive data\
+B) Escaping user input before displaying it\
+C) Storing user passwords in plain text\
 D) Disabling HTTPS encryption
 
 **Question 3**
 
 Which technique is effective in preventing SQL injection attacks in web applications?
 
-A) Using dynamic SQL queries \
-B ) Employing input sanitization and parameterized queries \
-C) Storing sensitive data in plain text \
+A) Using dynamic SQL queries\
+B ) Employing input sanitization and parameterized queries\
+C) Storing sensitive data in plain text\
 D) Disabling error messages
 
 **Question 4**
 
 Which of the following statements best explains how proper data validation helps prevent command injection attacks in web application security?
 
-A) Data validation restricts the input to predefined characters and patterns, thereby minimizing the likelihood of malicious commands being injected into the application.
-
-B) Proper validation techniques, such as input sanitization and parameterized queries, help neutralize malicious commands embedded in user inputs, thereby mitigating command injection vulnerabilities.
-
-C) Implementing validation methods like input length checks and whitelisting of acceptable characters reduces the attack surface and prevents execution of unauthorized commands within the web application.
-
+A) Data validation restricts the input to predefined characters and patterns, thereby minimizing the likelihood of malicious commands being injected into the application.\
+B) Proper validation techniques, such as input sanitization and parameterized queries, help neutralize malicious commands embedded in user inputs, thereby mitigating command injection vulnerabilities.\
+C) Implementing validation methods like input length checks and whitelisting of acceptable characters reduces the attack surface and prevents execution of unauthorized commands within the web application.\
 D) All of the above.
 
 ### Answer key
@@ -486,37 +432,28 @@ D) All of the above.
 
 Explanation:
 
-A) Incorrect. Failing to implement proper data validation typically does not lead to increased server performance.
-
-B) Incorrect. While proper data validation contributes to a better user experience by preventing errors, its absence does not enhance user experience.
-
-C) Correct. Without proper data validation, web applications are vulnerable to SQL injection attacks, where attackers can manipulate database queries by injecting malicious SQL code.
-
-D) Incorrect. Data validation helps maintain data integrity, but its absence does not improve data integrity*. \
+A) Incorrect. Failing to implement proper data validation typically does not lead to increased server performance.\
+B) Incorrect. While proper data validation contributes to a better user experience by preventing errors, its absence does not enhance user experience.\
+C) Correct. Without proper data validation, web applications are vulnerable to SQL injection attacks, where attackers can manipulate database queries by injecting malicious SQL code.\
+D) Incorrect. Data validation helps maintain data integrity, but its absence does not improve data integrity*.
 *
 
 **Question 2 Correct Answer**: B) Escaping user input before displaying it
 
 Explanation:
 
-A) Incorrect. Using plaintext for storing sensitive data does not prevent XSS attacks; in fact, it increases the risk of data exposure.
-
-B) Correct. Escaping user input before displaying it helps mitigate XSS attacks by rendering any potentially malicious scripts harmless, thereby preventing them from executing in users' browsers.
-
-C) Incorrect. Storing user passwords in plaintext is a security risk and unrelated to preventing XSS attacks.
-
+A) Incorrect. Using plaintext for storing sensitive data does not prevent XSS attacks; in fact, it increases the risk of data exposure.\
+B) Correct. Escaping user input before displaying it helps mitigate XSS attacks by rendering any potentially malicious scripts harmless, thereby preventing them from executing in users' browsers.\
+C) Incorrect. Storing user passwords in plaintext is a security risk and unrelated to preventing XSS attacks.\
 D) Incorrect. Disabling HTTPS encryption exposes sensitive data to interception and does not prevent XSS attacks.
 
 **Question 3 Correct Answer**: B) Employing input sanitization and parameterized queries
 
 Explanation:
 
-A) Incorrect. Using dynamic SQL queries without proper input validation and sanitization increases the risk of SQL injection attacks.
-
-B) Correct. Employing input sanitization and parameterized queries helps prevent SQL injection attacks by ensuring that user input is treated as data rather than executable code, thus neutralizing malicious SQL injection attempts.
-
-C) Incorrect. Storing sensitive data in plain text increases the risk of data exposure but does not directly prevent SQL injection attacks.
-
+A) Incorrect. Using dynamic SQL queries without proper input validation and sanitization increases the risk of SQL injection attacks.\
+B) Correct. Employing input sanitization and parameterized queries helps prevent SQL injection attacks by ensuring that user input is treated as data rather than executable code, thus neutralizing malicious SQL injection attempts.\
+C) Incorrect. Storing sensitive data in plain text increases the risk of data exposure but does not directly prevent SQL injection attacks.\
 D) Incorrect. Disabling error messages may hide potential vulnerabilities from attackers but does not address the root cause of SQL injection vulnerabilities.
 
 **Question 4 Correct Answer**: D) All of the above.

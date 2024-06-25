@@ -60,8 +60,6 @@
                     </div>
                 </section>
 
-                {{ if eq .Page.Params.style "introduction" }}
-                {{ else }}
                 <nav class="w-full flex items-center {{ if not .NextInSection }}justify-end{{ else }}justify-between{{ end }} px-4 pt-6 sm:px-6" aria-label="Pagination">
                     {{ with .NextInSection }}
                     <a href="{{ .Permalink }}"
@@ -88,7 +86,6 @@
                         </a>
                     {{ end }}
                 </nav>
-                {{ end }}
 
                 {{ $permalink := .Permalink }}
                 {{ $parts := split $permalink "/" }}

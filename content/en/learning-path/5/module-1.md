@@ -145,168 +145,27 @@ Try it yourself
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>PortSwigger Academy
-   </td>
-   <td>A collection of explainers and labs on web application security, will be used as a resource throughout this learning path
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://portswigger.net/web-security/all-topics">https://portswigger.net/web-security/all-topics</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>What is a reverse proxy?
-   </td>
-   <td>A quick overview of what a reverse proxy is and how it differs from a forward one
-   </td>
-   <td>German, Spanish, French, Italian, Japanese, Korean, Portuguese, Chinese, Taiwanese
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/">https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Proxy server
-   </td>
-   <td>An introduction to the concept of a proxy server
-   </td>
-   <td>54 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Proxy_server">https://en.wikipedia.org/wiki/Proxy_server</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Fuzzing
-   </td>
-   <td>A simple explanation of fuzzing from the OWASP documentation
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-community/Fuzzing">https://owasp.org/www-community/Fuzzing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Squid cache
-   </td>
-   <td>Proxy software which anyone can roll out
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="http://www.squid-cache.org/">http://www.squid-cache.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Commercial proxies and content delivery networks
-   </td>
-   <td>Several companies provide proxy and CDN services 
-   </td>
-   <td>Many languages, depends on the product
-   </td>
-   <td>Varied
-   </td>
-   <td>Fastly: <a href="https://www.fastly.com/">https://www.fastly.com/</a>
-<p>
-Cloudflare: <a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a>
-<p>
-Amazon CloudFront: <a href="https://aws.amazon.com/cloudfront/">https://aws.amazon.com/cloudfront/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Fuzzing
-   </td>
-   <td>An overview of fuzzing, a software testing technique which can be used for all sorts of purposes, including testing websites and web applications
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-community/Fuzzing">https://owasp.org/www-community/Fuzzing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Burp Suite
-   </td>
-   <td>A popular web security testing tool
-   </td>
-   <td>English
-   </td>
-   <td>Community version is free, Pro edition costs $449 per user
-   </td>
-   <td><a href="https://portswigger.net/burp">https://portswigger.net/burp</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>ZAP
-   </td>
-   <td>A very popular security testing tool for web apps
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.zaproxy.org/">https://www.zaproxy.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Docker Desktop
-   </td>
-   <td>A tool to install containers which contain executable applications; crucial for quickly launching and testing new tools or running code in a controlled environment
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.docker.com/desktop/">https://docs.docker.com/desktop/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>sqlmap
-   </td>
-   <td>An open source penetration testing tool which tests for SQL injection
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://sqlmap.org/">https://sqlmap.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>WPScan
-   </td>
-   <td>A security scanner for WordPress
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/wpscanteam/wpscan">https://github.com/wpscanteam/wpscan</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="PortSwigger Academy" languages="English" cost="Free" description="Collection of explainers and labs on web application security." url="https://portswigger.net/web-security/all-topics" %}}
+
+{{% resource title="What is a reverse proxy?" languages="German, Spanish, French, Italian, Japanese, Korean, Portuguese, Chinese, Taiwanese" cost="Free" description="Overview of reverse proxy compared to forward proxy." url="https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/" %}}
+
+{{% resource title="Proxy server" languages="54 languages" cost="Free" description="Introduction to the concept of a proxy server." url="https://en.wikipedia.org/wiki/Proxy_server" %}}
+
+{{% resource title="Fuzzing" languages="English" cost="Free" description="Simple explanation of fuzzing from OWASP documentation." url="https://owasp.org/www-community/Fuzzing" %}}
+
+{{% resource title="Squid cache" languages="English" cost="Free" description="Proxy software that can be deployed by anyone." url="http://www.squid-cache.org/" %}}
+
+{{% resource title="Commercial proxies and content delivery networks" languages="Many languages, depends on the product" cost="Varied" description="Fastly, Cloudflare, Amazon CloudFront." url="Fastly: https://www.fastly.com/ Cloudflare: https://www.cloudflare.com/ Amazon CloudFront: https://aws.amazon.com/cloudfront/" %}}
+
+{{% resource title="Burp Suite" languages="English" cost="Community version is free, Pro edition costs $449 per user" description="Popular web security testing tool." url="https://portswigger.net/burp" %}}
+
+{{% resource title="ZAP" languages="English" cost="Free" description="Popular security testing tool for web apps." url="https://www.zaproxy.org/" %}}
+
+{{% resource title="Docker Desktop" languages="English" cost="Free" description="Tool to install containers containing executable applications." url="https://docs.docker.com/desktop/" %}}
+
+{{% resource title="sqlmap" languages="English" cost="Free" description="Open source penetration testing tool for SQL injection." url="https://sqlmap.org/" %}}
+
+{{% resource title="WPScan" languages="English" cost="Free" description="Security scanner for WordPress." url="https://github.com/wpscanteam/wpscan" %}}
 
 ## Practice
 

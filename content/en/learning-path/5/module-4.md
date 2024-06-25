@@ -79,44 +79,9 @@ Make sure to read and understand how a web shell works before you upload it. You
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Web shells
-   </td>
-   <td>A quick overview of what a web shell is and how it could be used in attacks
-   </td>
-   <td>English, Kurdish, Chinese, Korean, French, Lombard, Hindi, Malayalam
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Web_shell">https://en.wikipedia.org/wiki/Web_shell</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Webshells | Kali Linux Tools
-   </td>
-   <td>A look at the webshells available in a default Kali Linux installation
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.kali.org/tools/webshells/">https://www.kali.org/tools/webshells/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Web shells" languages="English, Kurdish, Chinese, Korean, French, Lombard, Hindi, Malayalam" cost="Free" description="Overview of what a web shell is and its potential use in attacks." url="https://en.wikipedia.org/wiki/Web_shell" %}}
+
+{{% resource title="Webshells | Kali Linux Tools" languages="English" cost="Free" description="Overview of webshells available in a default Kali Linux installation." url="https://www.kali.org/tools/webshells/" %}}
 
 ## Skill Check
 

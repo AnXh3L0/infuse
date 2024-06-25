@@ -165,264 +165,45 @@ If you are going to be coding a web app with authentication capabilities, we rec
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Credential stuffing
-   </td>
-   <td>An overview of an attack in which the adversary tests out many login combinations, for example those which came from a data breach
-   </td>
-   <td>English, Arabic, Chinese, Spanish, French
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Credential_stuffing">https://en.wikipedia.org/wiki/Credential_stuffing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Cryptographic hash function
-   </td>
-   <td>An overview of what cryptographic hash functions are and why they are so important to security
-   </td>
-   <td>31 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">https://en.wikipedia.org/wiki/Cryptographic_hash_function</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Rainbow table
-   </td>
-   <td>A list of precomputed hash functions which can be used when attempting to brute force encrypted content
-   </td>
-   <td>21 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Rainbow_table">https://en.wikipedia.org/wiki/Rainbow_table</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Salt
-   </td>
-   <td>A salt consists of a piece of data added to a password or other piece of information before it is encrypted. Using it makes it much harder for an adversary to use rainbow tables
-   </td>
-   <td>23 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">https://en.wikipedia.org/wiki/Salt_(cryptography)</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Traditional crypt
-   </td>
-   <td>A quick look at the first algorithms used to encrypt passwords in the 1970s. No longer used
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.usenix.org/legacy/publications/library/proceedings/usenix99/full_papers/provos/provos_html/node9.html">https://www.usenix.org/legacy/publications/library/proceedings/usenix99/full_papers/provos/provos_html/node9.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Cryptographic right answers
-   </td>
-   <td>A list of what cryptographic solutions would be prudent to use in the present day
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.latacora.com/blog/2018/04/03/cryptographic-right-answers/">https://www.latacora.com/blog/2018/04/03/cryptographic-right-answers/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Hash lookup
-   </td>
-   <td>A tool that does reverse lookups of hashes; could be useful for working with DVWA and similar tools
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.whatsmyip.org/hash-lookup/">https://www.whatsmyip.org/hash-lookup/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Password storage cheat sheet & Forgot password cheat sheet
-   </td>
-   <td>A series of best practices on how to store encrypted passwords and on how to manage password recovery
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html</a> 
-<p>
-<a href="https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>International SMS Fraud
-   </td>
-   <td>An example of how SMS messages can be abused by adversaries and a good case study on why we should not reply on SMS for authentication 
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.openmindnetworks.com/blog/international-sms-fraud-by-brian-kelly-cto-and-co-founder/">https://www.openmindnetworks.com/blog/international-sms-fraud-by-brian-kelly-cto-and-co-founder/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Selenium
-   </td>
-   <td>A tool for automating web browser tasks which can be used for testing
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.selenium.dev/">https://www.selenium.dev/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Testing for Account Enumeration and Guessable User Account
-   </td>
-   <td>Another web app security testing workflow; this time to see if it’s possible to get an app to enumerate usernames
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/03-Identity_Management_Testing/04-Testing_for_Account_Enumeration_and_Guessable_User_Account">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/03-Identity_Management_Testing/04-Testing_for_Account_Enumeration_and_Guessable_User_Account</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Have I Been Pwned
-   </td>
-   <td>A fantastic, reputable service to see if a certain username has been featured in any data breaches
-   </td>
-   <td>English
-   </td>
-   <td>Free for low volumes of queries
-   </td>
-   <td><a href="https://haveibeenpwned.com/">https://haveibeenpwned.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Introducing 306 Million Freely Downloadable Pwned Passwords
-   </td>
-   <td>A blog post by Troy Hunt, the founder of Have I Been Pwned, on how he found millions of leaked passwords and what the leaked database could be used for
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.troyhunt.com/introducing-306-million-freely-downloadable-pwned-passwords/">https://www.troyhunt.com/introducing-306-million-freely-downloadable-pwned-passwords/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Common credentials
-   </td>
-   <td>Lists of commonly used credentials, like passwords
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials">https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>NIST password guidelines
-   </td>
-   <td>A blog post outlining some of the NIST password guidelines and the reasons behind them
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://blog.netwrix.com/2022/11/14/nist-password-guidelines/">https://blog.netwrix.com/2022/11/14/nist-password-guidelines/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Phishing
-   </td>
-   <td>A quick overview of phishing attacks, their history, and methods frequently used by adversaries
-   </td>
-   <td>76 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Phishing">https://en.wikipedia.org/wiki/Phishing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>SIM swap scam
-   </td>
-   <td>A type of scam in which an attacker gains control of a targeted person’s SIM card; a key reason not to rely on SMS-based authentication
-   </td>
-   <td>English, Chinese, Japanese, Malayalam, German, Spanish
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/SIM_swap_scam">https://en.wikipedia.org/wiki/SIM_swap_scam</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>U2F Technical Overview
-   </td>
-   <td>A deeper look at how U2F, a popular authentication method which relies on tools like physical security keys, works
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://developers.yubico.com/U2F/Protocol_details/Overview.html">https://developers.yubico.com/U2F/Protocol_details/Overview.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Two factor authentication backup codes
-   </td>
-   <td>There are times when the primary method of two factor authentication is lost or destroyed. In such a case, the user will need to use a backup method. Those articles demonstrate how Google and GitHub manage such backups.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>Google: <a href="https://support.google.com/accounts/answer/1187538?hl=en&co=GENIE.Platform%3DDesktop">https://support.google.com/accounts/answer/1187538?hl=en</a>
-<p>
-Github: <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-recovery-methods">https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-recovery-methods</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Multifactor authentication cheat sheet
-   </td>
-   <td>An overview of what multifactor authentication is and what best practices we should adopt when implementing it
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Credential stuffing" languages="English, Arabic, Chinese, Spanish, French" cost="Free" description="Overview of an attack where adversaries test many login combinations, often from data breaches." url="https://en.wikipedia.org/wiki/Credential_stuffing" %}}
+
+{{% resource title="Cryptographic hash function" languages="31 languages" cost="Free" description="Overview of cryptographic hash functions and their importance to security." url="https://en.wikipedia.org/wiki/Cryptographic_hash_function" %}}
+
+{{% resource title="Rainbow table" languages="21 languages" cost="Free" description="List of precomputed hash functions used in brute-forcing encrypted content." url="https://en.wikipedia.org/wiki/Rainbow_table" %}}
+
+{{% resource title="Salt" languages="23 languages" cost="Free" description="Explanation of a salt added to passwords before encryption to prevent rainbow table attacks." url="https://en.wikipedia.org/wiki/Salt_(cryptography)" %}}
+
+{{% resource title="Traditional crypt" languages="English" cost="Free" description="Overview of early password encryption algorithms from the 1970s, no longer in use." url="https://www.usenix.org/legacy/publications/library/proceedings/usenix99/full_papers/provos/provos_html/node9.html" %}}
+
+{{% resource title="Cryptographic right answers" languages="English" cost="Free" description="List of recommended cryptographic solutions for modern use." url="https://www.latacora.com/blog/2018/04/03/cryptographic-right-answers/" %}}
+
+{{% resource title="Hash lookup" languages="English" cost="Free" description="Tool for reverse lookup of hashes, useful for working with tools like DVWA." url="https://www.whatsmyip.org/hash-lookup/" %}}
+
+{{% resource title="Password storage cheat sheet & Forgot password cheat sheet" languages="English" cost="Free" description="Best practices for storing encrypted passwords and managing password recovery." url="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" url2="https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html" %}}
+
+{{% resource title="International SMS Fraud" languages="English" cost="Free" description="Case study on SMS abuse by adversaries and reasons not to rely on SMS for authentication." url="https://www.openmindnetworks.com/blog/international-sms-fraud-by-brian-kelly-cto-and-co-founder/" %}}
+
+{{% resource title="Selenium" languages="English" cost="Free" description="Tool for automating web browser tasks, useful for testing." url="https://www.selenium.dev/" %}}
+
+{{% resource title="Testing for Account Enumeration and Guessable User Account" languages="English" cost="Free" description="Workflow for testing web app security to see if it's possible to enumerate usernames." url="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/03-Identity_Management_Testing/04-Testing_for_Account_Enumeration_and_Guessable_User_Account" %}}
+
+{{% resource title="Have I Been Pwned" languages="English" cost="Free for low volumes of queries" description="Service to check if a username has been featured in any data breaches." url="https://haveibeenpwned.com/" %}}
+
+{{% resource title="Introducing 306 Million Freely Downloadable Pwned Passwords" languages="English" cost="Free" description="Blog post by Troy Hunt on finding millions of leaked passwords and their implications." url="https://www.troyhunt.com/introducing-306-million-freely-downloadable-pwned-passwords/" %}}
+
+{{% resource title="Common credentials" languages="English" cost="Free" description="Lists of commonly used credentials, like passwords." url="https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials" %}}
+
+{{% resource title="NIST password guidelines" languages="English" cost="Free" description="Blog post outlining NIST password guidelines and their rationale." url="https://blog.netwrix.com/2022/11/14/nist-password-guidelines/" %}}
+
+{{% resource title="Phishing" languages="76 languages" cost="Free" description="Overview of phishing attacks, their history, and methods used by adversaries." url="https://en.wikipedia.org/wiki/Phishing" %}}
+
+{{% resource title="SIM swap scam" languages="English, Chinese, Japanese, Malayalam, German, Spanish" cost="Free" description="Overview of SIM swap scams and reasons not to rely on SMS-based authentication." url="https://en.wikipedia.org/wiki/SIM_swap_scam" %}}
+
+{{% resource title="U2F Technical Overview" languages="English" cost="Free" description="Detailed look at U2F authentication method using physical security keys." url="https://developers.yubico.com/U2F/Protocol_details/Overview.html" %}}
+
+{{% resource title="Two factor authentication backup codes" languages="English" cost="Free" description="Guides on managing backup methods for two factor authentication by Google and GitHub." url="https://support.google.com/accounts/answer/1187538?hl=en&co=GENIE.Platform%3DDesktop" url2="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-recovery-methods" %}}
+
+{{% resource title="Multifactor authentication cheat sheet" languages="English" cost="Free" description="Overview of multifactor authentication and best practices for implementation." url="https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html" %}}
 
 ## Practice
 
@@ -643,122 +424,83 @@ Enhance your understanding of web application security and learn how to mitigate
 
 **Question 1**. What is broken authentication in the context of web application security?
 
-A) A vulnerability that allows attackers to execute arbitrary code on the server.
-
-B) An exploit that grants unauthorized access to restricted parts of a web application.
-
-C) A weakness in the authentication mechanism of a web application, leading to compromised user credentials.
-
+A) A vulnerability that allows attackers to execute arbitrary code on the server.\
+B) An exploit that grants unauthorized access to restricted parts of a web application.\
+C) A weakness in the authentication mechanism of a web application, leading to compromised user credentials.\
 D) A security flaw that enables attackers to intercept communication between the client and server.
 
 Question 2. What are the potential risks associated with broken authentication vulnerabilities?
 
-A) Unauthorized access to sensitive data and user accounts.
-
-B) Exposure of session tokens, leading to session hijacking attacks.
-
-C) Compromise of user credentials, including passwords and authentication tokens.
-
+A) Unauthorized access to sensitive data and user accounts.\
+B) Exposure of session tokens, leading to session hijacking attacks.\
+C) Compromise of user credentials, including passwords and authentication tokens.\
 D) All of the above.
 
 **Question 3**. Which of the following is NOT an example of a mitigation mechanism for broken authentication vulnerabilities?
 
-A) Implementing multi-factor authentication (MFA) for user accounts.
-
-B) Enforcing strong password policies, including regular password rotation.
-
-C) Disabling HTTPS to prevent interception of authentication credentials.
-
+A) Implementing multi-factor authentication (MFA) for user accounts.\
+B) Enforcing strong password policies, including regular password rotation.\
+C) Disabling HTTPS to prevent interception of authentication credentials.\
 D) Implementing account lockout mechanisms to prevent brute force attacks.
 
 **Question 4**. Which type of flaw may lead to compromised authentication mechanisms by allowing attackers to guess or crack user passwords?
 
-A) Session Fixation
-
-B) Cross-Site Request Forgery (CSRF)
-
-C) Insufficient Password Complexity
-
+A) Session Fixation\
+B) Cross-Site Request Forgery (CSRF)\
+C) Insufficient Password Complexity\
 D) Cross-Site Scripting (XSS)
 
 **Question 5**. What is a specific example of a mitigation strategy for addressing the flaw of insufficient password complexity?
 
-A) Implementing CAPTCHA challenges during the login process.
-
-B) Enforcing password length and complexity requirements.
-
-C) Encrypting authentication tokens to prevent interception.
-
+A) Implementing CAPTCHA challenges during the login process.\
+B) Enforcing password length and complexity requirements.\
+C) Encrypting authentication tokens to prevent interception.\
 D) Whitelisting trusted IP addresses for accessing the login page.
 
 **Question 6**. Which mitigation strategy aims to prevent attackers from exploiting session fixation vulnerabilities?
 
-A) Implementing session timeout mechanisms.
-
-B) Encrypting session cookies using HTTPS.
-
-C) Regenerating session identifiers after successful authentication.
-
+A) Implementing session timeout mechanisms.\
+B) Encrypting session cookies using HTTPS.\
+C) Regenerating session identifiers after successful authentication.\
 D) Enforcing strong password policies for user accounts.
 
 **Question 7**. What type of flaw may lead to compromised authentication mechanisms by allowing attackers to hijack active user sessions?
 
-A) Insufficient Session Expiration
-
-B) Insecure Token Storage
-
-C) Cross-Site Scripting (XSS)
-
+A) Insufficient Session Expiration\
+B) Insecure Token Storage\
+C) Cross-Site Scripting (XSS)\
 D) Cross-Site Request Forgery (CSRF)
 
 **Question 8**. Which mitigation strategy addresses the flaw of insecure token storage by securely managing authentication tokens?
 
-A) Storing tokens in plaintext within client-side cookies.
-
-B) Encrypting tokens using a symmetric encryption algorithm.
-
-C) Implementing secure password hashing algorithms.
-
+A) Storing tokens in plaintext within client-side cookies.\
+B) Encrypting tokens using a symmetric encryption algorithm.\
+C) Implementing secure password hashing algorithms.\
 D) Using HTTP headers for transmitting authentication tokens.
 
 **Question 9**. What is a specific example of a mitigation strategy for preventing session fixation attacks?
 
-A) Rotating session identifiers after a successful login.
-
-B) Implementing multi-factor authentication (MFA).
-
-C) Using CAPTCHA challenges to verify user authenticity.
-
+A) Rotating session identifiers after a successful login.\
+B) Implementing multi-factor authentication (MFA).\
+C) Using CAPTCHA challenges to verify user authenticity.\
 D) Enforcing strict input validation on the login form.
 
 **Question 10**. What type of flaw may lead to compromised authentication mechanisms by allowing attackers to forge requests to the web application while authenticated as another user?
 
-A) Insufficient Session Expiration
-
-B) Insufficient Transport Layer Protection
-
-C) Cross-Site Scripting (XSS)
-
+A) Insufficient Session Expiration\
+B) Insufficient Transport Layer Protection\
+C) Cross-Site Scripting (XSS)\
 D) Cross-Site Request Forgery (CSRF)
 
 ### Answer key
 
 1. B) A weakness in the authentication mechanism of a web application, leading to compromised user credentials.
-
 2. D) All of the above.
-
 3. C) Disabling HTTPS to prevent interception of authentication credentials.
-
 4. C) Insufficient Password Complexity
-
 5. B) Enforcing password length and complexity requirements.
-
 6. C) Regenerating session identifiers after successful authentication.
-
 7. A) Insufficient Session Expiration
-
 8. B) Encrypting tokens using a symmetric encryption algorithm.
-
 9. A) Rotating session identifiers after a successful login.
-
 10. D) Cross-Site Request Forgery (CSRF)

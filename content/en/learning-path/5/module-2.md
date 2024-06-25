@@ -187,58 +187,11 @@ Head over to the [PortSwigger Academy XXE injection topic](https://portswigger.n
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Report: 50% of all web applications were vulnerable to attacks in 2021
-   </td>
-   <td>A summary of a report on how many major web applications were vulnerable to attacks similar to those we outlined in those learning paths
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://venturebeat.com/security/report-50-of-all-web-applications-were-vulnerable-to-attacks-in-2021/">https://venturebeat.com/security/report-50-of-all-web-applications-were-vulnerable-to-attacks-in-2021/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>An overview of same-origin policy and cross-origin resource sharing
-   </td>
-   <td>Introductions to both topics which go into quite some moderate depth
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Same-origin_policy">https://en.wikipedia.org/wiki/Same-origin_policy</a>
-<p>
-<a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">https://en.wikipedia.org/wiki/Cross-origin_resource_sharing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>An SSRF, privileged AWS keys and the Capital One breach
-   </td>
-   <td>A 2019 overview of a breach of a major financial institution through an SSRF bug
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://blog.appsecco.com/an-ssrf-privileged-aws-keys-and-the-capital-one-breach-4c3c2cded3af">https://blog.appsecco.com/an-ssrf-privileged-aws-keys-and-the-capital-one-breach-4c3c2cded3af</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Report: 50% of all web applications were vulnerable to attacks in 2021" languages="English" cost="Free" description="Summary of a report on vulnerabilities in major web applications." url="https://venturebeat.com/security/report-50-of-all-web-applications-were-vulnerable-to-attacks-in-2021/" %}}
+
+{{% resource title="An overview of same-origin policy and cross-origin resource sharing" languages="Multiple" cost="Free" description="Introductions to same-origin policy and cross-origin resource sharing." url="https://en.wikipedia.org/wiki/Same-origin_policy" url2="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" %}}
+
+{{% resource title="An SSRF, privileged AWS keys and the Capital One breach" languages="English" cost="Free" description="Overview of the 2019 Capital One breach through an SSRF bug." url="https://blog.appsecco.com/an-ssrf-privileged-aws-keys-and-the-capital-one-breach-4c3c2cded3af" %}}
 
 ## Skill Check
 

@@ -219,132 +219,23 @@ Logging the identity of a logged-in user can be dangerous, but there are steps t
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Log Files - Apache
-   </td>
-   <td>An overview of how to read log files in the Apache web server
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://httpd.apache.org/docs/2.4/logs.html#accesslog">https://httpd.apache.org/docs/2.4/logs.html#accesslog</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Understanding the Apache Access and Error Log
-   </td>
-   <td>Two more pieces on how to read the Apache web server’s logs
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.keycdn.com/support/apache-access-log">https://www.keycdn.com/support/apache-access-log</a> 
-<p>
-<a href="https://www.dataset.com/blog/apache-error-log-detail/">https://www.dataset.com/blog/apache-error-log-detail/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Server-side logging
-   </td>
-   <td>An analysis of logs within the Microsoft IIS server
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://learn.microsoft.com/en-us/windows/win32/http/server-side-logging-in-http-version-2-0">https://learn.microsoft.com/en-us/windows/win32/http/server-side-logging-in-http-version-2-0</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>IIS Error Logs and Other Ways to Find ASP.Net Failed Requests
-   </td>
-   <td>Another look at IIS logs and how we can search for application errors therein
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://stackify.com/beyond-iis-logs-find-failed-iis-asp-net-requests/">https://stackify.com/beyond-iis-logs-find-failed-iis-asp-net-requests/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Configuring logging on nginx
-   </td>
-   <td>Documentation by the NGINX web server on how to configure and work with logs
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.nginx.com/nginx/admin-guide/monitoring/logging/">https://docs.nginx.com/nginx/admin-guide/monitoring/logging/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>A guide to NGINX logs
-   </td>
-   <td>An overview of different NGINX logs and their formats
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://trunc.org/learning/nginx-log-analysis">https://trunc.org/learning/nginx-log-analysis</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Security Log: Best Practices for Logging and Management
-   </td>
-   <td>An analysis of when logs are useful, how we can analyze them, and what policies we can create around them
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.dnsstuff.com/security-log-best-practices">https://www.dnsstuff.com/security-log-best-practices</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OWASP logging cheat sheet and vocabulary 
-   </td>
-   <td>A guide from OWASP on what purpose logs should serve & how we should analyze them as well as a standard vocabulary for them 
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html</a>
-<p>
-<a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Keep Sensitive Data Out of Your Logs: 9 Best Practices
-   </td>
-   <td>Thorough logging can also end up including sensitive data, which could put users at risk. This guide looks at how we can adapt our logging practices to exclude sensitive data from logs.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.skyflow.com/post/how-to-keep-sensitive-data-out-of-your-logs-nine-best-practices">https://www.skyflow.com/post/how-to-keep-sensitive-data-out-of-your-logs-nine-best-practices</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Log Files - Apache" languages="English" cost="Free" description="An overview of how to read log files in the Apache web server." url="https://httpd.apache.org/docs/2.4/logs.html#accesslog" %}}
+
+{{% resource title="Understanding the Apache Access and Error Log" languages="English" cost="Free" description="Two pieces on how to read the Apache web server’s logs." url1="https://www.keycdn.com/support/apache-access-log" url2="https://www.dataset.com/blog/apache-error-log-detail/" %}}
+
+{{% resource title="Server-side logging" languages="English" cost="Free" description="An analysis of logs within the Microsoft IIS server." url="https://learn.microsoft.com/en-us/windows/win32/http/server-side-logging-in-http-version-2-0" %}}
+
+{{% resource title="IIS Error Logs and Other Ways to Find ASP.Net Failed Requests" languages="English" cost="Free" description="Another look at IIS logs and how we can search for application errors therein." url="https://stackify.com/beyond-iis-logs-find-failed-iis-asp-net-requests/" %}}
+
+{{% resource title="Configuring logging on nginx" languages="English" cost="Free" description="Documentation by the NGINX web server on how to configure and work with logs." url="https://docs.nginx.com/nginx/admin-guide/monitoring/logging/" %}}
+
+{{% resource title="A guide to NGINX logs" languages="English" cost="Free" description="An overview of different NGINX logs and their formats." url="https://trunc.org/learning/nginx-log-analysis" %}}
+
+{{% resource title="Security Log: Best Practices for Logging and Management" languages="English" cost="Free" description="An analysis of when logs are useful, how we can analyze them, and what policies we can create around them." url="https://www.dnsstuff.com/security-log-best-practices" %}}
+
+{{% resource title="OWASP logging cheat sheet and vocabulary" languages="English" cost="Free" description="A guide from OWASP on what purpose logs should serve, how we should analyze them, and a standard vocabulary for them." url1="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" url2="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html" %}}
+
+{{% resource title="Keep Sensitive Data Out of Your Logs: 9 Best Practices" languages="English" cost="Free" description="Thorough logging can also end up including sensitive data, which could put users at risk. This guide looks at how we can adapt our logging practices to exclude sensitive data from logs." url="https://www.skyflow.com/post/how-to-keep-sensitive-data-out-of-your-logs-nine-best-practices" %}}
 
 ## Practice
 

@@ -71,44 +71,10 @@ For a bit more authentication, see [the OWASP authorization cheat sheet](https:/
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Authorization cheat sheet
-   </td>
-   <td>A look at some authorization best practices
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Honda eCommerce hack
-   </td>
-   <td>A writeup demonstrating how to find certain vulnerabilities in websites with poor authentication or authorization
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://eaton-works.com/2023/06/06/honda-ecommerce-hack/">https://eaton-works.com/2023/06/06/honda-ecommerce-hack/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Authorization cheat sheet" languages="English" cost="Free" description="Best practices for authorization in web applications." url="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" %}}
+
+{{% resource title="Honda eCommerce hack" languages="English" cost="Free" description="Demonstration of vulnerabilities in websites with poor authentication or authorization practices." url="https://eaton-works.com/2023/06/06/honda-ecommerce-hack/" %}}
+
 
 ## Practice
 
@@ -124,124 +90,85 @@ Complete the DVWA authorization bypass exercise, as outlined above.
 
 **Question 1**. What is the primary purpose of authorization in a system?
 
-A) Authenticating users
-
-B) Ensuring data integrity
-
-C) Verifying user permissions
-
+A) Authenticating users\
+B) Ensuring data integrity\
+C) Verifying user permissions\
 D) Encrypting sensitive information
 
 **Question 2**. Which category of vulnerability involves developers failing to check if a user is logged in on certain pages?
 
-A) Vertical Privilege Escalation
-
-B) Horizontal Privilege Escalation
-
-C) Missing Authentication
-
+A) Vertical Privilege Escalation\
+B) Horizontal Privilege Escalation\
+C) Missing Authentication\
 D) Forced Browsing
 
 **Question 3**. What is one common pattern of missing authentication vulnerability mentioned in the subtopic text?
 
-A) Failing to check permissions on data-level actions
-
-B) Passing user IDs in URL parameters
-
-C) Allowing users to modify their own data
-
+A) Failing to check permissions on data-level actions\
+B) Passing user IDs in URL parameters\
+C) Allowing users to modify their own data\
 D) Showing different links based on user login status
 
 **Question 4**. What is the result of vertical privilege escalation vulnerability?
 
-A) Users can access unauthorized data
-
-B) Less powerful users can perform powerful actions they were not authorized to do
-
-C) Users can edit other users' data without permission
-
+A) Users can access unauthorized data\
+B) Less powerful users can perform powerful actions they were not authorized to do\
+C) Users can edit other users' data without permission\
 D) The entire site becomes vulnerable to attacks
 
 **Question 5**. In the context of horizontal privilege escalation, what is a common cause of vulnerability according to the subtopic text?
 
-A) Lack of developer awareness
-
-B) Inconsistent implementation of controls
-
-C) Passing user IDs in URL parameters
-
+A) Lack of developer awareness\
+B) Inconsistent implementation of controls\
+C) Passing user IDs in URL parameters\
 D) Insufficient encryption protocols
 
 **Question 6**. How can developers prevent authorization vulnerabilities according to the subtopic text?
 
-A) Use complex logic for authorization checks
-
-B) Rely solely on framework support
-
-C) Implement their own controls consistently
-
+A) Use complex logic for authorization checks\
+B) Rely solely on framework support\
+C) Implement their own controls consistently\
 D) Ignore data-level permissions checks
 
 **Question 7**. Which of the following is NOT a tip mentioned in the text for preventing authorization vulnerabilities?
 
-A) Layer and simplify the process of checking user permissions
-
-B) Use separate websites for regular users and administrators
-
-C) Rely solely on framework functions for authorization
-
+A) Layer and simplify the process of checking user permissions\
+B) Use separate websites for regular users and administrators\
+C) Rely solely on framework functions for authorization\
 D) Establish consistent developer guidelines for data access
 
 **Question 8**. What is the significance of consistency in implementing authorization controls?
 
-A) It increases the complexity of the system
-
-B) It reduces the likelihood of errors
-
-C) It limits access to certain users
-
+A) It increases the complexity of the system\
+B) It reduces the likelihood of errors\
+C) It limits access to certain users\
 D) It makes authorization checks more difficult
 
 **Question 9**. What is one example provided in the subtopic text for vertical privilege escalation vulnerability?
 
-A) Modifying URL parameters to escalate privileges
-
-B) Allowing users to view other users' data
-
-C) Passing user IDs in hidden form fields
-
+A) Modifying URL parameters to escalate privileges\
+B) Allowing users to view other users' data\
+C) Passing user IDs in hidden form fields\
 D) Regular users gaining access to administrative features
 
 **Question 10**. Which vulnerability category involves users performing actions on other users' data with the same access level?
 
-A) Missing Authentication
-
-B) Vertical Privilege Escalation
-
-C) Horizontal Privilege Escalation
-
-D) Forced Browsing
+A) Missing Authentication\
+B) Vertical Privilege Escalation\
+C) Horizontal Privilege Escalation\
+D) Forced Browsing\
 
 ### Answer key
 
-Question 1: C) Verifying user permissions
-
-Question 2: C) Missing Authentication
-
-Question 3: D) Showing different links based on user login status
-
-Question 4: B) Less powerful users can perform powerful actions
-
-Question 5: B) Inconsistent implementation of controls
-
-Question 6: C) Implement their own controls consistently
-
-Question 7: C) Rely solely on framework functions for authorization
-
-Question 8: B) It reduces the likelihood of errors
-
-Question 9: D) Regular users gaining access to administrative features
-
+Question 1: C) Verifying user permissions\
+Question 2: C) Missing Authentication\
+Question 3: D) Showing different links based on user login status\
+Question 4: B) Less powerful users can perform powerful actions\
+Question 5: B) Inconsistent implementation of controls\
+Question 6: C) Implement their own controls consistently\
+Question 7: C) Rely solely on framework functions for authorization\
+Question 8: B) It reduces the likelihood of errors\
+Question 9: D) Regular users gaining access to administrative features\
 Question 10: C) Horizontal Privilege Escalation
 
 ### Exercise 3 (optional, only for those comfortable with basic python): code bug finding challenge
@@ -296,7 +223,5 @@ The vulnerability lies in the fact that the `delete_profile` function only check
 **To fix the vulnerability, you could:**
 
 1. Check if the current user has the "delete" permission specifically.
-
 2. Implement role-based access control (RBAC) to restrict deletion based on user roles.
-
 3. Add additional checks to verify the legitimacy of the deletion request.

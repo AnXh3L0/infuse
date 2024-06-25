@@ -84,44 +84,9 @@ If user data was compromised, the site owner may be legally and/or morally requi
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>The year-long rash of supply chain attacks against open source is getting worse
-   </td>
-   <td>A look at supply chain attacks against open source software, in which attackers compromise software dependencies
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://arstechnica.com/information-technology/2019/08/the-year-long-rash-of-supply-chain-attacks-against-open-source-is-getting-worse/">https://arstechnica.com/information-technology/2019/08/the-year-long-rash-of-supply-chain-attacks-against-open-source-is-getting-worse/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How do you manage/balance truthful communications about an incident/breach while mitigating legal exposure?
-   </td>
-   <td>A short guide, written by an incident responder rather than a lawyer on what the various concerns (legal/ ethical/ other) digital protectors might have when disclosing breaches and how to manage those
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://discernibleinc.com/blog/-mailbag-reader-question-truthful-communication-legal-exposure">https://discernibleinc.com/blog/-mailbag-reader-question-truthful-communication-legal-exposure</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="The year-long rash of supply chain attacks against open source is getting worse" languages="English" cost="Free" description="A look at supply chain attacks against open source software, in which attackers compromise software dependencies" url="https://arstechnica.com/information-technology/2019/08/the-year-long-rash-of-supply-chain-attacks-against-open-source-is-getting-worse/" %}}
+
+{{% resource title="How do you manage/balance truthful communications about an incident/breach while mitigating legal exposure?" languages="English" cost="Free" description="A short guide, written by an incident responder rather than a lawyer on what the various concerns (legal/ ethical/ other) digital protectors might have when disclosing breaches and how to manage those" url="https://discernibleinc.com/blog/-mailbag-reader-question-truthful-communication-legal-exposure" %}}
 
 ## Practice
 

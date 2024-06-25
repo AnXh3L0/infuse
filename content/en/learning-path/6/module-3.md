@@ -93,92 +93,17 @@ This mini-site is a good overview of making a DoS response plan for a specific s
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>DDoS: the inconvenient business visitor
-   </td>
-   <td>A look at how some web hosting providers might want to abandon clients targeted by DDoS attacks
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.qurium.org/alerts/azerbaijan/ddos-the-inconvenient-business-visitor/">https://www.qurium.org/alerts/azerbaijan/ddos-the-inconvenient-business-visitor/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>GitHub Survived the Biggest DDoS Attack Ever Recorded
-   </td>
-   <td>A 2018 piece on how Github took on a massive DDoS attack and continued to operate thereafter 
-   </td>
-   <td>English
-   </td>
-   <td>First articles on WIRED are free, further ones might require a subscription
-   </td>
-   <td><a href="https://www.wired.com/story/github-ddos-memcached/">https://www.wired.com/story/github-ddos-memcached/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Understanding and Responding  to Distributed Denial-of-Service  Attacks
-   </td>
-   <td>A 2022 CISA guide on the topic, looking at what steps to take before, during, and after an attack
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.cisa.gov/sites/default/files/publications/understanding-and-responding-to-ddos-attacks_508c.pdf">https://www.cisa.gov/sites/default/files/publications/understanding-and-responding-to-ddos-attacks_508c.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>MS-ISAC Guide to DDoS  Attacks
-   </td>
-   <td>A guide which provides an overview of common types of DDoS attacks, along with general recommendations on mitigations
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://learn.cisecurity.org/ms-isac-guide-to-ddos-attacks">https://learn.cisecurity.org/ms-isac-guide-to-ddos-attacks</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Denial-of-Service (DoS) Attack Prevention: The Definitive Guide
-   </td>
-   <td>This piece outlines a few steps that admins can take to prevent or mitigate the impact of DoS attacks
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.byos.io/blog/denial-of-service-attack-prevention">https://www.byos.io/blog/denial-of-service-attack-prevention</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Denial of Service (DoS) guidance
-   </td>
-   <td>The UK National Security Cyber Centre’s guides on DoS attacks and how to defend organizations against them
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.ncsc.gov.uk/collection/denial-service-dos-guidance-collection/a-minimal-denial-of-service-response-plan">https://www.ncsc.gov.uk/collection/denial-service-dos-guidance-collection</a>
-   </td>
-  </tr>
-</table>
+{{% resource title="DDoS: the inconvenient business visitor" languages="English" cost="Free" description="A look at how some web hosting providers might want to abandon clients targeted by DDoS attacks" url="https://www.qurium.org/alerts/azerbaijan/ddos-the-inconvenient-business-visitor/" %}}
+
+{{% resource title="GitHub Survived the Biggest DDoS Attack Ever Recorded" languages="English" cost="First articles on WIRED are free, further ones might require a subscription" description="A 2018 piece on how Github took on a massive DDoS attack and continued to operate thereafter" url="https://www.wired.com/story/github-ddos-memcached/" %}}
+
+{{% resource title="Understanding and Responding to Distributed Denial-of-Service Attacks" languages="English" cost="Free" description="A 2022 CISA guide on the topic, looking at what steps to take before, during, and after an attack" url="https://www.cisa.gov/sites/default/files/publications/understanding-and-responding-to-ddos-attacks_508c.pdf" %}}
+
+{{% resource title="MS-ISAC Guide to DDoS Attacks" languages="English" cost="Free" description="A guide which provides an overview of common types of DDoS attacks, along with general recommendations on mitigations" url="https://learn.cisecurity.org/ms-isac-guide-to-ddos-attacks" %}}
+
+{{% resource title="Denial-of-Service (DoS) Attack Prevention: The Definitive Guide" languages="English" cost="Free" description="This piece outlines a few steps that admins can take to prevent or mitigate the impact of DoS attacks" url="https://www.byos.io/blog/denial-of-service-attack-prevention" %}}
+
+{{% resource title="Denial of Service (DoS) guidance" languages="English" cost="Free" description="The UK National Security Cyber Centre’s guides on DoS attacks and how to defend organizations against them" url="https://www.ncsc.gov.uk/collection/denial-service-dos-guidance-collection/a-minimal-denial-of-service-response-plan" %}}
 
 ## Skill Check
 
@@ -188,59 +113,59 @@ DDoS (Distributed Denial of Service) attacks pose significant threats to modern 
 
 1. Which of the following is NOT a common type of DDoS attack?
 
-   A) SYN Flood\
-   B) Ping Flood\
-   C) DNS Spoofing\
-   D) UDP Flood
+A) SYN Flood\
+B) Ping Flood\
+C) DNS Spoofing\
+D) UDP Flood
 
 2. What is the main objective of a DDoS attack?
 
-   A) To steal sensitive data\
-   B) To gain unauthorized access to a system\
-   C) To overwhelm a target system or network\
-   D) To encrypt files and demand ransom
+A) To steal sensitive data\
+B) To gain unauthorized access to a system\
+C) To overwhelm a target system or network\
+D) To encrypt files and demand ransom
 
 3. Which technique is commonly used to mitigate DNS Amplification DDoS attacks?
 
-   A) Implementing ingress filtering to block traffic with spoofed IP addresses\
-   B) Utilizing rate limiting to control the volume of DNS response packets leaving authoritative servers\
-   C) Deploying Intrusion Prevention Systems (IPS) to detect and block malicious traffic at the network perimeter\
-   D) Conducting regular vulnerability scans to identify and patch DNS server vulnerabilities
+A) Implementing ingress filtering to block traffic with spoofed IP addresses\
+B) Utilizing rate limiting to control the volume of DNS response packets leaving authoritative servers\
+C) Deploying Intrusion Prevention Systems (IPS) to detect and block malicious traffic at the network perimeter\
+D) Conducting regular vulnerability scans to identify and patch DNS server vulnerabilities
 
 4. Which phase of incident response involves identifying the nature and scope of a DDoS attack?
 
-   A) Preparation\
-   B) Detection and Analysis\
-   C) Containment, Eradication, and Recovery\
-   D) Post-Incident Activity
+A) Preparation\
+B) Detection and Analysis\
+C) Containment, Eradication, and Recovery\
+D) Post-Incident Activity
 
 5. What is a primary goal during the containment phase of incident response for a DDoS attack?
 
-   A) Complete system shutdown\
-   B) Eliminating the attacker's access\
-   C) Identifying vulnerabilities for future attacks\
-   D) Restoring affected services while preventing further damage
+A) Complete system shutdown\
+B) Eliminating the attacker's access\
+C) Identifying vulnerabilities for future attacks\
+D) Restoring affected services while preventing further damage
 
 6. In the context of incident response, what does the "Eradication" phase involve regarding DDoS attacks?
 
-   A) Restoring data from backups\
-   B) Investigating the attack's origin\
-   C) Implementing long-term solutions to prevent similar attacks\
-   D) Rebooting affected systems
+A) Restoring data from backups\
+B) Investigating the attack's origin\
+C) Implementing long-term solutions to prevent similar attacks\
+D) Rebooting affected systems
 
 7. Which action is typically performed during the recovery phase of incident response following a DDoS attack?
 
-   A) Conducting a post-mortem analysis\
-   B) Applying security patches to vulnerable systems\
-   C) Identifying new attack vectors\
-   D) Initiating legal action against the attacker
+A) Conducting a post-mortem analysis\
+B) Applying security patches to vulnerable systems\
+C) Identifying new attack vectors\
+D) Initiating legal action against the attacker
 
 8. How can Content Delivery Networks (CDNs) help protect websites from Denial of Service (DoS) attacks?
 
-   A) By encrypting all incoming traffic to prevent attacks\
-   B) By directly blocking all suspicious incoming traffic\
-   C) By distributing website content across multiple servers and data centers\
-   D) By increasing the website's processing power
+A) By encrypting all incoming traffic to prevent attacks\
+B) By directly blocking all suspicious incoming traffic\
+C) By distributing website content across multiple servers and data centers\
+D) By increasing the website's processing power
 
 _Correct answers:_
 

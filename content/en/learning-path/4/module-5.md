@@ -97,44 +97,9 @@ For an in-depth exploration of both CSRF and other application logic vulnerabili
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Cross-site request forgery
-   </td>
-   <td>An OWASP guide to the vulnerability, how it works, and what preventive measures do and do not work
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-community/attacks/csrf">https://owasp.org/www-community/attacks/csrf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Cross-Site Request Forgery Prevention Cheat Sheet
-   </td>
-   <td>A list of potential mitigations for CSRF, which are encouraged and which are discouraged
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Cross-site request forgery" languages="English" cost="Free" description="Guide to CSRF vulnerability, how it works, and preventive measures." url="https://owasp.org/www-community/attacks/csrf" %}}
+
+{{% resource title="Cross-Site Request Forgery Prevention Cheat Sheet" languages="English" cost="Free" description="List of CSRF mitigations, recommended and discouraged practices." url="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" %}}
 
 ## Skill Check
 

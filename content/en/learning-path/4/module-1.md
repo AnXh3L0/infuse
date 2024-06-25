@@ -47,82 +47,15 @@ Infrastructure software with vulnerabilities is usually discovered via vulnerabi
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>What’s a CVE
-   </td>
-   <td>A good introduction to what CVEs (Common Vulnerabilities and Exposures) are and why they are important
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.redhat.com/en/topics/security/what-is-cve">https://www.redhat.com/en/topics/security/what-is-cve</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>CVEs with a vulnerability score of 9.8
-   </td>
-   <td>Here are two examples of CVEs that had very high vulnerability scores, which means that attackers exploiting them could do a lot of damage
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaw-in-fortios-fortiproxy-devices">https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaw-in-fortios-fortiproxy-devices</a>
-<p>
-<a href="https://thehackernews.com/2023/05/critical-flaws-in-cisco-small-business.html">https://thehackernews.com/2023/05/critical-flaws-in-cisco-small-business.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OpenCVE
-   </td>
-   <td>A website (and standalone tool) that allows you to subscribe to CVEs affecting different vendors. Note that not all vulnerabilities receive CVEs.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.opencve.io/welcome">https://www.opencve.io/welcome</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>SAFETAG vulnerability scanning
-   </td>
-   <td>A guide to vulnerability scanning which uses the SAFETAG methodology and contains many discrete activities
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://safetag.org/methods/vulnerability_scanning">https://safetag.org/methods/vulnerability_scanning</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Vulnerability Scanning Tools
-   </td>
-   <td>A list of automated tools which digital protectors can use to look for vulnerabilities within web apps. Different tools work for different use cases and have different pricing models, with many being open source.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-community/Vulnerability_Scanning_Tools">https://owasp.org/www-community/Vulnerability_Scanning_Tools</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="What’s a CVE" languages="English" cost="Free" description="Introduction to CVEs (Common Vulnerabilities and Exposures) and their importance." url="https://www.redhat.com/en/topics/security/what-is-cve" %}}
+
+{{% resource title="CVEs with a vulnerability score of 9.8" languages="English" cost="Free" description="Examples of CVEs with high vulnerability scores that can cause significant damage." url="https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaw-in-fortios-fortiproxy-devices, https://thehackernews.com/2023/05/critical-flaws-in-cisco-small-business.html" %}}
+
+{{% resource title="OpenCVE" languages="English" cost="Free" description="Website and tool for subscribing to CVEs affecting different vendors." url="https://www.opencve.io/welcome" %}}
+
+{{% resource title="SAFETAG vulnerability scanning" languages="English" cost="Free" description="Guide to vulnerability scanning using the SAFETAG methodology." url="https://safetag.org/methods/vulnerability_scanning" %}}
+
+{{% resource title="Vulnerability Scanning Tools" languages="English" cost="Free" description="List of automated tools for web app vulnerability scanning, with various use cases and pricing models." url="https://owasp.org/www-community/Vulnerability_Scanning_Tools" %}}
 
 ## Skill Check
 

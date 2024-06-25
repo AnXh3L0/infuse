@@ -162,80 +162,15 @@ Although it’s not required, you’ll probably want to [sign up for an API key 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Web crawler
-   </td>
-   <td>An overview of what a web crawler is and what it does
-   </td>
-   <td>47 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Web_crawler">https://en.wikipedia.org/wiki/Web_crawler</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Usage
-   </td>
-   <td>A guide on how to use sqlmap
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/sqlmapproject/sqlmap/wiki/Usage">https://github.com/sqlmapproject/sqlmap/wiki/Usage</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Using Burp with sqlmap
-   </td>
-   <td>Instructions on how to integrate sqlmap with Burp for the purposes of web application security testing
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://portswigger.net/support/using-burp-with-sqlmap">https://portswigger.net/support/using-burp-with-sqlmap</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>WPScan
-   </td>
-   <td>An automated tool to scan WordPress sites for security flaws
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/wpscanteam/wpscan">https://github.com/wpscanteam/wpscan</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Damn Vulnerable WordPress
-   </td>
-   <td>A special installation of WordPress which intentionally includes many security vulnerabilities; to be used for testing
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/vavkamil/dvwp">https://github.com/vavkamil/dvwp</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Web crawler" languages="47 languages" cost="Free" description="An overview of what a web crawler is and what it does." url="https://en.wikipedia.org/wiki/Web_crawler" %}}
+
+{{% resource title="Usage" languages="English" cost="Free" description="A guide on how to use sqlmap." url="https://github.com/sqlmapproject/sqlmap/wiki/Usage" %}}
+
+{{% resource title="Using Burp with sqlmap" languages="English" cost="Free" description="Instructions on how to integrate sqlmap with Burp for web application security testing." url="https://portswigger.net/support/using-burp-with-sqlmap" %}}
+
+{{% resource title="WPScan" languages="English" cost="Free" description="An automated tool to scan WordPress sites for security flaws." url="https://github.com/wpscanteam/wpscan" %}}
+
+{{% resource title="Damn Vulnerable WordPress" languages="English" cost="Free" description="A specially designed WordPress installation intentionally vulnerable for testing purposes." url="https://github.com/vavkamil/dvwp" %}}
 
 ## Skill Check
 

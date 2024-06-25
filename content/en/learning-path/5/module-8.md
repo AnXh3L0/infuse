@@ -40,70 +40,13 @@ The two largest bug bounty platforms are [HackerOne](https://www.hackerone.com/h
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>All Labs | Portswigger academy
-   </td>
-   <td>During this learning path, you only completed some of the Portswigger labs. Going back and completing more, especially the difficult ones, will be excellent practice.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://portswigger.net/web-security/all-labs">https://portswigger.net/web-security/all-labs</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OWASP testing guide
-   </td>
-   <td>A very thorough document about web application security and the vulnerabilities you can find
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/OWASP/wstg/tree/master/document">https://github.com/OWASP/wstg/tree/master/document</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Hacking into a Toyota/Eicher Motors insurance company by exploiting their premium calculator website
-   </td>
-   <td>A good writeup of a website with particularly egregious security errors which could give an attacker high level access, and basic steps which could have mitigated those vulnerabilities
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://eaton-works.com/2024/01/17/ttibi-email-hack/">https://eaton-works.com/2024/01/17/ttibi-email-hack/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Bug bounty programs
-   </td>
-   <td>Those programs allow you to make money while finding security vulnerabilities and a great way of ethically testing applications and legally verifying your skills.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>HackerOne: <a href="https://www.hackerone.com/hackers">https://www.hackerone.com/hackers</a>
-<p>
-Bugcrowd: <a href="https://www.bugcrowd.com/hackers/faqs/">https://www.bugcrowd.com/hackers/faqs/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="All Labs | Portswigger academy" languages="English" cost="Free" description="During this learning path, you only completed some of the Portswigger labs. Going back and completing more, especially the difficult ones, will be excellent practice." url="https://portswigger.net/web-security/all-labs" %}}
+
+{{% resource title="OWASP testing guide" languages="English" cost="Free" description="A very thorough document about web application security and the vulnerabilities you can find." url="https://github.com/OWASP/wstg/tree/master/document" %}}
+
+{{% resource title="Hacking into a Toyota/Eicher Motors insurance company by exploiting their premium calculator website" languages="English" cost="Free" description="A good writeup of a website with particularly egregious security errors which could give an attacker high-level access, and basic steps which could have mitigated those vulnerabilities." url="https://eaton-works.com/2024/01/17/ttibi-email-hack/" %}}
+
+{{% resource title="Bug bounty programs" languages="English" cost="Free" description="Bug bounty programs allow you to make money while finding security vulnerabilities and are a great way of ethically testing applications and legally verifying your skills." url="HackerOne: https://www.hackerone.com/hackers" url2="Bugcrowd: https://www.bugcrowd.com/hackers/faqs/" %}}
 
 ## Skill Check
 
@@ -113,122 +56,83 @@ In a typical web application architecture, various OSI layers play distinct role
 
 1. At which OSI layer does the TCP protocol operate, which is commonly targeted by attackers for various types of network attacks?
 
-A) Application Layer
-
-B) Transport Layer
-
-C) Network Layer
-
+A) Application Layer\
+B) Transport Layer\
+C) Network Layer\
 D) Data Link Layer
 
 2. Which vulnerability is commonly associated with the Transport Layer (Layer 4) of the OSI model, where attackers attempt to overwhelm network resources with a high volume of traffic?
 
-A) Cross-Site Scripting (XSS)
-
-B) SQL Injection
-
-C) Denial of Service (DoS)
-
+A) Cross-Site Scripting (XSS)\
+B) SQL Injection\
+C) Denial of Service (DoS)\
 D) Broken Authentication
 
 3. At which OSI layer do HTTP and HTTPS protocols typically operate, making it a common target for attacks like Cross-Site Scripting (XSS) and SQL Injection?
 
-A) Data Link Layer
-
-B) Transport Layer
-
-C) Application Layer
-
+A) Data Link Layer\
+B) Transport Layer\
+C) Application Layer\
 D) Presentation Layer
 
 4. Which vulnerability is often exploited at the Application Layer (Layer 7) of the OSI model, allowing attackers to inject malicious code into web applications and compromise users' data?
 
-A) Denial of Service (DoS)
-
-B) Cross-Site Scripting (XSS)
-
-C) Man-in-the-Middle (MitM) Attack
-
+A) Denial of Service (DoS)\
+B) Cross-Site Scripting (XSS)\
+C) Man-in-the-Middle (MitM) Attack\
 D) SYN Flood Attack
 
 5. At which OSI layer do routers and switches operate, and where vulnerabilities like IP spoofing and ARP spoofing can occur?
 
-1) Physical Layer
-
-2) Network Layer
-
-3) Transport Layer
-
-4) Session Layer \
+A) Physical Layer\
+B) Network Layer\
+C) Transport Layer\
+D) Session Layer
 
 6. Which vulnerability involves attackers intercepting communication between two parties, allowing them to eavesdrop on sensitive information or modify data packets?
 
-A) Cross-Site Scripting (XSS)
-
-B) Man-in-the-Middle (MitM) Attack
-
-C) SQL Injection
-
+A) Cross-Site Scripting (XSS)\
+B) Man-in-the-Middle (MitM) Attack\
+C) SQL Injection\
 D) Buffer Overflow
 
 7. At which OSI layer do firewalls and intrusion detection systems (IDS) typically operate, aiming to filter and monitor network traffic for suspicious activities?
 
-A) Application Layer
-
-B) Transport Layer
-
-C) Network Layer
-
-D) Data Link Layer \
+A) Application Layer\
+B) Transport Layer\
+C) Netwok Layer\
+D) Data Link Layer 
 
 8. Which vulnerability involves attackers exploiting weaknesses in the network layer to redirect traffic to malicious destinations or intercept sensitive information?
 
-A) Cross-Site Scripting (XSS)
-
-B) ARP Spoofing
-
-C) SQL Injection
-
+A) Cross-Site Scripting (XSS)\
+B) ARP Spoofing\
+C) SQL Injection\
 D) Cross-Site Request Forgery (CSRF)
 
 9. At which OSI layer do SSL/TLS encryption protocols operate, protecting data transmitted over the network from interception and tampering?
 
-A) Presentation Layer
-
-B) Application Layer
-
-C) Transport Layer
-
+A) Presentation Layer\
+B) Application Layer\
+C) Transport Layer\
 D) Network Layer
 
 10. Which vulnerability involves attackers manipulating input fields within web forms or URLs to inject malicious SQL commands, potentially leading to unauthorized access to the underlying database?
 
-A) Cross-Site Scripting (XSS)
-
-B) SQL Injection
-
-C) Denial of Service (DoS)
-
+A) Cross-Site Scripting (XSS)\
+B) SQL Injection\
+C) Denial of Service (DoS)\
 D) Man-in-the-Middle (MitM) Attack
 
 _Correct answers:_
 
-_1. B) Transport Layer_
-
-_2. C) Denial of Service (DoS)_
-
-_3. C) Application Layer_
-
-_4. B) Cross-Site Scripting (XSS)_
-
-_5. B) Network Layer_
-
-_6. B) Man-in-the-Middle (MitM) Attack_
-
-_7. C) Network Layer_
-
-_8. B) ARP Spoofing_
-
-_9. C) Transport Layer_
-
+_1. B) Transport Layer_\
+_2. C) Denial of Service (DoS)_\
+_3. C) Application Layer_\
+_4. B) Cross-Site Scripting (XSS)_\
+_5. B) Network Layer_\
+_6. B) Man-in-the-Middle (MitM) Attack_\
+_7. C) Network Layer_\
+_8. B) ARP Spoofing_\
+_9. C) Transport Layer_\
 _10. B) SQL Injection_

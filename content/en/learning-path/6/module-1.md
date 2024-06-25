@@ -131,232 +131,39 @@ The downside of migrating to a static web site generator like Hugo or Jekyll is 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Ping flood 
-   </td>
-   <td>A description of a common denial of service attack
-   </td>
-   <td>English, Chinese, Japanese, Russian, Ukrainian, Greek, Indonesian, Catalan, Spanish, French, Italian, Dutch, Polish, Portuguese, Turkish, Czech
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Ping_flood">https://en.wikipedia.org/wiki/Ping_flood</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Smurf attack
-   </td>
-   <td>A description of another common denial of service attack, includes examples and mitigations
-   </td>
-   <td>English, Arabic, Farsi, Japanese, Korean, Greek, Indonesian, Catalan, German, Spanish, Basque, French, Italian, Lombard, Dutch, Polish, Portuguese, Slovenian, Finnish, Czech
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Smurf_attack">https://en.wikipedia.org/wiki/Smurf_attack</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>NTP amplification attack
-   </td>
-   <td>An overview of how the network time protocol (NTP) could be abused for denial of service attacks
-   </td>
-   <td>English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Chinese, Taiwanese
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.cloudflare.com/learning/ddos/ntp-amplification-ddos-attack/">https://www.cloudflare.com/learning/ddos/ntp-amplification-ddos-attack/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Ping of death
-   </td>
-   <td>An attack in which a computer is overwhelmed by a malicious ping
-   </td>
-   <td>English, Arabic, Farsi, Chinese, Japanese, Korean, Bulgarian, Russian, Ukrainian, Greek, Azeri, Indonesian, German, Spanish, French, Italian, Dutch, Polish, Portuguese, Romanian, Czech, Hebrew
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Ping_of_death">https://en.wikipedia.org/wiki/Ping_of_death</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Algorithmic Complexity Attacks and the Linux Networking Code
-   </td>
-   <td>A look at how Linux handles networking and a specific attack that could be directed against it
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.enyo.de/fw/security/notes/linux-dst-cache-dos.html">https://www.enyo.de/fw/security/notes/linux-dst-cache-dos.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>What is slow HTTP post DOS attack?
-   </td>
-   <td>An overview of a denial of service attack which exploits some features in HTTP POST requests (the requests are sent slowly enough for the server to have to process them, but not slowly enough to trigger timeouts)
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.educative.io/answers/what-is-slow-http-post-dos-attack">https://www.educative.io/answers/what-is-slow-http-post-dos-attack</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Botnet
-   </td>
-   <td>An overview of what a botnet, or a group of automatically managed internet-connected devices used for malicious purposes
-   </td>
-   <td>48 languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Botnet">https://en.wikipedia.org/wiki/Botnet</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>DDoS for hire
-   </td>
-   <td>A collection of blog posts by Brian Krebs on the DDoS for hire industry
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://krebsonsecurity.com/category/ddos-for-hire/">https://krebsonsecurity.com/category/ddos-for-hire/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Targeted sophisticated phishing attacks against dissidents in Azerbaijan is trending
-   </td>
-   <td>A  2020 Qurium report about an attacker who broke into a website and then used the data to phish dissidents
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.qurium.org/alerts/targeted-sophisticated-phishing-attacks-against-dissidents-in-azerbaijan-is-trending/">https://www.qurium.org/alerts/targeted-sophisticated-phishing-attacks-against-dissidents-in-azerbaijan-is-trending/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Deflect for nonprofits
-   </td>
-   <td>Deflect is a DDoS protection program which has allows nonprofits to sign up for free
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://deflect.ca/non-profits/">https://deflect.ca/non-profits/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Google Project Shield
-   </td>
-   <td>A free DDoS protection service for news, human rights, and election-related sites
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://projectshield.withgoogle.com/landing">https://projectshield.withgoogle.com/landing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Cloudflare Project Galileo
-   </td>
-   <td>Pre DDoS protection and other security measures for at-risk sites, including artistic groups, humanitarian organizations, and political dissidents
-   </td>
-   <td>English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Chinese, Taiwanese
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.cloudflare.com/galileo/">https://www.cloudflare.com/galileo/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Secure hosting for at risk sites
-   </td>
-   <td>Qurium and Greenhost both offer hosting for groups which might be at risk of attacks due to their human rights and media work.
-   </td>
-   <td>English
-   </td>
-   <td>Varied, depending on hosting package
-   </td>
-   <td>Qurium: <a href="https://www.qurium.org/secure-hosting/">https://www.qurium.org/secure-hosting/</a>
-<p>
-Greenhost: <a href="https://greenhost.net/internet-freedom/">https://greenhost.net/internet-freedom/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Web application firewalls
-   </td>
-   <td>Network devices that sit in between an end user and a website’s origin server, like a CDN, providing an additional layer of security
-   </td>
-   <td>English
-   </td>
-   <td>Varied
-   </td>
-   <td>Sucuri: <a href="https://sucuri.net/website-firewall/">https://sucuri.net/website-firewall/</a>
-<p>
-Wordfence: <a href="https://www.wordfence.com/products/pricing/">https://www.wordfence.com/products/pricing/</a>
-<p>
-ModSecurity: <a href="https://github.com/SpiderLabs/ModSecurity">https://github.com/SpiderLabs/ModSecurity</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Web application hardeners
-   </td>
-   <td>Automated tools which find potential vulnerabilities in web applications
-   </td>
-   <td>English
-   </td>
-   <td>Varied, many free options
-   </td>
-   <td>A hardening framework: <a href="https://dev-sec.io/baselines/">https://dev-sec.io/baselines/</a>
-<p>
-Snuffleupagus: <a href="https://snuffleupagus.readthedocs.io/">https://snuffleupagus.readthedocs.io/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Static site generators
-   </td>
-   <td>An overview of major static site generators
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cloudcannon.com/jamstack-ecosystem/static-site-generators/">https://cloudcannon.com/jamstack-ecosystem/static-site-generators/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>WP2Static
-   </td>
-   <td>A WordPress plugin to generate static sites
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://wp2static.com/">https://wp2static.com/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Ping flood" languages="English, Chinese, Japanese, Russian, Ukrainian, Greek, Indonesian, Catalan, Spanish, French, Italian, Dutch, Polish, Portuguese, Turkish, Czech" cost="Free" description="A description of a common denial of service attack." url="https://en.wikipedia.org/wiki/Ping_flood" %}}
+
+{{% resource title="Smurf attack" languages="English, Arabic, Farsi, Japanese, Korean, Greek, Indonesian, Catalan, German, Spanish, Basque, French, Italian, Lombard, Dutch, Polish, Portuguese, Slovenian, Finnish, Czech" cost="Free" description="A description of another common denial of service attack, includes examples and mitigations." url="https://en.wikipedia.org/wiki/Smurf_attack" %}}
+
+{{% resource title="NTP amplification attack" languages="English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Chinese, Taiwanese" cost="Free" description="An overview of how the network time protocol (NTP) could be abused for denial of service attacks." url="https://www.cloudflare.com/learning/ddos/ntp-amplification-ddos-attack/" %}}
+
+{{% resource title="Ping of death" languages="English, Arabic, Farsi, Chinese, Japanese, Korean, Bulgarian, Russian, Ukrainian, Greek, Azeri, Indonesian, German, Spanish, French, Italian, Dutch, Polish, Portuguese, Romanian, Czech, Hebrew" cost="Free" description="An attack in which a computer is overwhelmed by a malicious ping." url="https://en.wikipedia.org/wiki/Ping_of_death" %}}
+
+{{% resource title="Algorithmic Complexity Attacks and the Linux Networking Code" languages="English" cost="Free" description="A look at how Linux handles networking and a specific attack that could be directed against it." url="https://www.enyo.de/fw/security/notes/linux-dst-cache-dos.html" %}}
+
+{{% resource title="What is slow HTTP post DOS attack?" languages="English" cost="Free" description="An overview of a denial of service attack which exploits some features in HTTP POST requests." url="https://www.educative.io/answers/what-is-slow-http-post-dos-attack" %}}
+
+{{% resource title="Botnet" languages="48 languages" cost="Free" description="An overview of what a botnet is, or a group of automatically managed internet-connected devices used for malicious purposes." url="https://en.wikipedia.org/wiki/Botnet" %}}
+
+{{% resource title="DDoS for hire" languages="English" cost="Free" description="A collection of blog posts by Brian Krebs on the DDoS for hire industry." url="https://krebsonsecurity.com/category/ddos-for-hire/" %}}
+
+{{% resource title="Targeted sophisticated phishing attacks against dissidents in Azerbaijan is trending" languages="English" cost="Free" description="A 2020 Qurium report about an attacker who broke into a website and then used the data to phish dissidents." url="https://www.qurium.org/alerts/targeted-sophisticated-phishing-attacks-against-dissidents-in-azerbaijan-is-trending/" %}}
+
+{{% resource title="Deflect for nonprofits" languages="English" cost="Free" description="Deflect is a DDoS protection program which allows nonprofits to sign up for free." url="https://deflect.ca/non-profits/" %}}
+
+{{% resource title="Google Project Shield" languages="English" cost="Free" description="A free DDoS protection service for news, human rights, and election-related sites." url="https://projectshield.withgoogle.com/landing" %}}
+
+{{% resource title="Cloudflare Project Galileo" languages="English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Chinese, Taiwanese" cost="Free" description="Pre DDoS protection and other security measures for at-risk sites, including artistic groups, humanitarian organizations, and political dissidents." url="https://www.cloudflare.com/galileo/" %}}
+
+{{% resource title="Secure hosting for at risk sites" languages="English" cost="Varied, depending on hosting package" description="Qurium and Greenhost both offer hosting for groups which might be at risk of attacks due to their human rights and media work." url="Qurium: https://www.qurium.org/secure-hosting/" url2="Greenhost: https://greenhost.net/internet-freedom/" %}}
+
+{{% resource title="Web application firewalls" languages="English" cost="Varied" description="Network devices that sit between an end user and a website’s origin server, like a CDN, providing an additional layer of security." url="Sucuri: https://sucuri.net/website-firewall/" url2="Wordfence: https://www.wordfence.com/products/pricing/" url3="ModSecurity: https://github.com/SpiderLabs/ModSecurity" %}}
+
+{{% resource title="Web application hardeners" languages="English" cost="Varied, many free options" description="Automated tools which find potential vulnerabilities in web applications." url="A hardening framework: https://dev-sec.io/baselines/" url2="Snuffleupagus: https://snuffleupagus.readthedocs.io/" %}}
+
+{{% resource title="Static site generators" languages="English" cost="Free" description="An overview of major static site generators." url="https://cloudcannon.com/jamstack-ecosystem/static-site-generators/" %}}
+
+{{% resource title="WP2Static" languages="English" cost="Free" description="A WordPress plugin to generate static sites." url="https://wp2static.com/" %}}
 
 ## Skill Check
 
@@ -366,43 +173,31 @@ Test your knowledge of website hardening practices and gain insights into the es
 
 1. What development and maintenance process ensure a website can be recreated if production hosting servers are unavailable?
 
-   A) Regularly updating website plugins and themes
-
-   B) Implementing multi-factor authentication for admin accounts
-
-   C) Using version control systems and automated backups
-
-   D) Enforcing strict password policies for user accounts
+A) Regularly updating website plugins and themes\
+B) Implementing multi-factor authentication for admin accounts\
+C) Using version control systems and automated backups\
+D) Enforcing strict password policies for user accounts
 
 2. How can a CDN (Content Delivery Network) help protect a website from Denial of Service (DoS) attacks?
 
-   A) By distributing website content across multiple servers to handle traffic spikes
-
-   B) By encrypting all data transmitted between the server and client
-
-   C) By providing additional layers of authentication for user logins
-
-   D) By automatically blocking access to suspicious IP addresses
+A) By distributing website content across multiple servers to handle traffic spikes\
+B) By encrypting all data transmitted between the server and client\
+C) By providing additional layers of authentication for user logins\
+D) By automatically blocking access to suspicious IP addresses
 
 3. Which technology can enhance a website's resistance to DoS (Denial of Service) and hacking by serving pre-rendered HTML pages to users?
 
-   A) Serverless computing platforms
-
-   B) Dynamic web application frameworks
-
-   C) Content Management Systems (CMS)
-
-   D) Static site generators
+A) Serverless computing platforms\
+B) Dynamic web application frameworks\
+C) Content Management Systems (CMS)\
+D) Static site generators
 
 4. How do configuration hardeners and WAFs (Web Application Firewalls) contribute to making a website more resistant to hacking?
 
-   A) By optimizing server performance and resource usage
-
-   B) By implementing additional layers of authentication for user logins
-
-   C) By automatically detecting and blocking known attack patterns and suspicious traffic
-
-   D) By encrypting all data transmitted between the server and client
+A) By optimizing server performance and resource usage\
+B) By implementing additional layers of authentication for user logins\
+C) By automatically detecting and blocking known attack patterns and suspicious traffic\
+D) By encrypting all data transmitted between the server and client
 
 Correct answers and explanations:
 

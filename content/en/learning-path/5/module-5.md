@@ -85,116 +85,21 @@ One last note on reporting: it is very important that you document findings in y
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>The Checklist
-   </td>
-   <td>An article about the importance of using checklists in many different professions
-   </td>
-   <td>English
-   </td>
-   <td>Free for first articles from the publication, later ones require subscription
-   </td>
-   <td><a href="https://www.newyorker.com/magazine/2007/12/10/the-checklist">https://www.newyorker.com/magazine/2007/12/10/the-checklist</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OWASP vulnerable web applications directory
-   </td>
-   <td>A collection of web applications with known vulnerabilities which can be used to test out web assessment and penetration testing skills
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-project-vulnerable-web-applications-directory/">https://owasp.org/www-project-vulnerable-web-applications-directory/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Methodology for high-quality web application security testing
-   </td>
-   <td>A comprehensive (and, to quote the author, “opinionated”) list of issues a digital protector should review when assessing the security of web applications
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/tprynn/web-methodology/wiki">https://github.com/tprynn/web-methodology/wiki</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Samy (worm)
-   </td>
-   <td>An example of a piece of malicious code which exploited XSS vulnerabilities
-   </td>
-   <td>English, Arabic, Chinese, Indonesian, Lombard
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Samy_(computer_worm)">https://en.wikipedia.org/wiki/Samy_(computer_worm)</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>An overview of CVSS
-   </td>
-   <td>A quick look at the common vulnerability scoring system, a structured approach used to rate the severity of vulnerabilities
-   </td>
-   <td>Arabic, Bulgarian, Catalan, Czech, Danish, German, Greek, English, Spanish, Finnish, French, Croatian, Hungarian, Italian, Hebrew, Japanese, Korean, Kazakh, Dutch, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Serbian, Swedish, Thai, Turkish, Vietnamese, Chinese Simplified, Chinese Traditional 
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.ibm.com/docs/en/qsip/7.5?topic=vulnerabilities-common-vulnerability-scoring-system-cvss">https://www.ibm.com/docs/en/qsip/7.5?topic=vulnerabilities-common-vulnerability-scoring-system-cvss</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OWASP risk rating methodology
-   </td>
-   <td>There are many different ways of rating the risks of vulnerabilities and exploits, and OWASP makes one of them, described here in detail.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://owasp.org/www-community/OWASP_Risk_Rating_Methodology">https://owasp.org/www-community/OWASP_Risk_Rating_Methodology</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Bugcrowd vulnerability taxonomy
-   </td>
-   <td>Another way of tracking risks of vulnerabilities, this time by Bugcrowd
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://bugcrowd.com/vulnerability-rating-taxonomy">https://bugcrowd.com/vulnerability-rating-taxonomy</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Public penetration testing reports
-   </td>
-   <td>A public list of penetration testing reports produced
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/juliocesarfort/public-pentesting-reports/tree/master">https://github.com/juliocesarfort/public-pentesting-reports/tree/master</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="The Checklist" languages="English" cost="Free for first articles from the publication, later ones require subscription" description="An article about the importance of using checklists in various professions." url="https://www.newyorker.com/magazine/2007/12/10/the-checklist" %}}
+
+{{% resource title="OWASP vulnerable web applications directory" languages="English" cost="Free" description="A collection of web applications with known vulnerabilities for testing web assessment and penetration testing skills." url="https://owasp.org/www-project-vulnerable-web-applications-directory/" %}}
+
+{{% resource title="Methodology for high-quality web application security testing" languages="English" cost="Free" description="A comprehensive list of issues to review when assessing the security of web applications." url="https://github.com/tprynn/web-methodology/wiki" %}}
+
+{{% resource title="Samy (worm)" languages="English, Arabic, Chinese, Indonesian, Lombard" cost="Free" description="An example of a malicious code exploiting XSS vulnerabilities." url="https://en.wikipedia.org/wiki/Samy_(computer_worm)" %}}
+
+{{% resource title="An overview of CVSS" languages="Arabic, Bulgarian, Catalan, Czech, Danish, German, Greek, English, Spanish, Finnish, French, Croatian, Hungarian, Italian, Hebrew, Japanese, Korean, Kazakh, Dutch, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Serbian, Swedish, Thai, Turkish, Vietnamese, Chinese Simplified, Chinese Traditional" cost="Free" description="A quick look at the Common Vulnerability Scoring System (CVSS), used to rate the severity of vulnerabilities." url="https://www.ibm.com/docs/en/qsip/7.5?topic=vulnerabilities-common-vulnerability-scoring-system-cvss" %}}
+
+{{% resource title="OWASP risk rating methodology" languages="English" cost="Free" description="Describes OWASP's methodology for rating risks of vulnerabilities and exploits." url="https://owasp.org/www-community/OWASP_Risk_Rating_Methodology" %}}
+
+{{% resource title="Bugcrowd vulnerability taxonomy" languages="English" cost="Free" description="Bugcrowd's approach to tracking risks of vulnerabilities." url="https://bugcrowd.com/vulnerability-rating-taxonomy" %}}
+
+{{% resource title="Public penetration testing reports" languages="English" cost="Free" description="A public repository of penetration testing reports." url="https://github.com/juliocesarfort/public-pentesting-reports/tree/master" %}}
 
 ## Practice
 
