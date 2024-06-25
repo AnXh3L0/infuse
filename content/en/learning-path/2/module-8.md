@@ -54,106 +54,19 @@ To learn more about the kinds of techniques that Hybrid Analysis uses, you can l
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Verify SHA256 checksum
-   </td>
-   <td>A quick guide on how to use the command line to verify sha256 checksums for files
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://techdocs.akamai.com/download-ctr/docs/verify-checksum">https://techdocs.akamai.com/download-ctr/docs/verify-checksum</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>VirusTotal
-   </td>
-   <td>A web service where users can upload either files or hashes thereof to check them against known malware from a wide range of malware detection engines. Owned by Alphabet/ Google
-   </td>
-   <td>English
-   </td>
-   <td>Free, with rate limits
-   </td>
-   <td><a href="https://www.virustotal.com/gui/home/upload">https://www.virustotal.com/gui/home/upload</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Hybrid Analysis
-   </td>
-   <td>A service somewhat similar to VirusTotal, but it can also perform dynamic analysis (running the file and observing what happens)
-   </td>
-   <td>English
-   </td>
-   <td>Free, with premium features
-   </td>
-   <td><a href="https://www.hybrid-analysis.com/">https://www.hybrid-analysis.com/</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Any.run
-   </td>
-   <td>A commercial sandbox
-   </td>
-   <td>Free only for non-commercial use
-   </td>
-   <td>English
-   </td>
-   <td><a href="https://any.run/">https://any.run/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Joe Sandbox
-   </td>
-   <td>A commercial sandbox
-   </td>
-   <td>Free for public accounts (the results of the analysis will be published on the website)
-   </td>
-   <td>English
-   </td>
-   <td><a href="https://www.joesandbox.com/#windows">https://www.joesandbox.com/#windows</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Cuckoo Sandbox
-   </td>
-   <td>A sandbox service run by the Estonian CERT (Computer Emergency  Response Team)
-   </td>
-   <td>Free
-   </td>
-   <td>English
-   </td>
-   <td><a href="https://cuckoo.cert.ee/">https://cuckoo.cert.ee/</a>
-<p>
-<a href="https://cuckoo-hatch.cert.ee/">https://cuckoo-hatch.cert.ee/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Windows Sandbox
-   </td>
-   <td>A powerful sandbox tool built into Windows
-   </td>
-   <td>Requires Windows Pro, Education, or Enterprise
-   </td>
-   <td>Many languages
-   </td>
-   <td><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview">https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Verify SHA256 checksum" languages="English" cost="Free" description="Quick guide on using the command line to verify sha256 checksums for files." url="https://techdocs.akamai.com/download-ctr/docs/verify-checksum" %}}
+
+{{% resource title="VirusTotal" languages="English" cost="Free, with rate limits" description="Web service to check files or hashes against known malware using multiple detection engines." url="https://www.virustotal.com/gui/home/upload" %}}
+
+{{% resource title="Hybrid Analysis" languages="English" cost="Free, with premium features" description="Service similar to VirusTotal, offering dynamic analysis capabilities." url="https://www.hybrid-analysis.com/" %}}
+
+{{% resource title="Any.run" languages="English" cost="Free for non-commercial use" description="Commercial sandbox service for analyzing malware behavior." url="https://any.run/" %}}
+
+{{% resource title="Joe Sandbox" languages="English" cost="Free for public accounts (results published)" description="Commercial sandbox service for analyzing malware." url="https://www.joesandbox.com/#windows" %}}
+
+{{% resource title="Cuckoo Sandbox" languages="English" cost="Free" description="Sandbox service provided by the Estonian CERT for malware analysis." url="https://cuckoo.cert.ee/" %}}
+
+{{% resource title="Windows Sandbox" languages="Requires Windows Pro, Education, or Enterprise" cost="Free" description="Built-in sandbox tool in Windows for safely running applications." url="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview" %}}
 
 ## Practice
 

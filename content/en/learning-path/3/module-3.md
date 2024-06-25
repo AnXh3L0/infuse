@@ -61,192 +61,37 @@ PiRogue Tool Suite (outlined in the detecting malware learning path) can also [d
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Chapter 10, Field Guide to incident response for civil society and media
-   </td>
-   <td>The first pages of this chapter provide an in-depth look at how we can use sandboxes to analyze email payloads.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf">https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Any.run
-   </td>
-   <td>A commercial sandbox
-   </td>
-   <td>English
-   </td>
-   <td>Free only for non-commercial use
-   </td>
-   <td><a href="https://any.run/">https://any.run/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Joe Sandbox
-   </td>
-   <td>Another commercial sandbox
-   </td>
-   <td>English
-   </td>
-   <td>Free for public accounts (the results of the analysis will be published on the website)
-   </td>
-   <td><a href="https://www.joesandbox.com/#windows">https://www.joesandbox.com/#windows</a>  
-   </td>
-  </tr>
-  <tr>
-   <td>Cuckoo Sandbox
-   </td>
-   <td>A sandbox service run by the Estonian CERT (Computer Emergency Response Team)
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://cuckoo.cert.ee/">https://cuckoo.cert.ee/</a>
-<p>
-<a href="https://cuckoo-hatch.cert.ee/">https://cuckoo-hatch.cert.ee/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Hybrid Analysis
-   </td>
-   <td>A sandbox service by CrowdStrike which mixes static and dynamic analysis
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.hybrid-analysis.com/">https://www.hybrid-analysis.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Triage sandbox
-   </td>
-   <td>Community driven sandbox
-   </td>
-   <td>English
-   </td>
-   <td>Registration required
-   </td>
-   <td><a href="https://tria.ge/">https://tria.ge/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Online class on malware dynamic analysis
-   </td>
-   <td>A three-day class that provides an interview of dynamic malware analysis.
-<p>
-While the class might be based on Windows XP, all that matters at this stage of malware analysis is the program binary format. The basics thereof have not changed in the last decade+, rendering the class still relevant.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://opensecuritytraining.info/MalwareDynamicAnalysis.html">https://opensecuritytraining.info/MalwareDynamicAnalysis.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Case study 1: Dynamic Analysis of a Windows Malicious Self-Propagating Binary
-   </td>
-   <td>This blogpost, a 15 minute read, demonstrates dynamic analysis of a Windows binary, including network traffic and command and control traffic.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.keysight.com/blogs/tech/nwvs/2022/06/10/dynamic-analysis-of-a-windows-malicious-self-propagating-binary">https://www.keysight.com/blogs/tech/nwvs/2022/06/10/dynamic-analysis-of-a-windows-malicious-self-propagating-binary</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Case study 2: Configuring a Windows Domain to Dynamically Analyze an Obfuscated Lateral Movement Tool
-   </td>
-   <td>Investigates malware that has pretty powerful de-obfuscation mechanisms and explains how security analysts can use dynamic analysis to learn more about it. It includes pieces on how to build a test environment and do dynamic analysis on a specific domain.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.real-sec.com/2020/07/configuring-a-windows-domain-to-dynamically-analyze-an-obfuscatedlateral-movement-tool/">https://www.real-sec.com/2020/07/configuring-a-windows-domain-to-dynamically-analyze-an-obfuscatedlateral-movement-tool/</a>  
-   </td>
-  </tr>
-  <tr>
-   <td>Cast study 3: Starting dynamic analysis on a Windows x64 rootkit
-   </td>
-   <td>An in-depth look at the dynamic analysis of Windows rootkits, including an overview of how to set up a VM specifically to collect data on it. Also shows how to combine static and dynamic analysis.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://medium.com/@0x4ndr3/starting-dynamic-analysis-on-a-windows-x64-rootkit-8c7a74871fda">https://medium.com/@0x4ndr3/starting-dynamic-analysis-on-a-windows-x64-rootkit-8c7a74871fda</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Malware traffic analysis
-   </td>
-   <td>A great resource which looks at how to use captured network packets to detect and analyze malware.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://malware-traffic-analysis.net/">https://malware-traffic-analysis.net/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Hack The Box course on mobile penetration testing
-   </td>
-   <td>The tools and techniques used for mobile malware dynamic analysis are largely the same as those used for mobile application penetration testing. This article (and associated exercises) provides a solid introduction to the practice.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.hackthebox.com/blog/intro-to-mobile-pentesting">https://www.hackthebox.com/blog/intro-to-mobile-pentesting</a> and <a href="https://app.hackthebox.com/tracks/Intro-to-Android-Exploitation">https://app.hackthebox.com/tracks/Intro-to-Android-Exploitation</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Frida and House for Android
-   </td>
-   <td>Frida is an open-source multi-platform debugging framework. While it doesn’t have a GUI, it is quite powerful, letting you dynamically monitor app behavior. To make it a little easier to use, there’s a tool called House that is an interface to Frida.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://frida.re/docs/android/">https://frida.re/docs/android/</a> and <a href="https://github.com/nccgroup/house">https://github.com/nccgroup/house</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Advanced guide - How to use PiRogue to intercept the TLS traffic of a mobile app
-   </td>
-   <td>A series of instructions on how you could use PiRogue Tool Suite in order to perform dynamic analysis on potentially malicious Android binaries
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/guides/g8/">https://pts-project.org/guides/g8/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Chapter 10, Field Guide to incident response for civil society and media" languages="English" cost="Free" description="In-depth look at using sandboxes to analyze email payloads." url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+
+{{% resource title="Any.run" languages="English" cost="Free only for non-commercial use" description="Commercial sandbox for analyzing malware." url="https://any.run/" %}}
+
+{{% resource title="Joe Sandbox" languages="English" cost="Free for public accounts (results published on website)" description="Commercial sandbox service for malware analysis." url="https://www.joesandbox.com/#windows" %}}
+
+{{% resource title="Cuckoo Sandbox" languages="English" cost="Free" description="Sandbox service by Estonian CERT for malware analysis." url="https://cuckoo.cert.ee/" %}}
+
+{{% resource title="Hybrid Analysis" languages="English" cost="Free" description="Sandbox service by CrowdStrike mixing static and dynamic analysis." url="https://www.hybrid-analysis.com/" %}}
+
+{{% resource title="Triage sandbox" languages="English" cost="Registration required" description="Community-driven sandbox for analyzing malware." url="https://tria.ge/" %}}
+
+{{% resource title="Online class on malware dynamic analysis" languages="English" cost="Free" description="Three-day class on dynamic malware analysis." url="https://opensecuritytraining.info/MalwareDynamicAnalysis.html" %}}
+
+{{% resource title="Case study 1: Dynamic Analysis of a Windows Malicious Self-Propagating Binary" languages="English" cost="Free" description="Blogpost demonstrating dynamic analysis of a Windows binary." url="https://www.keysight.com/blogs/tech/nwvs/2022/06/10/dynamic-analysis-of-a-windows-malicious-self-propagating-binary" %}}
+
+{{% resource title="Case study 2: Configuring a Windows Domain to Dynamically Analyze an Obfuscated Lateral Movement Tool" languages="English" cost="Free" description="Case study on dynamic analysis of obfuscated malware in a Windows domain." url="https://www.real-sec.com/2020/07/configuring-a-windows-domain-to-dynamically-analyze-an-obfuscatedlateral-movement-tool/" %}}
+
+{{% resource title="Case study 3: Starting dynamic analysis on a Windows x64 rootkit" languages="English" cost="Free" description="In-depth look at dynamic analysis of Windows rootkits." url="https://medium.com/@0x4ndr3/starting-dynamic-analysis-on-a-windows-x64-rootkit-8c7a74871fda" %}}
+
+{{% resource title="Malware traffic analysis" languages="English" cost="Free" description="Guide on using captured network packets to analyze malware." url="https://malware-traffic-analysis.net/" %}}
+
+{{% resource title="Hack The Box course on mobile penetration testing" languages="English" cost="Free" description="Introduction to mobile malware dynamic analysis." url="https://www.hackthebox.com/blog/intro-to-mobile-pentesting" %}}
+
+{{% resource title="Hack The Box: Intro to Android Exploitation" languages="English" cost="Free" description="Exercises on mobile application penetration testing." url="https://app.hackthebox.com/tracks/Intro-to-Android-Exploitation" %}}
+
+{{% resource title="Frida and House for Android" languages="English" cost="Free" description="Tools for dynamic monitoring and debugging of Android apps." url="https://frida.re/docs/android/" %}}
+
+{{% resource title="House" languages="English" cost="Free" description="Interface to Frida for Android app analysis." url="https://github.com/nccgroup/house" %}}
+
+{{% resource title="Advanced guide - How to use PiRogue to intercept the TLS traffic of a mobile app" languages="English" cost="Free" description="Instructions on using PiRogue Tool Suite for dynamic analysis of Android binaries." url="https://pts-project.org/guides/g8/" %}}
 
 ## Skill Check
 

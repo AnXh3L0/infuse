@@ -61,56 +61,12 @@ This last term on chain of custody refers to best practice in digital forensics 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Intermediate guide - How to handle a potentially compromised device
-   </td>
-   <td>A step-by-step guide on how to handle devices with iOS or Android which you suspect might have malware on them prior to starting detection work
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/guides/g6/">https://pts-project.org/guides/g6/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Virtual machine chapter of the Field Guide to incident response for civil society and media (chapter 6)
-   </td>
-   <td>An introductory overview of how malware analysts can start working with virtual machines and an installation of the Linux distribution
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf">https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Technical simulation with canary tokens
-   </td>
-   <td>A guide on how to use canary tokens, an offensive security tool, to simulate malware trackers. Can be very useful in teaching defenders what data can be easily exfiltrated
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/">https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/</a>
-   </td>
-  </tr>
-</table>
+{{% resource title="Intermediate guide - How to handle a potentially compromised device" languages="English" cost="Free" description="A step-by-step guide on how to handle devices with iOS or Android which you suspect might have malware on them prior to starting detection work" url="https://pts-project.org/guides/g6/" %}}
+
+{{% resource title="Virtual machine chapter of the Field Guide to incident response for civil society and media (chapter 6)" languages="English" cost="Free" description="An introductory overview of how malware analysts can start working with virtual machines and an installation of the Linux distribution" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+
+{{% resource title="Technical simulation with canary tokens" languages="English" cost="Free" description="A guide on how to use canary tokens, an offensive security tool, to simulate malware trackers. Can be very useful in teaching defenders what data can be easily exfiltrated" url="https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/" %}}
+
 
 ## Practice
 

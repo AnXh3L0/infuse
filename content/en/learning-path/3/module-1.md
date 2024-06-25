@@ -24,68 +24,13 @@ In order to move malware files around, the standard practice is to put them in e
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Field Guide to incident response for civil society and media
-   </td>
-   <td>A  guide on how to analyze potentially malicious content, set up virtual machines, and more
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf">https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>REMnux 
-   </td>
-   <td>The webpage for the REMnux Linux distro, which is often used for malware analysis
-   </td>
-   <td>The website and documentation for the distro are in English; various tools with the distro itself might be localized in other languages.
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://remnux.org/">https://remnux.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Get the virtual appliance
-   </td>
-   <td>A guide on how to install and run REMnux as a virtual machine
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.remnux.org/install-distro/get-virtual-appliance">https://docs.remnux.org/install-distro/get-virtual-appliance</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>The difference between snapshots and backups
-   </td>
-   <td>An article which highlights how a virtual machine can contain both snapshots and backups, and the difference between them. Understanding both will make it much easier to manage and reset virtual machines used for malware analysis.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.nakivo.com/blog/vm-snapshot-vs-backup/">https://www.nakivo.com/blog/vm-snapshot-vs-backup/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Field Guide to incident response for civil society and media" languages="English" cost="Free" description="Guide on analyzing potentially malicious content, setting up virtual machines, and more." url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+
+{{% resource title="REMnux" languages="English" cost="Free" description="Webpage for the REMnux Linux distro, widely used for malware analysis." url="https://remnux.org/" %}}
+
+{{% resource title="Get the virtual appliance" languages="English" cost="Free" description="Guide on installing and running REMnux as a virtual machine." url="https://docs.remnux.org/install-distro/get-virtual-appliance" %}}
+
+{{% resource title="The difference between snapshots and backups" languages="English" cost="Free" description="Article explaining the distinctions between VM snapshots and backups, crucial for managing and resetting VMs used in malware analysis." url="https://www.nakivo.com/blog/vm-snapshot-vs-backup/" %}}
 
 ## Practice
 

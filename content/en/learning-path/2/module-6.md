@@ -103,175 +103,60 @@ Understand as well that intercepting traffic of a client’s device may expose o
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Pirogue Tool Suite Documentation
-   </td>
-   <td>The documentation for PiRogue tool suite
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/docs/prologue/introduction/">https://pts-project.org/docs/prologue/introduction/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>PiRogue Tool Suite Guides
-   </td>
-   <td>Additional set of guides for PiRogue tool suite
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/docs/prologue/introduction/">https://pts-project.org/docs/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>SpyGuard wiki
-   </td>
-   <td>The documentation for SpyGuard
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/SpyGuard/SpyGuard/wiki">https://github.com/SpyGuard/SpyGuard/wiki</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Malware Traffic Analysis
-   </td>
-   <td>Advanced resource with sample PCAP files for those who wish to go further in their journey to develop traffic analysis skills 
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td><a href="https://www.malware-traffic-analysis.net/">malware-traffic-analysis.net</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Emergency VPN
-   </td>
-   <td>A project by CivilSphere, which allows you to connect to a special VPN which collects your device’s internet connectivity data and then compiles detailed reports on it
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.civilsphereproject.org/emergency-vpn">https://www.civilsphereproject.org/emergency-vpn</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Threat Hunting Training Course
-   </td>
-   <td>A free, one day course on analyzing and interpreting network data for threat hunting
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.activecountermeasures.com/hunt-training/">https://www.activecountermeasures.com/hunt-training/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Course on network security monitoring with Suricata
-   </td>
-   <td>A free course on how to use Suricata, a commonly used open source threat detection tool
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.pluralsight.com/courses/network-security-monitoring-suricata">https://www.pluralsight.com/courses/network-security-monitoring-suricata</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Outbound firewalls
-   </td>
-   <td>An outbound firewall is a program installed on a computer which analyzes all of the traffic which leaves it and all the servers it connects to. While it can gather a lot of data, the signal/ noise ratio can also be worse than with other tools.
-   </td>
-   <td>Various
-   </td>
-   <td>Most are either free or have free versions available
-   </td>
-   <td>MacOS
+{{% resource title="Pirogue Tool Suite Documentation" languages="English" cost="Free" description="The documentation for PiRogue tool suite." url="https://pts-project.org/docs/prologue/introduction/" %}}
+
+{{% resource title="PiRogue Tool Suite Guides" languages="English" cost="Free" description="Additional set of guides for PiRogue tool suite." url="https://pts-project.org/docs/" %}}
+
+{{% resource title="SpyGuard wiki" languages="English" cost="Free" description="The documentation for SpyGuard." url="https://github.com/SpyGuard/SpyGuard/wiki" %}}
+
+{{% resource title="Malware Traffic Analysis" languages="English" cost="" description="Advanced resource with sample PCAP files for those who wish to develop traffic analysis skills." url="https://www.malware-traffic-analysis.net/" %}}
+
+{{% resource title="Emergency VPN" languages="English" cost="Free" description="A project by CivilSphere, which allows you to connect to a special VPN collecting your device’s internet data for detailed reports." url="https://www.civilsphereproject.org/emergency-vpn" %}}
+
+{{% resource title="Threat Hunting Training Course" languages="English" cost="Free" description="A free, one day course on analyzing and interpreting network data for threat hunting." url="https://www.activecountermeasures.com/hunt-training/" %}}
+
+{{% resource title="Course on network security monitoring with Suricata" languages="English" cost="Free" description="A free course on how to use Suricata, a commonly used open source threat detection tool." url="https://www.pluralsight.com/courses/network-security-monitoring-suricata" %}}
+
+{{% resource title="Outbound firewalls" languages="Various" cost="Most are either free or have free versions available" description="An outbound firewall analyzes outbound traffic and connects to servers. Includes tools like LuLu, Little Snitch, PortMaster, GlassWire, NetGuard, AFWall+, and OpenSnitch." url="" %}}
+
 <ul>
-
-<li><a href="https://objective-see.org/products/lulu.html">LuLu </a>(Open Source, Free)
-
-<li><a href="https://www.obdev.at/products/littlesnitch">Little Snitch</a> (Paid) or <a href="https://www.obdev.at/products/index.html">Little Snitch Mini</a> (Proprietary, Free)
-
-<p>
-Windows
-<ul>
-
-<li><a href="https://safing.io/">PortMaster </a>(Open Source, Free/Paid version available with network history/investigation feature)
-
-<li><a href="https://www.glasswire.com/">GlassWire</a> (Proprietary Free/Paid Version available)
-
-<p>
-Android
-<ul>
-
-<li><a href="https://github.com/M66B/NetGuard">NetGuard</a> (Open Source Free/Freemium version available with traffic capture/history)
-
-<li><a href="https://github.com/ukanth/afwall">AFWall+ </a>(Open Source, Free)
-
-<p>
-Linux
-<ul>
-
-<li><a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a> (Open Source, Free)
+<li>macOS:
+  <ul>
+    <li><a href="https://objective-see.org/products/lulu.html">LuLu</a> (Open Source, Free)</li>
+    <li><a href="https://www.obdev.at/products/littlesnitch">Little Snitch</a> (Paid) or <a href="https://www.obdev.at/products/index.html">Little Snitch Mini</a> (Proprietary, Free)</li>
+  </ul>
+</li>
+<li>Windows:
+  <ul>
+    <li><a href="https://safing.io/">PortMaster</a> (Open Source, Free/Paid version available)</li>
+    <li><a href="https://www.glasswire.com/">GlassWire</a> (Proprietary, Free/Paid Version available)</li>
+  </ul>
+</li>
+<li>Android:
+  <ul>
+    <li><a href="https://github.com/M66B/NetGuard">NetGuard</a> (Open Source Free/Freemium version available)</li>
+    <li><a href="https://github.com/ukanth/afwall">AFWall+</a> (Open Source, Free)</li>
+  </ul>
+</li>
+<li>Linux:
+  <ul>
+    <li><a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a> (Open Source, Free)</li>
+  </ul>
 </li>
 </ul>
-</li>
+
+{{% resource title="Threat hunting platforms" languages="Several" cost="" description="Several platforms using network data to detect threats within systems, including Security Onion, pfSense, OPNsense, AC Hunter Community Edition, RITA, Wazuh, and Suricata." url="" %}}
+
+<ul>
+  <li><a href="https://github.com/Security-Onion-Solutions/securityonion">Security Onion</a></li>
+  <li><a href="https://www.pfsense.org/">pfSense</a></li>
+  <li><a href="https://opnsense.org/">OPNsense</a></li>
+  <li><a href="https://www.activecountermeasures.com/ac-hunter-community-edition/">AC Hunter Community Edition</a></li>
+  <li><a href="https://github.com/activecm/rita">RITA</a></li>
+  <li><a href="https://wazuh.com/">Wazuh</a></li>
+  <li><a href="https://suricata.io/features/">Suricata</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td>Threat hunting platforms
-   </td>
-   <td>Here we present several platforms which use network data in order to detect possible threats within a system
-   </td>
-   <td>Several
-   </td>
-   <td>
-   </td>
-   <td><a href="https://github.com/Security-Onion-Solutions/securityonion">https://github.com/Security-Onion-Solutions/securityonion</a>
-<p>
-<a href="https://www.pfsense.org/">https://www.pfsense.org/</a>
-<p>
-<a href="https://opnsense.org/">https://opnsense.org/</a>
-<p>
-<a href="https://www.activecountermeasures.com/ac-hunter-community-edition/">https://www.activecountermeasures.com/ac-hunter-community-edition/</a>
-<p>
-<a href="https://github.com/activecm/rita">https://github.com/activecm/rita</a>
-<p>
-<a href="https://wazuh.com/">https://wazuh.com/</a>
-<p>
-<a href="https://suricata.io/features/">https://suricata.io/features/</a> 
-   </td>
-  </tr>
-</table>
+
 
 ## Skill Check
 

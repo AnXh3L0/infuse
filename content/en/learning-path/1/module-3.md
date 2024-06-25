@@ -46,26 +46,11 @@ As you document potentially malicious URLs, it is common practice to ‘defang�
 
 This is commonly done by replacing the protocol section of the URL with an invalid equivalent, and enclosing dots in the URL with [square brackets]. For example:
 
-<table>
-  <tr>
-   <td>From live URL
-   </td>
-   <td>To defanged URL
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.coca-colacompany.com/">https://www.malicious-site.com</a>
-   </td>
-   <td>hxxps://www[.]malicious-site[.]com
-   </td>
-  </tr>
-  <tr>
-   <td>ftp://192.168.12.20 
-   </td>
-   <td>fxp://192[.]168[.]12[.]20
-   </td>
-  </tr>
-</table>
+| From live URL                                                      | To defanged URL                   |
+|--------------------------------------------------------------------|-----------------------------------|
+| [https://www.malicious-site.com](https://www.malicious-site.com)   | hxxps://www[.]malicious-site[.]com |
+| ftp://192.168.12.20                                                | fxp://192[.]168[.]12[.]20          |
+
 
 This can be done manually using a text-only editor such as NotePad, Textedit, or Gedit. Also see utilities like [https://defang.me/](https://defang.me/) or search for Defang tools in [CyberChef](https://gchq.github.io/CyberChef).
 
@@ -79,56 +64,11 @@ If you suspect that a targeted person’s device has been compromised, ask them 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>NoScript
-   </td>
-   <td>A browser extension for Firefox and Chromium-based browsers, which allows you to selectively block or allow the execution of JavaScript. When looking at potentially malicious websites, it enables you to load the site while disabling much of its potentially damaging functionality.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://noscript.net/">https://noscript.net/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Defang.me
-   </td>
-   <td>A tool which automatically defangs URLs and IP addresses
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://defang.me/">https://defang.me/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>CyberChef
-   </td>
-   <td>A comprehensive tool for converting between different formats, also able to automatically defang URLs and IP addresses
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://gchq.github.io/CyberChef/">https://gchq.github.io/CyberChef/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="NoScript" languages="English" cost="Free" description="A browser extension for Firefox and Chromium-based browsers, which allows you to selectively block or allow the execution of JavaScript. When looking at potentially malicious websites, it enables you to load the site while disabling much of its potentially damaging functionality." url="https://noscript.net/" %}}
+
+{{% resource title="Defang.me" languages="English" cost="Free" description="A tool which automatically defangs URLs and IP addresses." url="https://defang.me/" %}}
+
+{{% resource title="CyberChef" languages="English" cost="Free" description="A comprehensive tool for converting between different formats, also able to automatically defang URLs and IP addresses." url="https://gchq.github.io/CyberChef/" %}}
 
 ## Practice
 

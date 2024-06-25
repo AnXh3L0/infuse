@@ -47,188 +47,33 @@ For a quick read on the IoCs that MVT checks for, how to download and give MVT n
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Smartphone malware forensics: An introduction
-   </td>
-   <td>A talk by two mobile malware researchers working with journalists where they outline the basics of smartphone malware forensics, how it differs from desktop forensics, and what the leading tools and methods are
-   </td>
-   <td>Original talk is in German, translated into French and English. Slides are in English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://media.ccc.de/v/37c3-11874-einfuhrung_in_smartphone_malware_forensik">https://media.ccc.de/v/37c3-11874-einfuhrung_in_smartphone_malware_forensik</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Mobile forensics
-   </td>
-   <td>This comprehensive guide was initially created by Security Without Borders. It looks at how to do basic forensics and data gathering on every major platform.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pellaeon.gitbook.io/mobile-forensics/">https://pellaeon.gitbook.io/mobile-forensics/</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>How to make a Windows 10/11 image backup
-   </td>
-   <td>In order to analyze a system for malware, we first need to make a copy of the files and folders on this system. This guide shows us how we can do so on Windows.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.computerworld.com/article/3655693/how-to-make-image-backup-windows-10-windows-11.html">https://www.computerworld.com/article/3655693/how-to-make-image-backup-windows-10-windows-11.html</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>How to back up a Mac or Macbook
-   </td>
-   <td>This article focuses on disk images on macOS.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.macworld.com/article/671336/how-to-back-up-a-mac-or-macbook.html">https://www.macworld.com/article/671336/how-to-back-up-a-mac-or-macbook.html</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>How To Backup Your Entire Linux System Using Rsync
-   </td>
-   <td>This piece uses rsync, a very powerful command line utility which can also be used to clone a Linux system for the purposes of analyzing the subsequent disk image.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://ostechnix.com/backup-entire-linux-system-using-rsync/">https://ostechnix.com/backup-entire-linux-system-using-rsync/</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>MVT, mobile verification toolkit
-   </td>
-   <td>A free tool which can analyze backups of iOS and Android systems to look for IoCs associated with malware or spyware infections. Used extensively in device forensics for civil society
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.mvt.re/en/latest/">https://docs.mvt.re/en/latest/</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Backing up with iTunes
-   </td>
-   <td>This article in the MVT documentation shows how to use iTunes to create a backup which can subsequently be analyzed with MVT.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.mvt.re/en/latest/ios/backup/itunes/">https://docs.mvt.re/en/latest/ios/backup/itunes/</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>I analyzed my phone for Pegasus spyware
-   </td>
-   <td>A step-by-step video which illustrates how you can use MVT in order to find IoCs associated with Pegasus on iOS
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.youtube.com/watch?v=iLOSlHhGI9U">https://www.youtube.com/watch?v=iLOSlHhGI9U</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Beginner guide - How to backup a mobile device for forensic analysis purpose
-   </td>
-   <td>An introductory guide on how to use common tools to make a backup of iOS and Android devices in order to scan them for malware later on
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/guides/g4/">https://pts-project.org/guides/g4/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>libimobiledevice
-   </td>
-   <td>The home page for a software library which can be used to access and backup iOS devices from a Windows, macOS, or Linux device 
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://libimobiledevice.org/">https://libimobiledevice.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Simplifying Android Forensics
-   </td>
-   <td>A write-up by an Amnesty Tech fellow on the current tools which can be used to backup Android devices for forensic analysis and some of their limitations
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://securitylab.amnesty.org/latest/2023/09/fellowship-apkqf-simplifying-android-forensics/">https://securitylab.amnesty.org/latest/2023/09/fellowship-apkqf-simplifying-android-forensics/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Install libimobiledevice
-   </td>
-   <td>A quick guide on how to install libimobiledevice for the purposes of a forensic investigation
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.mvt.re/en/latest/ios/install/">https://docs.mvt.re/en/latest/ios/install/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>androidqf
-   </td>
-   <td>Android Quick Forensics is a tool which can be used to easily access data from an Android device for future forensics, analysis, and malware scanning.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/botherder/androidqf">https://github.com/botherder/androidqf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>SANS Course on Digital Acquisition and Rapid Triage
-   </td>
-   <td>A very comprehensive, long, and pricey course on acquiring and analyzing data from mobile devices
-   </td>
-   <td>English
-   </td>
-   <td>around 8000+ USD
-   </td>
-   <td><a href="https://www.sans.org/cyber-security-courses/digital-acquisition-rapid-triage/">https://www.sans.org/cyber-security-courses/digital-acquisition-rapid-triage/</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-</table>
+{{% resource title="Smartphone malware forensics: An introduction" languages="Original talk is in German, translated into French and English. Slides are in English." cost="Free" description="A talk by two mobile malware researchers outlining smartphone malware forensics basics, tools, and methods." url="https://media.ccc.de/v/37c3-11874-einfuhrung_in_smartphone_malware_forensik" %}}
+
+{{% resource title="Mobile forensics" languages="English" cost="Free" description="Comprehensive guide by Security Without Borders on mobile forensics across major platforms." url="https://pellaeon.gitbook.io/mobile-forensics/" %}}
+
+{{% resource title="How to make a Windows 10/11 image backup" languages="English" cost="Free" description="Guide on creating a system backup for malware analysis on Windows." url="https://www.computerworld.com/article/3655693/how-to-make-image-backup-windows-10-windows-11.html" %}}
+
+{{% resource title="How to back up a Mac or Macbook" languages="English" cost="Free" description="Article focusing on disk images for macOS backups." url="https://www.macworld.com/article/671336/how-to-back-up-a-mac-or-macbook.html" %}}
+
+{{% resource title="How To Backup Your Entire Linux System Using Rsync" languages="English" cost="Free" description="Guide on using rsync to clone a Linux system for forensic analysis." url="https://ostechnix.com/backup-entire-linux-system-using-rsync/" %}}
+
+{{% resource title="MVT, mobile verification toolkit" languages="English" cost="Free" description="Tool to analyze iOS and Android backups for malware IoCs." url="https://docs.mvt.re/en/latest/" %}}
+
+{{% resource title="Backing up with iTunes" languages="English" cost="Free" description="Using iTunes to create iOS backups for analysis with MVT." url="https://docs.mvt.re/en/latest/ios/backup/itunes/" %}}
+
+{{% resource title="I analyzed my phone for Pegasus spyware" languages="English" cost="Free" description="Video guide using MVT to find IoCs related to Pegasus on iOS." url="https://www.youtube.com/watch?v=iLOSlHhGI9U" %}}
+
+{{% resource title="Beginner guide - How to backup a mobile device for forensic analysis purpose" languages="English" cost="Free" description="Introductory guide on using tools to backup iOS and Android devices for malware scanning." url="https://pts-project.org/guides/g4/" %}}
+
+{{% resource title="libimobiledevice" languages="English" cost="Free" description="Software library to access and backup iOS devices from Windows, macOS, or Linux." url="https://libimobiledevice.org/" %}}
+
+{{% resource title="Simplifying Android Forensics" languages="English" cost="Free" description="Write-up on tools for Android device backups and their limitations." url="https://securitylab.amnesty.org/latest/2023/09/fellowship-apkqf-simplifying-android-forensics/" %}}
+
+{{% resource title="Install libimobiledevice" languages="English" cost="Free" description="Guide on installing libimobiledevice for forensic investigations." url="https://docs.mvt.re/en/latest/ios/install/" %}}
+
+{{% resource title="androidqf" languages="English" cost="Free" description="Tool for accessing data from Android devices for forensic analysis." url="https://github.com/botherder/androidqf" %}}
+
+{{% resource title="SANS Course on Digital Acquisition and Rapid Triage" languages="English" cost="around 8000+ USD" description="Comprehensive course on acquiring and analyzing data from mobile devices." url="https://www.sans.org/cyber-security-courses/digital-acquisition-rapid-triage/" %}}
 
 ## Practice
 

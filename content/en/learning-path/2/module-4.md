@@ -90,215 +90,35 @@ It’s worth noting that security configurations vary between different versions
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Windows Defender
-   </td>
-   <td>An anti-malware solution made by Microsoft, available to all Windows users for free
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free with an active Windows license
-   </td>
-   <td><a href="https://apps.microsoft.com/detail/microsoft-defender/9P6PMZTM93LR?hl=en-us&gl=US">https://apps.microsoft.com/detail/microsoft-defender/9P6PMZTM93LR?hl=en-us&gl=US</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>MalwareBytes
-   </td>
-   <td>A popular antivirus scanner often used within civil society
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free with premium features
-   </td>
-   <td><a href="https://www.malwarebytes.com/">https://www.malwarebytes.com/</a>
-<p>
-The anti-adware product: <a href="https://support.malwarebytes.com/hc/en-us/articles/360038523194">https://support.malwarebytes.com/hc/en-us/articles/360038523194</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Avast
-   </td>
-   <td>Another antivirus scanner with a solid free tier
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free with premium features
-   </td>
-   <td><a href="https://www.avast.com/en-us/free-antivirus-download#pc">https://www.avast.com/en-us/free-antivirus-download#pc</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>ClamAV
-   </td>
-   <td>An open source virus scanner
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.clamav.net/">https://www.clamav.net/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Lookout
-   </td>
-   <td>A well-known company providing Android security services
-   </td>
-   <td>Multiple
-   </td>
-   <td>Multiple pricing tiers
-   </td>
-   <td><a href="https://www.lookout.com/">https://www.lookout.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Hypatia
-   </td>
-   <td>An open source malware scanner for Android, based on ClamAV
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://f-droid.org/en/packages/us.spotco.malwarescanner/">https://f-droid.org/en/packages/us.spotco.malwarescanner/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Google Play Protect
-   </td>
-   <td>Quick documentation on Google Play Protect, an additional and highly recommend security tool for Android 
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.google.com/googleplay/answer/2812853?hl=en">https://support.google.com/googleplay/answer/2812853?hl=en</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Identifying compromised devices: an intermediate guide
-   </td>
-   <td>Some quick signs we can look for when trying to figure out if a device is potentially compromised by malware. Do note that those steps are just the start and do not replace scans and deeper analysis.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/guides/g6/#identifying-compromised-devices">https://pts-project.org/guides/g6/#identifying-compromised-devices</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Windows Security
-   </td>
-   <td>A central point in a Windows operating system where you can check at a glance which security measures have been enabled and which have not
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free with every Windows install
-   </td>
-   <td><a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center">https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Protecting against malware in macOS
-   </td>
-   <td>An article by Apple outlining some of the security mechanisms present within macOS
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.apple.com/en-gb/guide/security/sec469d47bd8/web">https://support.apple.com/en-gb/guide/security/sec469d47bd8/web</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Gatekeeping on macOS
-   </td>
-   <td>A more in-depth article describing how Gatekeeper, a key macOS security mechanism, functions
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://redcanary.com/blog/gatekeeper/">https://redcanary.com/blog/gatekeeper/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>macOS trojan disables gatekeeper to deploy malicious payloads
-   </td>
-   <td>A case study of how malware managed to disable macOS security mechanisms in order to spread itself on a system
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.zdnet.com/article/macos-malware-disables-gatekeeper-to-deploy-malicious-payloads/">https://www.zdnet.com/article/macos-malware-disables-gatekeeper-to-deploy-malicious-payloads/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to look at your command history list in macOS terminal
-   </td>
-   <td>A brief guide to browsing through command line history on macOS terminal, which can be useful if you’re trying to figure out what prior commands were typed and if any of them affected security mechanisms
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.macworld.com/article/351872/how-to-look-at-your-command-history-list-in-macoss-terminal.html">https://www.macworld.com/article/351872/how-to-look-at-your-command-history-list-in-macoss-terminal.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>iOS security checks and mechanisms
-   </td>
-   <td>These articles describe some security checks you can conduct when doing triage on iOS systems
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free with macOS and iOS systems
-   </td>
-   <td>Introduction to privacy and security protections: <a href="https://support.apple.com/en-is/guide/iphone/iph6e7d349d1/17.0/ios/17.0">https://support.apple.com/en-is/guide/iphone/iph6e7d349d1/17.0/ios/17.0</a>
-<p>
-Control app tracking permissions on iPhone: <a href="https://support.apple.com/en-is/guide/iphone/iph4f4cbd242/ios">https://support.apple.com/en-is/guide/iphone/iph4f4cbd242/ios</a>
-<p>
-How Safety Check on iPhone works to keep you safe: <a href="https://support.apple.com/en-is/guide/personal-safety/ips2aad835e1/web">https://support.apple.com/en-is/guide/personal-safety/ips2aad835e1/web</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Checking for linked devices on WhatsApp, Signal, and Telegram
-   </td>
-   <td>When conducting triage, it’s useful to see if an adversary has linked a targeted person’s messenger app to other devices, which would allow them to read all messages which are being sent and received. These articles show you how to check for linked devices on WhatsApp, Signal, and Telegram.
-   </td>
-   <td>English, with apps and help guides localized into many other languages as well
-   </td>
-   <td>Free
-   </td>
-   <td>Articles for:
-<ul>
+{{% resource title="Windows Defender" languages="Multiple" cost="Free with an active Windows license" description="An anti-malware solution made by Microsoft, available to all Windows users for free." url="https://apps.microsoft.com/detail/microsoft-defender/9P6PMZTM93LR?hl=en-us&gl=US" %}}
 
-<li><a href="https://faq.whatsapp.com/378279804439436?helpref=faq_content">WhatsApp</a>
+{{% resource title="MalwareBytes" languages="Multiple" cost="Free with premium features" description="A popular antivirus scanner often used within civil society." url="https://www.malwarebytes.com/" %}}
 
-<li><a href="https://support.signal.org/hc/en-us/articles/360007320551-Linked-Devices">Signal</a>
+{{% resource title="Avast" languages="Multiple" cost="Free with premium features" description="Another antivirus scanner with a solid free tier." url="https://www.avast.com/en-us/free-antivirus-download#pc" %}}
 
-<li><a href="https://telegram.org/blog/sessions-and-2-step-verification">Telegram</a>
-</li>
-</ul>
-   </td>
-  </tr>
-</table>
+{{% resource title="ClamAV" languages="Multiple" cost="Free" description="An open source virus scanner." url="https://www.clamav.net/" %}}
+
+{{% resource title="Lookout" languages="Multiple" cost="Multiple pricing tiers" description="A well-known company providing Android security services." url="https://www.lookout.com/" %}}
+
+{{% resource title="Hypatia" languages="English" cost="Free" description="An open source malware scanner for Android, based on ClamAV." url="https://f-droid.org/en/packages/us.spotco.malwarescanner/" %}}
+
+{{% resource title="Google Play Protect" languages="Multiple" cost="Free" description="Quick documentation on Google Play Protect, an additional and highly recommended security tool for Android." url="https://support.google.com/googleplay/answer/2812853?hl=en" %}}
+
+{{% resource title="Identifying compromised devices: an intermediate guide" languages="English" cost="Free" description="Some quick signs we can look for when trying to figure out if a device is potentially compromised by malware. Note that these steps are just the start and do not replace scans and deeper analysis." url="https://pts-project.org/guides/g6/#identifying-compromised-devices" %}}
+
+{{% resource title="Windows Security" languages="Multiple" cost="Free with every Windows install" description="A central point in a Windows operating system where you can check at a glance which security measures have been enabled and which have not." url="https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center" %}}
+
+{{% resource title="Protecting against malware in macOS" languages="Multiple" cost="Free" description="An article by Apple outlining some of the security mechanisms present within macOS." url="https://support.apple.com/en-gb/guide/security/sec469d47bd8/web" %}}
+
+{{% resource title="Gatekeeping on macOS" languages="English" cost="Free" description="A more in-depth article describing how Gatekeeper, a key macOS security mechanism, functions." url="https://redcanary.com/blog/gatekeeper/" %}}
+
+{{% resource title="macOS trojan disables gatekeeper to deploy malicious payloads" languages="English" cost="Free" description="A case study of how malware managed to disable macOS security mechanisms in order to spread itself on a system." url="https://www.zdnet.com/article/macos-malware-disables-gatekeeper-to-deploy-malicious-payloads/" %}}
+
+{{% resource title="How to look at your command history list in macOS terminal" languages="English" cost="Free" description="A brief guide to browsing through command line history on macOS terminal, which can be useful if you’re trying to figure out what prior commands were typed and if any of them affected security mechanisms." url="https://www.macworld.com/article/351872/how-to-look-at-your-command-history-list-in-macoss-terminal.html" %}}
+
+{{% resource title="iOS security checks and mechanisms" languages="Multiple" cost="Free with macOS and iOS systems" description="Articles describing some security checks you can conduct when doing triage on iOS systems:" url="https://support.apple.com/en-is/guide/iphone/iph6e7d349d1/17.0/ios/17.0" additional_urls="https://support.apple.com/en-is/guide/iphone/iph4f4cbd242/ios, https://support.apple.com/en-is/guide/personal-safety/ips2aad835e1/web" %}}
+
+{{% resource title="Checking for linked devices on WhatsApp, Signal, and Telegram" languages="English, with apps and help guides localized into many other languages as well" cost="Free" description="Articles for:" url="WhatsApp: [https://faq.whatsapp.com/378279804439436?helpref=faq_content](https://faq.whatsapp.com/378279804439436?helpref=faq_content)" additional_urls="Signal: [https://support.signal.org/hc/en-us/articles/360007320551-Linked-Devices](https://support.signal.org/hc/en-us/articles/360007320551-Linked-Devices) Telegram: [https://telegram.org/blog/sessions-and-2-step-verification](https://telegram.org/blog/sessions-and-2-step-verification)" %}}
 
 ## Practice
 

@@ -50,56 +50,11 @@ You can also publish your findings on a blog or somewhere like GitHub. This requ
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Maltego 
-   </td>
-   <td>Maltego can be used for visual representation of findings and make it easier to identify connections between different indicators.
-   </td>
-   <td>English
-   </td>
-   <td>There is a community version free for non-commercial use, Pro versions cost 999 USD a year
-   </td>
-   <td><a href="https://www.maltego.com/">https://www.maltego.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs
-   </td>
-   <td>(Shared earlier in this learning path) This is a very thorough report on a major phishing campaign. Don’t feel the need to make yours this complete, but feel free to take inspiration from it.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/">https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Iran: State-Backed Hacking of Activists, Journalists, Politicians
-   </td>
-   <td>(Shared earlier in this learning path) Another great write-up and a summary of an investigation. Once again, yours will likely be less thorough but this one is a great example.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians">https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Maltego" languages="English" cost="There is a community version free for non-commercial use, Pro versions cost 999 USD a year" description="Maltego can be used for visual representation of findings and make it easier to identify connections between different indicators." url="https://www.maltego.com/" %}}
+
+{{% resource title="Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs" languages="English" cost="Free" description="This is a very thorough report on a major phishing campaign. Don’t feel the need to make yours this complete, but feel free to take inspiration from it." url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
+
+{{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="Another great write-up and a summary of an investigation. Once again, yours will likely be less thorough but this one is a great example." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
 
 ## Skill Check
 

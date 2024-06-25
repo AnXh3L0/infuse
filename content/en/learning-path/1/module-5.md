@@ -58,188 +58,31 @@ Systems administrators who use workplace domains such as Google Workspace and Mi
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>What are email headers?
-   </td>
-   <td>A good introduction to email headers. Highlights three important groupings of email headers. Includes a list of step-by-step guides for different MUAs
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mailtrap.io/blog/email-headers/">https://mailtrap.io/blog/email-headers/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Viewing full email headers
-   </td>
-   <td>How to view email headers in multiple email systems (Gmail, Outlook, Apple Mail, Thunderbird, etc)
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.google.com/mail/answer/29436?hl=en">https://support.google.com/mail/answer/29436?hl=en</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Checking SPF headers using the dig tool
-   </td>
-   <td>This piece offers a quick guide on how to check SPF headers using dig, a tool installed on most Unix-like systems.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://easydmarc.com/tools/spf-lookup#how-to-check-spf-record-via-command-line-via-dig-tool">https://easydmarc.com/tools/spf-lookup#how-to-check-spf-record-via-command-line-via-dig-tool</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to check and read a Sender Policy Framework record for a domain
-   </td>
-   <td>This piece shows how to check SPF headers using nslookup, an alternative tool to dig, and describes how to interpret the results.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.mailessentials.gfi.com/hc/en-us/articles/360015116520-How-to-check-and-read-a-Sender-Policy-Framework-record-for-a-domain">https://support.mailessentials.gfi.com/hc/en-us/articles/360015116520-How-to-check-and-read-a-Sender-Policy-Framework-record-for-a-domain</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>The Nebraska GenCyber Team course on email headers
-   </td>
-   <td>A comprehensive course on how to analyze email headers when investigating potential cases of phishing
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers">https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers</a> / Samples for exercises are also mirrored here: <a href="https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers">https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Checking email headers in Proton Mail
-   </td>
-   <td>English
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://proton.me/support/check-email-headers">https://proton.me/support/check-email-headers</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Viewing email headers on Zoho
-   </td>
-   <td>English
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.zoho.com/mail/help/mail-options.html#alink1">https://www.zoho.com/mail/help/mail-options.html#alink1</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Tools for analyzing email headers
-   </td>
-   <td>We link out to a couple of tools which can extract and dissect email headers, crucial for any analysis of potentially malicious emails.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mxtoolbox.com/EmailHeaders.aspx">https://mxtoolbox.com/EmailHeaders.aspx</a>
-<p>
-<a href="https://github.com/keraattin/EmailAnalyzer">https://github.com/keraattin/EmailAnalyzer</a>
-<p>
-<a href="https://github.com/umair9747/headmail">https://github.com/umair9747/headmail</a>
-<p>
-<a href="https://github.com/cyberdefenders/email-header-analyzer">https://github.com/cyberdefenders/email-header-analyzer</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Introduction to email spoofing
-   </td>
-   <td>Several articles describing email spoofing basics
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Email_spoofing">https://en.wikipedia.org/wiki/Email_spoofing</a>
-<p>
-<a href="https://docs.sendgrid.com/glossary/spoofing">https://docs.sendgrid.com/glossary/spoofing</a> 
-<p>
-<a href="https://www.fortinet.com/resources/cyberglossary/email-spoofing">https://www.fortinet.com/resources/cyberglossary/email-spoofing</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Evaluating “Received” headers
-   </td>
-   <td>How to use email headers to find the server that sent the email
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.techlicious.com/how-to/how-to-tell-if-email-has-been-spoofed/">https://www.techlicious.com/how-to/how-to-tell-if-email-has-been-spoofed/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Analyzing potentially forged “Received” headers
-   </td>
-   <td>How to identify fake “received” headers
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://luxsci.com/blog/analyzing-forged-email-message.html">https://luxsci.com/blog/analyzing-forged-email-message.html</a>
-<p>
-<a href="https://www.linkedin.com/pulse/anatomy-phishing-email-whats-header-penelope-raquel-bise-">https://www.linkedin.com/pulse/anatomy-phishing-email-whats-header-penelope-raquel-bise-</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Find messages with Email Log Search
-   </td>
-   <td>Describes how administrators of Google business and enterprise accounts can monitor message logs
-   </td>
-   <td>English
-   </td>
-   <td>Documentation free, tools only available to business & enterprise users
-   </td>
-   <td><a href="https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA">https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Monitoring, reporting, and message tracing in Exchange Online
-   </td>
-   <td>Describes how administrators of Microsoft enterprise accounts can monitor message logs
-   </td>
-   <td>English
-   </td>
-   <td>Documentation free, tools only available to enterprise users
-   </td>
-   <td><a href="https://learn.microsoft.com/en-us/exchange/monitoring/monitoring">https://learn.microsoft.com/en-us/exchange/monitoring/monitoring</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="What are email headers?" languages="English" cost="Free" description="A good introduction to email headers. Highlights three important groupings of email headers. Includes a list of step-by-step guides for different MUAs." url="https://mailtrap.io/blog/email-headers/" %}}
+
+{{% resource title="Viewing full email headers" languages="Multiple" cost="Free" description="How to view email headers in multiple email systems (Gmail, Outlook, Apple Mail, Thunderbird, etc)." url="https://support.google.com/mail/answer/29436?hl=en" %}}
+
+{{% resource title="Checking SPF headers using the dig tool" languages="English" cost="Free" description="This piece offers a quick guide on how to check SPF headers using dig, a tool installed on most Unix-like systems." url="https://easydmarc.com/tools/spf-lookup#how-to-check-spf-record-via-command-line-via-dig-tool" %}}
+
+{{% resource title="How to check and read a Sender Policy Framework record for a domain" languages="English" cost="Free" description="This piece shows how to check SPF headers using nslookup, an alternative tool to dig, and describes how to interpret the results." url="https://support.mailessentials.gfi.com/hc/en-us/articles/360015116520-How-to-check-and-read-a-Sender-Policy-Framework-record-for-a-domain" %}}
+
+{{% resource title="The Nebraska GenCyber Team course on email headers" languages="English" cost="Free" description="A comprehensive course on how to analyze email headers when investigating potential cases of phishing." url="https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers" additional_urls="Samples for exercises: https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers" %}}
+
+{{% resource title="Checking email headers in Proton Mail" languages="English" cost="Free" description="A guide on how to check email headers in Proton Mail." url="https://proton.me/support/check-email-headers" %}}
+
+{{% resource title="Viewing email headers on Zoho" languages="English" cost="Free" description="A guide on how to view email headers on Zoho." url="https://www.zoho.com/mail/help/mail-options.html#alink1" %}}
+
+{{% resource title="Tools for analyzing email headers" languages="English" cost="Free" description="Links to several tools which can extract and dissect email headers, crucial for any analysis of potentially malicious emails." url="https://mxtoolbox.com/EmailHeaders.aspx" additional_urls="https://github.com/keraattin/EmailAnalyzer, https://github.com/umair9747/headmail, https://github.com/cyberdefenders/email-header-analyzer" %}}
+
+{{% resource title="Introduction to email spoofing" languages="Multiple" cost="Free" description="Several articles describing email spoofing basics." url="https://en.wikipedia.org/wiki/Email_spoofing" additional_urls="https://docs.sendgrid.com/glossary/spoofing, https://www.fortinet.com/resources/cyberglossary/email-spoofing" %}}
+
+{{% resource title="Evaluating 'Received' headers" languages="English" cost="Free" description="How to use email headers to find the server that sent the email." url="https://www.techlicious.com/how-to/how-to-tell-if-email-has-been-spoofed/" %}}
+
+{{% resource title="Analyzing potentially forged 'Received' headers" languages="English" cost="Free" description="How to identify fake 'received' headers." url="https://luxsci.com/blog/analyzing-forged-email-message.html" additional_urls="https://www.linkedin.com/pulse/anatomy-phishing-email-whats-header-penelope-raquel-bise-" %}}
+
+{{% resource title="Find messages with Email Log Search" languages="English" cost="Documentation free, tools only available to business & enterprise users" description="Describes how administrators of Google business and enterprise accounts can monitor message logs." url="https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA" %}}
+
+{{% resource title="Monitoring, reporting, and message tracing in Exchange Online" languages="English" cost="Documentation free, tools only available to enterprise users" description="Describes how administrators of Microsoft enterprise accounts can monitor message logs." url="https://learn.microsoft.com/en-us/exchange/monitoring/monitoring" %}}
 
 ## Practice
 

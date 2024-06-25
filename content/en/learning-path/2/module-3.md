@@ -96,164 +96,29 @@ Not all malware that has been recognized has been extensively documented, either
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Malware chapter on Field Guide for Threat Labs (Chapter 5)
-   </td>
-   <td>Good introduction to malware from the perspective of a digital protector needing to understand
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf">https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Malware - Wikipedia
-   </td>
-   <td>A good fundamental introduction to the topic which explains some of the basic and moderately advanced concepts needed
-   </td>
-   <td>multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Malware">https://en.wikipedia.org/wiki/Malware</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>The Mac Malware of 2023
-   </td>
-   <td>An important overview of macOS malware spotted in 2023. Includes types of malware, infection vectors, persistence mechanisms, and goals.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><span style="text-decoration:underline;">https://objective-see.org/blog/blog_0x77.html </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Pegasus sales document from the NSO group
-   </td>
-   <td>This leaked document describes some of the capabilities of Pegasus, a piece of spyware that targets human rights activists among others. It gives a good introduction to how spyware is sold and marketed
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><span style="text-decoration:underline;">https://www.documentcloud.org/documents/4599753-NSO-Pegasus.html</span>
-   </td>
-  </tr>
-  <tr>
-   <td>Zero click attacks explained
-   </td>
-   <td>Describes what a zero-click attack is, why attackers might be so interested in using them, and why they are so dangerous
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html">https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Understanding indicators of compromise for incident response
-   </td>
-   <td>A video by the US CISA that gives a good overview and introduction to IoCs and how they could be used by incident responders
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.youtube.com/watch?v=zs-AEaSd2vk">https://www.youtube.com/watch?v=zs-AEaSd2vk</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Guide to Malware Incident Prevention and Handling for Desktops and Laptops
-   </td>
-   <td>An older (2013) guide by the US NIST which comprehensively covers the topic
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-83r1.pdf">https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-83r1.pdf</a><span style="text-decoration:underline;"> </span>
-   </td>
-  </tr>
-  <tr>
-   <td>Smartphone systems architecture
-   </td>
-   <td>A look at how mobile operating systems function and how malware can spread on them
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture">https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>The Predator Files
-   </td>
-   <td>A malware investigation conducted by Amnesty Tech; includes lists of IoCs on page 52
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.amnesty.org/en/documents/act10/7245/2023/en/">https://www.amnesty.org/en/documents/act10/7245/2023/en/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Indicators from Amnesty International's investigations
-   </td>
-   <td>A list of IoCs which Amnesty collected in the course of its investigations
-   </td>
-   <td>None (dataset)
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/AmnestyTech/investigations">https://github.com/AmnestyTech/investigations</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Microsoft Security: Indicators of compromise explained
-   </td>
-   <td>A summary of what IoCs are and which forms they could take
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc">https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Fortinet glossary: Indicators of compromise
-   </td>
-   <td>One more, very useful, summary of IoCs
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise">https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Malware chapter on Field Guide for Threat Labs (Chapter 5)" languages="English" cost="Free" description="Good introduction to malware from the perspective of a digital protector needing to understand" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+
+{{% resource title="Malware - Wikipedia" languages="multiple" cost="Free" description="A good fundamental introduction to the topic which explains some of the basic and moderately advanced concepts needed" url="https://en.wikipedia.org/wiki/Malware" %}}
+
+{{% resource title="The Mac Malware of 2023" languages="English" cost="Free" description="An important overview of macOS malware spotted in 2023. Includes types of malware, infection vectors, persistence mechanisms, and goals." url="https://objective-see.org/blog/blog_0x77.html" %}}
+
+{{% resource title="Pegasus sales document from the NSO group" languages="English" cost="Free" description="This leaked document describes some of the capabilities of Pegasus, a piece of spyware that targets human rights activists among others. It gives a good introduction to how spyware is sold and marketed." url="https://www.documentcloud.org/documents/4599753-NSO-Pegasus.html" %}}
+
+{{% resource title="Zero click attacks explained" languages="English" cost="Free" description="Describes what a zero-click attack is, why attackers might be so interested in using them, and why they are so dangerous." url="https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html" %}}
+
+{{% resource title="Understanding indicators of compromise for incident response" languages="English" cost="Free" description="A video by the US CISA that gives a good overview and introduction to IoCs and how they could be used by incident responders." url="https://www.youtube.com/watch?v=zs-AEaSd2vk" %}}
+
+{{% resource title="Guide to Malware Incident Prevention and Handling for Desktops and Laptops" languages="English" cost="Free" description="An older (2013) guide by the US NIST which comprehensively covers the topic." url="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-83r1.pdf" %}}
+
+{{% resource title="Smartphone systems architecture" languages="English" cost="Free" description="A look at how mobile operating systems function and how malware can spread on them." url="https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture" %}}
+
+{{% resource title="The Predator Files" languages="English" cost="Free" description="A malware investigation conducted by Amnesty Tech; includes lists of IoCs on page 52." url="https://www.amnesty.org/en/documents/act10/7245/2023/en/" %}}
+
+{{% resource title="Indicators from Amnesty International's investigations" languages="None (dataset)" cost="Free" description="A list of IoCs which Amnesty collected in the course of its investigations." url="https://github.com/AmnestyTech/investigations" %}}
+
+{{% resource title="Microsoft Security: Indicators of compromise explained" languages="English" cost="Free" description="A summary of what IoCs are and which forms they could take." url="https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc" %}}
+
+{{% resource title="Fortinet glossary: Indicators of compromise" languages="English" cost="Free" description="One more, very useful, summary of IoCs." url="https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise" %}}
 
 ## Practice
 

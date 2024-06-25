@@ -77,168 +77,29 @@ Learn about some of these blocklists, where they are integrated, and how to repo
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>RIPEstat launchpad
-   </td>
-   <td>A service which allows you to search for and list relevant abuse reporting mechanisms
-   </td>
-   <td>English, Spanish, Arabic, Russian, French, Farsi, Italian, Turkish
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://stat.ripe.net/app/launchpad">https://stat.ripe.net/app/launchpad</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Getting Started - Abusix
-   </td>
-   <td>A getting started guide to the Abuse Contact DB
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee">https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Twilio abuse reports
-   </td>
-   <td>You can report unwanted phone calls or SMS messages from phone numbers hosted on Twilio here.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.twilio.com/en-us/help/abuse">https://www.twilio.com/en-us/help/abuse</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Mailchimp abuse reports
-   </td>
-   <td>You can report any abuse that takes place on Mailchimp’s platform here.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mailchimp.com/contact/abuse/">https://mailchimp.com/contact/abuse/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>CiviCERT
-   </td>
-   <td>A network of security professionals who help civil society address cybersecurity issues
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.civicert.org/">https://www.civicert.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Templates of emails we could send to report malicious activity
-   </td>
-   <td>Three email templates that allow you to easily craft an email to a domain registrar, hosting provider, or client to inform them about the presence of malicious infrastructure
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>Registrar: <a href="https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html">https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html</a>
-<p>
-Hosting provider: <a href="https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html">https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html</a> 
-<p>
-Client: <a href="https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html">https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Send a SafeBrowsing report
-   </td>
-   <td>Here you can send SafeBrowsing reports to a Google-maintained database which reaches a huge amount of users.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://safebrowsing.google.com/safebrowsing/report_general/">https://safebrowsing.google.com/safebrowsing/report_general/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>PhishTank
-   </td>
-   <td>A collaborative list of phishing site submissions, allows users to search for and submit URLs
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://phishtank.org/">https://phishtank.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>AbusiveIP
-   </td>
-   <td>Allows users to both search for an report IP addresses linked to malicious behavior
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.abuseipdb.com/">https://www.abuseipdb.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Phishing Database
-   </td>
-   <td>One more crowdsourced database of suspected phishing domains and links
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/mitchellkrogza/Phishing.Database#additions">https://github.com/mitchellkrogza/Phishing.Database#additions</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Abuse ch
-   </td>
-   <td>A community driven platform focusing on threat intelligence regarding malware and botnets
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://abuse.ch/">https://abuse.ch/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Phish.gg documentation
-   </td>
-   <td>A service where you can report phishing on services such as Discord
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.phish.gg/docs/get-started/welcome/">https://docs.phish.gg/docs/get-started/welcome/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="RIPEstat launchpad" languages="English, Spanish, Arabic, Russian, French, Farsi, Italian, Turkish" cost="Free" description="A service which allows you to search for and list relevant abuse reporting mechanisms." url="https://stat.ripe.net/app/launchpad" %}}
+
+{{% resource title="Getting Started - Abusix" languages="English" cost="Free" description="A getting started guide to the Abuse Contact DB." url="https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee" %}}
+
+{{% resource title="Twilio abuse reports" languages="English" cost="Free" description="You can report unwanted phone calls or SMS messages from phone numbers hosted on Twilio here." url="https://www.twilio.com/en-us/help/abuse" %}}
+
+{{% resource title="Mailchimp abuse reports" languages="English" cost="Free" description="You can report any abuse that takes place on Mailchimp’s platform here." url="https://mailchimp.com/contact/abuse/" %}}
+
+{{% resource title="CiviCERT" languages="English" cost="Free" description="A network of security professionals who help civil society address cybersecurity issues." url="https://www.civicert.org/" %}}
+
+{{% resource title="Templates of emails we could send to report malicious activity" languages="English" cost="Free" description="Three email templates that allow you to easily craft an email to a domain registrar, hosting provider, or client to inform them about the presence of malicious infrastructure. Registrar: [Link](https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html), Hosting provider: [Link](https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html), Client: [Link](https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html)" %}}
+
+{{% resource title="Send a SafeBrowsing report" languages="English" cost="Free" description="Here you can send SafeBrowsing reports to a Google-maintained database which reaches a huge amount of users." url="https://safebrowsing.google.com/safebrowsing/report_general/" %}}
+
+{{% resource title="PhishTank" languages="English" cost="Free" description="A collaborative list of phishing site submissions, allows users to search for and submit URLs." url="https://phishtank.org/" %}}
+
+{{% resource title="AbusiveIP" languages="English" cost="Free" description="Allows users to both search for and report IP addresses linked to malicious behavior." url="https://www.abuseipdb.com/" %}}
+
+{{% resource title="Phishing Database" languages="English" cost="Free" description="One more crowdsourced database of suspected phishing domains and links." url="https://github.com/mitchellkrogza/Phishing.Database#additions" %}}
+
+{{% resource title="Abuse ch" languages="English" cost="Free" description="A community-driven platform focusing on threat intelligence regarding malware and botnets." url="https://abuse.ch/" %}}
+
+{{% resource title="Phish.gg documentation" languages="English" cost="Free" description="A service where you can report phishing on services such as Discord." url="https://docs.phish.gg/docs/get-started/welcome/" %}}
 
 ## Practice
 

@@ -218,6 +218,10 @@ other = "Previous module"
 [next-module]
 other = "Next module"
 
+[languages]
+one = "Language"
+other = "Languages"
+
 [home]
 other = "Home"
 

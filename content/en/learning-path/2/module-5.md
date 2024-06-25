@@ -44,56 +44,11 @@ There are [some macOS tools](https://objective-see.org/tools.html) created by Ob
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Mobile forensics
-   </td>
-   <td>A comprehensive guide on how to conduct forensics and triage for many leading operating systems
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pellaeon.gitbook.io/mobile-forensics/">https://pellaeon.gitbook.io/mobile-forensics/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Sysinternals
-   </td>
-   <td>A series of excellent tools analysts can use to better understand what is happening on a Windows system
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://learn.microsoft.com/en-us/sysinternals/">https://learn.microsoft.com/en-us/sysinternals/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Objective-see tools
-   </td>
-   <td>Excellent security tools for macOS which can help detect malware infections or attempts to gather/ exfiltrate data
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://objective-see.org/tools.html">https://objective-see.org/tools.html</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Mobile forensics" languages="English" cost="Free" description="A comprehensive guide on how to conduct forensics and triage for many leading operating systems." url="https://pellaeon.gitbook.io/mobile-forensics/" %}}
+
+{{% resource title="Sysinternals" languages="English" cost="Free" description="A series of excellent tools analysts can use to better understand what is happening on a Windows system." url="https://learn.microsoft.com/en-us/sysinternals/" %}}
+
+{{% resource title="Objective-see tools" languages="English" cost="Free" description="Excellent security tools for macOS which can help detect malware infections or attempts to gather/ exfiltrate data." url="https://objective-see.org/tools.html" %}}
 
 ## Practice
 

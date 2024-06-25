@@ -48,144 +48,26 @@ Once you understand the foundational concepts and potential threats, you need a 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Introduction to HTML email
-   </td>
-   <td>A brief introduction to the concept of sending emails that contain HTML
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/HTML_email">https://en.wikipedia.org/wiki/HTML_email</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Introduction to MIME
-   </td>
-   <td>A brief introduction to the MIME format for messages 
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/MIME">https://en.wikipedia.org/wiki/MIME</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to include images in email
-   </td>
-   <td>Although this page is oriented towards email senders, it goes over the ways that attackers may embed images in their email.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mailchimp.com/resources/embed-image-in-email/">https://mailchimp.com/resources/embed-image-in-email/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Learn HTML
-   </td>
-   <td>Most phishing malicious emails use HTML to deceive users. In order to extract URLs (and thus server addresses) from emails, you will have to learn some HTML. 
-   </td>
-   <td>Multiple (auto-translated)
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Intro to tracking pixels
-   </td>
-   <td>When investigating potentially malicious emails to discover attacker infrastructure, don’t just look for links and attachments. Attackers may include trackers in their emails, just like marketers do. This article for marketers explains how email tracking works. Note that any resource loaded from the web can be used for tracking.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work">https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>VirusTotal
-   </td>
-   <td>A tool to evaluate URLs and attachments for known malice. Note that submitted URLs and files can be accessed by other users.
-   </td>
-   <td>Main interface is in English
-   </td>
-   <td>Free, with some rate limitations and additional pro features
-   </td>
-   <td><a href="https://www.virustotal.com/gui/home/url">https://www.virustotal.com/gui/home/url</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Malicious email workflow
-   </td>
-   <td>A playbook for what to do when evaluating a suspicious email
-   </td>
-   <td>Multiple
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html">https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Exchange maliciou email investigation playbook
-   </td>
-   <td>A playbook for investigating malicious emails in a Microsoft Exchange environment (where the investigator has admin access)
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing">https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Example analyses of phishing emails
-   </td>
-   <td>Analyses of sample phishing emails. Includes a look at HTML files with embedded malicious scripts and encoded content
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e">https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e</a> 
-<p>
-<a href="https://www.vadesecure.com/en/blog/m365-phishing-email-analysis-eevilcorp">https://www.vadesecure.com/en/blog/m365-phishing-email-analysis-eevilcorp</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Example analyses of malware emails
-   </td>
-   <td>Since malicious emails could exploit security holes within email programs, this guide shows how best to analyze them using command line tools and text editors.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/">https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/</a> 
-<p>
-<a href="https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91">https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Introduction to HTML email" languages="Multiple" cost="Free" description="A brief introduction to the concept of sending emails that contain HTML." url="https://en.wikipedia.org/wiki/HTML_email" %}}
+
+{{% resource title="Introduction to MIME" languages="Multiple" cost="Free" description="A brief introduction to the MIME format for messages." url="https://en.wikipedia.org/wiki/MIME" %}}
+
+{{% resource title="How to include images in email" languages="English" cost="Free" description="Although this page is oriented towards email senders, it goes over the ways that attackers may embed images in their email." url="https://mailchimp.com/resources/embed-image-in-email/" %}}
+
+{{% resource title="Learn HTML" languages="Multiple (auto-translated)" cost="Free" description="Most phishing malicious emails use HTML to deceive users. In order to extract URLs (and thus server addresses) from emails, you will have to learn some HTML." url="https://www.w3schools.com/html/" %}}
+
+{{% resource title="Intro to tracking pixels" languages="English" cost="Free" description="When investigating potentially malicious emails to discover attacker infrastructure, don’t just look for links and attachments. Attackers may include trackers in their emails, just like marketers do. This article for marketers explains how email tracking works. Note that any resource loaded from the web can be used for tracking." url="https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work" %}}
+
+{{% resource title="VirusTotal" languages="Main interface is in English" cost="Free, with some rate limitations and additional pro features" description="A tool to evaluate URLs and attachments for known malice. Note that submitted URLs and files can be accessed by other users." url="https://www.virustotal.com/gui/home/url" %}}
+
+{{% resource title="Malicious email workflow" languages="Multiple" cost="Free" description="A playbook for what to do when evaluating a suspicious email." url="https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html" %}}
+
+{{% resource title="Exchange malicious email investigation playbook" languages="English" cost="Free" description="A playbook for investigating malicious emails in a Microsoft Exchange environment (where the investigator has admin access)." url="https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing" %}}
+
+{{% resource title="Example analyses of phishing emails" languages="English" cost="Free" description="Analyses of sample phishing emails. Includes a look at HTML files with embedded malicious scripts and encoded content." url="https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e" additional_urls="https://www.vadesecure.com/en/blog/m365-phishing-email-analysis-eevilcorp" %}}
+
+{{% resource title="Example analyses of malware emails" languages="English" cost="Free" description="Since malicious emails could exploit security holes within email programs, this guide shows how best to analyze them using command line tools and text editors." url="https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/" additional_urls="https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91" %}}
+
 
 ## Practice
 

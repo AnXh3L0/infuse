@@ -43,128 +43,23 @@ Next up, look for emails, messages, etc. that may have triggered the download. Y
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Filesystem Timestamps: What Makes Them Tick?
-   </td>
-   <td>An overview of what timestamps are, how portable they are, and how they work on a somewhat technical level. Mostly Windows focused
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://www.sans.org/white-papers/36842/">https://www.sans.org/white-papers/36842/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>macOS timestamps from extended attributes and spotlight
-   </td>
-   <td>A guide to using advanced file metadata in macOS to find different file timestamps and what those timestamps mean
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/">https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>File Timestamps in Linux: atime, mtime, ctime Explained
-   </td>
-   <td>Linux has different types of timestamps. This article goes over explains how to interpret them.
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://linuxhandbook.com/file-timestamps/">https://linuxhandbook.com/file-timestamps/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>File creation time on ext4 Linux
-   </td>
-   <td>The most modern file system that Linux uses is called ext4. This article looks at how ext4 manages timestamps and how to find detailed info on the creation of files.
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/">https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Records extracted by mvt-ios
-   </td>
-   <td>Looks at what files MVT generates when analyzing iOS dumps and how to read them
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://docs.mvt.re/en/latest/ios/records/">https://docs.mvt.re/en/latest/ios/records/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Files by Google
-   </td>
-   <td>An Android app which gives access to advanced file metadata
-   </td>
-   <td>multiple
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US">https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Mark of the Web from a Read Team’s Perspective
-   </td>
-   <td>Introduces Mark of the Web, a flag in Windows which suggests that a file was downloaded from the web and requires special security precautions when opening
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/">https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Beward: Chromium-based browsers save download origin url for files
-   </td>
-   <td>Looks at how Windows and Linux systems sometimes save metadata on which URLs a file was downloaded from
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/">https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Find Out Where a File was Downloaded From in Mac OS X
-   </td>
-   <td>macOS files that have been downloaded from the URL usually have the download URL embedded within their metadata. This piece shows how to extract said URL
-   </td>
-   <td>English
-   </td>
-   <td>free
-   </td>
-   <td><a href="https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/">https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Filesystem Timestamps: What Makes Them Tick?" languages="English" cost="Free" description="Overview of timestamps, their portability, and technical workings, with a focus on Windows." url="https://www.sans.org/white-papers/36842/" %}}
+
+{{% resource title="macOS timestamps from extended attributes and spotlight" languages="English" cost="Free" description="Guide to using advanced file metadata in macOS to find different file timestamps." url="https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/" %}}
+
+{{% resource title="File Timestamps in Linux: atime, mtime, ctime Explained" languages="English" cost="Free" description="Explanation of different types of file timestamps in Linux and how to interpret them." url="https://linuxhandbook.com/file-timestamps/" %}}
+
+{{% resource title="File creation time on ext4 Linux" languages="English" cost="Free" description="Details on how ext4 manages file timestamps and where to find creation time information." url="https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/" %}}
+
+{{% resource title="Records extracted by mvt-ios" languages="English" cost="Free" description="Information on files generated by MVT when analyzing iOS dumps and how to interpret them." url="https://docs.mvt.re/en/latest/ios/records/" %}}
+
+{{% resource title="Files by Google" languages="Multiple" cost="Free" description="Android app providing access to advanced file metadata." url="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US" %}}
+
+{{% resource title="Mark of the Web from a Read Team’s Perspective" languages="English" cost="Free" description="Introduction to Mark of the Web, indicating files downloaded from the web requiring special security considerations." url="https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/" %}}
+
+{{% resource title="Beware: Chromium-based browsers save download origin url for files" languages="English" cost="Free" description="Discussion on how Windows and Linux systems store metadata about file download origins." url="https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/" %}}
+
+{{% resource title="Find Out Where a File was Downloaded From in Mac OS X" languages="English" cost="Free" description="Guide on extracting download URLs from macOS file metadata." url="https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/" %}}
 
 ## Skill Check
 

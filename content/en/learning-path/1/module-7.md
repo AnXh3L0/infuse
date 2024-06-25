@@ -98,178 +98,29 @@ Some phishing kits also have the ability to bypass multi-factor authentication, 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Iran: State-Backed Hacking of Activists, Journalists, Politicians
-   </td>
-   <td>A good write-up and analysis of a highly sophisticated phishing campaign which targeted civil society groups. Includes extensive discussions on infrastructure and attribution
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians">https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs
-   </td>
-   <td>A write up of an earlier phishing campaign which specifically targeted civil groups working on Russia. The attack itself included an MFA bypass.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/">https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>VirusTotal
-   </td>
-   <td>A tool to evaluate URLs and attachments for known malicious content. Note that submitted URLs and files can be accessed by other users.
-   </td>
-   <td>
-   </td>
-   <td>Free, with some rate limitations and additional pro features
-   </td>
-   <td><a href="https://www.virustotal.com/gui/home/url">https://www.virustotal.com/gui/home/url</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>UrlScan
-   </td>
-   <td>A tool where you input a URL and which analyzes the resulting website, looking out for malware or other suspicious behavior
-   </td>
-   <td>
-   </td>
-   <td>Free, with additional premium features
-   </td>
-   <td><a href="https://urlscan.io/">https://urlscan.io/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Hybrid Analysis
-   </td>
-   <td>A tool which can scan files and links for malicious content or behavior. In contrast to UrlScan, it can also open up malware samples or executable files.
-   </td>
-   <td>
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.hybrid-analysis.com/">https://www.hybrid-analysis.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Learn JavaScript
-   </td>
-   <td>In addition to HTML, most web pages use JavaScript. Although you don’t need to be an expert, learning some JavaScript is important to understand what websites are doing.
-   </td>
-   <td>
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.codecademy.com/learn/introduction-to-javascript">https://www.codecademy.com/learn/introduction-to-javascript</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to use Inspect Element in Chrome, Safari, and Firefox
-   </td>
-   <td>Every major web browser now contains an <em>inspect element</em> feature, which allows you to carefully study and modify the code components which make up a web page. This article provides a brief overview of that feature (though each browser’s documentation will be even more comprehensive) and shows how to activate it on major browsers.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://blog.hubspot.com/website/how-to-inspect">https://blog.hubspot.com/website/how-to-inspect</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Example analyses of malicious websites
-   </td>
-   <td>A good guide on how to do some initial analysis and triage on a website to figure out whether it is malicious and has been labeled by others as such
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b">https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b</a> 
-<p>
-<a href="https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith">https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Classification of Web Phishing Kits for early detection by platform providers
-   </td>
-   <td>An academic paper which looks at phishing kits, what mechanisms some of them use, and how we can use tools such as machine learning to detect them
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://arxiv.org/pdf/2210.08273.pdf">https://arxiv.org/pdf/2210.08273.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Protecting Phishing Pages via .htaccess
-   </td>
-   <td>There are many ways in which phishing pages can try to avoid detection. One of them is to use .htaccess, a file containing instructions for web servers, to include or exclude specific IP ranges.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html">https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>StalkPhish
-   </td>
-   <td>A tool designed to automate the discovery and identification of phishing kits
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/t4d/StalkPhish">https://github.com/t4d/StalkPhish</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Bypassing MFA: A Forensic Look At Evilginx2 Phishing Kit
-   </td>
-   <td>This article looks at a phishing kit which has found a way to bypass some forms of MFA and provides a basic analysis of how it does that and what mitigations we could take.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/">https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>W3LL phishing kit hijacks thousands of Microsoft 365 accounts, bypasses MFA
-   </td>
-   <td>This piece analyzes a phishing kit designed and sold by cybercriminals, which contains multiple mechanisms which frustrate analysis and also uses MFA bypass techniques.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/">https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="A good write-up and analysis of a highly sophisticated phishing campaign which targeted civil society groups. Includes extensive discussions on infrastructure and attribution." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
+
+{{% resource title="Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs" languages="English" cost="Free" description="A write-up of an earlier phishing campaign which specifically targeted civil groups working on Russia. The attack itself included an MFA bypass." url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
+
+{{% resource title="UrlScan" languages="English" cost="Free, with additional premium features" description="A tool where you input a URL and which analyzes the resulting website, looking out for malware or other suspicious behavior." url="https://urlscan.io/" %}}
+
+{{% resource title="Hybrid Analysis" languages="English" cost="Free" description="A tool which can scan files and links for malicious content or behavior. In contrast to UrlScan, it can also open up malware samples or executable files." url="https://www.hybrid-analysis.com/" %}}
+
+{{% resource title="Learn JavaScript" languages="English" cost="Free" description="In addition to HTML, most web pages use JavaScript. Although you don’t need to be an expert, learning some JavaScript is important to understand what websites are doing." url="https://www.codecademy.com/learn/introduction-to-javascript" %}}
+
+{{% resource title="How to use Inspect Element in Chrome, Safari, and Firefox" languages="English" cost="Free" description="Every major web browser now contains an inspect element feature, which allows you to carefully study and modify the code components which make up a web page. This article provides a brief overview of that feature and shows how to activate it on major browsers." url="https://blog.hubspot.com/website/how-to-inspect" %}}
+
+{{% resource title="Example analyses of malicious websites" languages="English" cost="Free" description="A good guide on how to do some initial analysis and triage on a website to figure out whether it is malicious and has been labeled by others as such." url="https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b" additional_urls="https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith" %}}
+
+{{% resource title="Classification of Web Phishing Kits for early detection by platform providers" languages="English" cost="Free" description="An academic paper which looks at phishing kits, what mechanisms some of them use, and how we can use tools such as machine learning to detect them." url="https://arxiv.org/pdf/2210.08273.pdf" %}}
+
+{{% resource title="Protecting Phishing Pages via .htaccess" languages="English" cost="Free" description="There are many ways in which phishing pages can try to avoid detection. One of them is to use .htaccess, a file containing instructions for web servers, to include or exclude specific IP ranges." url="https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html" %}}
+
+{{% resource title="StalkPhish" languages="English" cost="Free" description="A tool designed to automate the discovery and identification of phishing kits." url="https://github.com/t4d/StalkPhish" %}}
+
+{{% resource title="Bypassing MFA: A Forensic Look At Evilginx2 Phishing Kit" languages="English" cost="Free" description="This article looks at a phishing kit which has found a way to bypass some forms of MFA and provides a basic analysis of how it does that and what mitigations we could take." url="https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/" %}}
+
+{{% resource title="W3LL phishing kit hijacks thousands of Microsoft 365 accounts, bypasses MFA" languages="English" cost="Free" description="This piece analyzes a phishing kit designed and sold by cybercriminals, which contains multiple mechanisms which frustrate analysis and also uses MFA bypass techniques." url="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/" %}}
 
 ## Practice
 

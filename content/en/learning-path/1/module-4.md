@@ -137,378 +137,62 @@ Attackers can host their own DNS server and track requests. In this case, DNS re
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>What is a URL?
-   </td>
-   <td>A brief overview of what URLs are, how they are constructed, and what additional features (anchors and the like) they might have
-   </td>
-   <td>Chinese, English, French, Japanese, Korean, Russian, Spanish
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL">https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Introduction to DNS
-   </td>
-   <td>A basic overview of how DNS works
-   </td>
-   <td>Video in English, text in Arabic, Bahasa Indonesian, German, Spanish, French, Italian, Portuguese, Vietnamese, Turkish, Russian, Thai, Japanese, Korean, Chinese, Taiwanese
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://aws.amazon.com/route53/what-is-dns/">https://aws.amazon.com/route53/what-is-dns/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Overview of DNS record types
-   </td>
-   <td>Includes the most common record types, and some less common ones. 
-   </td>
-   <td>English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Taiwanese, Mandarin
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.cloudflare.com/learning/dns/dns-records/">https://www.cloudflare.com/learning/dns/dns-records/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Using the dig command
-   </td>
-   <td>How to query for information about IP addresses
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://phoenixnap.com/kb/linux-dig-command-examples">https://phoenixnap.com/kb/linux-dig-command-examples</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>doggo
-   </td>
-   <td>An alternative to the dig command, with very similar functionality but differently formatted output
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/mr-karan/doggo">https://github.com/mr-karan/doggo</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>host command in Linux with examples
-   </td>
-   <td>A guide on how to use the host command in Linux, another commonly used tool to analyze servers and other types of infrastructure
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.geeksforgeeks.org/host-command-in-linux-with-examples/">https://www.geeksforgeeks.org/host-command-in-linux-with-examples/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Further DNS reconnaissance
-   </td>
-   <td>Various tools to automate searching for related servers
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>DNSRecon: <a href="https://securitytrails.com/blog/dnsrecon-tool">https://securitytrails.com/blog/dnsrecon-tool</a> 
-<p>
-Fierce: <a href="https://www.kali.org/tools/fierce/">https://www.kali.org/tools/fierce/</a> and <a href="https://salsa.debian.org/pkg-security-team/fierce">https://salsa.debian.org/pkg-security-team/fierce</a> 
-<p>
-You can also use VirusTotal to <a href="https://support.virustotal.com/hc/en-us/articles/115002739245-Searching">manually search</a> for names of URLs and servers
-   </td>
-  </tr>
-  <tr>
-   <td>GeoIP
-   </td>
-   <td>Look up the (likely) physical location of a server by IP address
-   </td>
-   <td>English
-   </td>
-   <td>Free for limited quantities
-   </td>
-   <td><a href="https://www.maxmind.com/en/geoip-demo">https://www.maxmind.com/en/geoip-demo</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>whois/RDAP
-   </td>
-   <td>Shows ownership information for a domain or IP address
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>Tool: <a href="https://who.is/">https://who.is/</a>
-<p>
-<a href="https://search.arin.net/rdap/">https://search.arin.net/rdap/</a>, <a href="https://lookup.icann.org/en">https://lookup.icann.org/en</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>What is whois and how is it used
-   </td>
-   <td>A quick summary of what a whois database is and what its potential limitations are
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.domain.com/blog/what-is-whois-and-how-is-it-used/">https://www.domain.com/blog/what-is-whois-and-how-is-it-used/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>The ultimate guide to the whois database
-   </td>
-   <td>Offers a look at what whois can (and cannot) be used for
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database">https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>What is an IPv4 address?
-   </td>
-   <td>There are two types of IP addresses, IPv4 and IPv6. This guide provides an introduction to the former
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://bluecatnetworks.com/glossary/what-is-ipv4/">https://bluecatnetworks.com/glossary/what-is-ipv4/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Differences between IPv4 and IPv6
-   </td>
-   <td>Outlines the key differences between the two types of IP addresses
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/">https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Understanding IP addresses
-   </td>
-   <td>A quick introduction to what IP addresses are, what the different types thereof are
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/">https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>What are port numbers and how do they work?
-   </td>
-   <td>A quick introduction to port numbers, includes a list of some key ones
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.techtarget.com/searchnetworking/definition/port-number">https://www.techtarget.com/searchnetworking/definition/port-number</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Subdomain enumeration: the ultimate guide
-   </td>
-   <td>A guide which contains several techniques on enumerating (figuring out) which subdomains a specific domain contains. It’s worth remembering that not all techniques will work on all domains/ servers.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/">https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Threat intelligence services with DNS history
-   </td>
-   <td>Those services perform DNS scans and add history; analysts who use them can therefore see whether certain websites or addresses moved or changed
-   </td>
-   <td>English
-   </td>
-   <td>Free with premium features (security trails) / Free (Microsoft Defender)
-   </td>
-   <td><a href="https://securitytrails.com/">https://securitytrails.com/</a>
-<p>
-<a href="https://ti.defender.microsoft.com/">https://ti.defender.microsoft.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Alienvault OTX
-   </td>
-   <td>A service that compiles threat intelligence and indicators put forward by the community
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://otx.alienvault.com/">https://otx.alienvault.com/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Mandiant Advantage
-   </td>
-   <td>Another threat intelligence service, currently owned by Google
-   </td>
-   <td>English
-   </td>
-   <td>Some features are available on the free tier
-   </td>
-   <td><a href="https://www.mandiant.com/multi-vendor-security-platform-free-access">https://www.mandiant.com/multi-vendor-security-platform-free-access</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Shodan
-   </td>
-   <td>Shows information on services running on a server by IP address, can also search for all servers running a service with a particular banner
-   </td>
-   <td>English
-   </td>
-   <td>Free tier
-<p>
-Basic $49
-<p>
-More volume available as  monthly subscriptions
-<p>
-(Free basic for academic emails, occasionally has great discounts, e.g. membership for $5 when they got 5 million users in July 2022, and $4 when they hit 4 million users in March of 2021)
-   </td>
-   <td>Background: <a href="https://en.wikipedia.org/wiki/Banner_grabbing">https://en.wikipedia.org/wiki/Banner_grabbing</a> 
-<p>
-Tool: <a href="https://www.shodan.io/">https://www.shodan.io/</a> 
-<p>
-Documentation: <a href="https://help.shodan.io/">https://help.shodan.io/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Censys Search
-   </td>
-   <td>A tool which can observe open ports, running services, TLS certificates, and more for a given IP
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://search.censys.io/">https://search.censys.io/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>DNS Dumpster
-   </td>
-   <td>A tool used to look up the potential attack surfaces of internet facing services
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://dnsdumpster.com/">https://dnsdumpster.com/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>DNS Checker & MX ToolBox
-   </td>
-   <td>‘Swiss Army Knives’ of DNS and IP lookups - allows various fast searches on domain/DNS, IP, and email records
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mxtoolbox.com/SuperTool.aspx">Network Tools: DNS,IP,Email (mxtoolbox.com)</a>
-<p>
-<a href="https://dnschecker.org/all-tools.php">DNS & IP Tools, Developer & Webmaster Tools, Productivity Tools, SEO Tools (dnschecker.org)</a>
-   </td>
-  </tr>
-  <tr>
-   <td>How certificate transparency works
-   </td>
-   <td>A quick introduction to what certificate transparency is, what issues it addresses, and how it functions
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://certificate.transparency.dev/howctworks/">https://certificate.transparency.dev/howctworks/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Certificates: the OSINT Gift that keeps on giving
-   </td>
-   <td>A guide for analysts on how to use tools like Shodan to search for certificates and get good data on web servers they are investigating
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td>Text version: <a href="https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/">https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/</a> 
-<p>
-Video version: <a href="https://www.youtube.com/watch?v=XHltHamQVoA">https://www.youtube.com/watch?v=XHltHamQVoA</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>crt.sh
-   </td>
-   <td>A search engine which focuses specifically on certificate search
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://crt.sh/">https://crt.sh/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>massdns
-   </td>
-   <td>A tool which can be used to brute force searches for subdomain
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains">https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Advanced Persistent Infrastructure Tracking
-   </td>
-   <td>A guide on various methods which could be used to track attacker infrastructure, which also looks at certificate searches
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://censys.com/advanced-persistent-infrastructure-tracking/">https://censys.com/advanced-persistent-infrastructure-tracking/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="What is a URL?" languages="Chinese, English, French, Japanese, Korean, Russian, Spanish" cost="Free" description="A brief overview of what URLs are, how they are constructed, and what additional features (anchors and the like) they might have." url="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" %}}
+
+{{% resource title="Introduction to DNS" languages="Video in English, text in Arabic, Bahasa Indonesian, German, Spanish, French, Italian, Portuguese, Vietnamese, Turkish, Russian, Thai, Japanese, Korean, Chinese, Taiwanese" cost="Free" description="A basic overview of how DNS works." url="https://aws.amazon.com/route53/what-is-dns/" %}}
+
+{{% resource title="Overview of DNS record types" languages="English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Taiwanese, Mandarin" cost="Free" description="Includes the most common record types, and some less common ones." url="https://www.cloudflare.com/learning/dns/dns-records/" %}}
+
+{{% resource title="Using the dig command" languages="English" cost="Free" description="How to query for information about IP addresses." url="https://phoenixnap.com/kb/linux-dig-command-examples" %}}
+
+{{% resource title="doggo" languages="English" cost="Free" description="An alternative to the dig command, with very similar functionality but differently formatted output." url="https://github.com/mr-karan/doggo" %}}
+
+{{% resource title="host command in Linux with examples" languages="English" cost="Free" description="A guide on how to use the host command in Linux, another commonly used tool to analyze servers and other types of infrastructure." url="https://www.geeksforgeeks.org/host-command-in-linux-with-examples/" %}}
+
+{{% resource title="Further DNS reconnaissance" languages="English" cost="Free" description="Various tools to automate searching for related servers." url="https://securitytrails.com/blog/dnsrecon-tool" additional_urls="DNSRecon: https://securitytrails.com/blog/dnsrecon-tool Fierce: https://www.kali.org/tools/fierce/ and https://salsa.debian.org/pkg-security-team/fierce VirusTotal: https://support.virustotal.com/hc/en-us/articles/115002739245-Searching" %}}
+
+{{% resource title="GeoIP" languages="English" cost="Free for limited quantities" description="Look up the (likely) physical location of a server by IP address." url="https://www.maxmind.com/en/geoip-demo" %}}
+
+{{% resource title="whois/RDAP" languages="English" cost="Free" description="Shows ownership information for a domain or IP address." url="https://who.is/" additional_urls="https://search.arin.net/rdap/, https://lookup.icann.org/en" %}}
+
+{{% resource title="What is whois and how is it used" languages="English" cost="Free" description="A quick summary of what a whois database is and what its potential limitations are." url="https://www.domain.com/blog/what-is-whois-and-how-is-it-used/" %}}
+
+{{% resource title="The ultimate guide to the whois database" languages="English" cost="Free" description="Offers a look at what whois can (and cannot) be used for." url="https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database" %}}
+
+{{% resource title="What is an IPv4 address?" languages="English" cost="Free" description="There are two types of IP addresses, IPv4 and IPv6. This guide provides an introduction to the former." url="https://bluecatnetworks.com/glossary/what-is-ipv4/" %}}
+
+{{% resource title="Differences between IPv4 and IPv6" languages="English" cost="Free" description="Outlines the key differences between the two types of IP addresses." url="https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/" %}}
+
+{{% resource title="Understanding IP addresses" languages="English" cost="Free" description="A quick introduction to what IP addresses are, what the different types thereof are." url="https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/" %}}
+
+{{% resource title="What are port numbers and how do they work?" languages="English" cost="Free" description="A quick introduction to port numbers, includes a list of some key ones." url="https://www.techtarget.com/searchnetworking/definition/port-number" %}}
+
+{{% resource title="Subdomain enumeration: the ultimate guide" languages="English" cost="Free" description="A guide which contains several techniques on enumerating (figuring out) which subdomains a specific domain contains. It’s worth remembering that not all techniques will work on all domains/servers." url="https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/" %}}
+
+{{% resource title="Threat intelligence services with DNS history" languages="English" cost="Free with premium features (security trails) / Free (Microsoft Defender)" description="Those services perform DNS scans and add history; analysts who use them can therefore see whether certain websites or addresses moved or changed." url="https://securitytrails.com/" additional_urls="https://ti.defender.microsoft.com/" %}}
+
+{{% resource title="Alienvault OTX" languages="English" cost="Free" description="A service that compiles threat intelligence and indicators put forward by the community." url="https://otx.alienvault.com/" %}}
+
+{{% resource title="Mandiant Advantage" languages="English" cost="Some features are available on the free tier" description="Another threat intelligence service, currently owned by Google." url="https://www.mandiant.com/multi-vendor-security-platform-free-access" %}}
+
+{{% resource title="Shodan" languages="English" cost="Free tier\nBasic $49\nMore volume available as monthly subscriptions\n(Free basic for academic emails, occasionally has great discounts, e.g. membership for $5 when they got 5 million users in July 2022, and $4 when they hit 4 million users in March of 2021)" description="Shows information on services running on a server by IP address, can also search for all servers running a service with a particular banner." url="https://www.shodan.io/" additional_urls="Background: https://en.wikipedia.org/wiki/Banner_grabbing\nDocumentation: https://help.shodan.io/" %}}
+
+{{% resource title="Censys Search" languages="English" cost="Free" description="A tool which can observe open ports, running services, TLS certificates, and more for a given IP." url="https://search.censys.io/" %}}
+
+{{% resource title="DNS Dumpster" languages="English" cost="Free" description="A tool used to look up the potential attack surfaces of internet facing services." url="https://dnsdumpster.com/" %}}
+
+{{% resource title="DNS Checker & MX ToolBox" languages="English" cost="Free" description="‘Swiss Army Knives’ of DNS and IP lookups - allows various fast searches on domain/DNS, IP, and email records." url="https://mxtoolbox.com/SuperTool.aspx" additional_urls="https://dnschecker.org/all-tools.php" %}}
+
+{{% resource title="How certificate transparency works" languages="English" cost="Free" description="A quick introduction to what certificate transparency is, what issues it addresses, and how it functions." url="https://certificate.transparency.dev/howctworks/" %}}
+
+{{% resource title="Certificates: the OSINT Gift that keeps on giving" languages="English" cost="Free" description="A guide for analysts on how to use tools like Shodan to search for certificates and get good data on web servers they are investigating." url="https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/" additional_urls="Video version: https://www.youtube.com/watch?v=XHltHamQVoA" %}}
+
+{{% resource title="crt.sh" languages="English" cost="Free" description="A search engine which focuses specifically on certificate search." url="https://crt.sh/" %}}
+
+{{% resource title="massdns" languages="English" cost="Free" description="A tool which can be used to brute force searches for subdomains." url="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains" %}}
+
+{{% resource title="Advanced Persistent Infrastructure Tracking" languages="English" cost="Free" description="A guide on various methods which could be used to track attacker infrastructure, which also looks at certificate searches." url="https://cobaltstrike.com/downloads/csmanual38.pdf" %}}
+
 
 ## Practice
 

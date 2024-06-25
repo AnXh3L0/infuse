@@ -52,32 +52,7 @@ For operational security to protect yourself while working with malicious emails
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Security Education 101
-   </td>
-   <td>A popular community resource on how to teach and talk about digital security
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.securityeducationcompanion.org/articles">https://www.securityeducationcompanion.org/articles</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Security Education 101" languages="English" cost="Free" description="A popular community resource on how to teach and talk about digital security" url="https://www.securityeducationcompanion.org/articles" %}}
 
 ## Practice
 

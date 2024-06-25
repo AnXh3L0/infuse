@@ -81,128 +81,23 @@ Take as many detailed technical notes, screenshots, and samples (or, more likely
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>UEFI rootkit cyber attack discovered
-   </td>
-   <td>A 2018 analysis by a security firm which describes a UEFI rootkit: a piece of malware embedded at a lower level than the operating system, so it wouldn’t be destroyed by a simple operating system reinstall
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/">https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Microsoft shares guidance to detect BlackLotus UEFI bootkit attacks
-   </td>
-   <td>An overview of another, more recent, piece of malware which operates at a level lower than the operating system, along with steps that an analyst could take to detect it
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/">https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Trojans All the Way Down: BADBOX and PEACHPIT
-   </td>
-   <td>An in-depth report looking at malware which is pre-installed on devices, most likely at the factory, and is therefore extremely difficult to remove. Good example for why devices used for sensitive work need to come from reputable manufacturers
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf">https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How Safety Check on iPhone works to keep you safe
-   </td>
-   <td>An iOS feature which allows any user to review which information they are sharing with others and–if need be–stop that sharing from taking place
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0">https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to tell if your iPhone is jailbroken
-   </td>
-   <td>A quick look at some initial heuristics you can do to check if your iOS device has been jailbroken
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/">https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to factory reset your iPhone, iPad or iPod touch
-   </td>
-   <td>A quick guide on how to completely wipe an iOS device, which should provide additional reassurance that any malware or malicious profiles were removed
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.apple.com/en-gb/HT201274">https://support.apple.com/en-gb/HT201274</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Best antivirus rescue disks of 2024
-   </td>
-   <td>A list of tools which you can use to scan and clean up an infected operating system while booting from an external drive
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.techradar.com/best/best-antivirus-rescue-disk">https://www.techradar.com/best/best-antivirus-rescue-disk</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Erase your Mac and reset it to factory settings
-   </td>
-   <td>A quick guide on how to completely wipe a macOS device, which should provide additional reassurance that any malware or malicious profiles were removed
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.apple.com/en-ug/102664">https://support.apple.com/en-ug/102664</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Objective-See Tools
-   </td>
-   <td>A series of security tools for macOS, developed by a very reputable security researcher, which can be used to detect malware
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://objective-see.org/tools.html">https://objective-see.org/tools.html</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="UEFI rootkit cyber attack discovered" languages="English" cost="Free" description="Analysis of a UEFI rootkit malware discovered in 2018, designed to persist even after OS reinstall." url="https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/" %}}
+
+{{% resource title="Microsoft shares guidance to detect BlackLotus UEFI bootkit attacks" languages="English" cost="Free" description="Overview of the BlackLotus UEFI bootkit malware and steps to detect it, provided by Microsoft." url="https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/" %}}
+
+{{% resource title="Trojans All the Way Down: BADBOX and PEACHPIT" languages="English" cost="Free" description="In-depth report on BADBOX and PEACHPIT, malware pre-installed at factories, emphasizing the importance of devices from reputable manufacturers." url="https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf" %}}
+
+{{% resource title="How Safety Check on iPhone works to keep you safe" languages="English" cost="Free" description="Explanation of the iPhone Safety Check feature, allowing users to review and control shared information." url="https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0" %}}
+
+{{% resource title="How to tell if your iPhone is jailbroken" languages="English" cost="Free" description="Guide to detecting whether an iOS device has been jailbroken using initial heuristics." url="https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/" %}}
+
+{{% resource title="How to factory reset your iPhone, iPad or iPod touch" languages="English" cost="Free" description="Guide on how to completely wipe an iOS device, ensuring removal of malware or malicious profiles." url="https://support.apple.com/en-gb/HT201274" %}}
+
+{{% resource title="Best antivirus rescue disks of 2024" languages="English" cost="Free" description="List of tools for scanning and cleaning infected operating systems using external bootable drives." url="https://www.techradar.com/best/best-antivirus-rescue-disk" %}}
+
+{{% resource title="Erase your Mac and reset it to factory settings" languages="English" cost="Free" description="Guide on how to completely wipe a macOS device to remove malware or malicious profiles." url="https://support.apple.com/en-ug/102664" %}}
+
+{{% resource title="Objective-See Tools" languages="English" cost="Free" description="Collection of security tools for macOS developed by a reputable security researcher, used for detecting malware." url="https://objective-see.org/tools.html" %}}
 
 ## Skill Check
 

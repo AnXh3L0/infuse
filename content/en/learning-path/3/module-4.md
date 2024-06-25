@@ -33,68 +33,13 @@ To start off in Windows static analysis, we will set aside REMnux and go through
 
 ## Windows: Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Windows malware reverse engineering 101 and 102
-   </td>
-   <td>An excellent and comprehensive course on reverse engineering Windows malware. Note that these exercises are a <em>non-gentle </em>introduction, you may have to do additional studying (resources below) in order to understand certain exercises. They might take several days to complete.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://malwareunicorn.org/workshops/re101.html">https://malwareunicorn.org/workshops/re101.html</a><br><a href="https://malwareunicorn.org/workshops/re102.html">https://malwareunicorn.org/workshops/re102.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OpenSecurityTraining2 courses
-   </td>
-   <td>Courses which provide a very deep dive on low-level system architecture and reversing.
-   </td>
-   <td>English
-   </td>
-   <td>Free, paid with instructor support
-   </td>
-   <td><a href="https://p.ost2.fyi/courses">https://p.ost2.fyi/courses</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>OpenSecurity’s learning path for malware analysis
-   </td>
-   <td>
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://opensecuritytraining.info/Malware%20Analysis.html">https://opensecuritytraining.info/Malware%20Analysis.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Windows reversing using x64dbg
-   </td>
-   <td>This video series focuses specifically on using x64dbg, an open source debugging tool, to reverse Windows malware
-   </td>
-   <td>Spanish
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.youtube.com/watch?v=Af5pvCl0CBE&list=PLn__CHOEZR1Ymxi2n4Q9G9I9kBYr6B4Ft">https://www.youtube.com/watch?v=Af5pvCl0CBE&list=PLn__CHOEZR1Ymxi2n4Q9G9I9kBYr6B4Ft</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Windows malware reverse engineering 101 and 102" languages="English" cost="Free" description="Comprehensive courses on reverse engineering Windows malware." url="https://malwareunicorn.org/workshops/re101.html" url2="https://malwareunicorn.org/workshops/re102.html" %}}
+
+{{% resource title="OpenSecurityTraining2 courses" languages="English" cost="Free, paid with instructor support" description="Courses on low-level system architecture and reversing." url="https://p.ost2.fyi/courses" %}}
+
+{{% resource title="OpenSecurity’s learning path for malware analysis" languages="English" cost="Free" description="Learning path for malware analysis." url="https://opensecuritytraining.info/Malware%20Analysis.html" %}}
+
+{{% resource title="Windows reversing using x64dbg" languages="Spanish" cost="Free" description="Video series on using x64dbg for reversing Windows malware." url="https://www.youtube.com/watch?v=Af5pvCl0CBE&list=PLn__CHOEZR1Ymxi2n4Q9G9I9kBYr6B4Ft" %}}
 
 **Android**
 
@@ -106,68 +51,13 @@ As with the Windows static analysis section this section on Android static analy
 
 ## Android: Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Android App Reverse Engineering 101
-   </td>
-   <td>An excellent and comprehensive course on reverse engineering Android applications. Note that these exercises are a <em>non-gentle </em>introduction, so you may have to do additional studying (resources below) in order to understand certain exercises. They might take several days to complete. The resources below may help you flesh out sections of the course.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.ragingrock.com/AndroidAppRE/">https://www.ragingrock.com/AndroidAppRE/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>How to statically analyze a suspicious Android app
-   </td>
-   <td>An excellent intermediate introduction to static analysis of Android apps.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/guides/g5/">https://pts-project.org/guides/g5/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Codecademy’s Learn Java course
-   </td>
-   <td>A basic introduction to Java. You’ll need to understand Java in order to work with Android programs.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.codecademy.com/enrolled/courses/learn-java">https://www.codecademy.com/enrolled/courses/learn-java</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Build Your First Android App in Java
-   </td>
-   <td>A basic course on app building from Google. This should give you an idea of the way Android apps work and prepare you to learn about Android internals.
-   </td>
-   <td>English, Chinese, Indonesian, Japanese, Korean, Portuguese, Spanish 
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://developer.android.com/codelabs/build-your-first-android-app">https://developer.android.com/codelabs/build-your-first-android-app</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Android App Reverse Engineering 101" languages="English" cost="Free" description="Comprehensive course on reverse engineering Android applications." url="https://www.ragingrock.com/AndroidAppRE/" %}}
+
+{{% resource title="How to statically analyze a suspicious Android app" languages="English" cost="Free" description="Intermediate introduction to static analysis of Android apps." url="https://pts-project.org/guides/g5/" %}}
+
+{{% resource title="Codecademy’s Learn Java course" languages="English" cost="Free" description="Basic introduction to Java programming." url="https://www.codecademy.com/enrolled/courses/learn-java" %}}
+
+{{% resource title="Build Your First Android App in Java" languages="English, Chinese, Indonesian, Japanese, Korean, Portuguese, Spanish" cost="Free" description="Basic course on building Android apps using Java." url="https://developer.android.com/codelabs/build-your-first-android-app" %}}
 
 ## Skill Check
 

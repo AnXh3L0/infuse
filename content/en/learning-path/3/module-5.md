@@ -115,116 +115,21 @@ Lastly, if you have malware samples, you can submit them to the major antivirus 
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>What is hashing and how does it work?
-   </td>
-   <td>A brief introduction to the topic of file hashes and what role they play in malware detection and investigation
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.sentinelone.com/cybersecurity-101/hashing/">https://www.sentinelone.com/cybersecurity-101/hashing/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>YARA
-   </td>
-   <td>The official homepage of the YARA tool, which is used for pattern matching, mostly during malware research
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://virustotal.github.io/yara/">https://virustotal.github.io/yara/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Threat hunting 101 with Yara rules
-   </td>
-   <td>This post looks at how to create and use YARA rules to detect malicious files.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674">https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>yarGen
-   </td>
-   <td>A tool which can automate some string generation for YARA rules
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/Neo23x0/yarGen">https://github.com/Neo23x0/yarGen</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Snort rules
-   </td>
-   <td>The best way to think of Snort is as being akin to YARA but for networks, using patterns to detect and stop intrusions. This post introduces some basic rules for it.
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://docs.snort.org/start/rules">https://docs.snort.org/start/rules</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Snort rules examples and usage
-   </td>
-   <td>Some good rules for Snort beginners
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.sapphire.net/security/snort-rules-examples/">https://www.sapphire.net/security/snort-rules-examples/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>What to include in a malware analysis report
-   </td>
-   <td>A solid to-do list for all the main things that you should keep in mind and note down when building out a malware analysis report to share with others
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://zeltser.com/malware-analysis-report/">https://zeltser.com/malware-analysis-report/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Writing malware reports
-   </td>
-   <td>An older (2012) but still very useful guide by SANS on best practices when writing malware reports
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.sans.org/blog/writing-malware-reports/">https://www.sans.org/blog/writing-malware-reports/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="What is hashing and how does it work?" languages="English" cost="Free" description="Introduction to file hashes and their role in malware detection." url="https://www.sentinelone.com/cybersecurity-101/hashing/" %}}
+
+{{% resource title="YARA" languages="English" cost="Free" description="Official homepage of YARA, used for pattern matching in malware research." url="https://virustotal.github.io/yara/" %}}
+
+{{% resource title="Threat hunting 101 with Yara rules" languages="English" cost="Free" description="Using YARA rules to detect malicious files." url="https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674" %}}
+
+{{% resource title="yarGen" languages="English" cost="Free" description="Tool to automate string generation for YARA rules." url="https://github.com/Neo23x0/yarGen" %}}
+
+{{% resource title="Snort rules" languages="English" cost="Free" description="Introduction to Snort rules for network intrusion detection." url="https://docs.snort.org/start/rules" %}}
+
+{{% resource title="Snort rules examples and usage" languages="English" cost="Free" description="Examples of Snort rules for beginners." url="https://www.sapphire.net/security/snort-rules-examples/" %}}
+
+{{% resource title="What to include in a malware analysis report" languages="English" cost="Free" description="Guide on essential elements for a malware analysis report." url="https://zeltser.com/malware-analysis-report/" %}}
+
+{{% resource title="Writing malware reports" languages="English" cost="Free" description="Guide on best practices for writing malware reports." url="https://www.sans.org/blog/writing-malware-reports/" %}}
 
 ## Practice
 

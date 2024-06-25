@@ -51,128 +51,23 @@ Here’s [a quick article on static reverse engineering of file formats](https:/
 
 ## Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Common file name extensions in Windows
-   </td>
-   <td>A guide created by Microsoft outlining some of the most commonly encountered file extensions in the Windows operating system
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://support.microsoft.com/en-us/windows/common-file-name-extensions-in-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01">https://support.microsoft.com/en-us/windows/common-file-name-extensions-in-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>List of filename extensions | Wikipedia
-   </td>
-   <td>A longer, more comprehensive list of file extensions used by various pieces of software
-   </td>
-   <td>English, Japanese, Korean
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/List_of_filename_extensions">https://en.wikipedia.org/wiki/List_of_filename_extensions</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>TrID
-   </td>
-   <td>A Windows and Linux program which can figure out the filetypes of various files based on their binary signatures
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mark0.net/soft-trid-e.html">https://mark0.net/soft-trid-e.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>File extensions and file type definitions
-   </td>
-   <td>TrID’s list of known file extensions, which now numbers over 16,000
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://mark0.net/soft-trid-deflist.html">https://mark0.net/soft-trid-deflist.html</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>File
-   </td>
-   <td>A command line program for Unix-like systems, which identifies files by type
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://github.com/file/file">https://github.com/file/file</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Comparison of hex editors
-   </td>
-   <td>A list and comparison of hex editors, or programs which allow you to directly edit binary files
-   </td>
-   <td>English, Simplified Chinese, Croatian, Spanish
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikipedia.org/wiki/Comparison_of_hex_editors">https://en.wikipedia.org/wiki/Comparison_of_hex_editors</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>wxHexEditor
-   </td>
-   <td>The official webpage of the hex editor supplied with every REMnux install
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.wxhexeditor.org/home.php">https://www.wxhexeditor.org/home.php</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Wikibooks/ Reverse Engineering  File Formats
-   </td>
-   <td>A comprehensive guide to reverse engineering file formats. Make sure you understand it before proceeding to other sections of this learning path
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://en.wikibooks.org/wiki/Reverse_Engineering/File_Formats">https://en.wikibooks.org/wiki/Reverse_Engineering/File_Formats</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Beginner guide: how to handle a potentially malicious mobile app
-   </td>
-   <td>An introduction to handling a suspicious Android app and all the initial data collection and analysis steps we could take
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://pts-project.org/guides/g3/">https://pts-project.org/guides/g3/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Common file name extensions in Windows" languages="English" cost="Free" description="Guide by Microsoft outlining commonly encountered file extensions in Windows." url="https://support.microsoft.com/en-us/windows/common-file-name-extensions-in-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01" %}}
+
+{{% resource title="List of filename extensions | Wikipedia" languages="English, Japanese, Korean" cost="Free" description="Comprehensive list of file extensions used by various software." url="https://en.wikipedia.org/wiki/List_of_filename_extensions" %}}
+
+{{% resource title="TrID" languages="English" cost="Free" description="Program for Windows and Linux to identify file types based on binary signatures." url="https://mark0.net/soft-trid-e.html" %}}
+
+{{% resource title="File extensions and file type definitions" languages="English" cost="Free" description="TrID’s list of over 16,000 known file extensions." url="https://mark0.net/soft-trid-deflist.html" %}}
+
+{{% resource title="File" languages="English" cost="Free" description="Command line program for Unix-like systems to identify files by type." url="https://github.com/file/file" %}}
+
+{{% resource title="Comparison of hex editors" languages="English, Simplified Chinese, Croatian, Spanish" cost="Free" description="List and comparison of hex editors for directly editing binary files." url="https://en.wikipedia.org/wiki/Comparison_of_hex_editors" %}}
+
+{{% resource title="wxHexEditor" languages="English" cost="Free" description="Official webpage of the hex editor supplied with REMnux." url="https://www.wxhexeditor.org/home.php" %}}
+
+{{% resource title="Wikibooks/ Reverse Engineering File Formats" languages="English" cost="Free" description="Comprehensive guide to reverse engineering file formats." url="https://en.wikibooks.org/wiki/Reverse_Engineering/File_Formats" %}}
+
+{{% resource title="Beginner guide: how to handle a potentially malicious mobile app" languages="English" cost="Free" description="Introduction to handling suspicious Android apps with initial data collection and analysis steps." url="https://pts-project.org/guides/g3/" %}}
 
 ## Practice
 

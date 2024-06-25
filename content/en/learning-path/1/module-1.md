@@ -43,104 +43,20 @@ Attackers who use lower quality or mass messaging are also likely to be caught b
 
 ### Learning Resources
 
-<table>
-  <tr>
-   <td>Title
-   </td>
-   <td>Description
-   </td>
-   <td>Language
-   </td>
-   <td>Cost
-   </td>
-   <td>URL
-   </td>
-  </tr>
-  <tr>
-   <td>Shira by Horizontal
-   </td>
-   <td>An online quiz with sample emails, where the user must decide whether they are malicious
-   </td>
-   <td>English, Spanish, Mandarin
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://shira.app">https://shira.app</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Phishing Quiz by Jigsaw
-   </td>
-   <td>An online quiz with sample emails, where the user must decide whether they are malicious
-   </td>
-   <td>27 Languages
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://phishingquiz.withgoogle.com/">Jigsaw | Phishing Quiz</a>
-   </td>
-  </tr>
-  <tr>
-   <td>6 Common phishing attacks and how to protect against them
-   </td>
-   <td>A summary of some common phishing attacks, which also includes some more sophisticated methods used by attackers
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them">https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>5 Common phishing techniques
-   </td>
-   <td>A look at some techniques attackers use to make phishing emails more convincing and occasionally escape detection
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.vadesecure.com/en/blog/5-common-phishing-techniques">https://www.vadesecure.com/en/blog/5-common-phishing-techniques</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>CiviCERT
-   </td>
-   <td>A network of civil society organizations and rapid response groups which focus on cyberattacks and similar threats
-   </td>
-   <td>English
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://www.civicert.org/">https://www.civicert.org/</a> 
-   </td>
-  </tr>
-  <tr>
-   <td>Digital First Aid Kit
-   </td>
-   <td>A comprehensive guide supporting digital protectors who deal with a variety of different issues
-   </td>
-   <td>Arabic, Spanish, Farsi, French, Indonesian, Armenian, Kyrgyz, Burmese, Portuguese, Russian, Albanian, Thai, Ukrainian
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://digitalfirstaid.org/en/index.html">https://digitalfirstaid.org/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Recover from possible account compromise
-   </td>
-   <td>A guide on what immediate and long-term steps to take when an account has been compromised
-   </td>
-   <td>Arabic, Indonesian, English, Spanish, Farsi, French, Portuguese, Russian, Thai, Turkish, Vietnamese, Chinese, Tibetan, Khmer, Burmese 
-   </td>
-   <td>Free
-   </td>
-   <td><a href="https://securityinabox.org/en/communication/account-compromise/">https://securityinabox.org/en/communication/account-compromise/</a> 
-   </td>
-  </tr>
-</table>
+{{% resource title="Shira by Horizontal" languages="English, Spanish, Mandarin" cost="Free" description="An online quiz with sample emails, where the user must decide whether they are malicious" url="https://shira.app" %}}
+
+{{% resource title="Phishing Quiz by Jigsaw" languages="27 Languages" cost="Free" description="An online quiz with sample emails, where the user must decide whether they are malicious" url="https://phishingquiz.withgoogle.com/" %}}
+
+{{% resource title="6 Common phishing attacks and how to protect against them" languages="English" cost="Free" description="A summary of some common phishing attacks, which also includes some more sophisticated methods used by attackers" url="https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them" %}}
+
+{{% resource title="5 Common phishing techniques" languages="English" cost="Free" description="A look at some techniques attackers use to make phishing emails more convincing and occasionally escape detection" url="https://www.vadesecure.com/en/blog/5-common-phishing-techniques" %}}
+
+{{% resource title="CiviCERT" languages="English" cost="Free" description="A network of civil society organizations and rapid response groups which focus on cyberattacks and similar threats" url="https://www.civicert.org/" %}}
+
+{{% resource title="Digital First Aid Kit" languages="Arabic, Spanish, Farsi, French, Indonesian, Armenian, Kyrgyz, Burmese, Portuguese, Russian, Albanian, Thai, Ukrainian" cost="Free" description="A comprehensive guide supporting digital protectors who deal with a variety of different issues" url="https://digitalfirstaid.org/en/index.html" %}}
+
+{{% resource title="Recover from possible account compromise" languages="Arabic, Indonesian, English, Spanish, Farsi, French, Portuguese, Russian, Thai, Turkish, Vietnamese, Chinese, Tibetan, Khmer, Burmese" cost="Free" description="A guide on what immediate and long-term steps to take when an account has been compromised" url="https://securityinabox.org/en/communication/account-compromise/" %}}
+
 
 ### Skill Check
 

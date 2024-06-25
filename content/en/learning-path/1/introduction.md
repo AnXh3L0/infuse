@@ -88,73 +88,8 @@ This learning path offers a fantastic introduction to other ones. After completi
 
 ## Other resources and links
 
-<table>
-  <tr>
-   <td>Title
+{{% resource title="Helpdesk Workflow: Client Receives a Suspicious/Phishing Email" languages="English" cost="Free" description="Access Now helpline community documentation for responding to suspicious/phishing emails" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#" %}}
 
-   </td>
-   <td>Description
+{{% resource title="List of all DNS record types" languages="English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French" cost="Free" description="Includes (almost?) all DNS record types." url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
 
-   </td>
-   <td>Language
-
-   </td>
-   <td>Cost
-
-   </td>
-   <td>URL
-
-   </td>
-  </tr>
-  <tr>
-   <td>Helpdesk Workflow: Client Receives a Suspicious/Phishing Email
-
-   </td>
-   <td>Access Now helpline community documentation for responding to suspicious/phishing emails
-
-   </td>
-   <td>English
-
-   </td>
-   <td>Free
-
-   </td>
-   <td>[Client Receives a Suspicious/Phishing Email | Access Now Digital Security Helpline Public Documentation (accessnowhelpline.gitlab.io)](https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#)
-
-   </td>
-  </tr>
-  <tr>
-   <td>List of all DNS record types
-
-   </td>
-   <td>Includes (almost?) all DNS record types.
-
-   </td>
-   <td>English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French
-
-   </td>
-   <td>Free
-
-   </td>
-   <td>[https://en.wikipedia.org/wiki/List_of_DNS_record_types](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
-
-   </td>
-  </tr>
-  <tr>
-   <td>Amnesty reports on phishing campaigns
-
-   </td>
-   <td>A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks
-
-   </td>
-   <td>Multiple, depending on the report
-
-   </td>
-   <td>Free
-
-   </td>
-   <td>[https://www.amnesty.org/en/search/phishing/](https://www.amnesty.org/en/search/phishing/)
-
-   </td>
-  </tr>
-</table>
+{{% resource title="Amnesty reports on phishing campaigns" languages="Multiple depending on the report" cost="Free" description="A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks" url="https://www.amnesty.org/en/search/phishing/" %}}
