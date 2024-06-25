@@ -34,8 +34,11 @@
             {{ partial "certificate.html" }}
 
             <section class="mx-auto max-w-7xl px-8 pb-32 pt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-                {{ range where (where .Site.Pages "Section" "learning-path" ) "Params.type" "=" "learning-path" }}
-                <div x-data="{ isOpen: false, isClickable: false }" class="relative">
+                {{ $learningPaths := where .Site.Pages "Section" "learning-path" }}
+                {{ range $learningPath := where $learningPaths "Params.type" "=" "learning-path" }}
+                {{ $modulesCount := len $learningPath.RegularPagesRecursive }}
+                <div x-data="{ isOpen: false, isClickable: false }" class="relative"
+                    data-modules-count="{{ $modulesCount }}" data-path-id="{{ $learningPath.Permalink }}">
                     <!-- Badge Card -->
                     <div x-on:click="isClickable && (isOpen = true)" role="button" tabindex="0"
                         :class="{ 'opacity-70 cursor-not-allowed': !isClickable }"
@@ -145,22 +148,21 @@
                             const badgeKey = `/${lastItem}`;
 
                             let completedModules = 0;
-                            let modulesCount = 0;
+                            const container = document.querySelector(`[data-path-id="${permalink}"]`);
+                            let modulesCount = parseInt(container.getAttribute('data-modules-count')); // Get module count from data attribute
 
+                            // Count completed modules from userData
                             for (let [key, value] of Object.entries(userData)) {
-                                if (key.startsWith(badgeKey)) {
-                                    modulesCount++; // Count total modules in the learning path
-                                    if (value === true) {
-                                        completedModules++; // Count completed modules
-                                    }
+                                if (key.startsWith(badgeKey) && value === true) {
+                                    completedModules++; // Count completed modules
                                 }
                             }
 
                             // Decide whether the badge is clickable based on completion progress
-                            this.isClickable = completedModules === modulesCount;
+                            this.isClickable = completedModules === modulesCount && modulesCount > 0;
 
                             // Decide which badge icon to show based on completion progress
-                            if (completedModules === modulesCount) {
+                            if (completedModules === modulesCount && modulesCount > 0) {
                                 return `/media/badges/${icon}-badge.svg`; // Fully completed badge icon
                             } else {
                                 return `/media/badges/${icon}-badge-incomplete.svg`; // Incomplete badge icon
@@ -177,11 +179,11 @@
                             const badgeKey = `/${lastItem}`;
 
                             let completedModules = 0;
-                            let modulesCount = 0;
+                            const container = document.querySelector(`[data-path-id="${permalink}"]`);
+                            let modulesCount = parseInt(container.getAttribute('data-modules-count')); // Get module count from data attribute
 
                             for (let [key, value] of Object.entries(userData)) {
                                 if (key.startsWith(badgeKey)) {
-                                    modulesCount++; // Count total modules in the learning path
                                     if (value === true) {
                                         completedModules++; // Count completed modules
                                     }
@@ -192,10 +194,12 @@
 
                             if (remainingModules === 1) {
                                 return '{{ i18n "modules_left" 1 }}';
-                            } else if (remainingModules > 1) {
+                            } else if (remainingModules > 1 && completedModules > 0) {
                                 return '{{ i18n "modules_left" 2 }}'.replace("'count'", remainingModules);
-                            } else {
+                            } else if (modulesCount > 0 && remainingModules === 0) {
                                 return '{{ i18n "badge_completed" }}';
+                            } else if (completedModules === 0 && remainingModules > 0) {
+                                return '{{ i18n "no_modules" }}';
                             }
                         },
 

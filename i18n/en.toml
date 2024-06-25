@@ -176,6 +176,9 @@ other = "Finish 'count' more modules to earn your badge"
 one = "1 module left to earn your badge"
 other = "'count' more modules to earn your badge"
 
+[no_modules]
+other = "You haven't completed any module yet!"
+
 [badge_completed]
 other = "You've earned the badge!"
 

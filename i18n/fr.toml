@@ -126,6 +126,7 @@ other = "Delete Account"
 other = "Your profile"
 
 [badges]
+one = "Badge"
 other = "Badges"
 
 [settings]
@@ -156,14 +157,27 @@ other = "Skill Check"
 [markAsComplete]
 other = "Mark module as complete"
 
+[markIntroAsComplete]
+other = "Mark introduction as complete"
+
 [markAsCompleteARIA]
 other = "Marks the current module as completed and saves the progress for the user."
+
+[markIntroAsCompleteARIA]
+other = "Marks the introduction as completed and saves the progress for the user."
 
 [only_one_module_left]
 other = "Only 1 module left to earn your badge"
 
 [multiple_modules_left]
 other = "Finish 'count' more modules to earn your badge"
+
+[modules_left]
+one = "1 module left to earn your badge"
+other = "'count' more modules to earn your badge"
+
+[no_modules]
+other = "You haven't completed any module yet!"
 
 [badge_completed]
 other = "You've earned the badge!"
