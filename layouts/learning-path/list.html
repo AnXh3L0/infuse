@@ -5,12 +5,12 @@
     {{ partial "head.html" . }}
 </head>
 
-<body x-data="learningPathComponent()" x-init="init()">
+<body class="min-h-screen flex flex-col" x-data="learningPathComponent()" x-init="init()">
     <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
 
     {{ partial "header.html" . }}
 
-    <main id="content" class="content">
+    <main id="content" class="content mb-auto">
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <section
                 class="mx-auto max-w-7xl px-8 lg:flex lg:items-center lg:justify-between lg:px-8 border-b border-gray-300 pb-8">

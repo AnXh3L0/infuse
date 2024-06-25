@@ -5,12 +5,12 @@
     {{ partial "head.html" . }}
 </head>
 
-<body class="h-full">
+<body class="min-h-screen flex flex-col">
     <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
 
     {{ partial "header.html" . }}
 
-    <main id="content" class="content">
+    <main id="content" class="content mb-auto">
         {{ partial "breadcrumbs.html" . }}
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <section

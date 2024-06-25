@@ -29,7 +29,7 @@
                             <div class="relative pl-16">
                                 <dt class="text-base font-semibold leading-7 text-gray-900">
                                     <div
-                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-200">
+                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-green-200">
                                         <svg class="h-6 w-6 text-green-700" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +45,7 @@
                             <div class="relative pl-16">
                                 <dt class="text-base font-semibold leading-7 text-gray-900">
                                     <div
-                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-200">
+                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-green-200">
                                         <svg class="h-6 w-6 text-green-700" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -61,7 +61,7 @@
                             <div class="relative pl-16">
                                 <dt class="text-base font-semibold leading-7 text-gray-900">
                                     <div
-                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-200">
+                                        class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-green-200">
                                         <svg class="h-6 w-6 text-green-700" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -153,34 +153,6 @@
             });
         });
     </script>
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.progress-container').forEach((container) => {
-                const learningPathUrl = container.closest('article').querySelector('a').getAttribute('href');
-                const permalinkParts = learningPathUrl.split('/');
-                const lastItem = "/" + permalinkParts[permalinkParts.length - 2];
-                const progressKey = `progress_${lastItem}`;
-    
-                const username = localStorage.getItem("loggedInUser");
-                const userDataString = localStorage.getItem(username);
-                const userData = JSON.parse(userDataString) || {};
-    
-                const progressPercent = userData[progressKey] || 0;
-                console.log(`Loading progress: ${progressKey} = ${progressPercent}%`);
-    
-                const circumference = 30 * 2 * Math.PI;
-                const offset = circumference - (progressPercent / 100) * circumference;
-    
-                const progressCircle = container.querySelector('circle.text-green-600');
-                progressCircle.style.strokeDasharray = `${circumference}`;
-                progressCircle.style.strokeDashoffset = `${offset}`;
-    
-                const progressText = container.querySelector('.progress-text');
-                progressText.textContent = `${progressPercent}%`;
-            });
-        });
-    </script> -->
 
     {{ partial "faq.html" . }}
 
