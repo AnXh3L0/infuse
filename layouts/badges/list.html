@@ -203,7 +203,7 @@
                             }
                         },
 
-                        // Function to generate PDF for the badge
+                        // Function to generate PDF certificate
                         async generatePDF(icon, permalink, event) {
                             // Retrieve fullName from localStorage
                             const username = localStorage.getItem("loggedInUser");
@@ -240,9 +240,9 @@
                             // Replace placeholders in SVG with dynamic data
                             const updatedSvgString = svgString
                                 .replace('FULL_NAME_PLACEHOLDER', fullName)
-                                .replace('BADGE_NAME_PLACEHOLDER', badgeName)
                                 .replace('LEARNING_PATH_NAME_PLACEHOLDER', learningpathName)
                                 .replace('BADGE_COLOR_PLACEHOLDER', badgeIconColor)
+                                .replace('BADGE_NAME_PLACEHOLDER', badgeName)
                                 .replace('DATE_PLACEHOLDER', today);
 
                             // Create a canvas element to convert SVG to image
@@ -288,8 +288,28 @@
 
                                 // Save PDF
                                 pdf.save(filename);
+
+                                // Clean up: Reset SVG to original state after PDF generation
+                                svgTemplate.innerHTML = svgString; // Reset SVG content
                             };
                             img.src = url;
+
+                            img.addEventListener('load', function () {
+                                const badgeNameTextElement = document.getElementById('badgeNamePlaceholder');
+                                const ribbonPathElement = document.getElementById('ribbonPath');
+
+                                // Dynamically adjust the ribbon path width based on badge name length
+                                const textWidth = badgeNameTextElement.getBBox().width;
+                                console.log(textWidth);
+                                const ribbonWidth = 315.394 + textWidth + 20; // Adjust as necessary
+                                console.log(ribbonWidth);
+
+                                ribbonPathElement.setAttribute('d', `M315.394 451.854C314.659 450.222 315.853 448.376 317.642 448.376H${ribbonWidth}C${ribbonWidth + 1.289} 448.376 ${ribbonWidth + 2.482} 450.222 ${ribbonWidth + 1.748} 451.854L${ribbonWidth - 7.186} 470.034C${ribbonWidth - 7.476} 470.677 ${ribbonWidth - 7.476} 471.414 ${ribbonWidth - 7.186} 472.058L${ribbonWidth + 1.748} 490.238C${ribbonWidth + 2.482} 491.869 ${ribbonWidth + 1.289} 493.715 ${ribbonWidth - 0.5} 493.715H317.642C315.853 493.715 314.659 491.869 315.394 490.238L323.579 472.058C323.869 471.414 323.869 470.677 323.579 470.034L315.394 451.854Z`);
+
+                                // Center the badge name text based on the adjusted ribbon width
+                                const ribbonX = 315.394 + (ribbonWidth - 315.394) / 2;
+                                badgeNameTextElement.setAttribute('x', ribbonX);
+                            });
                         },
 
                         init() {
@@ -302,36 +322,6 @@
             {{ $jspdf := slice $jspdf | resources.Concat "jspdf.min.js" | resources.Minify }}
 
             <script type="module" src="{{ $jspdf.RelPermalink }}"></script>
-            <!-- 
-            <script>
-            // Retrieve information from localStorage
-            const fullName = localStorage.getItem("fullName") || "John Doe";
-            const badgeName = localStorage.getItem("badgeName") || "Badge Name";
-            const learningpathName = localStorage.getItem("learningpathName") || "Learning Path";
-            // Retrieve badge image URL or other relevant data from localStorage
-            const today = new Date().toLocaleDateString();
-
-            // Update SVG with retrieved information
-            document.getElementById("fullNameText").textContent = fullName;
-            document.getElementById("badgeNameText").textContent = badgeName;
-            //document.getElementById("learningNameText").textContent = learningpathName;
-            // Update other SVG elements as needed
-
-            // Handle PDF generation
-            document.getElementById("generatePdfButton").addEventListener("click", () => {
-                var svgUrl = 'data:image/svg+xml;base64,' + btoa(new XMLSerializer().serializeToString(document.getElementById('badgeTemplate')));
-                //const svgContent = document.getElementById('badgeTemplate').outerHTML;
-                const svgString = new XMLSerializer().serializeToString(document.getElementById("badgeTemplate"));
-
-                // Convert SVG to PDF
-                const pdf = new window.jspdf.jsPDF();
-                pdf.addSvgAsImage(svgUrl, 10, 10, 180, 100);
-                // Add more text or images to the PDF as needed
-
-                // Download the PDF
-                pdf.save("badge.pdf");
-            });
-            </script> -->
 
         </div>
     </main>
