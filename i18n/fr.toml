@@ -217,13 +217,13 @@ one = "1 module restant pour obtenir votre badge"
 other = "'count' modules restants pour obtenir votre badge"
 
 [no_modules]
-other = "Vous n'avez encore complété aucun module !"
+other = "Vous n'avez encore complété aucun module!"
 
 [badge_completed]
-other = "Vous avez obtenu un badge !"
+other = "Vous avez obtenu un badge!"
 
 [keep-learning]
-other = "Continuez à apprendre pour obtenir votre badge !"
+other = "Continuez à apprendre pour obtenir votre badge!"
 
 [congratulations]
 other = "Félicitations !"

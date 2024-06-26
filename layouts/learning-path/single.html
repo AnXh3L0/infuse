@@ -19,7 +19,7 @@
                 <article class="w-full flex flex-col items-start justify-between border-b border-gray-300">
                     {{ if eq .Page.Params.style "introduction" }}
                     {{ else }}
-                    <p class="text-sm text-gray-500">Module {{ .Page.Params.weight }}</p>
+                    <p class="text-sm text-gray-500">{{ i18n "modules" 1 }} {{ .Page.Params.weight }}</p>
                     {{ end }}
                     <h1 class="mt-2 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
                         {{ .Page.Params.title }}

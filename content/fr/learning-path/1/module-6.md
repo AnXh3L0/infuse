@@ -1,27 +1,29 @@
 +++
 style = "module"
 weight = 6
-title = "Active Investigation - Analyze malicious emails"
+title = "Enquête active : analyse des e-mails malveillants"
 description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
 +++
 
-## Use Case
+## Cas d'utilisation
 
-This module will teach you how to **interpret and understand malicious emails** and **find the infrastructure that they link to**. Whether they be pure social engineering, phishing, or malware delivery, malicious emails can be quite complex. While the immediate goal of this skill is to identify attacker infrastructure, these advanced skills of reversing complex emails are also good preparation for understanding attacker campaigns, and they are a good introduction to analyzing more complicated malware. Some of those techniques can also **help you analyze suspicious messages sent through other mediums, such as WhatsApp**.
+Ce module vous apprendra à **interpréter et à comprendre les e-mails malveillants** et à **trouver l’infrastructure à laquelle ils sont liés**. Qu'il s'agisse d'ingénierie sociale pure, d'hameçonnage ou de diffusion de logiciels malveillants, les e-mails malveillants peuvent être assez complexes. Bien que l'objectif immédiat de cette compétence soit d'identifier l'infrastructure des cybercriminels, ces compétences avancées d'inversion des e-mails complexes sont également une bonne préparation pour comprendre les campagnes des cybercriminels, et elles constituent une bonne introduction à l'analyse des logiciels malveillants plus complexes. Certaines de ces techniques peuvent également **vous aider à analyser les messages suspects envoyés par d'autres moyens, tels que WhatsApp**.
 
-Note that during active investigation, you may have to perform actions that will alert the attacker to the investigation (or at least that someone is interacting with their trap). Consider whether or not this is an acceptable cost to completing an investigation.
+Notez que pendant l'enquête active, vous devrez peut-être effectuer des actions qui alerteront le cybercriminel au sujet de l'enquête (ou au moins que quelqu'un interagit avec son piège). Déterminez s'il s'agit d'un coût acceptable pour mener une enquête.
 
-It is best to do this type of analysis from a virtual machine or dedicated device. For added protection, it might be a good idea to use a reputable VPN so that your IP address does not leak out when you are conducting an active investigation.
+Il est préférable d'effectuer ce type d'analyse à partir d'une machine virtuelle ou d'un appareil dédié. Pour assurer une protection supplémentaire, il peut être judicieux d'utiliser un VPN de bonne réputation afin que votre adresse IP ne fuie pas lorsque vous effectuez une enquête active.
 
-This module deals with analyzing the _body_ of a malicious email, whereas the [Passive Investigation: Analyze email headers](#subtopic-5-passive-investigation-analyze-email-headers) module deals with the _header_ of the email. For proper investigations, you will want to use both skills. Note that analyzing the contents and behaviors of email attachments is covered in the Malware Analysis learning path.
+Ce module traite de l'analyse du _corps_ d'un e-mail malveillant, tandis que le module
 
-## Objectives
+Investigation passive : analyser les en-têtes des e-mails traite des _en-têtes_ des e-mails. Pour effectuer des enquêtes appropriées, vous pourriez utiliser les deux compétences. Notez que l'analyse du contenu et des comportements des pièces jointes est couverte dans le parcours d'apprentissage Analyse des logiciels malveillants.
 
-After completing this subtopic, practitioners should be able to do the following:
+## Objectifs
 
-- Analyze the HTML code of an email and understand the basics of MIME;
-- Understand and detect tracking pixels and similar active content;
-- Use tools such as VirusTotal and URLScan to evaluate attachments and URLs for malicious content.
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
+
+- Analyser le code HTML d'un e-mail et comprendre les bases du MIME ;
+- Comprendre et détecter les pixels de suivi et le contenu actif similaire ;
+- Utiliser des outils tels que VirusTotal et URLScan pour évaluer les pièces jointes et les URL de contenus malveillants.
 
 ---
 
@@ -67,7 +69,6 @@ Once you understand the foundational concepts and potential threats, you need a 
 {{% resource title="Example analyses of phishing emails" languages="English" cost="Free" description="Analyses of sample phishing emails. Includes a look at HTML files with embedded malicious scripts and encoded content." url="https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e" additional_urls="https://www.vadesecure.com/en/blog/m365-phishing-email-analysis-eevilcorp" %}}
 
 {{% resource title="Example analyses of malware emails" languages="English" cost="Free" description="Since malicious emails could exploit security holes within email programs, this guide shows how best to analyze them using command line tools and text editors." url="https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/" additional_urls="https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91" %}}
-
 
 ## Practice
 

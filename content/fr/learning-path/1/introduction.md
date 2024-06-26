@@ -6,90 +6,80 @@ description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
 categories = ["Introduction"]
 +++
 
-## Overview
+## Présentation
 
-Phishing messages are usually tied to malicious infrastructure that either seeks to capture login credentials and use them to access an organization’s or individual's systems, or otherwise seeks to deliver a socially-engineered compromise such as a browser or device exploit. They are one of the most common techniques used by malicious actors who aim to compromise NGOs. Very often, an NGO that receives such a message might find it difficult to tell with certainty whether it was suspicious, much less what the identity and goal of the attacker were. Checking with the presumed sender through another channel might be the easiest way to verify whether a message was legitimate. If the sender cannot be contacted or if the message was not legitimate, it might be important to analyze it in more depth. This could allow us to stop such attacks before they compromise an NGO’s systems, prevent them from doing so in the future, and alert others within the community to such attackers and their tactics, techniques, and procedures (TTPs). The results of such investigations are then often shared, either through formal reports or networks, or informal discussions between NGO security professionals.
+Les messages d'hameçonnage sont généralement liés à une infrastructure malveillante qui cherche soit à capturer des informations de connexion et à les utiliser pour accéder aux systèmes d'une organisation ou d'un individu, soit à exécuter une transaction d'ingénierie sociale ou d'exploiter une faille de sécurité d'un navigateur ou d'un appareil. Ils constituent l'une des techniques les plus courantes utilisées par les acteurs malveillants qui visent à compromettre les ONG. Très souvent, les ONG qui reçoivent de tels messages peuvent avoir du mal à déterminer avec certitude s'il s'agit de messages suspects, et encore moins à connaître l'identité et le but du cybercriminel. La vérification auprès de l'expéditeur présumé par un autre canal pourrait être le moyen le plus simple de vérifier si un message est légitime. Si l'expéditeur ne peut pas être contacté ou si le message ne semble pas légitime, il peut être important de l'analyser plus en profondeur. Cela pourrait nous permettre d'arrêter de telles attaques avant qu'elles compromettent les systèmes de l'ONG, de les empêcher de le faire à l'avenir et d'alerter les autres intervenants au sein de la communauté au sujet de ces cybercriminels et de leurs tactiques, techniques et procédures (TTP). Les résultats de ces enquêtes sont ensuite souvent partagés, soit par le biais de rapports formels ou de réseaux, soit de discussions informelles entre les professionnels de la sécurité des ONG.
 
-There have been several cases in which NGOs conducted excellent investigations of malicious infrastructure. These include a joint effort between Bellingcat and several private sector groups [investigating phishing attacks against organizations focusing on Russia-related affairs](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/), as well as [an HRW-Amnesty project](https://www.hrw.org/the-day-in-human-rights/2022/12/05) which [tracked down phishing attempts](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) attributed to the Iranian government.
+Dans plusieurs cas, des ONG ont mené d'excellentes enquêtes sur des infrastructures malveillantes. Celles-ci comprennent notamment un effort conjoint de Bellingcat et de plusieurs groupes du secteur privé qui [enquêtent sur des attaques d'hameçonnage contre des organisations se concentrant sur des affaires liées à la Russie](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/), ainsi qu'[un projet HRW-Amnesty](https://www.hrw.org/the-day-in-human-rights/2022/12/05) visant à [traquer les tentatives d'hameçonnage](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) attribuées au gouvernement iranien.
 
-The attacks that this section investigates generally start with a phishing message. The targeted person receives a message (on email, WhatsApp, or another medium) which tries to convince them to click a link. Sometimes, the targeted person will be working for a civil society group and be targeted because of their ties to it, with attackers hoping to dig deeper into the organization’s systems. At other times, attackers will directly target individual researchers or freelancers.
+Les attaques examinées dans cette section commencent généralement par un message d'hameçonnage. La personne ciblée reçoit un message (par e-mail, WhatsApp ou un autre moyen de communication) qui tente de la convaincre de cliquer sur un lien. Parfois, la personne ciblée travaille pour un groupe de la société civile et est ciblée en raison de ses liens avec celui-ci, les cybercriminels espérant ainsi creuser plus profondément dans les systèmes de l'organisation. À d'autres moments, les cybercriminels cibleront directement les chercheurs individuels ou les travailleurs indépendants.
 
-A phishing message will often try to trick the targeted person to enter their credentials such as usernames and passwords (as happened with the attacks documented by Bellingcat and HRW), download malware, or in some cases bypass browser security to directly access information in the browser or automatically install malware. The sections “Passive investigation: Analyze URLs, hostnames, and IP addresses” and “Passive investigation: Analyze email headers” cover these phases of an attack.
+Un message d'hameçonnage tentera souvent de tromper la personne ciblée pour qu'elle saisisse ses identifiants tels que son nom d'utilisateur et son mot de passe (comme cela s'est produit avec les attaques documentées par Bellingcat et HRW), télécharge des logiciels malveillants ou, dans certains cas, contournera la sécurité du navigateur pour accéder directement aux informations du navigateur ou pour installer automatiquement des logiciels malveillants. Les sections « Enquête passive : analyser les URL, les noms d'hôte et les adresses IP » et « Enquête passive : analyser les en-têtes des e-mails » abordent ces phases d'une attaque.
 
-When someone receives a credible phishing message, or otherwise is attacked by malicious software, they may need to try to identify the infrastructure (servers, websites, etc.) used by the attackers. Targeted attacks using dedicated or compromised infrastructure are relatively rare, so the section on “Triage” will help you determine whether it is worth spending time on analysis. It’s a good idea to have a solid understanding of incident management in general prior to starting this learning path.
+Lorsqu'une personne reçoit un message d'hameçonnage crédible ou est attaquée par un logiciel malveillant, elle pourrait devoir tenter d'identifier l'infrastructure (serveurs, sites Web, etc.) utilisée par les cybercriminels. Bien que les attaques ciblées utilisant une infrastructure dédiée ou compromise soient relativement rares, la section sur le « triage » vous aidera à déterminer s'il vaut la peine de consacrer du temps à l'analyse. Il peut être judicieux d'avoir une solide compréhension de la gestion des incidents en général avant de commencer ce parcours d'apprentissage.
 
-Before you visit any attacker-controlled websites, or download any malware, it is important that you learn to do so safely. This learning path looks at both passive investigation techniques, which do not contact the attacker’s server and are therefore unlikely to alert them of an investigation in progress, and active techniques, which do contact servers. Once you have learned how to do passive investigation, you can move on to active techniques to visit the websites linked to in phishing messages, and analyze them to discover further attacker-controlled infrastructure. This is covered in the “Active investigation: Analyze malicious web pages” section.
+Avant de visiter un site Web contrôlé par un cybercriminel ou de télécharger un logiciel malveillant, il est important que vous appreniez à le faire en toute sécurité. Ce parcours d'apprentissage examine à la fois les techniques d'investigation passive, qui ne contactent pas le serveur du cybercriminel et sont donc peu susceptibles de les alerter au sujet d'une enquête en cours, et les techniques actives, qui contactent les serveurs. Une fois que vous avez appris à mener une enquête passive, vous pouvez passer à des techniques actives pour visiter les sites Web liés aux messages d'hameçonnage et les analyser pour découvrir une infrastructure contrôlée par les cybercriminels. Cette question est abordée dans la section « Enquête active : analyser les pages Web malveillantes ».
 
-If the attacker manages to get malware onto the device of the targeted person or organization, that malware will usually communicate with a command-and-control (C&C) server. Discovering what the attacker’s C&C servers are and how they work is covered in the Malware Analysis learning path. Analyzing malware is another skill you can use to discover more attacker infrastructure.
+Si le cybercriminel parvient à introduire un logiciel malveillant sur l'appareil de la personne ou de l'organisation ciblée, ce logiciel malveillant communiquera généralement avec un serveur de commande et de contrôle (C&C). La manière d'identifier les serveurs C&C du cybercriminel et la façon dont ils fonctionnent est abordée dans le parcours d'apprentissage Analyse des logiciels malveillants. L'analyse des logiciels malveillants est une autre compétence que vous pouvez utiliser pour découvrir plus d'infrastructures de cybercriminels.
 
-To better support both the person you’re helping and the greater community, it is important to document and share your findings. This is covered in the “Documenting findings” section. There are several threat and information sharing communities within the wider NGO space, but listing those lies outside of the scope of this learning path.
+Pour mieux soutenir la personne que vous aidez et l'ensemble de la communauté, il est important de documenter et de partager vos conclusions. Cela est abordé dans la section « Documenter les constatations ». Il existe plusieurs communautés de partage d'informations et de menaces au sein de l'espace plus large des ONG, mais la liste de ces communautés dépasse le cadre de ce parcours d'apprentissage.
 
-Lastly, it is important to recognize up-front that many of the investigation techniques in this learning path can alert an attacker that they are being investigated, or even place the investigator—or the wider community— at risk. We divide the techniques into passive and active methods. Use caution when considering active methods of investigation, and first talk to the recipient individual/organization before doing so in order to discuss their threat model and allow them to make an informed choice about proceeding with investigations.
+Enfin, il est important de reconnaître dès le départ que bon nombre des techniques d'enquête utilisées dans ce parcours d'apprentissage peuvent alerter le cybercriminel qu'il fait l'objet d'une enquête ou même mettre l'enquêteur (ou la collectivité en général) en danger. Nous divisons les techniques en méthodes passives et actives. Faites preuve de prudence lorsque vous envisagez des méthodes d'enquête actives et parlez d'abord à la personne ou à l'organisation destinataire avant de le faire afin de discuter de son modèle de menace et de lui permettre de faire un choix éclairé au sujet de la poursuite des enquêtes.
 
-Passive (appropriate in all cases)
+- Méthode passive (appropriée dans tous les cas)
+  - Utilise les informations qui ont déjà été transmises à la personne ciblée
+  - N'implique pas de communication avec l'infrastructure du cybercriminel
+  - Généralement plus facile
+  - Ne prévient généralement pas le cybercriminel qu'il fait l'objet d'une enquête
+  - Plus sûr
+- Méthode active
+  - Généralement utilisée uniquement pour la livraison de logiciels malveillants et les serveurs de commande et de contrôle
+  - L'enquêteur interagira avec l'infrastructure du cybercriminel
+  - Cela nécessite souvent plus de compétences et une investigation plus approfondie
+    - « Jeu du chat et de la souris » avec le cybercriminel
+  - Peut alerter le cybercriminel qu'il fait l'objet d'une enquête
+  - Risque que l'enquêteur soit compromis ou ciblé
 
-- Uses information that has already been delivered to the targeted person
-- Does not involve communication with the attacker’s infrastructure
-- Generally easier
-- Does not generally alert the attacker that they are under investigation
-- Safer
+## Objectif
 
-Active
+Les participants apprendront à :
 
-- Generally only used for malware delivery and command-and-control servers
-- Investigator will interact with the attacker’s infrastructure
-- Often requires more skill and deeper investigation
-  - “Cat-and-mouse game” with the attacker
-- May alert the attacker that they are being investigated
-- Risk that the investigator may become compromised or targeted
+- Effectuer un triage des e-mails pour déterminer s'ils sont malveillants ou s'ils méritent une enquête approfondie
+- Comprendre les cybercriminels et les méthodes d'attaque
+- Analyser les en-têtes de messagerie pour identifier l'infrastructure des cybercriminels
+- Analyser les pages de renvoi Web malveillantes
+- Documenter et signaler les conclusions de l'enquête
+- Prendre des mesures de retrait pour réduire les dommages
 
-## Objective
+## Quelles menaces cette compétence permet-elle d'atténuer ou de gérer?
 
-Practitioners will learn how to:
+Des compétences en matière d'enquête, de suivi et de détection de l'infrastructure malveillante peuvent contribuer à répondre aux besoins suivants :
 
-- Triage email messages to understand if they are malicious/worth investigating in depth
-- Understand attacker and attack methods
-- Analyze email headers to identify attacker infrastructure
-- Analyze malicious web landing pages
-- Document and report investigation findings
-- Initiate takedown actions to reduce harm
+- Attaques d'hameçonnage ciblées
+- Hameçonnage par messagerie
+- Infrastructure liée à l'hameçonnage
 
-## What threats does this skill mitigate or respond to?
+## Quels sont les prérequis?
 
-Skills in investigating, tacking, and detecting malicious infrastructure can help respond to the following:
+- Connaissances de base en ligne de commande sur un système d'exploitation majeur de votre choix. Si vous voulez apprendre ou réviser certaines bases des lignes de commande, nous vous recommandons [ce guide](https://www.git-tower.com/blog/command-line-cheat-sheet/) et [celui-ci](https://github.com/jlevy/the-art-of-command-line). Si vous cherchez une introduction générale pour débutants à l'utilisation des lignes de commande, nous vous recommandons de terminer le chapitre 4 du [Guide de terrain des laboratoires sur les menaces](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) sur le sujet.
+- Une compréhension de base des langages HTML et JavaScript. Que vous ayez besoin d'apprendre à leur sujet à partir de zéro ou que vous souhaitiez actualiser vos connaissances, nous vous recommandons de consulter les [documents MDN Developer](https://developer.mozilla.org/en-US/docs/Learn)
+- Une compréhension de base du fonctionnement des dépôts Git et de la façon d'interagir avec eux. Bien que la connaissance détaillée des plateformes Git et de celles basées sur Git telles que GitHub et GitLab ne soit pas indispensable, elle peut s'avérer utile pour tous les parcours d'apprentissage, car de nombreux outils et ressources y sont hébergés et, à terme, vous risquez de mettre à jour les référentiels locaux ou même de créer vos propres branches. Si vous n'avez pas beaucoup travaillé avec de telles plateformes dans le passé, nous vous recommandons de commencer par l'une de ces ressources :
+  - [Pro Git Book](https://book.git-scm.com/book/en/v2) (disponible dans 17 langues) : l'étude des chapitres 1 à 3 en plus de sujets sélectionnés dans d'autres chapitres vous procurera une excellente introduction
+  - [git - le guide simple](https://rogerdudler.github.io/git-guide/index.html) (disponible dans 16 langues) est un aide-mémoire des commandes Git. Utile lorsque vous avez un concept général de git, mais que vous avez besoin de références sur les commandes et la syntaxe
+  - [Une référence Git visuelle](https://marklodato.github.io/visual-git-guide/index-en.html) (disponible dans 14 langues) : référence visuelle plus avancée pour comprendre les flux de travail et les commandes Git
+- [GitHub Skills ](https://skills.github.com/)(anglais uniquement)
+- [GitLab Git Essentials](https://levelup.gitlab.com/courses/gitlab-with-git-essentials-s2) (anglais uniquement)
 
-- Targeted phishing attacks
-- Messenger-based phishing
-- Phishing-related infrastructure
+## De quels appareils ou logiciels avez-vous besoin pour les exercices?
 
-## What are the prerequisites?
+Vous n'avez pas besoin de matériel spécialisé ou puissant pour ce parcours d'apprentissage. Tout ordinateur moderne devrait faire l'affaire. Bien que les outils de ce parcours d'apprentissage n'aient été testés que sur des systèmes x86, la plupart, sinon tous, devraient également fonctionner sur des systèmes ARM tels que les ordinateurs Raspberry Pi ou Apple Silicon
 
-- Basic command line knowledge on a major OS of your choice. If you want to learn or brush up on some command line basics, we recommend [this guide](https://www.git-tower.com/blog/command-line-cheat-sheet/) and [this one](https://github.com/jlevy/the-art-of-command-line). If you are looking for a general beginners’ introduction to the command line, we recommend completing Chapter 4 of the [Field Guide to Threat Labs](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) guide on the topic.
-- A basic understanding of HTML and JavaScript. Whether you need to learn about them from scratch or want to refresh your knowledge, we recommend the [MDN Developer docs](https://developer.mozilla.org/en-US/docs/Learn)
-- A basic understanding of how Git repositories work and how to interact with them. While detailed knowledge of Git and Git-based platforms such as GitHub and GitLab is not a must, it can be useful for all learning paths, since many tools and resources are hosted there and in time you may end up updating local repositories or even creating your own branches. If you have not worked much with such platforms in the past, we recommend starting with any of these resources:
-  - [Pro Git Book](https://book.git-scm.com/book/en/v2) (available in 17 languages) - A study of chapters 1-3 plus selected topics in other chapters will give an excellent introduction
-  - [git - the simple guide](https://rogerdudler.github.io/git-guide/index.html) (Available in 16 languages) is a cheatsheet of Git commands. Useful for when you have a general concept of git but need reference on commands and syntax
-  - [A Visual Git Reference ](https://marklodato.github.io/visual-git-guide/index-en.html) (available in 14 languages) - More advanced visual reference to understand Git workflows and commands
-- [GitHub Skills ](https://skills.github.com/)(English Only)
-- [GitLab Git Essentials](https://levelup.gitlab.com/courses/gitlab-with-git-essentials-s2) (English Only)
+- La plupart des outils de ce parcours d'apprentissage fonctionnent mieux sur des systèmes d'exploitation de type Unix. Cela signifie qu'il est plus facile d'utiliser des périphériques Linux, macOS ou Windows avec WSL (Windows Subsystem pour Linux) installé dessus.
+- Si vous utilisez Windows, vous devrez installer WSL (Windows Subsystem for Linux) pour pouvoir exécuter certains des outils décrits ci-dessous
+- Si vous utilisez macOS, il peut être judicieux d'installer [Homebrew](https://brew.sh/) ou [Macports](https://www.macports.org/). Il s'agit de gestionnaires de paquets qui peuvent automatiser le processus d'installation de certains des outils décrits tout au long du parcours d'apprentissage.
+- WSL et Linux devraient être dotés de gestionnaires de paquets intégrés que vous pouvez utiliser pour installer les outils décrits ci-dessous.
+- Il est préférable d'analyser l'infrastructure malveillante sur un appareil distinct que vous n'utilisez pas pour d'autres travaux sensibles et sur lequel vous n'êtes pas connecté(e) à des comptes sensibles ou professionnels. Si vous ne pouvez pas utiliser un périphérique discret, vous pouvez également exécuter l'analyse dans une machine virtuelle. Si vous débutez avec les machines virtuelles, consultez ce [guide rapide](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview) sur la façon d'exécuter Ubuntu Linux dans une machine virtuelle.
 
-## What devices or software do you need for the exercises?
+## Parcours d'apprentissage connexes
 
-- You do not need any specialized or powerful hardware for this learning path. Any modern computer should work. While the tools in this learning path have only been tested on x86-based systems, most if not all should also work on ARM systems like the Raspberry Pi or Apple Silicon computers
-- Many of the tools in this learning path run best on Unix-like operating systems. This means that it’s easiest to use Linux, macOS devices, or Windows devices with WSL (Windows Subsystem for Linux) installed on them.
-- If you are running Windows, you will need to install WSL (Windows Subsystem for Linux) to be able to run some of the tools outlined below
-- If you are running macOS, it’s a good idea to install [Homebrew](https://brew.sh/) or [Macports](https://www.macports.org/); those are package managers which can automate the process of installing some of the tools outlined throughout the learning path.
-- WSL and Linux should both have built-in package managers which you can use to install the tools outlined below.
-- It is best to analyze malicious infrastructure on a separate device which you do not use for other sensitive work and where you are not logged into any sensitive or work accounts. If you cannot use a discrete device, you could also run the analysis within a virtual machine. If you’re just starting out with virtual machines, check out [this quick guide](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview) on how to run the user-friendly Ubuntu Linux within one.
-
-## Related learning paths
-
-This learning path offers a fantastic introduction to other ones. After completing this one, we would recommend that learners work on either Detecting Malware or Web Security Fundamentals.
-
-## Other resources and links
-
-{{% resource title="Helpdesk Workflow: Client Receives a Suspicious/Phishing Email" languages="English" cost="Free" description="Access Now helpline community documentation for responding to suspicious/phishing emails" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#" %}}
-
-{{% resource title="List of all DNS record types" languages="English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French" cost="Free" description="Includes (almost?) all DNS record types." url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
-
-{{% resource title="Amnesty reports on phishing campaigns" languages="Multiple depending on the report" cost="Free" description="A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks" url="https://www.amnesty.org/en/search/phishing/" %}}
+Ce parcours d'apprentissage constitue une introduction fantastique aux autres parcours. Après avoir terminé celui-ci, nous recommandons aux apprenants de travailler sur la _détection de logiciels malveillants_ ou sur _les principes fondamentaux de la sécurité Web_.
