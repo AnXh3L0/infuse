@@ -180,7 +180,13 @@ other = "'count' more modules to earn your badge"
 other = "You haven't completed any module yet!"
 
 [badge_completed]
-other = "You've earned the badge!"
+other = "You've earned a badge!"
+
+[keep-learning]
+other = "Keep learning to earn your badge!"
+
+[congratulations]
+other = "Congratulations!"
 
 [translations]
 other = "Translations"
