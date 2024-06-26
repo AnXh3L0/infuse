@@ -94,6 +94,13 @@ pluralizeListTitles = false
   [languages.fr.params]
     languageName = "French"
 
+  [languages.es]
+  languageName = "Spanish"
+  weight    = 3
+  contentDir = "content/es"
+  [languages.es.params]
+    languageName = "Spanish"
+
 [privacy]
   [privacy.instagram]
     disable = false

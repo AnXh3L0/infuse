@@ -1,5 +1,5 @@
 +++
-title = "Profile"
+title = "Profil"
 type = "profile"
-description = "View and edit your Infuse account details"
+description = "Afficher et modifier les détails de votre compte Infuse"
 +++

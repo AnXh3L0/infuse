@@ -1,6 +1,37 @@
 # Translations for English
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
+# Landing page
+[hero-title]
+other = "Elevating Expertise for Digital Protectors"
+
+[hero-subtitle]
+other = "At Infuse, we empower individuals to achieve greater online safety through comprehensive cybersecurity education, equipping them with the knowledge to effectively protect themselves online."
+
+[feature-one-title]
+other = "Learn at your own pace with different learning paths"
+
+[feature-one-subtitle]
+other = "This emphasizes flexibility and user control, which is appealing to learners who prefer self-paced education."
+
+[feature-two-title]
+other = "Earn badges and save certificates"
+
+[feature-two-subtitle]
+other = "This feature highlights achievements and provides tangible proof of mastery, which can be motivating for users."
+
+[feature-three-title]
+other = "Available in multiple languages"
+
+[feature-three-subtitle]
+other = "Accessibility is crucial, and offering content in multiple languages ensures a broader reach and inclusivity."
+
+[learning-paths-title]
+other = "Learning Paths"
+
+[learning-paths-subtitle]
+other = "Lorem ipsum dolor sit amet blah blah."
+
 # Signup and login
 [createAccount]
 other = "Create a new account"
@@ -145,6 +176,15 @@ other = "What you'll learn"
 [modules-description]
 other = "Lorem ipsum dolor sit amet blah blah."
 
+[visit-site]
+other = "Visit Site"
+
+[out-of]
+other = "out of"
+
+[modules-completed]
+other = "modules completed"
+
 [todo]
 other = "To do"
 
@@ -212,6 +252,12 @@ other = "Clients"
 [faq]
 other = "Frequently Asked Questions"
 
+[faq-description]
+other = "Can’t find the answer you’re looking for? Reach out to our"
+
+[faq-link]
+other = "customer support team"
+
 [ariaLanguage]
 other = "Current language is "
 
@@ -231,8 +277,29 @@ other = "Languages"
 [home]
 other = "Home"
 
+[close]
+other = "Close"
+
+[download-badge]
+other = "Download badge"
+
+[rights-reserved]
+other = "All rights reserved."
+
+[open-language]
+other = "Open language menu"
+
+[open-user]
+other = "Open user menu"
+
+[confirm-delete]
+other = "Are you sure you want to delete your account? This action cannot be undone."
+
 [notFound]
 other = "Oops, page not found…"
+
+[completed]
+other = "completed"
 
 # Blog 
 [newerPosts]

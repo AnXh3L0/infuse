@@ -1,3 +1,4 @@
 +++
-title = "Learning Paths"
+title = "Parcours d'apprentissage"
+draft = true
 +++

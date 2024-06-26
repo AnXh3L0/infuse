@@ -5,8 +5,8 @@
             <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
                     <h1 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
-                        Elevating Expertise for Digital Protectors</h1>
-                    <p class="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">At Infuse, we empower individuals to achieve greater online safety through comprehensive cybersecurity education, equipping them with the knowledge to effectively protect themselves online.</p>
+                        {{ i18n "hero-title" }}</h1>
+                    <p class="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">{{ i18n "hero-subtitle" }}</p>
                     <div class="mt-10 flex items-center gap-x-3">
                         <div id="signupButtonCTA" class="hidden">
                             <a href="{{ "/signup" | relLangURL }}"
@@ -32,9 +32,9 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z" />
                                           </svg>
                                     </div>
-                                    Learn at your own pace with different learning paths
+                                    {{ i18n "feature-one-title" }}
                                 </dt>
-                                <dd class="mt-2 text-base leading-7 text-gray-600">This emphasizes flexibility and user control, which is appealing to learners who prefer self-paced education.</dd>
+                                <dd class="mt-2 text-base leading-7 text-gray-600">{{ i18n "feature-one-subtitle" }}</dd>
                             </div>
                             <div class="relative pl-16">
                                 <dt class="text-base font-semibold leading-7 text-gray-900">
@@ -44,9 +44,9 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
                                         </svg>
                                     </div>
-                                    Earn badges and save certificates
+                                    {{ i18n "feature-two-title" }}
                                 </dt>
-                                <dd class="mt-2 text-base leading-7 text-gray-600">This feature highlights achievements and provides tangible proof of mastery, which can be motivating for users.</dd>
+                                <dd class="mt-2 text-base leading-7 text-gray-600">{{ i18n "feature-two-subtitle" }}</dd>
                             </div>
                             <div class="relative pl-16">
                                 <dt class="text-base font-semibold leading-7 text-gray-900">
@@ -56,9 +56,9 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
                                         </svg>
                                     </div>
-                                    Available in multiple languages
+                                    {{ i18n "feature-three-title" }}
                                 </dt>
-                                <dd class="mt-2 text-base leading-7 text-gray-600">Accessibility is crucial, and offering content in multiple languages ensures a broader reach and inclusivity.</dd>
+                                <dd class="mt-2 text-base leading-7 text-gray-600">{{ i18n "feature-three-subtitle" }}</dd>
                             </div>
                         </dl>
                     </div>
@@ -69,8 +69,9 @@
 
     <div class="mx-auto max-w-7xl px-8 lg:px-8 lg:pt-16">
         <div class="border-b border-gray-200 pb-5">
-            <h3 class="text-xl font-semibold leading-6 text-gray-900">Learning Paths</h3>
-            <p class="mt-2 max-w-4xl text-sm text-gray-500">Lorem ipsum dolor sit amet blah blah.</p>
+            <h3 class="text-xl font-semibold leading-6 text-gray-900">{{ i18n "learning-paths-title" }}</h3>
+            <p class="mt-2 max-w-4xl text-sm text-gray-500">{{ i18n "learning-paths-subtitle" }}</p>
+            <span id="completed" class="hidden">{{ i18n "completed" }}</span>
         </div>
     </div>
 
@@ -114,7 +115,6 @@
                                 .Page.Params.description }}</p>
                         </div>
                     </div>
-
                 </article>
             </div>
             {{ end }}
@@ -132,10 +132,12 @@
                 const username = localStorage.getItem("loggedInUser");
                 const userDataString = localStorage.getItem(username);
                 const userData = JSON.parse(userDataString) || {};
+
+                const completed = document.getElementById("completed").innerText;
     
                 const progressPercent = userData[progressKey] || 0;
                 container.querySelector('.progress').style.width = `${progressPercent}%`;
-                container.querySelector('.progress-text').innerText = `${progressPercent}% completed`;
+                container.querySelector('.progress-text').innerText = `${progressPercent}% ` + completed;
             });
         });
     </script>

@@ -46,7 +46,7 @@
                         </button>
                     </li>
                     <li>
-                        <button x-on:click="openTab = 3"
+                        <button x-on:click="openTab = 3" :class="{ 'bg-gray-50 text-green-600': openTab === 3 }"
                             class="text-gray-700 hover:text-green-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                             <svg :class="{ 'text-green-600' : openTab===3 }"
                                 class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-green-600" fill="none"
@@ -179,6 +179,8 @@
                     </div>
 
                     <p class="mt-1 mb-3 text-sm leading-6 text-gray-600">{{ i18n "finalConfirmation" }}</p>
+
+                    <span id="confirmDeleteMessage" class="hidden">{{ i18n "confirm-delete" }}</span>
 
                     <button id="deleteButton"
                         class="rounded-md bg-orange-500 px-3 py-2 text-sm font-semibold text-gray-800 shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">{{
@@ -358,7 +360,8 @@
         // Add event listener to the delete button
         document.getElementById("deleteButton").addEventListener("click", function () {
             event.preventDefault();
-            if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+            const confirmMessage = document.getElementById("confirmDeleteMessage").innerText;
+            if (confirm(confirmMessage)) {
                 deleteUser();
             }
         });

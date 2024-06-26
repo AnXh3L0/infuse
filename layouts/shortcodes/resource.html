@@ -4,6 +4,6 @@
 {{ if .Get "cost" }}<span class="inline-block bg-indigo-50 border-2 border-indigo-300 text-indigo-700 rounded-full px-2 py-0 mr-2 mb-2 text-sm font-semibold">{{ .Get "cost" }}</span>{{ end }}
 {{ if .Get "description" }}<p class="mt-0 mb-3">{{ .Get "description" | markdownify }}</p>{{ end }}
 {{ if .Get "languages" }}<div class="mb-2"><span class="font-semibold text-sm">{{ i18n "languages" }}</span>: {{ $languages := split (.Get "languages") ", " }}{{ range $index, $lang := $languages }}<span class="inline-block mb-0 text-sm">{{ $lang }}</span>{{ if ne $index (sub (len $languages) 1) }}, {{ end }}{{ end }}{{ end }}</div>
-{{ if .Get "url" }}<a href="{{ .Get " url" }}" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-lg mt-2 inline-block no-underline">Visit Site</a>{{ end }}
+{{ if .Get "url" }}<a href="{{ .Get " url" }}" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-lg mt-2 inline-block no-underline">{{ i18n "visit-site" }}</a>{{ end }}
 </div>
 </div>

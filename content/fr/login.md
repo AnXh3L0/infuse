@@ -1,5 +1,5 @@
 +++
-title = "Log in"
+title = "Se connecter"
 type = "login"
-description = "Log into your local Infuse account"
+description = "Connectez-vous à votre compte Infuse local"
 +++

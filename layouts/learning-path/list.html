@@ -186,6 +186,10 @@
                         <p id="motivationMessage" class="hidden">{{ i18n "keep-learning" }}</p>
                         <p id="congratulationsMessage" class="hidden">{{ i18n "congratulations" }}</p>
 
+                        <p id="outOf" class="hidden">{{ i18n "out-of" }}</p>
+                        <p id="modulesCompleted" class="hidden">{{ i18n "modules-completed" }}</p>
+
+
                         <p id="badgeCompleted" class="hidden">{{ i18n "badge_completed" }}</p>
                         <p id="badgeName" class="hidden">{{ .Page.Params.badge }}</p>                        
 
@@ -304,9 +308,11 @@
 
                 get completedModulesMessage() {
                     const moduleCount = parseInt(document.getElementById("moduleCount").getAttribute("data-count"));
+                    const outOf = document.getElementById("outOf").innerText
+                    const modulesCompleted = document.getElementById("modulesCompleted").innerText
 
                     if ((this.remainingModules === 1) || (this.remainingModules > 1)) {
-                        return `${this.completedModules} out of ${moduleCount} modules completed`;
+                        return `${this.completedModules} ` + outOf + ` ${moduleCount} ` + modulesCompleted;
                     } else {
                         return document.getElementById("badgeCompleted").innerText;
                     }

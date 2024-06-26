@@ -1,5 +1,5 @@
 +++
-title = "Sign up"
+title = "S'inscrire"
 type = "signup"
-description = "Create a local Infuse account"
+description = "Créer un compte Infuse local"
 +++
