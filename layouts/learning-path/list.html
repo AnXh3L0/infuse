@@ -175,7 +175,7 @@
                             <path id="badge-banner"
                                 d="M1.56564 3.73219C0.831114 2.1008 2.02439 0.254883 3.81351 0.254883H290.909C292.698 0.254883 293.891 2.1008 293.157 3.73219L284.971 21.9122C284.681 22.5558 284.681 23.2928 284.971 23.9364L293.157 42.1164C293.891 43.7478 292.698 45.5937 290.909 45.5937H3.81351C2.02439 45.5937 0.831115 43.7478 1.56564 42.1164L9.75107 23.9364C10.0409 23.2928 10.0409 22.5558 9.75107 21.9122L1.56564 3.73219Z"
                                 fill="{{ .Page.Params.color }}" />
-                            <text class="text-2xl font-bold text-gray-400" x="50%" y="50%" text-anchor="middle" dy=".4em" fill="#333">{{ .Page.Params.badge | upper }}</text>
+                            <text id="badge-name" class="text-2xl font-bold" x="50%" y="50%" text-anchor="middle" dy=".4em" fill="#333">{{ .Page.Params.badge | upper }}</text>
                         </svg>
 
                         <img class="w-36 mt-4" :src="badgeImageUrl('{{ .Page.Params.icon }}')" :alt="badgeAltText()" alt=""/>
@@ -193,7 +193,7 @@
                         <p class="text-lg mt-4 text-center font-semibold" x-text="completionMessage"></p>
 
                         <!-- Number of completed modules -->
-                        <p class="text-sm mt-1 text-center" x-text="completedModulesMessage"></p>
+                        <p class="text-sm mt-1 text-center text-gray-500" x-text="completedModulesMessage"></p>
                     </div>
                 </div>
 
@@ -261,14 +261,17 @@
 
                 updateBadgeVisibility() {
                     const badgeBanner = document.getElementById("badge-banner");
+                    const badgeText = document.getElementById("badge-name");
                     if (this.remainingModules > 0) {
                         this.showBadge = true;
                         this.fullBadge = false;
                         badgeBanner.style.display = "none";
+                        badgeText.style.fontSize = "1rem";
                     } else {
                         this.showBadge = false;
                         this.fullBadge = true;
                         badgeBanner.style.display = "block";
+                        badgeText.style.fontSize = "1.5rem";
                     }
                 },
 
