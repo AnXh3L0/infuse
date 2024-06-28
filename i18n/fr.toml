@@ -264,6 +264,9 @@ other = "Clients"
 [search]
 other = "Rechercher"
 
+[table-of-contents]
+other = "Table des matières"
+
 [faq]
 other = "Questions fréquemment posées"
 

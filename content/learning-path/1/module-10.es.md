@@ -1,264 +1,258 @@
 +++
 style = "module"
 weight = 10
-title = "Capture-the-flag exercise"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
+title = "Ejercicio de captura de bandera"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
 +++
 
-We have also designed a capture-the-flag exercise in which learners can analyze a phishing email and the infrastructure it links to. The exercise can be used as an additional practice or skill verification exercise, and can be found below.
+También hemos diseñado un ejercicio de captura de bandera en el cual los estudiantes pueden analizar un correo electrónico de phishing y la infraestructura a la que enlaza. El ejercicio se puede utilizar como práctica adicional o como ejercicio de verificación de habilidades, y se puede encontrar a continuación.
 
-You are sitting in the bustling Press newsroom where you are working as an IT admin, sitting totally focused on your duties surrounded by glowing monitors. Your colleague Alia from Accounting rushes over with a concerned look on their face, who lets you know they forwarded an email claiming to be from PayPal which urges them to take immediate action due to suspicious account activity. The Press organization relies on PayPal for processing subscription payments. Your interest is instantly piqued as you recognize the potential of a malicious attack, and you get started on an investigation.
+Estás sentado en la bulliciosa redacción de la prensa donde trabajas como administrador de IT, totalmente concentrado en tus deberes rodeado de monitores brillantes. Tu colega Alia del departamento de Contabilidad se acerca corriendo con una expresión preocupada, y te informa que reenvió un correo electrónico que afirmaba ser de PayPal y que les urgía a tomar medidas inmediatas debido a una actividad sospechosa en su cuenta. La organización de prensa depende de PayPal para procesar los pagos de suscripción. Tu interés se despierta instantáneamente al reconocer el potencial de un ataque malicioso, y comienzas una investigación.
 
-_This activity utilizes a sample email and landing page needed for this activity. Download the files here: [CTF Materials](/files/ctf-materials.zip)_
+_Esta actividad utiliza un correo electrónico y una página de destino de muestra necesarios para la actividad. Descarga los archivos aquí: [Materiales CTF](/files/ctf-materials.zip)_
 
-### Question 1: What is the sender address of the email?
+### Pregunta 1: ¿Cuál es la dirección del remitente del correo electrónico?
 
-{{< question title="Instructions" open="true" >}}
-Find out how the sender address would appear in the email client if the email is opened.
+{{< question title="Instrucciones" open="true" >}}
+Descubre cómo aparecería la dirección del remitente en el cliente de correo electrónico si se abre el correo electrónico.
 {{< /question >}}
 
-{{< question title="Hints" >}}
-There are multiple ways to view what the email would look like to the recipient. The most straightforward way is to open the file in a mail client, which is what we have done in the below examples. However in the context of a targeted threat this can be a bad idea, in case the file contains scripts which can exploit email clients, collect information about the device, or load external resources (like images/tracking pixels) which disclose your IP to the attacker. In the case of this walkthrough it is safe to open the EML in your email client, however for live work consider some alternatives:
+{{< question title="Pistas" >}}
+Hay varias formas de ver cómo aparecería el correo electrónico para el destinatario. La forma más directa es abrir el archivo en un cliente de correo electrónico, que es lo que hemos hecho en los ejemplos a continuación. Sin embargo, en el contexto de una amenaza dirigida, esto puede ser una mala idea en caso de que el archivo contenga scripts que puedan explotar clientes de correo electrónico, recopilar información sobre el dispositivo o cargar recursos externos (como imágenes/píxeles de seguimiento) que revelen tu IP al atacante. En el caso de este recorrido, es seguro abrir el archivo EML en tu cliente de correo electrónico, pero para el trabajo en vivo considera algunas alternativas:
 
-- Use an email client in a virtual machine which can be rolled back to a safe snapshot
-- Open the file in a text editor and read the HTML content directly
-- Rename the file to .mht and open in a web browser (consider using a sandboxed machine and connecting to a VPN to avoid IP collection from tracking pixels)
-- Use an online service such as [https://www.emlreader.com/](https://www.emlreader.com/) or [https://www.encryptomatic.com/viewer/](https://www.encryptomatic.com/viewer/) to render the email. MXToolBox’s email header analyzer [https://mxtoolbox.com/EmailHeaders.aspx](https://mxtoolbox.com/EmailHeaders.aspx) (used later in this walkthrough) will also render HTML content if you include it in the pasted headers.
-- Using an eDiscovery tool which can render EML files
-- Self-host your own service to render EML files, such as [https://github.com/xme/emlrender](https://github.com/xme/emlrender)
+- Usa un cliente de correo electrónico en una máquina virtual que se pueda restaurar a una instantánea segura.
+- Abre el archivo en un editor de texto y lee directamente el contenido HTML.
+- Renombra el archivo a .mht y ábrelo en un navegador web (considera usar una máquina en sandbox y conectarte a una VPN para evitar la recopilación de IP desde píxeles de seguimiento).
+- Usa un servicio en línea como [https://www.emlreader.com/](https://www.emlreader.com/) o [https://www.encryptomatic.com/viewer/](https://www.encryptomatic.com/viewer/) para renderizar el correo electrónico. El analizador de encabezados de correo electrónico de MXToolBox [https://mxtoolbox.com/EmailHeaders.aspx](https://mxtoolbox.com/EmailHeaders.aspx) (utilizado más adelante en este recorrido) también renderizará contenido HTML si lo incluyes en los encabezados pegados.
+- Usa una herramienta de eDiscovery que pueda renderizar archivos EML.
+- Aloja tu propio servicio para renderizar archivos EML, como [https://github.com/xme/emlrender](https://github.com/xme/emlrender)
 
-In this walkthrough we will just open the email (paypal.eml) in an email program
+En este recorrido simplemente abriremos el correo electrónico (paypal.eml) en un programa de correo electrónico
 
 ![alt_text](images/image1.png "image_tooltip")
 
-As we look into the email, we see the visible sender email address
+Al observar el correo electrónico, vemos la dirección de correo electrónico del remitente visible
 
 ![alt_text](images/image2.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
-The sender email is: [paypal@service.com](mailto:paypal@service.com)
+{{< question title="Respuesta" >}}
+El correo electrónico del remitente es: [paypal@service.com](mailto:paypal@service.com)
 {{< /question >}}
 
-### Question 2: What is the subject of this email?
+### Pregunta 2: ¿Cuál es el asunto de este correo electrónico?
 
-{{< question title="Instructions" open="true" >}}
-As we continue to review the email, we look for more characteristics which could be indicative of spam or malicious messages. Let’s look at the subject and some other signs within the text! If you are reading the email in a text editor, you will find it in the Subject: line.
+{{< question title="Instrucciones" open="true" >}}
+A medida que continuamos revisando el correo electrónico, buscamos más características que podrían ser indicativas de spam o mensajes maliciosos. ¡Vamos a revisar el asunto y algunos otros signos dentro del texto! Si estás leyendo el correo electrónico en un editor de texto, lo encontrarás en la línea "Asunto:".
 {{< /question >}}
 
-{{< question title="Hints" >}}
+{{< question title="Pistas" >}}
 ![alt_text](images/image1.png "image_tooltip")
 
-Here are some key trigger points to watch out for in a phishing email:
+Aquí hay algunos puntos clave para detectar en un correo electrónico de phishing:
 
-- Sense of urgency
-- Weird opening, does not address you by name
-- Grammar errors
-- The sender address or URLs within the email are obfuscated or do not match the website the email claims to be from
-  {{< /question >}}
+- Sentido de urgencia
+- Apertura extraña, no te dirige por tu nombre
+- Errores gramaticales
+- La dirección del remitente o las URL dentro del correo electrónico están obfuscadas o no coinciden con el sitio web que el correo electrónico afirma ser
 
-{{< question title="Answer" >}}
-The email subject line is: _We called you and you didn't answer_
 {{< /question >}}
 
-### Question 3: What is the action requested?
-
-{{< question title="Instructions" open="true" >}}
-When we look at a potentially malicious email, we also need to figure out what the sender wanted us to do. What action do you assume that the sender wanted the recipient to do?
+{{< question title="Respuesta" >}}
+La línea de asunto del correo electrónico es: _Te llamamos y no contestaste_
 {{< /question >}}
 
-{{< question title="Hints" >}}
+### Pregunta 3: ¿Qué acción se solicita?
+
+{{< question title="Instrucciones" open="true" >}}
+Cuando examinamos un correo electrónico potencialmente malicioso, también necesitamos averiguar qué acción quería que hiciera el remitente. ¿Qué acción asumes que el remitente quería que hiciera el destinatario?
+{{< /question >}}
+
+{{< question title="Pistas" >}}
 ![alt_text](images/image1.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
-Click on one of the two links within the email.
+{{< question title="Respuesta" >}}
+Haz clic en uno de los dos enlaces dentro del correo electrónico.
 {{< /question >}}
 
-## Recognizing the Threat
+## Reconocimiento de la Amenaza
 
-### Question 4: Defang the “Confirm” Link
+### Pregunta 4: Desactiva el enlace "Confirmar"
 
-{{< question title="Instructions" open="true" >}}
-As we go deeper in the analysis, the first step to do is to understand the difference between suspicious links. When we analyze potentially suspicious links, we typically defang them–this means replacing some characters so that the link cannot be accidentally clicked or does not trigger any automated link- or virus-scanning mechanisms. Defanging links is considered best practice in security investigations. Defanged links will not automatically turn into clickable links but still retain the original link information, for instance hxxp[://]www[.]google[.]com.
+{{< question title="Instrucciones" open="true" >}}
+A medida que avanzamos en el análisis, el primer paso que debemos hacer es comprender la diferencia entre los enlaces sospechosos. Cuando analizamos enlaces potencialmente sospechosos, típicamente los desactivamos; esto significa reemplazar algunos caracteres para que el enlace no se pueda hacer clic accidentalmente ni desencadene mecanismos de escaneo de enlaces automáticos o de virus. Desactivar los enlaces se considera una buena práctica en las investigaciones de seguridad. Los enlaces desactivados no se convertirán automáticamente en enlaces clicables, pero aún conservarán la información del enlace original, por ejemplo, hxxp[://]www[.]google[.]com.
 {{< /question >}}
 
-{{< question title="Hints" >}}
-You can defang a link in a text editor. Here we will use [CyberChef](gchq.github.io/CyberChef) to defang the URL as we will use CyberChef for other steps as well. CyberChef is a web application with a huge number of functions which can help you with analyzing security-related data. Here’s a [very brief introduction](https://udel.codes/cyberchef.html) to its layout and functions.
+{{< question title="Pistas" >}}
+Puedes desactivar un enlace en un editor de texto. Aquí usaremos [CyberChef](gchq.github.io/CyberChef) para desactivar la URL ya que usaremos CyberChef para otros pasos también. CyberChef es una aplicación web con una gran cantidad de funciones que pueden ayudarte a analizar datos relacionados con la seguridad. Aquí tienes una [introducción muy breve](https://udel.codes/cyberchef.html) a su diseño y funciones.
 
-As part of this exercise, play around with CyberChef and defang the “please confirm” link from the attached email.
+Como parte de este ejercicio, juega con CyberChef y desactiva el enlace "por favor confirma" del correo electrónico adjunto.
 
 ![alt_text](images/image1.png "image_tooltip")
-First, we copy the hyperlink from the email.
+Primero, copiamos el hipervínculo del correo electrónico.
 
 ![alt_text](images/image2.png "image_tooltip")
-Then, we take the “Defang URL” input from CyberChef and drag it into the “Recipe” section
+Luego, tomamos la entrada "Defang URL" de CyberChef y la arrastramos a la sección "Receta".
 
 ![alt_text](images/image3.png "image_tooltip")
 
-Once we’ve pasted the URL into the input section in CyberChef, it will automatically output a defanged version thereof.
+Una vez que hemos pegado la URL en la sección de entrada en CyberChef, automáticamente generará una versión desactivada de la misma.
 {{< /question >}}
 
-{{< question title="Answer" >}}
+{{< question title="Respuesta" >}}
 hxxps[://]d[.]pr/mUxkOm
 {{< /question >}}
 
-### Question 5: Use CyberChef to extract and defang all the links in the email
+### Pregunta 5: Usa CyberChef para extraer y desactivar todos los enlaces en el correo electrónico
 
-{{< question title="Instructions" open="true" >}}
-You can use CyberChef to perform a lot of different analysis tasks. This time, find and describe a workflow to easily extract and defang all of the links from the email.
+{{< question title="Instrucciones" open="true" >}}
+Puedes usar CyberChef para realizar muchas tareas de análisis diferentes. Esta vez, encuentra y describe un flujo de trabajo para extraer fácilmente y desactivar todos los enlaces del correo electrónico.
 {{< /question >}}
 
-{{< question title="Answer" >}}
-You can use a ‘recipe’ – or a series of connected steps –in CyberChef to carry out a more complex analysis. To obtain and defang all the URLs in the message, all you need to do is run a recipe with the “extract URLs” and “defang URLs” workflows and paste the full content of the email (copied from a plain text editor) as input. If you were to tick the “unique” checkbox under “extract URLs”, you will see that the results will differ from those from the screenshot, and it will only output a single URL, the same one you defanged above. The fact that there is just one URL, repeated many times, within the email is great news for us–it will make our analysis much more straightforward. \
+{{< question title="Respuesta" >}}
+Puedes usar una 'receta', o una serie de pasos conectados, en CyberChef para llevar a cabo un análisis más complejo. Para obtener y desactivar todas las URLs en el mensaje, todo lo que necesitas hacer es ejecutar una receta con los flujos de trabajo "extraer URLs" y "desactivar URLs" y pegar el contenido completo del correo electrónico (copiado desde un editor de texto plano) como entrada. Si marcas la casilla "único" bajo "extraer URLs", verás que los resultados diferirán de los de la captura de pantalla, y solo se producirá una URL, la misma que desactivaste anteriormente. El hecho de que haya solo una URL, repetida muchas veces, dentro del correo electrónico es una gran noticia para nosotros: facilitará mucho nuestro análisis.
 
 ![alt_text](images/image1.png "image_tooltip")
 {{< /question >}}
 
-## Passive Investigation of URLs, Hostnames, and IP Addresses
+## Investigación Pasiva de URLs, Nombres de Host e IP
 
-### Question 6: When was the URL defanged in question 4 submitted to VirusTotal?
+### Pregunta 6: ¿Cuándo se envió la URL desactivada en la pregunta 4 a VirusTotal?
 
-{{< question title="Hints" >}}
-For the next few questions, we will use [VirusTotal](https://www.virustotal.com/)**.** It’s an online service that acts like a security scanner for suspicious files and URLs. Think of it as a digital inspector. You can upload a file or provide a URL, and VirusTotal scans it with antivirus engines and website checkers from dozens of different security companies. It also performs some additional analysis. This gives you a quick overview of whether the file or website is likely to be malicious. It's a valuable tool to help you identify potential threats before you open an attachment or click on a link. It also contains metadata about files which may be helpful. Here we will use the entry history to find out when a malicious indicator was first observed.
+{{< question title="Pistas" >}}
+Para las siguientes preguntas, utilizaremos [VirusTotal](https://www.virustotal.com/). Es un servicio en línea que actúa como un escáner de seguridad para archivos y URL sospechosos. Piénsalo como un inspector digital. Puedes subir un archivo o proporcionar una URL, y VirusTotal lo escanea con motores antivirus y verificadores de sitios web de docenas de compañías de seguridad diferentes. También realiza algunos análisis adicionales. Esto te proporciona una visión rápida de si el archivo o el sitio web es probablemente malicioso. Es una herramienta valiosa para ayudarte a identificar amenazas potenciales antes de abrir un archivo adjunto o hacer clic en un enlace. También contiene metadatos sobre archivos que pueden ser útiles. Aquí usaremos el historial de entradas para averiguar cuándo se observó por primera vez un indicador malicioso.
 
-Paste the URL from question 4 into VirusTotal (this time, you need to paste the full URL, not the defanged version). Go to “details” tab and look at the URL capture history.
+Pega la URL de la pregunta 4 en VirusTotal (esta vez, debes pegar la URL completa, no la versión desactivada). Ve a la pestaña "detalles" y mira el historial de captura de URL.
 
 ![alt_text](images/image1.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
+{{< question title="Respuesta" >}}
 08/20/2018
 {{< /question >}}
 
-### Question 7: What does VirusTotal give as the serving IP address for the URL defanged in question 4?
+### Pregunta 7: ¿Qué dirección IP sirve VirusTotal para la URL desactivada en la pregunta 4?
 
-{{< question title="Hints" >}}
-Also looking through the “details” tab in VirusTotal, look up the serving IP address.
+{{< question title="Pistas" >}}
+También buscando a través de la pestaña "detalles" en VirusTotal, busca la dirección IP que sirve.
 
 ![alt_text](images/image1.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
+{{< question title="Respuesta" >}}
 52.89.102.146
 {{< /question >}}
 
-### Question 8: how many vendors on VirusTotal detect this URL as malicious?
+### Pregunta 8: ¿Cuántos proveedores en VirusTotal detectan esta URL como maliciosa?
 
-{{< question title="Instructions" open="true" >}}
-When viewing the URL in VirusTotal, look up all the details under the “detection” tab. For a deep dive into what VirusTotal means by detection and what its methodologies are, check out [its documentation](https://docs.virustotal.com/).
+{{< question title="Instrucciones" open="true" >}}
+Al ver la URL en VirusTotal, busca todos los detalles bajo la pestaña "detección". Para profundizar en lo que VirusTotal significa con "detección" y cuáles son sus metodologías, consulta [su documentación](https://docs.virustotal.com/).
 {{< /question >}}
 
-{{< question title="Answer" >}}
-5 Vendors
+{{< question title="Respuesta" >}}
+5 Proveedores
 {{< /question >}}
 
-### Question 9: In which registrar was the domain defanged in question 4 registered?
+### Pregunta 9: ¿En qué registrador se registró el dominio desactivado en la pregunta 4?
 
-{{< question title="Instructions" open="true" >}}
-In order to look up information related to a domain registration, we can use a whois lookup. You can conduct such a lookup either through a command line tool on your device or through a dedicated app.
+{{< question title="Instrucciones" open="true" >}}
+Para buscar información relacionada con el registro de un dominio, podemos utilizar una búsqueda whois. Puedes realizar dicha búsqueda ya sea a través de una herramienta de línea de comandos en tu dispositivo o a través de una aplicación dedicada.
 {{< /question >}}
 
-{{< question title="Hints" >}}
-Here we use a whois website to extract it
+{{< question title="Pistas" >}}
+Aquí utilizamos un sitio web whois para extraerlo
 
 ![alt_text](images/image1.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
+{{< question title="Respuesta" >}}
 Internet Technology Solutions
 {{< /question >}}
 
-### Question 10: Where is the serving IP that you identified through VirusTotal geographically located?
+### Pregunta 10: ¿Dónde se encuentra geográficamente ubicada la IP de servidor que identificaste a través de VirusTotal?
 
-{{< question title="Instructions" open="true" >}}
-IP addresses are loosely tied to geographical locations, such as cities or districts. There are many online services where you can input an IP address and learn more about where it’s most likely located. While this type of check is not perfect and can sometimes make mistakes, it can nonetheless be an important part of malicious infrastructure investigations.
+{{< question title="Instrucciones" open="true" >}}
+Las direcciones IP están vagamente vinculadas a ubicaciones geográficas, como ciudades o distritos. Hay muchos servicios en línea donde puedes ingresar una dirección IP y aprender más sobre dónde probablemente esté ubicada. Aunque este tipo de verificación no es perfecta y a veces puede cometer errores, sigue siendo una parte importante de las investigaciones de infraestructura maliciosa.
 
-It’s worth comparing the information you receive from a whois lookup with that you receive from IP location searches. You might learn that the IP address you are trying to investigate belongs to a VPN provider or a big tech company such as Google–if this is the case, then you will not learn much from those investigations; the IP location will likely correspond to one of those companies’ server farms and might have little to do with the location of the person or entity you’re trying to investigate.
-
-![alt_text](images/image1.png "image_tooltip")
-{{< /question >}}
-
-{{< question title="Answer" >}}
-Portland, Oregon, United States
-{{< /question >}}
-
-## Passive Investigation of Email Headers
-
-### Question 11: what is the return path of the initial email you looked up?
-
-{{< question title="Instructions" open="true" >}}
-For the next few questions, we will be using a tool called [MxToolbox](https://mxtoolbox.com/). It’s a tool which can analyze email headers, hostnames, spam status, and much more. We will focus on its [header analyzer](https://mxtoolbox.com/EmailHeaders.aspx) feature, in which you can copy and paste all of the headers of an email (or even the whole email!) and run some basic analytics on them.
-{{< /question >}}
-
-{{< question title="Hints" >}}
-First, open the email using a plain text editor of your choice and copy its content. Then, paste them into the MxToolbox’s “Analyze Headers” tool
+Vale la pena comparar la información que recibes de una búsqueda whois con la que recibes de búsquedas de ubicación de IP. Podrías descubrir que la dirección IP que estás investigando pertenece a un proveedor de VPN o a una gran empresa tecnológica como Google; si este es el caso, entonces no aprenderás mucho de esas investigaciones, la ubicación IP probablemente corresponderá a una de las granjas de servidores de esas empresas y puede tener poco que ver con la ubicación de la persona o entidad que estás investigando.
 
 ![alt_text](images/image1.png "image_tooltip")
+{{< /question >}}
 
-Once you press “Analyze Header”, you can see the return path
+{{< question title="Respuesta" >}}
+Portland, Oregon, Estados Unidos
+{{< /question >}}
+
+## Investigación Pasiva de Encabezados de Correo Electrónico
+
+### Pregunta 11: ¿Cuál es la ruta de retorno del correo electrónico inicial que investigaste?
+
+{{< question title="Instrucciones" open="true" >}}
+Para las siguientes preguntas, utilizaremos una herramienta llamada [MxToolbox](https://mxtoolbox.com/). Es una herramienta que puede analizar encabezados de correo electrónico, nombres de host, estado de spam y mucho más. Nos centraremos en su característica de [análisis de encabezados](https://mxtoolbox.com/EmailHeaders.aspx), en la cual puedes copiar y pegar todos los encabezados de un correo electrónico (¡o incluso el correo electrónico completo!) y realizar algunos análisis básicos sobre ellos.
+{{< /question >}}
+
+{{< question title="Pistas" >}}
+Primero, abre el correo electrónico con un editor de texto plano de tu elección y copia su contenido. Luego, pégalo en la herramienta "Analizar encabezados" de MxToolbox
+
+![alt_text](images/image1.png "image_tooltip")
+
+Una vez que presionas "Analizar encabezado", puedes ver la ruta de retorno
 
 ![alt_text](images/image2.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
+{{< question title="Respuesta" >}}
 paparazi@rjttznyzjjzydnillquh.designclub.uk.com
 {{< /question >}}
 
-### Question 12: What are the first hop and SMTP server address of that email?
+### Pregunta 12: ¿Cuál es el primer salto y la dirección del servidor SMTP de ese correo electrónico?
 
-{{< question title="Instructions" open="true" >}}
-Go to the file “mx-toolbox-header-analysis”, look into the relay information section.
+{{< question title="Instrucciones" open="true" >}}
+Ve al archivo "mx-toolbox-header-analysis", mira la sección de información de retransmisión.
 
 ![alt_text](images/image1.png "image_tooltip")
-The address of the mail server
+La dirección del servidor de correo
 
 ![alt_text](images/image2.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
-First hop: efianalytics.com 216.244.76.116
+{{< question title="Respuesta" >}}
+Primer salto: efianalytics.com 216.244.76.116
 
-SMTP: `2002:a59:ce05:0:b0:2d3:3de5:67a9`
+SMTP: 2002:a59:ce05:0:b0:2d3:3de5:67a9
 {{< /question >}}
 
-## Active Investigation of Malicious Web Pages
+## Investigación Activa de Páginas Web Maliciosas
 
-### Question 13: What is the victim Id present in the code of the website?
+### Pregunta 13: ¿Cuál es el ID de la víctima presente en el código del sitio web?
 
-{{< question title="Instructions" open="true" >}}
-If the recipient of the email clicked on the link they would arrive at a landing page. Go to the file in the activity package to open “paypal.html”, look into the source code and search for the victimID. Use CyberChef to decode it to find a string of text.
+{{< question title="Instrucciones" open="true" >}}
+Si el destinatario del correo electrónico hizo clic en el enlace, llegaría a una página de destino. Ve al archivo en el paquete de actividad para abrir "paypal.html", mira el código fuente y busca el ID de la víctima. Usa CyberChef para decodificarlo y encontrar una cadena de texto.
 {{< /question >}}
 
-{{< question title="Hints" >}}
-In this exercise, you will encounter a string of text encoded in Base64. Base64 is a technique for transforming text that has many purposes, but in this case aims to obfuscate a string of text: the string is still there, it’s just saved in a way that cannot be easily spotted by the human eye or by a simple text search. If this is the first time in your work you’ve encountered Base64, it’s worth reading [a little more about it and other obfuscation formats](https://anithaana3.medium.com/common-text-encoding-methods-for-code-obfuscation-9399757eb5c3). Malware authors like to obfuscate some text strings within their programs using a technique such as Base64 in order to make it more difficult to analyze.
+{{< question title="Pistas" >}}
+En este ejercicio, encontrarás una cadena de texto codificada en Base64. Base64 es una técnica para transformar texto que tiene muchos propósitos, pero en este caso tiene como objetivo ofuscar una cadena de texto: la cadena sigue ahí, solo que guardada de una manera que no puede ser fácilmente detectada por el ojo humano o por una simple búsqueda de texto. Si esta es la primera vez que te encuentras con Base64 en tu trabajo, vale la pena leer [un poco más sobre él y otros formatos de obfuscación](https://anithaana3.medium.com/common-text-encoding-methods-for-code-obfuscation-9399757eb5c3). Los autores de malware suelen obfuscar algunos textos dentro de sus programas utilizando una técnica como Base64 para dificultar el análisis.
 
-CyberChef can encode and decode Base64 text.
+CyberChef puede codificar y decodificar texto en Base64.
 
-We open once again the code attached of the phishing page (.html)
+Abrimos una vez más el código adjunto de la página de phishing (.html)
 
 ![alt_text](images/image1.png "image_tooltip")
 
-we search for the victimID in the source code
+Buscamos el ID de la víctima en el código fuente, después lo copiamos desde allí y lo pegamos en la receta de "decodificación Base64" de CyberChef
+
 ![alt_text](images/image2.png "image_tooltip")
-
-Then we can paste the value we discovered into CyberChef. The tool has a magic wand feature which automatically detects and converts encoding–we could use that!
-
-![alt_text](images/image3.png "image_tooltip")
-
-Yay! The magic wand detected that the input is encoded with Base64 and decoded it automatically, giving us the answer!
-
-![alt_text](images/image4.png "image_tooltip")
 {{< /question >}}
 
-{{< question title="Answer" >}}
+{{< question title="Respuesta" >}}
 Th1s_1s_pH1sh1ng_Em3il
 {{< /question >}}
 
-## Other resources and links
+## Otros recursos y enlaces
 
-{{% resource title="Access Now helpline community documentation for responding to suspicious/phishing emails" languages="English" cost="Free" description="Client Receives a Suspicious/Phishing Email" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#" %}}
+{{% resource title="Documentación comunitaria de la línea de ayuda de Access Now para responder a correos electrónicos sospechosos o de phishing" languages="Inglés" cost="Gratis" description="El cliente recibe un correo electrónico sospechoso o de phishing" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#" %}}
 
-{{% resource title="List of all DNS record types" languages="English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French" cost="Free" description="Includes (almost?) all DNS record types." url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
+{{% resource title="Lista de todos los tipos de registros DNS" languages="Inglés, Chino, Japonés, Coreano, Ruso, Serbio, Ucraniano, Esperanto, Húngaro, Vietnamita, Italiano, Español, Francés" cost="Gratis" description="Incluye (casi?) todos los tipos de registros DNS." url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
 
-{{% resource title="Amnesty reports on phishing campaigns" languages="Multiple, depending on the report" cost="Free" description="A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks" url="https://www.amnesty.org/en/search/phishing/" %}}
+{{% resource title="Informes de Amnesty sobre campañas de phishing" languages="Varios, dependiendo del informe" cost="Gratis" description="Una lista de ejemplos de cómo se ve una campaña de phishing dirigida contra defensores de derechos humanos, activistas y periodistas." url="https://www.amnesty.org/en/search/phishing/" %}}
