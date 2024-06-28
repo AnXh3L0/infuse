@@ -6,7 +6,7 @@ display_url: http://localhost:1313
 
 backend:
   name: git-gateway
-  # repo: OpenInternet/saferjourno
+  # repo: OpenInternet/infuse
   # branch: main
 
 local_backend: true
@@ -79,9 +79,16 @@ collections:
       - name: "weight"
         label: "Order"
         widget: "number"
+        required: false
+      - name: "navbar"
+        label: "Is in navbar"
+        widget: "boolean"
+        default: false
+        required: false
       - name: "body"
         label: "Body"
         widget: "markdown"
+        required: false
   - name: "faq"
     label: "Frequently Asked Questions"
     folder: "data"

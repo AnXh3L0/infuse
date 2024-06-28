@@ -1,4 +1,4 @@
 +++
 title = "Learning Paths"
-draft = true
+layout = "unique"
 +++

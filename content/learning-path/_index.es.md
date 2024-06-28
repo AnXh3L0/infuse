@@ -1,4 +1,4 @@
 +++
 title = "Rutas de Aprendizaje"
-draft = true
+layout = "unique"
 +++

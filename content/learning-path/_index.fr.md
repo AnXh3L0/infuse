@@ -1,4 +1,4 @@
 +++
 title = "Parcours d'apprentissage"
-draft = true
+layout = "unique"
 +++

@@ -1,0 +1,10 @@
+{{ if .IsNamedParams }}
+{{ $title := .Get "title" }}
+{{ $open := .Get "open" }}
+<details {{ if eq $open "true" }} open{{ end }}>
+<summary>{{ $title }}</summary>
+{{ .Inner | markdownify }}
+</details>
+{{ else }}
+<p class="text-red-600">Error: details shortcode requires a 'title' parameter.</p>
+{{ end }}
