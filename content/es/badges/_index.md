@@ -1,4 +1,0 @@
-+++
-type = "badges"
-title = "Insignias"
-+++

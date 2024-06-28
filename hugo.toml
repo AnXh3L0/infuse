@@ -83,21 +83,21 @@ pluralizeListTitles = false
   [languages.en]
   languageName = "English"
   weight    = 1
-  contentDir = "content/en"
+  #contentDir = "content/en"
   [languages.en.params]
     languageName = "English"
 
   [languages.fr]
   languageName = "French"
   weight    = 2
-  contentDir = "content/fr"
+  #contentDir = "content/fr"
   [languages.fr.params]
     languageName = "French"
 
   [languages.es]
   languageName = "Spanish"
   weight    = 3
-  contentDir = "content/es"
+  #contentDir = "content/es"
   [languages.es.params]
     languageName = "Spanish"
 

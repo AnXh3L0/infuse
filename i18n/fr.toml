@@ -194,6 +194,18 @@ other = "Fait"
 [skillcheck]
 other = "Vérification des compétences"
 
+[congratulations-introduction]
+other = "Félicitations pour avoir terminé l'introduction !"
+
+[congratulations-module]
+other = "Félicitations pour avoir terminé"
+
+[mark-intro-complete]
+other = "Cochez la case pour confirmer que vous avez lu l'introduction et continuez vers le module suivant."
+
+[mark-module-complete]
+other = "Cochez la case pour confirmer votre achèvement et continuez vers le module suivant."
+
 [markAsComplete]
 other = "Marquer le module comme terminé"
 
@@ -248,6 +260,9 @@ other = "Voir notre"
 
 [clients]
 other = "Clients"
+
+[search]
+other = "Rechercher"
 
 [faq]
 other = "Questions fréquemment posées"

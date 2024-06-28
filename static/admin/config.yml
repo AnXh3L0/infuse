@@ -20,10 +20,10 @@ i18n:
   # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
   # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
   # single_file - persists a single file in `<folder>/<slug>.<extension>`
-  structure: multiple_folders
+  structure: multiple_files
 
   # Required - a list of locales to show in the editor UI
-  locales: [en, fr]
+  locales: [en, es, fr]
 
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
@@ -34,12 +34,13 @@ slug:
   clean_accents: true
 
 collections:
-  - name: "en_learning_path"
-    label: "Learning Paths (English)"
-    folder: "content/en/learning-path"
+  - name: "learning_paths"
+    label: "Learning Paths"
+    folder: "content/learning-path"
     identifier_field: "title"
     create: true
     delete: true
+    i18n: true
     nested:
       depth: 2
       summary: "{{title}}"
@@ -58,3 +59,61 @@ collections:
     filter:
       field: "type"
       value: "learning-path"
+  - name: "badges"
+    label: "Badges"
+    folder: "content/badges"
+    identifier_field: "title"
+    i18n: true
+    fields:
+      - name: "title"
+        label: "Title"
+        widget: "string"
+  - name: pages
+    label: Pages
+    folder: "content"
+    i18n: true
+    fields:
+      - name: "title"
+        label: "Title"
+        widget: "string"
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+      - name: "body"
+        label: "Body"
+        widget: "markdown"
+  - name: "faq"
+    label: "Frequently Asked Questions"
+    folder: "data"
+    format: "yaml"
+    create: true
+    delete: true
+    i18n: true
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        default: "FAQ"
+      - label: "Items"
+        name: "items"
+        widget: "list"
+        fields:
+          - label: "Question"
+            name: "question"
+            widget: "string"
+            i18n: true
+          - label: "Answer"
+            name: "answer"
+            widget: "text"
+            i18n: true
+  - name: "i18n-keys"
+    label: "UI translation"
+    folder: "i18n"
+    format: "toml"
+    create: false
+    slug: "{{locale}}"
+    fields:
+      - label: "Content"
+        name: "content"
+        widget: "text"
+        required: false

@@ -78,45 +78,39 @@
     <section class="mx-auto max-w-7xl px-8 pb-32 pt-10 grid-cols-1 lg:grid-cols-3">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
             {{ range where (where .Site.Pages "Section" "learning-path" ) "Params.type" "=" "learning-path" }}
-            <div
-                class="relative flex space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-                <article class="flex flex-col items-start">
-                    <div class="relative w-full">
-
-                        <img src="/media/thumbnails/{{ .Page.Params.thumbnail }}.png" alt="{{ .Page.Params.title }}"
-                            class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
-                    </div>
-                    <div class="max-w-xl mb-auto">
-                        <div class="group mb-auto relative">
-                            <h3 class="justify-between items-center mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
-                                <a href="{{ .Permalink }}">
-                                    <span class="absolute inset-0"></span>
-                                    {{ .Title }}
-                                </a>
-                            </h3>
-
-                            <div class="mt-4 gap-x-2 text-xs">
-                                {{ range .Page.Params.categories }}
-                                <p class="relative inline-block z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
-                                    {{ . | humanize }}</p>
-                                {{ end }}
-                            </div>
-
-                            <div class="hidden progress-container mt-4 w-full">
-                                <div class="progress-bar w-full h-3 bg-gray-200 rounded-full">
-                                    <div class="progress bg-green-600 h-full rounded-full" style="width: 0%;"></div>
-                                </div>
-                                <p class="progress-text mt-1 text-sm font-semibold text-gray-500"></p>
-                            </div>
-
-                            <p class="text-green-600 font-semibold mt-3">{{ len (where .RegularPagesRecursive
-                                ".Params.style" "eq" "module") }} {{ i18n "modules" }}</p>
-                            <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{{
-                                .Page.Params.description }}</p>
+            <a href="{{ .Permalink }}" class="flex focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
+                <div
+                    class="relative flex space-x-3 rounded-3xl border border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400">
+                    <article class="flex flex-col items-start">
+                        <div class="relative w-full">
+                            <img src="/media/thumbnails/{{ .Page.Params.thumbnail }}.png" alt="{{ .Page.Params.title }}"
+                                class="aspect-[2/1] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]">
                         </div>
-                    </div>
-                </article>
-            </div>
+                        <div class="max-w-xl mb-auto">
+                            <div class="group mb-auto relative">
+                                <h3 class="justify-between items-center mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                                    {{ .Title }}
+                                </h3>
+                                <div class="mt-4 gap-x-2 text-xs">
+                                    {{ range .Page.Params.categories }}
+                                    <p class="relative inline-block z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
+                                        {{ . | humanize }}</p>
+                                    {{ end }}
+                                </div>
+                                <div class="hidden progress-container mt-4 w-full">
+                                    <div class="progress-bar w-full h-3 bg-gray-200 rounded-full">
+                                        <div class="progress bg-green-600 h-full rounded-full" style="width: 0%;"></div>
+                                    </div>
+                                    <p class="progress-text mt-1 text-sm font-semibold text-gray-500"></p>
+                                </div>
+                                <p class="text-green-600 font-semibold mt-3">{{ len (where .RegularPagesRecursive
+                                    ".Params.style" "eq" "module") }} {{ i18n "modules" }}</p>
+                                <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{{ .Page.Params.description }}</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </a>
             {{ end }}
         </div>
     </section>
@@ -124,7 +118,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.progress-container').forEach((container) => {
-                const learningPathUrl = container.closest('article').querySelector('a').getAttribute('href');
+                const learningPathUrl = container.closest('a').getAttribute('href');
                 const permalinkParts = learningPathUrl.split('/');
                 const lastItem = "/" + permalinkParts[permalinkParts.length - 2];
                 const progressKey = `progress_${lastItem}`;

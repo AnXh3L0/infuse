@@ -57,3 +57,36 @@
     display: none;
   }
 }
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  position: relative;
+}
+
+.anchor-link {
+  position: absolute;
+  top: .2em;
+  left: -2rem;
+  display: flex;
+  margin: auto;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.prose h1:hover .anchor-link,
+.prose h2:hover .anchor-link,
+.prose h3:hover .anchor-link,
+.prose h4:hover .anchor-link,
+.prose h5:hover .anchor-link,
+.prose h6:hover .anchor-link {
+  opacity: 1;
+}
+
+.anchor-link:hover {
+  visibility: visible;
+}

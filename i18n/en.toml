@@ -194,6 +194,18 @@ other = "Done"
 [skillcheck]
 other = "Skill Check"
 
+[congratulations-introduction]
+other = "Congratulations on finishing the introduction!"
+
+[congratulations-module]
+other = "Congratulations on finishing"
+
+[mark-intro-complete]
+other = "Mark the checkbox to confirm you have read the introduction and continue to the next module."
+
+[mark-module-complete]
+other = "Mark the checkbox to confirm your completion and continue to the next module."
+
 [markAsComplete]
 other = "Mark module as complete"
 
@@ -248,6 +260,9 @@ other = "See our"
 
 [clients]
 other = "Clients"
+
+[search]
+other = "Search"
 
 [faq]
 other = "Frequently Asked Questions"

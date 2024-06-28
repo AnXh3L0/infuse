@@ -194,6 +194,18 @@ other = "Hecho"
 [skillcheck]
 other = "Prueba de Habilidades"
 
+[congratulations-introduction]
+other = "¡Felicidades por terminar la introducción!"
+
+[congratulations-module]
+other = "¡Felicidades por terminar"
+
+[mark-intro-complete]
+other = "Marque la casilla para confirmar que ha leído la introducción y continúe al siguiente módulo."
+
+[mark-module-complete]
+other = "Marque la casilla para confirmar su finalización y continúe al siguiente módulo."
+
 [markAsComplete]
 other = "Marcar módulo como completo"
 
@@ -248,6 +260,9 @@ other = "Ver nuestros"
 
 [clients]
 other = "Clientes"
+
+[search]
+other = "Buscar"
 
 [faq]
 other = "Preguntas Frecuentes"
