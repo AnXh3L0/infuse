@@ -5,7 +5,7 @@
     {{ partial "head.html" . }}
 </head>
 
-<body class="min-h-screen flex flex-col" x-data="learningPathComponent()" x-init="init()">
+<body class="flex min-h-screen flex-col" x-data="learningPathComponent()" x-init="init()">
     <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
 
     {{ partial "header.html" . }}
@@ -13,54 +13,54 @@
     <main id="content" class="content mb-auto">
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <section
-                class="mx-auto max-w-7xl px-8 lg:flex lg:items-center lg:justify-between lg:px-8 border-b border-gray-300 pb-8">
+                class="mx-auto max-w-7xl border-b border-gray-300 px-8 pb-8 lg:flex lg:items-center lg:justify-between lg:px-8">
 
                 <article class="flex flex-col items-start justify-between lg:w-2/3">
                     <h3 class="mt-3 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
                         {{ .Page.Params.title }}
                     </h3>
 
-                    <div class="flex items-center gap-x-2 mt-4 text-xs">
+                    <div class="mt-4 flex items-center gap-x-2 text-xs">
                         {{ range .Page.Params.categories }}
                         <p class="relative z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-green-600">
                             {{ . | humanize }}</p>
                         {{ end }}
                     </div>
 
-                    <p class="mt-10 font-semibold text-xl leading-6">{{ i18n "what-learn" }}</p>
+                    <p class="mt-10 text-xl font-semibold leading-6">{{ i18n "what-learn" }}</p>
                     <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-800">{{
                         .Page.Params.description }}</p>
                 </article>
 
-                <div id="progress-bar" class="hidden items-center justify-center lg:w-1/3 w-full mt-6">
-                    <svg class="w-[180px] h-[180px]">
+                <div id="progress-bar" class="mt-6 hidden w-full items-center justify-center lg:w-1/3">
+                    <svg aria-label="{{ i18n "progress-bar" }}" class="h-[180px] w-[180px]">
                         <circle class="text-gray-300" stroke-width="16" stroke="currentColor" fill="transparent" r="70"
                             cx="90" cy="90" />
                         <circle class="text-green-600" stroke-width="16" :stroke-dasharray="circumference"
                             :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
                             stroke="currentColor" fill="transparent" r="70" cx="90" cy="90" />
                         <text x="50%" y="50%" text-anchor="middle" dy=".3em"
-                            class="text-2xl font-semibold text-gray-800 progress-text" x-text="`${percent}%`"></text>
+                            class="progress-text text-2xl font-semibold text-gray-800" x-text="`${percent}%`"></text>
                     </svg>
                 </div>
 
             </section>
 
             <section id="modules"
-                class="mx-auto max-w-7xl px-8 pb-32 pt-10 flex flex-col lg:flex-row justify-between grid-cols-1 gap-8">
-                <div class="grid order-last lg:order-first grid-cols-1 gap-8 lg:w-2/3">
+                class="mx-auto flex max-w-7xl grid-cols-1 flex-col justify-between gap-8 px-8 pb-32 pt-10 lg:flex-row">
+                <div class="order-last grid grid-cols-1 gap-8 lg:order-first lg:w-2/3">
                     <span class="hidden" id="moduleCount" data-count="{{ len .RegularPagesRecursive }}"></span>
 
                     <div class="flex flex-col">
-                        <p class="mt-2 font-semibold text-xl leading-6">{{ i18n "modules" }}</p>
+                        <p class="mt-2 text-xl font-semibold leading-6">{{ i18n "modules" }}</p>
                         <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-500">{{ i18n "modules-description" }}
                         </p>
                     </div>
 
                     {{ range where .RegularPagesRecursive "Params.style" "=" "introduction" }}
                     <div
-                        class="relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 transition-shadow transition-200 shadow-3xl hover:shadow-none focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-                        <article class="flex flex-col items-start justify-between w-full">
+                        class="transition-200 relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-3xl transition-shadow focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-none">
+                        <article class="flex w-full flex-col items-start justify-between">
                             <div class="w-full">
                                 <div class="group relative">
                                     <h3
@@ -73,7 +73,7 @@
                                     <p class="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-gray-500">{{
                                         .Page.Params.description }}</p>
 
-                                    <div class="completion-status hidden items-center gap-x-2 mt-4 text-md">
+                                    <div class="completion-status text-md mt-4 hidden items-center gap-x-2">
 
                                         {{ $permalink := .Permalink }}
                                         {{ $parts := split $permalink "/" }}
@@ -81,17 +81,17 @@
                                         {{ $lastPart := index $parts (sub (len $parts) 2) }}
                                         {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
 
-                                        <span class="hidden urlValue">{{ $url }}</span>
+                                        <span class="urlValue hidden">{{ $url }}</span>
 
                                         <div>
                                             <div x-show="isModuleCompleted('{{ $url }}')">
                                                 <p
-                                                    class="relative z-10 rounded-full bg-green-50 border-solid border-2 border-green-200 px-3 py-0.5 font-medium text-sm text-green-700">
+                                                    class="relative z-10 rounded-full border-2 border-solid border-green-200 bg-green-50 px-3 py-0.5 text-sm font-medium text-green-700">
                                                     {{ i18n "done" }}</p>
                                             </div>
                                             <div x-show="isModuleNotCompleted('{{ $url }}')">
                                                 <p
-                                                    class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
+                                                    class="relative z-10 rounded-full border-2 border-solid border-red-200 bg-red-50 px-3 py-0.5 text-sm font-medium text-red-700">
                                                     {{ i18n "todo" }}</p>
                                             </div>
                                         </div>
@@ -107,17 +107,17 @@
 
                     {{ range where .RegularPagesRecursive "Params.style" "=" "module" }}
                     <div
-                        class="relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 transition-shadow transition-200 shadow-3xl hover:shadow-none focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400">
-                        <article class="flex flex-col items-start justify-between w-full">
+                        class="transition-200 relative flex items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-6 py-5 shadow-3xl transition-shadow focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-none">
+                        <article class="flex w-full flex-col items-start justify-between">
                             <div class="w-full">
-                                <div class="flex mb-3 items-center gap-x-2 text-md">
+                                <div class="text-md mb-3 flex items-center gap-x-2">
                                     {{ range .Page.Params.categories }}
                                     <p class="relative z-10 font-semibold text-green-600">
                                         {{ . | humanize }}</p>
                                     {{ end }}
                                 </div>
                                 <div class="group relative">
-                                    <p class="text-sm font-bold mb-1 text-green-700">{{ i18n "modules" 1 }} {{
+                                    <p class="mb-1 text-sm font-bold text-green-700">{{ i18n "modules" 1 }} {{
                                         .Page.Params.weight }}</p>
                                     <h3
                                         class="text-2xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
@@ -132,7 +132,7 @@
                                     </p>
                                     {{ end }}
 
-                                    <div class="completion-status hidden items-center gap-x-2 mt-4 text-md">
+                                    <div class="completion-status text-md mt-4 hidden items-center gap-x-2">
 
                                         {{ $permalink := .Permalink }}
                                         {{ $parts := split $permalink "/" }}
@@ -140,17 +140,17 @@
                                         {{ $lastPart := index $parts (sub (len $parts) 2) }}
                                         {{ $url := printf "/%s/%s" $lastTwoParts $lastPart }}
 
-                                        <span class="hidden urlValue">{{ $url }}</span>
+                                        <span class="urlValue hidden">{{ $url }}</span>
 
                                         <div>
                                             <div x-show="isModuleCompleted('{{ $url }}')">
                                                 <p
-                                                    class="relative z-10 rounded-full bg-green-50 border-solid border-2 border-green-200 px-3 py-0.5 font-medium text-sm text-green-700">
+                                                    class="relative z-10 rounded-full border-2 border-solid border-green-200 bg-green-50 px-3 py-0.5 text-sm font-medium text-green-700">
                                                     {{ i18n "done" }}</p>
                                             </div>
                                             <div x-show="isModuleNotCompleted('{{ $url }}')">
                                                 <p
-                                                    class="relative z-10 rounded-full bg-red-50 border-solid border-2 border-red-200 px-3 py-0.5 font-medium text-sm text-red-700">
+                                                    class="relative z-10 rounded-full border-2 border-solid border-red-200 bg-red-50 px-3 py-0.5 text-sm font-medium text-red-700">
                                                     {{ i18n "todo" }}</p>
                                             </div>
                                         </div>
@@ -167,10 +167,10 @@
 
                 <!-- Badge -->
                 <div id="badge-card"
-                    class="hidden relative lg:order-first h-max lg:w-1/3 mb-8 lg:mt-24 items-center justify-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-12 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
+                    class="relative mb-8 hidden h-max items-center justify-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white px-12 py-5 shadow-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 lg:order-first lg:mt-24 lg:w-1/3">
                     <div class="grid place-items-center" x-data="learningPathComponent()" x-init="init()">
 
-                        <svg class="mt-3" viewBox="0 0 295 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg aria-label="{{ .Page.Params.badge }} {{ i18n "badges" 1 }}" class="mt-3" viewBox="0 0 295 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path id="badge-banner"
                                 d="M1.56564 3.73219C0.831114 2.1008 2.02439 0.254883 3.81351 0.254883H290.909C292.698 0.254883 293.891 2.1008 293.157 3.73219L284.971 21.9122C284.681 22.5558 284.681 23.2928 284.971 23.9364L293.157 42.1164C293.891 43.7478 292.698 45.5937 290.909 45.5937H3.81351C2.02439 45.5937 0.831115 43.7478 1.56564 42.1164L9.75107 23.9364C10.0409 23.2928 10.0409 22.5558 9.75107 21.9122L1.56564 3.73219Z"
                                 fill="{{ .Page.Params.color }}" />
@@ -178,7 +178,7 @@
                                 dy=".4em" fill="#333">{{ .Page.Params.badge | upper }}</text>
                         </svg>
 
-                        <img class="w-36 mt-4" :src="badgeImageUrl('{{ .Page.Params.icon }}')" :alt="badgeAltText()"
+                        <img class="mt-4 w-36" :src="badgeImageUrl('{{ .Page.Params.icon }}')" :alt="badgeAltText()"
                             alt="" />
 
                         <p id="onlyOneModuleLeft" class="hidden">{{ i18n "only-one-module-left" }}</p>
@@ -195,10 +195,10 @@
                         <p id="badgeName" class="hidden">{{ .Page.Params.badge }}</p>
 
                         <!-- Completion message -->
-                        <p class="text-lg mt-4 text-center font-semibold" x-text="completionMessage"></p>
+                        <p class="mt-4 text-center text-lg font-semibold" x-text="completionMessage"></p>
 
                         <!-- Number of completed modules -->
-                        <p class="text-sm mt-1 text-center text-gray-500" x-text="completedModulesMessage"></p>
+                        <p class="mt-1 text-center text-sm text-gray-500" x-text="completedModulesMessage"></p>
                     </div>
                 </div>
 

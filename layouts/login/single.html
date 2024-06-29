@@ -13,12 +13,12 @@
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
       <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
 
-        <div class="sm:mx-auto sm:w-full sm:max-w-md mb-8">
+        <div class="mb-8 sm:mx-auto sm:w-full sm:max-w-md">
           <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
           <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n "login-header"
             }}
           </h2>
-          <p class="text-center test-sm text-gray-600">{{ i18n "login-subheader" }}</p>
+          <p class="test-sm text-center text-gray-600">{{ i18n "login-subheader" }}</p>
         </div>
 
         <form id="LoginForm" class="space-y-6" method="dialog">
@@ -27,13 +27,13 @@
               }}</label>
             <div class="mt-2">
               <input id="LoginUsername" name="LoginUsername" type="text" autocomplete="" required
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-700 sm:text-sm sm:leading-6">
             </div>
           </div>
 
           <div>
             <button type="submit"
-              class="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">{{
+              class="flex w-full justify-center rounded-md bg-green-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700">{{
               i18n "sign-in" }}</button>
           </div>
         </form>
@@ -42,14 +42,14 @@
 
       <p class="mt-10 text-center text-sm text-gray-500">
         {{ i18n "have-backup" }}
-        <label class="font-semibold leading-6 text-green-600 hover:text-green-500 cursor-pointer" for="importInput">
+        <label class="cursor-pointer font-semibold leading-6 text-green-700 hover:text-green-800" for="importInput">
           {{ i18n "import-data" }}</label>
         <input type="file" class="sr-only" id="importInput" accept=".json">
       </p>
 
       <p class="mt-0 text-center text-sm text-gray-500">
         {{ i18n "no-account" }}
-        <a href="{{ .Site.LanguagePrefix }}/signup" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
+        <a href="{{ .Site.LanguagePrefix }}/signup" class="font-semibold leading-6 text-green-700 hover:text-green-800">{{
           i18n "signup" }}</a>
       </p>
     </div>

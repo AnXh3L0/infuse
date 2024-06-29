@@ -182,6 +182,9 @@ other = "out of"
 [modules-completed]
 other = "modules completed"
 
+[progress-bar]
+other = "Progress bar"
+
 [todo]
 other = "To do"
 

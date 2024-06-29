@@ -188,6 +188,9 @@ other = "de"
 [modules-completed]
 other = "módulos completados"
 
+[progress-bar]
+other = "Barra de progreso"
+
 [todo]
 other = "Por hacer"
 

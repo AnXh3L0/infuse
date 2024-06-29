@@ -188,6 +188,9 @@ other = "sur"
 [modules-completed]
 other = "modules terminés"
 
+[progress-bar]
+other = "Barre de progression"
+
 [todo]
 other = "À faire"
 
