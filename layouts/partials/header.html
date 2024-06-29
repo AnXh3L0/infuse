@@ -6,7 +6,7 @@
                 <img class="h-8 w-auto" src="/media/images/infuse-logo.svg" alt="Infuse logo">
             </a>
             <div class="hidden lg:flex lg:gap-x-12">
-                <div class="hidden lg:ms-3 lg:flex lg:space-x-8">
+                <div class="hidden lg:flex lg:gap-x-6">
                     {{ range where .Site.Pages "Params.navbar" "=" true }}
                     <a href="{{ .Permalink }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 hover:underline">{{
