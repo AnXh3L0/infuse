@@ -104,3 +104,31 @@ body {
 .anchor-link:hover {
   visibility: visible;
 }
+
+nav#TableOfContents ul {
+  list-style: none;
+}
+
+nav#TableOfContents li {
+  padding-inline-start: 0;
+}
+
+nav#TableOfContents li a {
+  padding: .5rem 1rem;
+  display: block;
+  background-color: #EDFCF2;
+  color: #087443;
+  border-radius: .5rem;
+  text-decoration: none;
+  border-width: 2px 2px 2px 8px;
+  border-color: transparent;
+}
+
+nav#TableOfContents li a.active-element {
+  padding: .5rem 1rem;
+  border-color: #087443;
+}
+
+nav#TableOfContents ul:first-child {
+  padding-left: 0;
+}

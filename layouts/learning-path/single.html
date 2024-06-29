@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html class="h-full bg-gray-50" lang="{{ .Site.Language }}" itemscope itemtype="http://schema.org/WebPage">
+<html class="h-full bg-gray-50" lang="{{ .Site.Language }}" dir="{{ .Site.Language.Params.direction }}" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
     {{ partial "head.html" . }}
 </head>
 
-<body class="flex min-h-screen flex-col">
+<body class="flex flex-col">
     <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
 
     {{ partial "header.html" . }}
 
     <main id="content" class="content mb-auto">
         {{ partial "breadcrumbs.html" . }}
-        <div class="relative flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div class="relative flex flex-col justify-center py-12 sm:px-6 lg:px-8">
 
             <section
                 class="prose mx-auto w-full max-w-3xl flex-col px-8 lg:flex lg:items-center lg:justify-between lg:px-8">
@@ -40,9 +40,8 @@
                     {{ $content | safeHTML }}
 
                     <!-- Table of Contents (ToC) Panel -->
-                    <div
-                        class="relative mt-10 hidden lg:block xl:absolute xl:-right-96 xl:top-0 xl:max-h-screen xl:overflow-y-auto">
-                        <div class="sticky top-0">
+                    <div class="absolute mt-8 hidden h-full xl:-left-96 xl:block">
+                        <div class="sticky top-0 px-4 py-2">
                             <h2 class="mb-4 mt-3 text-xl font-bold">{{ i18n "table-of-contents" }}</h2>
                             <div class="max-w-72 space-y-2">
                                 {{ .TableOfContents }}
@@ -53,11 +52,11 @@
                     <script>
                         document.addEventListener('DOMContentLoaded', function () {
                             const tocLinks = document.querySelectorAll('#TableOfContents a');
-                            const tocItems = Array.from(tocLinks).map(link => link.parentElement);
+                            const tocItems = Array.from(tocLinks).map(link => link);
 
                             const scrollOffsets = Array.from(tocLinks).map(link => {
                                 const target = document.getElementById(link.getAttribute('href').slice(1));
-                                return target.offsetTop - 10; // Adjust offset as needed
+                                return target.offsetTop + 100; // Adjust offset as needed
                             });
 
                             window.addEventListener('scroll', function () {
@@ -71,14 +70,26 @@
                                 }
 
                                 tocItems.forEach(item => {
-                                    item.classList.remove('border-green-600', 'border-s-4');
+                                    item.classList.remove('active-element');
                                 });
 
                                 if (currentIndex !== -1) {
-                                    tocItems[currentIndex].classList.add('border-green-600', 'border-s-4');
+                                    tocItems[currentIndex].classList.add('active-element');
                                 }
                             });
                         });
+                    </script>
+
+                    <script>
+                        let parent = document.querySelector('.sticky').parentElement;
+
+                        while (parent) {
+                            const hasOverflow = getComputedStyle(parent).overflow;
+                            if (hasOverflow !== 'visible') {
+                                console.log(hasOverflow, parent);
+                            }
+                            parent = parent.parentElement;
+                        }
                     </script>
                 </article>
 
@@ -200,7 +211,6 @@
                         });
                     });
                 </script>
-
             </section>
         </div>
     </main>

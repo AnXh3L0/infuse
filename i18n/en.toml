@@ -295,15 +295,6 @@ other = "Are you sure you want to delete your account? This action cannot be und
 [completed]
 other = "completed"
 
-# Blog 
-[newerPosts]
-other = "Newer post"
-[olderPosts]
-other = "Older post"
-[allPosts]
-other = "All Posts"
-
-# posts/single.html
 [readingTime]
 one   = "1 min read"
 other = "{{ .Count }} min read"

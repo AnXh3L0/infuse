@@ -1,7 +1,6 @@
 title = "Infuse"
 
 defaultContentLanguage = "en"
-languageCode = "en-us"
 defaultContentLanguageInSubdir = true
 
 rssLimit  = 300
@@ -83,23 +82,30 @@ pluralizeListTitles = false
   [languages.en]
   languageName = "English"
   weight    = 1
-  #contentDir = "content/en"
   [languages.en.params]
     languageName = "English"
+    direction = "ltr"
 
   [languages.fr]
   languageName = "French"
   weight    = 2
-  #contentDir = "content/fr"
   [languages.fr.params]
     languageName = "French"
+    direction = "ltr"
 
   [languages.es]
   languageName = "Spanish"
   weight    = 3
-  #contentDir = "content/es"
   [languages.es.params]
     languageName = "Spanish"
+    direction = "ltr"
+  
+  [languages.ar]
+  languageName = "Arabic"
+  weight    = 4
+  [languages.ar.params]
+    languageName = "Arabic"
+    direction = "rtl"
 
 [privacy]
   [privacy.instagram]
