@@ -316,4 +316,7 @@ other = "{{ .Count }} mots"
 other = "Publié le"
 
 [updated-on]
-other = "dernière mise à jour le"
+other = "Dernière mise à jour le"
+
+[git-unavailable]
+other = "Les informations Git ne sont pas disponibles."

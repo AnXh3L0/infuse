@@ -311,3 +311,6 @@ other = "نشرت في"
 
 [updated-on]
 other = "آخر تحديث في"
+
+[git-unavailable]
+other = "معلومات Git غير متاحة."

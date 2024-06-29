@@ -13,3 +13,8 @@
 {{ $instantpage := slice $instant | resources.Concat "instant.js" | resources.Minify }}
 
 <script type="module" defer src="{{ $instantpage.RelPermalink }}"></script>
+
+<script type="module">
+    await import('/pagefind/pagefind-highlight.js');
+    new PagefindHighlight({ highlightParam: "highlight" });
+</script>

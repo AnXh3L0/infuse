@@ -18,6 +18,12 @@
                 class="prose prose-stone mx-auto w-full max-w-3xl flex-col px-8 lg:flex lg:items-center lg:justify-between lg:px-8">
 
                 <article class="flex w-full flex-col items-start justify-between border-b border-gray-300">
+                    {{ if .GitInfo }}
+                    <p class="mb-2 me-2 inline-block rounded-full border-2 border-indigo-300 bg-indigo-50 px-3 py-0.5 text-sm font-semibold text-indigo-800">{{ i18n "updated-on" }}: {{ .GitInfo.AuthorDate.Format "Jan 2, 2006" }}</p>
+                    {{ else }}
+                    <p class="text-sm text-gray-800">{{ i18n "git-unavailable" }}</p>
+                    {{ end }}
+
                     {{ if eq .Page.Params.style "introduction" }}
                     {{ else }}
                     <p class="text-sm text-gray-500">{{ i18n "modules" 1 }} {{ .Page.Params.weight }}</p>

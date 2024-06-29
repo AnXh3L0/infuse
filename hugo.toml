@@ -17,7 +17,7 @@ buildExpored = false
 canonifyURLs = true
 
 enableRobotsTXT = true
-enableGitInfo   = false
+enableGitInfo   = true
 enableEmoji     = true
 enableMissingTranslationPlaceholders = true
 disableRSS     = false
@@ -53,7 +53,7 @@ pluralizeListTitles = false
   images = ["media/images/thumbnail.png"]
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
-  gitUrl = "https://github.com/x/y/commit/"
+  gitUrl = "https://github.com/AnXh3L0/infuse/commit/"
 
   # Integrate Javascript files or stylesheets by adding the url to the external assets or by
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"

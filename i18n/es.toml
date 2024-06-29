@@ -316,4 +316,7 @@ other = "{{ .Count }} Palabras"
 other = "Publicado en"
 
 [updated-on]
-other = "última actualización en"
+other = "Última actualización en"
+
+[git-unavailable]
+other = "La información de Git no está disponible."

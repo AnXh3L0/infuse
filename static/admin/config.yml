@@ -37,13 +37,13 @@ collections:
   - name: "learning_paths"
     label: "Learning Paths"
     folder: "content/learning-path"
-    identifier_field: "title"
+    identifier_field: "{{ title }}"
     create: true
     delete: true
     i18n: true
     nested:
       depth: 2
-      summary: "{{title}}"
+      # summary: "{{title}}"
     fields:
       - name: "title"
         label: "Title"
@@ -51,14 +51,27 @@ collections:
       - name: "body"
         label: "Body"
         widget: "markdown"
-    filters:
-      fileType: "md"
-      exclude:
-        - "_index.md"
-    preview_path_date_field: "updated_on"
-    filter:
-      field: "type"
-      value: "learning-path"
+    # filters:
+    #   fileType: "md"
+    #   exclude:
+    #     - "_index.md"
+    # filter:
+    #   field: "type"
+    #   value: "learning-path"
+  - name: "learning_path_2"
+    label: "Learning Path 2"
+    folder: "content/learning-path/2"
+    identifier_field: "title"
+    create: true
+    delete: true
+    i18n: true
+    fields:
+      - name: "title"
+        label: "Title"
+        widget: "string"
+      - name: "body"
+        label: "Body"
+        widget: "markdown"
   - name: "badges"
     label: "Badges"
     folder: "content/badges"
