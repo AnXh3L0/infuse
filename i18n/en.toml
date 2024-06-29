@@ -66,10 +66,13 @@ other = "We do not use password authentication because all information is stored
 [signup]
 other = "Sign up"
 
-[existingAccount]
-other = "Have an existing account?"
+[have-backup]
+other = "Have an existing backup?"
 
-[importData]
+[have-account]
+other = "Already have an account?"
+
+[import-data]
 other = "Import your data"
 
 [loginHeader]

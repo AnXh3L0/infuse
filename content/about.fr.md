@@ -20,13 +20,13 @@ Infuse est développé et détenu par la communauté. À sa base, le cadre a ét
 
 Tout comme votre thé préféré infuse l'eau chaude, créant une boisson délicieuse, aromatique, réconfortante (peut-être même caféinée), nous espérons qu'Infuse sera une source riche d'apprentissage, de croissance et de connexion pour les protecteurs numériques et les communautés qu'ils soutiennent. Santé !
 
-## Qu'est-ce que l'Expertise Technique Spécialisée (STE) ?
+## Qu'est-ce que l'Expertise Technique Spécialisée (STE)?
 
 La plupart des protecteurs numériques ont une compréhension solide de sujets tels que la sécurité des comptes, la navigation sécurisée, la sécurité des appareils et la messagerie sécurisée, et partagent ces connaissances avec leurs clients régulièrement. La communauté de la liberté sur Internet a publié et localisé d'excellents guides couvrant ces sujets.
 
 L'expertise technique spécialisée (STE), en revanche, consiste en des connaissances nécessaires pour des interventions et des investigations plus spécialisées et approfondies, telles que la sécurité web, l'analyse d'infrastructures malveillantes ou l'investigation de logiciels malveillants. Ces domaines de STE n'ont pas été aussi largement documentés et localisés par la communauté de la liberté sur Internet que les sujets plus fondamentaux. De plus, la STE nécessite non seulement des connaissances mais aussi des compétences spécifiques, telles que l'analyse des en-têtes ou des journaux, qui nécessitent une pratique régulière et approfondie.
 
-## Pour qui est Infuse ?
+## Pour qui est Infuse?
 
 Infuse a été conçu pour être utilisé par des protecteurs numériques (formateurs en sécurité numérique, technologues, auditeurs, etc.) du monde entier cherchant à améliorer leurs compétences en STE et à se connecter avec des pairs pouvant les aider à travers le mentorat et la validation des compétences tout au long du processus d'apprentissage. Les parcours d'apprentissage ne sont pas destinés aux débutants absolus en sécurité numérique, et pour bénéficier des parcours d'apprentissage, les Learners sont recommandés de posséder certaines compétences préalables et connaissances. Vous trouverez des orientations dans chaque parcours d'apprentissage sur ces prérequis ainsi que des conseils sur les ressources pour vous remettre à niveau si nécessaire.
 

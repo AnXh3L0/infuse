@@ -66,10 +66,13 @@ other = "Nous n'utilisons pas l'authentification par mot de passe car toutes les
 [signup]
 other = "S'inscrire"
 
-[existingAccount]
-other = "Vous avez déjà un compte ?"
+[have-backup]
+other = "Avez-vous déjà une sauvegarde existante?"
 
-[importData]
+[have-account]
+other = "Vous avez déjà un compte?"
+
+[import-data]
 other = "Importer vos données"
 
 [loginHeader]
@@ -82,7 +85,7 @@ other = "Bon retour ! Veuillez entrer vos coordonnées."
 other = "Se connecter"
 
 [noAccount]
-other = "Vous n'avez pas de compte ?"
+other = "Vous n'avez pas de compte?"
 
 [login]
 other = "Se connecter"
@@ -271,7 +274,7 @@ other = "Table des matières"
 other = "Questions fréquemment posées"
 
 [faq-description]
-other = "Vous ne trouvez pas la réponse que vous cherchez ? Contactez notre"
+other = "Vous ne trouvez pas la réponse que vous cherchez? Contactez notre"
 
 [faq-link]
 other = "équipe de support client"
@@ -311,7 +314,7 @@ other = "Ouvrir le menu des langues"
 other = "Ouvrir le menu utilisateur"
 
 [confirm-delete]
-other = "Êtes-vous sûr de vouloir supprimer votre compte ? Cette action ne peut pas être annulée."
+other = "Êtes-vous sûr de vouloir supprimer votre compte? Cette action ne peut pas être annulée."
 
 [notFound]
 other = "Oups, page non trouvée…"

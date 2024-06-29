@@ -11,7 +11,7 @@ Vous êtes assis dans la salle de rédaction animée de la presse où vous trava
 
 _Cette activité utilise un exemple d'e-mail et de page de destination nécessaires à cette activité. Téléchargez les fichiers ici : [Matériaux CTF](/files/ctf-materials.zip)_
 
-### Question 1 : Quelle est l'adresse e-mail de l'expéditeur de l'e-mail ?
+### Question 1 : Quelle est l'adresse e-mail de l'expéditeur de l'e-mail?
 
 {{< question title="Instructions" open="true" >}}
 Découvrez comment l'adresse de l'expéditeur apparaîtrait dans le client e-mail si l'e-mail était ouvert.
@@ -40,7 +40,7 @@ En examinant l'e-mail, nous voyons l'adresse e-mail visible de l'expéditeur
 L'adresse e-mail de l'expéditeur est : [paypal@service.com](mailto:paypal@service.com)
 {{< /question >}}
 
-### Question 2 : Quel est le sujet de cet e-mail ?
+### Question 2 : Quel est le sujet de cet e-mail?
 
 {{< question title="Instructions" open="true" >}}
 En continuant d'examiner l'e-mail, recherchons d'autres caractéristiques qui pourraient indiquer qu'il s'agit de messages de spam ou malveillants. Regardons le sujet et d'autres signes dans le texte ! Si vous lisez l'e-mail dans un éditeur de texte, vous le trouverez dans la ligne Objet : .
@@ -61,10 +61,10 @@ Voici quelques points clés à surveiller dans un e-mail de phishing :
 Le sujet de l'e-mail est : _We called you and you didn't answer_
 {{< /question >}}
 
-### Question 3 : Quelle action est demandée ?
+### Question 3 : Quelle action est demandée?
 
 {{< question title="Instructions" open="true" >}}
-Lorsque nous examinons un e-mail potentiellement malveillant, nous devons également comprendre ce que l'expéditeur voulait que nous fassions. Quelle action supposez-vous que l'expéditeur voulait que le destinataire fasse ?
+Lorsque nous examinons un e-mail potentiellement malveillant, nous devons également comprendre ce que l'expéditeur voulait que nous fassions. Quelle action supposez-vous que l'expéditeur voulait que le destinataire fasse?
 {{< /question >}}
 
 {{< question title="Indications" >}}
@@ -117,7 +117,7 @@ Vous pouvez utiliser une "recette" - ou une série d'étapes connectées - dans 
 
 ## Investigation passive des URL, noms d'hôte et adresses IP
 
-### Question 6 : À quelle date le lien défusé de la question 4 a-t-il été soumis à VirusTotal ?
+### Question 6 : À quelle date le lien défusé de la question 4 a-t-il été soumis à VirusTotal?
 
 {{< question title="Indications" >}}
 Pour les prochaines questions, nous utiliserons [VirusTotal](https://www.virustotal.com/). C'est un service en ligne qui agit comme un scanner de sécurité pour les fichiers et les URL suspects. Pensez-y comme un inspecteur numérique. Vous pouvez télécharger un fichier ou fournir une URL, et VirusTotal le scanne avec des moteurs antivirus et des vérificateurs de sites web de dizaines de différentes entreprises de sécurité. Il effectue également des analyses supplémentaires. Cela vous donne un aperçu rapide de la probabilité que le fichier ou le site web soit malveillant. C'est un outil précieux pour vous aider à identifier les menaces potentielles avant d'ouvrir une pièce jointe ou de cliquer sur un lien. Il contient également des métadonnées sur les fichiers qui peuvent être utiles. Ici, nous utiliserons l'historique d'entrée pour savoir quand un indicateur malveillant a été observé pour la première fois.
@@ -131,7 +131,7 @@ Collez l'URL de la question 4 dans VirusTotal (cette fois, vous devez coller l'U
 08/20/2018
 {{< /question >}}
 
-### Question 7 : Quelle adresse IP de service VirusTotal donne-t-elle pour l'URL dégradée de la question 4 ?
+### Question 7 : Quelle adresse IP de service VirusTotal donne-t-elle pour l'URL dégradée de la question 4?
 
 {{< question title="Indications" >}}
 En regardant également l'onglet "détails" dans VirusTotal, recherchez l'adresse IP de service.
@@ -143,7 +143,7 @@ En regardant également l'onglet "détails" dans VirusTotal, recherchez l'adress
 52.89.102.146
 {{< /question >}}
 
-### Question 8 : Combien de fournisseurs sur VirusTotal détectent cette URL comme malveillante ?
+### Question 8 : Combien de fournisseurs sur VirusTotal détectent cette URL comme malveillante?
 
 {{< question title="Instructions" open="true" >}}
 Lors de la visualisation de l'URL dans VirusTotal, recherchez tous les détails sous l'onglet "détection". Pour une plongée plus profonde dans ce que VirusTotal entend par détection et quelles sont ses méthodologies, consultez [sa documentation](https://docs.virustotal.com/).
@@ -153,7 +153,7 @@ Lors de la visualisation de l'URL dans VirusTotal, recherchez tous les détails 
 5 Fournisseurs
 {{< /question >}}
 
-### Question 9 : Dans quel registraire le domaine dégradé de la question 4 a-t-il été enregistré ?
+### Question 9 : Dans quel registraire le domaine dégradé de la question 4 a-t-il été enregistré?
 
 {{< question title="Instructions" open="true" >}}
 Pour rechercher des informations liées à l'enregistrement d'un domaine, vous pouvez utiliser une recherche whois. Vous pouvez effectuer une telle recherche soit via un outil de ligne de commande sur votre appareil, soit via une application dédiée.
@@ -169,7 +169,7 @@ Ici, nous utilisons un site whois pour l'extraire
 Internet Technology Solutions
 {{< /question >}}
 
-### Question 10 : Où se situe géographiquement l'adresse IP de service que vous avez identifiée grâce à VirusTotal ?
+### Question 10 : Où se situe géographiquement l'adresse IP de service que vous avez identifiée grâce à VirusTotal?
 
 {{< question title="Instructions" open="true" >}}
 Les adresses IP sont vaguement liées à des emplacements géographiques, comme des villes ou des districts. Il existe de nombreux services en ligne où vous pouvez saisir une adresse IP et en apprendre davantage sur l'endroit où elle est le plus susceptible de se trouver. Bien que ce type de vérification ne soit pas parfait et puisse parfois commettre des erreurs, il peut néanmoins constituer une partie importante des enquêtes sur l'infrastructure malveillante.
@@ -185,7 +185,7 @@ Portland, Oregon, États-Unis
 
 ## Investigation passive des en-têtes d'e-mail
 
-### Question 11 : Quel est le chemin de retour du premier e-mail que vous avez examiné ?
+### Question 11 : Quel est le chemin de retour du premier e-mail que vous avez examiné?
 
 {{< question title="Instructions" open="true" >}}
 Pour les questions suivantes, nous utiliserons un outil appelé [MxToolbox](https://mxtoolbox.com/). C'est un outil qui peut analyser les en-têtes d'e-mail, les noms d'hôtes, le statut du spam, et bien plus encore. Nous nous concentrerons sur sa fonction d'analyse d'en-têtes, dans laquelle vous pouvez copier et coller tous les en-têtes d'un e-mail (ou même l'e-mail entier !) et effectuer quelques analyses de base dessus.
@@ -205,7 +205,7 @@ Une fois que vous avez cliqué sur "Analyze Header", vous pouvez voir le chemin 
 paparazi@rjttznyzjjzydnillquh.designclub.uk.com
 {{< /question >}}
 
-### Question 12 : Quel sont le premier saut et l'adresse du serveur SMTP de cet e-mail ?
+### Question 12 : Quel sont le premier saut et l'adresse du serveur SMTP de cet e-mail?
 
 {{< question title="Instructions" open="true" >}}
 Allez dans le fichier "mx-toolbox-header-analysis", regardez la section des informations de relais.
@@ -224,7 +224,7 @@ SMTP : `2002:a59:ce05:0:b0:2d3:3de5:67a9`
 
 ## Investigation active des pages web malveillantes
 
-### Question 13 : Quel est l'identifiant de la victime présent dans le code du site web ?
+### Question 13 : Quel est l'identifiant de la victime présent dans le code du site web?
 
 {{< question title="Instructions" open="true" >}}
 Si le destinataire de l'e-mail a cliqué sur le lien, il serait arrivé sur une page de destination. Allez dans le fichier du package d'activités pour ouvrir "paypal.html", examinez le code source et recherchez l'identifiant de la victime. Utilisez CyberChef pour le décoder afin de trouver une chaîne de texte.

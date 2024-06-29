@@ -66,10 +66,13 @@ other = "No utilizamos autenticación por contraseña porque toda la informació
 [signup]
 other = "Registrarse"
 
-[existingAccount]
-other = "¿Tienes una cuenta existente?"
+[have-backup]
+other = "¿Tienes una copia de seguridad existente?"
 
-[importData]
+[have-account]
+other = "¿Ya tienes una cuenta?"
+
+[import-data]
 other = "Importar tus datos"
 
 [loginHeader]

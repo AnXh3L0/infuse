@@ -61,7 +61,7 @@ Reflect on and answer/discuss the following with peers, colleagues, friends, or 
 - Describe how touching and gaining access to someone's device might present unforeseen risks.
 - Imagine you are assisting someone with sensitive data on their device. How would you approach a discussion with this person regarding your access and data handling.
 - How does understanding a person’s specific threat model impact your harm-reduction efforts, for instance if they are an anonymous blogger or dissident in exile?
-- How do you navigate providing factual technical evidence according to your ability, while balancing the need not to provide false confidence while also not fostering paranoia ?
+- How do you navigate providing factual technical evidence according to your ability, while balancing the need not to provide false confidence while also not fostering paranoia?
 - Describe your own abilities and limitations in conducting infrastructure analysis work. After making a first attempt at this description, attempt to add further nuance and accuracy to your description.
 - What might be the risks if you proceed without this recognition of your limitations?
 

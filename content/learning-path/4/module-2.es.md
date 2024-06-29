@@ -184,8 +184,8 @@ function localize($content, $lang) {
 }
 ?>
 <html>
-<head><title><?= localize($_GET("pg")+".title",$_GET("hl")) ?></title></head>
-<body><?= localize($_GET("pg"), $_GET("hl")) ?></body>
+<head><title><?= localize($_GET("pg")+".title",$_GET("hl"))?></title></head>
+<body><?= localize($_GET("pg"), $_GET("hl"))?></body>
 </html>
 ```
 

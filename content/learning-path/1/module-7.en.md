@@ -136,5 +136,5 @@ Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/
   - Who owns the infrastructure that’s serving the website?
   - What other domains does this side load or link to? What do they do?
   - When was this domain registered?
-  - (optional) What software is being used to serve the site ?
+  - (optional) What software is being used to serve the site?
   - Have others listed the site as malicious?

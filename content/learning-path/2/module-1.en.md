@@ -104,7 +104,7 @@ Reflect on and answer/discuss the following with peers, colleagues, friends, or 
 - Imagine you are assisting someone with sensitive data on their device. How would you approach a discussion with this person regarding your access and data handling.
 - Why is it impossible to say that a device is free from malware?
 - How does understanding a person’s specific threat model impact your harm-reduction efforts, for instance if they are an anonymous blogger or dissident in exile?
-- How do you navigate providing factual technical evidence according to your ability, while balancing the need not to provide false confidence while also not fostering paranoia ?
+- How do you navigate providing factual technical evidence according to your ability, while balancing the need not to provide false confidence while also not fostering paranoia?
 - Describe your own abilities and limitations in conducting malware detection work. After making a first attempt at this description, attempt to add further nuance and accuracy to your description.
   - What might be the risks if you proceed without this recognition of your limitations?
 - Role Play an interaction in which you report to a client on finding active malware on a device.
