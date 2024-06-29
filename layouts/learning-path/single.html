@@ -6,7 +6,7 @@
 </head>
 
 <body class="min-h-screen flex flex-col">
-    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
 
     {{ partial "header.html" . }}
 
@@ -112,16 +112,16 @@
                                     {{ if eq .Page.Params.style "introduction" }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
-                                        "markIntroAsComplete" }}</label>
+                                        "mark-intro-as-complete" }}</label>
                                     <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n
-                                        "markIntroAsCompleteARIA"
+                                        "mark-intro-as-complete-aria"
                                         }}</p>
                                     {{ else }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
-                                        "markAsComplete" }}</label>
+                                        "mark-as-complete" }}</label>
                                     <p id="checkbox-description" class="text-gray-500 sr-only">{{ i18n
-                                        "markAsCompleteARIA"
+                                        "mark-as-complete-aria"
                                         }}</p>
                                     {{ end }}
                                 </div>

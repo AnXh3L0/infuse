@@ -1,13 +1,13 @@
-<section id="breadcrumb" class="mx-auto max-w-7xl px-8 lg:px-8 lg:pt-16">
+<section id="breadcrumb" class="mx-auto max-w-7xl px-8 lg:px-8 lg:pt-16 pt-8">
     <nav class="flex justify-center mb-5" aria-label="Breadcrumb">
-        <ol role="list" class="lg:flex items-center lg:space-x-4 space-y-2" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <ol role="list" class="sm:flex items-center sm:space-x-4 space-y-2 sm:space-y-0" itemscope itemtype="https://schema.org/BreadcrumbList">
             {{- $data := newScratch }}
             {{- range $index, $value := .Ancestors.Reverse }}
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 {{- $data.Set "counter" $index }}
                 {{- $data.Add "counter" 1 }}
                 {{ if .IsHome }}
-                <div class="hidden lg:block">
+                <div class="hidden sm:block">
                     <a itemprop="item" href="{{ .Site.LanguagePrefix }}/" class="text-gray-400 hover:text-gray-500">
                         <span itemprop="name">
                             <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="none"
@@ -24,11 +24,11 @@
                 </div>
                 {{ else }}
                 <div class="flex items-center">
-                    <svg class="hidden lg:block h-5 w-5 flex-shrink-0 text-gray-300" fill="currentColor" viewBox="0 0 20 20"
+                    <svg class="hidden sm:block h-5 w-5 flex-shrink-0 text-gray-300" fill="currentColor" viewBox="0 0 20 20"
                         aria-hidden="true">
                         <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                     </svg>
-                    <a class="lg:ms-2 text-sm font-medium text-gray-500 hover:text-gray-700" aria-current="page"
+                    <a class="sm:ms-2 text-sm font-medium text-gray-500 hover:text-gray-700" aria-current="page"
                         itemprop="item" href="{{ .Permalink }}">
                         <span itemprop="name">{{ .Title }}</span>
                     </a>
@@ -37,14 +37,14 @@
                 {{- end }}
                 {{ end }}
             </li>
-            <li class="hidden lg:block" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <li class="hidden sm:block" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 {{- $data.Add "counter" 1 }}
                 <div class="flex items-center">
-                    <svg class="hidden lg:block h-5 w-5 flex-shrink-0 text-gray-300" fill="currentColor" viewBox="0 0 20 20"
+                    <svg class="hidden sm:block h-5 w-5 flex-shrink-0 text-gray-300" fill="currentColor" viewBox="0 0 20 20"
                         aria-hidden="true">
                         <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                     </svg>
-                    <a class="lg:ms-2 text-sm font-medium text-gray-500 hover:text-gray-700" aria-current="page"
+                    <a class="sm:ms-2 text-sm font-medium text-gray-500 hover:text-gray-700" aria-current="page"
                         itemprop="item" href="{{ .Permalink }}">
                         <span itemprop="name">{{ .Title }}</span>
                     </a>

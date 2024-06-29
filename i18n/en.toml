@@ -33,7 +33,7 @@ other = "Learning Paths"
 other = "Lorem ipsum dolor sit amet blah blah."
 
 # Signup and login
-[createAccount]
+[create-account]
 other = "Create a new account"
 
 [username]
@@ -42,13 +42,13 @@ other = "Username*"
 [username-description]
 other = "This information is used as your primary means of authentication to the Infuse page."
 
-[fullname]
+[full-name]
 other = "Full name*"
 
 [name-description]
 other = "This information is used to prepare and generate certificates upon the completion of each learning path."
 
-[profilephoto]
+[avatar-image]
 other = "Avatar image"
 
 [avatar-description]
@@ -60,7 +60,7 @@ other = "Upload"
 [required]
 other = "Items marked with * are required"
 
-[nopassword]
+[no-password]
 other = "We do not use password authentication because all information is stored locally in your browser and is not transmitted to any 1st or 3rd party sources."
 
 [signup]
@@ -75,40 +75,34 @@ other = "Already have an account?"
 [import-data]
 other = "Import your data"
 
-[loginHeader]
+[login-header]
 other = "Log in to your account"
 
-[loginSubheader]
+[login-subheader]
 other = "Welcome back! Please enter your details."
 
-[signin]
+[sign-in]
 other = "Sign in"
 
-[noAccount]
+[no-account]
 other = "Don't have an account?"
 
 [login]
 other = "Log in"
 
-[tab_profile]
+[tab-profile]
 other = "Profile data"
 
-[tab_export]
+[tab-export]
 other = "Export data"
 
-[tab_delete]
+[tab-delete]
 other = "Delete data"
-
-[profileInformation]
-other = "Your profile information"
-
-[editDetails]
-other = "You can view or edit your details below"
 
 [profile]
 other = "Profile"
 
-[profileWarning]
+[profile-warning]
 other = "This information can be accessed by other users on this computer, so be mindful of what you share."
 
 [unlock]
@@ -117,43 +111,43 @@ other = "Unlock and edit profile"
 [change]
 other = "Change"
 
-[saveChanges]
+[save-changes]
 other = "Save Changes"
 
-[exportInformation]
+[export-information]
 other = "Export your information"
 
-[exportDetails]
+[export-details]
 other = "You can export your profile along with your current progress and import it onto another device, for seamless learning on the go."
 
 [info]
 other = "Information"
 
-[infoExport]
+[info-export]
 other = "The JSON file produced by this export is NOT encrypted."
 
-[exportIncludes]
+[export-includes]
 other = "This export includes ALL your profile information and progress across modules."
 
-[exportData]
+[export-data]
 other = "Export Data"
 
-[deleteInformation]
+[delete-information]
 other = "Delete your information"
 
-[deleteDetails]
+[delete-details]
 other = "You can delete your current account and all associated progress in the following section."
 
 [warning]
 other = "Warning"
 
-[warningDelete]
+[warning-delete]
 other = "This action is NOT reversible, and all your data will be permanently lost unless you have a backup."
 
-[finalConfirmation]
+[final-confirmation]
 other = "You will be prompted for final confirmation before proceeding."
 
-[deleteAccount]
+[delete-account]
 other = "Delete Account"
 
 [your-profile]
@@ -194,9 +188,6 @@ other = "To do"
 [done]
 other = "Done"
 
-[skillcheck]
-other = "Skill Check"
-
 [congratulations-introduction]
 other = "Congratulations on finishing the introduction!"
 
@@ -209,32 +200,32 @@ other = "Mark the checkbox to confirm you have read the introduction and continu
 [mark-module-complete]
 other = "Mark the checkbox to confirm your completion and continue to the next module."
 
-[markAsComplete]
+[mark-as-complete]
 other = "Mark module as complete"
 
-[markIntroAsComplete]
+[mark-intro-as-complete]
 other = "Mark introduction as complete"
 
-[markAsCompleteARIA]
+[mark-as-complete-aria]
 other = "Marks the current module as completed and saves the progress for the user."
 
-[markIntroAsCompleteARIA]
+[mark-intro-as-complete-aria]
 other = "Marks the introduction as completed and saves the progress for the user."
 
-[only_one_module_left]
+[only-one-module-left]
 other = "Only 1 module left to earn your badge"
 
-[multiple_modules_left]
+[multiple-modules-left]
 other = "Finish 'count' more modules to earn your badge"
 
-[modules_left]
+[modules-left]
 one = "1 module left to earn your badge"
 other = "'count' more modules to earn your badge"
 
-[no_modules]
+[no-modules]
 other = "You haven't completed any module yet!"
 
-[badge_completed]
+[badge-completed]
 other = "You've earned a badge!"
 
 [keep-learning]
@@ -243,26 +234,8 @@ other = "Keep learning to earn your badge!"
 [congratulations]
 other = "Congratulations!"
 
-[translations]
-other = "Translations"
-
-[postAvailable]
-other = "Also available in"
-
-[skipLink]
+[skip-link]
 other = "Skip to content"
-
-[next]
-other = "Next"
-
-[contact]
-other = "Contact"
-
-[seeOur]
-other = "See our"
-
-[clients]
-other = "Clients"
 
 [search]
 other = "Search"
@@ -279,10 +252,10 @@ other = "Can’t find the answer you’re looking for? Reach out to our"
 [faq-link]
 other = "customer support team"
 
-[ariaLanguage]
+[aria-language]
 other = "Current language is "
 
-[ariaTranslation]
+[aria-translation]
 other = "Translated in "
 
 [previous-module]
@@ -316,9 +289,6 @@ other = "Open user menu"
 [confirm-delete]
 other = "Are you sure you want to delete your account? This action cannot be undone."
 
-[notFound]
-other = "Oops, page not found…"
-
 [completed]
 other = "completed"
 
@@ -345,5 +315,5 @@ other = "{{ .Count }} Words"
 [publishDate]
 other = "Published on"
 
-[updatedOn]
+[updated-on]
 other = "last updated on"

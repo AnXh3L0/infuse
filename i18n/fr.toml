@@ -33,7 +33,7 @@ other = "Parcours d'apprentissage"
 other = "Lorem ipsum dolor sit amet blah blah."
 
 # Signup and login
-[createAccount]
+[create-account]
 other = "Créer un nouveau compte"
 
 [username]
@@ -42,13 +42,13 @@ other = "Nom d'utilisateur*"
 [username-description]
 other = "Cette information est utilisée comme votre principal moyen d'authentification sur la page Infuse."
 
-[fullname]
+[full-name]
 other = "Nom complet*"
 
 [name-description]
 other = "Cette information est utilisée pour préparer et générer des certificats à l'issue de chaque parcours d'apprentissage."
 
-[profilephoto]
+[avatar-image]
 other = "Image d'avatar"
 
 [avatar-description]
@@ -60,7 +60,7 @@ other = "Télécharger"
 [required]
 other = "Les éléments marqués d'un * sont obligatoires"
 
-[nopassword]
+[no-password]
 other = "Nous n'utilisons pas l'authentification par mot de passe car toutes les informations sont stockées localement dans votre navigateur et ne sont pas transmises à des sources internes ou externes."
 
 [signup]
@@ -75,40 +75,40 @@ other = "Vous avez déjà un compte?"
 [import-data]
 other = "Importer vos données"
 
-[loginHeader]
+[login-header]
 other = "Connectez-vous à votre compte"
 
-[loginSubheader]
+[login-subheader]
 other = "Bon retour ! Veuillez entrer vos coordonnées."
 
-[signin]
+[sign-in]
 other = "Se connecter"
 
-[noAccount]
+[no-account]
 other = "Vous n'avez pas de compte?"
 
 [login]
 other = "Se connecter"
 
-[tab_profile]
+[tab-profile]
 other = "Données de profil"
 
-[tab_export]
+[tab-export]
 other = "Exporter des données"
 
-[tab_delete]
+[tab-delete]
 other = "Supprimer des données"
 
-[profileInformation]
+[profile-information]
 other = "Vos informations de profil"
 
-[editDetails]
+[edit-details]
 other = "Vous pouvez consulter ou modifier vos informations ci-dessous"
 
 [profile]
 other = "Profil"
 
-[profileWarning]
+[profile-warning]
 other = "Ces informations peuvent être consultées par d'autres utilisateurs sur cet ordinateur, soyez donc attentif à ce que vous partagez."
 
 [unlock]
@@ -117,43 +117,43 @@ other = "Déverrouiller et éditer le profil"
 [change]
 other = "Modifier"
 
-[saveChanges]
+[save-changes]
 other = "Enregistrer les modifications"
 
-[exportInformation]
+[export-information]
 other = "Exporter vos informations"
 
-[exportDetails]
+[export-details]
 other = "Vous pouvez exporter votre profil ainsi que vos progrès actuels et les importer sur un autre appareil, pour un apprentissage fluide en déplacement."
 
 [info]
 other = "Information"
 
-[infoExport]
+[info-export]
 other = "Le fichier JSON produit par cette exportation n'est PAS crypté."
 
-[exportIncludes]
+[export-includes]
 other = "Cette exportation inclut TOUTES vos informations de profil et votre progression à travers les modules."
 
-[exportData]
+[export-data]
 other = "Exporter des données"
 
-[deleteInformation]
+[delete-information]
 other = "Supprimer vos informations"
 
-[deleteDetails]
+[delete-details]
 other = "Vous pouvez supprimer votre compte actuel et tous les progrès associés dans la section suivante."
 
 [warning]
 other = "Avertissement"
 
-[warningDelete]
+[warning-delete]
 other = "Cette action est IRRÉVERSIBLE, et toutes vos données seront définitivement perdues à moins que vous n'ayez une sauvegarde."
 
-[finalConfirmation]
+[final-confirmation]
 other = "Une confirmation finale vous sera demandée avant de continuer."
 
-[deleteAccount]
+[delete-account]
 other = "Supprimer le compte"
 
 [your-profile]
@@ -194,9 +194,6 @@ other = "À faire"
 [done]
 other = "Fait"
 
-[skillcheck]
-other = "Vérification des compétences"
-
 [congratulations-introduction]
 other = "Félicitations pour avoir terminé l'introduction !"
 
@@ -209,32 +206,32 @@ other = "Cochez la case pour confirmer que vous avez lu l'introduction et contin
 [mark-module-complete]
 other = "Cochez la case pour confirmer votre achèvement et continuez vers le module suivant."
 
-[markAsComplete]
+[mark-as-complete]
 other = "Marquer le module comme terminé"
 
-[markIntroAsComplete]
+[mark-intro-as-complete]
 other = "Marquer l'introduction comme terminée"
 
-[markAsCompleteARIA]
+[mark-as-complete-aria]
 other = "Marque le module actuel comme terminé et enregistre la progression de l'utilisateur."
 
-[markIntroAsCompleteARIA]
+[mark-intro-as-complete-aria]
 other = "Marque l'introduction comme terminée et enregistre la progression de l'utilisateur."
 
-[only_one_module_left]
+[only-one-module-left]
 other = "Il ne reste qu'un module pour obtenir votre badge"
 
-[multiple_modules_left]
+[multiple-modules-left]
 other = "Terminez encore 'count' modules pour obtenir votre badge"
 
-[modules_left]
+[modules-left]
 one = "1 module restant pour obtenir votre badge"
 other = "'count' modules restants pour obtenir votre badge"
 
-[no_modules]
+[no-modules]
 other = "Vous n'avez encore complété aucun module!"
 
-[badge_completed]
+[badge-completed]
 other = "Vous avez obtenu un badge!"
 
 [keep-learning]
@@ -243,26 +240,8 @@ other = "Continuez à apprendre pour obtenir votre badge!"
 [congratulations]
 other = "Félicitations !"
 
-[translations]
-other = "Traductions"
-
-[postAvailable]
-other = "Aussi disponible en"
-
-[skipLink]
+[skip-link]
 other = "Passer au contenu"
-
-[next]
-other = "Suivant"
-
-[contact]
-other = "Contact"
-
-[seeOur]
-other = "Voir notre"
-
-[clients]
-other = "Clients"
 
 [search]
 other = "Rechercher"
@@ -279,10 +258,10 @@ other = "Vous ne trouvez pas la réponse que vous cherchez? Contactez notre"
 [faq-link]
 other = "équipe de support client"
 
-[ariaLanguage]
+[aria-language]
 other = "La langue actuelle est "
 
-[ariaTranslation]
+[aria-translation]
 other = "Traduit en "
 
 [previous-module]
@@ -316,21 +295,9 @@ other = "Ouvrir le menu utilisateur"
 [confirm-delete]
 other = "Êtes-vous sûr de vouloir supprimer votre compte? Cette action ne peut pas être annulée."
 
-[notFound]
-other = "Oups, page non trouvée…"
-
 [completed]
 other = "terminé"
 
-# Blog 
-[newerPosts]
-other = "Nouveau post"
-[olderPosts]
-other = "Ancien post"
-[allPosts]
-other = "Tous les posts"
-
-# posts/single.html
 [readingTime]
 one   = "1 min de lecture"
 other = "{{ .Count }} min de lecture"
@@ -345,5 +312,5 @@ other = "{{ .Count }} mots"
 [publishDate]
 other = "Publié le"
 
-[updatedOn]
+[updated-on]
 other = "dernière mise à jour le"

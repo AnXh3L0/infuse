@@ -33,7 +33,7 @@ other = "Rutas de Aprendizaje"
 other = "Lorem ipsum dolor sit amet blah blah."
 
 # Signup and login
-[createAccount]
+[create-account]
 other = "Crear una nueva cuenta"
 
 [username]
@@ -42,13 +42,13 @@ other = "Nombre de usuario*"
 [username-description]
 other = "Esta información se utiliza como su medio principal de autenticación en la página de Infuse."
 
-[fullname]
+[full-name]
 other = "Nombre completo*"
 
 [name-description]
 other = "Esta información se utiliza para preparar y generar certificados al completar cada ruta de aprendizaje."
 
-[profilephoto]
+[avatar-image]
 other = "Imagen de avatar"
 
 [avatar-description]
@@ -60,7 +60,7 @@ other = "Subir"
 [required]
 other = "Los elementos marcados con * son obligatorios"
 
-[nopassword]
+[no-password]
 other = "No utilizamos autenticación por contraseña porque toda la información se almacena localmente en su navegador y no se transmite a ninguna fuente de primera o tercera parte."
 
 [signup]
@@ -75,40 +75,40 @@ other = "¿Ya tienes una cuenta?"
 [import-data]
 other = "Importar tus datos"
 
-[loginHeader]
+[login-header]
 other = "Inicia sesión en tu cuenta"
 
-[loginSubheader]
+[login-subheader]
 other = "¡Bienvenido de nuevo! Por favor, introduce tus datos."
 
-[signin]
+[sign-in]
 other = "Iniciar sesión"
 
-[noAccount]
+[no-account]
 other = "¿No tienes una cuenta?"
 
 [login]
 other = "Iniciar sesión"
 
-[tab_profile]
+[tab-profile]
 other = "Datos del perfil"
 
-[tab_export]
+[tab-export]
 other = "Exportar datos"
 
-[tab_delete]
+[tab-delete]
 other = "Eliminar datos"
 
-[profileInformation]
+[profile-information]
 other = "Tu información de perfil"
 
-[editDetails]
+[edit-details]
 other = "Puedes ver o editar tus detalles a continuación"
 
 [profile]
 other = "Perfil"
 
-[profileWarning]
+[profile-warning]
 other = "Esta información puede ser accesible por otros usuarios en este ordenador, así que ten cuidado con lo que compartes."
 
 [unlock]
@@ -117,43 +117,43 @@ other = "Desbloquear y editar perfil"
 [change]
 other = "Cambiar"
 
-[saveChanges]
+[save-changes]
 other = "Guardar Cambios"
 
-[exportInformation]
+[export-information]
 other = "Exportar tu información"
 
-[exportDetails]
+[export-details]
 other = "Puedes exportar tu perfil junto con tu progreso actual e importarlo en otro dispositivo, para un aprendizaje continuo en cualquier lugar."
 
 [info]
 other = "Información"
 
-[infoExport]
+[info-export]
 other = "El archivo JSON producido por esta exportación NO está encriptado."
 
-[exportIncludes]
+[export-includes]
 other = "Esta exportación incluye TODA tu información de perfil y progreso en los módulos."
 
-[exportData]
+[export-data]
 other = "Exportar Datos"
 
-[deleteInformation]
+[delete-information]
 other = "Eliminar tu información"
 
-[deleteDetails]
+[delete-details]
 other = "Puedes eliminar tu cuenta actual y todo el progreso asociado en la siguiente sección."
 
 [warning]
 other = "Advertencia"
 
-[warningDelete]
+[warning-delete]
 other = "Esta acción NO es reversible, y todos tus datos se perderán permanentemente a menos que tengas una copia de seguridad."
 
-[finalConfirmation]
+[final-confirmation]
 other = "Se te pedirá una confirmación final antes de proceder."
 
-[deleteAccount]
+[delete-account]
 other = "Eliminar Cuenta"
 
 [your-profile]
@@ -194,9 +194,6 @@ other = "Por hacer"
 [done]
 other = "Hecho"
 
-[skillcheck]
-other = "Prueba de Habilidades"
-
 [congratulations-introduction]
 other = "¡Felicidades por terminar la introducción!"
 
@@ -209,32 +206,32 @@ other = "Marque la casilla para confirmar que ha leído la introducción y conti
 [mark-module-complete]
 other = "Marque la casilla para confirmar su finalización y continúe al siguiente módulo."
 
-[markAsComplete]
+[mark-as-complete]
 other = "Marcar módulo como completo"
 
-[markIntroAsComplete]
+[mark-intro-as-complete]
 other = "Marcar introducción como completa"
 
-[markAsCompleteARIA]
+[mark-as-complete-aria]
 other = "Marca el módulo actual como completado y guarda el progreso para el usuario."
 
-[markIntroAsCompleteARIA]
+[mark-intro-as-complete-aria]
 other = "Marca la introducción como completada y guarda el progreso para el usuario."
 
-[only_one_module_left]
+[only-one-module-left]
 other = "Solo 1 módulo más para ganar tu insignia"
 
-[multiple_modules_left]
+[multiple-modules-left]
 other = "Termina 'count' módulos más para ganar tu insignia"
 
-[modules_left]
+[modules-left]
 one = "1 módulo más para ganar tu insignia"
 other = "'count' módulos más para ganar tu insignia"
 
-[no_modules]
+[no-modules]
 other = "¡Aún no has completado ningún módulo!"
 
-[badge_completed]
+[badge-completed]
 other = "¡Has ganado una insignia!"
 
 [keep-learning]
@@ -243,26 +240,8 @@ other = "¡Sigue aprendiendo para ganar tu insignia!"
 [congratulations]
 other = "¡Felicidades!"
 
-[translations]
-other = "Traducciones"
-
-[postAvailable]
-other = "También disponible en"
-
-[skipLink]
+[skip-link]
 other = "Saltar al contenido"
-
-[next]
-other = "Siguiente"
-
-[contact]
-other = "Contacto"
-
-[seeOur]
-other = "Ver nuestros"
-
-[clients]
-other = "Clientes"
 
 [search]
 other = "Buscar"
@@ -279,10 +258,10 @@ other = "¿No encuentras la respuesta que buscas? Comunícate con nuestro"
 [faq-link]
 other = "equipo de soporte al cliente"
 
-[ariaLanguage]
+[aria-language]
 other = "El idioma actual es "
 
-[ariaTranslation]
+[aria-translation]
 other = "Traducido en "
 
 [previous-module]
@@ -316,9 +295,6 @@ other = "Abrir menú de usuario"
 [confirm-delete]
 other = "¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer."
 
-[notFound]
-other = "Oops, página no encontrada…"
-
 [completed]
 other = "completado"
 
@@ -347,5 +323,5 @@ other = "{{ .Count }} Palabras"
 [publishDate]
 other = "Publicado en"
 
-[updatedOn]
+[updated-on]
 other = "última actualización en"

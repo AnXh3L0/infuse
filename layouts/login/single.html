@@ -6,7 +6,7 @@
 </head>
 
 <body class="h-full">
-  <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
+  <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
 
   <div id="content" class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
 
@@ -15,10 +15,10 @@
 
         <div class="sm:mx-auto sm:w-full sm:max-w-md mb-8">
           <img class="mx-auto h-10 w-auto" src="/media/images/logomark.svg" alt="Infuse logo">
-          <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n "loginHeader"
+          <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ i18n "login-header"
             }}
           </h2>
-          <p class="text-center test-sm text-gray-600">{{ i18n "loginSubheader" }}</p>
+          <p class="text-center test-sm text-gray-600">{{ i18n "login-subheader" }}</p>
         </div>
 
         <form id="LoginForm" class="space-y-6" method="dialog">
@@ -34,7 +34,7 @@
           <div>
             <button type="submit"
               class="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">{{
-              i18n "signin" }}</button>
+              i18n "sign-in" }}</button>
           </div>
         </form>
 
@@ -48,8 +48,8 @@
       </p>
 
       <p class="mt-0 text-center text-sm text-gray-500">
-        {{ i18n "noAccount" }}
-        <a href="{{ "/signup" | absLangURL }}" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
+        {{ i18n "no-account" }}
+        <a href="{{ .Site.LanguagePrefix }}/signup" class="font-semibold leading-6 text-green-600 hover:text-green-500">{{
           i18n "signup" }}</a>
       </p>
     </div>

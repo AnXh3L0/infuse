@@ -6,7 +6,7 @@
 </head>
 
 <body class="min-h-screen flex flex-col" x-data="badgesComponent()" x-init="init()">
-    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skipLink" }}</a>
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
 
     {{ partial "header.html" . }}
 
@@ -182,13 +182,13 @@
                             const remainingModules = modulesCount - completedModules;
 
                             if (remainingModules === 1) {
-                                return '{{ i18n "modules_left" 1 }}';
+                                return '{{ i18n "modules-left" 1 }}';
                             } else if (remainingModules > 1 && completedModules > 0) {
-                                return '{{ i18n "modules_left" 2 }}'.replace("'count'", remainingModules);
+                                return '{{ i18n "modules-left" 2 }}'.replace("'count'", remainingModules);
                             } else if (modulesCount > 0 && remainingModules === 0) {
-                                return '{{ i18n "badge_completed" }}';
+                                return '{{ i18n "badge-completed" }}';
                             } else if (completedModules === 0 && remainingModules > 0) {
-                                return '{{ i18n "no_modules" }}';
+                                return '{{ i18n "no-modules" }}';
                             }
                         },
 

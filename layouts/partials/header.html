@@ -37,7 +37,7 @@
         </div>
 
         {{ if .Site.IsMultiLingual }}
-        <div id="languageSwitcher" aria-label="Language switcher" class="flex lg:flex-grow-0 flex-1 justify-end ms-1">
+        <div id="languageSwitcher" aria-label="Language switcher" class="flex lg:flex-grow-0 justify-end ms-1">
             <div class="relative" x-data="{ dropdown: false }">
                 <button type="button" class="-m-1.5 flex items-center p-1.5" id="language-switcher-button"
                     aria-expanded="false" aria-haspopup="true" x-on:click="dropdown = true">
@@ -52,7 +52,7 @@
                         {{ range .Site.Languages }}
                         {{ if eq . $.Site.Language }}
                         <span class="ms-2 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true"
-                            aria-label="{{ i18n " ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }}</span>
+                            aria-label="{{ i18n "aria-language" }}{{ .LanguageName }}">{{ .LanguageName }}</span>
                         {{ end }}
                         {{ end }}
                         </svg>
@@ -71,7 +71,7 @@
                     {{ range $.Translations }}
                     <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}"
                         class="block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100 active:bg-gray-100"
-                        role="menuitem" tabindex="-1" aria-label="{{ i18n " ariaTranslation" }}{{ .Language.LanguageName
+                        role="menuitem" tabindex="-1" aria-label="{{ i18n "aria-translation" }}{{ .Language.LanguageName
                         }}">{{ .Language.LanguageName }}</a>
                     {{ end }}
                 </div>

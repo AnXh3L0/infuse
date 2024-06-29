@@ -58,7 +58,7 @@
   }
 }
 
-:root {
+body {
   --pagefind-ui-scale: 0.75;
   --pagefind-ui-primary: #087443;
   --pagefind-ui-text: #1c1917;
