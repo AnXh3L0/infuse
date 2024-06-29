@@ -111,22 +111,22 @@ nav#TableOfContents ul {
 
 nav#TableOfContents li {
   padding-inline-start: 0;
+  margin-block: 0;
 }
 
 nav#TableOfContents li a {
   padding: .5rem 1rem;
   display: block;
-  background-color: #EDFCF2;
-  color: #087443;
-  border-radius: .5rem;
   text-decoration: none;
   border-width: 2px 2px 2px 8px;
   border-color: transparent;
 }
 
 nav#TableOfContents li a.active-element {
-  padding: .5rem 1rem;
   border-color: #087443;
+  background-color: #EDFCF2;
+  color: #087443;
+  border-radius: .5rem;
 }
 
 nav#TableOfContents ul:first-child {
