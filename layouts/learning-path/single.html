@@ -164,6 +164,7 @@
                             i18n "previous-module" }}</span>
                     </a>
                     {{ end }}
+                    {{ partial "github.html" . }}
                     {{ with .PrevInSection }}
                     <a href="{{ .Permalink }}"
                         class="relative flex items-center justify-end rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 no-underline ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">

@@ -314,3 +314,6 @@ other = "Last updated on"
 
 [git-unavailable]
 other = "Git information is not available."
+
+[edit-github]
+other = "Edit this page on GitHub"

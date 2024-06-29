@@ -320,3 +320,6 @@ other = "Dernière mise à jour le"
 
 [git-unavailable]
 other = "Les informations Git ne sont pas disponibles."
+
+[edit-github]
+other = "Modifier cette page sur GitHub"
