@@ -226,6 +226,15 @@
                             const svgTemplate = document.getElementById("badgeTemplate");
                             const svgString = new XMLSerializer().serializeToString(svgTemplate);
 
+                            // Calculate the width required for the badge name text
+                            const badgeNameTextWidth = badgeName.length * 10; // Adjust multiplier based on font and size
+
+                            // Calculate the minimum ribbon width based on the SVG template or a default value
+                            const ribbonMinWidth = 400; // Adjust as necessary
+
+                            // Calculate the ribbon width considering the badge name text width and minimum width
+                            const ribbonWidth = Math.max(ribbonMinWidth, 315.394 + badgeNameTextWidth + 20); // Adjust padding as necessary
+
                             // Replace placeholders in SVG with dynamic data
                             const updatedSvgString = svgString
                                 .replace('FULL_NAME_PLACEHOLDER', fullName)
@@ -284,15 +293,11 @@
                             img.src = url;
 
                             img.addEventListener('load', function () {
-                                const badgeNameTextElement = document.getElementById('badgeNamePlaceholder');
-                                const ribbonPathElement = document.getElementById('ribbonPath');
-
                                 // Dynamically adjust the ribbon path width based on badge name length
-                                const textWidth = badgeNameTextElement.getBBox().width;
-                                console.log(textWidth);
-                                const ribbonWidth = 315.394 + textWidth + 20; // Adjust as necessary
-                                console.log(ribbonWidth);
+                                const ribbonPathElement = svgTemplate.querySelector('#ribbonPath');
+                                const badgeNameTextElement = svgTemplate.querySelector('#badgeNamePlaceholder');
 
+                                // Update the ribbon path with the adjusted width
                                 ribbonPathElement.setAttribute('d', `M315.394 451.854C314.659 450.222 315.853 448.376 317.642 448.376H${ribbonWidth}C${ribbonWidth + 1.289} 448.376 ${ribbonWidth + 2.482} 450.222 ${ribbonWidth + 1.748} 451.854L${ribbonWidth - 7.186} 470.034C${ribbonWidth - 7.476} 470.677 ${ribbonWidth - 7.476} 471.414 ${ribbonWidth - 7.186} 472.058L${ribbonWidth + 1.748} 490.238C${ribbonWidth + 2.482} 491.869 ${ribbonWidth + 1.289} 493.715 ${ribbonWidth - 0.5} 493.715H317.642C315.853 493.715 314.659 491.869 315.394 490.238L323.579 472.058C323.869 471.414 323.869 470.677 323.579 470.034L315.394 451.854Z`);
 
                                 // Center the badge name text based on the adjusted ribbon width
