@@ -317,3 +317,40 @@ other = "معلومات Git غير متاحة."
 
 [edit-github]
 other = "تعديل هذه الصفحة على GitHub"
+
+# Months
+[January]
+other = "يناير"
+
+[February]
+other = "فبراير"
+
+[March]
+other = "مارس"
+
+[April]
+other = "أبريل"
+
+[May]
+other = "مايو"
+
+[June]
+other = "يونيو"
+
+[July]
+other = "يوليو"
+
+[August]
+other = "أغسطس"
+
+[September]
+other = "سبتمبر"
+
+[October]
+other = "أكتوبر"
+
+[November]
+other = "نوفمبر"
+
+[December]
+other = "ديسمبر"

@@ -31,13 +31,17 @@
                     {{ end }}
 
                     <p class="mt-8 text-xl font-semibold leading-6">{{ i18n "what-learn" }}</p>
-                    <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-800">{{
+                    <p class="mb-4 mt-2 line-clamp-3 text-sm leading-6 text-gray-800">{{
                         .Page.Params.description }}</p>
 
                     {{ if .GitInfo }}
-                    <p class="mt-4 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ .GitInfo.AuthorDate.Format "Jan 2, 2006" }}</p>
+                    {{ $day := .GitInfo.AuthorDate.Day }}
+                    {{ $month := .GitInfo.AuthorDate.Month }}
+                    {{ $year := .GitInfo.AuthorDate.Year }}
+                    {{ $localizedMonth := i18n (printf "%s" $month) }}
+                    <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
                     {{ else }}
-                    <p class="mt-4 text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
+                    <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
                     {{ end }}
                 </article>
 

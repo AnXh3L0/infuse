@@ -17,9 +17,19 @@
                 class="prose prose-stone mx-auto w-full max-w-3xl flex-col px-8 prose-hr:w-full lg:flex lg:items-center lg:justify-between lg:px-8">
 
                 <article class="flex w-full flex-col items-start justify-between border-b border-gray-300">
-                    <h1 class="mt-2 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                    <h1 class="mb-0 mt-2 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
                         {{ .Page.Params.title }}
                     </h1>
+
+                    {{ if .GitInfo }}
+                    {{ $day := .GitInfo.AuthorDate.Day }}
+                    {{ $month := .GitInfo.AuthorDate.Month }}
+                    {{ $year := .GitInfo.AuthorDate.Year }}
+                    {{ $localizedMonth := i18n (printf "%s" $month) }}
+                    <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
+                    {{ else }}
+                    <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
+                    {{ end }}
                 </article>
 
                 <article class="flex w-full flex-col items-start justify-between">
