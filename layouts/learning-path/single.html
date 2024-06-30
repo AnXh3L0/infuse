@@ -18,19 +18,19 @@
                 class="prose prose-stone mx-auto w-full max-w-3xl flex-col px-8 lg:flex lg:items-center lg:justify-between lg:px-8">
 
                 <article class="flex w-full flex-col items-start justify-between border-b border-gray-300">
-                    {{ if .GitInfo }}
-                    <p class="mb-2 me-2 inline-block rounded-full border-2 border-indigo-300 bg-indigo-50 px-3 py-0.5 text-sm font-semibold text-indigo-800">{{ i18n "updated-on" }}: {{ .GitInfo.AuthorDate.Format "Jan 2, 2006" }}</p>
-                    {{ else }}
-                    <p class="text-sm text-gray-800">{{ i18n "git-unavailable" }}</p>
-                    {{ end }}
-
                     {{ if eq .Page.Params.style "introduction" }}
                     {{ else }}
                     <p class="text-sm text-gray-500">{{ i18n "modules" 1 }} {{ .Page.Params.weight }}</p>
                     {{ end }}
-                    <h1 class="mt-2 text-3xl font-semibold leading-9 text-gray-900 group-hover:text-gray-600">
+                    <h1 class="mb-0 text-3xl font-semibold text-gray-900">
                         {{ .Page.Params.title }}
                     </h1>
+
+                    {{ if .GitInfo }}
+                    <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ .GitInfo.AuthorDate.Format "Jan 2, 2006" }}</p>
+                    {{ else }}
+                    <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
+                    {{ end }}
                 </article>
 
                 <article class="relative flex w-full flex-col items-start justify-between">
@@ -121,13 +121,13 @@
                             <p class="text-md mb-4 mt-0 text-gray-700">{{ i18n "mark-module-complete" }}</p>
                             {{ end }}
                             <div
-                                class="relative mb-4 flex w-full items-start gap-x-2 space-x-3 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3">
+                                class="relative mb-4 flex w-full items-center gap-x-2 space-x-1 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3">
                                 <div class="flex h-6 items-center">
                                     <input id="{{ .Page.Params.title }}Checkbox" aria-describedby="checkbox-description"
                                         name="checkbox" type="checkbox"
                                         class="h-4 w-4 rounded border-gray-300 text-green-700 focus:ring-green-700">
                                 </div>
-                                <div class="w-full text-sm leading-6">
+                                <div class="w-full text-sm">
                                     {{ if eq .Page.Params.style "introduction" }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
@@ -149,7 +149,7 @@
                     </div>
                 </section>
 
-                <nav class="w-full flex items-center {{ if not .NextInSection }}justify-end{{ else }}justify-between{{ end }} px-4 pt-6 sm:px-6"
+                <nav class="flex w-full items-center justify-between px-4 pt-6 sm:px-6"
                     aria-label="Pagination">
                     {{ with .NextInSection }}
                     <a href="{{ .Permalink }}"
