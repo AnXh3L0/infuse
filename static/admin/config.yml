@@ -6,10 +6,10 @@ display_url: http://localhost:1313
 
 backend:
   name: git-gateway
-  # repo: OpenInternet/infuse
-  # branch: main
+  repo: AnXh3L0/infuse
+  branch: main
 
-local_backend: true
+#local_backend: true
 
 publish_mode: editorial_workflow
 media_folder: static/media/uploads
