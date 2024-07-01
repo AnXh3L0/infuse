@@ -70,10 +70,6 @@ collections:
         label: "Color"
         widget: "color"
         i18n: "duplicate"
-    filters:
-      fileType: "md"
-      include:
-        - "_index.md"
     filter:
       field: "type"
       value: "learning-path"
