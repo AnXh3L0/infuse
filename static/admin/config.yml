@@ -25,10 +25,6 @@ i18n:
   # Required - a list of locales to show in the editor UI
   locales: [en, es, fr, ar]
 
-  # Optional, defaults to the first item in locales.
-  # The locale to be used for fields validation and as a baseline for the entry.
-  default_locale: en
-
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -72,6 +68,18 @@ collections:
       - name: "body"
         label: "Body"
         widget: "markdown"
+  - name: "i18n-keys"
+    label: "UI translation"
+    folder: "i18n"
+    format: "toml"
+    create: false
+    identifier_field: "{{ slug }}"
+    slug: "{{locale}}"
+    fields:
+      - label: "Content"
+        name: "content"
+        widget: "text"
+        required: true
   - name: "badges"
     label: "Badges"
     folder: "content/badges"
@@ -81,6 +89,7 @@ collections:
       - name: "title"
         label: "Title"
         widget: "string"
+        required: false
   - name: pages
     label: Pages
     folder: "content"
@@ -126,14 +135,3 @@ collections:
             name: "answer"
             widget: "text"
             i18n: true
-  - name: "i18n-keys"
-    label: "UI translation"
-    folder: "i18n"
-    format: "toml"
-    create: false
-    slug: "{{locale}}"
-    fields:
-      - label: "Content"
-        name: "content"
-        widget: "text"
-        required: false

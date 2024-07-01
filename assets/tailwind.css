@@ -115,7 +115,7 @@ nav#TableOfContents li {
 }
 
 nav#TableOfContents li a {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   display: block;
   text-decoration: none;
   border-width: 2px 2px 2px 8px;
@@ -124,11 +124,19 @@ nav#TableOfContents li a {
 
 nav#TableOfContents li a.active-element {
   border-color: #087443;
-  background-color: #EDFCF2;
+  background-color: #edfcf2;
   color: #087443;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 nav#TableOfContents ul:first-child {
   padding-inline-start: 0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::marker {
+  display: none;
 }
