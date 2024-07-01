@@ -1,5 +1,5 @@
-+++
-title = "Cómo funciona"
-navbar = true
-weight = 2
-+++
+---
+title: Cómo funciona
+weight: 2
+navbar: true
+---
