@@ -12,7 +12,7 @@
 
     <main id="content" class="content mb-auto">
         {{ partial "breadcrumbs.html" . }}
-        <div class="relative flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div class="relative flex flex-col justify-center py-6 sm:px-6 lg:px-8 lg:py-12">
 
             <section
                 class="prose prose-stone mx-auto w-full max-w-3xl flex-col px-8 prose-hr:w-full lg:flex lg:items-center lg:justify-between lg:px-8">
@@ -20,21 +20,25 @@
                 <article class="flex w-full flex-col items-start justify-between border-b border-gray-300">
                     {{ if eq .Page.Params.style "introduction" }}
                     {{ else }}
-                    <p class="text-sm text-gray-500">{{ i18n "modules" 1 }} {{ .Page.Params.weight }}</p>
+                    <p class="mb-1 text-sm text-gray-500">{{ i18n "modules" 1 }} {{ .Page.Params.weight }}</p>
                     {{ end }}
                     <h1 class="mb-0 text-3xl font-semibold text-gray-900">
                         {{ .Page.Params.title }}
                     </h1>
 
-                    {{ if .GitInfo }}
-                    {{ $day := .GitInfo.AuthorDate.Day }}
-                    {{ $month := .GitInfo.AuthorDate.Month }}
-                    {{ $year := .GitInfo.AuthorDate.Year }}
-                    {{ $localizedMonth := i18n (printf "%s" $month) }}
-                    <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
-                    {{ else }}
-                    <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
-                    {{ end }}
+                    <div class="w-full items-center justify-between lg:flex">
+                        {{ if .GitInfo }}
+                        {{ $day := .GitInfo.AuthorDate.Day }}
+                        {{ $month := .GitInfo.AuthorDate.Month }}
+                        {{ $year := .GitInfo.AuthorDate.Year }}
+                        {{ $localizedMonth := i18n (printf "%s" $month) }}
+                        <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
+                        {{ else }}
+                        <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
+                        {{ end }}
+                        {{ partial "github.html" . }}
+                    </div>
+                    
                 </article>
 
                 <article class="relative flex w-full flex-col items-start justify-between">
@@ -153,7 +157,7 @@
                     </div>
                 </section>
 
-                <nav class="flex w-full items-center justify-between px-4 pt-6 sm:px-6"
+                <nav class="flex w-full items-center {{ if not .NextInSection }}justify-end{{ else }}justify-between{{ end }} px-4 pt-6 sm:px-6"
                     aria-label="Pagination">
                     {{ with .NextInSection }}
                     <a href="{{ .Permalink }}"
@@ -168,7 +172,6 @@
                             i18n "previous-module" }}</span>
                     </a>
                     {{ end }}
-                    {{ partial "github.html" . }}
                     {{ with .PrevInSection }}
                     <a href="{{ .Permalink }}"
                         class="relative flex items-center justify-end rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 no-underline ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
