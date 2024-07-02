@@ -85,6 +85,14 @@ collections:
         label: "Title"
         widget: "string"
         i18n: true
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        i18n: true
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+        i18n: duplicate
       - name: "body"
         label: "Body"
         widget: "markdown"
@@ -101,6 +109,14 @@ collections:
         label: "Title"
         widget: "string"
         i18n: true
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        i18n: true
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+        i18n: duplicate
       - name: "body"
         label: "Body"
         widget: "markdown"
@@ -117,6 +133,14 @@ collections:
         label: "Title"
         widget: "string"
         i18n: true
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        i18n: true
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+        i18n: duplicate
       - name: "body"
         label: "Body"
         widget: "markdown"
@@ -133,6 +157,14 @@ collections:
         label: "Title"
         widget: "string"
         i18n: true
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        i18n: true
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+        i18n: duplicate
       - name: "body"
         label: "Body"
         widget: "markdown"
@@ -149,6 +181,14 @@ collections:
         label: "Title"
         widget: "string"
         i18n: true
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        i18n: true
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+        i18n: duplicate
       - name: "body"
         label: "Body"
         widget: "markdown"
@@ -165,6 +205,14 @@ collections:
         label: "Title"
         widget: "string"
         i18n: true
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        i18n: true
+      - name: "weight"
+        label: "Order"
+        widget: "number"
+        i18n: duplicate
       - name: "body"
         label: "Body"
         widget: "markdown"
