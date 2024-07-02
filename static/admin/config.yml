@@ -175,6 +175,7 @@ collections:
     create: false
     delete: false
     i18n: false
+    identifier_field: "{{ fields.title }}"
     editor:
       preview: false
     format: "toml-frontmatter"
@@ -183,6 +184,7 @@ collections:
       - label: "Content"
         name: "body"
         widget: "text"
+        i18n: true
   - name: "badges"
     label: "Badges"
     folder: "content/badges"
