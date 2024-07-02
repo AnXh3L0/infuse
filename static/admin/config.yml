@@ -1,19 +1,19 @@
 locale: "en"
 logo_url: ./cms-logo.svg
 
-site_url: http://localhost:1313
-display_url: http://localhost:1313
+site_url: https://infuse-preview.netlify.app
+display_url: https://infuse-preview.netlify.app
 
 backend:
   name: git-gateway
-  # repo: OpenInternet/infuse
-  # branch: main
+  repo: AnXh3L0/infuse
+  branch: main
 
-local_backend: true
+local_backend: false
 
 publish_mode: editorial_workflow
 media_folder: static/media/uploads
-public_folder: /media/uploads
+public_folder: /media/
 
 i18n:
   # Required and can be one of multiple_folders, multiple_files or single_file
