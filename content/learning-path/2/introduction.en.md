@@ -1,9 +1,7 @@
 ---
 style: introduction
 title: Introduction
-description: " This learning path covers intermediate-level knowledge and skills
-  needed to detect and identify malware either from a given sample, or actively
-  operating on a device on a variety of device platforms."
+description: ""
 weight: 1
 ---
 
