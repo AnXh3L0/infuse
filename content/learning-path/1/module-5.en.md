@@ -1,13 +1,17 @@
-+++
-style = "module"
-weight = 5
-title = "Passive Investigation - Analyze email headers"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Passive Investigation - Analyze email headers
+description: The subtopic will teach you how to analyze the extensive metadata
+  which documents an email’s origin, the servers it traveled through,
+  information about possible spam checks, and much more. This metadata can form
+  a crucial part of any in-depth investigation into potentially malicious
+  emails.
+weight: 5
+---
 
 ## Use Case
 
-There is far more to emails than meets the eye. The subtopic will teach you how to** analyze the extensive metadata** which documents an email’s origin, the servers it traveled through, information about possible spam checks, and much more. This metadata can form a crucial part of any in-depth investigation into potentially malicious emails.
+There is far more to emails than meets the eye. The subtopic will teach you how to **analyze the extensive metadata** which documents an email’s origin, the servers it traveled through, information about possible spam checks, and much more. This metadata can form a crucial part of any in-depth investigation into potentially malicious emails.
 
 Use this skill after or alongside the [Triage](#subtopic-4-passive-investigation-analyze-urls-hostnames-and-ip-addresses) subtopic within this learning path. Some of these skills may be necessary as part of the triage process in order to decide if a message is suspicious.
 
