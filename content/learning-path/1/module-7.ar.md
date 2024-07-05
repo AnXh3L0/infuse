@@ -1,9 +1,12 @@
-+++
-style = "module"
-weight = 7
-title = "Active Investigation - Analyze malicious webpages"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Active Investigation - Analyze malicious webpages
+description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+  risus.
+weight: 7
+---
 
 ## Use Case
 
