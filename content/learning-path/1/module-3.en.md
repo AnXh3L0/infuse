@@ -1,9 +1,14 @@
-+++
-style = "module"
-weight = 3
-title = "Operational Security - Safe Handling of links and infrastructure"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Operational Security - Safe Handling of links and infrastructure
+description: >
+  As you go about investigating malicious phishing emails, attachments,
+  websites, and other infrastructure, you will need to take some proactive steps
+  to make sure that you keep yourself and the people you support safe. Be sure
+  to study this skill and, if necessary, set up a safe environment before
+  interacting with suspected malicious emails or web pages.
+weight: 3
+---
 
 ## Use Case
 
