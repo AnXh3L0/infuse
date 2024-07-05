@@ -1,9 +1,7 @@
 ---
 style: module
 title: Triage - Deciding when to investigate
-description: After completing this subtopic, the practitioner should be able to
-  differentiate between legitimate emails, untargeted spam or phishing emails,
-  and targeted ones based on several heuristic indicators.
+description: ""
 weight: 1
 ---
 ## Use Case
