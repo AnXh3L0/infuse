@@ -1,9 +1,12 @@
-+++
-style = "module"
-weight = 10
-title = "Capture-the-flag exercise"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Capture-the-flag exercise
+description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+  risus.
+weight: 10
+---
 
 We have also designed a capture-the-flag exercise in which learners can analyze a phishing email and the infrastructure it links to. The exercise can be used as an additional practice or skill verification exercise, and can be found below.
 
