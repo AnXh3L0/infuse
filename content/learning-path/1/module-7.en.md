@@ -1,8 +1,8 @@
 ---
 style: module
 title: Active Investigation - Analyze malicious webpages
-description: This skill module will teach you to look at attacker-controlled
-  websites to understand their actions and potentially uncover further
+description: This module will teach you to look at attacker-controlled websites
+  to understand their actions and potentially uncover further
   attacker-controlled infrastructure or attack vectors used in the attacks.
 weight: 7
 ---
