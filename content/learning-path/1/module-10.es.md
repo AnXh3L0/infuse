@@ -1,9 +1,12 @@
-+++
-style = "module"
-weight = 10
-title = "Ejercicio de captura de bandera"
-description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Ejercicio de captura de bandera
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+  risus.
+weight: 10
+---
 
 También hemos diseñado un ejercicio de captura de bandera en el cual los estudiantes pueden analizar un correo electrónico de phishing y la infraestructura a la que enlaza. El ejercicio se puede utilizar como práctica adicional o como ejercicio de verificación de habilidades, y se puede encontrar a continuación.
 
