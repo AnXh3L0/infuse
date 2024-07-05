@@ -34,6 +34,55 @@ CMS.registerEditorComponent({
     }
 });
 CMS.registerEditorComponent({
+    id: "question",
+    label: "Question Element",
+    fields: [
+        { name: "title", label: "Title", widget: "string" },
+        { name: "open", label: "Open by default", widget: "boolean", default: false },
+        { name: "content", label: "Content", widget: "markdown" }
+    ],
+    pattern: /{{< question title="(.*?)"(?: open="(.*?)"|) >}}([\s\S]*?){{< \/question >}}/,
+    fromBlock: function(match) {
+        return {
+            title: match[1],
+            open: match[2] === undefined ? false : (match[2] === "true"),
+            content: match[3].trim()
+        };
+    },
+    toBlock: function(obj) {
+        return `{{< question title="${obj.title}"${obj.open ? ` open="true"` : ""} >}}
+${obj.content}
+{{< /question >}}`;
+    },
+    toPreview: function(obj) {
+        const markdownContent = obj.content.replace(/^\s*-\s+/gm, '- '); // Ensure proper markdown list formatting
+
+        // Render the content including markdown and HTML for images
+        const renderedContent = markdownContent.split(/\n\s*\n/).map(line => {
+            if (line.startsWith('![alt_text]')) {
+                const imageUrl = line.match(/\((.*?)\s/)[1];
+                return `<img src="${imageUrl}" alt="image" class="mb-4">`;
+            } else {
+                return `<p>${line}</p>`;
+            }
+        }).join('');
+        
+        return `<details class="group mb-6 w-full rounded-lg p-6 transition${obj.open ? ' open:bg-white open:shadow-lg open:ring-1 open:ring-black/5 dark:open:bg-slate-900 dark:open:ring-white/10' : ''}"${obj.open ? ' open' : ''}>
+<summary class="flex cursor-pointer list-none items-center justify-between font-medium"><span class="text-gray-900">${obj.title}</span>
+<span class="transition group-open:hidden">
+<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5 8.31055V16.3105M8.5 12.3105H16.5M22.5 12.3105C22.5 17.8334 18.0228 22.3105 12.5 22.3105C6.97715 22.3105 2.5 17.8334 2.5 12.3105C2.5 6.7877 6.97715 2.31055 12.5 2.31055C18.0228 2.31055 22.5 6.7877 22.5 12.3105Z" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+<span class="hidden transition group-open:block">
+<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 12.3105H16.5M22.5 12.3105C22.5 17.8334 18.0228 22.3105 12.5 22.3105C6.97715 22.3105 2.5 17.8334 2.5 12.3105C2.5 6.7877 6.97715 2.31055 12.5 2.31055C18.0228 2.31055 22.5 6.7877 22.5 12.3105Z" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</summary>
+<div class="pe-6 pt-4">${renderedContent}</div>
+</details>`;
+    }
+});
+CMS.registerEditorComponent({
     id: "figure",
     label: "Figure",
     fields: [{
