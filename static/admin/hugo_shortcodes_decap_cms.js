@@ -8,22 +8,18 @@ CMS.registerEditorComponent({
         { name: "languages", label: "Languages", widget: "string" },
         { name: "url", label: "URL", widget: "string" }
     ],
-    pattern: /{{< resource title="([^"]+)"( cost="([^"]*)")?( description="([^"]*)")?( languages="([^"]*)")?( url="([^"]*)")? >}}/,
+    pattern: /{{%\s*resource\s+title="(.*?)".*?\s*languages="(.*?)".*?\s*cost="(.*?)".*?\s*description="(.*?)".*?\s*url="(.*?)".*?%}}/,
     fromBlock: function(match) {
         return {
             title: match[1],
-            cost: match[3] || '',
-            description: match[5] || '',
-            languages: match[7] || '',
-            url: match[9] || ''
+            languages: match[2],
+            cost: match[3],
+            description: match[4],
+            url: match[5]
         };
     },
     toBlock: function(obj) {
-        return `{{< resource title="${obj.title}"` +
-               `${obj.cost ? ` cost="${obj.cost}"` : ''}` +
-               `${obj.description ? ` description="${obj.description}"` : ''}` +
-               `${obj.languages ? ` languages="${obj.languages}"` : ''}` +
-               `${obj.url ? ` url="${obj.url}"` : ''} >}}`;
+        return `{{% resource title="${obj.title}" languages="${obj.languages}" cost="${obj.cost}" description="${obj.description}" url="${obj.url}" %}}`
     },
     toPreview: function(obj) {
         return `<div class="transition-200 relative mb-6 flex w-full items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white p-4 shadow-3xl transition-shadow focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-none">
