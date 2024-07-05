@@ -1,9 +1,13 @@
-+++
-style = "module"
-weight = 2
-title = "Compétences interpersonnelles pour la réponse à l'infrastructure malveillante/hameçonnage"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Compétences interpersonnelles pour la réponse à l'infrastructure
+  malveillante/hameçonnage
+description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+  risus.
+weight: 2
+---
 
 ## Cas d'utilisation
 
