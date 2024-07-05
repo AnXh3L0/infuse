@@ -32,7 +32,7 @@ other = "Accessibility is crucial, and offering content in multiple languages en
 other = "Learning Paths"
 
 [learning-paths-subtitle]
-other = ""
+other = " "
 
 # Signup and login
 [create-account]
@@ -173,7 +173,7 @@ other = "Modules"
 other = "What you'll learn"
 
 [modules-description]
-other = ""
+other = " "
 
 [visit-site]
 other = "Visit Site"
