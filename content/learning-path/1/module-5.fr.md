@@ -1,9 +1,12 @@
-+++
-style = "module"
-weight = 5
-title = "Enquête passive : analyser les en-têtes d'e-mail"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: "Enquête passive : analyser les en-têtes d'e-mail"
+description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+  risus.
+weight: 5
+---
 
 ## Cas d'utilisation
 
