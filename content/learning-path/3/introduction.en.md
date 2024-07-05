@@ -1,9 +1,11 @@
-+++
-style = "introduction"
-weight = 1
-title = "Introduction"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: introduction
+title: Introduction
+description: This learning path will prepare you to start on the journey of
+  analyzing malware. The general goal of malware analysis is to characterize new
+  malware, both brand new malware and variants of existing ones.
+weight: 1
+---
 
 ## Overview
 
