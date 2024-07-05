@@ -1,9 +1,12 @@
-+++
-style = "module"
-weight = 4
-title = "Enquête passive : analyser les URL, les noms d'hôtes et les adresses IP"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: "Enquête passive : analyser les URL, les noms d'hôtes et les adresses IP"
+description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+  risus.
+weight: 4
+---
 
 ## Cas d'utilisation
 
