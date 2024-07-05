@@ -88,6 +88,7 @@ collections:
       - name: "description"
         label: "Description"
         widget: "text"
+        required: false
         i18n: true
       - name: "weight"
         label: "Order"
@@ -112,6 +113,7 @@ collections:
       - name: "description"
         label: "Description"
         widget: "text"
+        required: false
         i18n: true
       - name: "weight"
         label: "Order"
@@ -136,6 +138,7 @@ collections:
       - name: "description"
         label: "Description"
         widget: "text"
+        required: false
         i18n: true
       - name: "weight"
         label: "Order"
@@ -160,6 +163,7 @@ collections:
       - name: "description"
         label: "Description"
         widget: "text"
+        required: false
         i18n: true
       - name: "weight"
         label: "Order"
@@ -184,6 +188,7 @@ collections:
       - name: "description"
         label: "Description"
         widget: "text"
+        required: false
         i18n: true
       - name: "weight"
         label: "Order"
@@ -208,6 +213,7 @@ collections:
       - name: "description"
         label: "Description"
         widget: "text"
+        required: false
         i18n: true
       - name: "weight"
         label: "Order"
