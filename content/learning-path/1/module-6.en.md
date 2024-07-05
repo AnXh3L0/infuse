@@ -1,9 +1,12 @@
-+++
-style = "module"
-weight = 6
-title = "Active Investigation - Analyze malicious emails"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: module
+title: Active Investigation - Analyze malicious emails
+description: Whether they be pure social engineering, phishing, or malware
+  delivery, malicious emails can be quite complex. This module will teach you
+  how to interpret and understand them and find the infrastructure that they
+  link to.
+weight: 6
+---
 
 ## Use Case
 
