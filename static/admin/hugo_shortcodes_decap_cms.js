@@ -1,4 +1,43 @@
 CMS.registerEditorComponent({
+    id: "resource",
+    label: "Resource Card",
+    fields: [
+        { name: "title", label: "Title", widget: "string" },
+        { name: "cost", label: "Cost", widget: "string" },
+        { name: "description", label: "Description", widget: "text" },
+        { name: "languages", label: "Languages", widget: "string" },
+        { name: "url", label: "URL", widget: "string" }
+    ],
+    pattern: /{{< resource title="([^"]+)"( cost="([^"]*)")?( description="([^"]*)")?( languages="([^"]*)")?( url="([^"]*)")? >}}/,
+    fromBlock: function(match) {
+        return {
+            title: match[1],
+            cost: match[3] || '',
+            description: match[5] || '',
+            languages: match[7] || '',
+            url: match[9] || ''
+        };
+    },
+    toBlock: function(obj) {
+        return `{{< resource title="${obj.title}"` +
+               `${obj.cost ? ` cost="${obj.cost}"` : ''}` +
+               `${obj.description ? ` description="${obj.description}"` : ''}` +
+               `${obj.languages ? ` languages="${obj.languages}"` : ''}` +
+               `${obj.url ? ` url="${obj.url}"` : ''} >}}`;
+    },
+    toPreview: function(obj) {
+        return `<div class="transition-200 relative mb-6 flex w-full items-center space-x-3 rounded-3xl border-2 border-gray-300 bg-white p-4 shadow-3xl transition-shadow focus-within:shadow-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-none">
+<div class="p-6">
+<p class="mb-2 mt-0 text-2xl font-bold">${obj.title}</p>` +
+               `${obj.cost ? `<span class="mb-2 me-2 inline-block rounded-full border-2 border-indigo-300 bg-indigo-50 px-2 py-0 text-sm font-semibold text-indigo-700">${obj.cost}</span>` : ''}` +
+               `${obj.description ? `<p class="mb-3 mt-0">${obj.description}</p>` : ''}` +
+               `${obj.languages ? `<div class="mb-2"><span class="text-sm font-semibold">Languages</span>: ${obj.languages.split(', ').map(lang => `<span class="mb-0 inline-block text-sm">${lang}</span>`).join(', ')}</div>` : ''}` +
+               `${obj.url ? `<a href="${obj.url}" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block rounded-lg bg-green-700 px-4 py-2 font-bold text-white no-underline hover:bg-green-800">Visit Site</a>` : ''}
+</div>
+</div>`;
+    }
+});
+CMS.registerEditorComponent({
     id: "figure",
     label: "Figure",
     fields: [{
