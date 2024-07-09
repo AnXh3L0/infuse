@@ -2,10 +2,12 @@
 style: module
 title: "Sécurité opérationnelle : manipulation sécuritaire des liens et de
   l'infrastructure"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Lorsque vous enquêtez sur des e-mails d'hameçonnage, des pièces
+  jointes, des sites Web et d'autres infrastructures malveillantes, vous devez
+  prendre des mesures proactives pour vous assurer que vous et les personnes que
+  vous soutenez demeurez en sécurité. Assurez-vous d'étudier cette compétence
+  et, si nécessaire, de mettre en place un environnement sûr avant d'interagir
+  avec des e-mails ou des pages Web suspectes et malveillantes.
 weight: 3
 ---
 
