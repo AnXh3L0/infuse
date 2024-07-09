@@ -98,6 +98,23 @@ Most attacks you will encounter will use a pre-made or modified phishing kit, a 
 
 Some phishing kits also have the ability to bypass multi-factor authentication, for example by capturing a code that a targeted person typed in and immediately using it to log on to the real web page on their behalf. [This article is a great write-up](https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/) on how an open source phishing kit used by security teams who test out security mechanisms can capture and use two-factor authentication data (and what could be done to prevent this). You can also [check out another writeup of a phishing kit](https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/) (this kit was written by cybercriminals rather than security researchers), which used some MFA bypass and fascinating techniques to frustrate detection.
 
+## Practice
+
+- [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
+- [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
+
+## Skill Check
+
+Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/room/walkinganapplication)
+
+- Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
+- Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
+  - Who owns the infrastructure that’s serving the website?
+  - What other domains does this side load or link to? What do they do?
+  - When was this domain registered?
+  - (optional) What software is being used to serve the site?
+  - Have others listed the site as malicious?
+
 ## Learning Resources
 
 {{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="A good write-up and analysis of a highly sophisticated phishing campaign which targeted civil society groups. Includes extensive discussions on infrastructure and attribution." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
@@ -124,19 +141,3 @@ Some phishing kits also have the ability to bypass multi-factor authentication, 
 
 {{% resource title="W3LL phishing kit hijacks thousands of Microsoft 365 accounts, bypasses MFA" languages="English" cost="Free" description="This piece analyzes a phishing kit designed and sold by cybercriminals, which contains multiple mechanisms which frustrate analysis and also uses MFA bypass techniques." url="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/" %}}
 
-## Practice
-
-- [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
-- [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
-
-## Skill Check
-
-Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/room/walkinganapplication)
-
-- Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
-- Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
-  - Who owns the infrastructure that’s serving the website?
-  - What other domains does this side load or link to? What do they do?
-  - When was this domain registered?
-  - (optional) What software is being used to serve the site?
-  - Have others listed the site as malicious?

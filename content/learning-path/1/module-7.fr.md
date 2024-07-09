@@ -99,6 +99,21 @@ La plupart des attaques que vous rencontrerez utiliseront un kit d'hameçonnage 
 
 Certains kits d'hameçonnage ont également la capacité de contourner l'authentification multifactorielle, par exemple en capturant un code qu'une personne ciblée a saisi et en l'utilisant immédiatement pour se connecter à la page Web réelle en son nom. [Cet article est une excellente synthèse](https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/) sur la façon dont un kit d'hameçonnage open source utilisé par les équipes de sécurité qui testent les mécanismes de sécurité peut capturer et utiliser des données d’authentification à deux facteurs (et ce qui pourrait être fait pour l'éviter). Vous pouvez également [consulter un autre article sur un kit d'hameçonnage](https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/) (ce kit a été écrit par des cybercriminels plutôt que des chercheurs en sécurité), qui a utilisé un contournement MFA et des techniques fascinantes pour entraver la détection.
 
+## Pratique
+
+- Trouvez les contacts en cas d'abus pour 3 sociétés d'hébergement Web, y compris au moins une plateforme majeure comme AWS, GCP, Azure, Oracle Cloud et Alibaba Cloud. Recherchez toute information supplémentaire qu'ils offrent sur leur processus de signalement des abus.
+- Étudiez le fonctionnement des bases de données d'abus et de Google Safe Browsing. Répertorie plusieurs outils et services avec lesquels ils sont intégrés.
+- Créez votre propre organigramme de réponse aux incidents et votre liste de contrôle contenant les liens pertinents et les actions à prendre en cas d'incident d'infrastructure en ligne malveillante.
+
+## Contrôle de compétence
+
+Travaillez avec un mentor ou un pair qui a une certaine expérience dans la suppression d'infrastructures malveillantes. Effectuez les tâches suivantes avec son aide :
+
+- Préparez toutes les preuves (adresses IP, hachages, domaines et toute autre preuve) dont vous auriez besoin pour soumettre un rapport d'abus. Si vous avez un exemple d'infrastructure malveillante à portée de main, recueillez ces preuves concernant cette infrastructure. Si ce n'est pas le cas, recueillez les preuves à partir d'une page Web légitime (sans soumettre un rapport d'abus, bien sûr). Discutez des preuves avec votre pair ou votre mentor, qui vérifiera que vous avez recueilli les bonnes preuves et que vous les avez correctement documentées.
+- Expliquez comment la navigation sécurisée, la base de données d'abus et les fournisseurs de listes de blocage fonctionnent. Si vous avez un exemple d'infrastructure malveillante sous la main, envoyez-le à une base de données ou à un fournisseur. Si ce n'est pas le cas, rendez-vous sur la page Web du fournisseur et faites un essai du processus de soumission avec votre pair ou votre mentor (expliquez les informations que vous prépareriez, sans les soumettre).
+- Demandez à votre mentor ou à votre pair de lister trois fournisseurs d'hébergement Web, fournisseurs de services cloud, registraires de domaines ou autres fournisseurs de services. Pour chacun d'eux, trouvez le mécanisme de contact ou de signalement d'abus pertinent.
+- Parlez à votre mentor ou à votre pair des risques stratégiques et personnels liés au retrait, à la divulgation éventuelle des données du client et à l'indication à un cybercriminel que son attaque fait l'objet d'un examen critique. Faites un projet de jeu de rôle dans lequel vous communiquez ces considérations à la cible de l'attaque.
+
 
 ## Ressources d'apprentissage
 
@@ -126,20 +141,3 @@ Certains kits d'hameçonnage ont également la capacité de contourner l'authent
 
 {{% resource title="W3LL phishing kit hijacks thousands of Microsoft 365 accounts, bypasses MFA" languages="English" cost="Free" description="This piece analyzes a phishing kit designed and sold by cybercriminals, which contains multiple mechanisms which frustrate analysis and also uses MFA bypass techniques." url="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/" %}}
 
-## Practice
-
-* [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
-* [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
-
-## Skill Check
-
-Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/room/walkinganapplication)
-
-* Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
-* Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
-
-  * Who owns the infrastructure that’s serving the website?
-  * What other domains does this side load or link to? What do they do?
-  * When was this domain registered?
-  * (optional) What software is being used to serve the site?
-  * Have others listed the site as malicious?
