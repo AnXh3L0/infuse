@@ -52,10 +52,6 @@ The answers to these questions will both help provide useful harm reduction supp
 
 For operational security to protect yourself while working with malicious emails, check out the next subtopic.
 
-## Learning Resources
-
-{{% resource title="Security Education 101" languages="English" cost="Free" description="A popular community resource on how to teach and talk about digital security" url="https://www.securityeducationcompanion.org/articles" %}}
-
 ## Practice
 
 Reflect on and answer/discuss the following with peers, colleagues, friends, or a mentor. If available and if appropriate, talk to a ‘client’ you have worked with before to ask their input and experiences on some of these questions.
@@ -75,3 +71,9 @@ Do a role-playing exercise with a peer or mentor, in which you play the part of 
 * Talk the targeted person through what risk they might be at if they clicked the phishing email.
 * Talk about who the potential adversaries could be, and how many attacks are not targeted at all.
 * Discuss what next steps the targeted person and organization could take to keep safe.
+
+## Learning Resources
+
+{{% resource title="Security Education 101" languages="English" cost="Free" description="A popular community resource on how to teach and talk about digital security" url="https://www.securityeducationcompanion.org/articles" %}}
+
+
