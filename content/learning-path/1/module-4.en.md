@@ -29,7 +29,7 @@ After completing this subtopic, practitioners should be able to do the following
 
 ---
 
-# Main Section
+## Main Section
 
 Passive investigation utilizes open source intelligence (OSINT) tools and resources which can give us many details about the digital footprint of attack infrastructure without an attacker noticing that we are investigating.
 
