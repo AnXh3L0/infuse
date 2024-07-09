@@ -55,10 +55,6 @@ Les réponses à ces questions aideront à la fois à fournir un soutien utile e
 
 Dans un souci de sécurité opérationnelle pour vous protéger lorsque vous travaillez avec des e-mails malveillants, il convient de consulter le sous-thème suivant.
 
-## Ressources d'apprentissage
-
-{{% resource title="Formation en matière de sécurité 101" languages="Anglais" cost="Gratuit" description="Une ressource communautaire populaire sur la façon d'enseigner et de parler de la sécurité numérique" url="https://www.securityeducationcompanion.org/articles" %}}
-
 ## Pratique
 
 Réfléchissez à ce qui suit et discutez-en avec des pairs, des collègues, des amis ou un mentor. Le cas échéant, parlez à un « client » avec qui vous avez déjà travaillé pour lui demander ses commentaires et son expérience sur certaines de ces questions.
@@ -78,3 +74,8 @@ Faites un exercice de jeu de rôle avec un pair ou un mentor, dans lequel vous j
 - Parlez à la personne ciblée du risque auquel elle pourrait être exposée si elle cliquait sur l'e-mail d'hameçonnage.
 - Parlez des cybercriminels potentiels et du nombre d'attaques qui ne sont pas ciblées.
 - Discutez des prochaines étapes que la personne et l'organisation ciblées pourraient prendre pour assurer la sécurité.
+
+## Ressources d'apprentissage
+
+{{% resource title="Formation en matière de sécurité 101" languages="Anglais" cost="Gratuit" description="Une ressource communautaire populaire sur la façon d'enseigner et de parler de la sécurité numérique" url="https://www.securityeducationcompanion.org/articles" %}}
+
