@@ -1,7 +1,10 @@
 ---
 style: module
 title: Capture-the-flag exercise
-description: ""
+description: We have also designed a capture-the-flag exercise in which learners
+  can analyze a phishing email and the infrastructure it links to. The exercise
+  can be used as an additional practice or skill verification exercise, and can
+  be found here.
 weight: 10
 ---
 
