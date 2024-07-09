@@ -77,6 +77,21 @@ Learn about some of these blocklists, where they are integrated, and how to repo
 - More specific reporting and threat databases are offered by [abuse.ch](https://abuse.ch) and require authentication in order to submit, such as [URLhaus](https://urlhaus.abuse.ch/), [ThreatFox](https://threatfox.abuse.ch/), and [SSL Blacklist](https://sslbl.abuse.ch/).
 - Report Discord Phishing to [phish.gg ](https://docs.phish.gg/)(or add a server to their service).
 
+## Practice
+
+- Find the abuse contacts for 3 web hosting companies, including at least one major platform (use as AWS, GCP, Azure, Oracle Cloud, and Alibaba Cloud. Look for any additional information they offer on their abuse reporting process.
+- Investigate how abuse databases and Google Safe Browsing work. Lists several tools and services that they are integrated with.
+- Build your own incident-response flowchart and checklist containing relevant links and actions to take in case of an incident of malicious online infrastructure.
+
+## Skill Check
+
+Work with a mentor or peer who has some experience in taking down malicious infrastructure. Do the following tasks with them:
+
+- Prepare all of the evidence (IP addresses, hashes, domains, and any other evidence) you would need to submit an abuse report. If you have an example of malicious infrastructure at hand, collect that evidence for this infrastructure. If you do not, collect the evidence from a legitimate web page (but without submitting an abuse report, of course). Discuss the evidence with your peer or mentor who will verify that you collected the right evidence and have correctly documented it.
+- Explain how safe browsing, abuse database, and blocklist providers work. If you have an example of malicious infrastructure on hand, submit it to such a database or provider. If you do not, go to the provider’s web page and do a dry run of the submission process with your peer or mentor (explain what information you would prepare, without submitting it).
+- Ask your mentor or peer to list three web hosting providers, cloud providers, registrars, or other service providers. For each of those, find the relevant abuse contact or reporting mechanism.
+- Talk to your mentor or peer about the strategic and personal risks of initiating takedown, potentially disclosing client’s data, and potentially indicating to an attacker that their attack is being critically examined. Do a draft role-play in which you communicate these considerations to the target of the attack.
+
 ## Learning Resources
 
 {{% resource title="RIPEstat launchpad" languages="English, Spanish, Arabic, Russian, French, Farsi, Italian, Turkish" cost="Free" description="A service which allows you to search for and list relevant abuse reporting mechanisms." url="https://stat.ripe.net/app/launchpad" %}}
@@ -103,17 +118,4 @@ Learn about some of these blocklists, where they are integrated, and how to repo
 
 {{% resource title="Phish.gg documentation" languages="English" cost="Free" description="A service where you can report phishing on services such as Discord." url="https://docs.phish.gg/docs/get-started/welcome/" %}}
 
-## Practice
 
-- Find the abuse contacts for 3 web hosting companies, including at least one major platform (use as AWS, GCP, Azure, Oracle Cloud, and Alibaba Cloud. Look for any additional information they offer on their abuse reporting process.
-- Investigate how abuse databases and Google Safe Browsing work. Lists several tools and services that they are integrated with.
-- Build your own incident-response flowchart and checklist containing relevant links and actions to take in case of an incident of malicious online infrastructure.
-
-## Skill Check
-
-Work with a mentor or peer who has some experience in taking down malicious infrastructure. Do the following tasks with them:
-
-- Prepare all of the evidence (IP addresses, hashes, domains, and any other evidence) you would need to submit an abuse report. If you have an example of malicious infrastructure at hand, collect that evidence for this infrastructure. If you do not, collect the evidence from a legitimate web page (but without submitting an abuse report, of course). Discuss the evidence with your peer or mentor who will verify that you collected the right evidence and have correctly documented it.
-- Explain how safe browsing, abuse database, and blocklist providers work. If you have an example of malicious infrastructure on hand, submit it to such a database or provider. If you do not, go to the provider’s web page and do a dry run of the submission process with your peer or mentor (explain what information you would prepare, without submitting it).
-- Ask your mentor or peer to list three web hosting providers, cloud providers, registrars, or other service providers. For each of those, find the relevant abuse contact or reporting mechanism.
-- Talk to your mentor or peer about the strategic and personal risks of initiating takedown, potentially disclosing client’s data, and potentially indicating to an attacker that their attack is being critically examined. Do a draft role-play in which you communicate these considerations to the target of the attack.

@@ -1,84 +1,100 @@
 ---
 style: module
-title: Response - Infrastructure takedown
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: "Réponse : réduction de l'infrastructure"
+description: Ici, nous abordons la signalisation d'abus ainsi que d'autres
+  mécanismes de navigation sécurisée et de sinkhole. Cela inclut le contact avec
+  le fournisseur d'infrastructure pour signaler une infrastructure malveillante
+  afin qu'elle puisse être démantelée.
 weight: 9
 ---
+Cas d'utilisation
 
-## Use Case
+## Cas d'utilisation
 
-In the previous sub-topics, we looked at how you can identify infrastructure that serves malicious content, be it spam, malware, or phishing. Once you have successfully done so, it’s time to warn others about it. In this subtopic, we cover **abuse-reporting and other safe browsing and sinkhole mechanisms**. This includes contacting the infrastructure provider to report malicious infrastructure so that it can be taken down.
+Dans les sous-thèmes précédents, nous avons examiné comment vous pouvez identifier l'infrastructure qui sert le contenu malveillant, qu'il s’agisse de spam, de logiciels malveillants ou d'hameçonnage. Une fois que vous avez réussi, il est temps d'en avertir les autres. Dans ce sous-thème, nous abordons les **signalements d'abus et d'autres mécanismes de navigation sûre et de sinkhole**. Cela consiste notamment à contacter le fournisseur d'infrastructure pour signaler une infrastructure malveillante afin qu'il puisse la retirer.
 
-Pair this effort with broader incident response activities including threat sharing and reaching out to communities which may have also been targeted by the attacks originating from the same infrastructure.
+Associez cet effort à des activités plus vastes de réponse aux incidents, y compris le partage des menaces et la prise de contact avec les communautés qui pourraient également avoir été ciblées par les attaques provenant de la même infrastructure.
 
-## Objectives
+## Objectifs
 
-After completing this subtopic, practitioners should be able to do the following:
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-- Have a basic understanding of how abuse reporting and databases work;
-- Identify abuse databases which list URLs and domains suspected of being malicious;
-- Request data from and write to such databases;
-- Identify and use abuse reporting mechanisms at bigger infrastructure providers.
+- Avoir une compréhension de base du fonctionnement des bases de données et des rapports sur les abus ;
+- Identifier les bases de données d'abus qui répertorient les URL et les domaines soupçonnés d'être malveillants ;
+- Demander des données et vous adresser à ces bases de données ;
+- Identifier et utiliser des mécanismes de signalement des abus chez les plus grands fournisseurs d'infrastructures.
 
 ---
 
-## Abuse Reporting at hosting service providers
+## Signalement d'abus chez les fournisseurs de services d'hébergement
 
-Many instances of malicious infrastructure run on mainstream commercial service providers concerned with maintaining their system safety, stability, reputation, and tackling cyber threats. Responsible service providers offer effective abuse reporting mechanisms. Utilizing these mechanisms may lead to a prompt takedown of active infrastructure.
+De nombreuses instances d'infrastructures malveillantes s'exécutent sur les principaux fournisseurs de services commerciaux soucieux de maintenir la sécurité, la stabilité, la réputation et de lutter contre les cybermenaces. Les fournisseurs de services responsables offrent des mécanismes efficaces de signalement des abus. L'utilisation de ces mécanismes peut entraîner un retrait rapide de l'infrastructure active.
 
-Learn how to locate and utilize these abuse reporting mechanisms. Abuse contacts are available through numerous mechanisms:
+Apprenez comment trouver et utiliser ces mécanismes de signalement des abus. De nombreux mécanismes permettent d'établir des contacts en cas d'abus :
 
-- WHOIS records for a domain will provide an Abuse contact email and phone number.
-- Search for the abuse contact relevant to a given IP at [RIPEstat](https://stat.ripe.net/app/launchpad).
-- For a programmatic utility, see the Abusix Abuse Contacts Database’s [Getting Started](https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee) page which explains how to use a Python utility or a simple host lookup to obtain abuse contacts.
-- Use web search to obtain abuse reporting details for other types of service providers which may not be available through the above methods, such as abuse on platforms such as [Twilio ](https://www.twilio.com/help/abuse)and [Mailchimp](https://mailchimp.com/contact/abuse/).
+- Les enregistrements WHOIS pour un domaine fourniront une adresse e-mail et un numéro de téléphone de contact en cas d'abus.
+- Recherchez le contact en cas d'abus correspondant à une adresse IP donnée sur [RIPEstat](https://stat.ripe.net/app/launchpad).
+- Pour un utilitaire de programmation, consultez la page [Prise](https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee) [en main](https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee) de la base de données Abusix Abuse Contacts qui explique comment utiliser un utilitaire Python ou une simple recherche d'hôte pour obtenir les contacts en cas d'abus.
+- Utilisez la recherche sur le Web pour obtenir des détails de signalement d'abus pour d'autres types de fournisseurs de services qui peuvent ne pas être disponibles via les méthodes ci-dessus, tels que les abus sur des plateformes comme [Twilio](https://www.twilio.com/help/abuse) et [Mailchimp](https://mailchimp.com/contact/abuse/).
 
-Remember there may be multiple service providers involved. For instance, a phishing landing page can be reported both to the web hosting provider and to the domain registrar.
+N'oubliez pas qu'il peut y avoir plusieurs fournisseurs de services impliqués. Par exemple, une page de destination d'hameçonnage peut être signalée à la fois au fournisseur d'hébergement Web et au registraire de domaine.
 
-Learn how to write an abuse report with the technical information you have collected. Your report should include sufficient details so that the service provider can identify what specific account on their platform is serving malicious content. This may include the following:
+Apprenez à rédiger un rapport d'abus avec les informations techniques que vous avez recueillies. Votre rapport doit inclure suffisamment de détails pour que le fournisseur de services puisse identifier le compte spécifique sur sa plateforme qui diffuse du contenu malveillant. Cela peut inclure les éléments suivants :
 
-- URLs of the content
-- IPs of the hosted
-- Any other identifier relevant to the service
-- Any archives/snapshots taken of the content
-- Screenshots
-- Email headers, if relevant
-- Positive security scans or indicators of threats
-- How the service/resource is being abused
+- URL du contenu
+- IP de l'hôte
+- Tout autre identifiant pertinent au service
+- Toutes les archives/tous les instantanés pris à partir du contenu
+- Captures d'écran
+- En-têtes d'e-mails, le cas échéant
+- Analyses de sécurité positives ou indicateurs de menaces
+- Comment le service/la ressource est utilisée abusivement
 
-While providing screenshots or attachments, ensure you are not compromising sensitive information from yourself or your clients being targeted by the malicious content.
+Lorsque vous fournissez des captures d'écran ou des pièces jointes, assurez-vous de ne pas compromettre les informations sensibles vous concernant ou concernant vos clients qui sont ciblés par le contenu malveillant.
 
-While it is unlikely that service providers will offer additional information on the user account perpetrating abusive content, you may attempt to request such information in case it is helpful to your investigations.
+Bien qu'il soit peu probable que les fournisseurs de services offrent des informations supplémentaires sur le compte d'utilisateur perpétrant un contenu abusif, vous pouvez tenter de demander ces informations au cas où elles seraient utiles à vos enquêtes.
 
-In some cases, internet service and technology companies make a special effort to coordinate with civil society on targeted attacks and may offer additional support. It may be worth working with a [CiviCERT member](https://www.civicert.org) organization to seek a company contact for purposes of investigations and expedited rapid response.
+Dans certains cas, les entreprises de services Internet et de technologie font un effort particulier pour se coordonner avec la société civile contre les attaques ciblées et peuvent offrir une assistance supplémentaire. Il peut être utile de travailler avec une organisation [membre de CiviCERT](https://www.civicert.org) pour rechercher un contact de l'entreprise à des fins d'enquêtes et d'intervention rapide accélérée.
 
-Note that in many cases malicious infrastructure is hosted on compromised accounts or servers of parties unrelated to the attack (e.g. a compromised Google account, a hacked website, or an infected device coordinated in a botnet).
+Notez que dans de nombreux cas, l'infrastructure malveillante est hébergée sur des comptes ou des serveurs compromis de parties non liées à l'attaque (p. ex., un compte Google compromis, un site Web piraté ou un appareil infecté coordonné dans un botnet).
 
-If you are looking for inspiration on how to write an email message to an infrastructure provider, check out the following templates created by the Access Now Helpline:
+Si vous cherchez de l'inspiration sur la façon d'écrire un message électronique à un fournisseur d'infrastructure, consultez les modèles suivants créés par la ligne d'assistance Access Now :
 
-- Email template [to a registrar of a malicious domain](https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html)
-- Email template [to a hosting provider](https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html)
-- Email template [to a client](https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html), asking them for permission to share IoCs with the community
+- Modèle d'-email [à un registraire d'un domaine malveillant](https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html)
+- Modèle d'e-mail [à un fournisseur d'hébergement](https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html)
+- Modèle d'e-mail [à un client](https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html), pour lui demander la permission de partager les IoC avec la communauté
 
-## Safe Browsing, sinkholes, and blocklists
+## Navigation sécurisée, sinkholes et listes de blocage
 
-In addition to reaching out to abuse contacts for content takedown, there exists various mechanisms to have malicious infrastructure or other malicious indicators be added to blocklists and databases which are integrated in widely utilized tools and services.
+En plus de contacter les contacts en cas d'abus pour demander la suppression de contenu, il existe divers mécanismes permettant que l'infrastructure malveillante ou d'autres indicateurs malveillants soient ajoutés aux listes de blocage et aux bases de données qui sont intégrées dans des outils et des services largement utilisés.
 
-The same principle applies to social media and messaging platforms, and they rely on the abuse or content reporting procedures on those platforms (or complementary safety services).
+Le même principe s'applique aux réseaux sociaux et aux plateformes de messagerie, et ils s'appuient sur les procédures de signalement d'abus ou de contenu sur ces plateformes (ou sur des services de sécurité complémentaires).
 
-Learn about some of these blocklists, where they are integrated, and how to report to them, such as:
+Renseignez-vous sur certaines de ces listes de blocage, sur l'endroit où elles sont intégrées et sur la façon de leur envoyer un rapport, notamment :
 
 - [Google Safe Browsing](https://safebrowsing.google.com/safebrowsing/report_general/)
 - [PhishTank](https://phishtank.org/)
 - [Abuse IP DB](https://www.abuseipdb.com/)
-- [Phishing Database](https://github.com/mitchellkrogza/Phishing.Database#additions) (Send additions through GitHub)
-- More specific reporting and threat databases are offered by [abuse.ch](https://abuse.ch) and require authentication in order to submit, such as [URLhaus](https://urlhaus.abuse.ch/), [ThreatFox](https://threatfox.abuse.ch/), and [SSL Blacklist](https://sslbl.abuse.ch/).
-- Report Discord Phishing to [phish.gg ](https://docs.phish.gg/)(or add a server to their service).
+- [Phishing Database](https://github.com/mitchellkrogza/Phishing.Database#additions)(envoyer des ajouts via GitHub)
+- Des bases de données de signalement et de menaces plus spécifiques sont proposées par [abuse.ch](https://abuse.ch) et nécessitent une authentification pour soumettre de nouvelles informations, telles que [URLhaus](https://urlhaus.abuse.ch/), [ThreatFox](https://threatfox.abuse.ch/) et [SSL Blacklist](https://sslbl.abuse.ch/).
+- Signalez Discord Phishing à [phish.gg](https://docs.phish.gg/) (ou ajoutez un serveur à leur service).
 
-## Learning Resources
+## Pratique
+
+- Trouvez les contacts en cas d'abus pour 3 sociétés d'hébergement Web, y compris au moins une plateforme majeure comme AWS, GCP, Azure, Oracle Cloud et Alibaba Cloud. Recherchez toute information supplémentaire qu'ils offrent sur leur processus de signalement des abus.
+- Étudiez le fonctionnement des bases de données d'abus et de Google Safe Browsing. Répertorie plusieurs outils et services avec lesquels ils sont intégrés.
+- Créez votre propre organigramme de réponse aux incidents et votre liste de contrôle contenant les liens pertinents et les actions à prendre en cas d'incident d'infrastructure en ligne malveillante.
+
+## Contrôle de compétence
+
+Travaillez avec un mentor ou un pair qui a une certaine expérience dans la suppression d'infrastructures malveillantes. Effectuez les tâches suivantes avec son aide :
+
+- Préparez toutes les preuves (adresses IP, hachages, domaines et toute autre preuve) dont vous auriez besoin pour soumettre un rapport d'abus. Si vous avez un exemple d'infrastructure malveillante à portée de main, recueillez ces preuves concernant cette infrastructure. Si ce n'est pas le cas, recueillez les preuves à partir d'une page Web légitime (sans soumettre un rapport d'abus, bien sûr). Discutez des preuves avec votre pair ou votre mentor, qui vérifiera que vous avez recueilli les bonnes preuves et que vous les avez correctement documentées.
+- Expliquez comment la navigation sécurisée, la base de données d'abus et les fournisseurs de listes de blocage fonctionnent. Si vous avez un exemple d'infrastructure malveillante sous la main, envoyez-le à une base de données ou à un fournisseur. Si ce n'est pas le cas, rendez-vous sur la page Web du fournisseur et faites un essai du processus de soumission avec votre pair ou votre mentor (expliquez les informations que vous prépareriez, sans les soumettre).
+- Demandez à votre mentor ou à votre pair de lister trois fournisseurs d'hébergement Web, fournisseurs de services cloud, registraires de domaines ou autres fournisseurs de services. Pour chacun d'eux, trouvez le mécanisme de contact ou de signalement d'abus pertinent.
+- Parlez à votre mentor ou à votre pair des risques stratégiques et personnels liés au retrait, à la divulgation éventuelle des données du client et à l'indication à un cybercriminel que son attaque fait l'objet d'un examen critique. Faites un projet de jeu de rôle dans lequel vous communiquez ces considérations à la cible de l'attaque.
+
+## Ressources d'apprentissage
 
 {{% resource title="RIPEstat launchpad" languages="English, Spanish, Arabic, Russian, French, Farsi, Italian, Turkish" cost="Free" description="A service which allows you to search for and list relevant abuse reporting mechanisms." url="https://stat.ripe.net/app/launchpad" %}}
 
