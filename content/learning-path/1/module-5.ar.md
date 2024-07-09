@@ -59,6 +59,16 @@ As you analyze headers, you will learn quite a bit about the different domains i
 
 Systems administrators who use workplace domains such as Google Workspace and Microsoft 365 often have access to powerful logging and log search tools: they can use those to search their systems for identifiers which were found in email headers (such as suspicious domains), which can help them figure out who, if anyone, has been targeted in their organization. See [Google’s](https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA) and [Microsoft’s](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring) documentation on searching through logs. Do note that those search features are usually restricted to business or enterprise accounts.
 
+--- 
+
+## Practice
+
+After reading through all of the materials in the [Nebraska GenCyber email header analysis](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/) course, do the exercises linked therein. The site has a link issue, with the exercises often being unavailable directly on it, but they can also be downloaded [here](https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers).
+
+## Skill Check
+
+Find an email in your inbox or spam folder. Alternatively, ask for a peer or mentor to send you the headers of an email which they have recently received. Analyze the headers of the email using the same techniques as were outlined in the practice exercise, including by loading them in the [Google Admin Toolbox Message Header tool](https://toolbox.googleapps.com/apps/messageheader/). Then, answer questions 1, 2, 3, and 5 outlined in [the investigation section](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#investigation) of the Nebraska GenCyber email header analysis course, this time using the headers from the email you found rather than the email attached to the course.
+
 ## Learning Resources
 
 {{% resource title="What are email headers?" languages="English" cost="Free" description="A good introduction to email headers. Highlights three important groupings of email headers. Includes a list of step-by-step guides for different MUAs." url="https://mailtrap.io/blog/email-headers/" %}}
@@ -87,10 +97,4 @@ Systems administrators who use workplace domains such as Google Workspace and Mi
 
 {{% resource title="Monitoring, reporting, and message tracing in Exchange Online" languages="English" cost="Documentation free, tools only available to enterprise users" description="Describes how administrators of Microsoft enterprise accounts can monitor message logs." url="https://learn.microsoft.com/en-us/exchange/monitoring/monitoring" %}}
 
-## Practice
 
-After reading through all of the materials in the [Nebraska GenCyber email header analysis](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/) course, do the exercises linked therein. The site has a link issue, with the exercises often being unavailable directly on it, but they can also be downloaded [here](https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers).
-
-## Skill Check
-
-Find an email in your inbox or spam folder. Alternatively, ask for a peer or mentor to send you the headers of an email which they have recently received. Analyze the headers of the email using the same techniques as were outlined in the practice exercise, including by loading them in the [Google Admin Toolbox Message Header tool](https://toolbox.googleapps.com/apps/messageheader/). Then, answer questions 1, 2, 3, and 5 outlined in [the investigation section](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#investigation) of the Nebraska GenCyber email header analysis course, this time using the headers from the email you found rather than the email attached to the course.
