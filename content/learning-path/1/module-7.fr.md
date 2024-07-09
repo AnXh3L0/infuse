@@ -1,105 +1,106 @@
 ---
 style: module
-title: Active Investigation - Analyze malicious webpages
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: "Enquête active : analyser les pages Web malveillantes"
+description: Ce module vous apprendra à examiner les sites web contrôlés par les
+  attaquants afin de comprendre leurs actions et de potentiellement découvrir
+  d'autres infrastructures contrôlées par les attaquants ou des vecteurs
+  d'attaque utilisés dans les attaques.
 weight: 7
 ---
+## Cas d'utilisation
 
-## Use Case
+Les e-mails d'hameçonnage ne sont généralement que la première étape d'une attaque. La plupart essaient de pousser la personne ciblée à visiter une page Web avec un objectif d'attaque spécifique. Ce module de compétences vous apprendra à **examiner les sites Web contrôlés par le cybercriminel pour comprendre ses actions** et potentiellement **découvrir d'autres infrastructures contrôlées par le cybercriminel** ou des vecteurs d'attaque utilisés dans les attaques. Notez que les sites Web peuvent être extrêmement compliqués, avec des comportements allant de simples pages d'usurpation d'identité à des attaques complexes contre le navigateur Web ou le dispositif de navigation lui-même.
 
-Phishing emails are usually just the first step in an attack. Most try to get the targeted person to visit a web page with a specific attack objective. This skill module will teach you to **look at attacker-controlled websites to understand their actions** and potentially **uncover further attacker-controlled infrastructure** or attack vectors used in the attacks. Note that websites can be extremely complicated, with behavior ranging from simple credential-stealing impersonation pages to complex attacks against the web browser or browsing device itself.
+Notez que l'interaction avec des sites Web malveillants peut mettre l'analyste lui-même en danger. Assurez-vous de configurer et d'utiliser un environnement isolé ([voir le sous-thème 3](#_heading=h.2szc72q)), et de collecter et de stocker en toute sécurité toutes les pages Web. Enfin, cette compétence recoupe et mène au parcours d'apprentissage de l'analyse des logiciels malveillants.
 
-Note that interacting with malicious websites can put the analyst themself at risk. Make sure to set up and use an isolated environment ([see Subtopic 3](#subtopic-3-operational-security-safe-handling-of-links-and-infrastructure)), and to collect and safely store all web pages. Lastly, this skill intersects with and leads into the Malware Analysis learning path.
 
-## Objectives
+## Objectifs
 
-After completing this subtopic, practitioners should be able to do the following:
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-- Analyze attacker-owned websites by looking at their source code using inspect features of web browsers and optionally using tools such as intercepting proxies or JavaScript debuggers
-- Uncover what further infrastructure such websites could link to by looking for URLs, redirects, linked domains, and other assets or identifiers
+- Analysez les sites Web appartenant à des cybercriminels en regardant leur code source à l'aide des fonctionnalités d'inspection des navigateurs Web et en utilisant éventuellement des outils tels que des proxys d'interception ou des débogueurs JavaScript
+- Découvrez à quelle infrastructure supplémentaire ces sites Web pourraient être liés en recherchant des URL, des redirections, des domaines liés et d'autres actifs ou identifiants
 
----
+- - -
 
-## Foundation Knowledge
+## Connaissances de base
 
-This will be significantly easier to practice if you know the basics of JavaScript and HTML, though those are not strictly necessary prerequisites.
 
-It’s worth highlighting some basic differences between an email and a web page:
+Cela sera beaucoup plus facile à pratiquer si vous connaissez les bases de JavaScript et HTML, bien qu'il ne s'agisse pas de prérequis strictement nécessaires.
 
-- Web pages can be dynamic, so the server can generate a different web page based on variables such as the requester’s IP address, browser type, time of day, and many others.
-- Web browsers will process more types of HTML than email readers, with fewer protections. Most significantly, web browsers will run JavaScript, which email clients will not.
-- HTML emails are generated when the mail is sent; the action is initiated by the attacker. With web pages, the action is initiated by the visitor. When you view a malicious web page, the attacker can always be aware of your actions. While mechanisms such as VPNs or Tor could prevent the webpage administrator from viewing your IP address, the site itself could contain referrers linked to the phishing email or be custom to each recipient. That way, the attacker will know with a high degree of certainty that only those who had access to the phishing email would visit the webpage.
+Il convient de souligner quelques différences fondamentales entre un e-mail et une page Web :
 
-Because of this, we recommend only analyzing web pages in a safe environment specifically designed for opening potentially suspicious files, such as a virtual machine or a sandbox. In addition, discuss the threat model specific to the recipient of the email to ensure it is safe for them for you to conduct further analysis activity which could be visible to the attacker.
+- Les pages Web peuvent être dynamiques, de sorte que le serveur peut générer une page Web différente en fonction de variables telles que l'adresse IP du demandeur, le type de navigateur, l'heure de la journée et bien d'autres facteurs.
+- Les navigateurs Web traiteront plus de types de HTML que les clients de messagerie, avec moins de protections. Plus important encore, les navigateurs Web exécutent JavaScript, ce que les clients de messagerie ne font pas.
+- Les e-mails HTML sont générés lorsque le courrier est envoyé, l'action est donc initiée par le cybercriminel. Avec les pages Web, l'action est initiée par le visiteur. Lorsque vous affichez une page Web malveillante, le cybercriminel peut toujours être au courant de vos actions. Alors que des mécanismes tels que les VPN ou Tor pourraient empêcher l'administrateur de la page Web de voir votre adresse IP, le site lui-même pourrait contenir des référents liés à l'e-mail d'hameçonnage ou être personnalisé pour chaque destinataire. De cette façon, le cybercriminel saura avec un haut degré de certitude que seules les personnes ayant accès à l'e-mail d'hameçonnage visiteront la page Web.
 
-## Case studies
+Pour cette raison, nous vous recommandons d'analyser uniquement les pages Web dans un environnement sécurisé spécialement conçu pour ouvrir des fichiers potentiellement suspects, tels qu'une machine virtuelle ou un bac à sable. De plus, discutez du modèle de menace spécifique au destinataire de l'e-mail pour vous assurer qu'il est sûr pour vous de mener une activité d'analyse supplémentaire qui pourrait être visible par le cybercriminel.
 
-Read through two case studies which analyze phishing attacks that targeted civil society groups. Both of those attacks were partially successful:
+## Études de cas
 
-- Human Rights Watch: [Iran: State-Backed Hacking of Activists, Journalists, Politicians](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) (The introductory section is useful context on attacker tactics and motivations; however, focus on the _Technical Analysis of the Phishing Campaign_ section for learning purposes.
-- Bellingcat: [Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/)
+Lisez deux études de cas qui analysent les attaques d'hameçonnage ciblant des groupes de la société civile. Ces deux attaques ont partiellement réussi :
 
-Focusing on the[ HRW case study](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) above, note some key features of analysis used in each investigation. Some of these require technical skills to complete, while others require research, critical thinking, and interpersonal skills. Some of the methods identified in the case study include:
+- Human Rights Watch : [Iran : piratage soutenu par l'État des militants, des journalistes, des politiciens](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) (La section d'introduction est un contexte utile sur les tactiques et les motivations des cybercriminels ; cependant, concentrez-vous sur la section _Analyse technique de la campagne d'hameçonnage_ à des fins d'apprentissage.
+- Bellingcat : [ascension de Guccifer ? Une campagne d'hameçonnage de plusieurs mois sur ProtonMail cible des dizaines de journalistes et d'ONG russes](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/)
 
-- The attackers used an URL shortener service. This is common for legitimate and non-legitimate emails alike. You should be able to recognize URL shorteners and know how to expand these URLs where possible (for instance by using the shortener’s inbuilt mechanism such as adding a + to the end of the URL, or by using an expander tool like [Urlex](https://urlex.org/)) or track stages of HTTP redirects. Notably the attacker created their own URL shortener service in this case which impersonated (through a small typing change in the domain) another known URL shortener.
-- Multiple domains were registered which were intended to confuse the target (e.g. sharefilesonline[.]live, which plays on Microsoft’s product names SharePoint and Live.com.
-- Unique links sent to individual targets with a five-character identifier (this could be achieved by any unique string in an URL, usually within the URL path or passed in a parameter for instance after a ‘?’).
-- By using brute force to try out all possible five character identifiers and URL combinations, the analysts were able to discover several other landing pages used by the phishing campaign. They impersonated popular email providers and used a phishing kit which allows for MFA bypass techniques.
-- The analysts reached out to others who might have been targeted by the same campaign to further share threat intelligence and better understand the adversary’s techniques.
-- Attackers used tactics such as accessing data and using [Google Takeout](https://support.google.com/accounts/answer/3024190?hl=en) (a tool which allows users to download all of the data on their Google account).
-- The authors of the report looked into the targeted persons’ Google Takeout history and other logs. This helped reveal post-compromise activity, the names of attacker devices, and IP addresses of the attacker's connections.
-- The authors also flagged up other research and attribution work they conducted:
-  - They referred to research from threat intelligence groups on advanced persistent threat (APT) groups (see and bookmark this crowdsourced [APT Group and Operations](https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/htmlview#) Google Sheet).
-  - They reviewed source code to identify re-used or similar code blocks across previously researched threats.
-  - They wrote about other attacker tactics such as impersonating conference/summit organizers or NGO key figures.
-- Finally, the report also shares out technical indicators of compromise.
+En mettant l'accent sur l'[étude de cas HRW](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) ci-dessus, notez certaines fonctions clés de l'analyse utilisées dans chaque enquête. Certaines d'entre elles nécessitent des compétences techniques, tandis que d'autres nécessitent des recherches, une pensée critique et des compétences interpersonnelles. Voici quelques-unes des méthodes identifiées dans l'étude de cas :
 
-## Automated sandboxed inspection of a website
+- Les cybercriminels ont utilisé un service de raccourcissement d'URL. Ceci est commun pour les e-mails légitimes et non légitimes. Vous devriez être capable de reconnaître les raccourcisseurs d'URL et de savoir comment développer ces URL si possible (par exemple en utilisant le mécanisme intégré du raccourcisseur tel que l'ajout d'un + à la fin de l'URL, ou en utilisant un outil d'extension comme [Urlex](https://urlex.org/)) ou les étapes de suivi des redirections HTTP. Dans ce cas, il semble que le cybercriminel a créé son propre service de raccourcisseur d'URL qu'il a fait passer pour un autre raccourcisseur d'URL connu (par un petit changement de frappe dans le domaine).
+- Plusieurs domaines ont été enregistrés qui étaient destinés à confondre la cible (p. ex. sharefilesonline\[.\]live, qui joue sur les noms de produits Microsoft SharePoint et Live.com).
+- Liens uniques envoyés à des cibles individuelles avec un identifiant à cinq caractères (cela peut être obtenu par n'importe quelle chaîne unique dans une URL, généralement dans le chemin d'URL ou transmis dans un paramètre, par exemple après un « ? »).
+- En utilisant la force brute pour essayer toutes les combinaisons possibles d'identifiants à cinq caractères et d'URL, les analystes ont pu découvrir plusieurs autres pages de destination utilisées par la campagne d'hameçonnage. Ils se sont fait passer pour des fournisseurs de messagerie populaires et ont utilisé un kit d'hameçonnage qui permet de contourner les techniques MFA.
+- Les analystes ont contacté d'autres personnes qui auraient pu être ciblées par la même campagne pour mieux partager les renseignements au sujet des menaces et mieux comprendre les techniques des cybercriminels.
+- Les cybercriminels ont utilisé des tactiques telles que l'accès aux données et l'utilisation de [Google Takeout](https://support.google.com/accounts/answer/3024190?hl=en) (un outil qui permet aux utilisateurs de télécharger toutes les données de leur compte Google).
+- Les auteurs du rapport ont examiné l'historique Google Takeout et d'autres journaux des personnes ciblées. Cela a permis de révéler l'activité après l'attaque, les noms des appareils du cybercriminels et les adresses IP des connexions du cybercriminel.
+- Les auteurs ont également signalé d'autres travaux de recherche et d'attribution qu'ils ont menés :
+  - Ils ont fait référence à des recherches menées par des groupes de renseignements sur les menaces persistantes avancées (APT) (consultez et mettez en favori cette fiche Google participative du [groupe et des opérations APT](https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/htmlview)).
+  - Ils ont examiné le code source pour identifier les blocs de code réutilisés ou similaires parmi les menaces précédemment étudiées.
+  - Ils ont écrit sur d'autres tactiques d'attaque telles que se faire passer pour des organisateurs de conférence/sommet ou des personnalités clés d'ONG.
+- Enfin, le rapport présente également des indicateurs techniques d'attaque.
 
-The first step when you are ready to inspect a website linked to from a phishing message may be to safely look at the website. This entails some degree of interaction with the website. For direct handling of a potentially malicious website, you should have implemented precautions to give yourself a safe working environment, as covered in [Subtopic 3](#subtopic-3-operational-security-safe-handling-of-links-and-infrastructure). However you can also use online tools to inspect a website in a safe remote sandbox:
+## Inspection automatisée d'un site Web dans un bac à sable
 
-- 🧰 Tools such as[ UrlScan](https://urlscan.io/) allow the performance of a scan of an URL. Note some of the key features needed to interpret the results:
+La première étape à suivre lorsque vous vous préparez à inspecter un site Web lié à partir d'un message d'hameçonnage peut consister à examiner en toute sécurité le site Web. Cela implique un certain degré d'interaction avec le site Web. Pour le traitement direct d'un site Web potentiellement malveillant, vous devriez avoir mis en place des précautions pour vous assurer un environnement de travail sûr, comme abordé dans le [sous-thème 3](#_heading=h.2szc72q). Toutefois, vous pouvez également utiliser des outils en ligne pour inspecter un site Web dans un bac à sable en respectant une distance sécuritaire :
 
-  - When you run a scan, choose either Public, Unlisted, or Private. Read their [explanation ](https://urlscan.io/docs/api/)of the difference, but know that a Public scan (the default option) will list the URL on their front page.
-  - Live image of the website (this may be the first step of simple triage if the threat model allows you to initiate this scan)
-  - Domain and IP information
-  - Resources loaded including scripts and AJAX (HTTP tab)
-  - Dynamic elements, cookies, variables (Behavior tab)
-  - Redirects (if any)
-  - Indicators such as domains, IPs, strings, hashes (Indicators tab)
-    - A hash is like a short fingerprint of a file—it can be used to identify a unique file without revealing its contents. You can calculate a hash by using [the command line on Windows, macOS, and Linux](https://techdocs.akamai.com/download-ctr/docs/verify-checksum).
-  - Content such as forms (Content tab)
-  - Technologies used (such as a CMS)
-  - Verdicts (in case others have flagged the URL as malicious)
-  - Lookup button to check site in other analysis engines \
+- 🧰 Les outils tels que [UrlScan](https://urlscan.io/) permettent l'exécution d'une analyse d'une URL. Notez quelques-unes des principales caractéristiques nécessaires pour interpréter les résultats :
+  - Lorsque vous exécutez une analyse, choisissez Public, Non répertorié ou Privé. Lisez leur [explication](https://urlscan.io/docs/api/) de la différence, mais sachez qu'une analyse publique (l'option par défaut) listera l'URL sur la page d'accueil.
+  - Image en direct du site Web (cela peut être la première étape du triage simple si le modèle de menace vous permet de lancer cette analyse)
+  - Domaine et informations IP
+  - Ressources chargées, y compris les scripts et AJAX (onglet HTTP)
+  - Éléments dynamiques, cookies, variables (onglet Comportement)
+  - Redirections (le cas échéant)
+  - Indicateurs tels que les domaines, les adresses IP, les chaînes, les hachages (onglet Indicateurs)
+    - Un hachage est comme une courte empreinte digitale d'un fichier, il peut être utilisé pour identifier un fichier unique sans révéler son contenu. Vous pouvez calculer un hachage à l'aide [de la ligne de commande sous Windows, macOS et Linux](https://techdocs.akamai.com/download-ctr/docs/verify-checksum).
+  - Contenu tel que les formulaires (onglet Contenu)
+  - Technologies utilisées (telles que CMS)
+  - Verdicts (au cas où d'autres utilisateurs auraient signalé l'URL comme étant malveillante)
+  - Bouton de recherche pour vérifier le site dans d'autres moteurs d'analyse  
 
-- 🧰 [Hybrid Analysis](https://www.hybrid-analysis.com/) is a hosted sandbox which can load a web page within a test environment and match website behavior against various heuristics of malicious activity and checking internal indicators against known threats. Note some of the key features and the skills needed to interpret the results:
-  - After submitting an URL, select the environment to be used as a sandbox. In case you select ‘Quick Scan’, a full sandbox execution will not take place, but rather a smaller set of static analysis and indicator checks.
-- [VirusTotal ](https://www.virustotal.com/)can also check an URL for malicious content using . Note that Hybrid Analysis includes VirusTotal lookups and considers a broader range of issues in determining its rating.
+- 🧰[Hybrid Analysis](https://www.hybrid-analysis.com/) est un bac à sable hébergé qui peut charger une page Web dans un environnement de test et faire correspondre le comportement du site Web contre diverses heuristiques d'activité malveillante et vérifier les indicateurs internes contre les menaces connues. Notez certaines des caractéristiques clés et les compétences nécessaires pour interpréter les résultats :
+  - Après avoir soumis une URL, sélectionnez l'environnement à utiliser comme bac à sable. Si vous sélectionnez « Analyse rapide », une exécution de bac à sable complète n'aura pas lieu, mais plutôt un plus petit ensemble d'analyses statiques et de vérifications des indicateurs.
+- [VirusTotal](https://www.virustotal.com/) peut également vérifier une URL pour détecter l'utilisation éventuelle de contenu malveillant. Notez que Hybrid Analysis inclut les recherches VirusTotal et prend en compte un plus large éventail de questions pour déterminer sa notation.
 
-Note that a sophisticated web application could detect that a request comes from the IP ranges of these tools and serve different data or no data to the request, while delivering malicious content to other IPs.
+Notez qu'une application Web sophistiquée pourrait détecter qu'une requête provient des plages d'adresses IP de ces outils et servir différentes données ou aucune donnée à la requête, tout en fournissant un contenu malveillant à d'autres adresses IP.
 
-## Manual and specific tools for inspection of a website
+## Manuel et outils spécifiques pour l'inspection d'un site Web
 
-One of the easiest ways in which we could analyze a website is by [using our web browser’s built-in inspection tool](https://blog.hubspot.com/website/how-to-inspect), which usually breaks the website down into different sub-parts, can sometimes illustrate what code the website requests from which server, and allows us to modify the site’s code and see how this changes the layout and functionality.
+L'un des moyens les plus simples d'analyser un site Web est d'[utiliser l’outil d’inspection intégré de notre navigateur Web](https://blog.hubspot.com/website/how-to-inspect), qui décompose généralement le site Web en différentes sous-parties, peut parfois illustrer quel code le site Web demande à partir de quel serveur, et nous permet de modifier le code du site et de voir comment cela change la mise en page et la fonctionnalité.
 
-## Brute force
+### Force brute
 
-As in the Human Rights Watch report linked above, using programmatic approaches to brute forcing URLs is a commonly used technique during OSINT. Several tools and approaches can be learned:
+Comme dans le rapport de Human Rights Watch ci-dessus, l'utilisation d'approches programmatiques pour forcer les URL constitue une technique couramment utilisée pendant l'OSINT. Plusieurs outils et approches peuvent être appris :
 
 - OWASP [DirBuster](https://gitlab.com/kalilinux/packages/dirbuster)
-- Wordlist Generators: Often used for password cracking, wordlists are also used for brute forcing discovery of folders and sub-domains. These wordlists will work in conjunction with the tools listed in the previous point. See tools such as Crunch ([Tutorial 1](https://www.hackers-arise.com/post/creating-a-custom-wordlist-with-crunch) | [Tutorial 2](https://null-byte.wonderhowto.com/how-to/tutorial-create-wordlists-with-crunch-0165931/))
+- Générateurs de listes de mots : souvent utilisés pour le déchiffrement de mots de passe, les listes de mots de passe sont également utilisées pour la découverte de force brute de dossiers et de sous-domaines. Ces listes de mots fonctionneront conjointement avec les outils énumérés au point précédent. Voir les outils comme Crunch ([Tutoriel 1](https://www.hackers-arise.com/post/creating-a-custom-wordlist-with-crunch) | [Tutoriel 2](https://null-byte.wonderhowto.com/how-to/tutorial-create-wordlists-with-crunch-0165931/))
 
-## Phishing kit analysis
+### Analyse du kit d'hameçonnage
 
-Most attacks you will encounter will use a pre-made or modified phishing kit, a collection of code and templates that allow attackers to easily build a convincing phishing website. Some phishing kits have tell-tale signs; many of them, for example, use certain mechanisms to avoid being [detected and indexed by search engines](https://arxiv.org/pdf/2210.08273.pdf). They might even refuse to load from [the IP addresses of search engines or security companies](https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html).
+La plupart des attaques que vous rencontrerez utiliseront un kit d'hameçonnage préfabriqué ou modifié, une collection de code et de modèles qui permettent aux cybercriminels de créer facilement un site Web d'hameçonnage convaincant. Certains kits d'hameçonnage présentent des signes révélateurs ; beaucoup d'entre eux, par exemple, utilisent certains mécanismes pour éviter d'être [détectés et indexés par les moteurs de recherche](https://arxiv.org/pdf/2210.08273.pdf). Ils pourraient même refuser le chargement à partir des [adresses IP des moteurs de recherche ou des entreprises de sécurité](https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html).
 
-Some phishing kits also have the ability to bypass multi-factor authentication, for example by capturing a code that a targeted person typed in and immediately using it to log on to the real web page on their behalf. [This article is a great write-up](https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/) on how an open source phishing kit used by security teams who test out security mechanisms can capture and use two-factor authentication data (and what could be done to prevent this). You can also [check out another writeup of a phishing kit](https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/) (this kit was written by cybercriminals rather than security researchers), which used some MFA bypass and fascinating techniques to frustrate detection.
+Certains kits d'hameçonnage ont également la capacité de contourner l'authentification multifactorielle, par exemple en capturant un code qu'une personne ciblée a saisi et en l'utilisant immédiatement pour se connecter à la page Web réelle en son nom. [Cet article est une excellente synthèse](https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/) sur la façon dont un kit d'hameçonnage open source utilisé par les équipes de sécurité qui testent les mécanismes de sécurité peut capturer et utiliser des données d’authentification à deux facteurs (et ce qui pourrait être fait pour l'éviter). Vous pouvez également [consulter un autre article sur un kit d'hameçonnage](https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/) (ce kit a été écrit par des cybercriminels plutôt que des chercheurs en sécurité), qui a utilisé un contournement MFA et des techniques fascinantes pour entraver la détection.
 
-## Learning Resources
+
+## Ressources d'apprentissage
 
 {{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="A good write-up and analysis of a highly sophisticated phishing campaign which targeted civil society groups. Includes extensive discussions on infrastructure and attribution." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
 
@@ -113,7 +114,7 @@ Some phishing kits also have the ability to bypass multi-factor authentication, 
 
 {{% resource title="How to use Inspect Element in Chrome, Safari, and Firefox" languages="English" cost="Free" description="Every major web browser now contains an inspect element feature, which allows you to carefully study and modify the code components which make up a web page. This article provides a brief overview of that feature and shows how to activate it on major browsers." url="https://blog.hubspot.com/website/how-to-inspect" %}}
 
-{{% resource title="Example analyses of malicious websites" languages="English" cost="Free" description="A good guide on how to do some initial analysis and triage on a website to figure out whether it is malicious and has been labeled by others as such." url="https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b" additional_urls="https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith" %}}
+{{% resource title="Example analyses of malicious websites" languages="English" cost="Free" description="A good guide on how to do some initial analysis and triage on a website to figure out whether it is malicious and has been labeled by others as such." url="https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b" %}}
 
 {{% resource title="Classification of Web Phishing Kits for early detection by platform providers" languages="English" cost="Free" description="An academic paper which looks at phishing kits, what mechanisms some of them use, and how we can use tools such as machine learning to detect them." url="https://arxiv.org/pdf/2210.08273.pdf" %}}
 
@@ -127,17 +128,18 @@ Some phishing kits also have the ability to bypass multi-factor authentication, 
 
 ## Practice
 
-- [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
-- [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
+* [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
+* [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
 
 ## Skill Check
 
 Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/room/walkinganapplication)
 
-- Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
-- Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
-  - Who owns the infrastructure that’s serving the website?
-  - What other domains does this side load or link to? What do they do?
-  - When was this domain registered?
-  - (optional) What software is being used to serve the site?
-  - Have others listed the site as malicious?
+* Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
+* Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
+
+  * Who owns the infrastructure that’s serving the website?
+  * What other domains does this side load or link to? What do they do?
+  * When was this domain registered?
+  * (optional) What software is being used to serve the site?
+  * Have others listed the site as malicious?
