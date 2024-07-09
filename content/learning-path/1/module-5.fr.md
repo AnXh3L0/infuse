@@ -1,10 +1,11 @@
 ---
 style: module
 title: "Enquête passive : analyser les en-têtes d'e-mail"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Le sous-thème vous apprendra comment analyser les métadonnées
+  détaillées qui documentent l'origine d'un e-mail, les serveurs qu'il a
+  parcourus, les informations sur les contrôles de spam possibles et bien plus
+  encore. Ces métadonnées peuvent constituer un élément crucial de toute enquête
+  approfondie sur les e-mails potentiellement malveillants.
 weight: 5
 ---
 
