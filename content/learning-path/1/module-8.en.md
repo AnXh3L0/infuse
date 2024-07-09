@@ -49,14 +49,6 @@ If you are a member of an organization like [CiviCERT](https://www.civicert.org/
 
 You can also publish your findings on a blog or somewhere like GitHub. This requires little effort, but also can be limited in its impact. However, your report may be invaluable to someone who is investigating a similar set of infrastructure.
 
-## Learning Resources
-
-{{% resource title="Maltego" languages="English" cost="There is a community version free for non-commercial use, Pro versions cost 999 USD a year" description="Maltego can be used for visual representation of findings and make it easier to identify connections between different indicators." url="https://www.maltego.com/" %}}
-
-{{% resource title="Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs" languages="English" cost="Free" description="This is a very thorough report on a major phishing campaign. Don’t feel the need to make yours this complete, but feel free to take inspiration from it." url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
-
-{{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="Another great write-up and a summary of an investigation. Once again, yours will likely be less thorough but this one is a great example." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
-
 ## Skill Check
 
 Take either one of the phishing emails or targeted malicious emails which you discussed in Subtopic 2 or a domain you found on [PhishTank](https://phishtank.org/) (be careful when analyzing the latter, assume that all domains listed there are malicious). You could also use an email or domain you analyzed in a prior subtopic. Imagine and plan out what a report describing the wider campaign behind those emails would look like. Since the report will not be shared with anyone, feel free to make up some details. Afterwards, write down some notes which would summarize/ outline that report.
@@ -66,3 +58,13 @@ If you are working with a peer or a mentor, discuss those notes with them. They 
 - Do the notes accurately describe the type of attack?
 - Does the report contain and present information in a way which could be useful for others in the civil society space, for example by including indicators of compromise (IoC)?
 - Does the report summarize its findings in a responsible way, for example by defanging URLs and redacting sensitive data about targeted persons?
+
+## Learning Resources
+
+{{% resource title="Maltego" languages="English" cost="There is a community version free for non-commercial use, Pro versions cost 999 USD a year" description="Maltego can be used for visual representation of findings and make it easier to identify connections between different indicators." url="https://www.maltego.com/" %}}
+
+{{% resource title="Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs" languages="English" cost="Free" description="This is a very thorough report on a major phishing campaign. Don’t feel the need to make yours this complete, but feel free to take inspiration from it." url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
+
+{{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="Another great write-up and a summary of an investigation. Once again, yours will likely be less thorough but this one is a great example." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
+
+
