@@ -52,7 +52,8 @@ Read the resources and documents below to familiarize yourself a bit with (or re
 - **(Advanced) **Familiarize yourself with various techniques and mechanisms spam filters use to identify spam / spoofed emails.
   - Look at the list of available modules (and selectors) supported by RSPAMD [https://rspamd.com/doc/modules/](https://rspamd.com/doc/modules/)
 
-## Analyzing headers
+## Main Section
+### Analyzing headers
 
 The [Nebraska GenCyber Team created a quick and relatively comprehensive course on email headers](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers) : we recommend it to all who want to learn about the topic.
 

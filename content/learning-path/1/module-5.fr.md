@@ -54,7 +54,8 @@ Lisez les ressources et documents ci-dessous pour vous familiariser avec (ou ré
 - **(Avancé) **Familiarisez-vous avec les diverses techniques et mécanismes que les filtres antispam utilisent pour repérer les courriers indésirables et les adresses e-mail falsifiées.
   - Consultez la liste des modules disponibles (et des sélecteurs) pris en charge par RSPAMD [https://rspamd.com/doc/modules/](https://rspamd.com/doc/modules/)
 
-## Analyse des en-têtes
+## Section Principale
+###  Analyse des en-têtes
 
 [L'équipe GenCyber du Nebraska a créé un cours rapide et relativement complet sur les en-têtes d'e-mails](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers) : nous le recommandons à tous ceux qui veulent en savoir plus sur le sujet.
 
