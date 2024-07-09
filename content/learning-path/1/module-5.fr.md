@@ -12,17 +12,13 @@ weight: 5
 ## Cas d'utilisation
 
 Il y a beaucoup plus de choses dans les e-mails qu'il n'y paraît. Le sous-thème vous apprendra comment **analyser les métadonnées détaillées** qui documentent l'origine d'un e-mail, les serveurs qu'il a parcourus, les informations sur les contrôles de spam possibles et bien plus encore. Ces métadonnées peuvent constituer un élément crucial de toute enquête approfondie sur les e-mails potentiellement malveillants.
-
 Utilisez cette compétence après ou en parallèle au sous-thème.
-
 Triage dans ce parcours d'apprentissage. Certaines de ces compétences peuvent être nécessaires dans le cadre du processus de triage afin de décider si un message est suspect.
-
 Étant donné que les en-têtes d'e-mails peuvent contenir des références à d'autres domaines et infrastructures, les participants doivent d'abord se familiariser avec le sous-thème 4, qui examine l'analyse du domaine et des informations IP, avant de s'attaquer à celui-ci.
 
 ## Objectifs
 
 Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
-
 - Extraire les en-têtes complets d'un e-mail reçu ou qu'ils analysent ;
 - Analyser les en-têtes extraits, en accordant une attention particulière à :
   - L'identité du ou des serveurs qui ont envoyé l'e-mail ;
@@ -34,9 +30,7 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 Chaque e-mail a des en-têtes, qui contiennent des métadonnées cruciales concernant l'expéditeur, le destinataire et l'e-mail en lui-même. Dans cette section, nous examinerons les en-têtes d'e-mails, la façon dont vous pouvez les analyser et la façon dont les e-mails peuvent être usurpés. Cela nécessite des connaissances de base
 
 ## Connaissances de base
-
 Lisez les ressources et documents ci-dessous pour vous familiariser avec (ou récapituler vos connaissances sur) les en-têtes d'e-mails, SPF et DKIM.
-
 - Comprendre [ce que sont les en-têtes d'e-mails](https://support.google.com/mail/answer/29436?hl=en) et comment nous pouvons les consulter dans plusieurs systèmes
 - Comprendre les bases de l'usurpation d'adresse e-mail et utiliser SPF et DKIM pour la combattre
   - En savoir plus sur l'usurpation d'adresse e-mail/apprendre à identifier les e-mails usurpés
@@ -54,12 +48,11 @@ Lisez les ressources et documents ci-dessous pour vous familiariser avec (ou ré
 - **(Avancé) **Familiarisez-vous avec les diverses techniques et mécanismes que les filtres antispam utilisent pour repérer les courriers indésirables et les adresses e-mail falsifiées.
   - Consultez la liste des modules disponibles (et des sélecteurs) pris en charge par RSPAMD [https://rspamd.com/doc/modules/](https://rspamd.com/doc/modules/)
 
-## Analyse des en-têtes
+## Section principale
+### Analyse des en-têtes
 
 [L'équipe GenCyber du Nebraska a créé un cours rapide et relativement complet sur les en-têtes d'e-mails](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers) : nous le recommandons à tous ceux qui veulent en savoir plus sur le sujet.
-
 En analysant les en-têtes, vous en apprendrez beaucoup sur les différents domaines impliqués dans la configuration de l'e-mail. Une fois que vous avez une liste de ces domaines, vous pouvez utiliser les mêmes outils que nous avons utilisés dans la section précédente (dig, whois, geoIP et autres) pour en savoir plus à leur sujet.
-
 Les administrateurs de systèmes qui utilisent des domaines de travail tels que Google Workspace et Microsoft 365 ont souvent accès à de puissants outils de journalisation et de recherche de journaux : ils peuvent les utiliser pour rechercher dans leurs systèmes des identifiants trouvés dans les en-têtes d'e-mails (tels que des domaines suspects), ce qui peut les aider à déterminer qui, le cas échéant, a été ciblé au sein de leur organisation. Consultez la documentation de [Google](https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA) et de [Microsoft](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring) sur la recherche dans les journaux. Notez que ces fonctionnalités de recherche sont généralement limitées aux comptes professionnels ou d'entreprise.
 
 ## Pratique
