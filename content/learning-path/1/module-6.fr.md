@@ -1,10 +1,10 @@
 ---
 style: module
 title: "Enquête active : analyse des e-mails malveillants"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Qu'il s'agisse de pure ingénierie sociale, de phishing ou de
+  livraison de logiciels malveillants, les e-mails malveillants peuvent être
+  assez complexes. Ce module vous apprendra à les interpréter et à les
+  comprendre, ainsi qu'à trouver l'infrastructure à laquelle ils sont liés.
 weight: 6
 ---
 
