@@ -30,9 +30,11 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 
 ---
 
+## Section Principale
+
 L'enquête passive utilise des outils et des ressources de renseignement open source (OSINT) qui peuvent nous donner de nombreux détails sur l'empreinte numérique de l'infrastructure malveillante sans que le cybercriminel remarque que nous enquêtons.
 
-## Connaissances de base
+### Connaissances de base
 
 Cela nous oriente vers les bases des URL, DNS et IPv4/IPv6. Si vous vous sentez à l'aise avec ces concepts, c'est une très bonne chose ! Vous pouvez poursuivre et passer directement à la section « Flux de travail ». Dans le cas contraire, consultez les documents et les ressources ci-dessous :
 
@@ -57,11 +59,11 @@ Cela nous oriente vers les bases des URL, DNS et IPv4/IPv6. Si vous vous sentez 
 
 - En plus des adresses IP, il est utile de lire les [numéros de port](https://www.techtarget.com/searchnetworking/definition/port-number).
 
-Flux de travail : outils et capacités
+### Flux de travail : outils et capacités
 
 Les enquêtes IP/DNS passives peuvent être divisées en plusieurs catégories.
 
-Obtenir des informations IP/DNS essentielles
+#### Obtenir des informations IP/DNS essentielles
 
 L'une des premières choses que nous devrions faire dans notre enquête est d'obtenir des informations initiales sur les domaines et les hôtes. Plusieurs outils et catégories d'outils peuvent nous y aider.
 
@@ -83,7 +85,7 @@ L'une des premières choses que nous devrions faire dans notre enquête est d'ob
 
 🛠️ Prenez un moment pour vous exercer à utiliser ces services. Vous pouvez, par exemple, les utiliser pour rechercher votre propre site Web ou celui de votre organisation.
 
-Découvrir les informations DNS/IP cachées
+#### Découvrir les informations DNS/IP cachées
 
 Il existe différentes façons d'obtenir des informations supplémentaires sur les hôtes d'un domaine. Notez toutefois que la plupart de ces techniques ne fonctionnent que dans certains cas et échouent souvent. Si l'une d'elles ne fonctionne pas, ne vous découragez pas. Voici quelques-unes de ces méthodes :
 
@@ -93,7 +95,7 @@ Il existe différentes façons d'obtenir des informations supplémentaires sur l
 
 Il existe des outils qui utilisent ces techniques et d'autres pour essayer de découvrir des ressources réseau supplémentaires. L'un de ces outils, encore en cours de développement, s'appelle [Fierce](https://www.kali.org/tools/fierce/). [DNS Recon](https://securitytrails.com/blog/dnsrecon-tool) est un autre outil populaire. Cet [article de blog décrivant DNSRecon](https://securitytrails.com/blog/dnsrecon-tool#content-alternatives-to-dnsrecon) inclut également une liste d'autres outils d'énumération DNS populaires.
 
-Enrichir les informations IP/DNS à l'aide des services Internet Scanner
+#### Enrichir les informations IP/DNS à l'aide des services Internet Scanner
 
 Une fois que vous avez obtenu des informations d'identification (domaines et adresses IP), vous pouvez rechercher ces données plus en profondeur en utilisant certains services qui vous permettent d'enquêter sur des informations supplémentaires concernant l'hôte et toute activité qui lui est associée.
 
@@ -110,14 +112,14 @@ D'autres services de scanner recueillent également l'**historique DNS**, ce qui
 - [Traces de sécurité](https://securitytrails.com/)
 - [Microsoft Defender Threat Intelligence ](https://ti.defender.microsoft.com/)(anciennement RiskIQ) fournit des données d'historique et de résolution DNS limitées aux clients de niveau libre.
 
-Enrichir les informations IP/DNS à l'aide de bases de données de renseignements sur les menaces
+#### Enrichir les informations IP/DNS à l'aide de bases de données de renseignements sur les menaces
 
 Plusieurs services recueilleront des indicateurs de menaces et d'antécédents de comportement malveillant. Si vous devez vous assurer qu'aucune nouvelle activité d'analyse n'est amorcée (ce qui constituerait une enquête active), assurez-vous de ne pas effectuer de nouvelle analyse avec votre recherche (p. ex., alors que VirusTotal vous permet de vérifier une URL, il lancera une nouvelle analyse contre l'URL, en lançant ainsi une activité qui pourrait être détectée comme une enquête).
 
 - [Alienvault OTX](https://otx.alienvault.com/) est une ressource ouverte axée sur la communauté pour les indicateurs malveillants. La recherche d'une adresse IP ou d'un nom d'hôte affichera des informations OSINT utiles ainsi que des enregistrements de toute activité malveillante précédemment obtenue.
 - [Mandiant Advantage](https://www.mandiant.com/multi-vendor-security-platform-free-access) (propriété de Google) fournit des fonctionnalités de recherche limitées avec son offre gratuite.
 
-Utilisation de la recherche de certificats
+#### Utilisation de la recherche de certificats
 
 Presque tous les sites Web qu'un utilisateur rencontrera utilisent maintenant le protocole HTTPS, qui utilise une technologie connue sous le nom de TLS (Transport Layer Security). Les sites Web malveillants l'utilisent également, en partie parce que les utilisateurs croient que HTTPS et un verrou apparaissant dans la barre d'URL du navigateur pour signifier que le site Web est sûr, indépendamment d'autres facteurs.
 
