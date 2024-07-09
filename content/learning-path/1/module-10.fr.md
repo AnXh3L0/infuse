@@ -1,10 +1,11 @@
 ---
 style: module
 title: Exercice Capture The Flag
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Nous avons également conçu un exercice Capture The Flag dans lequel
+  les apprenants peuvent analyser un e-mail de phishing et l'infrastructure à
+  laquelle il est lié. L'exercice peut être utilisé comme pratique
+  supplémentaire ou comme exercice de vérification des compétences, et peut être
+  trouvé ici.
 weight: 10
 ---
 
