@@ -29,9 +29,11 @@ After completing this subtopic, practitioners should be able to do the following
 
 ---
 
+## Main Section
+
 Passive investigation utilizes open source intelligence (OSINT) tools and resources which can give us many details about the digital footprint of attack infrastructure without an attacker noticing that we are investigating.
 
-## Foundation Knowledge
+### Foundation Knowledge
 
 This dives into the basics of URLs, DNS, and IPv4/IPv6. If you feel comfortable with those concepts, excellent! Go and jump to the ‘workflows’ section. Otherwise, check out the documents and resources below:
 
@@ -52,11 +54,11 @@ This dives into the basics of URLs, DNS, and IPv4/IPv6. If you feel comfortable 
       [https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/](https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/)
 - In addition to IP addresses, it’s useful to read up on [port numbers](https://www.techtarget.com/searchnetworking/definition/port-number).
 
-## Workflows: Tools & Capabilities
+### Workflows: Tools & Capabilities
 
 Passive IP/DNS investigations can be divided into several categories.
 
-## Obtain Essential IP/DNS Information
+#### Obtain Essential IP/DNS Information
 
 One of the first things we should do in our investigation is gain some initial information on domains and hosts. Several tools and tool categories that can help with that.
 
@@ -77,7 +79,7 @@ One of the first things we should do in our investigation is gain some initial i
 
 🛠️ Take a moment to practice using these services. You could, for example, use them to look up your own website or that of your organization.
 
-### Discovering Hidden DNS/IP Information
+#### Discovering Hidden DNS/IP Information
 
 There are a variety of ways that one can obtain additional information about hosts in a domain. Do note, however, that most of those techniques only work some of the time and often fail. If one of them does not work, do not be discouraged. Some of these methods include:
 
@@ -87,7 +89,7 @@ There are a variety of ways that one can obtain additional information about hos
 
 There exist tools that use these and other techniques to try to discover additional network resources. One of the first of these, still under development, is called [Fierce](https://www.kali.org/tools/fierce/). Another popular tool is [DNS Recon](https://securitytrails.com/blog/dnsrecon-tool). This [blog post describing DNSRecon](https://securitytrails.com/blog/dnsrecon-tool#content-alternatives-to-dnsrecon) also includes a list of other popular DNS enumeration tools.
 
-### Enriching IP/DNS information using Internet Scanner Services
+#### Enriching IP/DNS information using Internet Scanner Services
 
 Once you have obtained identifier information (domains and IPs) you can search this data in greater depth using some services which allow you to investigate additional information about the host and any associated activity around it.
 
@@ -104,14 +106,14 @@ Other scanner services also collect **DNS history**, allowing you to peer back i
 - [Security Trails](https://securitytrails.com/)
 - [Microsoft Defender Threat Intelligence ](https://ti.defender.microsoft.com/)(formerly RiskIQ) provides limited DNS history and resolutions data to free-tier customers.
 
-### Enriching IP/DNS information using threat intelligence databases
+#### Enriching IP/DNS information using threat intelligence databases
 
 Several services will collect indicators of threats and history of malicious behavior. If you need to ensure that no new scanning activity is initiated (which would be active investigation), ensure that you are not initiating a new scan with your search (for instance, while VirusTotal allows you to check a URL, it will launch a new scan against the URL, thereby initiating activity which could be detected as an investigation).
 
 - [Alienvault OTX](https://otx.alienvault.com/) is a community-driven open resource for malicious indicators. Searching for an IP or host name will display useful OSINT information as well as records of any malicious activity previously obtained.
 - [Mandiant Advantage](https://www.mandiant.com/multi-vendor-security-platform-free-access) (owned by Google) provides search limited functionality on their free tier.
 
-### Using Certificate Search
+#### Using Certificate Search
 
 Almost every website a user will encounter now uses HTTPS, which uses a technology known as TLS (Transport Layer Security). Malicious websites use it too, in part playing on users' beliefs that HTTPS and a lock appearing in the browser's URL bar means that the website is therefore safe, regardless of other factors.
 
