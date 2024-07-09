@@ -1,10 +1,14 @@
 ---
 style: module
 title: "Enquête passive : analyser les URL, les noms d'hôtes et les adresses IP"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Un praticien peut utiliser les compétences décrites dans ce
+  sous-thème pour commencer une enquête passive contre des serveurs sur
+  Internet. Une enquête passive est une enquête qui ne charge aucun site Web et
+  ne recherche que les données publiquement disponibles à leur sujet. Elle
+  utilise des outils et des ressources de renseignement open source (OSINT) qui
+  peuvent nous donner de nombreux détails sur l'empreinte numérique de
+  l'infrastructure d'attaque sans que l'attaquant ne remarque que nous
+  enquêtons.
 weight: 4
 ---
 
