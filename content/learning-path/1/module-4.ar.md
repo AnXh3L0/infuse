@@ -70,6 +70,7 @@ One of the first things we should do in our investigation is gain some initial i
   Look out for common content distribution reverse-proxy name servers such as those offered by Akamai (e.g. a1-64.akam.net), CloudFlare (e.g. eve.ns.cloudflare.com), Fastly (e.g. ns3.fastly.net), as these will obscure the actual origin server IP. After spending some time looking up name servers, you will easily be able to recognize many of those proxies. If you, for example, run the dig command to look up theguardian.com, you will see that it resolves to Fastly servers (at least at time of writing).
 
 - geoIP
+
   IP addresses are roughly tied to physical geographies. This means that, if you know an IP address, [you can figure out](https://www.maxmind.com/en/geoip-demo) (MaxMind GeoIP lookup demo linked)) with some degree of certainty where in the world (country, region) the device that uses this address is located. There are many databases, known as geoIP, which allow you to look that up. Do note that the accuracy of IP-based lookups can be extremely varied: sometimes, it’s possible to track down an IP address to a specific organization, while at other times you only get country-level granularity.
 
 🛠️ Take a moment to practice using these services. You could, for example, use them to look up your own website or that of your organization.
