@@ -6,10 +6,10 @@ display_url: https://infuse-preview.netlify.app
 
 backend:
   name: git-gateway
-  repo: AnXh3L0/infuse
-  branch: main
+  #repo: AnXh3L0/infuse
+  #branch: main
 
-local_backend: false
+local_backend: true
 
 publish_mode: editorial_workflow
 media_folder: static/media/uploads

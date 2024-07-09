@@ -140,3 +140,9 @@ details summary::-webkit-details-marker {
 details summary::marker {
   display: none;
 }
+
+.prose {
+  * + * {
+    margin-top: .15em;
+  }
+}
