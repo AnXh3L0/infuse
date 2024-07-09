@@ -62,7 +62,15 @@ En analysant les en-têtes, vous en apprendrez beaucoup sur les différents doma
 
 Les administrateurs de systèmes qui utilisent des domaines de travail tels que Google Workspace et Microsoft 365 ont souvent accès à de puissants outils de journalisation et de recherche de journaux : ils peuvent les utiliser pour rechercher dans leurs systèmes des identifiants trouvés dans les en-têtes d'e-mails (tels que des domaines suspects), ce qui peut les aider à déterminer qui, le cas échéant, a été ciblé au sein de leur organisation. Consultez la documentation de [Google](https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA) et de [Microsoft](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring) sur la recherche dans les journaux. Notez que ces fonctionnalités de recherche sont généralement limitées aux comptes professionnels ou d'entreprise.
 
-## Learning Resources
+## Pratique
+
+Après avoir lu tous les documents du cours d'[analyse des en-têtes d'e-mails de l'équipe GenCyber du Nebraska](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/), faites les exercices qui y sont liés. Le site a un problème de lien, les exercices étant souvent indisponibles directement, mais ils peuvent également être téléchargés [ici](https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers).
+
+## Contrôle de compétence
+
+Cherchez un e-mail dans votre boîte de réception ou dossier spam. Vous pouvez également demander à un pair ou à un mentor de vous envoyer les en-têtes d'e-mails qu'il a récemment reçus. Analysez les en-têtes de l'e-mail en utilisant les mêmes techniques que celles décrites dans l'exercice pratique, y compris en les chargeant dans l'[outil d'en-tête d'e-mail Google Admin Toolbox](https://toolbox.googleapps.com/apps/messageheader/). Ensuite, répondez aux questions 1, 2, 3 et 5 décrites dans la [section d'enquête](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#investigation) du cours d'analyse des en-têtes d'e-mails de l'équipe GenCyber du Nebraska, cette fois en utilisant les en-têtes de l'e-mail que vous avez trouvé, plutôt que l'e-mail joint au cours.
+
+## Ressources d'apprentissage
 
 {{% resource title="Que sont les en-têtes d'e-mails?" description="Une bonne introduction aux en-têtes d'e-mails. Met en évidence trois groupes importants d'en-têtes d'e-mails. Comprend une liste de guides étape par étape pour différents MUA (agent utilisateur de messagerie)" languages="Anglais" cost="Gratuit\n[https://mailtrap.io/blog/email-headers/](https://mailtrap.io/blog/email-headers/)" %}}
 
@@ -90,10 +98,4 @@ Les administrateurs de systèmes qui utilisent des domaines de travail tels que 
 
 {{% resource title="Surveillance, rapports et suivi des messages dans Exchange Online" description="Décrit comment les administrateurs de comptes d'entreprise Microsoft peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels" url="[https://learn.microsoft.com/en-us/exchange/monitoring/monitoring](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring)" %}}
 
-## Pratique
 
-Après avoir lu tous les documents du cours d'[analyse des en-têtes d'e-mails de l'équipe GenCyber du Nebraska](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/), faites les exercices qui y sont liés. Le site a un problème de lien, les exercices étant souvent indisponibles directement, mais ils peuvent également être téléchargés [ici](https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers).
-
-## Contrôle de compétence
-
-Cherchez un e-mail dans votre boîte de réception ou dossier spam. Vous pouvez également demander à un pair ou à un mentor de vous envoyer les en-têtes d'e-mails qu'il a récemment reçus. Analysez les en-têtes de l'e-mail en utilisant les mêmes techniques que celles décrites dans l'exercice pratique, y compris en les chargeant dans l'[outil d'en-tête d'e-mail Google Admin Toolbox](https://toolbox.googleapps.com/apps/messageheader/). Ensuite, répondez aux questions 1, 2, 3 et 5 décrites dans la [section d'enquête](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#investigation) du cours d'analyse des en-têtes d'e-mails de l'équipe GenCyber du Nebraska, cette fois en utilisant les en-têtes de l'e-mail que vous avez trouvé, plutôt que l'e-mail joint au cours.
