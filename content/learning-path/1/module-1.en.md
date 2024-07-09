@@ -1,7 +1,12 @@
 ---
 style: module
 title: Triage - Deciding when to investigate
-description: ""
+description: When you receive or are forwarded a suspicious message, conduct
+  initial triage in order to determine if it is indeed malicious, to figure out
+  the best rapid response for the targeted recipient(s) if it is, and to
+  determine if further investigation is needed. For most messages, it’s enough
+  to conduct basic heuristics to separate untargeted from targeted threats and
+  to identify harm-reducing actions.
 weight: 1
 ---
 ## Use Case
