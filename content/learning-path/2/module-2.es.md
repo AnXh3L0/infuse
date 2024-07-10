@@ -1,8 +1,8 @@
-+++
-style = "module"
-weight = 2
-title = "OPSEC prerequisites for detecting malware"
-+++
+---
+style: module
+title: OPSEC prerequisites for detecting malware
+weight: 2
+---
 
 ## Use Case
 

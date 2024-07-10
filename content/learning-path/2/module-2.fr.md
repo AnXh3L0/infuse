@@ -1,8 +1,8 @@
-+++
-style = "module"
-weight = 2
-title = "OPSEC prerequisites for detecting malware"
-+++
+---
+style: module
+title: OPSEC prerequisites for detecting malware
+weight: 2
+---
 
 ## Use Case
 
@@ -59,13 +59,7 @@ For a deeper look at the topic, review the guide by Defensive Lab Agency on how 
 
 This last term on chain of custody refers to best practice in digital forensics and incident response to record the handling of a device in order to preserve evidence and allow evidence collected to be used in any potential legal proceedings. The linked article provides a good introduction to general-purpose best practices you can follow in case you are in a position to be handling evidence which might be used in a scenario with a higher burden of proof on evidence.
 
-## Learning Resources
 
-{{% resource title="Intermediate guide - How to handle a potentially compromised device" languages="English" cost="Free" description="A step-by-step guide on how to handle devices with iOS or Android which you suspect might have malware on them prior to starting detection work" url="https://pts-project.org/guides/g6/" %}}
-
-{{% resource title="Virtual machine chapter of the Field Guide to incident response for civil society and media (chapter 6)" languages="English" cost="Free" description="An introductory overview of how malware analysts can start working with virtual machines and an installation of the Linux distribution" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
-
-{{% resource title="Technical simulation with canary tokens" languages="English" cost="Free" description="A guide on how to use canary tokens, an offensive security tool, to simulate malware trackers. Can be very useful in teaching defenders what data can be easily exfiltrated" url="https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/" %}}
 
 
 ## Practice
@@ -79,3 +73,9 @@ After you have set up your REmnux VM, install and then connect to a reputable VP
 Which IP address did it trigger? What user agent?
 
 Talk to your peer / mentor about what data stays on your VM and what doesn’t. If you ran a piece of malware in your VM which contacted a server, would this go through your VPN or home/ office network connection?
+
+## Ressources d'apprentisage
+
+{{% resource title="Guide intermédiaire : Comment gérer un appareil potentiellement compromis" languages="Un guide étape par étape sur la façon de gérer les appareils avec iOS ou Android qui, selon vous, pourraient contenir des logiciels malveillants avant de commencer le travail de détection" cost="Anglais" description="Gratuit" url="https://pts-project.org/guides/g6/" %}}
+{{% resource title="Chapitre sur les machines virtuelles du Guide d'intervention sur le terrain pour la société civile et les médias (chapitre 6)" languages="Une introduction générale à la façon dont les analystes de logiciels malveillants peuvent travailler avec des machines virtuelles et une installation de la distribution Linux" cost="Anglais" description="Gratuit" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+{{% resource title="Simulation technique avec des jetons canaris" languages="Un guide sur l'utilisation des jetons canaris, un outil de sécurité offensif, pour simuler les traqueurs de logiciels malveillants. Peut être très utile pour enseigner aux défenseurs quelles données peuvent être facilement exfiltrées" cost="Anglais" description="Gratuit" url="https://docs.google.com/document/d/14YViryXq2id2PaLeT91KxS-u67-26BDuLPTP_O5BHTM/edit?usp=sharing" %}}
