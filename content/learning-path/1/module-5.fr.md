@@ -98,5 +98,3 @@ Cherchez un e-mail dans votre boîte de réception ou dossier spam. Vous pouvez 
 {{% resource title="Trouver des messages avec Email Log Search" description="Décrit comment les administrateurs de comptes d'entreprise et d'entreprise Google peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels et d'entreprise" url="[https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA](https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA)" %}}
 
 {{% resource title="Surveillance, rapports et suivi des messages dans Exchange Online" description="Décrit comment les administrateurs de comptes d'entreprise Microsoft peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels" url="[https://learn.microsoft.com/en-us/exchange/monitoring/monitoring](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring)" %}}
-
-

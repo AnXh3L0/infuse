@@ -147,6 +147,27 @@ Censys propose une lecture plus approfondie sur les techniques avancées de suiv
 - De nombreuses URL malveillantes utilisées dans les e-mails d'hameçonnage utilisent (parfois plusieurs) redirections, ce qui signifie que l'URL initiale peut être moins pertinente pour l'analyse. L'identification des redirections et des autres adresses IP impliquées nécessitera une interaction active avec l'URL, ce qui est couvert dans la compétence d'Enquête active.
 - Les cybercriminels peuvent héberger leur propre serveur DNS et suivre les demandes. Dans ce cas, les requêtes DNS peuvent ne pas être « passives » et alerter le cybercriminel au sujet de l'enquête. Faites particulièrement attention aux noms d'hôtes qui pourraient contenir des identificateurs, comme r2378r233yr39wjwr.exemple.com.
 
+## Pratique
+
+Choisissez un nom de domaine plus ou moins aléatoire, en vous assurant qu'il n'est pas hébergé derrière un service de distribution de contenu/reverse-proxy tel que Cloudflare (vous pouvez le déterminer en le recherchant rapidement à l'aide d'un outil tel que dig et en utilisant l'option NS pour rechercher des serveurs de noms). À l'aide des catégories d'outils ci-dessus, examinez le domaine et essayez d'expliquer :
+
+- Où le domaine est-il enregistré et, le cas échéant, qui l'a enregistré?
+- Quelle est l'adresse IP du domaine?
+- Qui gère cette adresse IP?
+- Où ce serveur est-il localisé?
+- (Si les participants ont accès à Shodan ou Censys) Quels services fonctionnent sur ce serveur?
+- Y a-t-il d'autres domaines hébergés sur la même IP?
+- Pouvez-vous trouver des sous-domaines pour ce domaine?
+
+## Contrôle de compétence
+
+Asseyez-vous avec un pair ou un mentor qui a une expérience significative dans les enquêtes passives contre les serveurs sur Internet. Puis :
+
+- Complétez la [salle de reconnaissance passive](https://tryhackme.com/room/passiverecon) sur TryHackMe.
+- Effectuez les exercices ci-dessus, idéalement dans un domaine différent, et passez en revue votre processus et vos conclusions avec votre pair ou votre mentor. Demandez-lui d'examiner votre travail et de fournir des commentaires sur le processus et les résultats. Il pourrait être utile de discuter spécifiquement de la façon de trouver des sous-domaines en cours d'exécution sur ce domaine et pour discuter de l'exactitude des recherches de geoIP concernant ces domaines. En option, asseyez-vous avec votre mentor ou pair pour exécuter certains paramètres d'examen avancés et configurer ensemble une automatisation de base, par exemple en demandant à dig de charger une liste de domaines à partir d'un fichier texte et de fournir des informations à leur sujet.
+- Si vous avez un message d'hameçonnage réel (ou, alternativement, prenez un domaine d'hameçonnage de [PhishTank](https://phishtank.org/) et analysez-le, notez que le site Web recueille des domaines plutôt que des messages), effectuez l'enquête passive décrite dans l'exercice pratique (avec prudence !) en discutant avec un pair ou un mentor. Documentez vos conclusions et votre processus. Demandez-lui d'examiner votre travail et de fournir des commentaires sur le processus et les résultats.
+
+
 ## Ressources d'apprentissage
 
 {{% resource title="Qu'est-ce qu'une URL?" languages="Chinois, anglais, français, japonais, coréen, russe, espagnol" cost="Gratuit" description="Un bref aperçu de ce que sont les URL, comment elles sont construites, et quelles fonctionnalités supplémentaires (ancres et similaires) elles peuvent avoir." url="[https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL)" %}}
@@ -204,23 +225,3 @@ Censys propose une lecture plus approfondie sur les techniques avancées de suiv
 {{% resource title="massdns" description="Un outil qui peut être utilisé pour la recherche de sous-domaine par force brute" languages="Anglais" cost="Gratuit" url="[https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains](https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains)" %}}
 
 {{% resource title="Suivi avancé de l'infrastructure persistante" description="Un guide sur les différentes méthodes qui pourraient être utilisées pour suivre l'infrastructure malveillante, et qui aborde également les recherches de certificats" languages="Anglais" cost="Gratuit" url="[https://censys.com/advanced-persistent-infrastructure-tracking/](https://censys.com/advanced-persistent-infrastructure-tracking/)" %}}
-
-## Pratique
-
-Choisissez un nom de domaine plus ou moins aléatoire, en vous assurant qu'il n'est pas hébergé derrière un service de distribution de contenu/reverse-proxy tel que Cloudflare (vous pouvez le déterminer en le recherchant rapidement à l'aide d'un outil tel que dig et en utilisant l'option NS pour rechercher des serveurs de noms). À l'aide des catégories d'outils ci-dessus, examinez le domaine et essayez d'expliquer :
-
-- Où le domaine est-il enregistré et, le cas échéant, qui l'a enregistré?
-- Quelle est l'adresse IP du domaine?
-- Qui gère cette adresse IP?
-- Où ce serveur est-il localisé?
-- (Si les participants ont accès à Shodan ou Censys) Quels services fonctionnent sur ce serveur?
-- Y a-t-il d'autres domaines hébergés sur la même IP?
-- Pouvez-vous trouver des sous-domaines pour ce domaine?
-
-## Contrôle de compétence
-
-Asseyez-vous avec un pair ou un mentor qui a une expérience significative dans les enquêtes passives contre les serveurs sur Internet. Puis :
-
-- Complétez la [salle de reconnaissance passive](https://tryhackme.com/room/passiverecon) sur TryHackMe.
-- Effectuez les exercices ci-dessus, idéalement dans un domaine différent, et passez en revue votre processus et vos conclusions avec votre pair ou votre mentor. Demandez-lui d'examiner votre travail et de fournir des commentaires sur le processus et les résultats. Il pourrait être utile de discuter spécifiquement de la façon de trouver des sous-domaines en cours d'exécution sur ce domaine et pour discuter de l'exactitude des recherches de geoIP concernant ces domaines. En option, asseyez-vous avec votre mentor ou pair pour exécuter certains paramètres d'examen avancés et configurer ensemble une automatisation de base, par exemple en demandant à dig de charger une liste de domaines à partir d'un fichier texte et de fournir des informations à leur sujet.
-- Si vous avez un message d'hameçonnage réel (ou, alternativement, prenez un domaine d'hameçonnage de [PhishTank](https://phishtank.org/) et analysez-le, notez que le site Web recueille des domaines plutôt que des messages), effectuez l'enquête passive décrite dans l'exercice pratique (avec prudence !) en discutant avec un pair ou un mentor. Documentez vos conclusions et votre processus. Demandez-lui d'examiner votre travail et de fournir des commentaires sur le processus et les résultats.

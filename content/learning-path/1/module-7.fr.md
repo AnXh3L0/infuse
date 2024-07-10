@@ -22,8 +22,8 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Découvrez à quelle infrastructure supplémentaire ces sites Web pourraient être liés en recherchant des URL, des redirections, des domaines liés et d'autres actifs ou identifiants
 
 - - -
-
-## Connaissances de base
+## Section Principale
+### Connaissances de base
 
 
 Cela sera beaucoup plus facile à pratiquer si vous connaissez les bases de JavaScript et HTML, bien qu'il ne s'agisse pas de prérequis strictement nécessaires.
@@ -36,7 +36,7 @@ Il convient de souligner quelques différences fondamentales entre un e-mail et 
 
 Pour cette raison, nous vous recommandons d'analyser uniquement les pages Web dans un environnement sécurisé spécialement conçu pour ouvrir des fichiers potentiellement suspects, tels qu'une machine virtuelle ou un bac à sable. De plus, discutez du modèle de menace spécifique au destinataire de l'e-mail pour vous assurer qu'il est sûr pour vous de mener une activité d'analyse supplémentaire qui pourrait être visible par le cybercriminel.
 
-## Études de cas
+### Études de cas
 
 Lisez deux études de cas qui analysent les attaques d'hameçonnage ciblant des groupes de la société civile. Ces deux attaques ont partiellement réussi :
 
@@ -58,7 +58,7 @@ En mettant l'accent sur l'[étude de cas HRW](https://www.hrw.org/news/2022/12/0
   - Ils ont écrit sur d'autres tactiques d'attaque telles que se faire passer pour des organisateurs de conférence/sommet ou des personnalités clés d'ONG.
 - Enfin, le rapport présente également des indicateurs techniques d'attaque.
 
-## Inspection automatisée d'un site Web dans un bac à sable
+### Inspection automatisée d'un site Web dans un bac à sable
 
 La première étape à suivre lorsque vous vous préparez à inspecter un site Web lié à partir d'un message d'hameçonnage peut consister à examiner en toute sécurité le site Web. Cela implique un certain degré d'interaction avec le site Web. Pour le traitement direct d'un site Web potentiellement malveillant, vous devriez avoir mis en place des précautions pour vous assurer un environnement de travail sûr, comme abordé dans le [sous-thème 3](#_heading=h.2szc72q). Toutefois, vous pouvez également utiliser des outils en ligne pour inspecter un site Web dans un bac à sable en respectant une distance sécuritaire :
 
@@ -82,18 +82,18 @@ La première étape à suivre lorsque vous vous préparez à inspecter un site W
 
 Notez qu'une application Web sophistiquée pourrait détecter qu'une requête provient des plages d'adresses IP de ces outils et servir différentes données ou aucune donnée à la requête, tout en fournissant un contenu malveillant à d'autres adresses IP.
 
-## Manuel et outils spécifiques pour l'inspection d'un site Web
+### Manuel et outils spécifiques pour l'inspection d'un site Web
 
 L'un des moyens les plus simples d'analyser un site Web est d'[utiliser l’outil d’inspection intégré de notre navigateur Web](https://blog.hubspot.com/website/how-to-inspect), qui décompose généralement le site Web en différentes sous-parties, peut parfois illustrer quel code le site Web demande à partir de quel serveur, et nous permet de modifier le code du site et de voir comment cela change la mise en page et la fonctionnalité.
 
-### Force brute
+#### Force brute
 
 Comme dans le rapport de Human Rights Watch ci-dessus, l'utilisation d'approches programmatiques pour forcer les URL constitue une technique couramment utilisée pendant l'OSINT. Plusieurs outils et approches peuvent être appris :
 
 - OWASP [DirBuster](https://gitlab.com/kalilinux/packages/dirbuster)
 - Générateurs de listes de mots : souvent utilisés pour le déchiffrement de mots de passe, les listes de mots de passe sont également utilisées pour la découverte de force brute de dossiers et de sous-domaines. Ces listes de mots fonctionneront conjointement avec les outils énumérés au point précédent. Voir les outils comme Crunch ([Tutoriel 1](https://www.hackers-arise.com/post/creating-a-custom-wordlist-with-crunch) | [Tutoriel 2](https://null-byte.wonderhowto.com/how-to/tutorial-create-wordlists-with-crunch-0165931/))
 
-### Analyse du kit d'hameçonnage
+#### Analyse du kit d'hameçonnage
 
 La plupart des attaques que vous rencontrerez utiliseront un kit d'hameçonnage préfabriqué ou modifié, une collection de code et de modèles qui permettent aux cybercriminels de créer facilement un site Web d'hameçonnage convaincant. Certains kits d'hameçonnage présentent des signes révélateurs ; beaucoup d'entre eux, par exemple, utilisent certains mécanismes pour éviter d'être [détectés et indexés par les moteurs de recherche](https://arxiv.org/pdf/2210.08273.pdf). Ils pourraient même refuser le chargement à partir des [adresses IP des moteurs de recherche ou des entreprises de sécurité](https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html).
 
@@ -117,27 +117,16 @@ Travaillez avec un mentor ou un pair qui a une certaine expérience dans la supp
 
 ## Ressources d'apprentissage
 
-{{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="A good write-up and analysis of a highly sophisticated phishing campaign which targeted civil society groups. Includes extensive discussions on infrastructure and attribution." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
-
-{{% resource title="Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs" languages="English" cost="Free" description="A write-up of an earlier phishing campaign which specifically targeted civil groups working on Russia. The attack itself included an MFA bypass." url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
-
-{{% resource title="UrlScan" languages="English" cost="Free, with additional premium features" description="A tool where you input a URL and which analyzes the resulting website, looking out for malware or other suspicious behavior." url="https://urlscan.io/" %}}
-
-{{% resource title="Hybrid Analysis" languages="English" cost="Free" description="A tool which can scan files and links for malicious content or behavior. In contrast to UrlScan, it can also open up malware samples or executable files." url="https://www.hybrid-analysis.com/" %}}
-
-{{% resource title="Learn JavaScript" languages="English" cost="Free" description="In addition to HTML, most web pages use JavaScript. Although you don’t need to be an expert, learning some JavaScript is important to understand what websites are doing." url="https://www.codecademy.com/learn/introduction-to-javascript" %}}
-
-{{% resource title="How to use Inspect Element in Chrome, Safari, and Firefox" languages="English" cost="Free" description="Every major web browser now contains an inspect element feature, which allows you to carefully study and modify the code components which make up a web page. This article provides a brief overview of that feature and shows how to activate it on major browsers." url="https://blog.hubspot.com/website/how-to-inspect" %}}
-
-{{% resource title="Example analyses of malicious websites" languages="English" cost="Free" description="A good guide on how to do some initial analysis and triage on a website to figure out whether it is malicious and has been labeled by others as such." url="https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b" %}}
-
-{{% resource title="Classification of Web Phishing Kits for early detection by platform providers" languages="English" cost="Free" description="An academic paper which looks at phishing kits, what mechanisms some of them use, and how we can use tools such as machine learning to detect them." url="https://arxiv.org/pdf/2210.08273.pdf" %}}
-
-{{% resource title="Protecting Phishing Pages via .htaccess" languages="English" cost="Free" description="There are many ways in which phishing pages can try to avoid detection. One of them is to use .htaccess, a file containing instructions for web servers, to include or exclude specific IP ranges." url="https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html" %}}
-
-{{% resource title="StalkPhish" languages="English" cost="Free" description="A tool designed to automate the discovery and identification of phishing kits." url="https://github.com/t4d/StalkPhish" %}}
-
-{{% resource title="Bypassing MFA: A Forensic Look At Evilginx2 Phishing Kit" languages="English" cost="Free" description="This article looks at a phishing kit which has found a way to bypass some forms of MFA and provides a basic analysis of how it does that and what mitigations we could take." url="https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/" %}}
-
-{{% resource title="W3LL phishing kit hijacks thousands of Microsoft 365 accounts, bypasses MFA" languages="English" cost="Free" description="This piece analyzes a phishing kit designed and sold by cybercriminals, which contains multiple mechanisms which frustrate analysis and also uses MFA bypass techniques." url="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/" %}}
-
+{{% resource title="Iran : piratage d'activistes, de journalistes et de politiciens soutenu par l'État" languages="Un bon article et une bonne analyse d'une campagne d'hameçonnage très sophistiquée ciblant des groupes de la société civile. Comprend des discussions approfondies sur l'infrastructure et l'attribution" cost="Anglais" description="Gratuit" url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
+{{% resource title="Ascension de Guccifer ? Une campagne d'hameçonnage de plusieurs mois sur ProtonMail cible des dizaines de journalistes et d'ONG russes" languages="Un article concernant une précédente campagne d'hameçonnage qui ciblait spécifiquement les groupes civils travaillant sur la Russie. L'attaque elle-même comprenait un contournement de la MFA." cost="Anglais" description="Gratuit" url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
+{{% resource title="VirusTotal" languages="" cost="Un outil pour évaluer les URL et les pièces jointes pour détecter tout contenu malveillant connu éventuel. Notez que les URL et les fichiers soumis peuvent être consultés par d'autres utilisateurs." description="Gratuit, avec certaines limitations de taux et des fonctionnalités professionnelles supplémentaires" url="https://www.virustotal.com/gui/home/url" %}}
+{{% resource title="UrlScan" languages="" cost="Un outil où vous saisissez une URL et qui analyse le site Web résultant, à la recherche de logiciels malveillants ou d'autres comportements suspects" description="Gratuit, avec des fonctionnalités Premium supplémentaires" url="https://urlscan.io/" %}}
+{{% resource title="Hybrid Analysis" languages="Un outil qui peut analyser les fichiers et les liens à la recherche de contenus ou de comportements malveillants. Contrairement à UrlScan, il peut également ouvrir des échantillons de logiciels malveillants ou des fichiers exécutables." cost="" description="Gratuit" url="https://www.hybrid-analysis.com/" %}}
+{{% resource title="Apprendre JavaScript" languages="En plus de HTML, la plupart des pages Web utilisent JavaScript. Bien qu'il ne soit pas nécessaire de devenir un expert en la matière, l'apprentissage de JavaScript est important pour comprendre ce qu'effectuent les sites Web." cost="Anglais" description="Gratuit" url="https://www.codecademy.com/learn/introduction-to-javascript" %}}
+{{% resource title="Comment utiliser Inspect Element dans Chrome, Safari et Firefox" languages="Chaque navigateur Web majeur contient maintenant une fonctionnalité d'élément d'inspection, qui vous permet d'étudier et de modifier soigneusement les composants de code qui composent une page Web. Cet article fournit un bref aperçu de cette fonctionnalité (bien que la documentation de chaque navigateur soit encore plus complète) et montre comment l'activer sur les principaux navigateurs." cost="Anglais" description="Gratuit" url="https://blog.hubspot.com/website/how-to-inspect" %}}
+{{% resource title="Exemples d'analyses de sites Web malveillants" languages="Un bon guide sur la façon d'effectuer une analyse initiale et un triage sur un site Web pour déterminer s'il est malveillant et s'il a été étiqueté par d'autres comme tel" cost="Anglais" description="Gratuit" url="https://infosecwriteups.com/analyzing-a-malicious-site-9fb8730be51b <br> https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith" %}}
+{{% resource title="Classification des kits d'hameçonnage Web pour assurer une détection précoce par les fournisseurs de plateformes" languages="Un article académique qui examine les kits d'hameçonnage, les mécanismes utilisés par certains d'entre eux et la façon dont nous pouvons utiliser des outils tels que l'apprentissage automatique pour les détecter" cost="Anglais" description="Gratuit" url="https://arxiv.org/pdf/2210.08273.pdf" %}}
+{{% resource title="Protection des pages d'hameçonnage via .htaccess" languages="Il existe de nombreuses façons dont les pages d'hameçonnage peuvent tenter d'éviter la détection. L'une d'elles consiste à utiliser .htaccess, un fichier contenant des instructions pour les serveurs Web, pour inclure ou exclure des plages IP spécifiques." cost="Anglais" description="Gratuit" url="https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html" %}}
+{{% resource title="StalkPhish" languages="Un outil conçu pour automatiser la découverte et l'identification des kits d'hameçonnage" cost="Anglais" description="Gratuit" url="https://github.com/t4d/StalkPhish" %}}
+{{% resource title="Contournement de l'authentification multifactorielle : un examen judiciaire du kit d'hameçonnage Evilginx2" languages="Cet article examine un kit d'hameçonnage qui a trouvé un moyen de contourner certaines formes de MFA et fournit une analyse de base de la façon dont il y parvient et des mesures d'atténuation que nous pourrions prendre." cost="Anglais" description="Gratuit" url="https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/" %}}
+{{% resource title="Le kit d'hameçonnage W3LL détourne des milliers de comptes Microsoft 365 et contourne la MFA" languages="Cet article analyse un kit d'hameçonnage conçu et vendu par des cybercriminels, qui contient plusieurs mécanismes qui entravent l'analyse et utilise également des techniques de contournement de la MFA." cost="Anglais" description="Gratuit" url="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/" %}}

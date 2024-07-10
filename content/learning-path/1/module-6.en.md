@@ -27,8 +27,9 @@ After completing this subtopic, practitioners should be able to do the following
 - Use tools such as VirusTotal and URLScan to evaluate attachments and URLs for malicious content.
 
 ---
+## Main Section
 
-## Foundation Knowledge: HTML Emails and MIME
+### Foundation Knowledge: HTML Emails and MIME
 
 In order to practice this , you need to understand the basics of HTML emails and MIME. If you feel it’s necessary to brush up on this topic a bit, see some of the resources on key topics below:
 
@@ -37,11 +38,11 @@ In order to practice this , you need to understand the basics of HTML emails and
 - Learning some HTML is inevitable, and resources like [W3Schools](https://www.w3schools.com/html/) can provide a good starting point. Do also note that some mail clients (for example Outlook) do not allow you to download the whole email body.
 - MIME is an Internet standard that extends the format of emails beyond plaintext emails and allows for text in character sets other than ASCII, non-text attachments, message bodies with multiple parts, and header information in non-ASCII character sets. MIME features can be abused to hide content and attach malicious content. [This Wikipedia article](https://en.wikipedia.org/wiki/MIME) gives a good initial introduction.
 
-## Identifying Potential Threats: Embedded Images and Tracking Pixels
+### Identifying Potential Threats: Embedded Images and Tracking Pixels
 
 When investigating potentially malicious emails to discover attacker infrastructure, don’t just look for links and attachments. Attackers may include trackers in their emails, just like marketers do.[ This article for marketers](https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work) explains how email tracking works. Note that any resource loaded from the web, not just images, can be used for tracking. Review the types of information which can be obtained through a tracking pixel or a tracking element, including IP (geolocation) and browser fingerprinting information. Internews created a training exercise (described in the practice section below) which will help you become more familiar with trackers and some of the information they can spot.
 
-## Tools and Workflow for Malicious Email Analysis
+### Tools and Workflow for Malicious Email Analysis
 
 Once you understand the foundational concepts and potential threats, you need a workflow and tools for analysis.
 

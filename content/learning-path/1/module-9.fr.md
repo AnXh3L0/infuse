@@ -7,7 +7,6 @@ description: Ici, nous abordons la signalisation d'abus ainsi que d'autres
   afin qu'elle puisse être démantelée.
 weight: 9
 ---
-Cas d'utilisation
 
 ## Cas d'utilisation
 
@@ -25,8 +24,8 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Identifier et utiliser des mécanismes de signalement des abus chez les plus grands fournisseurs d'infrastructures.
 
 ---
-
-## Signalement d'abus chez les fournisseurs de services d'hébergement
+## Section Principale
+### Signalement d'abus chez les fournisseurs de services d'hébergement
 
 De nombreuses instances d'infrastructures malveillantes s'exécutent sur les principaux fournisseurs de services commerciaux soucieux de maintenir la sécurité, la stabilité, la réputation et de lutter contre les cybermenaces. Les fournisseurs de services responsables offrent des mécanismes efficaces de signalement des abus. L'utilisation de ces mécanismes peut entraîner un retrait rapide de l'infrastructure active.
 
@@ -64,7 +63,7 @@ Si vous cherchez de l'inspiration sur la façon d'écrire un message électroniq
 - Modèle d'e-mail [à un fournisseur d'hébergement](https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html)
 - Modèle d'e-mail [à un client](https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html), pour lui demander la permission de partager les IoC avec la communauté
 
-## Navigation sécurisée, sinkholes et listes de blocage
+### Navigation sécurisée, sinkholes et listes de blocage
 
 En plus de contacter les contacts en cas d'abus pour demander la suppression de contenu, il existe divers mécanismes permettant que l'infrastructure malveillante ou d'autres indicateurs malveillants soient ajoutés aux listes de blocage et aux bases de données qui sont intégrées dans des outils et des services largement utilisés.
 
@@ -94,43 +93,19 @@ Travaillez avec un mentor ou un pair qui a une certaine expérience dans la supp
 - Demandez à votre mentor ou à votre pair de lister trois fournisseurs d'hébergement Web, fournisseurs de services cloud, registraires de domaines ou autres fournisseurs de services. Pour chacun d'eux, trouvez le mécanisme de contact ou de signalement d'abus pertinent.
 - Parlez à votre mentor ou à votre pair des risques stratégiques et personnels liés au retrait, à la divulgation éventuelle des données du client et à l'indication à un cybercriminel que son attaque fait l'objet d'un examen critique. Faites un projet de jeu de rôle dans lequel vous communiquez ces considérations à la cible de l'attaque.
 
+
 ## Ressources d'apprentissage
 
-{{% resource title="RIPEstat launchpad" languages="English, Spanish, Arabic, Russian, French, Farsi, Italian, Turkish" cost="Free" description="A service which allows you to search for and list relevant abuse reporting mechanisms." url="https://stat.ripe.net/app/launchpad" %}}
+{{% resource title="RIPEstat launchpad" languages="Un service qui vous permet de rechercher et de répertorier les mécanismes de signalement des abus pertinents" cost="Anglais, espagnol, arabe, russe, français, farsi, italien, turc" description="Gratuit" url="https://stat.ripe.net/app/launchpad" %}}
+{{% resource title="Prise en main - Abusix" languages="Un guide de prise en main de la base de données Abuse Contact" cost="Anglais" description="Gratuit" url="https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee" %}}
+{{% resource title="Rapports d'abus à Twilio" languages="Vous pouvez signaler les appels téléphoniques ou les messages SMS indésirables à partir de numéros de téléphone hébergés sur Twilio ici." cost="Anglais" description="Gratuit" url="https://www.twilio.com/en-us/help/abuse" %}}
+{{% resource title="Rapports d'abus à Mailchimp" languages="Vous pouvez signaler tout abus sur la plateforme Mailchimp ici." cost="Anglais" description="Gratuit" url="https://mailchimp.com/contact/abuse/" %}}
+{{% resource title="CiviCERT" languages="Un réseau de professionnels de la sécurité qui aident la société civile à aborder les questions de cybersécurité" cost="Anglais" description="Gratuit" url="https://www.civicert.org/" %}}
+{{% resource title="Modèles d'e-mails que nous pourrions envoyer pour signaler une activité malveillante" languages="Trois modèles d'e-mails qui vous permettent de créer facilement un e-mail à l'intention d'un registraire de domaine, d'un fournisseur d'hébergement ou d'un client pour l'informer de la présence d'une infrastructure malveillante" cost="Anglais" description="Gratuit" url="Registraire : https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html <br> Fournisseur d'hébergement : https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html <br> Client : https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html" %}}
+{{% resource title="Envoyer un rapport SafeBrowsing" languages="Ici, vous pouvez envoyer des rapports SafeBrowsing à une base de données gérée par Google qui atteint un grand nombre d'utilisateurs." cost="Anglais" description="Gratuit" url="https://safebrowsing.google.com/safebrowsing/report_general/" %}}
+{{% resource title="PhishTank" languages="Une liste collaborative de soumissions de sites d'hameçonnage qui permet aux utilisateurs de rechercher et de soumettre des URL" cost="Anglais" description="Gratuit" url="https://phishtank.org/" %}}
+{{% resource title="AbusiveIP" languages="Permet aux utilisateurs de rechercher à la fois des adresses IP de rapport liées à un comportement malveillant" cost="Anglais" description="Gratuit" url="https://www.abuseipdb.com/" %}}
+{{% resource title="Base de données d'hameçonnage" languages="Une base de données de plus de domaines et de liens d'hameçonnage suspects" cost="Anglais" description="Gratuit" url="https://github.com/mitchellkrogza/Phishing.Database#additions" %}}
+{{% resource title="Abuse ch" languages="Une plateforme communautaire axée sur la vigilance sur les menaces concernant les logiciels malveillants et les botnets" cost="Anglais" description="Gratuit" url="https://abuse.ch/" %}}
+{{% resource title="Documentation Phish.gg" languages="Un service où vous pouvez signaler l'hameçonnage sur des services tels que Discord" cost="Anglais" description="Gratuit" url="https://docs.phish.gg/docs/get-started/welcome/" %}}
 
-{{% resource title="Getting Started - Abusix" languages="English" cost="Free" description="A getting started guide to the Abuse Contact DB." url="https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee" %}}
-
-{{% resource title="Twilio abuse reports" languages="English" cost="Free" description="You can report unwanted phone calls or SMS messages from phone numbers hosted on Twilio here." url="https://www.twilio.com/en-us/help/abuse" %}}
-
-{{% resource title="Mailchimp abuse reports" languages="English" cost="Free" description="You can report any abuse that takes place on Mailchimp’s platform here." url="https://mailchimp.com/contact/abuse/" %}}
-
-{{% resource title="CiviCERT" languages="English" cost="Free" description="A network of security professionals who help civil society address cybersecurity issues." url="https://www.civicert.org/" %}}
-
-{{% resource title="Templates of emails we could send to report malicious activity" languages="English" cost="Free" description="Three email templates that allow you to easily craft an email to a domain registrar, hosting provider, or client to inform them about the presence of malicious infrastructure. Registrar: [Link](https://accessnowhelpline.gitlab.io/community-documentation/259-Disable_Malicious_Server_registrar.html), Hosting provider: [Link](https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html), Client: [Link](https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html)" %}}
-
-{{% resource title="Send a SafeBrowsing report" languages="English" cost="Free" description="Here you can send SafeBrowsing reports to a Google-maintained database which reaches a huge amount of users." url="https://safebrowsing.google.com/safebrowsing/report_general/" %}}
-
-{{% resource title="PhishTank" languages="English" cost="Free" description="A collaborative list of phishing site submissions, allows users to search for and submit URLs." url="https://phishtank.org/" %}}
-
-{{% resource title="AbusiveIP" languages="English" cost="Free" description="Allows users to both search for and report IP addresses linked to malicious behavior." url="https://www.abuseipdb.com/" %}}
-
-{{% resource title="Phishing Database" languages="English" cost="Free" description="One more crowdsourced database of suspected phishing domains and links." url="https://github.com/mitchellkrogza/Phishing.Database#additions" %}}
-
-{{% resource title="Abuse ch" languages="English" cost="Free" description="A community-driven platform focusing on threat intelligence regarding malware and botnets." url="https://abuse.ch/" %}}
-
-{{% resource title="Phish.gg documentation" languages="English" cost="Free" description="A service where you can report phishing on services such as Discord." url="https://docs.phish.gg/docs/get-started/welcome/" %}}
-
-## Practice
-
-- Find the abuse contacts for 3 web hosting companies, including at least one major platform (use as AWS, GCP, Azure, Oracle Cloud, and Alibaba Cloud. Look for any additional information they offer on their abuse reporting process.
-- Investigate how abuse databases and Google Safe Browsing work. Lists several tools and services that they are integrated with.
-- Build your own incident-response flowchart and checklist containing relevant links and actions to take in case of an incident of malicious online infrastructure.
-
-## Skill Check
-
-Work with a mentor or peer who has some experience in taking down malicious infrastructure. Do the following tasks with them:
-
-- Prepare all of the evidence (IP addresses, hashes, domains, and any other evidence) you would need to submit an abuse report. If you have an example of malicious infrastructure at hand, collect that evidence for this infrastructure. If you do not, collect the evidence from a legitimate web page (but without submitting an abuse report, of course). Discuss the evidence with your peer or mentor who will verify that you collected the right evidence and have correctly documented it.
-- Explain how safe browsing, abuse database, and blocklist providers work. If you have an example of malicious infrastructure on hand, submit it to such a database or provider. If you do not, go to the provider’s web page and do a dry run of the submission process with your peer or mentor (explain what information you would prepare, without submitting it).
-- Ask your mentor or peer to list three web hosting providers, cloud providers, registrars, or other service providers. For each of those, find the relevant abuse contact or reporting mechanism.
-- Talk to your mentor or peer about the strategic and personal risks of initiating takedown, potentially disclosing client’s data, and potentially indicating to an attacker that their attack is being critically examined. Do a draft role-play in which you communicate these considerations to the target of the attack.

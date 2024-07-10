@@ -23,8 +23,8 @@ After completing this subtopic, practitioners should be able to do the following
 - Identify and use abuse reporting mechanisms at bigger infrastructure providers.
 
 ---
-
-## Abuse Reporting at hosting service providers
+## Main Section
+### Abuse Reporting at hosting service providers
 
 Many instances of malicious infrastructure run on mainstream commercial service providers concerned with maintaining their system safety, stability, reputation, and tackling cyber threats. Responsible service providers offer effective abuse reporting mechanisms. Utilizing these mechanisms may lead to a prompt takedown of active infrastructure.
 
@@ -62,7 +62,7 @@ If you are looking for inspiration on how to write an email message to an infras
 - Email template [to a hosting provider](https://accessnowhelpline.gitlab.io/community-documentation/260-Disable_Malicious_Server_hosting_provider.html)
 - Email template [to a client](https://accessnowhelpline.gitlab.io/community-documentation/261-Disable_Malicious_Server_client.html), asking them for permission to share IoCs with the community
 
-## Safe Browsing, sinkholes, and blocklists
+### Safe Browsing, sinkholes, and blocklists
 
 In addition to reaching out to abuse contacts for content takedown, there exists various mechanisms to have malicious infrastructure or other malicious indicators be added to blocklists and databases which are integrated in widely utilized tools and services.
 
