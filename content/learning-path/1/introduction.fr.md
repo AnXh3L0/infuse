@@ -83,3 +83,7 @@ Vous n'avez pas besoin de matériel spécialisé ou puissant pour ce parcours d'
 ## Parcours d'apprentissage connexes
 
 Ce parcours d'apprentissage constitue une introduction fantastique aux autres parcours. Après avoir terminé celui-ci, nous recommandons aux apprenants de travailler sur la _détection de logiciels malveillants_ ou sur _les principes fondamentaux de la sécurité Web_.
+
+{{% resource title="Flux de travail du service d'assistance : le client reçoit un e-mail suspect ou d'hameçonnage" languages="Documentation communautaire de la ligne d'assistance Access Now pour répondre aux e-mails suspects / d'hameçonnage" cost="Anglais" description="Gratuit" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html" %}}
+{{% resource title="Liste de tous les types d'enregistrements DNS" languages="Inclut (presque ?) tous les types d'enregistrements DNS." cost="Anglais, chinois, japonais, coréen, russe, serbe, ukrainien, espéranto, hongrois, vietnamien, italien, espagnol, français" description="Gratuit" url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
+{{% resource title="Rapports d'Amnesty sur les campagnes d'hameçonnage" languages="Une liste d'exemples illustrant une campagne d'hameçonnage ciblée contre les défenseurs des droits de l'homme, les militants et les journalistes" cost="Multiple, selon le rapport" description="Gratuit" url="https://www.amnesty.org/en/search/phishing/" %}}
