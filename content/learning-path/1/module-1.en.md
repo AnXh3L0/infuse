@@ -45,6 +45,10 @@ Attackers who use lower quality or mass messaging are also likely to be caught b
 
 ⚠️ While considering or conducting an investigation, ensure you balance harm reduction needs and support any targets to implement timely harm reduction actions, such as those listed at [Recover from possible account compromise (securityinabox.org)](https://securityinabox.org/en/communication/account-compromise/).
 
+## Skill Check
+
+Spend some time on the phishing quiz by [Shira](https://shira.app/) until you feel like you can comfortably pass the tests and accurately recognize phishing on several app categories.
+
 ## Learning Resources
 
 {{% resource title="Shira by Horizontal" languages="English, Spanish, Mandarin" cost="Free" description="An online quiz with sample emails, where the user must decide whether they are malicious" url="https://shira.app" %}}
@@ -61,6 +65,4 @@ Attackers who use lower quality or mass messaging are also likely to be caught b
 
 {{% resource title="Recover from possible account compromise" languages="Arabic, Indonesian, English, Spanish, Farsi, French, Portuguese, Russian, Thai, Turkish, Vietnamese, Chinese, Tibetan, Khmer, Burmese" cost="Free" description="A guide on what immediate and long-term steps to take when an account has been compromised" url="https://securityinabox.org/en/communication/account-compromise/" %}}
 
-## Skill Check
 
-Spend some time on the phishing quiz by [Shira](https://shira.app/) until you feel like you can comfortably pass the tests and accurately recognize phishing on several app categories.
