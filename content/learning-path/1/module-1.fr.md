@@ -60,18 +60,10 @@ Discutez des deux situations suivantes avec un pair ou un mentor :
 
 ### Ressources d'apprentissage
 
-{{% resource title="Shira par Horizontal" languages="Anglais, espagnol, mandarin" cost="Gratuit" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" url="[https://shira.app](https://shira.app)" %}}
-
-{{% resource title="Questionnaire d'hameçonnage par Jigsaw" languages="27 langues" cost="Gratuit" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" url="[Jigsaw | Questionnaire d'hameçonnage](https://phishingquiz.withgoogle.com/)" %}}
-
-{{% resource title="6 attaques d'hameçonnage courantes et comment s'en protéger" languages="Anglais" cost="Gratuit" description="Un résumé de certaines attaques d'hameçonnage courantes, qui comprend également des méthodes plus sophistiquées utilisées par les cybercriminels" url="[https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them](https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them)" %}}
-
-{{% resource title="5 techniques courantes d'hameçonnage" languages="Anglais" cost="Gratuit" description="Quelques techniques utilisées par les cybercriminels pour rendre les e-mails d'hameçonnage plus convaincants et échapper occasionnellement à la détection" url="[https://www.vadesecure.com/en/blog/5-common-phishing-techniques](https://www.vadesecure.com/en/blog/5-common-phishing-techniques)" %}}
-
-{{% resource title="CiviCERT" languages="Anglais" cost="Gratuit" description="Un réseau d'organisations de la société civile et de groupes d'intervention rapide qui se concentrent sur les cyberattaques et les menaces similaires" url="[https://www.civicert.org/](https://www.civicert.org/)" %}}
-
-{{% resource title="Trousse à outils numérique" languages="Arabe, espagnol, farsi, français, indonésien, arménien, kirghize, birman, portugais, russe, albanais, thaï, ukrainien" cost="Gratuit" description="Un guide complet de soutien des protecteurs numériques qui aborde divers sujets" url="[https://digitalfirstaid.org/en/index.html](https://digitalfirstaid.org/en/index.html)" %}}
-
-{{% resource title="Récupérer un compte éventuellement compromis" languages="Arabe, indonésien, anglais, espagnol, farsi, français, portugais, russe, thaï, turc, vietnamien, chinois, tibétain, khmer, birman" cost="Gratuit" description="Un guide concernant les mesures immédiates et à long terme à prendre lorsqu'un compte s'avère compromis" url="[https://securityinabox.org/en/communication/account-compromise/](https://securityinabox.org/en/communication/account-compromise/)" %}}
-
-
+{{% resource title="Shira par Horizontal" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" languages="Anglais, espagnol, mandarin" cost="Gratuit" url="https://shira.app" %}}
+{{% resource title="Questionnaire d'hameçonnage par Jigsaw" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" languages="27 langues" cost="Gratuit" url="Jigsaw | Questionnaire d'hameçonnage" %}}
+{{% resource title="6 attaques d'hameçonnage courantes et comment s'en protéger" description="Un résumé de certaines attaques d'hameçonnage courantes, qui comprend également des méthodes plus sophistiquées utilisées par les cybercriminels" languages="Anglais" cost="Gratuit" url="https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them" %}}
+{{% resource title="5 techniques courantes d'hameçonnage" description="Quelques techniques utilisées par les cybercriminels pour rendre les e-mails d'hameçonnage plus convaincants et échapper occasionnellement à la détection" languages="Anglais" cost="Gratuit" url="https://www.vadesecure.com/en/blog/5-common-phishing-techniques" %}}
+{{% resource title="CiviCERT" description="Un réseau d'organisations de la société civile et de groupes d'intervention rapide qui se concentrent sur les cyberattaques et les menaces similaires" languages="Anglais" cost="Gratuit" url="https://www.civicert.org/" %}}
+{{% resource title="Trousse à outils numérique" description="Un guide complet de soutien des protecteurs numériques qui aborde divers sujets" languages="Arabe, espagnol, farsi, français, indonésien, arménien, kirghize, birman, portugais, russe, albanais, thaï, ukrainien" cost="Gratuit" url="https://digitalfirstaid.org/en/index.html" %}}
+{{% resource title="Récupérer un compte éventuellement compromis" description="Un guide concernant les mesures immédiates et à long terme à prendre lorsqu'un compte s'avère compromis" languages="Arabe, indonésien, anglais, espagnol, farsi, français, portugais, russe, thaï, turc, vietnamien, chinois, tibétain, khmer, birman" cost="Gratuit" url="https://securityinabox.org/en/communication/account-compromise/" %}}

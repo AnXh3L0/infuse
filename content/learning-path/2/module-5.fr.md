@@ -1,74 +1,73 @@
 +++
 style = "module"
 weight = 5
-title = "Forensic methods on live Windows and macOS systems"
+title = "Méthodes d'investigation sur les systèmes Windows et macOS"
 +++
 
-## Use Case
+## Cas d'utilisation
 
-Direct inspection of a device can be necessary to understand what is happening on it and to identify suspicious processes, artifacts, or traffic. Go beyond scanning tools by using methods to take a deeper look at what is happening on a device.
+L'inspection directe d'un appareil peut être nécessaire pour comprendre ce qui s'y passe et pour identifier les processus, artefacts ou trafics suspects. Allez au-delà des outils d'analyse et utilisez d'autres méthodes pour examiner plus en profondeur ce qui se passe sur l'appareil.
 
-## Objectives
+## Objectifs
 
-After completing this subtopic, practitioners should be able to do the following:
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-- Understand ways of inspecting running processes and methods to sort out potentially suspicious processes
-- Understand common persistence mechanisms and ways of checking for them
-- Inspect network traffic for suspicious communications
+- Comprendre les moyens d'inspecter les processus en cours d’exécution et les méthodes permettant de trier les processus potentiellement suspects
+- Comprendre les mécanismes de persistance communs et les moyens de les vérifier
+- Inspecter le trafic réseau pour détecter les communications suspectes
 
----
+## Section Principale
 
-Forensic methods require more knowledge about the internal operations of an operating system as well as developing an instinct for what is normal vs abnormal findings.
+Les méthodes d'investigation nécessitent plus de connaissances sur les opérations internes du système d'exploitation ainsi que de développer un certain instinct pour détecter ce qui est normal ou anormal.
 
-## Windows
+### Windows
 
-The [Guide to Quick Forensics](https://pellaeon.gitbook.io/mobile-forensics/) provides a good introduction to forensic approaches to device inspection. The guide includes an introduction to the important suite of Sysinternals tools made available from Microsoft. Complete the guide sections on [Autoruns](https://pellaeon.gitbook.io/mobile-forensics/windows/autoruns), [Process Explorer](https://pellaeon.gitbook.io/mobile-forensics/windows/processes), and [TCPView](https://pellaeon.gitbook.io/mobile-forensics/windows/network).[^1]
+Le [Guide d'investigation rapide](https://pellaeon.gitbook.io/mobile-forensics/) fournit une bonne introduction aux approches d'analyse pour l'inspection des appareils. Le guide comprend une introduction à l'importante suite d'outils Sysinternals mis à disposition par Microsoft. Remplissez les sections du guide sur [Autoruns](https://pellaeon.gitbook.io/mobile-forensics/windows/autoruns), [Process Explorer](https://pellaeon.gitbook.io/mobile-forensics/windows/processes) et [TCPView](https://pellaeon.gitbook.io/mobile-forensics/windows/network)[^1]
 
-After completing the guided activities, you should be able to:
+Après avoir terminé les activités guidées, vous devriez être en mesure de :
 
-- Understand what the [SysInternals suite](https://learn.microsoft.com/en-us/sysinternals/) is, and how to use some of the tools useful for forensic examination.
-- Read and understand results from Sysinternals Autoruns tool and understand what are the different locations and methods for persistence (by understanding the different tabs displayed in the tool)
-- Read and filter results from SysInternals Autoruns tools to identify only non-Microsoft, unsigned binaries, and how to check file hashes against VirusTotal
-- Know how to read and understand results from Process Explorer, including how to check for running processes with unverified file signatures and how to check process hashes against VirusTotal.
+- Comprendre ce qu'est la [suite SysInternals](https://learn.microsoft.com/en-us/sysinternals/) et comment utiliser certains des outils utiles pour l'examen d'investigation.
+- Lire et comprendre les résultats de l'outil Sysinternals Autoruns, et comprendre quels sont les différents emplacements et méthodes de persistance (en comprenant les différents onglets affichés dans l'outil)
+- Lire et filtrer les résultats des outils SysInternals Autoruns pour identifier uniquement les binaires non Microsoft et non signés, et vérifier les hachages de fichiers par rapport à VirusTotal
+- Lire et comprendre les résultats de Process Explorer, notamment en vérifiant l'exécution de processus avec des signatures de fichiers non vérifiées, et vérifier les hachages de processus par rapport à VirusTotal.
 
-Microsoft’s SysInternal tools are widely used and you will be able to find additional tutorials using them around the web, however the [Guide to Quick Forensics ](https://pellaeon.gitbook.io/mobile-forensics/)gives a good targeted introduction.
+Les outils SysInternal de Microsoft sont largement utilisés et vous pourrez trouver des tutoriels supplémentaires sur le Web, mais le [Guide d'investigation rapide](https://pellaeon.gitbook.io/mobile-forensics/) fournit une bonne introduction ciblée.
 
-## MacOS
+### MacOS
 
-There are [some macOS tools](https://objective-see.org/tools.html) created by Objective-See which can help detect potentially suspicious activity on a system. Many of the Objective-See tools have an integrated VirusTotal search; this is a tool we will also mention more later on in this learning path. For a quick tutorial on VirusTotal, check out [chapter 7 of the field guide](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf). We recommend that any learners who want to become more familiar with macOS look at the following tools:
+Il existe [des outils macOS](https://objective-see.org/tools.html) créés par Objective-See qui peuvent contribuer à détecter les activités potentiellement suspectes sur un système. Beaucoup d’outils Objective-See disposent d'une recherche VirusTotal intégrée. Nous mentionnerons encore cet outil plus tard dans ce parcours d'apprentissage. Pour un tutoriel rapide sur VirusTotal, consultez le [chapitre 7 du guide de terrain](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf). Nous recommandons aux apprenants qui souhaitent se familiariser avec macOS de consulter les outils suivants :
 
-- LuLu: a free and feature-rich firewall application for macOS. It can list all outgoing network connections, and, therefore, detect any attempts by malware to communicate with a server. Check out the whole [LuLu manual](https://objective-see.org/products/lulu.html), which shows how you can look up specific processes which try to make a network connection. If you are unsure about specific processes, you can also look it up on VirusTotal (LuLu has a built-in search) or search for it in your favorite search engine and see what others say about it.
-- OverSight: A tool which alerts the user every time the microphone or webcam are enabled. If malware attempts to capture information through the microphone or camera, then the tool should alert a user or analyst thereof.
-- KnockKnock and BlockBlock: Those two applications detect software which starts up when the user logs in to the system. It can therefore alert the user or analyst to malware which has persistence--or starts to run again on every restart. KnockKnock can provide a list of persistent software, while BlockBlock sends an alert every time a new persistent component is installed.
-- KextViewer: A tool to review and inspect kernel extensions, packages which extend the core operating system code and run at the highest privilege level.
+- LuLu : une application de pare-feu gratuite et riche en fonctionnalités pour macOS. Elle peut répertorier toutes les connexions réseau sortantes et, par conséquent, détecter toute tentative de communication avec un serveur par un logiciel malveillant. Consultez l'ensemble du [manuel de LuLu](https://objective-see.org/products/lulu.html), qui indique comment vous pouvez rechercher des processus spécifiques qui tentent d'établir une connexion réseau. Si vous avez des doutes concernant des processus spécifiques, vous pouvez également les rechercher sur VirusTotal (LuLu comprend une recherche intégrée) ou les rechercher dans votre moteur de recherche préféré et voir ce que d'autres en disent.
+- OverSight : un outil qui alerte l'utilisateur chaque fois que le microphone ou la webcam est activée. Si un logiciel malveillant tente de capturer des informations via le microphone ou la caméra, l'outil doit en avertir l'utilisateur ou un analyste.
+- KnockKnock et BlockBlock : ces deux applications détectent les logiciels qui démarrent lorsque l'utilisateur se connecte au système. Elles peuvent donc alerter l'utilisateur ou l'analyste au sujet des logiciels malveillants persistants ou qui sont exécutés à chaque redémarrage. KnockKnock peut fournir une liste de logiciels persistants, tandis que BlockBlock envoie une alerte chaque fois qu'un nouveau composant persistant est installé.
+- KextViewer : un outil permettant d'examiner et d'inspecter les extensions du noyau, des paquets qui étendent le code du système d'exploitation principal et qui s'exécutent au niveau de privilège le plus élevé.
 
-## Learning Resources
+## Pratique
 
-{{% resource title="Mobile forensics" languages="English" cost="Free" description="A comprehensive guide on how to conduct forensics and triage for many leading operating systems." url="https://pellaeon.gitbook.io/mobile-forensics/" %}}
+### Windows et macOS
 
-{{% resource title="Sysinternals" languages="English" cost="Free" description="A series of excellent tools analysts can use to better understand what is happening on a Windows system." url="https://learn.microsoft.com/en-us/sysinternals/" %}}
-
-{{% resource title="Objective-see tools" languages="English" cost="Free" description="Excellent security tools for macOS which can help detect malware infections or attempts to gather/ exfiltrate data." url="https://objective-see.org/tools.html" %}}
-
-## Practice
-
-### Windows and macOS
-
-1. Open your operating system’s process manager and read through its outputs. Do you notice any processes which look out of place or which consume a weirdly high or low amount of resources? Note them down and search the web for them to learn more about them.
-2. While tracking network connections as described in the Mobile Forensics Guide (articles for [Windows](https://pellaeon.gitbook.io/mobile-forensics/windows/network) and [macOS](https://pellaeon.gitbook.io/mobile-forensics/mac/network)), open one or two apps which connect to the internet and note which IP addresses they connect to. Is there anything surprising about any of those connections or IP addresses?
-3. Look through startup items and separate them between those which come from your operating system vendor, those which come from other vendors. Look up three of them online to learn more about what they do. If you are working with a peer or mentor, discuss the findings with them.
+1. Ouvrez le gestionnaire de processus de votre système d'exploitation et lisez ses résultats. Remarquez-vous des processus qui semblent déplacés ou qui consomment une quantité anormalement élevée ou faible de ressources ? Notez-les et recherchez-les sur le Web pour en savoir plus à leur sujet.
+2. Lors du suivi des connexions réseau tel que décrit dans le Guide d'investigation mobile (articles pour [Windows](https://pellaeon.gitbook.io/mobile-forensics/windows/network) et [macOS](https://pellaeon.gitbook.io/mobile-forensics/mac/network)), ouvrez une ou deux applications qui se connectent à Internet et notez les adresses IP auxquelles elles se connectent. Y a-t-il des éléments curieux concernant ces connexions ou adresses IP ?
+3. Parcourez les éléments de démarrage et divisez-les entre ceux qui proviennent de votre fournisseur de système d'exploitation et ceux qui proviennent d'autres fournisseurs. Consultez trois d'entre eux en ligne pour en savoir plus sur leur utilisation. Si vous travaillez avec un pair ou un mentor, discutez-en ensemble.
 
 ### Android
 
-Read through this guide: [Beginner guide - How to handle a potentially malicious mobile app - PiRogue tool suite (pts-project.org)](https://pts-project.org/guides/g3/)
+Lisez ce guide : [Guide pour débutants : comment gérer une application mobile potentiellement malveillante - PiRogue Tool Suite (pts-project.org)](https://pts-project.org/guides/g3/)
 
-## Skill Check
+## Contrôle de compétence
 
-1. Download a recent piece of malware from Malware Bazaar. Upload it to a public sandbox (such as Triage) and check what it does on the system. \
-   Write down your findings and then discuss them with a mentor or a peer who will make sure that you have performed the exercise correctly. \
-   (Note: it may happen that the malware appears to ‘do nothing’. In that case, discuss this with a mentor and peer and try a different kind of malware.)
-2. (Optional, additional exercise) Check out [this analysis](https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html) from security company Trend Micro and compare it with [this report](https://tria.ge/240207-qlmmrahhgr/behavioral1) on Triage. Discuss those two with a mentor or peer, focusing on issues such as the ways in which both reports label TTPs and try to explain the malware. Talk about which format you find more readable and why. (Note: this malware, that Trend Micro calls ‘Earth Preta’, is also known as ‘Mustang Panda’, and has targeted media organizations and NGOs, most notably in Myanmar.)
+1. Téléchargez un logiciel malveillant récent de Malware Bazaar. Téléversez-le dans un bac à sable public (tel que Triage) et vérifiez ce qu'il fait sur le système.  
+    Notez vos conclusions et discutez-en avec un mentor ou un pair qui s'assurera que vous avez effectué l'exercice correctement.  
+    (Remarque : il peut arriver que le logiciel malveillant semble ne rien faire. Dans ce cas, discutez-en avec un mentor ou un pair et essayez un autre type de logiciel malveillant.)
+2. (Facultatif, exercice supplémentaire) Consultez [cette analyse](https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html) de la société de sécurité Trend Micro et comparez-la avec [ce rapport](https://tria.ge/240207-qlmmrahhgr/behavioral1) sur le triage. Discutez-en avec un mentor ou un pair, en vous concentrant sur des questions telles que la façon dont les deux rapports étiquettent les TTP et tentez d'expliquer la fonction du logiciel malveillant. Parlez du format que vous trouvez le plus lisible et justifiez votre choix. (Remarque : ce logiciel malveillant, que Trend Micro appelle « Earth Preta », est également connu sous le nom de « Mustang Panda », et a ciblé des organisations de médias et des ONG, notamment au Myanmar.)
+
+
+## Ressources d'apprentissage
+
+{{% resource title="Investigation mobile" description="Un guide complet sur la façon de procéder à l'investigation et au triage pour de nombreux systèmes d'exploitation de premier plan" languages="Anglais" cost="Gratuit" url="https://pellaeon.gitbook.io/mobile-forensics/" %}}
+{{% resource title="Sysinternals" description="Une série d'excellents outils que les analystes peuvent utiliser pour mieux comprendre ce qui se passe sur un système Windows" languages="Anglais" cost="Gratuit" url="https://learn.microsoft.com/fr-fr/sysinternals/" %}}
+{{% resource title="Outils Objective-See" description="Excellents outils de sécurité pour macOS qui peuvent aider à détecter les infections de logiciels malveillants ou les tentatives de collecte/d'exfiltration des données" languages="Anglais" cost="Gratuit" url="https://objective-see.org/tools.html" %}}
 
 ## Notes
 
-[^1]: Crowdstrike’s CrowdInspect tool is not actively maintained and may not have full functionality, thus we recommend focusing on the Microsoft tools referenced in the guide for this section. However you may still be able to obtain useful information using the tool and can gain similar types of insights as obtained from tools such as Process Explorer and TCPView
+[^1]: L'outil CrowdInspect de Crowdstrike n'est pas activement actualisé et peut ne pas proposer toutes les fonctionnalités, nous vous recommandons donc de vous concentrer sur les outils Microsoft référencés dans le guide pour cette section. Cependant, vous pouvez toujours obtenir des informations utiles à l'aide de l'outil et obtenir des types d'informations similaires à celles obtenues à partir d'outils tels que Process Explorer et TCPView.
