@@ -1,83 +1,76 @@
 +++
 style = "module"
 weight = 10
-title = "Discovering where the malware came from"
+title = "Descubrir de dónde vino el malware"
 +++
 
-## Use Case
+## Caso de Uso
 
-No malware spontaneously appears on a targeted person’s device. It always comes from somewhere. Sometimes, that somewhere is obvious: the targeted person realizes that the link they clicked on was malicious. In other cases, the infection vector may be less clear. Learning where the infection came from can be important for managing future risk. If the initial infection source was untargeted, the victim may have just been the victim of a criminal gang with no goals other than making money. On the other hand, if the initial infection came from a sophisticated targeted social engineering attack, they are likely to face continuing future attacks from the same threat actor.
+Ningún malware aparece espontáneamente en el dispositivo de la persona objetivo. Siempre proviene de alguna parte. A veces, ese lugar es obvio: la persona objetivo se da cuenta de que el enlace en el que hizo clic era malicioso. En otros casos, el vector de infección puede ser menos claro. Saber de dónde provino la infección puede ser importante para gestionar riesgos futuros. Si la fuente de infección inicial no estaba dirigida, es posible que la víctima haya sido víctima de una banda criminal sin otro objetivo que ganar dinero. Por otro lado, si la infección inicial provino de un sofisticado ataque de ingeniería social dirigido, es probable que enfrenten futuros ataques continuos del mismo autor de amenazas.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, practitioners should be able to do the following:
+Después de completar este subtema, el profesional debe ser capaz de realizar lo siguiente:
 
-- Understand how timestamps work on desktop and mobile devices
-- Look at operating system metadata to learn where malicious files were downloaded from
+- Comprender cómo funcionan las marcas de tiempo en dispositivos móviles y de escritorio.
+- Mira los metadatos del sistema operativo para saber de dónde se descargaron los archivos maliciosos.
 
 ---
+## Sección Principal
 
-## File Timestamps
+### Marcas de tiempo de archivos
 
-The first step in tracing the origin of the attack is to establish the time that the malware was installed. If you have identified the downloaded malware file, you can use the timestamps on the file. This is harder than one might imagine at first because file system timestamps are complicated. The short answer is to start with the file creation time of the first file that was downloaded. Note that files extracted from archives may have different creation times; it’s important to start with the actual file that was downloaded.
+El primer paso para rastrear el origen del ataque es establecer la hora en que se instaló el malware. Si has identificado el archivo de malware descargado, puedes utilizar las marcas de tiempo del archivo. Esto es más difícil de lo que uno podría imaginar al principio porque las marcas de tiempo del sistema de archivos son complicadas. La respuesta corta es comenzar con la hora de creación del archivo que se descargó primero. Ten en cuenta que los archivos extraídos de archivos pueden tener diferentes horas de creación; es importante empezar con el archivo real que se descargó.
 
-## Windows, macOS, Linux
+#### Windows, macOS, Linux
 
-For more information on desktop filesystem timestamps, see [this whitepaper from SANS on Windows](https://www.sans.org/white-papers/36842/), [this description of the near-infinite time stamps on MacOS](https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/), [this description of linux timestamps](https://linuxhandbook.com/file-timestamps/) and [a way of viewing file creation time on ext4](https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/).
+Para obtener más información sobre las marcas de tiempo del sistema de archivos de escritorio, revisa [este documento oficial de SANS sobre Windows](https://www.sans.org/white-papers/36842/), [esta descripción de las marcas de tiempo casi infinitas sobre MacOS](https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/), [esta descripción de las marcas de tiempo de Linux](https://linuxhandbook.com/file-timestamps/) y [una forma de ver la hora de creación de archivos en ext4](https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/).
 
-## iOS, Android
+#### iOS, Android
 
-For mobile devices, MVT provides some timestamp information. For iOS, this is [described in the documentation](https://docs.mvt.re/en/latest/ios/records/). For Android, less information is extracted, and you might have to do on-device checks.
+Para dispositivos móviles, MVT proporciona información de marca de tiempo. Para iOS, esto se [describe en la documentación](https://docs.mvt.re/en/latest/ios/records/). Para Android, se extrae menos información y es posible que tengas que realizar comprobaciones en el dispositivo.
 
-The [Google Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US) app will show the modified time of a file from the meatball menu for each file.
+La aplicación [Google Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US) mostrará la hora de modificación de un archivo desde el menú despegable de opciones para cada archivo.
 
-Note that mobile malware typically is much less obvious about leaving easily accessible traces on the file system. The common ways that mobile devices are infected is via fake sideloaded apps, malicious apps in the Apple/Google app store, or via sophisticated browser exploits that gain deep access to the device before downloading any files. In the last cases, malicious files may not show up in common download directories.
+Ten en cuenta que el malware móvil típicamente deja vestigios mucho menos evidentes en el sistema de archivos. Las formas comunes en que los dispositivos móviles se infectan son a través de aplicaciones falsas transferidas localmente, aplicaciones maliciosas en las tiendas de aplicaciones de Apple/Google, o mediante exploits sofisticados del navegador que obtienen acceso profundo al dispositivo antes de descargar cualquier archivo. En estos últimos casos, los archivos maliciosos pueden no aparecer en directorios de descarga comunes.
 
-## Suspicious Messages/Downloads
+### Mensajes/Descargas Sospechosos
 
-Whether or not you find a malicious file, the next step is to find where it came from. There are several bits of information you can collect and look for.
+Ya sea que encuentres un archivo malicioso o no, el siguiente paso es encontrar de dónde provino. Hay varios fragmentos que puedes recopilar y buscar.
 
-In some operating systems, downloads are associated with their source. This means that files can contain metadata which shows what server they were downloaded from. [This guide](https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/#:~:text=To%20Find%20Origin%20URL%20For%20File%20Downloaded%20with,the%20following%20command%3A%20Get-Content%20%22file%20name%22%20-Stream%20Zone.Identifier.) shows how to check such information on Windows and Linux, while [this one](https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/) does the same for macOS. Such metadata will show you the server from which the file was downloaded, but not what caused the download.[^1] Also note that the link the targeted person clicked on might not be the download URL due to redirects.
+En algunos sistemas operativos, las descargas están asociadas con su fuente. Esto significa que los archivos pueden contener metadatos que muestran desde qué servidor se descargaron. [Esta guía](https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/#:~:text=To%20Find%20Origin%20URL%20For%20File%20Downloaded%20with,the%20following%20command%3A%20Get-Content%20%22file%20name%22%20-Stream%20Zone.Identifier.) muestra cómo verificar dicha información en Windows y Linux, mientras que [esta otra](https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/) hace lo mismo para macOS. Tales metadatos te mostrarán el servidor desde el cual se descargó el archivo, pero no lo que causó la descarga.[^1] También ten en cuenta que el enlace en el que la persona objetivo hizo clic puede no ser la URL de descarga debido a redireccionamientos.
 
-Next up, look for emails, messages, etc. that may have triggered the download. You can use any timestamp and URL information you identified previously to help.
+A continuación, busca correos electrónicos, mensajes, etc. que puedan haber activado la descarga. Puedes utilizar cualquier marca de tiempo e información de URL que identificó anteriormente como ayuda.
 
-## Learning Resources
+## Verificación de habilidades
 
-{{% resource title="Filesystem Timestamps: What Makes Them Tick?" languages="English" cost="Free" description="Overview of timestamps, their portability, and technical workings, with a focus on Windows." url="https://www.sans.org/white-papers/36842/" %}}
+Para al menos cinco archivos en tu carpeta de descargas:
 
-{{% resource title="macOS timestamps from extended attributes and spotlight" languages="English" cost="Free" description="Guide to using advanced file metadata in macOS to find different file timestamps." url="https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/" %}}
+- Escribe todas las marcas de tiempo que contienen y lo que podrían indicar.
+- Si están disponibles, encuentra los atributos extendidos o metadatos que describen desde qué URL o servicio se descargaron (en nuestras pruebas, no todos los archivos tenían información sobre URL en sus metadatos, así que no te preocupes si no puedes encontrarlo).
 
-{{% resource title="File Timestamps in Linux: atime, mtime, ctime Explained" languages="English" cost="Free" description="Explanation of different types of file timestamps in Linux and how to interpret them." url="https://linuxhandbook.com/file-timestamps/" %}}
+Pídele a un colega o mentor que revise tu trabajo para asegurarte de que has leído correctamente todos los metadatos.
 
-{{% resource title="File creation time on ext4 Linux" languages="English" cost="Free" description="Details on how ext4 manages file timestamps and where to find creation time information." url="https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/" %}}
+En Android, instala una aplicación (no maliciosa) y utiliza el administrador de archivos para encontrar las propiedades de la aplicación y ver qué puedes aprender sobre ella. Si tienes acceso a un teléfono Android de prueba, descarga una aplicación desde fuera de Google Play y haz lo mismo. Pídele a un colega o mentor que revise tu trabajo para asegurarte de que has leído correctamente todas las propiedades de la aplicación.
 
-{{% resource title="Records extracted by mvt-ios" languages="English" cost="Free" description="Information on files generated by MVT when analyzing iOS dumps and how to interpret them." url="https://docs.mvt.re/en/latest/ios/records/" %}}
+## Recursos Educativos
 
-{{% resource title="Files by Google" languages="Multiple" cost="Free" description="Android app providing access to advanced file metadata." url="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US" %}}
+{{% resource title="Marcas de Tiempo del Sistema de Archivos: ¿Qué las Mueve?" description="Una visión general de qué son las marcas de tiempo, qué tan portátiles son y cómo funcionan a un nivel bastante técnico. Principalmente centrado en Windows" languages="Inglés" cost="gratis" url="https://www.sans.org/white-papers/36842/" %}}
+{{% resource title="marcas de tiempo de macOS de atributos extendidos y enfoque" description="Una guía para usar metadatos de archivos avanzados en macOS para encontrar diferentes marcas de tiempo de archivos y lo que significan esas marcas de tiempo" languages="Inglés" cost="gratis" url="https://forensic4cast.com/2016/10/macos-timestamps-from-extended-attributes-and-spotlight/" %}}
+{{% resource title="Marcas de tiempo de archivos en Linux: atime, mtime, ctime Explicado" description="Linux tiene diferentes tipos de marcas de tiempo. Este artículo explica cómo interpretarlos." languages="Inglés" cost="gratis" url="https://linuxhandbook.com/file-timestamps/" %}}
+{{% resource title="Hora de creación de archivos en ext4 Linux" description="El sistema de archivos más moderno que utiliza Linux se llama ext4. Este artículo analiza cómo ext4 gestiona las marcas de tiempo y cómo encontrar información detallada sobre la creación de archivos." languages="Inglés" cost="gratis" url="https://blog.roberthallam.org/2018/01/file-creation-time-on-ext4-linux/" %}}
+{{% resource title="Registros extraídos por mvt-ios" description="Observa qué archivos genera MVT al realizar análisis de volcados de iOS y cómo leerlos" languages="Inglés" cost="gratis" url="https://docs.mvt.re/en/latest/ios/records/" %}}
+{{% resource title="Archivos de Google" description="Una aplicación de Android que proporciona acceso a metadatos de archivos avanzados" languages="Varios idiomas" cost="gratis" url="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files&hl=en_US&gl=US" %}}
+{{% resource title="Mark of the Web desde la Perspectiva de un Red Team" description="Introduce Mark of the Web, una bandera en Windows que sugiere que un archivo fue descargado de la web y requiere precauciones de seguridad especiales al abrirlo." languages="Inglés" cost="gratis" url="https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/" %}}
+{{% resource title="Beward: Los navegadores basados en Chromium guardan la URL de origen de descarga de archivos" description="Analiza cómo los sistemas Windows y Linux a veces guardan metadatos en las URL desde las que se descargó un archivo" languages="Inglés" cost="Gratis" url="https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/" %}}
+{{% resource title="Descubre desde dónde se descargó un archivo en Mac OS X" description="Los archivos macOS que se han descargado desde la URL suelen tener la URL de descarga incrustada en sus metadatos. Este artículo muestra cómo extraer dicha URL." languages="Inglés" cost="gratis" url="https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/" %}}
 
-{{% resource title="Mark of the Web from a Read Team’s Perspective" languages="English" cost="Free" description="Introduction to Mark of the Web, indicating files downloaded from the web requiring special security considerations." url="https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/" %}}
-
-{{% resource title="Beware: Chromium-based browsers save download origin url for files" languages="English" cost="Free" description="Discussion on how Windows and Linux systems store metadata about file download origins." url="https://winaero.com/beware-chromium-based-browsers-save-download-origin-url-for-files/" %}}
-
-{{% resource title="Find Out Where a File was Downloaded From in Mac OS X" languages="English" cost="Free" description="Guide on extracting download URLs from macOS file metadata." url="https://osxdaily.com/2010/10/12/find-out-where-a-file-was-downloaded-from/" %}}
-
-## Skill Check
-
-For at least five files in your downloads folder:
-
-- Write out all of the timestamps they contain and what they could indicate
-- If available, find the extended attributes or metadata that describes which URL or service they were downloaded from (in our testing, not all files had information about URLs in their metadata, so don’t worry if you are unable to find it)
-
-Ask a peer or mentor to double check your work and ensure that you have correctly read all the metadata.
-
-On Android, install a (non-malicious) app and use the file manager to find the app properties and see what you can learn about the app. If you have access to a test Android phone, download an app from outside Google Play and do the same. Ask a peer or mentor to double check your work and ensure that you have correctly read all the app properties.
-
-## Notes
+## Notas
 
 [^1]:
-    On Windows, you will additionally see a number corresponding to a Zone ID. The Zones associated with downloaded files are as follows:
+    En Windows, verá además un número correspondiente a una ID de la zona. Las Zonas asociadas con los archivos descargados son las siguientes:  
 
-    - ZoneId=1: Local Intranet
-    - ZoneId=2: Trusted sites
+    - ZoneId=1: Intranet Local
+    - ZoneId=2: Sitios de confianza
     - ZoneId=3: Internet
-    - ZoneId=4: Restricted sites
+    - ZoneId=4: Sitios restringidos

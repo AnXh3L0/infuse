@@ -1,146 +1,136 @@
 +++
 style = "module"
 weight = 3
-title = "How malware works and different types of malware"
+title = "Cómo funciona el malware y los diferentes tipos de malware"
 +++
 
-## Use Case
+## Caso de Uso
 
-In order to start working with malware, we first need to learn about its different types. Viruses, spyware, backdoors, ransomware, and adware behave differently and are inspired by different motivations. This knowledge will help the protector to classify the type of malware detected.
+Para empezar a trabajar con malware, primero debemos conocer sus diferentes tipos. Virus, spyware, backdoors, ransomware y adware se comportan de manera diferente y se inspiran en diferentes motivaciones. Este conocimiento ayudará al protector a clasificar el tipo de malware detectado.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, the practitioner should be able to do the following:
+Después de completar este subtema, el profesional debe ser capaz de realizar lo siguiente:
 
-- Differentiate between various types of malware
-- Understand what malware can do
-- Understand how malware infections begin
-- Explain what indicators of compromise are
+- Diferenciar entre los varios tipos de malware.
+- Comprender lo que puede hacer el malware.
+- Comprender cómo comienzan las infecciones de malware.
+- Describir qué son los indicadores de compromiso.
 
 ---
+## Sección Principal
 
-In general, malware is any software that is used to do unauthorized things on a user’s computer or mobile device. Wikipedia has a good [introduction to malware in general.](https://en.wikipedia.org/wiki/Malware)
+En general, el malware es cualquier software que se utiliza para realizar acciones no autorizadas en la computadora o dispositivo móvil de un usuario. Wikipedia tiene una buena [introducción al malware en general.](https://en.wikipedia.org/wiki/Malware)
 
-## What does malware do?
+### ¿Cómo funciona el malware?
 
-Malware can do anything that any software can do, but there are several common capabilities that exist in malware. While some malware is single-purpose, other malware will have multiple capabilities. Frequently-used capabilities include:
+El malware puede hacer cualquier cosa que cualquier software puede hacer, pero hay varias capacidades comunes que existe en el malware. Si bien algunos malware tienen un solo propósito, otros tendrán varias capacidades. Las capacidades utilizadas con frecuencia incluyen:
 
-- Wiping or encrypting data (ransomware). Often run by financially motivated attackers. This malware will take over the targeted person’s computer and deny them access to their data until a ransom is paid.
-- Stealing data. Malware can selectively or indiscriminately send data from the targeted person’s device to a computer controlled by the attacker. This is used on its own or in conjunction with ransomware.
-- Unauthorized use of resources. Financially motivated attackers will frequently use collections of compromised computers to perform actions, such as mining cryptocurrency, sending spam, or performing denial of service attacks.
-- Hijacking a user’s web browser. Some malware can insert ads into web pages while a user browses the web, collecting ad revenue. Others can steal passwords or session cookies (the cookie that authenticates you when you are logged in to your account), allowing attackers to access the targeted person’s accounts on websites. Some malware stealers will exfiltrate passwords, cookies, and other types of sensitive data from a device and then delete themselves, attempting to erase any traces of the infection.
-- Collecting user activity. More sophisticated malware will try to capture activities of the targeted person, such as recording video or audio, capturing the user’s typing, recording a mobile device’s location, etc. This is often used for espionage/surveillance or extortion.
-- Interactive or semi-interactive control. More sophisticated malware will have general purpose capabilities that allow the attacker to use the targeted person’s device for unscripted activities. An attacker can send general commands via a command-and-control server or direct connection, and the malware will run the commands on the targeted person’s device and return the results to the attacker. This is often used on high-value targets or to launch further attacks inside a network.
+- Borrar o cifrar datos (ransomware). A menudo son dirigidos por atacantes con motivaciones financieras. Este malware tomará control de la computadora de la persona objetivo y le negará el acceso a sus datos hasta que se pague un rescate.
+- Robo de datos. El malware puede enviar datos de forma selectiva o indiscriminada desde el dispositivo de la persona objetivo a una computadora controlada por el atacante. Se utiliza solo o junto con ransomware.
+- Uso no autorizado de recursos. Los atacantes con motivaciones financieras utilizarán con frecuencia conjuntos de computadoras comprometidas para realizar acciones, como la minería de criptomonedas, enviar spam o realizar ataques de denegación de servicio.
+- Secuestro del navegador web de un usuario. Algunos malware pueden insertar anuncios en páginas web mientras un usuario navega por la web, recaudando ingresos por publicidad. Otros pueden robar contraseñas o cookies de sesión (la cookie que te autentica al iniciar una sesión en tu cuenta), lo que permite a los atacantes acceder a las cuentas de la persona objetivo en los sitios web. Algunos malware ladrones extraen contraseñas, cookies y otros tipos de datos confidenciales de un dispositivo y luego los eliminan, intentando borrar cualquier rastro de la infección.
+- Recopilación de la actividad del usuario. El malware más sofisticado intentará capturar las actividades de la persona objetivo, como grabar video o audio, capturar la escritura del usuario, registrar la localización de un dispositivo móvil, etc. Esto se utiliza a menudo para espionaje/vigilancia o extorsión.
+- Control interactivo o seminteractivo. El malware más sofisticado tendrá capacidades de propósito general que le permitirá al atacante utilizar el dispositivo de la persona objetivo para actividades improvisadas. Un atacante puede enviar comandos generales a través de un servidor de comando y control o una conexión directa, y el malware ejecutará los comandos en el dispositivo de la persona objetivo y devolverá los resultados al atacante. Esto se utiliza a menudo contra objetivos de gran valor o para lanzar más ataques dentro de una red.
 
-This list above is not exhaustive, but outlines the most common malware capabilities. For a great overview of key malware which was discovered in the previous year, check out Patrick Wardle’s blogpost on [The Mac Malware of 2023](https://objective-see.org/blog/blog_0x77.html). While this post describes many concepts we will cover later on throughout this learning path (such as VirusTotal scans), it’s a fantastic introduction and overview to the world of malware.
+La lista anterior no es exhaustiva, pero describe las capacidades de malware más comunes. Para obtener una excelente visión general de los principales malware descubiertos en el año anterior, consulte la publicación del blog de Patrick Wardle en [The Mac Malware of 2023](https://objective-see.org/blog/blog_0x77.html). Si bien esta publicación describe muchos conceptos que cubriremos más adelante a lo largo de esta ruta de aprendizaje (como los escaneos de VirusTotal), es una fantástica introducción y visión general del mundo del malware.
 
-Perhaps one of the most notoriously capable pieces of malware is the NSO Group Pegasus package, which is purpose-built for covert surveillance. Its capabilities are listed in this [sales document from the NSO Group](https://www.documentcloud.org/documents/4599753-NSO-Pegasus.html).
+Quizás una de las piezas de Malware más notoriamente capaz es el paquete Pegasus de NSO Group, que está diseñado específicamente para la vigilancia encubierta. Sus capacidades se enumeran en este [documento de ventas de NSO Group](https://www.documentcloud.org/documents/4599753-NSO-Pegasus.html).
 
-We highly recommend reading [Chapter 5](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) of the Field Guide to incident response for civil society and media for thematically relevant overview of malware and related concepts, including:
+Recomendamos mucho la lectura del [Capítulo 5](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) de la Guía de Campo sobre respuesta a incidentes para la sociedad civil y medios para obtener una visión general temáticamente relevante del malware y conceptos relacionados, que incluyen:
 
-- Code obfuscation
-- Types of malware
-- Persistence
-- Infection chains
-- Command and control communication
-- Antivirus programs
-- Vulnerabilities and exploits
+- Ofuscación de código.
+- Tipos de malware.
+- Persistencia.
+- Cadenas de infección.
+- Comunicación de comando y control.
+- Programas antivirus.
+- Vulnerabilidades y exploits.
 
-## How do targeted devices get infected?
+### ¿Cómo se infectan los dispositivos objetivo?
 
-Malware has to get on a targeted person’s device somehow. The methods to do this range from users being tricked into running malicious software to exploitation of vulnerable software and services, including true 0-click attacks.
+El malware tiene que llegar de alguna manera al dispositivo de la persona objetivo. Los métodos para hacerlo van desde engañar a los usuarios para que ejecuten software malicioso hasta la explotación de software y servicios vulnerables, incluidos los verdaderos ataques de 0-clics.
 
-## Methods of infecting Windows, macOS, and Linux
+#### Métodos para infectar Windows, macOS y Linux
 
-1. Directly running (executing) malicious programs received via social engineering attacks
-   1. Phishing via email, SMS, WhatsApp, etc.
-   2. Malware disguised as legitimate software, such as pirated software
-   3. Malware copied from USB sticks, etc
-2. Documents that have malware embedded in them, most frequently legacy Microsoft Office documents, but also such formats as PDFs, web pages, etc.
-3. Documents and web pages that exploit bugs in software to install malware. These circumvent the security controls built into applications and the operating system
-4. [“Zero-click” attacks](https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html) (Free, English) that don’t require any user interaction at all, but allow the attacker to directly attack an application or operating system. They affect both desktop and mobile operating systems.
+1. Ejecutar directamente (ejecución) programas maliciosos recibidos a través de ataques de ingeniería social.
+    1. Phishing a través de correo electrónico, SMS, WhatsApp, etc.
+    2. Malware disfrazado de software legítimo, como software pirateado.
+    3. Malware copiado de memorias USB, etc.
+2. Documentos que contienen malware incrustado, normalmente documentos heredados de Microsoft Office, pero también formatos como PDF, páginas web, etc.
+3. Documentos y páginas web que aprovechan errores en el software para instalar malware. Estos eluden los controles integrados de seguridad en las aplicaciones y sistema operativo.
+4. [Ataque “Sin clic”](https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html) (Gratis, Ingles) que no requieren ninguna interacción del usuario, pero permiten al atacante atacar directamente una aplicación o sistema operativo. Afectan tanto a los sistemas operativos de escritorio como a los móviles.
 
-Once the initial compromise is made, most malware will go through [multiple stages of infection](https://community.fireeye.com/s/article/000002205) (Free, English).
+Una vez que se logra el comprometimiento inicial, la mayoría del malware pasará por [varias etapas de infección](https://community.fireeye.com/s/article/000002205) (Gratis, Inglés).
 
-## Methods of infecting iOS and Android
+#### Métodos para infectar iOS y Android
 
-Mobile operating systems have a slightly different architecture from desktop ones. They are usually more locked down and restrict what code can be run on them. This means that malware, too, has slightly different infection paths and methods. Check out the [smartphone systems architecture](https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture) section of the Mobile Forensics Guide for a good overview.
+Los sistemas operativos móviles tienen una arquitectura ligeramente diferente a los sistemas operativos de escritorio. Por lo general, están más asegurados y restringen el código que se puede ejecutar en ellos. Esto significa que el malware también tiene rutas y métodos de infección ligeramente diferentes. Verifica la sección de [arquitectura de sistemas de teléfonos inteligentes](https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture) de la Guía Forense Móvil para obtener una buena visión general.
 
-Standard iOS and Android configurations only allow the user to run software downloaded from the official app stores. Malware for those platforms is either installed through such an app store (which means that it was not discovered during Apple’s or Google’s security audits) or by exploiting holes in iOS and Android which stop unauthorized code from running. Alternatively, some malware authors also use social engineering to convince targeted persons to install malicious profiles or other device configurations.
+Las configuraciones estándar de iOS y Android sólo permiten al usuario ejecutar software descargado de las tiendas de aplicaciones oficiales. El malware para esas plataformas se instala a través de dicha tienda de aplicaciones (lo que significa que no fue descubierto durante las auditorías de seguridad de Apple o Google) o explotando agujeros en iOS y Android que impiden la ejecución de código no autorizado. Alternativamente, algunos autores de malware también utilizan la ingeniería social para convencer a las personas objetivo a instalar perfiles maliciosos u otras configuraciones de dispositivos.
 
-## Persistence
+### Persistencia
 
-Much of the malware you encounter in your work will be persistent, or able to start running automatically every time the targeted person logs in or restarts their system. Each operating system has mechanisms which automatically run certain software at login, at scheduled times, or when something happens (for example, when a new network connection is made or a program is launched).
+Muchos de los malware que encuentras en tu trabajo serán persistentes o capaces de comenzar a ejecutarse automáticamente cada vez que la persona objetivo inicie sesión o reinicie su sistema. Cada sistema operativo tiene mecanismos que ejecutan automáticamente cierto software al iniciar sesión, en momentos programados o cuando sucede algo (por ejemplo, cuando se realiza una nueva conexión de red o se inicia un programa).
 
-Malware can use a wide array of persistence techniques; some of them are reasonably simple (such as adding itself to the list of programs which run automatically at login), with others far more complex and taking advantage of specialized operating system features. If you want to learn more about those, check out [this deep dive into the topic](https://github.com/Karneades/malware-persistence/blob/master/README.md) and [this advanced and comprehensive list](https://github.com/Karneades/awesome-malware-persistence) of persistence techniques. Many of those techniques include advanced analysis that goes slightly outside of the scope of this learning path; at the same time, it’s a good idea for you to have a general idea of what persistence is and which mechanisms it could use.
+El malware puede utilizar una amplia gama de técnicas de persistencia; algunos de ellos son razonablemente simples (como agregarse a la lista de programas que se ejecutan automáticamente al iniciar sesión), mientras que otros son mucho más complejos y aprovechan los recursos especializados del sistema operativo. Si deseas obtener más información sobre ellos, consulta [este análisis a fondo del tema](https://github.com/Karneades/malware-persistence/blob/master/README.md) y [esta lista avanzada y completa](https://github.com/Karneades/awesome-malware-persistence) de técnicas de persistencia. Muchas de esas técnicas incluyen análisis avanzados que están ligeramente fuera del alcance de esta ruta de aprendizaje; al mismo tiempo, es buena idea que tengas una idea general de qué es la persistencia y qué mecanismos podrían utilizarse.
 
-Some malware will not aim for persistence. Instead it will run, extract data, and then disappear following a logout or a restart. If attackers want to use the malware’s capabilities again, they simply re-install it on the targeted person’s system. While this can limit the period for which the malware is active on a system and therefore the data it collects, it also makes the malware more difficult to detect, since it leaves fewer traces on a system.
+Algunos malware no buscarán la persistencia. En su lugar, se ejecutará, extraerá datos y luego desaparecerá después de cerrar sesión o reiniciar. Si los atacantes quieren volver a utilizar las capacidades del malware, simplemente lo reinstalan en el sistema de la persona objetivo. Si bien esto puede limitar el período durante el cual el malware está activo en un sistema y, por lo tanto, los datos que recopila, también hacen que el malware sea más difícil de detectar, ya que deja menos rastros en el sistema.
 
-## Indicators of Compromise
+### Indicadores de Compromiso
 
-In the process of being installed and performing malicious activities, malware leaves IoCs, or Indicators of Compromise. These are frequently used to identify particular pieces of malware. IoCs could include cryptographic hashes (we cover them later on this learning path) which represent specific executable files, but they can also be connections to network services or particular network traffic, patterns of execution, etc.
+En el proceso de instalación y realización de actividades maliciosas, el malware deja IoCs o Indicadores de Compromiso. Se utilizan con frecuencia para identificar piezas específicas de malware. Los IoCs podrían incluir hashes cifrados (los cubriremos más adelante en esta ruta de aprendizaje) que representan archivos ejecutables específicos, pero también pueden ser conexiones a servicios de red o tráfico de red privada, patrones de ejecución, etc.
 
-For a short summary of what IoCs are and how they could look like, [check out pp. 37-40](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) (from indicators of compromise to defanging) of the Field Guide to Incident Response for Civil Society and Media.
+Para obtener un breve resumen de qué son los IoCs y cómo podrían verse, [consulta las páginas 37-40](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) (desde indicadores de compromiso hasta neutralización) de la Guía de Campo para Respuesta a Incidentes para la Sociedad Civil y Medios
 
-For a long discussion on IoCs and their uses in incident response, see [this webinar by CISA](https://www.youtube.com/watch?v=zs-AEaSd2vk) (English, 46 minutes).
+Para una discusión extensa sobre los IoC y sus usos en la respuesta a incidentes, echa un vistazo a [este seminario web de CISA](https://www.youtube.com/watch?v=zs-AEaSd2vk) (inglés, 46 minutos).
 
-Check out the IoCs outlined on page 52 [of this Amnesty Report](https://www.amnesty.org/en/documents/act10/7245/2023/en/) into a piece of powerful commercial spyware: they mostly consist of the names of domains which were used as infrastructure during this malware campaign. After you’ve done that, take a look at [this page](https://github.com/AmnestyTech/investigations), which collects IoCs from various investigations Amnesty Tech conducted.
+Consulta los IoCs descritos en la página 52 [de este Informe de Amnistía](https://www.amnesty.org/en/documents/act10/7245/2023/en/) un artículo sobre el poderoso spyware comercial: en su mayoría consisten en nombres de dominios que se utilizaron como infraestructura durante esta campaña de malware. Después de haber hecho eso, revisa [esta página](https://github.com/AmnestyTech/investigations), que recopila IoCs de varias investigaciones realizadas por Amnesty Tech.
 
-There are many different ways to spot indicators of compromise. They include looking through network logs to see if any device tried to contact a specific domain, and checking if any files on a device match certain hashes. If you would like to learn a little more about them, we recommend checking out those articles by [Microsoft](https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc) and [Fortinet](https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise).
+Hay muchas maneras diferentes de detectar indicadores de compromiso. Incluyen revisar los registros de red para ver si algún dispositivo intentó contactar con un dominio específico y verificar si algún archivo en un dispositivo coincide con ciertos _hashes_. Si desea aprender un poco más sobre ellos, te recomendamos consultar los artículos de [Microsoft](https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc) y [Fortinet](https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise).
 
-## Known versus unknown malware
+### Malware conocido versus malware desconocido
 
-The vast majority of malware infections you will encounter in your career will have been caused by malware that the community knows about. This means that somebody else has already found this malware and shared the IoCs or samples thereof with malware scanning engines. Still, cybercriminals continue to write new malware and adapt existing programs. There is therefore always a small chance that the devices you’re investigating have been infected with malware which has not yet been documented. If you worry that this might be the case, we recommend checking out the Malware Analysis Learning Path, which guides you on how to analyze unknown samples to figure out whether they are malicious.
+La gran mayoría de las infecciones de malware que encontrarás durante tu carrera habrán sido causadas por malware que la comunidad conoce. Esto significa que alguien más ya encontró este malware y compartió los IoCs o muestras de los mismos con motores de escaneo de malware. Aun así, los ciberdelincuentes continúan escribiendo nuevo malware y adaptando programas existentes. Por lo tanto, siempre existe una pequeña posibilidad de que los dispositivos que estás investigando estén infectados con malware que aún no ha sido documentado. Si te preocupa que este sea el caso, te recomendamos que consultes la Ruta de Aprendizaje sobre Análisis de Malware, la cual te guiará sobre cómo analizar muestras desconocidas para averiguar si son maliciosas.
 
-Not all malware that has been recognized has been extensively documented, either. Many of the samples that can be found on websites like MalwareBazaar might have IoCs associated with them and are known to be malicious, but analysts might not have written up what exactly such malware does. If you find a sample that others flagged up as malicious but which is nonetheless under-documented and you would like to learn more about how it functions and what it does, follow some of the guides on the analysis learning path.
+Tampoco todo el malware que se ha identificado está ampliamente documentado. Muchas de las muestras que se pueden encontrar en sitios web como _MalwareBazaar_ pueden tener IoCs asociados y se sabe que son maliciosos, pero es posible que los analistas no hayan escrito qué hace exactamente ese malware. Si encuentras una muestra que otros marcaron como maliciosa pero que, no obstante, está poco documentada y te gustaría aprender más sobre cómo funciona y qué hace, sigue algunas de las guías en la ruta de aprendizaje del análisis.
 
-## Learning Resources
+## Práctica
 
-{{% resource title="Malware chapter on Field Guide for Threat Labs (Chapter 5)" languages="English" cost="Free" description="Good introduction to malware from the perspective of a digital protector needing to understand" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+Tómate un momento para revisar la lista de malware de Malware Bazaar’s [recientemente enviada](https://bazaar.abuse.ch/browse/). Lee las descripciones y los comentarios de varias muestras de malware y toma nota de la forma que toman, qué mecanismo de entrega utilizan, y afines. Algunas de las muestras de malware tienen comentarios adjuntos; revísalos también. Ten en cuenta que no todas las muestras de malware contendrán detalles como IoCs o mecanismos de entrega.
 
-{{% resource title="Malware - Wikipedia" languages="multiple" cost="Free" description="A good fundamental introduction to the topic which explains some of the basic and moderately advanced concepts needed" url="https://en.wikipedia.org/wiki/Malware" %}}
+Ten en cuenta que Malware Bazaar también contiene algunos detalles, como _hashes_, que solo se cubrirán en fases posteriores de esta ruta de aprendizaje.
 
-{{% resource title="The Mac Malware of 2023" languages="English" cost="Free" description="An important overview of macOS malware spotted in 2023. Includes types of malware, infection vectors, persistence mechanisms, and goals." url="https://objective-see.org/blog/blog_0x77.html" %}}
+No descargues ninguna muestra en este momento. Simplemente echa un vistazo a las descripciones de las muestras, eso es suficiente en esta etapa.
 
-{{% resource title="Pegasus sales document from the NSO group" languages="English" cost="Free" description="This leaked document describes some of the capabilities of Pegasus, a piece of spyware that targets human rights activists among others. It gives a good introduction to how spyware is sold and marketed." url="https://www.documentcloud.org/documents/4599753-NSO-Pegasus.html" %}}
+## Verificación de habilidades
 
-{{% resource title="Zero click attacks explained" languages="English" cost="Free" description="Describes what a zero-click attack is, why attackers might be so interested in using them, and why they are so dangerous." url="https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html" %}}
+Trabajando con un colega o mentor, encuentra dos o tres informes que describan infecciones de malware para una plataforma de tu elección. Asegúrate de que esos informes incluyan IoCs. Si no puedes encontrar ningún informe, simplemente puedes leer uno de estos:
 
-{{% resource title="Understanding indicators of compromise for incident response" languages="English" cost="Free" description="A video by the US CISA that gives a good overview and introduction to IoCs and how they could be used by incident responders." url="https://www.youtube.com/watch?v=zs-AEaSd2vk" %}}
+- [HotRat: Los Riesgos de las Descargas Ilegales de Software y del Script AutoHotkey Oculto](https://decoded.avast.io/martinchlumecky/hotrat-the-risks-of-illegal-software-downloads-and-hidden-autohotkey-script-within/)
+- [Earth Preta utiliza Spear-Phishing para atacar Gobiernos en Todo el Mundo](https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html)
+- [Nuevo SugarGh0st RAT apunta al gobierno de Uzbekistán y Corea del Sur](https://blog.talosintelligence.com/new-sugargh0st-rat/)
+- (este documento es largo, solo léelo detenidamente si se siente particularmente ambiciosa) [Amnesty Tech informe sobre Predator](https://www.amnesty.org/en/documents/act10/7245/2023/en/)
 
-{{% resource title="Guide to Malware Incident Prevention and Handling for Desktops and Laptops" languages="English" cost="Free" description="An older (2013) guide by the US NIST which comprehensively covers the topic." url="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-83r1.pdf" %}}
+Responde las siguientes preguntas para uno de esos informes:
 
-{{% resource title="Smartphone systems architecture" languages="English" cost="Free" description="A look at how mobile operating systems function and how malware can spread on them." url="https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture" %}}
+- ¿Qué hace este malware?
+- ¿Cómo logra el malware llegar a un sistema? ¿Aprovecha un error existente para ser instalado? ¿Requiere intervención del usuario para instalarse?
+- ¿Cuáles son los IoCs para este malware? ¿Qué medidas podríamos tomar para detectar esos IoCs en un sistema o red infectados?
 
-{{% resource title="The Predator Files" languages="English" cost="Free" description="A malware investigation conducted by Amnesty Tech; includes lists of IoCs on page 52." url="https://www.amnesty.org/en/documents/act10/7245/2023/en/" %}}
+Discute tus respuestas a todas esas preguntas con tu colega o mentor.
 
-{{% resource title="Indicators from Amnesty International's investigations" languages="None (dataset)" cost="Free" description="A list of IoCs which Amnesty collected in the course of its investigations." url="https://github.com/AmnestyTech/investigations" %}}
+## Recursos Educativos
 
-{{% resource title="Microsoft Security: Indicators of compromise explained" languages="English" cost="Free" description="A summary of what IoCs are and which forms they could take." url="https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc" %}}
-
-{{% resource title="Fortinet glossary: Indicators of compromise" languages="English" cost="Free" description="One more, very useful, summary of IoCs." url="https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise" %}}
-
-## Practice
-
-Take a moment to look through Malware Bazaar’s list of [recently submitted malware](https://bazaar.abuse.ch/browse/). Read through the descriptions and comments of several malware samples and note what form they take, which delivery mechanism they use, and the like. Some of the malware samples have comments attached to them; check those out as well. Note that not all malware samples will contain details such as IoCs or delivery mechanisms.
-
-Do note that Malware Bazaar also contains some details such as hashes which are only covered in later phases of this learning path.
-
-Do not download any samples at this moment. Simply glancing at the sample descriptions is sufficient at this stage.
-
-## Skill Check
-
-Working with a peer or mentor, find two or three reports describing malware infections for a platform of your choice. Make sure that those reports include IoCs. If you cannot find any reports, you can just read through one of those:
-
-- [HotRat: The Risks of Illegal Software Downloads and Hidden AutoHotkey Script Within](https://decoded.avast.io/martinchlumecky/hotrat-the-risks-of-illegal-software-downloads-and-hidden-autohotkey-script-within/)
-- [Earth Preta Spear-Phishing Governments Worldwide](https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html)
-- [New SugarGh0st RAT targets Uzbekistan government and South Korea](https://blog.talosintelligence.com/new-sugargh0st-rat/)
-- (this is a long one, only peruse if you feel particularly ambitious) [Amnesty Tech report on Predator](https://www.amnesty.org/en/documents/act10/7245/2023/en/)
-
-Answer the following questions for one of those reports:
-
-- What does this malware do?
-- How does still malware get on a system? Does it exploit an existing bug to be installed? Does it require user intervention to install?
-- What are the IoCs for this malware? What steps could we take to spot those IoCs on an infected system or network?
-
-Discuss your answers to all those questions with your peer or mentor.
+{{% resource title="Capítulo sobre malware en la Guía de Campo para Threat Labs (Capítulo 5)" description="Buena introducción al malware desde la perspectiva de un protector digital que necesita comprender" languages="Inglés" cost="Gratis" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+{{% resource title="Malware - Wikipedia" description="Una buena introducción básica al tema que explica algunos de los conceptos básicos y moderadamente avanzados necesarios" languages="Varios idiomas" cost="Gratis" url="https://en.wikipedia.org/wiki/Malware" %}}
+{{% resource title="El Malware para Mac de 2023" description="Una visión general importante del malware para macOS detectado en 2023. Incluye tipos de malware, vectores de infección, mecanismos de persistencia y objetivos." languages="Inglés" cost="Gratis" url="https://objective-see.org/blog/blog_0x77.html" %}}
+{{% resource title="Documento de ventas de Pegasus de NSO group" description="Este documento filtrado describe algunas de las capacidades de Pegasus, un artículo sobre spyware dirigido a activistas de derechos humanos, entre otros. Ofrece una buena introducción a cómo se vende y comercializa el spyware" languages="Inglés" cost="Gratis" url="https://www.documentcloud.org/documents/4599753-NSO-Pegasus.html" %}}
+{{% resource title="Ataques sin clic (ataque sin clic) explicado" description="Describe qué es un zero-click attack, por qué los atacantes pueden estar tan interesados en usarlos y por qué son tan peligrosos" languages="Inglés" cost="Gratis" url="https://www.csoonline.com/article/572727/zero-click-attacks-explained-and-why-they-are-so-dangerous.html" %}}
+{{% resource title="Comprender los indicadores de compromiso para la respuesta a incidentes" description="Un vídeo de US CISA que ofrece una buena visión general y una introducción a IoCs y cómo podrían utilizarlos los respondientes a incidentes." languages="Inglés" cost="Gratis" url="https://www.youtube.com/watch?v=zs-AEaSd2vk" %}}
+{{% resource title="Guía para la Prevención y el Manejo de Incidente de Malware para Computadoras de Escritorio y Portátiles" description="Una guía anterior (2013) del US NIST que cubre ampliamente el tema" languages="Inglés" cost="Gratis" url="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-83r1.pdf" %}}
+{{% resource title="Arquitectura de Sistemas de Teléfonos Inteligentes" description="Una mirada sobre cómo funcionan los sistemas operativos móviles y cómo el malware puede propagarse en ellos" languages="Inglés" cost="Gratis" url="https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture" %}}
+{{% resource title="Los Archivos Predator" description="Una investigación de malware realizada por Amnesty Tech; incluye listas de IoCs en la página 52" languages="Inglés" cost="Gratis" url="https://www.amnesty.org/en/documents/act10/7245/2023/en/" %}}
+{{% resource title="Indicadores de las investigaciones de Amnesty International's" description="Una lista de IoCs que Amnesty recopiló en el curso de sus investigaciones" languages="Ninguno (conjunto de datos)" cost="Gratis" url="https://github.com/AmnestyTech/investigations" %}}
+{{% resource title="Microsoft Security: Indicadores de compromiso explicados" description="Un resumen de qué son los IoCs y qué formas podrían adoptar" languages="Inglés" cost="Gratis" url="https://www.microsoft.com/en-us/security/business/security-101/what-are-indicators-of-compromise-ioc" %}}
+{{% resource title="Glosario de Fortinet: Indicadores de compromiso" description="Un resumen más, muy útil, de los IoCs" languages="Inglés" cost="Gratis" url="https://www.fortinet.com/resources/cyberglossary/indicators-of-compromise" %}}

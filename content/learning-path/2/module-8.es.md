@@ -1,85 +1,80 @@
 +++
 style = "module"
 weight = 8
-title = "Sample-based detection and determination"
+title = "Detección y determinación basadas en muestras"
 +++
 
-## Use Case
+## Caso de Uso
 
-You have a sample of a file and need to determine if it is malicious. This may have been sent to the target by email, social media, or instant messenger, or transferred over removable media or otherwise. The file itself may be a binary, a compressed archive, a captured web page, or other file formats. The primary objective is to determine whether the file is malicious. In addition, you may be able to determine some additional useful characterizing information about the file, however for more guidance see the [Malware Analysis Learning Path](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Tienes una muestra de un archivo y necesita determinar si es malicioso. Esto puede haber sido enviado al objetivo por correo electrónico, redes sociales o mensajería instantánea, o transferido a través de medios extraíbles o de otro modo. El archivo en sí puede ser binario, un archivo comprimido, una página web capturada u otros formatos de archivo. El objetivo principal es determinar si el archivo es malicioso. Además, es posible que puedas determinar información adicional útil para caracterizar el archivo, sin embargo, para obtener más orientación, revisa el [Análisis de Malware en la Ruta de Aprendizaje](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, practitioners should be able to do the following:
+Después de completar este subtema, el profesional debe ser capaz de realizar lo siguiente:
 
-- Investigate suspicious files using malware platforms
-- Utilize sandboxes to assist in determining whether a sample is malicious and what it does
+- Investigar archivos sospechosos utilizando plataformas de malware.
+- Utiliza entornos Sandbox para ayudar a determinar si una muestra es maliciosa y qué hace.
 
 ---
+## Sección Principal
 
-If you require more in-depth evaluation of a few specific files, there are online services that will scan a specific file or set of files for malware. If you have a file that you suspect to be malicious, you can upload the file to the scanning service. Note that these services do not keep confidential the contents of the files you upload. You should not upload any files that contain sensitive information. These files may come from email attachments, or be recently downloaded files on the victim’s device. Note that in many cases, the initial download may be a dropper (executable that installs the actual malware, often easier to customize than the “real” malware), and may not be known to anti-malware software. If possible, analyze file creation/modification/download dates to identify files that might have been downloaded by the initial dropper.
+Si necesita una evaluación más profunda de algunos archivos específicos, existen servicios en línea que escanearán un archivo específico o un conjunto de archivos en busca de malware. Si tienes un archivo que sospechas que es malicioso, puedes cargarlo en el servicio de escaneo. Ten en cuenta que estos servicios no mantienen confidencial el contenido de los archivos que envías. No debes enviar archivos que contengan información confidencial. Estos archivos pueden provenir de archivos adjuntos de correo electrónico o ser archivos descargados recientemente en el dispositivo de la víctima. Ten en cuenta que, en muchos casos, la descarga inicial puede ser un dropper (ejecutable que instala el malware real, a menudo más fácil de personalizar que el malware "real") y es posible que el software antimalware no lo reconozca. Si es posible, analiza las fechas de creación/modificación/descarga de archivos para identificar los archivos que podrían haber sido descargados por el dropper inicial.
 
-If you would prefer not to share a full file with an online service but still want to check if it has ever been submitted, you can simply upload a hash of the file. A hash is like a short fingerprint of a file—it can be used to identify a unique file without revealing its contents. For more information on hashes, go through the “Hashes” section in Chapter 7 of the [Field Guide to Incident Response for Civil Society and Media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/). The guide activity assumes the user is learning on a Linux operating system, so you will need to look up the command line utility to use to obtain a SHA sum on your chosen platform, for instance using \_shasum \_or \_openssl \_on MacOS or using Get-FileHash or certutil in PowerShell.
+Si prefieres no compartir un archivo completo con un servicio en línea, pero aun así deseas verificar si alguna vez se ha enviado, simplemente puedes cargar un hash del archivo. Un hash es como una huella digital corta de un archivo: se puede utilizar para identificar un archivo único sin revelar su contenido. Para obtener más información sobre _hashes_, consulta la sección "_Hashes_" en el Capítulo 7 de la [Guía de Campo para Respuesta a Incidentes para la Sociedad Civil y Medios](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/). La actividad de la guía supone que el usuario está aprendiendo en un sistema operativo Linux, por lo que deberás buscar la utilidad de línea de comandos que utilizarás para obtener una suma SHA en la plataforma elegida, por ejemplo, usando shasum o openssl en MacOS o usando Get-FileHash o certutil en PowerShell.
 
-A popular malware intelligence service is Google’s [VirusTotal](https://www.virustotal.com/). VirusTotal will scan a file with a number of antimalware scanners, and report the results back. It can also scan for file hashes or URLs. VirusTotal is free to use, subject to volume constraints. For a detailed description and activity, complete the “Using VirusTotal” section in Chapter 7 of Internews’ [Field Guide to Incident Response for Civil Society and Media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/).
+Un servicio popular de inteligencia de malware es [VirusTotal](https://www.virustotal.com/) de Google. VirusTotal escaneará un archivo con varios escáneres antimalware e informará los resultados. También puede buscar _hashes_ de archivos o URL. VirusTotal es de uso gratuito, sujeto a restricciones de volumen. Para obtener una descripción detallada y actividad, completa la sección **"Utilizando VirusTotal"** del Capítulo 7 del documento de Internews’ [Guía de Campo para Respuesta a Incidentes para la Sociedad Civil y Medios](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/).
 
-‼️ After reading the above chapter, you should be able to:
+Después de leer el capítulo anterior, deberías poder:
 
-- Understand what uploading a sample to VirusTotal does (shares your sample with paying VirusTotal customers), and be able to decide if it is appropriate to do so
-- Submit a file or check a record by hash and read the Detections, Details, Relations, Behavior, and Community tabs on VirusTotal
+- Comprender lo que significa enviar una muestra a VirusTotal (compartir tu muestra con clientes de pago de VirusTotal) y poder decidir si es apropiado hacerlo.
+- Enviar un archivo o verificar un registro mediante _hash_ y leer las pestañas Detecciones, Detalles, Relaciones, Comportamiento y Comunidad en VirusTotal.
 
-## Sandboxes
+### Sandboxes
 
-Sandboxes provide a virtual environment simulating an ordinary computer which captures detailed logs of activities which occur in memory and on disk. This generally allows a safe and automated way to bootstrap malware analysis and understand the actions and intentions of a file.
+Los entornos Sandbox proporcionan un entorno virtual que simula una computadora común que captura registros detallados de las actividades que ocurren en la memoria y en el disco. Generalmente, esto permite una forma segura y automatizada de iniciar el análisis de malware y comprender las acciones e intenciones de un archivo.
 
-Several freely available commercial sandbox services include [Hybrid Analysis](https://www.hybrid-analysis.com/), [Any.Run](https://any.run/), [Joe Sandbox](https://www.joesandbox.com/), and [Triage](https://tria.ge/). These services run files that you send it and perform dynamic analysis. This has great advantages in being able to heuristically detect new malware, and also being able to evaluate multiple malware stages. Note that samples submitted will be collected and become available to paying customers and analysts.
+Varios servicios de sandbox comerciales de acceso gratuito incluyen [Hybrid Analysis](https://www.hybrid-analysis.com/), [Any.Run](https://any.run/), [Joe Sandbox](https://www.joesandbox.com/), y [Triage](https://tria.ge/). Estos servicios ejecutan archivos que les envías y realizan análisis dinámico. Esto tiene grandes ventajas al poder detectar heurísticamente nuevo malware y también al poder evaluar varias etapas del malware. Ten en cuenta que las muestras enviadas serán recopiladas y estarán disponibles para clientes de pago y analistas.
 
-Cuckoo Sandbox is a free and open source malware analysis sandbox tool which you can self-host. CERT-EE in Estonia offers a free hosted version online: [Cuckoo V2](https://cuckoo.cert.ee/), [Cuckoo V3 (Beta)](https://cuckoo-hatch.cert.ee/).
+Cuckoo Sandbox es una herramienta de análisis de malware en un sandbox de código abierto y gratuita que puedes autohospedar. CERT-EE en Estonia ofrece una versión gratuita alojada en línea: [Cuckoo V2](https://cuckoo.cert.ee/), [Cuckoo V3 (Beta)](https://cuckoo-hatch.cert.ee/).
 
-To learn more about using Sandboxes for detection of samples, complete the “Sandboxes” section in Chapter 10 of Internews’ [Field Guide to Incident Response for Civil Society and Media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/), which uses the Triage sandbox as an example
+Para obtener más información sobre el uso de Sandboxes para la detección de muestras, completa la sección "Sandboxes" en el Capítulo 10 de Internews’ [Guía de Campo para Respuesta a Incidentes para la Sociedad Civil y Medios](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/), que utiliza el Triage sandbox como ejemplo.
 
-After completing the activity, you should be able to:
+Después de completar la actividad, deberías poder:
 
-- Submit a file into a sandbox
-- Selecting or configure an appropriate operating environment for the sandbox
-- Decide whether networking should be disabled or emulated
-- Read the overview of results including automated detections
-- Have a general understanding of the other categories of information being presented in the sandbox analysis. For the purpose of detection detailed understanding is not necessary but for Malware Analysis or threat hunting you will need to understand these further.
+- Enviar un archivo a sandbox.
+- Seleccionar o configurar un entorno operativo apropiado para sandbox.
+- Decidir si las redes deben deshabilitarse o emularse.
+- Lee la visión general de los resultados, incluidas las detecciones automáticas.
+- Tener una comprensión general de las otras categorías de información que se presentan en el análisis del sandbox. Con el propósito de detección, no es necesaria una comprensión detallada, pero para el Análisis de Malware o la caza de amenazas deberás comprenderlos más a fondo.
 
-You can find a deeper dive on Sandboxes in the Infuse Malware Analysis learning path.
+Puedes encontrar un análisis más detallado sobre las Sandboxes en la ruta de aprendizaje de Análisis de Malware de Infuse.
 
-Note that advanced malware may initiate checks to discover if it is in a virtualized/sandboxed environment thus may behave differently depending on the environment, therefore no sandbox environment will be 100% reliable.
+Ten en cuenta que el malware avanzado puede iniciar verificaciones para descubrir si se encuentra en un entorno virtualizado / sandbox, por lo que puede comportarse de manera diferente según el entorno, por lo que ningún entorno sandbox será 100% confiable.
 
-To learn more about the kinds of techniques that Hybrid Analysis uses, you can learn to do your own hybrid (static and dynamic) malware analysis in the Malware Analysis learning path.
+Para obtener más información sobre los tipos de técnicas que utiliza el Análisis Híbrido, puede aprender a realizar tu propio Análisis de Malware híbrido (estático y dinámico) en la ruta de aprendizaje de Análisis de Malware.
 
-## Learning Resources
+## Práctica
 
-{{% resource title="Verify SHA256 checksum" languages="English" cost="Free" description="Quick guide on using the command line to verify sha256 checksums for files." url="https://techdocs.akamai.com/download-ctr/docs/verify-checksum" %}}
+1. Encuentra o crea un archivo de texto sin formato en tu sistema y luego calcula su hash sha256. Después de haber hecho eso, cambia el archivo editándolo en un editor de texto sin formato y agregándole un solo carácter. Calcula su hash sha256 nuevamente.
+2. Descarga un ejecutable desconocido de Windows desde un sitio como download.cnet.com. Envíalo a VirusTotal o analízalo con Hybrid Analysis. Ten en cuenta que los instaladores pueden marcarse incorrectamente como maliciosos debido a la naturaleza de su funcionamiento. Piensa por qué podría estar sucediendo esto y, si es posible, discútelo con un compañero o mentor.
+3. Encuentra el hash de una pieza de malware bien conocido (puedes hacerlo navegando en un sitio que contenga hashes de malware, ¡no es necesario que descargues la muestra y genera el hash tú misma!) y súbelo a VirusTotal. Explica lo que ves y lo que sucedió.
 
-{{% resource title="VirusTotal" languages="English" cost="Free, with rate limits" description="Web service to check files or hashes against known malware using multiple detection engines." url="https://www.virustotal.com/gui/home/upload" %}}
+## Verificación de habilidades
 
-{{% resource title="Hybrid Analysis" languages="English" cost="Free, with premium features" description="Service similar to VirusTotal, offering dynamic analysis capabilities." url="https://www.hybrid-analysis.com/" %}}
+Independientemente (o con un mentor)
 
-{{% resource title="Any.run" languages="English" cost="Free for non-commercial use" description="Commercial sandbox service for analyzing malware behavior." url="https://any.run/" %}}
+1. Explora muestras de malware enviadas recientemente en Malware Bazaar. Copia los _hashes_ de 3 a 5 muestras que hayas detectado y pégalos en la búsqueda de VirusTotal. ¿Cuáles son los resultados? Cada uno de esos _hashes_ debe ser detectado como malicioso por al menos un par de motores de detección de malware de VirusTotal. Si ninguno de los _hashes_ es detectado como malicioso o reconocido por VirusTotal, entonces es probable que hayas cometido algún error en algún lugar y vale la pena tomarse un momento para volver a seguir tus pasos.
 
-{{% resource title="Joe Sandbox" languages="English" cost="Free for public accounts (results published)" description="Commercial sandbox service for analyzing malware." url="https://www.joesandbox.com/#windows" %}}
+Con un Compañero o un Mentor
 
-{{% resource title="Cuckoo Sandbox" languages="English" cost="Free" description="Sandbox service provided by the Estonian CERT for malware analysis." url="https://cuckoo.cert.ee/" %}}
+1. Pídele a un compañero o mentor que seleccione alrededor de 10 archivos aleatorios, que podrían ser, por ejemplo, imágenes. Luego tomarán el _hash_ sha256 de 3 archivos seleccionados al azar y te enviarán tanto los archivos como los hashes. Identifica cuáles de esos 10 archivos coinciden con los _hashes_ y solicita a tu compañero o mentor que revise tu trabajo.
 
-{{% resource title="Windows Sandbox" languages="Requires Windows Pro, Education, or Enterprise" cost="Free" description="Built-in sandbox tool in Windows for safely running applications." url="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview" %}}
+## Recursos Educativos
 
-## Practice
-
-1. Find or create a plain text file on your system, and then calculate its sha256 hash. After you have done that, change the file by editing it in a plain text editor and appending a single character to it. Calculate its sha256 hash again.
-2. Grab an obscure Windows executable from something like download.cnet.com. Upload it to VirusTotal or analyze it with Hybrid Analysis. Note that installers may be incorrectly flagged as malicious due to the nature of their operation. Think about why this might be happening, and, if possible, discuss it with a peer or mentor.
-3. Find the hash of a well-known piece of malware (you can do so by browsing a site that contains malware hashes, no need to download the sample and hash it yourself!) and upload it to VirusTotal. Explain what you see and what happened.
-
-## Skill Check
-
-Independently (or with a mentor)
-
-1. Browse through recently submitted malware samples on Malware Bazaar. Copy the hashes of 3-5 samples you detected and paste them into VirusTotal search. What are the results? Each one of those hashes should be detected as malicious by at least a couple of VirusTotal malware detection engines. If none of the hashes are detected as malicious or recognized by VirusTotal, then it’s likely you’ve made a mistake somewhere and it’s worth taking a moment to retrace your steps!
-
-With a Peer or a Mentor
-
-1. Ask a peer or mentor to select around 10 random files, which could, for example, be images. They will then take the sha256 hash of 3 randomly selected files and send you both the files and the hashes. Figure out which of those 10 files map to the hashes, and ask the peer or mentor to check your work.
+{{% resource title="Verificar la suma de comprobación SHA256" description="Una guía rápida sobre cómo usar la línea de comando para verificar las sumas de comprobación sha256 para archivos" languages="Inglés" cost="Gratis" url="https://techdocs.akamai.com/download-ctr/docs/verify-checksum" %}}
+{{% resource title="VirusTotal" description="Un servicio web donde los usuarios pueden enviar archivos o hashes de estos para compararlos con malware conocido utilizando una amplia variedad de motores de detección de malware. Propiedad de Alphabet/Google" languages="Inglés" cost="Gratis, con limitación de peticiones" url="https://www.virustotal.com/gui/home/upload" %}}
+{{% resource title="Hybrid Analysis" description="Un servicio algo similar a VirusTotal, pero que también puede realizar análisis dinámicos (ejecutando el archivo y observando lo que sucede)" languages="Inglés" cost="Gratis, con funciones premium" url="https://www.hybrid-analysis.com/" %}}
+{{% resource title="Any.run" description="Sandbox comercial" languages="Gratis sólo para uso no comercial" cost="Inglés" url="https://any.run/" %}}
+{{% resource title="Joe Sandbox" description="Sandbox comercial" languages="Gratis para cuentas públicas (los resultados del análisis se publicarán en el sitio web)" cost="Inglés" url="https://www.joesandbox.com/#windows" %}}
+{{% resource title="Cuckoo Sandbox" description="Un servicio sandbox gestionado por el Estonian CERT (Equipo de Respuesta a Emergencias Informáticas)" languages="Gratis" cost="Inglés" url="https://cuckoo.cert.ee/ <br>https://cuckoo-hatch.cert.ee/" %}}
+{{% resource title="Windows Sandbox" description="Una potente herramienta sandbox integrada en Windows" languages="Requiere Windows Pro, Education o Enterprise" cost="Varios idiomas" url="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview" %}}
