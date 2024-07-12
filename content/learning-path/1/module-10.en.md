@@ -7,12 +7,11 @@ description: We have also designed a capture-the-flag exercise in which learners
   be found here.
 weight: 10
 ---
-
 We have also designed a capture-the-flag exercise in which learners can analyze a phishing email and the infrastructure it links to. The exercise can be used as an additional practice or skill verification exercise, and can be found below.
 
 You are sitting in the bustling Press newsroom where you are working as an IT admin, sitting totally focused on your duties surrounded by glowing monitors. Your colleague Alia from Accounting rushes over with a concerned look on their face, who lets you know they forwarded an email claiming to be from PayPal which urges them to take immediate action due to suspicious account activity. The Press organization relies on PayPal for processing subscription payments. Your interest is instantly piqued as you recognize the potential of a malicious attack, and you get started on an investigation.
 
-_This activity utilizes a sample email and landing page needed for this activity. Download the files here: [CTF Materials](/files/ctf-materials.zip)_
+*This activity utilizes a sample email and landing page needed for this activity. Download the files here: [CTF Materials](/files/ctf-materials.zip)*
 
 ### Question 1: What is the sender address of the email?
 
@@ -23,20 +22,20 @@ Find out how the sender address would appear in the email client if the email is
 {{< question title="Hints" >}}
 There are multiple ways to view what the email would look like to the recipient. The most straightforward way is to open the file in a mail client, which is what we have done in the below examples. However in the context of a targeted threat this can be a bad idea, in case the file contains scripts which can exploit email clients, collect information about the device, or load external resources (like images/tracking pixels) which disclose your IP to the attacker. In the case of this walkthrough it is safe to open the EML in your email client, however for live work consider some alternatives:
 
-- Use an email client in a virtual machine which can be rolled back to a safe snapshot
-- Open the file in a text editor and read the HTML content directly
-- Rename the file to .mht and open in a web browser (consider using a sandboxed machine and connecting to a VPN to avoid IP collection from tracking pixels)
-- Use an online service such as [https://www.emlreader.com/](https://www.emlreader.com/) or [https://www.encryptomatic.com/viewer/](https://www.encryptomatic.com/viewer/) to render the email. MXToolBox’s email header analyzer [https://mxtoolbox.com/EmailHeaders.aspx](https://mxtoolbox.com/EmailHeaders.aspx) (used later in this walkthrough) will also render HTML content if you include it in the pasted headers.
-- Using an eDiscovery tool which can render EML files
-- Self-host your own service to render EML files, such as [https://github.com/xme/emlrender](https://github.com/xme/emlrender)
+* Use an email client in a virtual machine which can be rolled back to a safe snapshot
+* Open the file in a text editor and read the HTML content directly
+* Rename the file to .mht and open in a web browser (consider using a sandboxed machine and connecting to a VPN to avoid IP collection from tracking pixels)
+* Use an online service such as <https://www.emlreader.com/> or <https://www.encryptomatic.com/viewer/> to render the email. MXToolBox’s email header analyzer <https://mxtoolbox.com/EmailHeaders.aspx> (used later in this walkthrough) will also render HTML content if you include it in the pasted headers.
+* Using an eDiscovery tool which can render EML files
+* Self-host your own service to render EML files, such as <https://github.com/xme/emlrender>
 
 In this walkthrough we will just open the email (paypal.eml) in an email program
 
-![alt_text](images/image1.png "image_tooltip")
+![Windows Right-Click menu showing Open With -> Outlook Option](/media/image10.png "image_tooltip")
 
 As we look into the email, we see the visible sender email address
 
-![alt_text](images/image2.png "image_tooltip")
+![Imageof an ostensible email from Paypal indicating suspicious account activity with a link to verify the account. The email is from paypal@service.com](/media/image13.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -50,15 +49,15 @@ As we continue to review the email, we look for more characteristics which could
 {{< /question >}}
 
 {{< question title="Hints" >}}
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/image12.png "image_tooltip")
 
 Here are some key trigger points to watch out for in a phishing email:
 
-- Sense of urgency
-- Weird opening, does not address you by name
-- Grammar errors
-- The sender address or URLs within the email are obfuscated or do not match the website the email claims to be from
-  {{< /question >}}
+* Sense of urgency
+* Weird opening, does not address you by name
+* Grammar errors
+* The sender address or URLs within the email are obfuscated or do not match the website the email claims to be from
+{{< /question >}}
 
 {{< question title="Answer" >}}
 The email subject line is: _We called you and you didn't answer_
@@ -71,7 +70,7 @@ When we look at a potentially malicious email, we also need to figure out what t
 {{< /question >}}
 
 {{< question title="Hints" >}}
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/image7.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
