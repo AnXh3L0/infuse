@@ -1,82 +1,70 @@
 ---
 style: introduction
 title: Introduction
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: COMMENCEZ ICI. Lisez la présentation du parcours d'apprentissage, les objectifs, les menaces associées et les prérequis.
 weight: 1
 ---
 
-## Overview
+## Présentation
 
-This learning path covers intermediate-level knowledge and skills needed to detect and identify malware either from a given sample, or actively operating on a device on a variety of device platforms. The distinction between malware and software can be very subtle, and a detailed analysis of processes and binaries to ultimately determine what is malware sometimes requires advanced-level expertise. However, the skills covered here will give you a start in detection efforts. This learning path covers:
+Ce parcours d'apprentissage aborde les connaissances et les compétences de niveau intermédiaire nécessaires pour détecter et identifier les logiciels malveillants présents dans un échantillon donné ou exécutés activement sur un appareil sur diverses plateformes. La distinction entre les logiciels malveillants et les logiciels ordinaires peut être très subtile, et une analyse détaillée des processus et des exécutables visant à déterminer la nature d'un logiciel malveillant nécessite parfois une expertise de niveau avancé. Cependant, les compétences abordées ici vous donneront un point de départ dans vos efforts de détection. Ce parcours d'apprentissage couvre :
 
-- Soft skills and ethical considerations for engaging with people potentially targeted by malware
-- Protecting client’s’ privacy and data
-- Off-the-shelf malware detection tools
-- Static and dynamic methods of investigating a sample to determine if it is malicious
-- Network-based methods of investigating a sample to determine if it is malicious
-- Collecting data for analysis from a potentially infected device and safe retention of samples for further analysis
-- What to do after malware discovery: Investigation, clean-up, and risk management
-- Clean-up of malware from infected systems
+- Les compétences générales et considérations éthiques pour interagir avec des personnes potentiellement ciblées par des logiciels malveillants
+- La protection de la vie privée et des données des clients
+- Les outils de détection de logiciels malveillants disponibles sur le marché
+- Les méthodes statiques et dynamiques d'enquête sur un échantillon pour déterminer s'il est de nature malveillante
+- Les méthodes d'enquête en réseau pour déterminer si un échantillon est de nature malveillante
+- La collecte de données pour permettre l'analyse à partir d'un dispositif potentiellement infecté et la conservation sécurisée des échantillons pour permettre une analyse ultérieure
+- Que faire après la découverte d'un logiciel malveillant : enquête, nettoyage et gestion des risques
+- Nettoyage des logiciels malveillants sur les systèmes infectés
 
-### Background reading
+##Lecture complémentaire
 
-📕 Adversaries, especially state-based ones, have long used malware to attack civil society groups. Such attacks managed to [shut down a news site](https://www.amnesty.org/en/latest/research/2016/12/how-a-hacking-campaign-helped-shut-down-an-award-winning-news-site/), with hacking-for-hire outfits taking in major state contracts, as shown in those pieces on India’s cyber mercenaries by [The New Yorker](https://www.newyorker.com/news/annals-of-crime/a-confession-exposes-indias-secret-hacking-industry), [Reuters](https://www.reuters.com/investigates/special-report/usa-hackers-litigation/), and [Citizen Lab](https://citizenlab.ca/2020/06/dark-basin-uncovering-a-massive-hack-for-hire-operation/).
+📕 Les cybercriminels, en particulier ceux basés sur un État, utilisent depuis longtemps des logiciels malveillants pour attaquer les groupes de la société civile. De telles attaques ont réussi à [fermer un site d'information](https://www.amnesty.org/en/latest/research/2016/12/how-a-hacking-campaign-helped-shut-down-an-award-winning-news-site/), avec des entreprises de piratage acceptant des contrats d'État majeurs, comme le montrent les articles sur les cyber-mercenaires indiens de [The New Yorker](https://www.newyorker.com/news/annals-of-crime/a-confession-exposes-indias-secret-hacking-industry), [Reuters](https://www.reuters.com/investigates/special-report/usa-hackers-litigation/) et [Citizen Lab](https://citizenlab.ca/2020/06/dark-basin-uncovering-a-massive-hack-for-hire-operation/).
 
-In the early 2020s, commercially produced spyware such as [Predator ](https://eic.network/projects/predator-files.html)and [especially Pegasus](https://www.amnesty.org/en/latest/news/2022/03/the-pegasus-project-how-amnesty-tech-uncovered-the-spyware-scandal-new-video/) dominated the headlines, with both of them regularly targeting journalists, activists, and politicians. While most malware is much more mundane and used to deliver ads or mine for cryptocurrency, the existence of sophisticated, state-sponsored malware means that many civil society activists will likely be very concerned about any potential infections.
+Au début des années 2020, les logiciels espions produits commercialement tels que [Predator](https://eic.network/projects/predator-files.html) et surtout [Pegasus](https://www.amnesty.org/en/latest/news/2022/03/the-pegasus-project-how-amnesty-tech-uncovered-the-spyware-scandal-new-video/) ont fait les gros titres, les deux programmes ciblant régulièrement les journalistes, les militants et les politiciens. Bien que la plupart des logiciels malveillants soient beaucoup plus banals et utilisés pour diffuser des annonces ou miner des cryptomonnaies, l'existence de logiciels malveillants sophistiqués parrainés par les États signifie que de nombreux militants de la société civile doivent probablement se préoccuper des infections potentielles.
 
-## Objective
+## Objectif
 
-Practitioners will learn how to:
+Les participants apprendront à :
 
-- Practice soft skills and ethical considerations for engaging with people potentially targeted by malware
-- Take steps to protect client’s privacy and data
-- Usefully utilize off-the-shelf malware detection tools
-- Utilize static and dynamic methods of investigating a sample to determine if it is malicious
-- Utilize network-based methods of investigating a sample to determine if it is malicious
-- Investigate Microsoft Office Documents to determine if they are potentially malicious
-- Collect data for analysis from a potentially infected device and safely retain samples for further analysis
-- Carry out post-detection work, including planning for investigation, clean-up, and risk management
+- Mettre en pratique les compétences générales et les considérations éthiques pour interagir avec les personnes potentiellement ciblées par les logiciels malveillants
+- Prendre des mesures pour protéger la vie privée et les données des clients
+- Utiliser utilement les outils de détection de logiciels malveillants disponibles sur le marché
+- Utiliser des méthodes statiques et dynamiques d'enquête sur un échantillon pour déterminer s'il est de nature malveillante
+- Utiliser des méthodes d'enquête en réseau pour examiner un échantillon afin de déterminer s'il est de nature malveillante
+- Examiner les documents Microsoft Office pour déterminer s'ils sont potentiellement malveillants
+- Recueillir des données pour permettre l'analyse d'un appareil potentiellement infecté et conserver en toute sécurité des échantillons pour permettre une analyse ultérieure
+- Effectuer des travaux post-détection, y compris la planification des enquêtes, le nettoyage et la gestion des risques
 
-## What threats does this skill mitigate or respond to?
+## Quelles menaces cette compétence permet-elle d'atténuer ou de gérer ?
 
-Malware detection skills can help respond to:
+Les compétences de détection de logiciels malveillants peuvent contribuer à réagir aux circonstances suivantes :
 
-- Device, website, account compromise
-- Malware infections (ransomware, spyware, adware etc)
-- Investigating possibility of compromise
+- Appareil, site Web ou compte compromis
+- Infections de logiciels malveillants (ransomware, spyware, adware, etc.)
+- Examen des possibilités de failles de sécurité
 
-## What are the prerequisites?
+## Quels sont les prérequis ?
 
-- Basic IT skills: Understanding concepts such as disk images, executable files, and different types of malware
-- Understanding of common Operating System protection/hardening practices and ‘power-user’ usage of your chosen OS platform.
-- Basic command line knowledge: Being able to run commands from the command line and understanding what command line arguments syntax are.
+- Compétences informatiques de base : compréhension de concepts tels que les images de disques, les fichiers exécutables et les différents types de logiciels malveillants
+- Compréhension des pratiques courantes de protection et de renforcement du système d'exploitation et de l'utilisation par les utilisateurs avertis de la plateforme du système d'exploitation choisi.
+- Connaissance de base de la ligne de commande : pouvoir exécuter des commandes à partir de la ligne de commande et comprendre ce que sont les arguments des commandes.
 
-## What devices or software do you need for the exercises?
+De quels appareils ou logiciels avez-vous besoin pour réaliser les exercices ?
 
-Depending on the scenario, you may be implementing detection steps directly on the concerned device, while in other cases you may need a separate machine configured for analysis, in which case the following is advised:
+Selon le scénario, vous pouvez implémenter des étapes de détection directement sur l'appareil concerné, tandis que dans d'autres cas, vous pouvez avoir besoin d'une machine séparée configurée pour l'analyse, auquel cas les éléments suivants sont conseillés :
 
-- First device (device of concern): At least one device running Windows, macOS, Linux, Android, or iOS on which you will look for malware
-- Second device (analysis device): Another device running Windows, macOS, or Linux which you can use to run scans on the first device. Scanning iOS devices using the covered toolset is only possible (at time of writing) via macOS or Linux
-- Enough storage space either on the second device or on an external hard drive/ solid state drive to back up the entirety of the first device (in case imaging and forensics are required)
+- Premier appareil (appareil concerné) : au moins un appareil exécutant Windows, macOS, Linux, Android ou iOS sur lequel vous recherchez des logiciels malveillants
+- Deuxième appareil (appareil d'analyse) : un autre appareil exécutant Windows, macOS ou Linux que vous pouvez utiliser pour exécuter des analyses sur le premier appareil. L'analyse des appareils iOS à l'aide du jeu d'outils présenté est uniquement possible (au moment de la rédaction) via macOS ou Linux
+- Un espace de stockage suffisant sur le deuxième périphérique ou sur un disque dur externe/disque SSD pour sauvegarder l'intégralité du premier appareil (dans le cas où l'imagerie et la criminalistique sont nécessaires)
 
-(Optional) For section 5b alone, you will need access to a Raspberry Pi.
+(Facultatif) Pour la section 5b uniquement, vous devrez accéder à un Raspberry Pi.
 
-## Related learning paths
+## Parcours d'apprentissage connexes
 
-Like all of security, this learning path benefits and is benefited by knowledge in related areas. Notably, the following learning paths synergize well with this one:
+Comme pour tous les sujets de sécurité, ce parcours d'apprentissage est avantagé si vous disposez de connaissances dans des domaines connexes. Notamment, les parcours d'apprentissage suivants s'harmonisent facilement avec celui-ci :
 
-- [Analyzing Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit): Taking malware apart to understand how it functions and what it does. In addition, this learning path contains beginner-to-intermediate approaches to static, dynamic, and network-based determination of whether a given sample is malicious; in cases such methods are not sufficient for a determination, additional analysis skills are covered in this subsequent learning path.
-- [Detecting, Investigating and Tracking Malicious Infrastructure](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit): Targeted malware generally communicates with command & control, exfiltration, or delivery infrastructure. This learning path will help with investigating and understanding this infrastructure.
-
-Web Application Security Fundamentals: Some malware is delivered as a web application or a browser exploit. Some of the skills covered in this learning path will help you with browser-based malware detection and analysis.
-
-## Other resources and links
-
-{{% resource title="Helpdesk Workflow: Client Receives a Suspicious/Phishing Email" languages="English" cost="Free" description="Access Now helpline community documentation for responding to suspicious/phishing emails" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#" %}}
-
-{{% resource title="List of all DNS record types" languages="English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French" cost="Free" description="Includes (almost?) all DNS record types." url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
-
-{{% resource title="Amnesty reports on phishing campaigns" languages="Multiple, depending on the report" cost="Free" description="A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks" url="https://www.amnesty.org/en/search/phishing/" %}}
+- [Analyse des logiciels malveillants](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit) : démonter les logiciels malveillants pour comprendre comment ils fonctionnent et ce qu'ils font. En outre, ce parcours d'apprentissage contient des approches de débutant à intermédiaire pour déterminer si un échantillon donné est malveillant. Dans les cas où ces méthodes ne sont pas suffisantes pour assurer une détermination exacte, des compétences supplémentaires en analyse sont abordées ultérieurement dans ce parcours d'apprentissage.
+- [Détection, enquête et suivi des infrastructures malveillantes](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit) : les logiciels malveillants ciblés communiquent généralement avec l'infrastructure de commande et de contrôle, d'exfiltration ou de livraison. Ce parcours d'apprentissage aidera à étudier et à comprendre cette infrastructure.
+- Principes fondamentaux de la sécurité des applications Web : certains logiciels malveillants sont fournis sous forme d'application Web ou d'exploitation de failles des navigateurs. Certaines des compétences abordées dans ce parcours d'apprentissage vous aideront à détecter et à analyser les logiciels malveillants sur les navigateurs.

@@ -22,6 +22,7 @@ After completing this subtopic, practitioners should be able to do the following
 
 ---
 
+## Main Section 
 As you investigate the malicious infrastructure associated with a particular phishing campaign or other threat, it is imperative that you keep detailed notes. You may forget small details that turn out to be important. Furthermore, the threat actors are likely to change their infrastructure (e.g. turn off servers) during your investigation! Therefore, you should keep notes on both what you’re doing and what you discover. Include all information you collect, including things like DNS/whois query results, attacker emails and web pages (full source and screenshots), etc. The exact format of these notes isn’t important, but they should be comprehensive.
 
 As your investigation proceeds, you’ll want to start keeping more distilled analysis notes keeping track of your significant findings. You can also document these in your detailed notes, but it’s good to also track them separately, as your detailed notes are likely to get very long and unwieldy. Your significant findings notes should contain your conclusions about various pieces of infrastructure and the connections between them. Think of it as containing things that you’re likely going to want to keep in your final report. As with your unfiltered notes, the format of these notes isn’t significant, but many people like to use [Maltego](https://www.maltego.com/) to document connections.

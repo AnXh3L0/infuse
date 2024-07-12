@@ -1,7 +1,7 @@
 +++
 type = "learning-path"
-title = "Detecting Malware"
-description = "This learning path covers intermediate-level knowledge and skills needed to detect and identify malware either from a given sample, or actively operating on a device on a variety of device platforms."
+title = "Détection des logiciels malveillants"
+description = "Ce parcours d'apprentissage aborde les connaissances et les compétences de niveau intermédiaire nécessaires pour détecter et identifier les logiciels malveillants présents dans un échantillon donné ou exécutés activement sur un appareil sur diverses plateformes."
 weight = 2
 thumbnail = "2"
 icon = "virus-vanquisher"

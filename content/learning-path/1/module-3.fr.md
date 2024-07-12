@@ -84,10 +84,8 @@ Si vous soupçonnez que l'appareil d'une personne ciblée a été compromis, dem
 
 ## Ressources d'apprentissage
 
-{{% resource title="NoScript" languages="Anglais" cost="Gratuit" description="Une extension de navigateur pour les navigateurs Firefox et Chromium, qui vous permet de bloquer ou de permettre l'exécution de JavaScript de manière sélective. Lorsque vous consultez des sites Web potentiellement malveillants, elle vous permet de charger le site tout en neutralisant une grande partie de ses fonctionnalités potentiellement dommageables." url="[https://noscript.net/](https://noscript.net/)" %}}
-
-{{% resource title="Defang.me" languages="Anglais" cost="Gratuit" description="Un outil qui neutralise automatiquement les URL et les adresses IP." url="[https://defang.me/](https://defang.me/)" %}}
-
-{{% resource title="CyberChef" languages="Anglais" cost="Gratuit" description="Un outil complet pour convertir différents formats, qui permet également de neutraliser automatiquement les URL et les adresses IP." url="[https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/)" %}}
+{{% resource title="NoScript" description="Une extension de navigateur pour les navigateurs Firefox et Chromium, qui vous permet de bloquer ou de permettre l'exécution de JavaScript de manière sélective. Lorsque vous consultez des sites Web potentiellement malveillants, elle vous permet de charger le site tout en neutralisant une grande partie de ses fonctionnalités potentiellement dommageables." languages="Anglais" cost="Gratuit" url="https://noscript.net/" %}}
+{{% resource title="Defang.me" description="Un outil qui neutralise automatiquement les URL et les adresses IP" languages="Anglais" cost="Gratuit" url="https://defang.me/" %}}
+{{% resource title="CyberChef" description="Un outil complet pour convertir différents formats, qui permet également de neutraliser automatiquement les URL et les adresses IP" languages="Anglais" cost="Gratuit" url="https://gchq.github.io/CyberChef/" %}}
 
 

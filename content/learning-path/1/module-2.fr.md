@@ -77,5 +77,5 @@ Faites un exercice de jeu de rôle avec un pair ou un mentor, dans lequel vous j
 
 ## Ressources d'apprentissage
 
-{{% resource title="Formation en matière de sécurité 101" languages="Anglais" cost="Gratuit" description="Une ressource communautaire populaire sur la façon d'enseigner et de parler de la sécurité numérique" url="https://www.securityeducationcompanion.org/articles" %}}
+{{% resource title="Formation en matière de sécurité 101" description="Une ressource communautaire populaire sur la façon d'enseigner et de parler de la sécurité numérique" languages="Anglais" cost="Gratuit" url="https://www.securityeducationcompanion.org/articles" %}}
 
