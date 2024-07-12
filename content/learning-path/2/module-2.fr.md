@@ -19,6 +19,7 @@ Après avoir terminé ce sous-thème, le participant devrait être en mesure d'a
 - Modélisation des menaces et évaluation des risques
 - Effectuer des sauvegardes et l'image du disque
 
+---
 ## Section Principale
 
 La sécurité opérationnelle pour la détection des logiciels malveillants peut être divisée en préoccupations liées à des scénarios spécifiques :

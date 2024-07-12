@@ -17,6 +17,7 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Comprendre comment commencent les infections de logiciels malveillants
 - Expliquer quels sont les indicateurs de failles
 
+---
 ## Section Principale
 
 En général, un logiciel malveillant est un logiciel qui est utilisé pour faire des choses non autorisées sur l'ordinateur ou l'appareil mobile d'un utilisateur. Wikipédia propose une bonne [introduction aux logiciels malveillants en général.](https://en.wikipedia.org/wiki/Malware)

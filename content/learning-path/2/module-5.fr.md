@@ -16,6 +16,7 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Comprendre les mécanismes de persistance communs et les moyens de les vérifier
 - Inspecter le trafic réseau pour détecter les communications suspectes
 
+---
 ## Section Principale
 
 Les méthodes d'investigation nécessitent plus de connaissances sur les opérations internes du système d'exploitation ainsi que de développer un certain instinct pour détecter ce qui est normal ou anormal.

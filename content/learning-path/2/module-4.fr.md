@@ -15,6 +15,7 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Utiliser des outils de détection de logiciels malveillants populaires, tels qu'un antivirus ou les outils intégrés à votre système d'exploitation pour faciliter votre analyse
 - Comprendre certaines protections de base contre les logiciels malveillants dans les systèmes d'exploitation modernes et la façon de vérifier si elles sont en cours d'exécution ou si elles ont été désactivées.
 
+---
 ## Section Principale
 
 #### Programme antimalware standard (toutes les plateformes)

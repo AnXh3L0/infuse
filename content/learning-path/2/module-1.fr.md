@@ -19,6 +19,7 @@ Les participants devraient également être en mesure de faire ce qui suit :
 - Préparer une simple entente de confidentialité avec un client, au besoin
 - Naviguer dans une discussion de triage pour aider à déterminer quand une enquête plus approfondie et un travail de détection sont nécessaires
 
+---
 ## Section Principale
 
 ### Connaissances de base

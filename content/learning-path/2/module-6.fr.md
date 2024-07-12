@@ -22,6 +22,7 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Étudier et comprendre quels ensembles de règles ou heuristiques sont utilisés par chaque approche d'analyse du trafic réseau donnée, et comprendre leurs forces ou faiblesses
 - Lire les résultats des flux réseau signalés et être en mesure de trier les résultats nécessitant une enquête plus approfondie ou des mesures correctives des risques
 
+---
 ## Section Principale
 
 Plutôt que d'examiner les fichiers et les processus exécutés sur un appareil, les logiciels malveillants peuvent également être identifiés par les communications réseau qu'ils initient ou auxquelles ils répondent. Cette approche présente plusieurs avantages par rapport à l'analyse basée sur l'appareil, car il est difficile pour les logiciels malveillants d'éviter de réaliser des communications réseau à un moment donné et, dans certains cas, cela vous permet d'enquêter sur plusieurs appareils à la fois.
