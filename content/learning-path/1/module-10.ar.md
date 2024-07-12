@@ -49,14 +49,14 @@ As we continue to review the email, we look for more characteristics which could
 {{< /question >}}
 
 {{< question title="Hints" >}}
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/image12.png "image_tooltip")
 
 Here are some key trigger points to watch out for in a phishing email:
 
-- Sense of urgency
-- Weird opening, does not address you by name
-- Grammar errors
-- The sender address or URLs within the email are obfuscated or do not match the website the email claims to be from
+* Sense of urgency
+* Weird opening, does not address you by name
+* Grammar errors
+* The sender address or URLs within the email are obfuscated or do not match the website the email claims to be from
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -70,7 +70,7 @@ When we look at a potentially malicious email, we also need to figure out what t
 {{< /question >}}
 
 {{< question title="Hints" >}}
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/image7.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
