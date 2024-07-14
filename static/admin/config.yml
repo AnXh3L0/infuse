@@ -13,7 +13,7 @@ local_backend: false
 
 publish_mode: editorial_workflow
 media_folder: static/media/uploads
-public_folder: /media/
+public_folder: /media/uploads
 
 i18n:
   # Required and can be one of multiple_folders, multiple_files or single_file
