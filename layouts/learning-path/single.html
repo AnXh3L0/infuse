@@ -116,7 +116,7 @@
                             <div class="bg-green-100 px-10 py-3">
                                 {{ if eq .Page.Params.style "introduction" }}
                                 <p class="m-0 text-lg font-semibold text-green-700">{{ i18n
-                                    "congratulations-introduction" }}</p>
+                                    "key.congratulations-introduction" }}</p>
                                 {{ else }}
                                 <p class="m-0 text-lg font-semibold text-green-700">{{ i18n "key.congratulations-module" }}
                                     {{ i18n "key.modules" 1 }} {{ .Page.Params.weight }}!</p>
@@ -141,16 +141,16 @@
                                     {{ if eq .Page.Params.style "introduction" }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
-                                        "mark-intro-as-complete" }}</label>
+                                        "key.mark-intro-as-complete" }}</label>
                                     <p id="checkbox-description" class="sr-only text-gray-500">{{ i18n
-                                        "mark-intro-as-complete-aria"
+                                        "key.mark-intro-as-complete-aria"
                                         }}</p>
                                     {{ else }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
-                                        "mark-as-complete" }}</label>
+                                        "key.mark-as-complete" }}</label>
                                     <p id="checkbox-description" class="sr-only text-gray-500">{{ i18n
-                                        "mark-as-complete-aria"
+                                        "key.mark-as-complete-aria"
                                         }}</p>
                                     {{ end }}
                                 </div>

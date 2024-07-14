@@ -180,26 +180,42 @@ key:
     translation:
       one: null
       other: "يتم حذف جميع البيانات المخزنة على هذا الجهاز ويؤدي هذا الإجراء إلى عدم القدرة على استردادها."
-  - id: permanently-delete
+  - id: warning
     translation:
       one: null
-      other: "حذف نهائيًا"
-  - id: cancel-action
+      other: "تحذير"
+  - id: warning-delete
     translation:
       one: null
-      other: "إلغاء"
-  - id: sign-out
+      other: "هذا الإجراء لا يمكن التراجع عنه، وسيتم فقدان جميع بياناتك بشكل دائم ما لم تكن لديك نسخة احتياطية."
+  - id: final-confirmation
     translation:
       one: null
-      other: "تسجيل الخروج"
+      other: "سيُطلب منك التأكيد النهائي قبل المتابعة."
+  - id: delete-account
+    translation:
+      one: null
+      other: "حذف الحساب"
+  - id: your-profile
+    translation:
+      one: null
+      other: "ملفك الشخصي"
+  - id: badges
+    translation:
+      one: "شارة"
+      other: "شارات"
   - id: settings
     translation:
       one: null
       other: "الإعدادات"
-  - id: modules
+  - id: sign-out
     translation:
       one: null
-      other: "وحدة"
+      other: "تسجيل الخروج"
+  - id: modules
+    translation:
+      one: "وحدة"
+      other: "وحدات"
   - id: what-learn
     translation:
       one: null
