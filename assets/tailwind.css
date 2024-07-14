@@ -146,3 +146,31 @@ details summary::marker {
   )::marker {
   @apply text-gray-700;
 }
+
+.toc-container {
+  max-height: calc(100vh - 5rem);.toc-container {
+    max-height: calc(100vh - 5rem);
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .toc-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .toc-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.toc-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.toc-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
