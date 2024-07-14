@@ -223,22 +223,40 @@ collections:
         label: "Body"
         widget: "markdown"
         i18n: true
-  - name: "i18n"
-    label: "UI translation"
+  - name: "i18n_entries"
+    label: "UI Translation Entries"
     folder: "i18n"
     create: false
     delete: false
     i18n: false
-    identifier_field: "{{ fields.title }}"
+    identifier_field: "filename"
     editor:
       preview: false
-    format: "toml-frontmatter"
-    extension: "toml"
+    format: "yaml"
+    extension: "yml"
     fields:
-      - label: "Content"
-        name: "body"
-        widget: "text"
-        i18n: true
+      - label: "Filename"
+        name: filename
+        widget: "string"
+      - label: "Translations"
+        name: "key"
+        widget: "list"
+        fields:
+          - label: "ID"
+            name: "id"
+            widget: "string"
+          - label: "Translation"
+            name: "translation"
+            widget: "object"
+            fields:
+              - label: "One"
+                name: "one"
+                widget: "string"
+                required: false
+              - label: "Other"
+                name: "other"
+                widget: "string"
+                required: false
   - name: "badges"
     label: "Badges"
     folder: "content/badges"

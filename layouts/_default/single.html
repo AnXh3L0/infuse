@@ -7,7 +7,7 @@
 
 
 <body class="flex min-h-screen flex-col">
-    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "key.skip-link" }}</a>
 
     {{ partial "header.html" . }}
 
@@ -25,10 +25,10 @@
                     {{ $day := .GitInfo.AuthorDate.Day }}
                     {{ $month := .GitInfo.AuthorDate.Month }}
                     {{ $year := .GitInfo.AuthorDate.Year }}
-                    {{ $localizedMonth := i18n (printf "%s" $month) }}
-                    <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
+                    {{ $localizedMonth := i18n (printf "key.%s" $month) }}
+                    <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "key.updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
                     {{ else }}
-                    <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
+                    <p class="text-sm text-green-900">{{ i18n "key.git-unavailable" }}</p>
                     {{ end }}
                 </article>
 

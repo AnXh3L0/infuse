@@ -6,7 +6,7 @@
 </head>
 
 <body class="flex min-h-screen flex-col">
-    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "key.skip-link" }}</a>
 
     {{ partial "header.html" . }}
 
@@ -14,7 +14,7 @@
         <div class="max-w-4xl px-8 sm:mx-auto sm:w-full lg:px-3">
             <h2 class="mt-6 border-b border-gray-200 pb-6 text-3xl font-bold leading-9 tracking-tight text-gray-900">{{
                 i18n
-                "settings" }}
+                "key.settings" }}
             </h2>
         </div>
 
@@ -30,7 +30,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                             </svg>
-                            {{ i18n "tab-profile" }}
+                            {{ i18n "key.tab-profile" }}
                         </button>
                     </li>
                     <li>
@@ -42,7 +42,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                             </svg>
-                            {{ i18n "tab-export" }}
+                            {{ i18n "key.tab-export" }}
                         </button>
                     </li>
                     <li>
@@ -54,7 +54,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
                             </svg>
-                            {{ i18n "tab-delete" }}
+                            {{ i18n "key.tab-delete" }}
                         </button>
                     </li>
                 </ul>
@@ -64,18 +64,18 @@
 
                 <div x-show="openTab === 1" class="mb-6 bg-white px-8 py-12 shadow sm:rounded-lg sm:px-12">
                     <form id="profilePage">
-                        <h2 class="text-base font-semibold leading-7 text-gray-900">{{ i18n "profile" }}</h2>
-                        <p class="mb-4 mt-1 text-sm leading-6 text-gray-600">{{ i18n "profile-warning" }}</p>
+                        <h2 class="text-base font-semibold leading-7 text-gray-900">{{ i18n "key.profile" }}</h2>
+                        <p class="mb-4 mt-1 text-sm leading-6 text-gray-600">{{ i18n "key.profile-warning" }}</p>
 
                         <button type="button"
                             class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                            onclick="editProfile()">{{ i18n "unlock" }}</button>
+                            onclick="editProfile()">{{ i18n "key.unlock" }}</button>
 
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="sm:col-span-4">
                                 <label for="profileUsername"
                                     class="block text-sm font-medium leading-6 text-gray-900">{{
-                                    i18n "username"
+                                    i18n "key.username"
                                     }}</label>
                                 <div class="mt-2">
                                     <div
@@ -90,7 +90,7 @@
 
                             <div class="sm:col-span-4">
                                 <label for="profileName" class="block text-sm font-medium leading-6 text-gray-900">{{
-                                    i18n "full-name"
+                                    i18n "key.full-name"
                                     }}</label>
                                 <div class="mt-2">
                                     <div
@@ -103,13 +103,13 @@
                             </div>
 
                             <div class="col-span-full">
-                                <p class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "avatar-image"
+                                <p class="block text-sm font-medium leading-6 text-gray-900">{{ i18n "key.avatar-image"
                                     }}</p>
                                 <div class="mt-2 flex items-center gap-x-3">
                                     <label for="profileAvatar"
                                         class="cursor-pointer rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
                                         disabled>{{
-                                        i18n "change" }}</label>
+                                        i18n "key.change" }}</label>
                                     <img id="avatarPreview" class="h-10 w-10 rounded-full"
                                         src="/media/images/user-pfp.svg" alt="Avatar">
                                     <input class="sr-only" type="file" id="profileAvatar" accept="image/*" disabled>
@@ -119,14 +119,14 @@
                         <div class="mt-6 flex items-center justify-start gap-x-6">
                             <button type="button"
                                 class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:bg-gray-200 disabled:text-gray-600"
-                                onclick="saveProfile()" disabled>{{ i18n "save-changes" }}</button>
+                                onclick="saveProfile()" disabled>{{ i18n "key.save-changes" }}</button>
                         </div>
                     </form>
                 </div>
 
                 <div x-show="openTab === 2" class="mb-6 bg-white px-8 py-12 shadow sm:rounded-lg sm:px-12">
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">{{ i18n "export-information" }}</h2>
-                    <p class="mt-1 text-sm leading-6 text-gray-600">{{ i18n "export-details" }}</p>
+                    <h2 class="text-base font-semibold leading-7 text-gray-900">{{ i18n "key.export-information" }}</h2>
+                    <p class="mt-1 text-sm leading-6 text-gray-600">{{ i18n "key.export-details" }}</p>
 
                     <div class="my-4 rounded-md border-l-4 border-blue-600 bg-blue-50 p-4">
                         <div class="flex">
@@ -139,26 +139,26 @@
                                 </svg>
                             </div>
                             <div class="ms-3">
-                                <h3 class="text-sm font-medium text-blue-800">{{ i18n "info" }}</h3>
+                                <h3 class="text-sm font-medium text-blue-800">{{ i18n "key.info" }}</h3>
                                 <div class="mt-2 text-sm text-blue-700">
-                                    <p>{{ i18n "info-export" }}</p>
+                                    <p>{{ i18n "key.info-export" }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
 
-                    <p class="mb-3 mt-1 text-sm leading-6 text-gray-600">{{ i18n "export-includes" }}</p>
+                    <p class="mb-3 mt-1 text-sm leading-6 text-gray-600">{{ i18n "key.export-includes" }}</p>
 
                     <button id="exportButton"
                         class="rounded-md bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">{{
-                        i18n "export-data" }}</button>
+                        i18n "key.export-data" }}</button>
 
                 </div>
 
                 <div x-show="openTab === 3" class="bg-white px-8 py-12 shadow sm:rounded-lg sm:px-12">
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">{{ i18n "delete-information" }}</h2>
-                    <p class="mt-1 text-sm leading-6 text-gray-600">{{ i18n "delete-details" }}</p>
+                    <h2 class="text-base font-semibold leading-7 text-gray-900">{{ i18n "key.delete-information" }}</h2>
+                    <p class="mt-1 text-sm leading-6 text-gray-600">{{ i18n "key.delete-details" }}</p>
 
                     <div class="my-4 rounded-md border-l-4 border-yellow-400 bg-yellow-50 p-4">
                         <div class="flex">
@@ -171,21 +171,21 @@
                                 </svg>
                             </div>
                             <div class="ms-3">
-                                <h3 class="text-sm font-medium text-yellow-800">{{ i18n "warning" }}</h3>
+                                <h3 class="text-sm font-medium text-yellow-800">{{ i18n "key.warning" }}</h3>
                                 <div class="mt-2 text-sm text-yellow-700">
-                                    <p>{{ i18n "warning-delete" }}</p>
+                                    <p>{{ i18n "key.warning-delete" }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <p class="mb-3 mt-1 text-sm leading-6 text-gray-600">{{ i18n "final-confirmation" }}</p>
+                    <p class="mb-3 mt-1 text-sm leading-6 text-gray-600">{{ i18n "key.final-confirmation" }}</p>
 
-                    <span id="confirmDeleteMessage" class="hidden">{{ i18n "confirm-delete" }}</span>
+                    <span id="confirmDeleteMessage" class="hidden">{{ i18n "key.confirm-delete" }}</span>
 
                     <button id="deleteButton"
                         class="rounded-md bg-orange-500 px-3 py-2 text-sm font-semibold text-gray-800 shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">{{
-                        i18n "delete-account" }}</button>
+                        i18n "key.delete-account" }}</button>
                 </div>
 
             </div>
