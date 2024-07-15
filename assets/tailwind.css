@@ -126,6 +126,10 @@ nav#TableOfContents ul:first-child {
   @apply ps-4;
 }
 
+.prose :where(pre):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  @apply max-w-full overflow-x-auto;
+}
+
 details summary::-webkit-details-marker {
   @apply hidden;
 }

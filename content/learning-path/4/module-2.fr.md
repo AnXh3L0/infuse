@@ -29,7 +29,7 @@ While this attack is powerful, there are limits. The attacker is limited to cont
 
 Mechanically, this attack works by a web application receiving user data, and then integrating that user data directly into a web page. Consider a discussion forum site that allows users to to pick a display name:
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 This rather un-fancy web page has the following HTML code:
 
@@ -42,7 +42,7 @@ This rather un-fancy web page has the following HTML code:
 
 When it receives a name from the user, it displays it in the form:
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 
 using the following HTML:
 
@@ -61,7 +61,7 @@ Alice"><script>alert("Owned by Alice")</script><i q="
 
 When the web page is generated, it looks a bit different:
 
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](/media/uploads/image3.png "image_tooltip")
 
 How did this happen? Let’s use some color to highlight what’s going on. Remember, the web application is just treating the user input as text, it has no idea about the colors.
 
@@ -96,7 +96,7 @@ As it is, this demonstration of XSS doesn’t do anything malicious, and the onl
 
 Log into your DVWA and make sure the security level is set to low (see the “Setup” section in the introduction of this learning path for more information on this). Navigate to the “XSS (Reflected)” section. The “What’s your name?” input is vulnerable to XSS. Try to enter a name that causes a JavaScript alert box to pop up when you click the “Submit” button.
 
-![alt_text](images/image4.png "image_tooltip")
+![alt_text](/media/uploads/image4.png "image_tooltip")
 
 ### XSS Prevention
 
@@ -111,7 +111,7 @@ To prevent XSS, the best technique to use is called output encoding. Note that i
 
 which would display like this
 
-![alt_text](images/image5.png "image_tooltip")
+![alt_text](/media/uploads/image5.png "image_tooltip")
 
 Output encoding is dependent on the context that the data will be used in. For HTML, you would encode HTML entities in the data. For data that was going to be included into a block of JavaScript, a different encoding would be used. If user data was going to be used in a database query yet another type of encoding would be used. Web frameworks and libraries should have functions to perform output encoding for you; it’s better to use those (hopefully) mature functions than to try to write them yourself from first principles.
 
