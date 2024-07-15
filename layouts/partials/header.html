@@ -7,9 +7,10 @@
             </a>
             <div class="hidden lg:flex lg:gap-x-12">
                 <div class="hidden lg:flex lg:gap-x-6">
+                    {{ $currentPage := . }}
                     {{ range where .Site.Pages "Params.navbar" "=" true }}
                     <a href="{{ .Permalink }}"
-                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 hover:underline">{{
+                        class="inline-flex items-center text-sm font-semibold text-gray-700 hover:text-gray-900 hover:underline {{ if eq $currentPage.Permalink .Permalink }}underline text-green-700{{ else }}{{ end }}" aria-current="{{ if eq $currentPage.Permalink .Permalink }}page{{ else }}false{{ end }}">{{
                         .Title }}</a>
                     {{ end }}
                 </div>
