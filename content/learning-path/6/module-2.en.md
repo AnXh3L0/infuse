@@ -221,7 +221,7 @@ Logging the identity of a logged-in user can be dangerous, but there are steps t
 
 Read through the following example commands which use common Unix tools like `awk`, `sort`, `uniq`, and `grep `to perform the analysis on Apache and Nginx logs.
 
-## A brief introduction to Unix text analysis tools
+### A brief introduction to Unix text analysis tools
 
 Below are example commands using common Unix tools like `awk`, `sort`, `uniq`, and `grep` to perform the analysis on Apache and Nginx logs.
 
@@ -274,7 +274,7 @@ If you want to print line numbers in addition to line content, you could use the
 awk '{print NR, $0}' example.txt
 ```
 
-## Practice exercise 1: Apache Access Log Analysis
+### Practice exercise 1: Apache Access Log Analysis
 
 Spend some time playing around with the following awk commands. You can use a log from your own web server or use practice ones, such as [this collection](https://github.com/OpenInternet/Infuse/blob/main/nginx%20and%20apache%20logs.zip).
 
@@ -304,7 +304,7 @@ Analyze the distribution of request methods.
 awk '{print $6}' apache_access.log | sort | uniq -c
 ```
 
-## Practice exercise 2: Nginx Access Log Analysis
+### Practice exercise 2: Nginx Access Log Analysis
 
 Count the total number of requests in an Nginx access log.
 
@@ -352,7 +352,7 @@ The extracted hour values are piped to sort to arrange them in ascending order. 
 
 The output will display the count of log entries for each hour in the log file.
 
-## Practice exercise 3: Error Log Analysis (Both Apache and Nginx)
+### Practice exercise 3: Error Log Analysis (Both Apache and Nginx)
 
 Apache and nginx: Count the total number of error entries in the log.
 
@@ -389,7 +389,7 @@ Apache: Investigate any recurring error patterns and propose potential solutions
 cat apache_error.log | grep 'error' | awk '{$1=""; $2=""; $3=""; print}' | sort | uniq -c | sort -nr | head -10
 ```
 
-## An introduction to regular expressions and using them to analyze a log
+### An introduction to regular expressions and using them to analyze a log
 
 For this exercise, we use we use log files from [this collection](https://github.com/OpenInternet/Infuse/blob/main/nginx%20and%20apache%20logs.zip) (same collection as the other files in this practice section)
 
@@ -414,96 +414,20 @@ In this task we are going to use regular expressions. Regular expressions (regex
 
 [a-d]{3} matches any sequence of exactly three characters within the given range, each of which can be any lowercase letter from 'a' to 'd'. So, it would match strings like 'abc', 'bda', 'cad', etc. Some characters have special meanings within regexes these characters are:
 
-<table>
-  <tr>
-   <td>\
-   </td>
-   <td>Backslash
-   </td>
-   <td>Used to escape a special character
-   </td>
-  </tr>
-  <tr>
-   <td>^
-   </td>
-   <td>Caret
-   </td>
-   <td>Beginning of a string
-   </td>
-  </tr>
-  <tr>
-   <td>$
-   </td>
-   <td>Dollar sign
-   </td>
-   <td>End of a string
-   </td>
-  </tr>
-  <tr>
-   <td>.
-   </td>
-   <td>Period or dot
-   </td>
-   <td>Matches any single character
-   </td>
-  </tr>
-  <tr>
-   <td>|
-   </td>
-   <td>Vertical bar or pipe symbol
-   </td>
-   <td>Matches previous OR next character/group
-   </td>
-  </tr>
-  <tr>
-   <td>?
-   </td>
-   <td>Question mark
-   </td>
-   <td>Match zero or one of the previous
-   </td>
-  </tr>
-  <tr>
-   <td>*
-   </td>
-   <td>Asterisk or star
-   </td>
-   <td>Match zero, one or more of the previous
-   </td>
-  </tr>
-  <tr>
-   <td>+
-   </td>
-   <td>Plus sign
-   </td>
-   <td>Match one or more of the previous
-   </td>
-  </tr>
-  <tr>
-   <td>( )
-   </td>
-   <td>Opening and closing parenthesis
-   </td>
-   <td>Group characters
-   </td>
-  </tr>
-  <tr>
-   <td>[ ]
-   </td>
-   <td>Opening and closing square bracket
-   </td>
-   <td>Matches a range of characters
-   </td>
-  </tr>
-  <tr>
-   <td>{ }
-   </td>
-   <td>Opening and closing curly brace
-   </td>
-   <td>Matches a specified number of occurrences of the previous
-   </td>
-  </tr>
-</table>
+| Symbol | Name                          | Description                                      |
+|--------|-------------------------------|--------------------------------------------------|
+| \      | Backslash                     | Used to escape a special character               |
+| ^      | Caret                         | Beginning of a string                            |
+| $      | Dollar sign                   | End of a string                                  |
+| .      | Period or dot                 | Matches any single character                     |
+| \|     | Vertical bar or pipe symbol   | Matches previous OR next character/group         |
+| ?      | Question mark                 | Match zero or one of the previous                |
+| *      | Asterisk or star              | Match zero, one or more of the previous          |
+| +      | Plus sign                     | Match one or more of the previous                |
+| ( )    | Opening and closing parenthesis| Group characters                                |
+| [ ]    | Opening and closing square bracket| Matches a range of characters               |
+| { }    | Opening and closing curly brace| Matches a specified number of occurrences of the previous|
+
 
 In our task we will use backslash to escape “\” special character.
 
@@ -524,7 +448,7 @@ We will use the `grep` command to search for the specified pattern in text. For 
 
 The “`-E`” option in the `grep `command enables the use of extended regular expressions for pattern matching `grep -E 'abcd\[0-9]{2}'` for filtering text like `abcd\34, abcd\47` etc.
 
-## Practice exercise 4: using regular expressions (regexes)
+### Practice exercise 4: using regular expressions (regexes)
 
 For those exercises, we use nginx log files from [this collection](https://github.com/OpenInternet/Infuse/blob/main/nginx%20and%20apache%20logs.zip) (same collection as the other files in this practice section)
 
@@ -533,7 +457,7 @@ For those exercises, we use nginx log files from [this collection](https://githu
 3. Examine` error.log` by running `more  error.log`. You can quit this command with ctrl+c or press the “q” key to return command prompt. Excluding "PHP Notice" errors. What kind of critical errors can you find in the log?
 4. Exclude PHP errors from the error.log and find the lines where requests are denied due to security rules. Which sensitive file has been requested?
 
-### Practice exercise 4: answers
+#### Practice exercise 4: answers
 
 Exercise 1: \
 Correct answer: 113 lines
