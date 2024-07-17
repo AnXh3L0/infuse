@@ -1,6 +1,6 @@
 ---
 style: module
-title: Investigación pasiva: Análisis de los encabezados de correo electrónico
+title: "Investigación pasiva - Análisis de los encabezados de correo electrónico"
 description: 
 weight: 5
 ---
