@@ -1,6 +1,6 @@
 ---
 style: module
-title: Respuesta: desmontaje de la infraestructura
+title: Respuesta - desmontaje de la infraestructura
 description: 
 weight: 9
 ---
