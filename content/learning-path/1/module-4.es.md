@@ -1,6 +1,6 @@
 ---
 style: module
-title: Investigación Pasiva: Análisis de URL, los nombres de host y direcciones IP
+title: Investigación Pasiva - Análisis de URL, los nombres de host y direcciones IP
 description: 
 weight: 4
 ---
