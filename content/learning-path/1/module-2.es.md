@@ -1,78 +1,77 @@
 ---
 style: module
-title: Interpersonal Skills for Malicious Infrastructure/Phishing Response
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: Habilidades Interpersonales para Infraestructura Maliciosa/Respuesta al Phishing
+description: En casi todos los casos de intervención o apoyo, los profesionales trabajarán directamente con las personas afectadas por un ataque o intento de ataque. Esto puede ser una experiencia estresante e inductora de ansiedad para las personas objetivo, y cada profesional debe saber cómo mitigar esas presiones.
 weight: 2
 ---
 
-## Use Case
+## Estudios de caso
 
-In almost every intervention or support case, practitioners will be working directly with persons affected by an attack or attempted attack. This can often be a stressful and anxiety-inducing experience for targeted persons, and every practitioner should know how to mitigate those pressures.
+En casi todos los casos de intervención o apoyo, los profesionales trabajarán directamente con las personas afectadas por un ataque o intento de ataque. Esto puede ser una experiencia estresante e inductora de ansiedad para las personas objetivo, y cada profesional debe saber cómo mitigar esas presiones.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic,  practitioners will be able to support those who might have received or clicked on malicious emails or links  in a responsible way, embodying empathy and focusing on harm reduction informed by the targeted person’s own threat model.
+Una vez completado este subtema, los profesionales serán capaces de ayudar de forma más responsable a quienes hayan podido recibir o hacer clic en correos o enlaces maliciosos.
 
 ---
+## Sección Principal
 
-## Foundation Knowledge
+### Conocimiento Fundamental
 
-The Security Education Companion contains a multitude of advice on thoughtful, careful, harm-reducing ways to interact as a technology helper. If you are not already familiar with this type of content, we highly advise reviewing the resources in [Security Education 101](https://www.securityeducationcompanion.org/articles).
+Security Education Companion contiene una multitud de consejos sobre formas reflexivas, cuidadosas y reductoras de daños para interactuar como ayudante de tecnología. Si aún no está familiarizado con este tipo de contenido, le recomendamos que revise los recursos de [Security Education 101](https://www.securityeducationcompanion.org/articles).
 
-After reading through the above resources, you should be able to do the following:
+**  
+Al leer los recursos anteriores, debería poder hacer lo siguiente:**
 
-- Understand how risk assessment is important in every interaction;
-- Understand the risks of touching people’s devices or gaining access to their accounts;
-- Understand that when you share information about the case or attack with colleagues or others in the community, you require the informed consent of the targeted person. This means explaining to them what information you will share, how you handle that information, what the possible risks of sharing that information could be, and requesting their explicit permission to do so;
-- Understand the risks of engaging in fear-mongering discourse;
-- Understand your own limitations, both in terms of technical ability but also your suitability to support a given person or community and any risks inherent in doing so;
-- Avoid injecting preferences for platforms, technology, open-source vs closed-source, etc, into helper interactions.
+- Comprender cómo la evaluación de riesgos es importante en cada interacción;
+- Comprender los riesgos de tocar los dispositivos de las personas u obtener acceso a sus cuentas;
+- Comprender que cuando comparta información sobre el caso o la agresión con colegas u otras personas de la comunidad, necesita el consentimiento informado de la persona objeto de la agresión. Esto significa explicarles qué información va a compartir, cómo maneja esa información, cuáles podrían ser los posibles riesgos de compartir esa información y solicitar su permiso explícito para hacerlo;
+- Comprender los riesgos de participar en un discurso de alarmismo;
+- Comprender sus propias limitaciones, tanto en términos de capacidad técnica como de su idoneidad para apoyar a una persona o comunidad determinada y cualquier riesgo inherente al hacerlo;
+- Evite introducir preferencias por plataformas, tecnología, código abierto frente a código cerrado, etc., en las interacciones de los ayudantes.
 
-## Path-specific Knowledge
+### Conocimiento Específico del Itinerario
 
-Once you are familiar with the above foundational knowledge, take some time to think about particular interpersonal skills which might be needed for this specific learning path. Every learning path and intervention are slightly different; each one might bring with it different narratives or concerns by learners.
+Una vez que esté familiarizado con el conocimiento fundamental anterior, tómese un tiempo para pensar en las habilidades interpersonales particulares que podrían ser necesarias para este ruta de aprendizaje específico. Cada ruta de aprendizaje e intervención son ligeramente diferentes; cada uno podría traer consigo diferentes narrativas o preocupaciones por parte de los profesionales.
 
-You should be able to:
+Debería ser capaz de:
 
-- Look at how you can talk about phishing and malicious infrastructure in the most empathetic way possible. Everyone can click a bad link or misread a URL; make sure that you do not shame anyone. When publicly discussing case studies, do so carefully and empathetically as not to blame any individual users or identify any people who would prefer to remain anonymous;
-- Be ready to discuss the difference between active and passive analysis of infrastructure of risk tolerance;
-- Be ready to explain how the same method of analysis can sometimes yield lots of data and sometimes very little, and manage expectations accordingly.
+- Observe cómo puede hablar sobre el (phishing) y de infraestructura malintencionada de la forma más empática posible. Todos pueden hacer clic en un vínculo incorrecto o leer mal una dirección URL; asegúrese de que no avergüenza a nadie. Cuando discuta públicamente estudios de casos, hágalo con cuidado y empatía para no culpar a ningún usuario individual ni identificar a personas que preferirían permanecer en el anonimato;
+- Esté preparado para discutir la diferencia entre el análisis activo y pasivo de la infraestructura de tolerancia al riesgo;
+- Esté preparado para explicar cómo el mismo método de análisis puede producir a veces muchos datos y a veces muy pocos, y gestione las expectativas en consecuencia.
 
-Note that the skills outlined later on in this learning path also contain advice on developing the interpersonal skills in order to deliver thoughtful, harm-reducing support.
+Tenga en cuenta que las habilidades que se describen más adelante en este ruta de aprendizaje también contienen consejos sobre el desarrollo de las habilidades interpersonales para ofrecer un apoyo reflexivo que reduzca los daños.
 
-## Understand: Harm Reduction & Operational Security
+### Para entender: Reducción de Daños y Seguridad Operacional
 
-By the time a phishing email has been shared with you, it is possible that the intended target has already been harmed: they might have clicked it and entered some data, or they may be impacted by the psychosocial impact of feeling targeted or watched. It’s important to support the intended target while, at the same time, avoiding causing harm to yourself during active interaction with malicious content.
+En el momento en que se ha compartido un correo electrónico de phishing con usted, es posible que el objetivo previsto ya haya sido dañado: es posible que haya hecho clic en él e introducido algunos datos, o que se vea afectado por el impacto psicosocial de sentirse atacado u observado. Es importante apoyar al objetivo previsto y, al mismo tiempo, evitar hacerse daño durante la interacción activa con contenido malicioso.
 
-Harm reduction for the targeted person should start with collecting some information on the actions they took and the circumstances in which they received and interacted with the email. You might ask different sets of questions for people you know well, such as colleagues, and beneficiaries whom you know less about. Some questions worth asking include: What is their threat model? Are they an anonymous blogger? A dissident in exile attempting to hide their location? Were they using a VPN? Is their browser and operating system up to date? What email system did they receive and open the email in? Did they interact with links, forms, or attachments? Did they reply to the email or forward it to anyone else? Did others in their organization or community receive a same or similar email?
+La reducción de daños para la persona objetivo debe comenzar con la recopilación de información sobre las acciones que tomó y las circunstancias en las que recibió e interactuó con el correo electrónico. Podría hacer diferentes conjuntos de preguntas a personas que conoce bien, como colegas y beneficiarios de quienes sabe menos. Algunas preguntas que vale la pena hacer incluyen: ¿Cuál es su modelo de amenaza? ¿Es un blogger anónimo? ¿Un disidente en el exilio que intenta ocultar su ubicación? ¿Estaban usando una VPN? ¿Está actualizado el nivel de patch de su navegador? ¿En qué sistema de correo electrónico recibieron y abrieron el correo electrónico? ¿Interactuaron con enlaces, formularios o archivos adjuntos? ¿Respondieron al correo electrónico o lo reenviaron a alguien más? ¿Otros miembros de su organización o comunidad recibieron un correo electrónico igual o similar?
 
-The answers to these questions will both help provide useful harm reduction support and aid in your investigations. As you progress in analysis and understanding of the malicious content, update the targeted person especially insofar as is relevant to harm reduction.
+Las respuestas a estas preguntas ayudarán a proporcionar un apoyo útil para la reducción de daños y ayudarán en sus investigaciones. A medida que avance en el análisis y la comprensión del contenido malicioso, actualice a la persona objetivo, especialmente en la medida en que sea relevante para la reducción de daños.
 
-For operational security to protect yourself while working with malicious emails, check out the next subtopic.
+Para que la seguridad operacional le proteja mientras trabaja con correos electrónicos maliciosos, consulte el siguiente subtema.
 
-## Learning Resources
+## Practique
 
-{{% resource title="Security Education 101" languages="English" cost="Free" description="A popular community resource on how to teach and talk about digital security" url="https://www.securityeducationcompanion.org/articles" %}}
+### Reflexione y responda/discuta lo siguiente con sus compañeros, colegas, amigos o un mentor. Si está disponible y es apropiado, hable con un ʻclienteʼ con el que haya trabajado antes para pedirle su opinión y experiencias sobre algunas de estas preguntas
 
-## Practice
+- Describa cómo manipular el dispositivo de alguien y acceder a él puede presentar riesgos imprevistos.
+- Imagine que está ayudando a alguien con datos confidenciales en su dispositivo. ¿Cómo abordaría una discusión con esta persona con respecto a su acceso y manejo de datos?
+- ¿Cómo afecta la comprensión del modelo de amenaza específico de una persona a sus esfuerzos de reducción de daños, por ejemplo, si es un bloguero anónimo o un disidente en el exilio?
+- ¿Cómo se comporta al proporcionar evidencia técnica objetiva de acuerdo con su capacidad, al tiempo que equilibra la necesidad de no proporcionar una falsa confianza y al mismo tiempo no fomentar la paranoia?
+- Describa sus propias habilidades y limitaciones para realizar el trabajo de análisis de infraestructura. Al hacer un primer intento de esta descripción, trate de añadir más matices y precisión a su descripción.
+- ○ ¿Cuáles podrían ser los riesgos si continúa sin este reconocimiento de sus limitaciones?
 
-Reflect on and answer/discuss the following with peers, colleagues, friends, or a mentor. If available and if appropriate, talk to a ‘client’ you have worked with before to ask their input and experiences on some of these questions.
+## Comprobación de Habilidades
 
-- Describe how touching and gaining access to someone's device might present unforeseen risks.
-- Imagine you are assisting someone with sensitive data on their device. How would you approach a discussion with this person regarding your access and data handling.
-- How does understanding a person’s specific threat model impact your harm-reduction efforts, for instance if they are an anonymous blogger or dissident in exile?
-- How do you navigate providing factual technical evidence according to your ability, while balancing the need not to provide false confidence while also not fostering paranoia?
-- Describe your own abilities and limitations in conducting infrastructure analysis work. After making a first attempt at this description, attempt to add further nuance and accuracy to your description.
-- What might be the risks if you proceed without this recognition of your limitations?
+Haga un ejercicio de juego de roles con un compañero o mentor, en el que usted desempeñe el papel de protector digital, y ellos desempeñen el papel de alguien que recibió un correo electrónico de phishing que todavía está en su buzón de correo. Recibieron el correo electrónico hace varias horas, no recuerdan si hicieron clic en él, y solo comenzaron a pensar que es sospechoso y que deberían alertar a los demás ahora. Están muy estresados, preocupados de que puedan haber puesto en riesgo a sus colegas y a la organización. Algunos de los temas que la conversación podría tocar incluyen:
 
-## Skill Check
+- Explicar qué es un mensaje de phishing y cuáles podrían ser los objetivos de los atacantes.
+- Hablar con la persona objetivo sobre el riesgo que podría correr si hiciera clic en el correo electrónico de phishing.
+- Hablar sobre quiénes podrían ser los posibles adversarios y cuántos ataques no están dirigidos en absoluto sobre quiénes podrían ser los adversarios potenciales y cuántos ataques no tienen ningún objetivo.
+- Discutir los próximos pasos que la persona y la organización objetivo podrían tomar para mantenerse a salvo.
 
-Do a role-playing exercise with a peer or mentor, in which you play the part of the digital protector, and they play the part of somebody who received a phishing email which is still in their mailbox. They received the email several hours ago, do not remember whether they clicked on it, and only started to think that it’s suspicious and that they should alert others now. They are very stressed, worried that they might have put their colleagues and organization at risk. Some of the topics the conversation could touch upon include:
+## Recursos de Aprendizaje
 
-- Explain what a phishing message is and what the attackers’ aims could be.
-- Talk the targeted person through what risk they might be at if they clicked the phishing email.
-- Talk about who the potential adversaries could be, and how many attacks are not targeted at all.
-- Discuss what next steps the targeted person and organization could take to keep safe.
+{{% resource title="Educación en seguridad 101" description="Un recurso comunitario popular sobre cómo enseñar y hablar de seguridad digital" languages="Inglés" cost="Gratis" url="https://www.securityeducationcompanion.org/articles" %}}
