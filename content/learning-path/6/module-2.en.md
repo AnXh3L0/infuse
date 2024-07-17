@@ -23,18 +23,18 @@ After completing this subtopic, the practitioner should be able to do the follow
 - Know how to minimize sensitive information in logs
 
 ---
-
+## Main Section
 Even with the best possible skills, dedication, processes, and intentions, it’s nearly impossible to develop a website that’s completely resistant to any kind of attack. Given enough time and bad luck, every site will have a security incident. When that happens, it’s important to have logging in place that supports the detection and investigation of security events. At the same time, it’s important that a website's logs don’t pose additional risks themselves. This subtopic will teach you how to approach logging to maximize a site’s security. It will discuss:
 
 - Built-in logs for popular platforms
 - Adding logs to catch important security events
 - Minimizing risks associated with logging
 
-## Built-in Logging
+### Built-in Logging
 
 Various web platforms have their own logging systems. They can be relied upon to record data on every request and response, but are generally not sufficient for all incident response needs. Let’s go over what’s available in some common frameworks’ logs.
 
-### Apache
+#### Apache
 
 Apache is the most popular full-featured web server on the internet, serving more active sites than any other. By default, it logs events to file on the web server’s filesystem. There are two files: `access_log` and `error_log`. The access log contains structured information about each request, while the error log contains more semi-structured data about things that have gone wrong.
 
@@ -65,7 +65,7 @@ The error log consists of a mix of messages from Apache that are in a semi-struc
 
 [This article](https://www.dataset.com/blog/apache-error-log-detail/) provides more information about using the Apache error log.
 
-### IIS
+#### IIS
 
 IIS is the default Windows web server, and is also a very popular web server. Like Apache, IIS also, by default, logs requests to the web server’s filesystem. There are several log formats available, but the default is the W3C format, which logs the following, separated by spaces:
 
@@ -108,7 +108,7 @@ The Windows event log contains errors generated from the application server (e.g
 
 For more information on finding error logs on Windows, see [this article](https://stackify.com/beyond-iis-logs-find-failed-iis-asp-net-requests/).
 
-### nginx
+#### nginx
 
 Depending on how you count, nginx may be the most popular web server on the internet, however it is fairly limited, usually acting as a reverse proxy to a back-end web server or serving static files.
 
@@ -130,11 +130,11 @@ nginx error logs are semi-structured, with the following fields, separated by sp
 
 For more information, see [this article](https://trunc.org/learning/nginx-log-analysis).
 
-### Upstream CDN logs
+#### Upstream CDN logs
 
 If a site is behind a CDN, it’s often useful to see the logs of the requests to the CDN, as opposed to the requests from the CDN to the origin site. Each CDN provider provides logs differently and has different pricing structures for logging.
 
-### Setting up server logging
+#### Setting up server logging
 
 When setting up server logging, there are a few steps that should be taken to maximize the security value of the logs.
 
@@ -143,7 +143,7 @@ When setting up server logging, there are a few steps that should be taken to ma
   - Have a process that pulls log files from the server periodically. Pushing logs from the web server is okay, though it’s important that the push process cannot be used to delete the backed-up logs.
   - “Stream” logs from the web server to a remote ever, for example, with syslog-ng. This provides great protection against loss of logs. It’s usually a good idea to keep logs on the web server as well, in case of network interruption.
 
-### Limitations of server logging
+#### Limitations of server logging
 
 Even when fully configured, built-in server logs miss a lot of important information. Some examples:
 
@@ -153,7 +153,7 @@ Even when fully configured, built-in server logs miss a lot of important informa
 
 Much of this information isn’t included for good reason. Much of it can have bad implications for user privacy. Others (like useful error logging) require insight into the application itself, so can’t be done by the web server.
 
-### Approaching Logging for security
+#### Approaching Logging for security
 
 The main purpose of application-level logging in a web application is to overcome the limitations of server logging. There are numerous articles describing best practices for logging, here are a few:
 
@@ -163,13 +163,13 @@ The main purpose of application-level logging in a web application is to overcom
 
 These resources should get you set up with the knowledge you need to integrate security logging into an existing (or new) web application.
 
-### Logging and sensitive information
+#### Logging and sensitive information
 
 When overcoming the limitations of built-in server logging, we want to make sure that we don’t put site users at risk. It is frequently the case that logs are less well protected than production databases. First off, logs are not as obvious a target as a production database, so people tend to not focus on them as much when putting security measures in place. Secondly, it’s often the case that more users at an organization are given access to logs than are granted to access to a production database. Third, logs tend to be sent to many different systems, whereas production databases tend to stay centralized. Because of this, it’s worth considering redacting sensitive information in logs.
 
 [This article](https://www.skyflow.com/post/how-to-keep-sensitive-data-out-of-your-logs-nine-best-practices) prevents some general best practices for handling sensitive data during logging. Here are some approaches to consider for specific sorts of data:
 
-#### POST parameters
+##### POST parameters
 
 It is a recommended practice to not include sensitive information in GET parameters, hence GET parameters being logged, but not POST parameters. However, it can be extremely useful to have access to information about POST parameters when responding to an attack. A few things to put in place:
 
@@ -203,7 +203,7 @@ It is a recommended practice to not include sensitive information in GET paramet
 
   ```
 
-#### Security-related errors
+##### Security-related errors
 
 If a request causes an error that looks like an attempt to hack or bypass controls, the website should aggressively log the request information. Examples include:
 
@@ -213,29 +213,9 @@ If a request causes an error that looks like an attempt to hack or bypass contro
 
 If any of these happen, it’s a good idea to log the request, as well as internal information (e.g., database query, filename, etc). In the good case, there’s a simple bug in the site. In that case, there’s plenty of debugging information. In the bad case, the site is being compromised. In that case, it’s easier to find where the compromise occurred, so that forensics is more effective.
 
-#### Identity information
+##### Identity information
 
 Logging the identity of a logged-in user can be dangerous, but there are steps that can be taken to mitigate the danger. It’s questionable to log session cookies, but a hash of a session ID can be used to track a user’s activity across the site. Also, if the web server has a queryable directory of active user sessions, then either an internal ID can be used in logs, or the existing session IDs can be hashed to identify the log entries of a logged-in user. This will allow site owners to identify an active attacker, while making the identities in the logs useless to a threat actor on their own.
-
-## Learning Resources
-
-{{% resource title="Log Files - Apache" languages="English" cost="Free" description="An overview of how to read log files in the Apache web server." url="https://httpd.apache.org/docs/2.4/logs.html#accesslog" %}}
-
-{{% resource title="Understanding the Apache Access and Error Log" languages="English" cost="Free" description="Two pieces on how to read the Apache web server’s logs." url1="https://www.keycdn.com/support/apache-access-log" url2="https://www.dataset.com/blog/apache-error-log-detail/" %}}
-
-{{% resource title="Server-side logging" languages="English" cost="Free" description="An analysis of logs within the Microsoft IIS server." url="https://learn.microsoft.com/en-us/windows/win32/http/server-side-logging-in-http-version-2-0" %}}
-
-{{% resource title="IIS Error Logs and Other Ways to Find ASP.Net Failed Requests" languages="English" cost="Free" description="Another look at IIS logs and how we can search for application errors therein." url="https://stackify.com/beyond-iis-logs-find-failed-iis-asp-net-requests/" %}}
-
-{{% resource title="Configuring logging on nginx" languages="English" cost="Free" description="Documentation by the NGINX web server on how to configure and work with logs." url="https://docs.nginx.com/nginx/admin-guide/monitoring/logging/" %}}
-
-{{% resource title="A guide to NGINX logs" languages="English" cost="Free" description="An overview of different NGINX logs and their formats." url="https://trunc.org/learning/nginx-log-analysis" %}}
-
-{{% resource title="Security Log: Best Practices for Logging and Management" languages="English" cost="Free" description="An analysis of when logs are useful, how we can analyze them, and what policies we can create around them." url="https://www.dnsstuff.com/security-log-best-practices" %}}
-
-{{% resource title="OWASP logging cheat sheet and vocabulary" languages="English" cost="Free" description="A guide from OWASP on what purpose logs should serve, how we should analyze them, and a standard vocabulary for them." url1="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" url2="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html" %}}
-
-{{% resource title="Keep Sensitive Data Out of Your Logs: 9 Best Practices" languages="English" cost="Free" description="Thorough logging can also end up including sensitive data, which could put users at risk. This guide looks at how we can adapt our logging practices to exclude sensitive data from logs." url="https://www.skyflow.com/post/how-to-keep-sensitive-data-out-of-your-logs-nine-best-practices" %}}
 
 ## Practice
 
@@ -592,3 +572,24 @@ You are given an nginx access log from a website under attack to investigate, wh
 Locate a suspicious path that is being targeted, extract IP addresses that are sending suspicious requests and find out which countries those IPs are in (you can use geoIP databases, described in more detail in the malicious infrastructure learning path, for this). You can use standard CLI tools like `awk`, `grep`, `sort`, `uniq`. To find out AS numbers and countries, we recommend using relevant online lookup services.
 
 _Hint:_ ipinfo.io provides a convenient way of looking up IP details, you can use curl to fetch those.
+
+
+## Learning Resources
+
+{{% resource title="Log Files - Apache" languages="English" cost="Free" description="An overview of how to read log files in the Apache web server." url="https://httpd.apache.org/docs/2.4/logs.html#accesslog" %}}
+
+{{% resource title="Understanding the Apache Access and Error Log" languages="English" cost="Free" description="Two pieces on how to read the Apache web server’s logs." url1="https://www.keycdn.com/support/apache-access-log" url2="https://www.dataset.com/blog/apache-error-log-detail/" %}}
+
+{{% resource title="Server-side logging" languages="English" cost="Free" description="An analysis of logs within the Microsoft IIS server." url="https://learn.microsoft.com/en-us/windows/win32/http/server-side-logging-in-http-version-2-0" %}}
+
+{{% resource title="IIS Error Logs and Other Ways to Find ASP.Net Failed Requests" languages="English" cost="Free" description="Another look at IIS logs and how we can search for application errors therein." url="https://stackify.com/beyond-iis-logs-find-failed-iis-asp-net-requests/" %}}
+
+{{% resource title="Configuring logging on nginx" languages="English" cost="Free" description="Documentation by the NGINX web server on how to configure and work with logs." url="https://docs.nginx.com/nginx/admin-guide/monitoring/logging/" %}}
+
+{{% resource title="A guide to NGINX logs" languages="English" cost="Free" description="An overview of different NGINX logs and their formats." url="https://trunc.org/learning/nginx-log-analysis" %}}
+
+{{% resource title="Security Log: Best Practices for Logging and Management" languages="English" cost="Free" description="An analysis of when logs are useful, how we can analyze them, and what policies we can create around them." url="https://www.dnsstuff.com/security-log-best-practices" %}}
+
+{{% resource title="OWASP logging cheat sheet and vocabulary" languages="English" cost="Free" description="A guide from OWASP on what purpose logs should serve, how we should analyze them, and a standard vocabulary for them." url1="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" url2="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html" %}}
+
+{{% resource title="Keep Sensitive Data Out of Your Logs: 9 Best Practices" languages="English" cost="Free" description="Thorough logging can also end up including sensitive data, which could put users at risk. This guide looks at how we can adapt our logging practices to exclude sensitive data from logs." url="https://www.skyflow.com/post/how-to-keep-sensitive-data-out-of-your-logs-nine-best-practices" %}}
