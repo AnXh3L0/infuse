@@ -1,218 +1,192 @@
 ---
 style: module
-title: Passive Investigation - Analyze URLs, hostnames, and IP addresses
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: Investigación Pasiva: Análisis de URL, los nombres de host y direcciones IP
+description: 
 weight: 4
 ---
 
-## Use Case
+## Estudios de caso
 
-A practitioner can use the skills outlined in this subtopic to **begin a passive investigation against servers on the internet**. A passive investigation is one that does not load any websites, but only looks up publicly available data on them. As such, the attacker will not be alerted that their website received additional visits, which could tip them off that an investigation is taking place. By evaluating domain and IP info, an investigator can work towards **generating rich technical information about the attack **useful for community education, threat information sharing, discovery of associated attacker infrastructure, and for placing attacks in context of broader attack patterns.
+Un profesional puede usar las habilidades descritas en este subtema para **comenzar una investigación pasiva contra los servidores en Internet**. Una investigación pasiva es aquella que no carga ningún sitio web, sino que solo busca datos disponibles públicamente en ellos. Como tal, el atacante no será alertado de que su sitio web recibió visitas adicionales, lo que podría indicarle que se está llevando a cabo una investigación. Al evaluar la información de dominio e IP, un investigador puede trabajar para **generar información técnica enriquecida sobre el ataque, útil para la** educación de la comunidad, el intercambio de información sobre amenazas, el descubrimiento de la infraestructura de atacantes asociada y para colocar los ataques en el contexto de patrones de ataque más amplios.
 
-Some of those skills may be necessary as part of an initial triage process, for example to help an analyst decide if a link is suspicious. They will also prove very useful during an in-depth analysis of email headers, outlined in the next section.
+Algunas de esas habilidades pueden ser necesarias como parte de un proceso de clasificación inicial, por ejemplo, para ayudar a un analista a decidir si un enlace es sospechoso. También resultarán muy útiles durante un análisis en profundidad de los encabezados de correo electrónico, que se describe en la siguiente sección.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, practitioners should be able to do the following:
+Después de completar esta subhabilidad, el profesional debe ser capaz de hacer lo siguiente:
 
-- Understand how a URL is structured;
-- Understand DNS record types, WHOIS, and the difference between IPv4 and IPv6;
-- Conduct basic reconnaissance on domains;
-- Recognize common reverse proxies which shield origin IP addresses for purposes of DDoS protection or content delivery optimization, such as CloudFlare, Akamai, and Fastly;
-- Discover or enumerate subdomains attached to a domain.
+- Comprender cómo está estructurada una URL;
+- Comprender los tipos de registros DNS, WHOIS y la diferencia entre IPv4 e IPv6;
+- Llevar a cabo un reconocimiento básico en los dominios;
+- Reconocer proxies inversos comunes que protejan las direcciones IP de origen con fines de protección contra DDoS u optimización de la entrega de contenido, como CloudFlare, Akamai y Fastly;
+- Descubrir subdominios fácilmente observables en el dominio.
 
 ---
+## Sección Principal
 
-Passive investigation utilizes open source intelligence (OSINT) tools and resources which can give us many details about the digital footprint of attack infrastructure without an attacker noticing that we are investigating.
+La investigación pasiva utiliza herramientas y recursos de inteligencia de código abierto (OSINT) que pueden darnos muchos detalles sobre la huella digital de la infraestructura de ataque sin que un atacante se dé cuenta de que estamos investigando.
 
-## Foundation Knowledge
+### Conocimiento Fundamental
 
-This dives into the basics of URLs, DNS, and IPv4/IPv6. If you feel comfortable with those concepts, excellent! Go and jump to the ‘workflows’ section. Otherwise, check out the documents and resources below:
+Esta subhabilidad profundiza en los conceptos básicos de URL, DNS e IPv4/IPv6. Si se siente cómodo con esos conceptos, ¡excelente! Vaya y salte a la sección ‘flujos de trabajo’. De lo contrario, revise los documentos y recursos a continuación:
 
-- URL construction
-  - You should be able to read an URL and understand the significance of its parts, including identifying the scheme, sub-domains, primary domain, top-level domains, and any identifying features of the path or parameters in the URL. If you need to brush up on this knowledge, check out [this document from MDN](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL).
-- URL Shorteners
-  - Some malicious messages might use a URL shortener to hide the actual malicious link. If you want to see the final destination of the link, you can use an online service such as [unshorten.me](https://unshorten.me/) to view the full URL. Do note, however, that unshortening a URL might alert the attacker that you are conducting an investigation and should be considered active analysis;
+- Construcción de URL
+  - Debería poder leer una URL y comprender el significado de sus partes, incluida la identificación del esquema, los subdominios, el dominio principal, los dominios de nivel superior y cualquier característica de identificación del itinerario o los parámetros en la URL. Si necesita repasar este conocimiento, [este documento de MDN](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL).
+- Reductores de URL
+  - Algunos mensajes maliciosos pueden usar un reductor de URL para ocultar el enlace malicioso real. Si desea ver el destino final del enlace, puede utilizar un servicio en línea como [unshorten.me](https://unshorten.me/) para ver la URL completa. Tenga en cuenta, no obstante, que el hecho de no reducir una URL puede alertar al atacante de que está llevando a cabo una investigación y debe considerarse un análisis activo;
 - DNS
-  - [Introduction to Domain Name System ](https://aws.amazon.com/route53/what-is-dns/)
+  - [Introduction to Domain Name System](https://aws.amazon.com/route53/what-is-dns/)
   - [DNS record types](https://www.cloudflare.com/learning/dns/dns-records/)
-  - WHOIS - You should be able to understand how WHOIS records are created and stored, read a WHOIS record, query the WHOIS record for any domain [replace with a resource]. If you need more info on that, see [this guide](https://www.domain.com/blog/what-is-whois-and-how-is-it-used/).
+  - WHOIS: Usted debe poder comprender cómo se crean y almacenan los registros WHOIS, leer un registro WHOIS, consultar el registro WHOIS para cualquier dominio \[reemplazar con un recurso\] Si necesita más información al respecto, consulte [esta guía](https://www.domain.com/blog/what-is-whois-and-how-is-it-used/).
 - IPv4/IPv6
-  - What is IPv4?
-    [https://bluecatnetworks.com/glossary/what-is-ipv4/](https://bluecatnetworks.com/glossary/what-is-ipv4/)
-    - Getting to Understand the Differences between IPv4 and IPv6.
-      [https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6](https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/)
-    - Understanding IP addresses
-      [https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/](https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/)
-- In addition to IP addresses, it’s useful to read up on [port numbers](https://www.techtarget.com/searchnetworking/definition/port-number).
+  - ¿Qué es una dirección IPv4?
 
-## Workflows: Tools & Capabilities
+<https://bluecatnetworks.com/glossary/what-is-ipv4/>
 
-Passive IP/DNS investigations can be divided into several categories.
+- - Comprender las diferencias entre IPv4 e IPv6
 
-## Obtain Essential IP/DNS Information
+[https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6](https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/)
 
-One of the first things we should do in our investigation is gain some initial information on domains and hosts. Several tools and tool categories that can help with that.
+- - Comprender las direcciones IP  
+        <https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/>
+
+● Además de las direcciones IP, es útil leer sobre los [números de puerto](https://www.techtarget.com/searchnetworking/definition/port-number).
+
+### Flujo de trabajo: Herramientas y capacidades
+
+Las investigaciones pasivas de IP/DNS se pueden dividir en varias categorías.
+
+#### Obtener información esencial de IP/DNS
+
+Una de las primeras cosas que debemos hacer en nuestra investigación es obtener información inicial sobre dominios y hosts. Varias herramientas y categorías de herramientas que pueden ayudar con eso.
 
 - WHOIS
 
-  WHOIS records are publicly accessible and contain useful information on a domain. Learn how to use web-based (for example [ARIN whois](https://search.arin.net/rdap/) or [who.is](https://who.is/)) or [command-line utilities](https://www.arin.net/resources/registry/whois/rws/cli/) to view a WHOIS record and learn to read the registrant information (if disclosed), the registrar, the date of registry, and the DNS nameservers which indicate where the authoritative records for that DNS zone are hosted.
+Los registros WHOIS son de acceso público y contienen información útil sobre un dominio. Aprenda a usar utilidades basadas en la web (por ejemplo, [ARIN whois](https://search.arin.net/rdap/) o[who.is](https://who.is/)) o [de línea de comandos](https://www.arin.net/resources/registry/whois/rws/cli/) para ver un registro WHOIS y aprender a leer la información del registrante (si se revela), el registrador, la fecha de registro y los servidores de nombres DNS que indican dónde están alojados los registros fidedignos para esa zona DNS.
 
-  WHOIS can also be run on an IP address in order to attempt to identify the company responsible for the IP, thereby potentially telling you the hosting company serving a website.
+WHOIS también se puede ejecutar en una dirección IP con el fin de averiguar la empresa responsable de la IP, por lo que potencialmente le indica la empresa de alojamiento que sirve a un sitio web.
 
 - dig & host
 
-  **dig** is a command-line tool either pre-installed or available for major operating systems. It allows you to easily look up (follow [tutorial here](https://phoenixnap.com/kb/linux-dig-command-examples)) the DNS records of any domain, and differentiates between different record types. While the linked tutorial contains many elements of **dig** syntax, the most common use is to lookup A and MX record types. dig is quite popular among analysts since it is simple and easy to automate. **host **(see [tutorial link](https://www.geeksforgeeks.org/host-command-in-linux-with-examples/)) is an alternative command line tool which rapidly converts a hostname into an IP address with simpler syntax. There are also plenty of alternatives to dig with more features or better readability, [such as doggo](https://github.com/mr-karan/doggo).
+**dig** es una herramienta de línea de comandos preinstalada o disponible para los principales sistemas operacionales. Permite buscar fácilmente (siga el [tutorial aquí](https://phoenixnap.com/kb/linux-dig-command-examples)) los registros DNS de cualquier dominio y distingue entre distintos tipos de registros. Si bien el tutorial vinculado contiene muchos elementos de sintaxis **dig**, los usos más comunes son buscar tipos de registros A y MX. dig es bastante popular entre los analistas, ya que es simple y fácil de automatizar. **host** (ver [enlace tutorial](https://www.geeksforgeeks.org/host-command-in-linux-with-examples/)) es una herramienta alternativa de línea de comandos que convierte rápidamente un nombre de host en una dirección IP con una sintaxis más simple. También hay muchas alternativas a dig con más funciones o mejor legibilidad, [como doggo](https://github.com/mr-karan/doggo).
 
-  Look out for common content distribution reverse-proxy name servers such as those offered by Akamai (e.g. a1-64.akam.net), CloudFlare (e.g. eve.ns.cloudflare.com), Fastly (e.g. ns3.fastly.net), as these will obscure the actual origin server IP. After spending some time looking up name servers, you will easily be able to recognize many of those proxies. If you, for example, run the dig command to look up theguardian.com, you will see that it resolves to Fastly servers (at least at time of writing).
+Busque servidores de nombres proxy inversos de distribución de contenido comunes, como los ofrecidos por Akamai (por ejemplo, a1-64.akam.net), CloudFlare (por ejemplo, eve.ns.cloudflare.com), Fastly (por ejemplo, ns3.fastly.net), ya que ocultarán la IP real del servidor de origen. Si pasa algún tiempo buscando servidores de nombres, podrá reconocer fácilmente muchos de esos proxies. Si, por ejemplo, ejecuta el comando dig para buscar theguardian.com, verá que se resuelve en los servidores Fastly (al menos en el momento de escribir).  
 
 - geoIP
-  IP addresses are roughly tied to physical geographies. This means that, if you know an IP address, [you can figure out](https://www.maxmind.com/en/geoip-demo) (MaxMind GeoIP lookup demo linked)) with some degree of certainty where in the world (country, region) the device that uses this address is located. There are many databases, known as geoIP, which allow you to look that up. Do note that the accuracy of IP-based lookups can be extremely varied: sometimes, it’s possible to track down an IP address to a specific organization, while at other times you only get country-level granularity.
 
-🛠️ Take a moment to practice using these services. You could, for example, use them to look up your own website or that of your organization.
+Las direcciones IP están más o menos vinculadas a geografías físicas. Esto significa que, si conoce una dirección IP, [puede averiguar](https://www.maxmind.com/en/geoip-demo) (MaxMind GeoIP lookup demo linked)) con cierto grado de certeza en qué parte del mundo (país, región) se encuentra el dispositivo que utiliza esta dirección. Hay muchas bases de datos, conocidas como geoIP, que te permiten buscarlas. Tenga en cuenta que la precisión de las búsquedas basadas en IP puede ser extremadamente variada: a veces, es posible rastrear una dirección IP a una organización específica, mientras que en otras ocasiones solo se obtiene granularidad a nivel de país.
 
-### Discovering Hidden DNS/IP Information
+🛠️Tómese un momento para practicar el uso de estos servicios. Podría, por ejemplo, usarlos para buscar su sitio web o el de su organización.
 
-There are a variety of ways that one can obtain additional information about hosts in a domain. Do note, however, that most of those techniques only work some of the time and often fail. If one of them does not work, do not be discouraged. Some of these methods include:
+#### Descubrimiento de información oculta de DNS/IP
 
-- Using DNS Zone Transfers. A feature (usually disabled over the internet) of authoritative DNS servers is to give out their entire set of DNS records for a given domain. Its intended use is to synchronize replica servers to the primary server. Check [out this guide](https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/) on how to use dig and other tools to figure out subdomains based on DNS zone transfers.
-- Brute-forcing subdomains. One can simply guess subdomains using a list of common subdomain prefixes and ask the DNS server for those servers’ IP addresses. (e.g. webmail.attacker.com, vpn.attacker.com, remoteaccess.attacker.com, etc.) So long as the server gives a NXDOMAIN (no such domain) response for non-existent hostnames, one can often find hidden domains this way. This [guide on enumerating subdomains](https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/) also lists some brute forcing tools.
-- Reverse-lookup of adjacent IP addresses. Some DNS servers will let you look up the hostname for an IP address. It is common for self-hosted infrastructure to exist in a small block of IP addresses. Given this, it’s sometimes possible to, given one hostname's IP address (e.g. 127.0.0.5), look up the hostnames of nearby IP addresses (e.g. 127.0.0.1-127.0.0.254).
+Hay varias formas de obtener información adicional sobre los hosts de un dominio. Sin embargo, tenga en cuenta que la mayoría de esas técnicas solo funcionan una parte del tiempo y luego fallan. Si uno de ellos no funciona, no se desanime. Algunos de estos métodos incluyen:
+
+- Uso de transferencias de zona DNS. Una característica (generalmente deshabilitada a través de Internet) de los servidores DNS autorizados es dar a conocer todo su conjunto de registros DNS para un dominio determinado. Su uso previsto es sincronizar los servidores de réplica con el servidor principal. Consulta [esta guía](https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/) sobre cómo usar dig y otras herramientas para descubrir subdominios basados en transferencias de zona DNS.
+- Subdominios de fuerza bruta. Uno puede simplemente adivinar subdominios usando una lista de prefijos de subdominios comunes y pedirle al servidor DNS las direcciones IP de esos servidores. (por ejemplo, webmail.attacker.com, vpn.attacker.com, remoteaccess.attacker.com, etc.) Siempre que el servidor dé una respuesta NXDOMAIN (sin dicho dominio) para nombres de host inexistentes, se pueden encontrar dominios ocultos de esta manera. La [guía sobre la enumeración de subdominios](https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/) enlazada anteriormente también enumera algunas herramientas de fuerza bruta.
+- Búsqueda inversa de direcciones IP adyacentes. Algunos servidores DNS te permitirán buscar el nombre de host para una dirección IP. Es común que la infraestructura autoalojada exista en un pequeño bloque de direcciones IP. En vista de ello, a veces es posible, dada la dirección IP de un nombre de host (por ejemplo, 127.0.0.5), buscar los nombres de host de las direcciones IP cercanas (por ejemplo, 127.0.0.1-127.0.0.254).
 
 There exist tools that use these and other techniques to try to discover additional network resources. One of the first of these, still under development, is called [Fierce](https://www.kali.org/tools/fierce/). Another popular tool is [DNS Recon](https://securitytrails.com/blog/dnsrecon-tool). This [blog post describing DNSRecon](https://securitytrails.com/blog/dnsrecon-tool#content-alternatives-to-dnsrecon) also includes a list of other popular DNS enumeration tools.
 
-### Enriching IP/DNS information using Internet Scanner Services
+#### Enriquecimiento de la información IP/DNS mediante los Servicios de Escáner de Internet
 
-Once you have obtained identifier information (domains and IPs) you can search this data in greater depth using some services which allow you to investigate additional information about the host and any associated activity around it.
+Una vez que haya obtenido la información del identificador (dominios e IP), puede buscar estos datos con mayor profundidad utilizando algunos servicios que te permiten investigar información adicional sobre el host y cualquier actividad asociada a su alrededor.
 
-Learn how to view open ports, active services, and service banners from a given IP by using one of numerous web intelligence scanning services. Note that this is still a passive investigation technique as these services repeatedly scan the web for their data sets and you will not be initiating new activity on the infrastructure of interest:
+Aprenda a ver puertos abiertos, servicios activos y banners de servicio desde una IP determinada utilizando uno de los numerosos servicios de escaneo de inteligencia web. Tenga en cuenta que esta sigue siendo una técnica de investigación pasiva, ya que estos servicios escanean repetidamente la web en busca de sus conjuntos de datos y no iniciará una nueva actividad en la infraestructura de interés:
 
-- Use [Censys Search](https://search.censys.io/) to observe open ports, running services, TLS certificates, and more for a given IP.
-- Use [Shodan ](https://www.shodan.io/)(subscription required for some features, and requires utilization of Shodan filters in queries, see [reference](https://www.shodan.io/search/filters) and [examples](https://www.shodan.io/search/examples)) to search for information on services running on a server by IP address. Shodcan can also search for all servers running a service with a particular banner.
-- Use [DNS Dumpster](https://dnsdumpster.com/) to look up the potential attack surfaces of internet facing services.
+- Utilice [Censys Search](https://search.censys.io/) para observar puertos abiertos, servicios en ejecución, certificados TLS y más para una IP determinada.
+- Utilice [Shodan](https://www.shodan.io/) (se requiere suscripción para algunas funciones y se requiere la utilización de filtros Shodan en las consultas, vea la [referencia](https://www.shodan.io/search/filters) y [los ejemplos](https://www.shodan.io/search/examples)) para buscar información sobre los servicios que se ejecutan en un servidor por dirección IP. Shodcan también puede buscar todos los servidores que ejecutan un servicio con un banner en particular.
+- Utilice el [DNS Dumpster](https://dnsdumpster.com/) para buscar las posibles superficies de ataque de los servicios orientados a Internet.
 
-These and similar services and databases can help you identify the activities and history of a specified server/service.
+Estos y otros servicios y bases de datos similares pueden ayudarle a identificar las actividades y el historial de un servidor/servicio específico.
 
-Other scanner services also collect **DNS history**, allowing you to peer back in time to learn what other domain _resolutions_ have appeared for a given IP, when they appeared/disappeared, as well as subdomains for a given domain.
+Otros servicios de escáner también recopilan el **historial de DNS**, lo que le permite mirar hacia atrás en el tiempo para saber qué otras resoluciones de dominio han aparecido para una IP determinada, cuándo aparecieron/desaparecieron, así como subdominios para un dominio determinado.
 
-- [Security Trails](https://securitytrails.com/)
-- [Microsoft Defender Threat Intelligence ](https://ti.defender.microsoft.com/)(formerly RiskIQ) provides limited DNS history and resolutions data to free-tier customers.
+- [Senderos de seguridad](https://securitytrails.com/)
+- [Microsoft Defender Threat Intelligence](https://ti.defender.microsoft.com/) (anteriormente RiskIQ) proporciona historial de DNS limitado y datos de resoluciones a clientes de nivel gratuito.
 
-### Enriching IP/DNS information using threat intelligence databases
+#### Enriquecimiento de la información IP/DNS mediante bases de datos de inteligencia de amenazas
 
-Several services will collect indicators of threats and history of malicious behavior. If you need to ensure that no new scanning activity is initiated (which would be active investigation), ensure that you are not initiating a new scan with your search (for instance, while VirusTotal allows you to check a URL, it will launch a new scan against the URL, thereby initiating activity which could be detected as an investigation).
+Varios servicios recopilarán indicadores de amenazas e historial de comportamiento malicioso. Si necesita asegurarse de que no se inicie una nueva actividad de escaneo (lo que sería una investigación activa), asegúrese de que no está iniciando un nuevo análisis con su búsqueda (por ejemplo, aunque VirusTotal le permite comprobar una URL, lanzará un nuevo escaneo contra la URL, iniciando así una actividad que podría ser detectada como una investigación).
 
-- [Alienvault OTX](https://otx.alienvault.com/) is a community-driven open resource for malicious indicators. Searching for an IP or host name will display useful OSINT information as well as records of any malicious activity previously obtained.
-- [Mandiant Advantage](https://www.mandiant.com/multi-vendor-security-platform-free-access) (owned by Google) provides search limited functionality on their free tier.
+- [Alienvault OTX](https://otx.alienvault.com/) es un recurso abierto impulsado por la comunidad para indicadores maliciosos. La búsqueda de una IP o un nombre de host mostrará información útil de OSINT, así como registros de cualquier actividad maliciosa obtenida previamente.
+- [Mandiant Advantage](https://www.mandiant.com/multi-vendor-security-platform-free-access) (propiedad de Google) proporciona una funcionalidad de búsqueda limitada en su nivel gratuito.
 
-### Using Certificate Search
+#### Usando la búsqueda de certificados
 
-Almost every website a user will encounter now uses HTTPS, which uses a technology known as TLS (Transport Layer Security). Malicious websites use it too, in part playing on users' beliefs that HTTPS and a lock appearing in the browser's URL bar means that the website is therefore safe, regardless of other factors.
+En la actualidad, casi todos los sitios web que visita un usuario utilizan HTTPS, que emplea una tecnología conocida como TLS (Transport Layer Security). Los sitios web maliciosos también lo utilizan, en parte jugando con la creencia de los usuarios de que HTTPS y un candado que aparece en la barra de URL del navegador significa que el sitio web es por tanto seguro, independientemente de otros factores.
 
-As TLS certificates must be signed by a trusted Certificate Authority (CA) in order to be trusted by the browser, a substantial amount of data about the domain may be available for your investigation as you look for shared infrastructure, subdomains, identifiers, and other assets.
+Como los certificados TLS deben estar firmados por una Autoridad de Certificación (CA) de confianza para que el navegador confíe en ellos, es posible que haya una cantidad sustancial de datos sobre el dominio disponibles para su investigación mientras busca infraestructura, subdominios, identificadores y otros activos compartidos.
 
-Rich certificate data is publicly available thanks to the practice of Certificate Transparency, in which Certificate Authorities add all certificates issued to a tamper-resistant public log. It can be helpful to understand this system - see a brief overview at the [Certificate Transparency website](https://certificate.transparency.dev/) or take a deeper dive in their technical overview at [How CT Works](https://certificate.transparency.dev/howctworks/). It’s useful for learners who want to learn more about tracking and detecting malicious infrastructure to have a broad understanding of this system.
+Los datos enriquecidos de certificados están disponibles públicamente debido a la práctica de Transparencia de Certificados, en la que las Autoridades de certificación agregan todos los certificados emitidos a un registro público a prueba de manipulaciones. Puede ser útil comprender este sistema: consulte una breve descripción general en el [sitio web de Certificate Transparency](https://certificate.transparency.dev/) o profundice en su descripción técnica en [How CT Works](https://certificate.transparency.dev/howctworks/). Es útil para los alumnos que desean obtener más información sobre el rastreo y la detección de infraestructuras maliciosas tener una amplia comprensión de este sistema.
 
-Making practice use of certificate search involves searching for domains, subdomains, IPs, identifying interesting information such as dates of issue, and correlating information found in issued certificates.
+Hacer uso práctico de la búsqueda de certificados implica buscar dominios, subdominios, IP, identificar información interesante, como las fechas de emisión, y correlacionar la información que se encuentra en los certificados emitidos.
 
-Read through the guide at [Certificates: The OSINT Gift that Keeps on Giving…](https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/) which describes key investigative fields and searches using Censys and Shodan, and watch the accompanying [10-minute video on YouTube](https://www.youtube.com/watch?v=XHltHamQVoA) which carries out the same search using [crt.sh](https://crt.sh/). It is useful to be able to use all three search utilities. In particular, ensure you understand:
+Lea la guía en [Certificados: The OSINT Gih that Keeps on Giving…](https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/) que describe los campos de investigación clave y las búsquedas utilizando Censys y Shodan, y vea el [video adjunto de 10 minutos en YouTube](https://www.youtube.com/watch?v=XHltHamQVoA) que lleva a cabo la misma búsqueda utilizando [crt.sh](https://crt.sh/). Es útil poder emplear las tres utilidades de búsqueda. En particular, asegúrese de comprender:
 
-- What are some of the ‘interesting’ fields within a certificate when conducting an investigation
-- How to search within those fields on the various platforms
-- How to identify subdomains, host IPs, alternative domains issued for a certificate.
+- ¿Cuáles son algunos de los campos 'interesantes' dentro de un certificado al realizar una investigación?
+- Cómo buscar dentro de esos campos en las diversas plataformas
+- Cómo identificar subdominios, direcciones IP de host y dominios alternativos emitidos para un certificado.
 
-Note that the Censys search API syntax changed in 2021 and some of the searches in the above tutorials will not work. For instance instead of “parsed.names:” simply use “names:” in the new syntax.
+Tenga en cuenta que la sintaxis de la API de búsqueda de Censys cambió en 2021 y algunas de las búsquedas en los tutoriales anteriores no funcionarán. Por ejemplo, en lugar de “parsed.names:”simplemente use “names:” en la nueva sintaxis.
 
-Many tools have been built around certificate transparency logs. For instance, try enumerating for subdomains using [MassDNS ](https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains)(see instructions for using scripts/ct.py on the READMe page).
+Se han creado muchas herramientas en torno a los registros de transparencia de certificados. Por ejemplo, intente enumerar los subdominios usando [MassDNS](https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains) (consulte las instrucciones para usar scripts/ct.py en la página READMe).
 
-Censys offers further reading on advanced techniques for tracking and hunting for threat actors using their platform at [Advanced Persistent Infrastructure Tracking](https://censys.com/advanced-persistent-infrastructure-tracking/).
+Censys ofrece más información sobre técnicas avanzadas para el rastreo y la búsqueda de actores de amenazas utilizando su plataforma en [Advanced Persistent Infrastructure Tracking](https://censys.com/advanced-persistent-infrastructure-tracking/).
 
-**Things to note**
+**Aspectos a destacar**
 
-When you use a tool such as WHOIS, you will find many addresses which are hidden behind Cloudflare or similar services. This means that the administrators of this address are partially hosting it using a major third party service, for example to maintain greater anonymity or for DDoS protection. Similarly, many domains use privacy services to make sure that their data does not show up in WHOIS. Some people also put fake data into WHOIS. If this is the case, then analyzing the address through WHOIS will not yield a lot of good information (save perhaps for the creation date of the domain) and you'll need to use alternative forms of analysis.
+- Cuando utiliza una herramienta como WHOIS, encontrará muchas direcciones ocultas detrás de Cloudflare o servicios similares. Esto significa que los administradores de esta dirección la alojan parcialmente utilizando un importante servicio de terceros, por ejemplo, para mantener un mayor anonimato o para protección contra DDoS. Del mismo modo, muchos dominios utilizan servicios de privacidad para asegurarse de que sus datos no aparezcan en WHOIS. Algunas personas también ponen datos falsos en WHOIS. Si este es el caso, analizar la dirección a través de WHOIS no arrojará mucha información buena (excepto tal vez para la fecha de creación del dominio) y deberá utilizar formas alternativas de análisis
+- Muchas URL maliciosas utilizadas en correos electrónicos de phishing utilizan redireccionamientos (a veces múltiples), lo que significa que la URL inicial puede ser menos relevante para el análisis. La identificación de redireccionamientos y otras IP involucradas requerirá una interacción activa con la URL, que está cubierta en la habilidad de Investigación Activa.
+- Los atacantes pueden alojar su propio servidor DNS y realizar un seguimiento de las solicitudes. En este caso, las solicitudes de DNS pueden no ser “pasivas” y pueden alertar al atacante de la investigación. Especialmente busque nombres de host que puedan tener identificadores, como r2378r233yr39wjwr.example.com..
 
-Many malicious URLs used in phishing emails utilize (sometimes multiple) redirects, meaning the initial URL may be less relevant for analysis. Identifying redirects and other IPs involved will require active interaction with the URL, which is covered in Active Investigation skill.
+## Practique
 
-Attackers can host their own DNS server and track requests. In this case, DNS requests may not be "passive" and may alert the attacker of the investigation. Especially look out for hostnames that might have identifiers in them, like r2378r233yr39wjwr.example.com.
+Elija un nombre de dominio aleatorio, asegurándose de que no está alojado detrás de un servicio de distribución de contenidos/proxy inverso como Cloudflare (puede averiguarlo buscándolo rápidamente con una herramienta como dig y utilizando la opción NS para buscar servidores de nombres). Utilizando las categorías de herramientas anteriores, investigue el dominio e intente explicarlo:
 
-## Learning Resources
+- ¿Dónde está registrado el dominio y, si está disponible, quién lo registró?
+- ¿Cuál es la dirección IP del dominio?
+- ¿Quién gestiona esa dirección IP?
+- ¿Cuál es la dirección IP del dominio?
+- (Si los profesionales tienen acceso a Shodan o Censys) ¿Qué servicios se están ejecutando en ese servidor?
+- ¿Qué otros dominios están alojados en la misma IP?
+- ¿Puedes encontrar algún subdominio para ese dominio?
 
-{{% resource title="What is a URL?" languages="Chinese, English, French, Japanese, Korean, Russian, Spanish" cost="Free" description="A brief overview of what URLs are, how they are constructed, and what additional features (anchors and the like) they might have." url="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" %}}
+## Comprobación de Habilidades
 
-{{% resource title="Introduction to DNS" languages="Video in English, text in Arabic, Bahasa Indonesian, German, Spanish, French, Italian, Portuguese, Vietnamese, Turkish, Russian, Thai, Japanese, Korean, Chinese, Taiwanese" cost="Free" description="A basic overview of how DNS works." url="https://aws.amazon.com/route53/what-is-dns/" %}}
+Siéntese con un compañero o un mentor que tenga una experiencia significativa en la investigación pasiva contra servidores en Internet. Entonces:
 
-{{% resource title="Overview of DNS record types" languages="English, German, Spanish, French, Italian, Japanese, Korean, Portuguese, Taiwanese, Mandarin" cost="Free" description="Includes the most common record types, and some less common ones." url="https://www.cloudflare.com/learning/dns/dns-records/" %}}
+- Completa la [sala de reconocimiento pasivo](https://tryhackme.com/room/passiverecon) en TryHackMe.
+- Realice los Ejercicios de Práctica anteriores, idealmente en un dominio diferente, y repase su proceso y hallazgos con su compañero o mentor. Pídales que revisen su trabajo y le den su opinión tanto sobre el proceso como sobre los resultados. Puede ser un buen ejercicio discutir específicamente cómo encontrar subdominios que se ejecutan en ese dominio y discutir la exactitud de las búsquedas geoIP relativas a esos dominios. Como extra opcional, siéntese con el mentor o compañero para revisar algunas configuraciones avanzadas de dig y configurar una automatización básica juntos, por ejemplo, pedirle a dig que cargue una lista de dominios de un archivo de texto y proporcione información sobre ellos.
+- Si tiene un mensaje de phishing del mundo real (o, alternativamente, tome un dominio de phishing de [PhishTank](https://phishtank.org/) analícelo, tenga en cuenta que el sitio web recopila dominios en lugar de mensajes), lleve a cabo la investigación pasiva descrita en el ejercicio de práctica (¡con cuidado!) mientras consulta con un compañero o mentor. Documente sus hallazgos y su proceso. Pídales que revisen su trabajo y le den su opinión tanto sobre el proceso como sobre los resultados.
 
-{{% resource title="Using the dig command" languages="English" cost="Free" description="How to query for information about IP addresses." url="https://phoenixnap.com/kb/linux-dig-command-examples" %}}
+## Recursos de Aprendizaje
 
-{{% resource title="doggo" languages="English" cost="Free" description="An alternative to the dig command, with very similar functionality but differently formatted output." url="https://github.com/mr-karan/doggo" %}}
-
-{{% resource title="host command in Linux with examples" languages="English" cost="Free" description="A guide on how to use the host command in Linux, another commonly used tool to analyze servers and other types of infrastructure." url="https://www.geeksforgeeks.org/host-command-in-linux-with-examples/" %}}
-
-{{% resource title="Further DNS reconnaissance" languages="English" cost="Free" description="Various tools to automate searching for related servers." url="https://securitytrails.com/blog/dnsrecon-tool" additional_urls="DNSRecon: https://securitytrails.com/blog/dnsrecon-tool Fierce: https://www.kali.org/tools/fierce/ and https://salsa.debian.org/pkg-security-team/fierce VirusTotal: https://support.virustotal.com/hc/en-us/articles/115002739245-Searching" %}}
-
-{{% resource title="GeoIP" languages="English" cost="Free for limited quantities" description="Look up the (likely) physical location of a server by IP address." url="https://www.maxmind.com/en/geoip-demo" %}}
-
-{{% resource title="whois/RDAP" languages="English" cost="Free" description="Shows ownership information for a domain or IP address." url="https://who.is/" additional_urls="https://search.arin.net/rdap/, https://lookup.icann.org/en" %}}
-
-{{% resource title="What is whois and how is it used" languages="English" cost="Free" description="A quick summary of what a whois database is and what its potential limitations are." url="https://www.domain.com/blog/what-is-whois-and-how-is-it-used/" %}}
-
-{{% resource title="The ultimate guide to the whois database" languages="English" cost="Free" description="Offers a look at what whois can (and cannot) be used for." url="https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database" %}}
-
-{{% resource title="What is an IPv4 address?" languages="English" cost="Free" description="There are two types of IP addresses, IPv4 and IPv6. This guide provides an introduction to the former." url="https://bluecatnetworks.com/glossary/what-is-ipv4/" %}}
-
-{{% resource title="Differences between IPv4 and IPv6" languages="English" cost="Free" description="Outlines the key differences between the two types of IP addresses." url="https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/" %}}
-
-{{% resource title="Understanding IP addresses" languages="English" cost="Free" description="A quick introduction to what IP addresses are, what the different types thereof are." url="https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/" %}}
-
-{{% resource title="What are port numbers and how do they work?" languages="English" cost="Free" description="A quick introduction to port numbers, includes a list of some key ones." url="https://www.techtarget.com/searchnetworking/definition/port-number" %}}
-
-{{% resource title="Subdomain enumeration: the ultimate guide" languages="English" cost="Free" description="A guide which contains several techniques on enumerating (figuring out) which subdomains a specific domain contains. It’s worth remembering that not all techniques will work on all domains/servers." url="https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/" %}}
-
-{{% resource title="Threat intelligence services with DNS history" languages="English" cost="Free with premium features (security trails) / Free (Microsoft Defender)" description="Those services perform DNS scans and add history; analysts who use them can therefore see whether certain websites or addresses moved or changed." url="https://securitytrails.com/" additional_urls="https://ti.defender.microsoft.com/" %}}
-
-{{% resource title="Alienvault OTX" languages="English" cost="Free" description="A service that compiles threat intelligence and indicators put forward by the community." url="https://otx.alienvault.com/" %}}
-
-{{% resource title="Mandiant Advantage" languages="English" cost="Some features are available on the free tier" description="Another threat intelligence service, currently owned by Google." url="https://www.mandiant.com/multi-vendor-security-platform-free-access" %}}
-
-{{% resource title="Shodan" languages="English" cost="Free tier\nBasic $49\nMore volume available as monthly subscriptions\n(Free basic for academic emails, occasionally has great discounts, e.g. membership for $5 when they got 5 million users in July 2022, and $4 when they hit 4 million users in March of 2021)" description="Shows information on services running on a server by IP address, can also search for all servers running a service with a particular banner." url="https://www.shodan.io/" additional_urls="Background: https://en.wikipedia.org/wiki/Banner_grabbing\nDocumentation: https://help.shodan.io/" %}}
-
-{{% resource title="Censys Search" languages="English" cost="Free" description="A tool which can observe open ports, running services, TLS certificates, and more for a given IP." url="https://search.censys.io/" %}}
-
-{{% resource title="DNS Dumpster" languages="English" cost="Free" description="A tool used to look up the potential attack surfaces of internet facing services." url="https://dnsdumpster.com/" %}}
-
-{{% resource title="DNS Checker & MX ToolBox" languages="English" cost="Free" description="‘Swiss Army Knives’ of DNS and IP lookups - allows various fast searches on domain/DNS, IP, and email records." url="https://mxtoolbox.com/SuperTool.aspx" additional_urls="https://dnschecker.org/all-tools.php" %}}
-
-{{% resource title="How certificate transparency works" languages="English" cost="Free" description="A quick introduction to what certificate transparency is, what issues it addresses, and how it functions." url="https://certificate.transparency.dev/howctworks/" %}}
-
-{{% resource title="Certificates: the OSINT Gift that keeps on giving" languages="English" cost="Free" description="A guide for analysts on how to use tools like Shodan to search for certificates and get good data on web servers they are investigating." url="https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/" additional_urls="Video version: https://www.youtube.com/watch?v=XHltHamQVoA" %}}
-
-{{% resource title="crt.sh" languages="English" cost="Free" description="A search engine which focuses specifically on certificate search." url="https://crt.sh/" %}}
-
-{{% resource title="massdns" languages="English" cost="Free" description="A tool which can be used to brute force searches for subdomains." url="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains" %}}
-
-{{% resource title="Advanced Persistent Infrastructure Tracking" languages="English" cost="Free" description="A guide on various methods which could be used to track attacker infrastructure, which also looks at certificate searches." url="https://cobaltstrike.com/downloads/csmanual38.pdf" %}}
-
-
-## Practice
-
-Choose a random-ish domain name, making sure that it is not hosted behind a content distribution/reverse-proxy service such as Cloudflare (you can figure it out by quickly searching for it using a tool such as dig and using the NS option to look for name servers). Using the above tool categories, investigate the domain and try to explain:
-
-- Where is the domain registered, and if available, who registered the domain?
-- What is the domain’s IP address?
-- Who manages that IP address?
-- Where is that server located?
-- (If practitioners have access to Shodan or Censys) What services are running on that server?
-- What other domains are hosted at the same IP?
-- Can you find any sub-domains for that domain?
-
-## Skill Check
-
-Sit down with a peer or a mentor who has significant experience in passive investigation against servers on the internet. Then:
-
-- Complete the [passive reconnaissance room](https://tryhackme.com/room/passiverecon) on TryHackMe.
-- Carry out the above Practice Exercises, ideally on a different domain, and go through your process and findings with your peer or mentor. Have them review your work and provide feedback on both the process and results. It might be a good exercise to discuss specifically how to find subdomains running on that domain and to discuss the accuracy of geoIP lookups concerning those domains. As an optional extra, sit down with the mentor or peer to run through some advanced dig settings and set up a basic automation together, for example asking dig to load a list of domains from a text file and provide information on them.
-- If you have a real-world phishing message (or alternatively, take a phishing domain from [PhishTank](https://phishtank.org/) and analyze that, note that the website collects domains rather than messages), carry out the passive investigation outlined in the practice exercise (carefully!) while conferring with a peer or mentor. Document your findings and your process. Have them review your work and provide feedback on both the process and results.
+{{% resource title="¿Qué es una URL?" description="Una breve descripción de qué son las URL, cómo se construyen y qué características adicionales (anclajes y similares) pueden tener" languages="Chino, Inglés, Francés, Japonés, Coreano, Ruso, Español" cost="Gratis" url="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" %}}
+{{% resource title="Introducción al DNS" description="Resumen básico sobre el funcionamiento del DNS" languages="Vídeo en Inglés, texto en Vídeo en inglés, texto en Árabe, Bahasa Indonesio, Alemán, Español, Francés, Italiano, Portugués, Vietnamita, Turco, Ruso, Tailandés, Japonés, Coreano, Chino, Taiwanés" cost="Gratis" url="https://aws.amazon.com/route53/what-is-dns/" %}}
+{{% resource title="Resumen de los tipos de registros DNS" description="Incluye los tipos de registro más habituales y algunos menos comunes." languages="Inglés, Alemán, Español, Francés, Italiano, Japonés, Coreano, Portugués, Taiwanés, Mandarín" cost="Gratis" url="https://www.cloudflare.com/learning/dns/dns-records/" %}}
+{{% resource title="Uso del comando dig" description="Cómo buscar información sobre direcciones IP" languages="Inglés" cost="Gratis" url="https://phoenixnap.com/kb/linux-dig-command-examples" %}}
+{{% resource title="doggo" description="Una alternativa al comando dig, con una funcionalidad muy similar pero con un formato de salida diferente" languages="Inglés" cost="Gratis" url="https://github.com/mr-karan/doggo" %}}
+{{% resource title="comando host en Linux con ejemplos" description="Una guía sobre cómo utilizar el comando host en Linux, otra herramienta de uso común para analizar servidores y otros tipos de infraestructura." languages="Inglés" cost="Gratis" url="https://www.geeksforgeeks.org/host-command-in-linux-with-examples/" %}}
+{{% resource title="Further DNS reconnaissance" description="Varias herramientas para automatizar la búsqueda de servidores relacionados" languages="Inglés" cost="Gratis" url="DNSRecon: https://securitytrails.com/blog/dnsrecon-tool <br>Fierce: https://www.kali.org/tools/fierce/ y https://salsa.debian.org/pkg-security-team/fierce <br>También puede utilizar VirusTotal para buscar manualmente nombres de URL y servidores (https://support.virustotal.com/hc/en-us/articles/115002739245-Searching)" %}}
+{{% resource title="GeoIP" description="Buscar la ubicación física (probable) de un servidor por dirección IP" languages="Inglés" cost="Gratis para cantidades limitadas" url="https://www.maxmind.com/en/geoip-demo" %}}
+{{% resource title="whois/RDAP" description="Muestra la información de propiedad de un dominio o dirección IP" languages="Inglés" cost="Gratis" url="Herramienta: https://who.is/ <br> https://search.arin.net/rdap/ <br> https://lookup.icann.org/en" %}}
+{{% resource title="Qué es whois y cómo se utiliza" description="Un breve resumen de qué es una base de datos whois y cuáles son sus posibles limitaciones" languages="Inglés" cost="Gratis" url="https://www.domain.com/blog/what-is-whois-and-how-is-it-used/" %}}
+{{% resource title="La guía definitiva de la base de datos whois" description="Ofrece una mirada a lo que whois puede y (no puede) usar" languages="Inglés" cost="Gratis" url="https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database" %}}
+{{% resource title="¿Qué es una dirección IPv4?" description="Existen dos tipos de direcciones IP, IPv4 e IPv6.  Esta guía ofrece una introducción a las primeras" languages="Inglés" cost="Gratis" url="https://bluecatnetworks.com/glossary/what-is-ipv4/" %}}
+{{% resource title="Diferencia entre IPv4 e IPv6" description="Describa las principales diferencias entre los dos tipos de direcciones IP" languages="Inglés" cost="Gratis" url="https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/" %}}
+{{% resource title="Comprensión de las direcciones IP" description="Una rápida introducción a qué son las direcciones IP, cuáles son sus diferentes tipos" languages="Inglés" cost="Gratis" url="https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/" %}}
+{{% resource title="¿Qué son los números de puerto y cómo funcionan?" description="Una rápida introducción a números de puerto, incluye una lista de algunos de los principales" languages="Inglés" cost="Gratis" url="https://www.techtarget.com/searchnetworking/definition/port-number" %}}
+{{% resource title="Enumeración de subdominios: la guía definitiva" description="Una guía que contiene varias técnicas para enumerar (averiguar) qué subdominios contienen un dominio específico.  Vale la pena recordar que no todas las técnicas funcionarán en todos los dominios/servidores" languages="Inglés" cost="Gratis" url="https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/" %}}
+{{% resource title="Servicios de inteligencia sobre amenazas con historial DNS" description="Estos servicios realizan escaneos de DNS y añaden historiales; los analistas que los utilizan pueden así ver si determinados sitios web o direcciones se movieron o cambiaron" languages="Inglés" cost="Gratuito con funciones Premium (Security Trails)<br>Gratuito (Microsoft Defender))" url="https://securitytrails.com/ <br> https://ti.defender.microsoft.com/" %}}
+{{% resource title="Alienvault OTX" description="Un servicio que recopila información sobre amenazas e indicadores presentados por la comunidad" languages="Inglés" cost="Gratis" url="https://otx.alienvault.com/" %}}
+{{% resource title="Mandiant Advantage" description="Otro servicio de inteligencia sobre amenazas, actualmente propiedad de Google" languages="Inglés" cost="Algunas funciones están disponibles en la versión gratuita" url="https://www.mandiant.com/multi-vendor-security-platform-free-access" %}}
+{{% resource title="Shodan" description="Muestra información sobre los servicios que se ejecutan en un servidor a través de la dirección IP, también puede buscar todos los servidores que ejecutan un servicio con un banner determinado" languages="Inglés" cost="Gratis Nivel<br>Básico $49<br>Más volumen disponible como suscripciones mensuales<br>(Gratis básico para correos electrónicos académicos, ocasionalmente tiene grandes descuentos, por ejemplo, membresía por $5 cuando obtuvieron 5 millones de usuarios en julio de 2022, y $4 cuando alcanzaron los 4 millones en marzo de 2021)" url="Contexto: https://en.wikipedia.org/wiki/Banner_grabbing<br>Herramienta: https://www.shodan.io/<br>Documentación: https://help.shodan.io/" %}}
+{{% resource title="Censys Search" description="Una herramienta que puede observar puertos abiertos, servicios en ejecución, certificados TLS, etc. para una IP determinada." languages="Inglés" cost="Gratis" url="https://search.censys.io/" %}}
+{{% resource title="DNS Dumpster" description="Herramienta utilizada para buscar las posibles superficies de ataque de los servicios orientados a Internet." languages="Inglés" cost="Gratis" url="https://dnsdumpster.com/" %}}
+{{% resource title="DNS Checker & MX ToolBox" description="ʻSwiss Army Knivesʼ de búsquedas DNS e IP: permite diversas búsquedas rápidas en registros de dominio/DNS, IP y correo electrónico." languages="Inglés" cost="Gratis" url="https://mxtoolbox.com/SuperTool.aspx <br>https://dnschecker.org/all-tools.php" %}}
+{{% resource title="Cómo funciona la transparencia de los certificados" description="Una rápida introducción a qué es la transparencia de los certificados, qué problemas aborda y cómo funciona" languages="Inglés" cost="Gratis" url="https://certificate.transparency.dev/howctworks/" %}}
+{{% resource title="Certificados.: el OSINT Gih que sigue dando" description="Una guía para analistas sobre cómo usar herramientas como Shodan para buscar certificados y obtener buenos datos en los servidores web que están investigando" languages="Inglés" cost="Gratis" url="Versión de texto: https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/ <br>Versión en vídeo: https://www.youtube.com/watch?v=XHltHamQVoA" %}}
+{{% resource title="crt.sh" description="Un motor de búsqueda que se centra específicamente en la búsqueda de certificados" languages="Inglés" cost="Gratis" url="https://crt.sh/" %}}
+{{% resource title="masadns" description="Una herramienta que se puede utilizar para realizar búsquedas de subdominio por fuerza bruta" languages="Inglés" cost="Gratis" url="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains" %}}
+{{% resource title="Rastreo de infraestructuras persistentes avanzadas" description="Una guía sobre diversos métodos que podrían utilizarse para rastrear la infraestructura de los atacantes, que también examina la búsqueda de certificados" languages="Inglés" cost="Gratis" url="https://censys.com/advanced-persistent-infrastructure-tracking/" %}}

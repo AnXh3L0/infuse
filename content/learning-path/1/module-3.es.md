@@ -1,85 +1,82 @@
 ---
 style: module
-title: Operational Security - Safe Handling of links and infrastructure
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: Seguridad Operacional - Manejo Seguro de enlaces e infraestructura
+description: 
 weight: 3
 ---
 
-## Use Case
+## Estudios de caso
 
-As you go about investigating malicious phishing emails, attachments, websites, and other infrastructure, you will need to take some proactive steps to make sure that you keep yourself and the people you support safe. You will also need to know what to advise the recipient of the messages whenever they are faced with such incidents, and how they can safely report it to you for handling without compromising themselves.
-Be sure to study this skill and, if necessary, set up a safe environment before interacting with suspected malicious emails or web pages.
+A medida que vaya investigando correos electrónicos, archivos adjuntos, sitios web y otras infraestructuras de phishing malintencionado, tendrá que tomar algunas medidas proactivas para asegurarse de que tanto usted como las personas a las que ayuda están a salvo. También tendrá que saber qué aconsejar al destinatario de los mensajes cuando se enfrente a este tipo de incidentes, y cómo puede informarle con seguridad para que se ocupe de ello sin comprometerse.
 
-## Objectives
+Asegúrese de estudiar esta habilidad y, si es necesario, configure un entorno seguro antes de interactuar con correos electrónicos o páginas web sospechosos de ser maliciosos.
 
-After completing this subtopic, practitioners should be able to do the following:
+## Objetivos
 
-- Demonstrate how to safely handle malicious emails and URLs during investigation of malicious infrastructure;
-- Describe what steps they should take to prevent their IP address being leaked while conducting an investigation;
-- Describe immediate next steps when you suspect that an account might have been compromised;
-- Safely ‘defang’ URLs.
+Después de completar esta subhabilidad, el profesional debe ser capaz de hacer lo siguiente:
+
+- Demostrar cómo manejar de forma segura correos electrónicos y URL maliciosos durante la investigación de la infraestructura maliciosa;
+- Describir qué medidas deben tomar para evitar que se filtre su dirección IP mientras realizan una investigación;
+- Describa los próximos pasos inmediatos cuando sospeche que una cuenta podría haberse visto comprometida;
+- URL de 'defang' seguras.
 
 ---
+## Sección Principal
 
-Many phishing emails and similar messages do not just try to get the targeted person to click on a link but may also attempt to collect data about them (we discuss this in more depth in Subtopic 6). When conducting an investigation, it’s important to handle messages and other infrastructure carefully, so as to not reveal too much information about your identity, work and organization to an attacker, as well as to protect devices and accounts.
+Muchos correos electrónicos de phishing y mensajes similares no solo intentan que la persona objetivo haga clic en un enlace, sino que también pueden intentar recopilar datos sobre ellos (discutimos esto con más profundidad en el subtema 6). Al realizar una investigación, es importante manejar los mensajes y otra infraestructura con cuidado, para no revelar demasiada información sobre su identidad, trabajo y organización a un atacante, así como para proteger los dispositivos y las cuentas.
 
-## Basic precautions
+### Precauciones básicas
 
-We typically divide analysis up into two components: passive (Subtopics 4 and 5) and active (Subtopics 6 and 7). Passive analysis should not include any contact with an attackers’ servers, whereas active analysis does.
-It’s important for analysts to understand what types of activities directly interact with attacker infrastructure and can therefore be detected. Once analysts gain this understanding, they will be able to adapt the methods they use to relevant threat models.
+Normalmente dividimos el análisis en dos componentes: pasivo (subtemas 4 y 5) y activo (subtemas 6 y 7). El análisis pasivo no debe incluir ningún contacto con los servidores de un atacante, mientras que el análisis activo sí.  
 
-We recommend consider the following operational security precautions when you conduct your analyses:
+Es importante que los analistas comprendan qué tipos de actividades interactúan directamente con la infraestructura del atacante y, por lo tanto, pueden detectarse. Una vez que los analistas obtengan esta comprensión, podrán adaptar los métodos que utilizan a los modelos de amenazas relevantes.
 
-## Safe Environment
+Recomendamos tener en cuenta las siguientes precauciones de seguridad operacional al realizar sus análisis:
 
-Depending on the sophistication of the attacks which you are dealing with, the sensitivity of the machine, data, and accounts you are utilizing, and even the sensitivity of your investigation activities and personal identity, you may need to adopt an appropriate safe environment for conducting investigation work. Consider the following suggestions when building your safety solution:
+### Entorno Seguro
 
-- Use a reputable VPN while doing any activity which might entail interacting with attacker infrastructure in order to avoid your actual IP from being logged by the attacker.
-- Select and utilize a specific browser on your device for this work which you pre-configure to reduce risk of malicious active content from running on your device. [NoScript](https://noscript.net/) is an excellent browser extension available on Firefox and Chromium-based browsers which will prevent the execution of scripts, allowing you to inspect any active content before execution.
-- Consider using a separate device for your analysis, or a separate virtual machine. This device and virtual machine should not be connected to any work or personal accounts, network attached storage or sensitive networks. It should not contain any sensitive information (unless you discover such information during your investigation).
-- Set up a special email address where targeted persons can forward suspicious emails they receive. (If they receive suspicious messages from a platform like WhatsApp, they can send a screenshot of the message via email). This email address does not need to be unique for each targeted person. Make sure this account is protected by a unique password and two-factor authentication and prevent your email client from automatically loading external content such as images. This is because images that are loaded from a server can alert the attacker that they are being investigated, and turn an investigation from a passive to an active one (see subtopic 6 for more detail);
-- Ensure you have a protected PC with up-to-date anti-malware protection in place to guard your computer handling malware analysis against any potential spillover of malware infection to your computer.
+Dependiendo de la sofisticación de los ataques a los que se enfrente, de la sensibilidad de la máquina, los datos y las cuentas que esté utilizando, e incluso de la sensibilidad de sus actividades de investigación y de su identidad personal, puede que necesite adoptar un entorno seguro apropiado para llevar a cabo el trabajo de investigación. Tenga en cuenta las siguientes sugerencias al crear su solución de seguridad:
 
-## Defanging URLs
+- Use una VPN de buena reputación mientras realiza cualquier actividad que pueda implicar interactuar con la infraestructura del atacante para evitar que el atacante registre su IP real.
+- Seleccione y utilice un navegador específico en su dispositivo para este trabajo, que usted preconfigurará previamente para reducir el riesgo de que se ejecute contenido activo malicioso en su dispositivo. [NoScript](https://noscript.net/) es una excelente extensión de navegador disponible en navegadores basados en Firefox y Chromium que evitará la ejecución de scripts, lo que le permitirá inspeccionar cualquier contenido activo antes de la ejecución.
+- Considere la posibilidad de utilizar un dispositivo separado para su análisis o una máquina virtual separada. Este dispositivo y máquina virtual no deben conectarse a ninguna cuenta laboral o personal, almacenamiento conectado a la red o redes confidenciales. No debe contener ninguna información confidencial (a menos que descubra dicha información durante su investigación).
+- Configure una dirección de correo electrónico especial donde las personas objetivo puedan reenviar los correos electrónicos sospechosos que reciban. (Si reciben mensajes sospechosos de una plataforma como WhatsApp, pueden enviar una captura de pantalla del mensaje por correo electrónico). Esta dirección de correo electrónico no necesita ser única para cada persona objetivo. Asegúrese de que esta cuenta esté protegida por una contraseña única y una autenticación de dos factores y evite que su cliente de correo electrónico cargue automáticamente contenido externo, como imágenes. Esto se debe a que las imágenes que se cargan desde un servidor pueden alertar al atacante de que están siendo investigadas y convertir una investigación de pasiva a activa (consulte el subtema 6 para obtener más detalles);
+- Asegúrese de tener un equipo protegido con una protección antimalware actualizada para proteger su equipo contra cualquier posible propagación de una infección de malware a su equipo.
 
-As you document potentially malicious URLs, it is common practice to ‘defang’ the URL so that the applications you use for notes or documentation do not automatically generate clickable links which unintentionally lead you (or anyone you are collaborating with) to click the link or otherwise instigate traffic to the URL from your working machine. Some applications, for example messengers, also automatically preview links (and fetch the content from a server in order to do so). Defanging URLs prevents them from doing so.
+### Defanging URLs
 
-This is commonly done by replacing the protocol section of the URL with an invalid equivalent, and enclosing dots in the URL with [square brackets]. For example:
+Al documentar URLs potencialmente maliciosas, es una práctica común 'defang' (desarmar) la URL para que las aplicaciones que utiliza para notas o documentación no generen automáticamente enlaces clicables que involuntariamente le lleven a usted (o a cualquier persona con la que esté colaborando) a hacer clic en el enlace o instigar de otro modo el tráfico a la URL desde su máquina de trabajo. Algunas aplicaciones, por ejemplo messengers, también previsualizan automáticamente los enlaces (y obtienen el contenido de un servidor para hacerlo). La modificación de las URL les impide hacerlo. La modificación de las URL les impide hacerlo.
 
-| From live URL                                                      | To defanged URL                   |
+Esto se hace comúnmente reemplazando la sección de protocolo de la URL con un equivalente no válido y cubriendo los puntos en la URL con \[corchetes\]. Por ejemplo:
+
+| Desde URL en directo                                               | A URL desarmada                   |
 |--------------------------------------------------------------------|-----------------------------------|
-| [https://www.malicious-site.com](https://www.malicious-site.com)   | hxxps://www[.]malicious-site[.]com |
+| [https://www.sitio-malicioso.com](https://www.malicious-site.com)  | hxxps://www[.]sito-malicioso[.]com |
 | ftp://192.168.12.20                                                | fxp://192[.]168[.]12[.]20          |
 
+Esto puede hacerse manualmente utilizando un editor sólo de texto como NotePad, Textedit o Gedit. También vea utilidades como <https://defang.me/> o busque herramientas Defang en [CyberChef](https://gchq.github.io/CyberChef).
 
-This can be done manually using a text-only editor such as NotePad, Textedit, or Gedit. Also see utilities like [https://defang.me/](https://defang.me/) or search for Defang tools in [CyberChef](https://gchq.github.io/CyberChef).
+### Comunicación con las personas objetivo y medidas inmediatas durante un incidente
 
-## Communicating with targeted persons and immediate next steps during an incident
+Si sospecha que un atacante podría haber obtenido acceso al correo electrónico o la cuenta de mensajería de la persona objetivo o está monitoreando su máquina (el primero podría haber sido el resultado de un ataque de phishing exitoso, mientras que el segundo podría ser causado por malware, causado por ejemplo, al ejecutar un archivo adjunto malicioso), pídale a la persona objetivo que no use esa máquina y cuenta hasta que pueda averiguar qué está pasando. Si es posible, comuníquese con la persona objetivo a través de otra cuenta y otro dispositivo, por ejemplo, Signal o WhatsApp en su dispositivo personal.
 
-If you suspect that an attacker might have gained access to the targeted person’s email or messaging account or is monitoring their machine (the former might have been the result of a successful phishing attack, while the latter might be caused by malware, caused for example by running a malicious attachment), ask the targeted person not to use this machine and account until you can figure out what is going on. If possible, communicate with the targeted person through another account and another device—for example, Signal or WhatsApp on their personal device.
+Si sospecha que las cuentas de una persona objetivo podrían haberse visto comprometidas, pídale que cambie inmediatamente sus contraseñas y obligue a la cuenta a cerrar sesión en todas las demás ubicaciones (la mayoría de los servicios principales tienen una configuración como esta). Esto debería evitar que el atacante tenga más acceso a la cuenta. Sin embargo, les alertará de que la persona objetivo se ha dado cuenta de que algo está mal. Es posible que el atacante ya haya descargado una cantidad significativa de datos de la cuenta.
 
-If you suspect that a targeted person’s accounts might have been compromised, ask them to immediately change their passwords and force the account to log out of all other locations (most major services have a setting like this). This should stop the attacker from having any further access to the account. It will, however, alert them that the targeted person has realized that something is wrong. The attacker might already have downloaded a significant amount of data from the account.
+Si sospecha que el dispositivo de una persona objetivo se ha visto comprometido, pídale que cambie las contraseñas de su cuenta en un dispositivo diferente y evite usar ese dispositivo hasta que se complete una investigación. Siga los pasos descritos en ruta de aprendizaje Detección de Malware
 
-If you suspect that a targeted person’s device has been compromised, ask them to change their account passwords on a different device and avoid using that device until an investigation is complete. Follow the steps outlined in the Malware Detection learning path.
+## Practique
 
-## Learning Resources
+- Con su VPN activada (si es seguro hacerlo), vaya a un sitio web que muestre su dirección IP (esos sitios web son fáciles de encontrar, solo busque “cuál es mi IP” en su motor de búsqueda favorito). Piense en lo que sucedería si un atacante se enterara de su dirección IP: ¿su dirección IP pertenece a una empresa o a una oficina?  
+    Después de esto, active una VPN de buena reputación y compruebe una vez más cuál es su dirección IP.  
+    Finalmente, [lea sobre las fugas de DNS](https://mullvad.net/en/help/all-about-dns-servers-and-privacy) y pruebe si su VPN está filtrando información de DNS (la mayoría de las VPN tienen su propio sitio web que prueba las fugas de DNS, ¡puede usar su motor de búsqueda favorito para encontrarlo!).
+- Desactive la dirección URL de <https://www.wikipedia.org/>. Pegue la URL modificada en la barra de direcciones de su navegador y pulse Intro. Si se niega a cargar la página web, significa que ha modificado correctamente la URL (el navegador puede intentar buscar la URL modificada en un motor de búsqueda, lo cual es completamente normal).
 
-{{% resource title="NoScript" languages="English" cost="Free" description="A browser extension for Firefox and Chromium-based browsers, which allows you to selectively block or allow the execution of JavaScript. When looking at potentially malicious websites, it enables you to load the site while disabling much of its potentially damaging functionality." url="https://noscript.net/" %}}
+## Comprobación de Habilidades
 
-{{% resource title="Defang.me" languages="English" cost="Free" description="A tool which automatically defangs URLs and IP addresses." url="https://defang.me/" %}}
+- Trabaje con un compañero o mentor que le enviará un token de error web generado [aquí](https://canarytokens.org/generate). Abra este error web en su máquina de análisis. Una vez que lo haya hecho, su compañero o mentor recibirá información sobre la dirección de correo electrónico con la que registró el error web, incluida su dirección IP y una breve descripción de su navegador web llamado agente de usuario. Discuta esos resultados con su compañero o mentor: si estuviera realizando un análisis activo, es probable que el atacante también vea esos detalles, ya que estaría utilizando esa máquina para conectarse a los servidores que controla.
 
-{{% resource title="CyberChef" languages="English" cost="Free" description="A comprehensive tool for converting between different formats, also able to automatically defang URLs and IP addresses." url="https://gchq.github.io/CyberChef/" %}}
+## Recursos de Aprendizaje
 
-## Practice
-
-- With your VPN turned off (if it is safe to do so), go to a website which displays your IP address (those websites are easy to find, just look up ‘what is my IP’ in your favorite search engine). Think about what would happen if an attacker were to learn your IP address: does your IP address belong to a company or an office? \
-  Following this, turn on a reputable VPN and once again check what your IP address is. \
-  Finally, [read up on DNS leaks](https://mullvad.net/en/help/all-about-dns-servers-and-privacy) and test if your VPN is leaking DNS information (most VPNs have their own website which tests for DNS leaks, you can use your favorite search engine to find it!).
-- Defang the URL for [https://www.wikipedia.org/](https://www.wikipedia.org/). Paste the defanged URL into your web browser address bar and press enter. If it refuses to load the webpage, then it means that you have properly defanged the URL (the web browser might instead try to look for the defanged URL in a search engine, this is completely normal behavior).
-
-## Skill Check
-
-- Work with a peer or mentor who will send you a web bug token generated [here](https://canarytokens.org/generate#). Open this web bug on your analysis machine. Once you do, your peer or mentor will receive some information on the email address with which they registered the web bug, including your IP address and a brief description of your web browser called a user agent. Discuss those results with your peer or mentor: if you were conducting an active analysis, the attacker would likely see those details as well, since you would be using this machine to connect to servers they control.
+{{% resource title="NoScript" description="Una extensión para navegadores Firefox y Chromium que permite bloquear o habilitar de forma selectiva la ejecución de JavaScript.  Cuando se examinan sitios web potencialmente maliciosos, le permite cargar el sitio y al mismo tiempo, deshabilitar gran parte de su funcionalidad potencialmente dañina." languages="Inglés" cost="Gratis" url="https://noscript.net/" %}}
+{{% resource title="Defang.me" description="Una herramienta que automáticamente desconecta URL y direcciones IP" languages="Inglés" cost="Gratis" url="https://defang.me/" %}}
+{{% resource title="CyberChef" description="Una herramienta completa para convertir entre diferentes formatos, también capaz de desconectar automáticamente URL y direcciones IP" languages="Inglés" cost="Gratis" url="https://gchq.github.io/CyberChef/" %}}
