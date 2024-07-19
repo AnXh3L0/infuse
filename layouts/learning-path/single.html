@@ -54,7 +54,7 @@
                     {{ $content | safeHTML }}
 
                     <!-- Table of Contents (ToC) Panel -->
-                    <div class="absolute mt-8 hidden h-full 2xl:-left-96 xl:-left-80 xl:block">
+                    <div class="absolute mt-8 hidden h-full -left-64 2xl:max-w-full xl:max-w-64 2xl:-left-96 xl:block">
                         <div class="h-full">
                             <div class="sticky top-0 px-4 py-2">
                                 <h2 class="mb-4 mt-3 text-xl font-bold">{{ i18n "key.table-of-contents" }}</h2>
@@ -72,7 +72,7 @@
 
                     const scrollOffsets = tocItems.map(link => {
                         const target = document.getElementById(link.getAttribute('href').slice(1));
-                        return target.offsetTop - 50; // Adjust offset as needed
+                        return target.offsetTop - 30; // Adjust offset as needed
                     });
 
                     // Smooth scrolling and setting active state on click
