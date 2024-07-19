@@ -285,7 +285,13 @@ collections:
         required: false
         i18n: duplicate
       - name: "navbar"
-        label: "Is part of the navbar?"
+        label: "Is part of the top navigation?"
+        widget: "boolean"
+        default: false
+        required: false
+        i18n: duplicate
+      - name: "footer"
+        label: "Is part of the footer navigation?"
         widget: "boolean"
         default: false
         required: false
