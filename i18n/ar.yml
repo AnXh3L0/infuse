@@ -352,6 +352,10 @@ key:
     translation:
       one: null
       other: "اللغة"
+  - id: for-path
+    translation:
+      one: null
+      other: ل
   - id: home
     translation:
       one: null

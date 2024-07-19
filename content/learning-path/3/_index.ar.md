@@ -10,5 +10,5 @@ weight: 3
 thumbnail: "3"
 icon: forensics-fanatic
 badge: Forensics Fanatic
-color: "#B3B8DB"
+color: "#FDA29B"
 ---

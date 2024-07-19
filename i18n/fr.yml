@@ -270,6 +270,10 @@ key:
   - id: languages
     one: "Langue"
     other: "Langues"
+  - id: for-path
+    translation:
+      one: null
+      other: pour
   - id: home
     one: null
     other: "Accueil"

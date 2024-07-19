@@ -205,7 +205,6 @@
 
                         <p id="badgeCompleted" class="hidden">{{ i18n "key.badge-completed" }}</p>
                         <p id="badgeName" class="hidden">{{ .Page.Params.badge }}</p>
-                        <p id="badgeColor" class="hidden">{{ .Page.Params.color }}</p>
 
                         <!-- Completion message -->
                         <p class="mt-4 text-center text-lg font-semibold" x-text="completionMessage"></p>
@@ -279,7 +278,6 @@
 
                 updateBadgeVisibility() {
                     const badgeBanner = document.getElementById("badge-banner");
-                    const badgeColor = document.getElementById("badge-color");
 
                     if (this.remainingModules > 0) {
                         this.showBadge = true;

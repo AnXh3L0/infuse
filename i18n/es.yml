@@ -358,6 +358,10 @@ key:
   - id: languages
     one: "Idioma"
     other: "Idiomas"
+  - id: for-path
+    translation:
+      one: null
+      other: para
   - id: home
     translation:
       one: null

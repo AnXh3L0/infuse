@@ -9,5 +9,5 @@ weight: 1
 thumbnail: "1"
 icon: infrastructure-inspector
 badge: Infrastructure Inspector
-color: "#FDA29B"
+color: "#B3B8DB"
 ---
