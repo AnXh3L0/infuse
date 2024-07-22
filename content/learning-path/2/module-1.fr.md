@@ -1,8 +1,8 @@
-+++
+---
 style = "module"
 weight = 1
 title = "Compétences interpersonnelles pour détecter les logiciels malveillants"
-+++
+---
 
 ## Cas d'utilisation
 

@@ -1,7 +1,7 @@
 ---
 style: module
 title: Ejercicio de captura de bandera
-description: 
+description: We have also designed a flag-catching exercise in which students can analyze a phishing email and the infrastructure it links to. The exercise can be used as additional practice or as a skills check exercise and can be found here.
 weight: 10
 ---
 
