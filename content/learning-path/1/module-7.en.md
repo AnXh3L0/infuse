@@ -21,8 +21,8 @@ After completing this subtopic, practitioners should be able to do the following
 - Uncover what further infrastructure such websites could link to by looking for URLs, redirects, linked domains, and other assets or identifiers
 
 ---
-
-## Foundation Knowledge
+## Main Section
+### Foundation Knowledge
 
 This will be significantly easier to practice if you know the basics of JavaScript and HTML, though those are not strictly necessary prerequisites.
 
@@ -34,7 +34,7 @@ It’s worth highlighting some basic differences between an email and a web page
 
 Because of this, we recommend only analyzing web pages in a safe environment specifically designed for opening potentially suspicious files, such as a virtual machine or a sandbox. In addition, discuss the threat model specific to the recipient of the email to ensure it is safe for them for you to conduct further analysis activity which could be visible to the attacker.
 
-## Case studies
+### Case studies
 
 Read through two case studies which analyze phishing attacks that targeted civil society groups. Both of those attacks were partially successful:
 
@@ -56,7 +56,7 @@ Focusing on the[ HRW case study](https://www.hrw.org/news/2022/12/05/iran-state-
   - They wrote about other attacker tactics such as impersonating conference/summit organizers or NGO key figures.
 - Finally, the report also shares out technical indicators of compromise.
 
-## Automated sandboxed inspection of a website
+### Automated sandboxed inspection of a website
 
 The first step when you are ready to inspect a website linked to from a phishing message may be to safely look at the website. This entails some degree of interaction with the website. For direct handling of a potentially malicious website, you should have implemented precautions to give yourself a safe working environment, as covered in [Subtopic 3](#subtopic-3-operational-security-safe-handling-of-links-and-infrastructure). However you can also use online tools to inspect a website in a safe remote sandbox:
 
@@ -81,18 +81,18 @@ The first step when you are ready to inspect a website linked to from a phishing
 
 Note that a sophisticated web application could detect that a request comes from the IP ranges of these tools and serve different data or no data to the request, while delivering malicious content to other IPs.
 
-## Manual and specific tools for inspection of a website
+### Manual and specific tools for inspection of a website
 
 One of the easiest ways in which we could analyze a website is by [using our web browser’s built-in inspection tool](https://blog.hubspot.com/website/how-to-inspect), which usually breaks the website down into different sub-parts, can sometimes illustrate what code the website requests from which server, and allows us to modify the site’s code and see how this changes the layout and functionality.
 
-## Brute force
+#### Brute force
 
 As in the Human Rights Watch report linked above, using programmatic approaches to brute forcing URLs is a commonly used technique during OSINT. Several tools and approaches can be learned:
 
 - OWASP [DirBuster](https://gitlab.com/kalilinux/packages/dirbuster)
 - Wordlist Generators: Often used for password cracking, wordlists are also used for brute forcing discovery of folders and sub-domains. These wordlists will work in conjunction with the tools listed in the previous point. See tools such as Crunch ([Tutorial 1](https://www.hackers-arise.com/post/creating-a-custom-wordlist-with-crunch) | [Tutorial 2](https://null-byte.wonderhowto.com/how-to/tutorial-create-wordlists-with-crunch-0165931/))
 
-## Phishing kit analysis
+#### Phishing kit analysis
 
 Most attacks you will encounter will use a pre-made or modified phishing kit, a collection of code and templates that allow attackers to easily build a convincing phishing website. Some phishing kits have tell-tale signs; many of them, for example, use certain mechanisms to avoid being [detected and indexed by search engines](https://arxiv.org/pdf/2210.08273.pdf). They might even refuse to load from [the IP addresses of search engines or security companies](https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html).
 

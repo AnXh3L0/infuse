@@ -18,10 +18,10 @@ After completing this subtopic, practitioners should be able to do the following
 - Understand, in broad strokes, how those vulnerabilities can be prevented
 
 ---
-
+## Main Section
 Our first class of web application specific vulnerabilities encompasses those related to data validation. There are many different kinds of data validation vulnerabilities, and they can occur in any system that processes input. Generally, these vulnerabilities occur when the application makes implicit assumptions about the length and/or content of data it’s sent. When the input is received and/or processed, the data “escapes” its intended context and becomes code in its new context. We’ll talk about how this works, its consequences, and how to fix the vulnerability for each specific type. Be sure to read through in order, as the sections build on previous ones.
 
-## Cross site scripting (XSS)
+### Cross site scripting (XSS)
 
 The name “cross site scripting” is an artifact of how early XSS exploits worked. A better name might be “JavaScript injection,” but the old name remains for historical reasons. XSS occurs when a browser interprets user input as JavaScript. This allows an attacker to, to a limited extent, control the targeted person’s web browser in the context of the target website. The attacker can steal the targeted person’s cookies, allowing the attacker to impersonate them on the site. More than that, though, the attacker can automatically extract any of the targeted person’s data from the target website and can similarly perform actions on the target site as the user. Finally, the attacker can change the appearance of the website for the targeted person, for example popping up a fake re-authentication page that sends the user’s credentials to the attacker or prompting them to download malware purporting to come from a trusted site.
 
@@ -29,7 +29,7 @@ While this attack is powerful, there are limits. The attacker is limited to cont
 
 Mechanically, this attack works by a web application receiving user data, and then integrating that user data directly into a web page. Consider a discussion forum site that allows users to to pick a display name:
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 This rather un-fancy web page has the following HTML code:
 
@@ -42,7 +42,7 @@ This rather un-fancy web page has the following HTML code:
 
 When it receives a name from the user, it displays it in the form:
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 
 using the following HTML:
 
@@ -61,7 +61,7 @@ Alice"><script>alert("Owned by Alice")</script><i q="
 
 When the web page is generated, it looks a bit different:
 
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](/media/uploads/image3.png "image_tooltip")
 
 How did this happen? Let’s use some color to highlight what’s going on. Remember, the web application is just treating the user input as text, it has no idea about the colors.
 
@@ -92,11 +92,11 @@ Note the `">` in red. That tells the browser that the HTML input’s value attri
 
 As it is, this demonstration of XSS doesn’t do anything malicious, and the only person who is affected is Alice herself. However, if our attacker Alice can cause someone else to see her display name, and her JavaScript does something malicious, then she’s got a real attack to perform.
 
-### Try it yourself!
+#### Try it yourself!
 
 Log into your DVWA and make sure the security level is set to low (see the “Setup” section in the introduction of this learning path for more information on this). Navigate to the “XSS (Reflected)” section. The “What’s your name?” input is vulnerable to XSS. Try to enter a name that causes a JavaScript alert box to pop up when you click the “Submit” button.
 
-![alt_text](images/image4.png "image_tooltip")
+![alt_text](/media/uploads/image4.png "image_tooltip")
 
 ### XSS Prevention
 
@@ -111,13 +111,13 @@ To prevent XSS, the best technique to use is called output encoding. Note that i
 
 which would display like this
 
-![alt_text](images/image5.png "image_tooltip")
+![alt_text](/media/uploads/image5.png "image_tooltip")
 
 Output encoding is dependent on the context that the data will be used in. For HTML, you would encode HTML entities in the data. For data that was going to be included into a block of JavaScript, a different encoding would be used. If user data was going to be used in a database query yet another type of encoding would be used. Web frameworks and libraries should have functions to perform output encoding for you; it’s better to use those (hopefully) mature functions than to try to write them yourself from first principles.
 
 For a bit more on XSS, see [the OWASP guide on XSS](https://owasp.org/www-community/attacks/xss/). For an in-depth exploration, see the [Web Application Security Assessment learning path](https://docs.google.com/document/d/19v34droskAFgkp_qqcwiQLpc1hI1W-FjzHNV2QRBsaA/edit?usp=sharing).
 
-## SQL injection (SQLi)
+### SQL injection (SQLi)
 
 Where XSS allows user data to escape from its context and be interpreted as HTML and JavaScript in the victim’s web browser, SQL injection allows user data to escape from its context and be interpreted as SQL on the web application’s database. Most web applications use a back-end database to store and retrieve data. Typically, they will use SQL to perform this data access. SQL injection can occur where user data is interpolated into a query.
 
@@ -158,11 +158,11 @@ union all
 
 What this query does is look up all the tools that have a category `id` of `-1` (which is probably none of them), and then add to that list the usernames and passwords of the ticketing platform’s admin users. The application then formats this as a nice, readable HTML table and sends it back to the user requesting the data. Not only will this allow the attacker to simply log into the ticketing system, but if any of those users reuse their passwords, then the attacker may be able to access other systems in the same organization.
 
-## Try it yourself!
+#### Try it yourself!
 
 Log into your DVWA and make sure the security level is set to low. Navigate to the “SQL Injection” page, and experiment with the input. Can you cause the page to return the list of all user accounts? Can you use the “union all” technique to retrieve data from other tables, such as the table called “information_schema.tables”?
 
-## SQLi Prevention
+### SQLi Prevention
 
 Unlike with XSS, output encoding is not a reliable way to prevent SQL injection. Note that in the above examples, the attacker uses characters such as space and - to change the context of their data from that of data in the SQL query to that of the structure of the query itself. Some combination of type-aware input filtering and output encoding can prevent SQL injection in theory, but in practice this approach is very unreliable.
 
@@ -170,7 +170,7 @@ Instead, we can use a feature of every database engine that skips some of the in
 
 For a bit more on SQL injection, see [the OWASP guide on it](https://owasp.org/www-community/attacks/SQL_Injection). For an in-depth exploration, see the [Web Application Security Assessment learning path](https://docs.google.com/document/d/19v34droskAFgkp_qqcwiQLpc1hI1W-FjzHNV2QRBsaA/edit?usp=sharing).
 
-## Path injection/directory traversal/local file inclusion
+### Path injection/directory traversal/local file inclusion
 
 This class of vulnerabilities involves the user sending a web application that subverts the application’s interactions with the filesystem. With this type of vulnerability, the attacker can influence or control the pathname of a file that the web application is reading from or writing to, potentially giving the attacker full access to any file that the web server can read or write. Depending on what’s stored on the web server, this may give different abilities to an attacker. However, popular targets are configuration files, which often contain credentials for databases and other external network services, and the source code to the application itself.
 
@@ -214,11 +214,11 @@ daemon:*:1:1:System Services:/var/root:/usr/bin/false
 
 On any modern Unix-like system, grabbing `/etc/passwd` isn’t a big deal, but if the the attacker managed to brute force other files on the system (perhaps a config file or something like `/home/dev/vpn-credentials.txt`), the results could be quite bad. Even worse would be a site that allows users to upload files, but the user can manipulate the file location to be code (e.g. .php, .asp, etc.) inside the web root. In this case, the attacker can upload a [web shell](https://en.wikipedia.org/wiki/Web_shell) and run commands on the web server.
 
-## Try it yourself!
+#### Try it yourself!
 
 Log into your DVWA and make sure the security level is set to low. Navigate to the “File Inclusion” page, and experiment with the URL that you visit when you click on a file. Can you retrieve the `/etc/passwd` file?
 
-## Path injection prevention
+### Path injection prevention
 
 To a large extent, the best advice for preventing this sort of attack is “don’t use the filesystem in your application code.” While this advice is effective, it’s not always practical. A hybrid option would be to store file names in a database, and accept database indices from the user. In the above example, perhaps the database would look something like:
 
@@ -259,7 +259,7 @@ If this isn’t feasible, the site should only use and accept a very limited set
 
 For a bit more on path injection, see [the OWASP guide on it](https://owasp.org/www-community/attacks/Path_Traversal). For an in-depth exploration, see the [Web Application Security Assessment learning path](https://docs.google.com/document/d/19v34droskAFgkp_qqcwiQLpc1hI1W-FjzHNV2QRBsaA/edit?usp=sharing).
 
-## Shell injection/command injection
+### Shell injection/command injection
 
 Shell injection is similar to path injection, in that it involves the application’s interactions with the operating system. In this case, though, the application is directly executing a shell command or several commands, and it’s possible for an attacker to change what commands are executed. The impact of a shell injection is extremely high, allowing the attacker to run their own commands on the underlying web server hardware. Complete compromise of the web application is almost assured. Given time, compromise of other infrastructure in the server environment is likely.
 
@@ -351,23 +351,15 @@ What happened? The shell saw the command to ping 8.8.8.8, and then a semicolon. 
 
 Obviously, something like this could be used to retrieve almost any file from the web server (for example, using the “cat” command). The attacker could cause the web server to download files (including executables) from other servers, and then run those commands. Those downloaded executables could be exploits that allow the attacker to escalate privileges from the web server user to an administrative user (e.g. system or root), giving the attacker full control over the web server.
 
-## Try it yourself!
+#### Try it yourself!
 
 Log into your DVWA and make sure the security level is set to low. Navigate to the “Command Injection” page, and experiment with the input. Can you list the contents of the web server’s root directory?
 
-## Shell injection prevention
+### Shell injection prevention
 
 As with path injection, the best way to prevent shell injection is “don’t do that.” Unlike with path injection, the advice to not run shell commands from the web server should not be given full consideration. The other alternatives (such as input data validation) are difficult to implement correctly, and may be impossible if the application needs to allow any sort of non-trivial input.
 
 For a bit more on shell injection, see [the OWASP guide on it](https://owasp.org/www-community/attacks/Command_Injection) and the [OWASP guide on preventing it](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html). For an in-depth exploration, see the [Web Application Security Assessment learning path](https://docs.google.com/document/d/19v34droskAFgkp_qqcwiQLpc1hI1W-FjzHNV2QRBsaA/edit?usp=sharing).
-
-## Learning Resources
-
-{{% resource title="OWASP guides to vulnerabilities" languages="English" cost="Free" description="Great overviews of different vulnerabilities, including examples." url="https://owasp.org/www-community/attacks/SQL_Injection" url2="https://owasp.org/www-community/attacks/xss/" url3="https://owasp.org/www-community/attacks/Path_Traversal" url4="https://owasp.org/www-community/attacks/Command_Injection" %}}
-
-{{% resource title="OS command injection cheat sheet" languages="English" cost="Free" description="Quick overview of different OS commands which could be abused for injection." url="https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html" %}}
-
-{{% resource title="Web shells" languages="English, Kurdish, Chinese, Korean, French, Lombard, Hindi, Malayalam" cost="Free" description="Overview of what a web shell is and how it could be used in attacks." url="https://en.wikipedia.org/wiki/Web_shell" %}}
 
 ## Skill Check
 
@@ -457,3 +449,11 @@ C) Incorrect. Storing sensitive data in plain text increases the risk of data ex
 D) Incorrect. Disabling error messages may hide potential vulnerabilities from attackers but does not address the root cause of SQL injection vulnerabilities.
 
 **Question 4 Correct Answer**: D) All of the above.
+
+## Learning Resources
+
+{{% resource title="OWASP guides to vulnerabilities" languages="English" cost="Free" description="Great overviews of different vulnerabilities, including examples." url="https://owasp.org/www-community/attacks/SQL_Injection" url2="https://owasp.org/www-community/attacks/xss/" url3="https://owasp.org/www-community/attacks/Path_Traversal" url4="https://owasp.org/www-community/attacks/Command_Injection" %}}
+
+{{% resource title="OS command injection cheat sheet" languages="English" cost="Free" description="Quick overview of different OS commands which could be abused for injection." url="https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html" %}}
+
+{{% resource title="Web shells" languages="English, Kurdish, Chinese, Korean, French, Lombard, Hindi, Malayalam" cost="Free" description="Overview of what a web shell is and how it could be used in attacks." url="https://en.wikipedia.org/wiki/Web_shell" %}}

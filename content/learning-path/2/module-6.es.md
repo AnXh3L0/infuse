@@ -1,163 +1,119 @@
 +++
 style = "module"
 weight = 6
-title = "Detecting malware through traffic analysis"
+title = "Detección de malware mediante análisis de tráfico"
 +++
 
-## Use Case
+## Caso de Uso
 
-Most malware will make some sort of network connection, be it to connect to a command and control server for further instructions or exfiltrate data from a computer. While various tactics can be used by malware to avoid being detected by antivirus scanners, in many cases an analyst with access to all network traffic from the device can spot those suspicious network connections and analyze them to look for signs of malicious activity.
+La mayoría del malware realizará algún tipo de conexión de red, ya sea para conectarse a un servidor de comando y control para recibir instrucciones adicionales o para exfiltrar datos de una computadora. Si bien el malware puede utilizar diversas tácticas para evitar ser detectado por los escáneres antivirus, en muchos casos un analista con acceso a todo el tráfico de red del dispositivo puede detectar esas conexiones sospechosas y analizarlas en busca de signos de actividad maliciosa.
 
-Use when you are able to set up an in-line traffic analysis solution, for instance by using a WiFi hotspot device running on a Raspberry Pi as in some of the tools discussed here. Other options could include making use of TAP or SPAN ports to capture traffic for all users of a local network, such as in an office space.
+Utiliza este método cuando puedas configurar una solución de análisis de tráfico en línea, por ejemplo, utilizando un dispositivo de punto de acceso WiFi que funcione con una Raspberry Pi, como se discute en algunas de las herramientas mencionadas aquí. Otras opciones podrían incluir el uso de puertos TAP o SPAN para capturar el tráfico de todos los usuarios de una red local, como en un espacio de oficina.
 
-_Note to learners: this subtopic assumes that you have access to a Raspberry Pi. If this is not the case, you can skip it and move on to the next one._
+_Nota para los aprendices: Este subtema supone que tienes acceso a una Raspberry Pi. Si este no es el caso, puedes omitirlo y pasar al siguiente._
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, practitioners should be able to do the following:
+Después de completar este subtema, el profesional debe ser capaz de realizar lo siguiente:
 
-- Discuss with the client the suggested approach of traffic analysis including explaining the process, the risks, and limitations of the action
-- Select an appropriate network traffic analysis tool and implement it using the relevant hardware or software configuration
-- Investigate and understand which rule sets or heuristics are being used by each given network traffic analysis approach and understand their strengths or weaknesses
-- Read the results of flagged network flows and be able to triage which results require further investigation or risk-remediating action
+- Discutir con el cliente el enfoque sugerido de análisis de tráfico, incluyendo la explicación del proceso, los riesgos y limitaciones de la acción.
+- Seleccionar una herramienta apropiada de análisis de tráfico de red e implementarla utilizando la configuración de hardware o software relevante.
+- Investigar y comprender qué conjuntos de reglas o heurísticas se están utilizando por cada enfoque de análisis de tráfico de red y comprender sus fortalezas o debilidades.
+- Leer los resultados de los flujos de red marcados y ser capaz de hacer un triage de cuáles resultados requieren una investigación adicional o una acción de mitigación de riesgos.
 
 ---
+## Sección Principal
 
-Rather than looking at files and processes running on a device, malware can also be identified by the network communications it initiates or responds to. This approach has several advantages over device-based analysis as it is difficult for malware to avoid making network communications at some point, and, in some cases, allows you to investigate multiple devices at once.
+En lugar de analizar archivos y procesos en un dispositivo, el malware también puede ser identificado por las comunicaciones de red que inicia o a las que responde. Este enfoque tiene varias ventajas sobre el análisis basado en dispositivos, ya que es difícil para el malware evitar hacer comunicaciones de red en algún momento, y, en algunos casos, te permite investigar varios dispositivos a la vez.
 
-## Traffic Capture using a Raspberry Pi
+### Captura de Tráfico utilizando una Raspberry Pi
 
-In this section, we will look at two tools: PiRogue Tool Suite and SpyGuard. Both of those tools require additional hardware (a small, low-cost computer called a Raspberry Pi and an SD card).
+En esta sección, veremos dos herramientas: PiRogue Tool Suite y SpyGuard. Ambas herramientas requieren hardware adicional (una pequeña y económica computadora llamada Raspberry Pi y una tarjeta SD).
 
-‼️ After learning skills on of either of the two tools, you should be able to:
+Después de aprender las habilidades en cualquiera de las dos herramientas, deberías poder:
 
-- Install the selected tool on the SD Card of a Raspberry Pi and perform initial configuration
-- Access the control panel for the tool
-- Connect devices to the WiFi hotspot
-- Identify devices connected to the hotspot (if connecting multiple devices at once)
-- Read and interpret suspicious findings and triage which ones require risk remediation/further investigation
-- Advanced: configure logging and notifications on the selected tool
-- Advanced: Conduct traffic capture for further investigation
+- Instalar la herramienta seleccionada en la tarjeta SD de una Raspberry Pi y realizar la configuración inicial.
+- Acceder al panel de control de la herramienta.
+- Conectar dispositivos al punto de acceso WiFi.
+- Identificar dispositivos conectados al punto de acceso (si se conectan varios dispositivos a la vez).
+- Leer e interpretar hallazgos sospechosos y hacer triage de cuáles requieren remedios de riesgo/investigación adicional.
+- Avanzado: configurar el registro de eventos y las notificaciones en la herramienta seleccionada.
+- Avanzado: realizar la captura de tráfico para una investigación más profunda.
 
-## PiRogue tool suite
+#### PiRogue Tool Suite
 
-PiRogue tools suite is a set of software tools which turns the Raspberry Pi into a malware analysis station. It’s developed by the Defensive Lab Agency. It serves as an intermediary router, which sits between a device which you suspect might be infected and the internet, and captures and analyzes all of the servers and services the infected device attempts to communicate with. This can be used to detect potential malware activity.
+PiRogue Tool Suite es un conjunto de herramientas de software que convierte la Raspberry Pi en una estación de análisis de malware. Está desarrollada por Defensive Lab Agency. Sirve como un enrutador intermediario, que se sitúa entre un dispositivo que sospechas que podría estar infectado y el internet, y captura y analiza todos los servidores y servicios con los que el dispositivo infectado intenta comunicarse. Esto se puede utilizar para detectar potenciales actividades de malware.
 
-If you are interested in running those tools, check out the author’s [excellent documentation](https://pts-project.org/docs/prologue/introduction/). We recommend starting with the beginner’s guide, which looks at [how to set up a PiRogue](https://pts-project.org/guides/g1/) and [how to conduct your first analyses](https://pts-project.org/guides/g2/).
+Si estás interesado en ejecutar esas herramientas, consulta la [excelente documentación](https://pts-project.org/docs/prologue/introduction/) del autor. Recomendamos comenzar con la guía para principiantes, que explica [cómo configurar un PiRogue](https://pts-project.org/guides/g1/) y [cómo realizar sus primeros análisis](https://pts-project.org/guides/g2/).
 
-## SpyGuard
+#### SpyGuard
 
-An alternative tool, called SpyGuard, also runs on the Raspberry Pi or other Linux devices and also works as an intermediary router. In contrast to the PiRogue Tool Suite, which primarily focuses on more advanced network analysis, SpyGuard focuses on scanning network traffic for known IoCs and [potentially suspicious behavior](https://github.com/SpyGuard/SpyGuard/wiki/Detection-methods-and-IOCs) such as contacting recently registered domains or using unusual ports. SpyGuard is forked from another project called TinyCheck which was originally designed for a French women’s shelter to detect traces of stalkerware (malware used to non-consensually spy on people, often installed by abusive partners) on mobile devices. Its capabilities have, however, expanded and it can now be used to test for many other types of malware. You can read more about SpyGuard [on its github page](https://github.com/SpyGuard/SpyGuard/).
+Una herramienta alternativa, llamada _SpyGuard_, también se ejecuta en Raspberry Pi u otros dispositivos Linux y también funciona como enrutador intermediario. A diferencia de _PiRogue Tool Suite_, que se centra principalmente en análisis de red más avanzados, SpyGuard se centra en escanear el tráfico de red en busca de IoCs conocidos y [comportamientos potencialmente sospechosos](https://github.com/SpyGuard/SpyGuard/wiki/Detection-methods-and-IOCs) como contactar dominios registrados recientemente o utilizar puertos inusuales. _SpyGuard_ se deriva de otro proyecto llamado _TinyCheck_, que fue diseñado originalmente para asociación francesa para mujeres para detectar rastros de stalkerware (malware utilizado para espiar a personas sin consentimiento, a menudo instalado por parejas abusivas) en dispositivos móviles. Sin embargo, sus capacidades se han ampliado y ahora se puede utilizar para realizar pruebas en busca de muchos otros tipos de malware. Puedes leer más sobre SpyGuard [en su página de github](https://github.com/SpyGuard/SpyGuard/).
 
-## Other Approaches
+### Otros Enfoques
 
-### Outbound Firewalls
+#### Firewalls salientes
 
-Using a ‘noisy’ device firewall which asks permission for every process requesting to send internet traffic is a useful, though cumbersome, way to identify processes which are making network connections and potentially identify suspicious communications. This does require a level of familiarity with common processes on your chosen platform in order to identify non-suspicious processes, as well as ability to research IP blocks and DNS lookups. Leaving this active on a client’s computer may not always be the best approach as it is difficult to properly investigate every process, however as a practitioner of digital security it is useful to be able to conduct this work and it may be worth it on your own device or when investigating a clients’ device. Some endpoint firewalls in this class include:
+El uso de un firewall de dispositivo "ruidoso" que solicita permiso para cada proceso que solicita enviar tráfico de Internet es una forma útil, aunque complicada, de identificar procesos que están realizando conexiones de red y potencialmente identificar comunicaciones sospechosas. Esto requiere un nivel de familiaridad con los procesos comunes en la plataforma elegida para poder identificar procesos no sospechosos, así como la capacidad de investigar bloques de IP y búsquedas de DNS. Dejar esto activo en la computadora de un cliente no siempre es la mejor opción, ya que es difícil investigar adecuadamente cada proceso, sin embargo, como profesional de la seguridad digital, es útil poder realizar este trabajo y puede que valga la pena hacerlo en tu dispositivo o al investigar el dispositivo de un cliente. Algunos firewalls de endpoint en esta categoría incluyen:
 
-- MacOS
-  - [LuLu ](https://objective-see.org/products/lulu.html)(Open Source, Free)
-  - [Little Snitch](https://www.obdev.at/products/littlesnitch) (Paid) or [Little Snitch Mini](https://www.obdev.at/products/index.html) (Proprietary, Free)
+- Mac OS
+  - [LuLu](https://objective-see.org/products/lulu.html) (Código Abierto, Gratuito).
+  - [Little Snitch](https://www.obdev.at/products/littlesnitch) (de Pago) o [Little Snitch Mini](https://www.obdev.at/products/index.html) (Patentado, Gratis).
 - Windows
-  - [PortMaster ](https://safing.io/)(Open Source, Free/Paid version available with network history/investigation feature)
-  - [GlassWire](https://www.glasswire.com/) (Proprietary Free/Paid Version available)
+  - [PortMaster](https://safing.io/) (Disponible en versión de Código Abierto, Gratuita/de Pago, con función de historial/investigación de red).
+  - [GlassWire](https://www.glasswire.com/) (Versión disponible patentada gratuita/de pago).
 - Android
-  - [NetGuard](https://github.com/M66B/NetGuard) (Open Source Free/Freemium version available with traffic capture/history)
-  - [AFWall+ ](https://github.com/ukanth/afwall)(Open Source, Free)
+  - [NetGuard](https://github.com/M66B/NetGuard) (Disponible versión de Código Abierto Gratuita / Freemium con captura/historial de tráfico).
+  - [AFWall+](https://github.com/ukanth/afwall) (Código Abierto, Gratuito).
 - Linux
-  - [OpenSnitch](https://github.com/evilsocket/opensnitch) (Open Source, Free)
+  - [OpenSnitch](https://github.com/evilsocket/opensnitch) (Código Abierto, Gratuito).
 
-Outbound firewalls can be a bit difficult to get the hang of at first. The signal to noise ratio is far from optimal and we recommend first working alongside others who have experience with such tools before heavily relying on them in your own analysis.
+Los firewalls salientes pueden ser un poco difíciles de dominar al principio. La relación señal-ruido está lejos de ser óptima y recomendamos trabajar primero junto a otros que tengan experiencia con tales herramientas antes de depender en gran medida de ellas en tu propio análisis.
 
-### 3rd Party Traffic Analysis
+#### Análisis de tráfico de terceros
 
-Traffic can be captured and filtered or analyzed by 3rd parties. One such semi-automated service is [Emergency VPN](https://www.civilsphereproject.org/emergency-vpn), run by the Civilsphere project at the Czech Technical University. A VPN profile can be generated and installed on any platform. After connecting to the VPN and running device traffic through it for 24 hours, the Emergency VPN service will automatically send a machine-generated analysis flagging any initial findings. Subsequently the traffic from the device will be retained and analyzed manually by a staff analyst and a manual report sent in case of malicious findings. This is a way of outsourcing analysis skills when needed. Ensure you or your client understands the privacy implications and are comfortable with the risks associated with external traffic capture.
+El tráfico puede ser capturado y filtrado o analizado por terceros. Uno de esos servicios semiautomáticos es [Emergency VPN](https://www.civilsphereproject.org/emergency-vpn), dirigido por el proyecto Civilsphere de Czech Technical University. Se puede generar e instalar un perfil VPN en cualquier plataforma. Después de conectarse a la VPN y ejecutar el tráfico del dispositivo a través de ella durante 24 horas, el servicio Emergency VPN enviará automáticamente un análisis generado por máquina que marcará cualquier hallazgo inicial. Posteriormente, el tráfico del dispositivo será retenido y analizado manualmente por un analista del personal, y se enviará un informe manual en caso de hallazgos maliciosos. Esta es una forma de subcontratar habilidades de análisis cuando sea necesario. Asegúrate de que tú o tu cliente comprendan las implicaciones de privacidad y se sientan cómodos con los riesgos asociados a la captura de tráfico externa.
 
-If you have a moment to do so and are all right with the privacy implications of sharing your data with the Emergency VPN team, we recommend that you read a bit more about the service, run it for a few days, and analyze the data you receive afterwards. Once you have done so, you should be able to:
+Si tienes un momento para hacerlo y estás de acuerdo con las implicaciones de privacidad de compartir tus datos con el equipo de Emergency VPN, te recomendamos que leas un poco más sobre el servicio, lo ejecutes durante unos días y luego analices los datos que recibas. Una vez que lo haya hecho, deberías poder:
 
-- Understand how the Emergency VPN service works
-- Request an Emergency VPN profile and install it on your selected platform
-- Read through and understand the first automated Emergency VPN report and parse results to identify any suspicious findings for further investigations
+- Comprende cómo funciona el servicio Emergency VPN.
+- Solicita un perfil de Emergency VPN e instálalo en tu plataforma seleccionada.
+- Lee y comprende el primer informe automatizado de Emergency VPN y analiza los resultados para identificar cualquier hallazgo sospechoso que requiera investigaciones adicionales.
 
-In other cases, if you are working with an external analyst, they may request you go through a similar VPN-based process or run a utility to capture network traffic most commonly into a PCAP file (Packet CAPture) for sharing and external review.
+En otros casos, si estás trabajando con un analista externo, es posible que te soliciten que realices un proceso similar basado en VPN o que ejecutes una utilidad para capturar el tráfico de red, más comúnmente en un archivo PCAP (Packet CAPture) para compartirlo y revisarlo externamente.
 
-#### Manual Traffic Analysis & Organizational Monitoring
+### Análisis de Tráfico Manual y Seguimiento Organizacional
 
-If you are ready to take this skill further, you will need to develop skills around traffic capture, filtering, and analysis using tools such as Suricata, Zeek, and Wireshark. See some suggested resources for learning these below:
+Si estás listo para llevar esta habilidad más lejos, necesitarás desarrollar habilidades en la captura, filtrado y análisis de tráfico utilizando herramientas como _Suricata_, _Zeek_ y _Wireshark_. Revisa a continuación algunos recursos sugeridos para aprender sobre ellos:
 
-- [Malware-traffic-analysis.net](https://www.malware-traffic-analysis.net/) - Contains years of blog and tutorial write-ups including PCAP files for practicing detection and analysis skills
-- Course: [Network Security Monitoring with Suricata ](https://www.pluralsight.com/courses/network-security-monitoring-suricata)(Pluralsight, Free)
-- Course: [Threat Hunting Training course ](https://www.activecountermeasures.com/hunt-training/)(Active Countermeasures, uses AC-Hunter CE, offered live monthly)
+- [Malware-traffic-analysis.net](https://www.malware-traffic-analysis.net/) - Contiene años de artículos de blogs y tutoriales que incluyen archivos PCAP para practicar habilidades de detección y análisis.
+- Curso: [Monitoreo de Seguridad de Red con Suricata](https://www.pluralsight.com/courses/network-security-monitoring-suricata) (Pluralsight, Gratis) .
+- Curso: [Curso de Capacitación en Caza de Amenazas](https://www.activecountermeasures.com/hunt-training/) (Contramedidas Activas, utiliza AC-Hunter CE, ofrecido en vivo mensualmente).
 
-Consider also learning the organizational deployments of such tools across various categories, for instance using [Security Onion](https://github.com/Security-Onion-Solutions/securityonion), [pfsense](https://www.pfsense.org/)/[Opensense](https://opnsense.org/), [AC-Hunter CE](https://www.activecountermeasures.com/ac-hunter-community-edition/), [RITA](https://github.com/activecm/rita), and [Wazuh](https://wazuh.com/).
+Considera también aprender sobre los despliegues organizativos de tales herramientas en diversas categorías, por ejemplo, utilizando [Security Onion](https://github.com/Security-Onion-Solutions/securityonion), [pfsense](https://www.pfsense.org/)/[Opensense](https://opnsense.org/), [AC-Hunter CE](https://www.activecountermeasures.com/ac-hunter-community-edition/), [RITA](https://github.com/activecm/rita), y [Wazuh](https://wazuh.com/)
 
-#### Understand: Limitations & Privacy
+### Entender: Limitaciones y Privacidad
 
-As with all the approaches in this learning path, there are strengths and weaknesses to each method of malware detection and will only be effective when used with the proper skills, experience, and sometimes requires access to the right threat feeds or rulesets. Network analysis is no different.
+Como ocurre con todos los enfoques en esta ruta de aprendizaje, existen fortalezas y debilidades en cada método de detección de malware y solo serán efectivos cuando se utilicen con las habilidades adecuadas, experiencia y a veces requieren acceso a las fuentes de amenazas o conjuntos de reglas adecuados. El análisis de redes no es diferente.
 
-Traffic analysis approaches combine hard rules such as ‘_this IP is known malicious_’ along with heuristic rules such as ‘_unusual amount of outbound traffic to new IP_’ or ‘_unexpected port/protocol usage’_. Since the former approach relies on IoCs, it can only catch known and well-documented malware. While the latter heuristic approaches may be able to catch novel malware, it often requires additional analysis skills to capture and manually review traffic in a tool like Wireshark while using additional rules and IoCs to hunt for specific threats. Several resources for learning additional analysis skills are linked in the resource table below.
+Los enfoques de análisis de tráfico combinan reglas estrictas como "esta IP se considera maliciosa" junto con reglas heurísticas como "cantidad inusual de tráfico saliente a una nueva IP" o "uso inesperado de puerto/protocolo". Dado que el primer enfoque se basa en IoC, sólo puede detectar malware conocido y bien documentado. Si bien estos últimos enfoques heurísticos pueden detectar malware novedoso, a menudo requieren habilidades de análisis adicionales para capturar y revisar manualmente el tráfico en una herramienta como Wireshark mientras se utilizan reglas e IoC adicionales para buscar amenazas específicas. Varios recursos para aprender habilidades de análisis adicionales están relacionados en la siguiente tabla de recursos.
 
-Some sophisticated malware could exfiltrate data or contact servers in very subtle or obfuscated ways, which further complicates analysis.
+Algunos programas maliciosos sofisticados podrían exfiltrar datos o contactar servidores de maneras muy sutiles u ofuscadas, lo que complica aún más el análisis.
 
-Understand as well that intercepting traffic of a client’s device may expose online activities or other private information about the person. Most device traffic will be TLS encrypted; this means that an analyst would not be able to capture private messages or passwords. Still, there remains a substantial amount of private information which could be captured, including the services somebody uses, the domains they visit, and potentially sensitive pages they browse or services they use. Some tools will display live traffic flows on a dashboard while using the tool, which could potentially surface private information in a group setting. Ensure your client understands the process you are offering to them and handle any information collected with utmost confidentiality and OPSEC.
+Comprende también que interceptar el tráfico de un dispositivo del cliente puede exponer actividades en línea u otra información privada sobre la persona. La mayor parte del tráfico del dispositivo estará cifrado con TLS; esto significa que un analista no podrá capturar mensajes privados ni contraseñas. Aun así, sigue habiendo una cantidad sustancial de información privada que podría capturarse, incluidos los servicios que alguien usa, los dominios que visita y las páginas potencialmente confidenciales que navega o los servicios que utiliza. Algunas herramientas mostrarán flujos de tráfico en vivo en un panel de control mientras se utiliza la herramienta, lo que podría potencialmente revelar información privada en un entorno grupal. Asegúrate de que tu cliente comprenda el proceso que le estás ofreciendo y maneja cualquier información recopilada con la máxima confidencialidad y OPSEC.
 
-## Learning Resources
+## Verificación de habilidades
 
-{{% resource title="Pirogue Tool Suite Documentation" languages="English" cost="Free" description="The documentation for PiRogue tool suite." url="https://pts-project.org/docs/prologue/introduction/" %}}
+ Configure PiRogue en una Raspberry Pi y verifique el tráfico desde un dispositivo. Idealmente, este sería un dispositivo de prueba en el que haya instalado muchas aplicaciones aleatorias. Intenta comprender la salida y las alertas que está dando PiRogue. Anota al menos tres tipos diferentes de salidas, explica lo que crees que significan y discútelas con un mentor o un compañero.
 
-{{% resource title="PiRogue Tool Suite Guides" languages="English" cost="Free" description="Additional set of guides for PiRogue tool suite." url="https://pts-project.org/docs/" %}}
+## Recursos Educativos
 
-{{% resource title="SpyGuard wiki" languages="English" cost="Free" description="The documentation for SpyGuard." url="https://github.com/SpyGuard/SpyGuard/wiki" %}}
-
-{{% resource title="Malware Traffic Analysis" languages="English" cost="" description="Advanced resource with sample PCAP files for those who wish to develop traffic analysis skills." url="https://www.malware-traffic-analysis.net/" %}}
-
-{{% resource title="Emergency VPN" languages="English" cost="Free" description="A project by CivilSphere, which allows you to connect to a special VPN collecting your device’s internet data for detailed reports." url="https://www.civilsphereproject.org/emergency-vpn" %}}
-
-{{% resource title="Threat Hunting Training Course" languages="English" cost="Free" description="A free, one day course on analyzing and interpreting network data for threat hunting." url="https://www.activecountermeasures.com/hunt-training/" %}}
-
-{{% resource title="Course on network security monitoring with Suricata" languages="English" cost="Free" description="A free course on how to use Suricata, a commonly used open source threat detection tool." url="https://www.pluralsight.com/courses/network-security-monitoring-suricata" %}}
-
-{{% resource title="Outbound firewalls" languages="Various" cost="Most are either free or have free versions available" description="An outbound firewall analyzes outbound traffic and connects to servers. Includes tools like LuLu, Little Snitch, PortMaster, GlassWire, NetGuard, AFWall+, and OpenSnitch." url="" %}}
-
-<ul>
-<li>macOS:
-  <ul>
-    <li><a href="https://objective-see.org/products/lulu.html">LuLu</a> (Open Source, Free)</li>
-    <li><a href="https://www.obdev.at/products/littlesnitch">Little Snitch</a> (Paid) or <a href="https://www.obdev.at/products/index.html">Little Snitch Mini</a> (Proprietary, Free)</li>
-  </ul>
-</li>
-<li>Windows:
-  <ul>
-    <li><a href="https://safing.io/">PortMaster</a> (Open Source, Free/Paid version available)</li>
-    <li><a href="https://www.glasswire.com/">GlassWire</a> (Proprietary, Free/Paid Version available)</li>
-  </ul>
-</li>
-<li>Android:
-  <ul>
-    <li><a href="https://github.com/M66B/NetGuard">NetGuard</a> (Open Source Free/Freemium version available)</li>
-    <li><a href="https://github.com/ukanth/afwall">AFWall+</a> (Open Source, Free)</li>
-  </ul>
-</li>
-<li>Linux:
-  <ul>
-    <li><a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a> (Open Source, Free)</li>
-  </ul>
-</li>
-</ul>
-
-{{% resource title="Threat hunting platforms" languages="Several" cost="" description="Several platforms using network data to detect threats within systems, including Security Onion, pfSense, OPNsense, AC Hunter Community Edition, RITA, Wazuh, and Suricata." url="" %}}
-
-<ul>
-  <li><a href="https://github.com/Security-Onion-Solutions/securityonion">Security Onion</a></li>
-  <li><a href="https://www.pfsense.org/">pfSense</a></li>
-  <li><a href="https://opnsense.org/">OPNsense</a></li>
-  <li><a href="https://www.activecountermeasures.com/ac-hunter-community-edition/">AC Hunter Community Edition</a></li>
-  <li><a href="https://github.com/activecm/rita">RITA</a></li>
-  <li><a href="https://wazuh.com/">Wazuh</a></li>
-  <li><a href="https://suricata.io/features/">Suricata</a></li>
-</ul>
-
-
-## Skill Check
-
-1. Set up PiRogue on a Raspberry Pi and check the traffic from one device. Ideally, this would be a test device on which you have installed a lot of random apps. Try to understand the output and the alerts PiRogue is giving. Note down at least three different types of outputs, explain what you think they mean, and discuss them with a mentor or peer.
+{{% resource title="Documentación de Pirogue Tool Suite" description="La documentación de Pirogue Tool Suite" languages="Inglés" cost="Gratis" url="https://pts-project.org/docs/prologue/introduction/" %}}
+{{% resource title="Guías de Pirogue Tool Suite" description="Conjunto adicional de guías para Pirogue Tool Suite" languages="Inglés" cost="Gratis" url="https://pts-project.org/docs/" %}}
+{{% resource title="SpyGuard wiki" description="La documentación de SpyGuard" languages="Inglés" cost="Gratis" url="https://github.com/SpyGuard/SpyGuard/wiki" %}}
+{{% resource title="Análisis de Tráfico de Malware" description="Recurso avanzado con archivos PCAP de muestra para aquellos que deseen ir más allá en su jornada para desarrollar habilidades de análisis de tráfico" languages="" cost="" url="malware-traffic-analysis.net" %}}
+{{% resource title="Emergency VPN" description="Un proyecto de CivilSphere, que te permite conectarte a una VPN especial que recopila los datos de conectividad a Internet de tu dispositivo y luego compila informes detallados sobre ellos" languages="Inglés" cost="Gratis" url="https://www.civilsphereproject.org/emergency-vpn" %}}
+{{% resource title="Curso de Capacitación en Caza de Amenazas" description="Un curso gratuito de un día sobre análisis e interpretación de datos de red para la caza de amenazas" languages="Inglés" cost="Gratis" url="https://www.activecountermeasures.com/hunt-training/" %}}
+{{% resource title="Curso de monitoreo de seguridad de redes con Suricata" description="Un curso gratuito sobre cómo utilizar Suricata, una herramienta de detección de amenazas de código abierto de uso común" languages="Inglés" cost="Gratis" url="https://www.pluralsight.com/courses/network-security-monitoring-suricata" %}}
+{{% resource title="Firewalls salientes" description="Un firewall de salida es un programa instalado en una computadora que analiza todo el tráfico que sale de él y todos los servidores a los que se conecta. Si bien puede recopilar una gran cantidad de datos, la relación señal/ruido también puede ser peor que con otras herramientas." languages="Diversos" cost="La mayoría son gratuitos o tienen versiones gratuitas disponibles" url="Mac OS<br>LuLu: https://objective-see.org/products/lulu.html(Código Abierto, Gratuito).<br>Little Snitch: https://www.obdev.at/products/littlesnitch (de Pago) o Little Snitch Mini: https://www.obdev.at/products/index.html (Patentado, Gratis).<br>Windows<br>PortMaster: https://safing.io/(Disponible en versión de Código Abierto, Gratuita/de Pago, con función de historial/investigación de red).<br>GlassWire: https://www.glasswire.com/ (Versión disponible patentada gratuita/de pago).<br>Android<br>NetGuard: https://github.com/M66B/NetGuard (Disponible versión de Código Abierto Gratuita / Freemium con captura/historial de tráfico).<br>AFWall+: https://github.com/ukanth/afwall(Código Abierto, Gratuito).<br>Linux<br>OpenSnitch: https://github.com/evilsocket/opensnitch (Código Abierto, Gratuito)." %}}
+{{% resource title="Plataformas de Caza de Amenazas" description="Aquí presentamos varias plataformas que utilizan datos de red para detectar posibles amenazas dentro de un sistema" languages="Varios" cost="" url="<br>https://github.com/Security-Onion-Solutions/securityonion<br>https://www.pfsense.org/<br>https://opnsense.org/<br>https://www.activecountermeasures.com/ac-hunter-community-edition/<br>https://github.com/activecm/rita<br>https://wazuh.com/<br>https://suricata.io/features/" %}}

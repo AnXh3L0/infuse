@@ -20,7 +20,7 @@ Find out how the sender address would appear in the email client if the email is
 {{< /question >}}
 
 {{< question title="Hints" >}}
-There are multiple ways to view what the email would look like to the recipient. The most straightforward way is to open the file in a mail client, which is what we have done in the below examples. However in the context of a targeted threat this can be a bad idea, in case the file contains scripts which can exploit email clients, collect information about the device, or load external resources (like images/tracking pixels) which disclose your IP to the attacker. In the case of this walkthrough it is safe to open the EML in your email client, however for live work consider some alternatives:
+There are multiple ways to view what the email would look like to the recipient. The most straightforward way is to open the file in a mail client, which is what we have done in the below examples. However in the context of a targeted threat this can be a bad idea, in case the file contains scripts which can exploit email clients, collect information about the device, or load external resources (like /media/uploads/tracking pixels) which disclose your IP to the attacker. In the case of this walkthrough it is safe to open the EML in your email client, however for live work consider some alternatives:
 
 * Use an email client in a virtual machine which can be rolled back to a safe snapshot
 * Open the file in a text editor and read the HTML content directly
@@ -31,11 +31,11 @@ There are multiple ways to view what the email would look like to the recipient.
 
 In this walkthrough we will just open the email (paypal.eml) in an email program
 
-![Windows Right-Click Menu showing Open With -> Outlook Option](/media/image10.png "image_tooltip")
+![Windows Right-Click Menu showing Open With -> Outlook Option](/media/uploads/image10.png "image_tooltip")
 
 As we look into the email, we see the visible sender email address
 
-![Image of an ostensible email from Paypal indicating suspicious account activity with a link to verify account. The email is from paypal@service.com](/media/image2.png "image_tooltip")
+![Image of an ostensible email from Paypal indicating suspicious account activity with a link to verify account. The email is from paypal@service.com](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -49,7 +49,7 @@ As we continue to review the email, we look for more characteristics which could
 {{< /question >}}
 
 {{< question title="Hints" >}}
-![alt_text](/media/image12.png "image_tooltip")
+![alt_text](/media/uploads/image12.png "image_tooltip")
 
 Here are some key trigger points to watch out for in a phishing email:
 
@@ -70,7 +70,7 @@ When we look at a potentially malicious email, we also need to figure out what t
 {{< /question >}}
 
 {{< question title="Hints" >}}
-![alt_text](/media/image7.png "image_tooltip")
+![alt_text](/media/uploads/image7.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -90,13 +90,13 @@ You can defang a link in a text editor. Here we will use [CyberChef](gchq.github
 
 As part of this exercise, play around with CyberChef and defang the “please confirm” link from the attached email.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 First, we copy the hyperlink from the email.
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 Then, we take the “Defang URL” input from CyberChef and drag it into the “Recipe” section
 
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](/media/uploads/image3.png "image_tooltip")
 
 Once we’ve pasted the URL into the input section in CyberChef, it will automatically output a defanged version thereof.
 {{< /question >}}
@@ -114,7 +114,7 @@ You can use CyberChef to perform a lot of different analysis tasks. This time, f
 {{< question title="Answer" >}}
 You can use a ‘recipe’ – or a series of connected steps –in CyberChef to carry out a more complex analysis. To obtain and defang all the URLs in the message, all you need to do is run a recipe with the “extract URLs” and “defang URLs” workflows and paste the full content of the email (copied from a plain text editor) as input. If you were to tick the “unique” checkbox under “extract URLs”, you will see that the results will differ from those from the screenshot, and it will only output a single URL, the same one you defanged above. The fact that there is just one URL, repeated many times, within the email is great news for us–it will make our analysis much more straightforward. \
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 ## Passive Investigation of URLs, Hostnames, and IP Addresses
@@ -126,7 +126,7 @@ For the next few questions, we will use [VirusTotal](https://www.virustotal.com/
 
 Paste the URL from question 4 into VirusTotal (this time, you need to paste the full URL, not the defanged version). Go to “details” tab and look at the URL capture history.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -138,7 +138,7 @@ Paste the URL from question 4 into VirusTotal (this time, you need to paste the 
 {{< question title="Hints" >}}
 Also looking through the “details” tab in VirusTotal, look up the serving IP address.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -164,7 +164,7 @@ In order to look up information related to a domain registration, we can use a w
 {{< question title="Hints" >}}
 Here we use a whois website to extract it
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -178,7 +178,7 @@ IP addresses are loosely tied to geographical locations, such as cities or distr
 
 It’s worth comparing the information you receive from a whois lookup with that you receive from IP location searches. You might learn that the IP address you are trying to investigate belongs to a VPN provider or a big tech company such as Google–if this is the case, then you will not learn much from those investigations; the IP location will likely correspond to one of those companies’ server farms and might have little to do with the location of the person or entity you’re trying to investigate.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -196,11 +196,11 @@ For the next few questions, we will be using a tool called [MxToolbox](https://m
 {{< question title="Hints" >}}
 First, open the email using a plain text editor of your choice and copy its content. Then, paste them into the MxToolbox’s “Analyze Headers” tool
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 Once you press “Analyze Header”, you can see the return path
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -212,10 +212,10 @@ paparazi@rjttznyzjjzydnillquh.designclub.uk.com
 {{< question title="Instructions" open="true" >}}
 Go to the file “mx-toolbox-header-analysis”, look into the relay information section.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 The address of the mail server
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}
@@ -239,18 +239,18 @@ CyberChef can encode and decode Base64 text.
 
 We open once again the code attached of the phishing page (.html)
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 we search for the victimID in the source code
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 
 Then we can paste the value we discovered into CyberChef. The tool has a magic wand feature which automatically detects and converts encoding–we could use that!
 
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](/media/uploads/image3.png "image_tooltip")
 
 Yay! The magic wand detected that the input is encoded with Base64 and decoded it automatically, giving us the answer!
 
-![alt_text](images/image4.png "image_tooltip")
+![alt_text](/media/uploads/image4.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Answer" >}}

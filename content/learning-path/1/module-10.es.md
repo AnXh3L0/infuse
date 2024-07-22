@@ -1,10 +1,7 @@
 ---
 style: module
 title: Ejercicio de captura de bandera
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: 
 weight: 10
 ---
 
@@ -32,11 +29,11 @@ Hay varias formas de ver cómo aparecería el correo electrónico para el destin
 
 En este recorrido simplemente abriremos el correo electrónico (paypal.eml) en un programa de correo electrónico
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 Al observar el correo electrónico, vemos la dirección de correo electrónico del remitente visible
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -50,7 +47,7 @@ A medida que continuamos revisando el correo electrónico, buscamos más caracte
 {{< /question >}}
 
 {{< question title="Pistas" >}}
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 Aquí hay algunos puntos clave para detectar en un correo electrónico de phishing:
 
@@ -72,7 +69,7 @@ Cuando examinamos un correo electrónico potencialmente malicioso, también nece
 {{< /question >}}
 
 {{< question title="Pistas" >}}
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -92,13 +89,13 @@ Puedes desactivar un enlace en un editor de texto. Aquí usaremos [CyberChef](gc
 
 Como parte de este ejercicio, juega con CyberChef y desactiva el enlace "por favor confirma" del correo electrónico adjunto.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 Primero, copiamos el hipervínculo del correo electrónico.
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 Luego, tomamos la entrada "Defang URL" de CyberChef y la arrastramos a la sección "Receta".
 
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](/media/uploads/image3.png "image_tooltip")
 
 Una vez que hemos pegado la URL en la sección de entrada en CyberChef, automáticamente generará una versión desactivada de la misma.
 {{< /question >}}
@@ -116,7 +113,7 @@ Puedes usar CyberChef para realizar muchas tareas de análisis diferentes. Esta 
 {{< question title="Respuesta" >}}
 Puedes usar una 'receta', o una serie de pasos conectados, en CyberChef para llevar a cabo un análisis más complejo. Para obtener y desactivar todas las URLs en el mensaje, todo lo que necesitas hacer es ejecutar una receta con los flujos de trabajo "extraer URLs" y "desactivar URLs" y pegar el contenido completo del correo electrónico (copiado desde un editor de texto plano) como entrada. Si marcas la casilla "único" bajo "extraer URLs", verás que los resultados diferirán de los de la captura de pantalla, y solo se producirá una URL, la misma que desactivaste anteriormente. El hecho de que haya solo una URL, repetida muchas veces, dentro del correo electrónico es una gran noticia para nosotros: facilitará mucho nuestro análisis.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 ## Investigación Pasiva de URLs, Nombres de Host e IP
@@ -128,7 +125,7 @@ Para las siguientes preguntas, utilizaremos [VirusTotal](https://www.virustotal.
 
 Pega la URL de la pregunta 4 en VirusTotal (esta vez, debes pegar la URL completa, no la versión desactivada). Ve a la pestaña "detalles" y mira el historial de captura de URL.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -140,7 +137,7 @@ Pega la URL de la pregunta 4 en VirusTotal (esta vez, debes pegar la URL complet
 {{< question title="Pistas" >}}
 También buscando a través de la pestaña "detalles" en VirusTotal, busca la dirección IP que sirve.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -166,7 +163,7 @@ Para buscar información relacionada con el registro de un dominio, podemos util
 {{< question title="Pistas" >}}
 Aquí utilizamos un sitio web whois para extraerlo
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -180,7 +177,7 @@ Las direcciones IP están vagamente vinculadas a ubicaciones geográficas, como 
 
 Vale la pena comparar la información que recibes de una búsqueda whois con la que recibes de búsquedas de ubicación de IP. Podrías descubrir que la dirección IP que estás investigando pertenece a un proveedor de VPN o a una gran empresa tecnológica como Google; si este es el caso, entonces no aprenderás mucho de esas investigaciones, la ubicación IP probablemente corresponderá a una de las granjas de servidores de esas empresas y puede tener poco que ver con la ubicación de la persona o entidad que estás investigando.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -198,11 +195,11 @@ Para las siguientes preguntas, utilizaremos una herramienta llamada [MxToolbox](
 {{< question title="Pistas" >}}
 Primero, abre el correo electrónico con un editor de texto plano de tu elección y copia su contenido. Luego, pégalo en la herramienta "Analizar encabezados" de MxToolbox
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 Una vez que presionas "Analizar encabezado", puedes ver la ruta de retorno
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -214,10 +211,10 @@ paparazi@rjttznyzjjzydnillquh.designclub.uk.com
 {{< question title="Instrucciones" open="true" >}}
 Ve al archivo "mx-toolbox-header-analysis", mira la sección de información de retransmisión.
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 La dirección del servidor de correo
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}
@@ -241,11 +238,11 @@ CyberChef puede codificar y decodificar texto en Base64.
 
 Abrimos una vez más el código adjunto de la página de phishing (.html)
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](/media/uploads/image1.png "image_tooltip")
 
 Buscamos el ID de la víctima en el código fuente, después lo copiamos desde allí y lo pegamos en la receta de "decodificación Base64" de CyberChef
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](/media/uploads/image2.png "image_tooltip")
 {{< /question >}}
 
 {{< question title="Respuesta" >}}

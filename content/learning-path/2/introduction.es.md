@@ -1,82 +1,71 @@
 ---
 style: introduction
-title: Introduction
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: Introducción
+description: 
 weight: 1
 ---
 
-## Overview
+## Visión general
 
-This learning path covers intermediate-level knowledge and skills needed to detect and identify malware either from a given sample, or actively operating on a device on a variety of device platforms. The distinction between malware and software can be very subtle, and a detailed analysis of processes and binaries to ultimately determine what is malware sometimes requires advanced-level expertise. However, the skills covered here will give you a start in detection efforts. This learning path covers:
+Esta ruta de aprendizaje cubre conocimientos y habilidades de nivel intermedio necesarios para detectar e identificar malware a partir de una muestra u operando activamente en un dispositivo, en una variedad de plataformas de dispositivos. La distinción entre malware y software puede ser muy imperceptible, y un análisis detallado de procesos y binarios para determinar en definitiva qué es malware a veces requiere experiencia de nivel avanzado. Sin embargo, las habilidades que se cubren aquí te darán una iniciación en los esfuerzos de detección. Esta ruta de aprendizaje cubre:
 
-- Soft skills and ethical considerations for engaging with people potentially targeted by malware
-- Protecting client’s’ privacy and data
-- Off-the-shelf malware detection tools
-- Static and dynamic methods of investigating a sample to determine if it is malicious
-- Network-based methods of investigating a sample to determine if it is malicious
-- Collecting data for analysis from a potentially infected device and safe retention of samples for further analysis
-- What to do after malware discovery: Investigation, clean-up, and risk management
-- Clean-up of malware from infected systems
+- Las habilidades blandas y las consideraciones éticas para interactuar con personas que son potenciales objetivos de ataque malware.
+- Proteger la privacidad y los datos del cliente.
+- Herramientas de detección de malware listas para usar.
+- Métodos estáticos y dinámicos para investigar una muestra para determinar si es maliciosa.
+- Métodos basados ​​en red para investigar una muestra para determinar si es maliciosa.
+- Recopilación de datos para análisis de un dispositivo que se puede infectar y retención segura de muestras para análisis más a fondo.
+- Qué hacer después de descubrir el malware: Investigación, limpieza y gestión de riesgo.
+- Limpieza de malware de sistemas infectados.
 
-### Background reading
+## Lectura de fondo
 
-📕 Adversaries, especially state-based ones, have long used malware to attack civil society groups. Such attacks managed to [shut down a news site](https://www.amnesty.org/en/latest/research/2016/12/how-a-hacking-campaign-helped-shut-down-an-award-winning-news-site/), with hacking-for-hire outfits taking in major state contracts, as shown in those pieces on India’s cyber mercenaries by [The New Yorker](https://www.newyorker.com/news/annals-of-crime/a-confession-exposes-indias-secret-hacking-industry), [Reuters](https://www.reuters.com/investigates/special-report/usa-hackers-litigation/), and [Citizen Lab](https://citizenlab.ca/2020/06/dark-basin-uncovering-a-massive-hack-for-hire-operation/).
+📕 Los atacantes, especialmente aquellos relacionados o parte del estado, llevan mucho tiempo utilizando malware para atacar a grupos de la sociedad civil. Estos ataques lograron [derribar un sitio web de noticias](https://www.amnesty.org/en/latest/research/2016/12/how-a-hacking-campaign-helped-shut-down-an-award-winning-news-site/), con grupos de hackeo por encargo, obteniendo importantes contratos estatales, como lo muestran los artículos sobre los mercenarios cibernéticos de la India publicados por [The New Yorker](https://www.newyorker.com/news/annals-of-crime/a-confession-exposes-indias-secret-hacking-industry), [Reuters](https://www.reuters.com/investigates/special-report/usa-hackers-litigation/), y [Citizen Lab](https://citizenlab.ca/2020/06/dark-basin-uncovering-a-massive-hack-for-hire-operation/).
 
-In the early 2020s, commercially produced spyware such as [Predator ](https://eic.network/projects/predator-files.html)and [especially Pegasus](https://www.amnesty.org/en/latest/news/2022/03/the-pegasus-project-how-amnesty-tech-uncovered-the-spyware-scandal-new-video/) dominated the headlines, with both of them regularly targeting journalists, activists, and politicians. While most malware is much more mundane and used to deliver ads or mine for cryptocurrency, the existence of sophisticated, state-sponsored malware means that many civil society activists will likely be very concerned about any potential infections.
+A principios de la década de 2020, el spyware producido comercialmente, como [Predator](https://eic.network/projects/predator-files.html) y [especialmente Pegasus](https://www.amnesty.org/en/latest/news/2022/03/the-pegasus-project-how-amnesty-tech-uncovered-the-spyware-scandal-new-video/) dominaba los titulares, y ambos atacaban regularmente a periodistas, activistas y políticos. Si bien la mayoría del malware es mucho más rutinaria y se utiliza para entregar anuncios o la minería de criptomonedas, la existencia de malware sofisticado, patrocinado por el Estado significa que muchos activistas de la sociedad civil probablemente están preocupados por cualquier infección potencial.
 
-## Objective
+## Objetivo
 
-Practitioners will learn how to:
+Profesionales aprenderán como:
 
-- Practice soft skills and ethical considerations for engaging with people potentially targeted by malware
-- Take steps to protect client’s privacy and data
-- Usefully utilize off-the-shelf malware detection tools
-- Utilize static and dynamic methods of investigating a sample to determine if it is malicious
-- Utilize network-based methods of investigating a sample to determine if it is malicious
-- Investigate Microsoft Office Documents to determine if they are potentially malicious
-- Collect data for analysis from a potentially infected device and safely retain samples for further analysis
-- Carry out post-detection work, including planning for investigation, clean-up, and risk management
+- Practicar las habilidades blandas y las consideraciones éticas para interactuar con personas que son potenciales objetivos de ataque malware.
+- Tomar medidas para proteger la privacidad y los datos de los clientes.
+- Utilizar provechosamente herramientas de detección de malware listas para usar.
+- Utilizar métodos estáticos y dinámicos para investigar una muestra y determinar si es maliciosa.
+- Utilizar métodos basados ​​en red para investigar una muestra para determinar si es maliciosa.
+- Investigar Documentos de Microsoft Office para determinar si son potencialmente maliciosos.
+- Recopilar datos de un dispositivo que se puede infectar para análisis y, posteriormente retener de forma segura muestras para análisis más a fondo.
+- Realizar trabajos posteriores a la detección, incluida la planificación de la investigación, la limpieza y la gestión del riesgo.
 
-## What threats does this skill mitigate or respond to?
+¿Qué amenazas mitiga o a cuáles responde esta habilidad?
 
-Malware detection skills can help respond to:
+Las habilidades de detección de malware pueden ayudar a responder a:
 
-- Device, website, account compromise
-- Malware infections (ransomware, spyware, adware etc)
-- Investigating possibility of compromise
+- Dispositivo, sitio web, cuenta comprometida.
+- Infecciones de malware (ransomware, spyware, adware, etc.).
+- Investigando la posibilidad de comprometimiento.
 
-## What are the prerequisites?
+¿Cuáles son los prerrequisitos?
 
-- Basic IT skills: Understanding concepts such as disk images, executable files, and different types of malware
-- Understanding of common Operating System protection/hardening practices and ‘power-user’ usage of your chosen OS platform.
-- Basic command line knowledge: Being able to run commands from the command line and understanding what command line arguments syntax are.
+- Habilidades básicas de TI: Comprender conceptos como imágenes de disco, archivos ejecutables y diferentes tipos de malware.
+- Comprensión de las prácticas comunes de protección/fortificación del Sistema Operativo y el uso por parte de "usuarios avanzados" de la plataforma del sistema operativo elegido.
+- Conocimientos básicos de línea de comando: Ser capaz de ejecutar comandos desde la línea de comandos y comprender cuál es la sintaxis de los argumentos de la línea de comandos.
 
-## What devices or software do you need for the exercises?
+¿Qué dispositivos o software necesitas para los ejercicios?
 
-Depending on the scenario, you may be implementing detection steps directly on the concerned device, while in other cases you may need a separate machine configured for analysis, in which case the following is advised:
+Dependiendo del escenario, es posible que estés implementando pasos para la detección directamente en el dispositivo en cuestión, mientras que en otros casos tal vez necesite una máquina configurada separada para el análisis, en cuyo caso se recomienda lo siguiente:
 
-- First device (device of concern): At least one device running Windows, macOS, Linux, Android, or iOS on which you will look for malware
-- Second device (analysis device): Another device running Windows, macOS, or Linux which you can use to run scans on the first device. Scanning iOS devices using the covered toolset is only possible (at time of writing) via macOS or Linux
-- Enough storage space either on the second device or on an external hard drive/ solid state drive to back up the entirety of the first device (in case imaging and forensics are required)
+- Primer dispositivo (dispositivo afectado): Al menos un dispositivo que ejecute Windows, macOS, Linux, Android o iOS en el que buscarás malware.
+- Segundo dispositivo (dispositivo de análisis): Otro dispositivo que ejecute Windows, macOS o Linux que puedas utilizar para ejecutar escaneo en el primer dispositivo. Escanear dispositivos iOS utilizando el conjunto de herramientas solo es posible (en el momento de escribir) vía macOS o Linux.
+- Suficiente espacio de almacenamiento en el segundo dispositivo o en un disco duro externo/unidad de estado sólido para realizar una copia de seguridad de la totalidad del primer dispositivo (en caso de que se requieran imágenes y análisis forenses)
 
-(Optional) For section 5b alone, you will need access to a Raspberry Pi.
+(Opcional) Solo para la sección 5b, necesitarás acceso a una Raspberry Pi.
 
-## Related learning paths
+## Rutas de aprendizaje relacionadas
 
-Like all of security, this learning path benefits and is benefited by knowledge in related areas. Notably, the following learning paths synergize well with this one:
+Como toda en seguridad, esta ruta de aprendizaje beneficia y se ve beneficiada por el conocimiento en áreas relacionadas. En particular, las siguientes rutas de aprendizaje tienen una buena sinergia:
 
-- [Analyzing Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit): Taking malware apart to understand how it functions and what it does. In addition, this learning path contains beginner-to-intermediate approaches to static, dynamic, and network-based determination of whether a given sample is malicious; in cases such methods are not sufficient for a determination, additional analysis skills are covered in this subsequent learning path.
-- [Detecting, Investigating and Tracking Malicious Infrastructure](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit): Targeted malware generally communicates with command & control, exfiltration, or delivery infrastructure. This learning path will help with investigating and understanding this infrastructure.
+- [Analizando el Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit): Analizar el malware para entender cómo funciona y qué hace. Además, esta ruta de aprendizaje contiene enfoques para personas principiantes hasta intermedios, para determinar de forma estática, dinámica y basada en red si una muestra determinada es maliciosa; en caso de que dichos métodos no sean suficientes para una determinación, las habilidades de análisis adicionales se cubren en una ruta de aprendizaje subsecuente.
+- [Investigación, Seguimiento y Detección de Infraestructura Maliciosa](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit): El malware dirigido generalmente se comunica con la infraestructura de comando y control, exfiltración o entrega. Esta ruta de aprendizaje ayudará a investigar y comprender esta infraestructura.
 
-Web Application Security Fundamentals: Some malware is delivered as a web application or a browser exploit. Some of the skills covered in this learning path will help you with browser-based malware detection and analysis.
-
-## Other resources and links
-
-{{% resource title="Helpdesk Workflow: Client Receives a Suspicious/Phishing Email" languages="English" cost="Free" description="Access Now helpline community documentation for responding to suspicious/phishing emails" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html#" %}}
-
-{{% resource title="List of all DNS record types" languages="English, Chinese, Japanese, Korean, Russian, Serbian, Ukrainian, Esperanto, Hungarian, Vietnamese, Italian, Spanish, French" cost="Free" description="Includes (almost?) all DNS record types." url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
-
-{{% resource title="Amnesty reports on phishing campaigns" languages="Multiple, depending on the report" cost="Free" description="A list of examples of how a targeted phishing campaign against human right defenders, activists and journalists looks" url="https://www.amnesty.org/en/search/phishing/" %}}
+Fundamentos de Seguridad de Aplicaciones Web: un malware se entrega como aplicación web o exploit de navegador. Algunas de las habilidades que se cubren en esta ruta de aprendizaje te ayudarán con la detección y análisis de malware basado en navegador.

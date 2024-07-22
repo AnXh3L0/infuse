@@ -12,7 +12,7 @@
 
   <body class="h-full">
     <a class="sr-only focus:not-sr-only" href="#content"
-      >{{ i18n "skip-link" }}</a
+      >{{ i18n "key.skip-link" }}</a
     >
 
     <div
@@ -30,10 +30,10 @@
             <h2
               class="mb-3 mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
             >
-              {{ i18n "create-account" }}
+              {{ i18n "key.create-account" }}
             </h2>
             <p class="text-xs text-gray-500">
-              {{ i18n "no-password" | markdownify }}
+              {{ i18n "key.no-password" | markdownify }}
             </p>
           </div>
 
@@ -42,7 +42,7 @@
               <label
                 for="SignupUsername"
                 class="block text-sm font-medium leading-6 text-gray-900"
-                >{{ i18n "username" }}</label
+                >{{ i18n "key.username" }}</label
               >
               <div class="mt-2">
                 <input
@@ -56,7 +56,7 @@
                 />
               </div>
               <p class="mt-2 text-xs text-gray-500" id="username-description">
-                {{ i18n "username-description" }}
+                {{ i18n "key.username-description" }}
               </p>
             </div>
 
@@ -64,7 +64,7 @@
               <label
                 for="SignupName"
                 class="block text-sm font-medium leading-6 text-gray-900"
-                >{{ i18n "full-name" }}</label
+                >{{ i18n "key.full-name" }}</label
               >
               <div class="mt-2">
                 <input
@@ -78,19 +78,19 @@
                 />
               </div>
               <p class="mt-2 text-xs text-gray-500" id="name-description">
-                {{ i18n "name-description" }}
+                {{ i18n "key.name-description" }}
               </p>
             </div>
 
             <div>
               <p class="block text-sm font-medium leading-6 text-gray-900">
-                {{ i18n "avatar-image" }}
+                {{ i18n "key.avatar-image" }}
               </p>
               <div class="mt-2 flex items-center gap-x-3">
                 <label
                   for="SignupPhoto"
                   class="block cursor-pointer rounded-md bg-white px-3 py-1 text-sm font-normal leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                  >{{ i18n "upload" }}</label
+                  >{{ i18n "key.upload" }}</label
                 >
                 <img
                   id="avatarUpload"
@@ -108,7 +108,7 @@
                 />
               </div>
               <p class="mt-2 text-xs text-gray-500" id="avatar-description">
-                {{ i18n "avatar-description" }}
+                {{ i18n "key.avatar-description" }}
               </p>
             </div>
 
@@ -121,22 +121,22 @@
                 type="submit"
                 class="flex w-full justify-center rounded-md bg-green-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
               >
-                {{ i18n "signup" }}
+                {{ i18n "key.signup" }}
               </button>
             </div>
 
             <p class="text-xs font-normal leading-6 text-gray-500">
-              {{ i18n "required" }}
+              {{ i18n "key.required" }}
             </p>
           </form>
         </div>
 
         <p class="mt-10 text-center text-sm text-gray-500">
-          {{ i18n "have-account" }}
+          {{ i18n "key.have-account" }}
           <a
             href="{{ .Site.LanguagePrefix }}/login"
             class="font-semibold leading-6 text-green-700 hover:text-green-800"
-            >{{ i18n "login" }}</a
+            >{{ i18n "key.login" }}</a
           >
         </p>
       </div>

@@ -144,6 +144,27 @@ Many malicious URLs used in phishing emails utilize (sometimes multiple) redirec
 
 Attackers can host their own DNS server and track requests. In this case, DNS requests may not be "passive" and may alert the attacker of the investigation. Especially look out for hostnames that might have identifiers in them, like r2378r233yr39wjwr.example.com.
 
+
+## Practice
+
+Choose a random-ish domain name, making sure that it is not hosted behind a content distribution/reverse-proxy service such as Cloudflare (you can figure it out by quickly searching for it using a tool such as dig and using the NS option to look for name servers). Using the above tool categories, investigate the domain and try to explain:
+
+- Where is the domain registered, and if available, who registered the domain?
+- What is the domain’s IP address?
+- Who manages that IP address?
+- Where is that server located?
+- (If practitioners have access to Shodan or Censys) What services are running on that server?
+- What other domains are hosted at the same IP?
+- Can you find any sub-domains for that domain?
+
+## Skill Check
+
+Sit down with a peer or a mentor who has significant experience in passive investigation against servers on the internet. Then:
+
+- Complete the [passive reconnaissance room](https://tryhackme.com/room/passiverecon) on TryHackMe.
+- Carry out the above Practice Exercises, ideally on a different domain, and go through your process and findings with your peer or mentor. Have them review your work and provide feedback on both the process and results. It might be a good exercise to discuss specifically how to find subdomains running on that domain and to discuss the accuracy of geoIP lookups concerning those domains. As an optional extra, sit down with the mentor or peer to run through some advanced dig settings and set up a basic automation together, for example asking dig to load a list of domains from a text file and provide information on them.
+- If you have a real-world phishing message (or alternatively, take a phishing domain from [PhishTank](https://phishtank.org/) and analyze that, note that the website collects domains rather than messages), carry out the passive investigation outlined in the practice exercise (carefully!) while conferring with a peer or mentor. Document your findings and your process. Have them review your work and provide feedback on both the process and results.
+
 ## Learning Resources
 
 {{% resource title="What is a URL?" languages="Chinese, English, French, Japanese, Korean, Russian, Spanish" cost="Free" description="A brief overview of what URLs are, how they are constructed, and what additional features (anchors and the like) they might have." url="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" %}}
@@ -201,24 +222,3 @@ Attackers can host their own DNS server and track requests. In this case, DNS re
 {{% resource title="massdns" languages="English" cost="Free" description="A tool which can be used to brute force searches for subdomains." url="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains" %}}
 
 {{% resource title="Advanced Persistent Infrastructure Tracking" languages="English" cost="Free" description="A guide on various methods which could be used to track attacker infrastructure, which also looks at certificate searches." url="https://cobaltstrike.com/downloads/csmanual38.pdf" %}}
-
-
-## Practice
-
-Choose a random-ish domain name, making sure that it is not hosted behind a content distribution/reverse-proxy service such as Cloudflare (you can figure it out by quickly searching for it using a tool such as dig and using the NS option to look for name servers). Using the above tool categories, investigate the domain and try to explain:
-
-- Where is the domain registered, and if available, who registered the domain?
-- What is the domain’s IP address?
-- Who manages that IP address?
-- Where is that server located?
-- (If practitioners have access to Shodan or Censys) What services are running on that server?
-- What other domains are hosted at the same IP?
-- Can you find any sub-domains for that domain?
-
-## Skill Check
-
-Sit down with a peer or a mentor who has significant experience in passive investigation against servers on the internet. Then:
-
-- Complete the [passive reconnaissance room](https://tryhackme.com/room/passiverecon) on TryHackMe.
-- Carry out the above Practice Exercises, ideally on a different domain, and go through your process and findings with your peer or mentor. Have them review your work and provide feedback on both the process and results. It might be a good exercise to discuss specifically how to find subdomains running on that domain and to discuss the accuracy of geoIP lookups concerning those domains. As an optional extra, sit down with the mentor or peer to run through some advanced dig settings and set up a basic automation together, for example asking dig to load a list of domains from a text file and provide information on them.
-- If you have a real-world phishing message (or alternatively, take a phishing domain from [PhishTank](https://phishtank.org/) and analyze that, note that the website collects domains rather than messages), carry out the passive investigation outlined in the practice exercise (carefully!) while conferring with a peer or mentor. Document your findings and your process. Have them review your work and provide feedback on both the process and results.

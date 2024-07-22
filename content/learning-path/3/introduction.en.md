@@ -1,9 +1,7 @@
 ---
 style: introduction
 title: Introduction
-description: This learning path will prepare you to start on the journey of
-  analyzing malware. The general goal of malware analysis is to characterize new
-  malware, both brand new malware and variants of existing ones.
+description: START HERE. Read the learning path overview, objectives, associated threats, and prerequisites.
 weight: 1
 ---
 
