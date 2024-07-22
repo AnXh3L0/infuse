@@ -29,7 +29,7 @@ key:
     other: "Parcours d'apprentissage"
   - id: learning-paths-subtitle
     one: null
-    other: "Lorem ipsum dolor sit amet blah blah."
+    other: ""
   - id: create-account
     one: null
     other: "Créer un nouveau compte"
@@ -173,7 +173,7 @@ key:
     other: "Ce que vous apprendrez"
   - id: modules-description
     one: null
-    other: "Lorem ipsum dolor sit amet blah blah."
+    other: ""
   - id: visit-site
     one: null
     other: "Visitez le site"
