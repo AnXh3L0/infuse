@@ -1,7 +1,7 @@
 ---
 style: module
-title: Habilidades Interpersonales para Infraestructura Maliciosa/Respuesta al Phishing
-description: En casi todos los casos de intervención o apoyo, los profesionales trabajarán directamente con las personas afectadas por un ataque o intento de ataque. Esto puede ser una experiencia estresante e inductora de ansiedad para las personas objetivo, y cada profesional debe saber cómo mitigar esas presiones.
+title: "Habilidades Interpersonales para Infraestructura Maliciosa/Respuesta al Phishing"
+description: "En casi todos los casos de intervención o apoyo, los profesionales trabajarán directamente con las personas afectadas por un ataque o intento de ataque. Esto puede ser una experiencia estresante e inductora de ansiedad para las personas objetivo, y cada profesional debe saber cómo mitigar esas presiones."
 weight: 2
 ---
 
