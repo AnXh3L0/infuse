@@ -2,6 +2,7 @@
 style = "module"
 weight = 11
 title = "Clean-up, after-care, post-incident risk management, and information sharing"
+description = "Removing malware and supporting people post-infection can prove challenging. We look at some of the best ways to do so"
 +++
 
 ## Use Case

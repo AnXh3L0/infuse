@@ -2,6 +2,7 @@
 style: module
 title: OPSEC prerequisites for detecting malware
 weight: 2
+description: When you set up your malware detection environment, it's a good idea to create some rules and processes to reduce the risk of any security breaches.
 ---
 
 ## Use Case

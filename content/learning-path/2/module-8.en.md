@@ -2,6 +2,7 @@
 style = "module"
 weight = 8
 title = "Sample-based detection and determination"
+description = "You have a sample of a file and need to determine if it is malicious. This may have been sent to the target by email, social media, or instant messenger, or transferred over removable media or otherwise. Here, we learn how to view this sample in analysis platforms or sandboxes."
 +++
 
 ## Use Case

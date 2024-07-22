@@ -2,6 +2,7 @@
 style = "module"
 weight = 9
 title = "Malicious document analysis"
+description = "We learn how to triage and analyze potentially suspicious malicious documents"
 +++
 
 ## Use Case

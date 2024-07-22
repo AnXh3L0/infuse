@@ -1,8 +1,9 @@
-+++
-style = "module"
-weight = 1
-title = "Habilidades interpersonales para detectar malware"
-+++
+---
+style: "module"
+weight: 1
+title: "Habilidades interpersonales para detectar malware"
+description: "Antes de comenzar a analizar cualquier malware, debe configurar un entorno seguro para hacerlo. El malware daña los sistemas en los que se ejecuta. No desea ejecutarlo en su sistema principal."
+---
 
 ## Caso de Uso
 

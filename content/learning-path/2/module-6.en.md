@@ -2,6 +2,7 @@
 style = "module"
 weight = 6
 title = "Detecting malware through traffic analysis"
+description = "This optional topic teaches you to use a Raspberry Pi to conduct traffic analysis while searching for potential malware"
 +++
 
 ## Use Case
