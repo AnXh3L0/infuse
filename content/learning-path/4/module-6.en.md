@@ -2,6 +2,7 @@
 style = "module"
 weight = 6
 title = "Interpersonal Skills for Web Application Security"
+description = "When working on web application security (or any security!), it's important to check the nature of the digital protector relationship, provide useful advice, not fear-monger, and give solid risk assessments"
 +++
 
 ## Use Case

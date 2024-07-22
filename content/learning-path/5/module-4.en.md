@@ -2,6 +2,7 @@
 style = "module"
 weight = 4
 title = "Application Logic and Related Vulnerabilities"
+description = "There exist other types of vulnerabilities not covered in the above subtopics which could nonetheless be used to damage or gain unauthorized entry into a web app. We look at several of those"
 +++
 
 ## Use Case

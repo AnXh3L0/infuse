@@ -2,6 +2,7 @@
 style = "module"
 weight = 8
 title = "Next Steps"
+description = "How to continue practicing and honing your web security assessment skills"
 +++
 
 ## Use Case
