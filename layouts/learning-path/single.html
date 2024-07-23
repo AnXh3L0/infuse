@@ -64,31 +64,37 @@
                             </div>
                         </div>
                     </div>
+                </article>
 
                 <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                    const tocLinks = document.querySelectorAll('#TableOfContents a');
-                    const tocItems = Array.from(tocLinks);
+                document.addEventListener('DOMContentLoaded', function () {
+                const tocLinks = document.querySelectorAll('#TableOfContents a');
+                const tocItems = Array.from(tocLinks);
 
-                    const scrollOffsets = tocItems.map(link => {
-                        const target = document.getElementById(link.getAttribute('href').slice(1));
-                        return target.offsetTop - 30; // Adjust offset as needed
-                    });
+                const scrollOffsets = tocItems.map(link => {
+                    const target = document.getElementById(link.getAttribute('href').slice(1));
+                    return target ? target.offsetTop - 30 : 0; // Adjust offset as needed
+                });
 
-                    // Smooth scrolling and setting active state on click
-                    tocItems.forEach((item, index) => {
-                        item.addEventListener('click', function (event) {
-                            event.preventDefault();
-                            document.getElementById(item.getAttribute('href').slice(1)).scrollIntoView({
+                // Smooth scrolling and setting active state on click
+                tocItems.forEach((item, index) => {
+                    item.addEventListener('click', function (event) {
+                        // event.preventDefault();
+                        const targetId = item.getAttribute('href').slice(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
                                 behavior: 'smooth',
                                 block: 'start'
                             });
                             tocItems.forEach(link => link.classList.remove('active-element'));
                             item.classList.add('active-element');
-                        });
+                        }
                     });
+                });
 
-                    window.addEventListener('scroll', function () {
+                window.addEventListener('scroll', function () {
                         const currentScroll = window.scrollY;
                         let currentIndex = scrollOffsets.findIndex(offset => offset > currentScroll);
 
@@ -98,23 +104,20 @@
                             currentIndex--;
                         }
 
-                        tocItems.forEach(item => {
-                            item.classList.remove('active-element');
-                        });
+                        tocItems.forEach(item => item.classList.remove('active-element'));
 
                         if (currentIndex !== -1) {
                             tocItems[currentIndex].classList.add('active-element');
-                            
+
                             // Scroll the toc-container to make the active item visible
                             const tocContainer = document.querySelector('.toc-container');
                             const activeItem = tocItems[currentIndex];
-                            
+
                             tocContainer.scrollTop = activeItem.offsetTop - tocContainer.offsetTop - tocContainer.clientHeight / 2 + activeItem.clientHeight / 2;
-                            }
-                        });
+                        }
                     });
-                    </script>
-                </article>
+                });
+                </script>
 
                 <section id="mark-complete" class="hidden w-full flex-col items-start justify-between">
                     <div class="mx-auto w-full rounded-xl border border-green-400 bg-white shadow-lg">
