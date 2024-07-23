@@ -46,7 +46,7 @@ This is important to keep in mind when reading a sandbox report: a lack of malic
 
 Check out [Chapter 10 of the Field Guide to incident response for civil society and media](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) for a more in-depth introduction to sandboxes.
 
-It is possible to run a sandbox locally. [Cuckoo](https://cuckoosandbox.org/) is an open source sandbox that has been around for many years. A [new version](https://github.com/cert-ee/cuckoo3) is being developed but is not yet available at the time of writing (February 2024).
+It is possible to run a sandbox locally. [Cuckoo](https://cuckoosandbox.org/) is an open source sandbox that has been around for many years. A [new version](https://github.com/cert-ee/cuckoo3) is being developed but is not yet recommended for production use at the time of writing (July 2024).
 
 While running a sandbox locally gives you full control of the environment and means you can keep your files and URLs fully private, it can be quite a lot of work to set up and maintain. Thankfully, there are many online sandboxes available, such as [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [Joe Sandbox](https://www.joesandbox.com/), [Triage](https://tria.ge/) and even an online version of [Cuckoo](https://cuckoo.cert.ee/). All of them have free versions that allow you to upload malware and URLs, though some do require registration. Do keep in mind that if you use a free version, anything you run inside a sandbox will be publicly available. This can be a concern if you don’t want to tip off an adversary or are dealing with very private data, such as potentially infected confidential documents.
 
