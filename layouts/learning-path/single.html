@@ -79,7 +79,7 @@
                 // Smooth scrolling and setting active state on click
                 tocItems.forEach((item, index) => {
                     item.addEventListener('click', function (event) {
-                        event.preventDefault();
+                        // event.preventDefault();
                         const targetId = item.getAttribute('href').slice(1);
                         const targetElement = document.getElementById(targetId);
 
