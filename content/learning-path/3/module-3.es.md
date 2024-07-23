@@ -1,8 +1,8 @@
-+++
-style = "module"
-weight = 3
-title = "Sandboxes and dynamic analysis"
-+++
+---
+style: module
+title: Sandboxes and dynamic analysis
+weight: 3
+---
 
 ## Use Case
 
