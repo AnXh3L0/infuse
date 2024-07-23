@@ -82,7 +82,7 @@ Vous n'avez pas besoin de matériel spécialisé ou puissant pour ce parcours d'
 
 ## Parcours d'apprentissage connexes
 
-Ce parcours d'apprentissage constitue une introduction fantastique aux autres parcours. Après avoir terminé celui-ci, nous recommandons aux apprenants de travailler sur la [détection de logiciels malveillants](/fr/learning-path/2/) ou sur [les principes fondamentaux de la sécurité Web](/fr/learning-path/4/).
+Ce parcours d'apprentissage constitue une introduction fantastique aux autres parcours. Après avoir terminé celui-ci, nous recommandons aux apprenants de travailler sur la _détection de logiciels malveillants_ ou sur _les principes fondamentaux de la sécurité Web_.
 
 ## Autres ressources et liens
 

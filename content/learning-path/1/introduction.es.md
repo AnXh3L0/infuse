@@ -86,7 +86,7 @@ Es mejor analizar la infraestructura maliciosa en un dispositivo separado que no
 
 Itinerarios de aprendizaje relacionados
 
-Este ruta de aprendizaje ofrece una fantástica introducción a otros. Tras completarla, recomendamos a los alumnos que sigan Detección de Malware (/es/learning-path/2/) o Web Security Fundamentals (/es/learning-path/2/).
+Este ruta de aprendizaje ofrece una fantástica introducción a otros. Tras completarla, recomendamos a los alumnos que sigan Detecting Malware o Web Security Fundamentals.
 
 ## Otros Recursos y Enlaces \[opcional\]
 
