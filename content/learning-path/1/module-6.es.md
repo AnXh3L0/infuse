@@ -13,7 +13,7 @@ Tenga en cuenta que durante la investigación activa, es posible que se realicen
 
 Lo mejor es hacer este tipo de análisis desde una máquina virtual o dispositivo dedicado. Para mayor protección, podría ser una buena idea utilizar una VPN de buena reputación para que su dirección IP no se filtre cuando esté llevando a cabo una investigación activa.
 
-Este módulo se ocupa de analizar el cuerpo de un correo electrónico malicioso, mientras que el módulo Investigación Pasiva: Analizar los encabezados de correos electrónicos se ocupa del encabezado. Para una investigación adecuada, querrá usar ambas habilidades. Tenga en cuenta que el análisis de los contenidos y comportamientos de los archivos adjuntos de correo electrónico está cubierto en elrutao de aprendizaje Análisis de malware.
+Este módulo se ocupa de analizar el cuerpo de un correo electrónico malicioso, mientras que el módulo Investigación Pasiva: Analizar los encabezados de correos electrónicos (/es/learning-path/1/module-5/) se ocupa del encabezado. Para una investigación adecuada, querrá usar ambas habilidades. Tenga en cuenta que el análisis de los contenidos y comportamientos de los archivos adjuntos de correo electrónico está cubierto en elrutao de aprendizaje Análisis de malware.
 
 ## Objetivos
 
