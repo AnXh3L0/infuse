@@ -2,6 +2,7 @@
 style = "module"
 weight = 2
 title = "Data Validation"
+description = "Every web application accepts and processes untrusted input. Here we learn how to discover common vulnerabilities that take advantage thereof"
 +++
 
 ## Use Case

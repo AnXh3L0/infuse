@@ -6,7 +6,7 @@ title = "Détection et détermination sur la base d'un échantillon"
 
 ## Cas d'utilisation
 
-Vous avez l'échantillon d'un fichier et vous devez déterminer s'il est malveillant. Il peut avoir été envoyé à la cible par e-mail, via les réseaux sociaux ou une messagerie instantanée, ou transféré à partir d'un support amovible ou autre. Le fichier lui-même peut être un binaire, une archive compressée, une page Web capturée ou d'autres formats de fichiers. L'objectif principal est de déterminer si le fichier est malveillant. En outre, vous êtes peut-être en mesure de déterminer des informations de caractérisation supplémentaires utiles sur le fichier, mais pour en savoir plus, consultez le [parcours d'apprentissage consacré à l'analyse des logiciels malveillants](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Vous avez l'échantillon d'un fichier et vous devez déterminer s'il est malveillant. Il peut avoir été envoyé à la cible par e-mail, via les réseaux sociaux ou une messagerie instantanée, ou transféré à partir d'un support amovible ou autre. Le fichier lui-même peut être un binaire, une archive compressée, une page Web capturée ou d'autres formats de fichiers. L'objectif principal est de déterminer si le fichier est malveillant. En outre, vous êtes peut-être en mesure de déterminer des informations de caractérisation supplémentaires utiles sur le fichier, mais pour en savoir plus, consultez le [parcours d'apprentissage consacré à l'analyse des logiciels malveillants](fr/learning-path/3/).
 
 ## Objectifs
 

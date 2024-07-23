@@ -2,6 +2,7 @@
 style = "module"
 weight = 3
 title = "Authentication"
+description = "In any website that has user logins, it’s important that the site protects user accounts from unauthorized access. We outline the most common areas of authentication where web application flaws appear."
 +++
 
 ## Use Case

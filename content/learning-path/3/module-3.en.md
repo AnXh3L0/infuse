@@ -1,8 +1,9 @@
----
-style: module
-title: Sandboxes and dynamic analysis
-weight: 3
----
++++
+style = "module"
+weight = 3
+title = "Sandboxes and dynamic analysis"
+description = "Dynamic analysis is the process of running a piece of malware and observing what it does. The easiest way of doing sp is by running a piece of software in a safe, isolated environment called a sandbox"
++++
 
 ## Use Case
 

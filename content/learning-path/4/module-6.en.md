@@ -2,6 +2,7 @@
 style = "module"
 weight = 6
 title = "Interpersonal Skills for Web Application Security"
+description = "When working on web application security (or any security!), it's important to check the nature of the digital protector relationship, provide useful advice, not fear-monger, and give solid risk assessments"
 +++
 
 ## Use Case
@@ -38,7 +39,7 @@ In other cases confidential and mission-critical data may be processed by the ap
 
 ### Reporting and talking about vulnerabilities
 
-Reporting vulnerabilities you’ve discovered can be difficult, especially if you’re new to it. We have created a brief overview of the reporting process in [Subtopic 5 of the Web Application Security Assessment learning path](https://docs.google.com/document/d/19v34droskAFgkp_qqcwiQLpc1hI1W-FjzHNV2QRBsaA/edit#heading=h.3b8ncrmhhmwt) and encourage all learners who need to write up reports to clients to look through it.
+Reporting vulnerabilities you’ve discovered can be difficult, especially if you’re new to it. We have created a brief overview of the reporting process in [Subtopic 5 of the Web Application Security Assessment learning path](/en/learning-path/5/module-5/) and encourage all learners who need to write up reports to clients to look through it.
 
 ## Skill Check
 

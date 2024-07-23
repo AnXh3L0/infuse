@@ -16,9 +16,7 @@ Notez que pendant l'enquête active, vous devrez peut-être effectuer des action
 
 Il est préférable d'effectuer ce type d'analyse à partir d'une machine virtuelle ou d'un appareil dédié. Pour assurer une protection supplémentaire, il peut être judicieux d'utiliser un VPN de bonne réputation afin que votre adresse IP ne fuie pas lorsque vous effectuez une enquête active.
 
-Ce module traite de l'analyse du _corps_ d'un e-mail malveillant, tandis que le module
-
-Investigation passive : analyser les en-têtes des e-mails traite des _en-têtes_ des e-mails. Pour effectuer des enquêtes appropriées, vous pourriez utiliser les deux compétences. Notez que l'analyse du contenu et des comportements des pièces jointes est couverte dans le parcours d'apprentissage Analyse des logiciels malveillants.
+Ce module traite de l'analyse du _corps_ d'un e-mail malveillant, tandis que le module Investigation passive : analyser les en-têtes des e-mails (/fr/learning-path/1/module-5/) traite des _en-têtes_ des e-mails. Pour effectuer des enquêtes appropriées, vous pourriez utiliser les deux compétences. Notez que l'analyse du contenu et des comportements des pièces jointes est couverte dans le parcours d'apprentissage Analyse des logiciels malveillants.
 
 ## Objectifs
 

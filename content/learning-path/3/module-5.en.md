@@ -2,6 +2,7 @@
 style = "module"
 weight = 5
 title = "Creating and sharing IoCs"
+description = "We look at how you can create and share Indicators of Compromise (IoCs) and tell others in the community about the malware you found or analyzed"
 +++
 
 ## Use Case

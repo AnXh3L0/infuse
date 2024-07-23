@@ -2,6 +2,7 @@
 style = "module"
 weight = 7
 title = "Automatic Vulnerability Discovery"
+description = "In past subtopics, we looked at how to discover vulnerabilities by hand. Here, we explore tools that can help automate that process!"
 +++
 
 ## Use Case

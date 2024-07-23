@@ -2,6 +2,7 @@
 style: module
 title: OPSEC prerequisites for detecting malware
 weight: 2
+description: When you set up your malware detection environment, it's a good idea to create some rules and processes to reduce the risk of any security breaches.
 ---
 
 ## Use Case
@@ -34,7 +35,7 @@ In many cases you will be handed a device and asked to inspect it for malware (o
 
 Be aware that in case the device is compromised, your activities may be monitored, which may impact risk and safety for your client. Any keystrokes including access to online accounts or communications may be captured. External storage devices such as hard drives or USB flash drives may become targets for transfer of malicious code, and any network connections may be used to further spread or exfiltrate malicious code.
 
-Note as well that introducing analysis tools can trigger a ‘kill switch’ on some malware which has been designed to evade detection and analysis. In such cases, capturing a disk image and other forensic records may be necessary for further analysis. This is not covered in this learning path but is covered in [Analyzing Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Note as well that introducing analysis tools can trigger a ‘kill switch’ on some malware which has been designed to evade detection and analysis. In such cases, capturing a disk image and other forensic records may be necessary for further analysis. This is not covered in this learning path but is covered in [Analyzing Malware](/en/learning-path/3/).
 
 ### Using a separate ‘good’ device during the malware detection process
 

@@ -1,7 +1,7 @@
 ---
 style: module
 title: Investigación activa - analiza correos electrónicos maliciosos
-description: 
+description: Este módulo de habilidades le enseñará a interpretar y comprender los correos electrónicos maliciosos y a encontrar la infraestructura a la que se vinculan. Ya se trate de ingeniería social pura, phishing o envío de malware, los correos electrónicos maliciosos pueden ser bastante complejos. Estas habilidades avanzadas para revertir correos electrónicos complejos también son una buena preparación para comprender las campañas de atacantes, y son una buena introducción para analizar más complicado.
 weight: 6
 ---
 
@@ -13,7 +13,7 @@ Tenga en cuenta que durante la investigación activa, es posible que se realicen
 
 Lo mejor es hacer este tipo de análisis desde una máquina virtual o dispositivo dedicado. Para mayor protección, podría ser una buena idea utilizar una VPN de buena reputación para que su dirección IP no se filtre cuando esté llevando a cabo una investigación activa.
 
-Este módulo se ocupa de analizar el cuerpo de un correo electrónico malicioso, mientras que el módulo Investigación Pasiva: Analizar los encabezados de correos electrónicos se ocupa del encabezado. Para una investigación adecuada, querrá usar ambas habilidades. Tenga en cuenta que el análisis de los contenidos y comportamientos de los archivos adjuntos de correo electrónico está cubierto en elrutao de aprendizaje Análisis de malware.
+Este módulo se ocupa de analizar el cuerpo de un correo electrónico malicioso, mientras que el módulo Investigación Pasiva: Analizar los encabezados de correos electrónicos (/es/learning-path/1/module-5/) se ocupa del encabezado. Para una investigación adecuada, querrá usar ambas habilidades. Tenga en cuenta que el análisis de los contenidos y comportamientos de los archivos adjuntos de correo electrónico está cubierto en elrutao de aprendizaje Análisis de malware.
 
 ## Objetivos
 
@@ -51,7 +51,7 @@ Una vez que comprenda los conceptos fundamentales y las amenazas potenciales, ne
 - Lea completamente los dos casos prácticos siguientes y anote todos los elementos que le resulten nuevos y que requieran más práctica:
   - [Analyzing Malicious Email Files | by Josh Lemon | Medium](https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91)
   - [Analyzing Malicious Emails. An intro to analyzing a phishing email | by Kyle Bubp | Medium](https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e)
-- Un proyecto de Internews que se centra en la seguridad de los periodistas [creó un ejercicio de simulación](https://docs.google.com/document/d/1QZWSERCexs8uGEyVzUZ9-9Ep-Z7XJle_/edit#heading=h.xc3zfaqq1a2o) para ayudar a las personas a comprender mejor y practicar el trabajo con rastreadores. Lea el proyecto y complete algunos de los ejercicios.
+- Un proyecto de Internews que se centra en la seguridad de los periodistas [creó un ejercicio de simulación](https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/) para ayudar a las personas a comprender mejor y practicar el trabajo con rastreadores. Lea el proyecto y complete algunos de los ejercicios.
 
 ## Comprobación de Habilidades
 

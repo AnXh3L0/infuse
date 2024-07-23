@@ -1,7 +1,7 @@
 ---
 style: module
 title: "Investigación pasiva - Análisis de los encabezados de correo electrónico"
-description: 
+description: Una investigación pasiva es aquella que no carga ningún sitio web, sino que solo busca datos disponibles públicamente en ellos. Como tal, el atacante no será alertado de que su sitio web recibió visitas adicionales, lo que podría indicarle que se está llevando a cabo una investigación.
 weight: 5
 ---
 

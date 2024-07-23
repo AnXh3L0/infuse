@@ -35,7 +35,7 @@ En muchos casos, te entregarán un dispositivo y te pedirán que lo inspecciones
 
 Ten en cuenta que en caso de que el dispositivo esté comprometido, tus actividades pueden ser monitoreadas, lo que puede afectar el riesgo y la seguridad de tu cliente. Se pueden capturar todas las pulsaciones de teclas, incluido el acceso a cuentas en línea o comunicaciones. Los dispositivos de almacenamiento externos, como discos duros o memorias USB, pueden convertirse en objetivos para la transferencia de código malicioso, y cualquier conexión a la red puede ser utilizada para propagar o exfiltrar código malicioso.
 
-También ten en cuenta que la introducción de herramientas de análisis puede activar un 'kill switch' (interruptor de apagado) en algunos malware que ha sido diseñado para evadir la detección y el análisis. En tales casos, puede ser necesario capturar una imagen de disco y otros registros forenses para un análisis más profundo. No se cubre en esta ruta de aprendizaje, pero se cubre en el [Análisis de Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+También ten en cuenta que la introducción de herramientas de análisis puede activar un 'kill switch' (interruptor de apagado) en algunos malware que ha sido diseñado para evadir la detección y el análisis. En tales casos, puede ser necesario capturar una imagen de disco y otros registros forenses para un análisis más profundo. No se cubre en esta ruta de aprendizaje, pero se cubre en el [Análisis de Malware](/es/learning-path/3/).
 
 ### Usar un dispositivo "bueno" separado durante el proceso de detección de malware
 

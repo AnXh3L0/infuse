@@ -16,7 +16,7 @@ Note that during active investigation, you may have to perform actions that will
 
 It is best to do this type of analysis from a virtual machine or dedicated device. For added protection, it might be a good idea to use a reputable VPN so that your IP address does not leak out when you are conducting an active investigation.
 
-This module deals with analyzing the _body_ of a malicious email, whereas the [Passive Investigation: Analyze email headers](#subtopic-5-passive-investigation-analyze-email-headers) module deals with the _header_ of the email. For proper investigations, you will want to use both skills. Note that analyzing the contents and behaviors of email attachments is covered in the Malware Analysis learning path.
+This module deals with analyzing the _body_ of a malicious email, whereas the [Passive Investigation: Analyze email headers](/en/learning-path/1/module-5/) module deals with the _header_ of the email. For proper investigations, you will want to use both skills. Note that analyzing the contents and behaviors of email attachments is covered in the Malware Analysis learning path.
 
 ## Objectives
 

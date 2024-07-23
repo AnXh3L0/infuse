@@ -2,6 +2,7 @@
 style = "module"
 weight = 1
 title = "Website Hardening"
+description = "We explore some initial steps you can take to make your website more resilient to attack"
 +++
 
 ## Use Case

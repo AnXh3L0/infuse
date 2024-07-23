@@ -2,6 +2,7 @@
 style = "module"
 weight = 11
 title = "Clean-up, after-care, post-incident risk management, and information sharing"
+description = "Removing malware and supporting people post-infection can prove challenging. We look at some of the best ways to do so"
 +++
 
 ## Use Case
@@ -77,7 +78,7 @@ In some cases, malware removal efforts may be ineffective. Built-in Android malw
 
 Sharing your findings with your client and working with them to understand how malware infection may have occurred is an important step which allows them to update their risk management approach and understand the significance (or lack of significance) of the security incident.
 
-Take as many detailed technical notes, screenshots, and samples (or, more likely, hashes thereof) and talk to your client about their threat model and to what degree you could share your findings with the wider community. Sharing your findings is particularly valuable if you found a novel threat or one that targets community members specifically based on certain work that they do; in this case, talking to others about malware hashes, infection vectors, and mitigation mechanisms will help protect those at highest risk from it. You can use some of the information from the [Documenting Findings](https://docs.google.com/document/d/1Qhka7uQYCBye-EQRQrrETo-ptik2yDAGDZg5DrncYF4/edit#heading=h.v971z46vfx88) section of the _Detecting, Investigating and Tracking Malicious Infrastructure_ learning path when authoring a brief report and when you consider disseminating it.
+Take as many detailed technical notes, screenshots, and samples (or, more likely, hashes thereof) and talk to your client about their threat model and to what degree you could share your findings with the wider community. Sharing your findings is particularly valuable if you found a novel threat or one that targets community members specifically based on certain work that they do; in this case, talking to others about malware hashes, infection vectors, and mitigation mechanisms will help protect those at highest risk from it. You can use some of the information from the [Documenting Findings](/en/learning-path/1/module-8/) section of the _Detecting, Investigating and Tracking Malicious Infrastructure_ learning path when authoring a brief report and when you consider disseminating it.
 
 ## Skill Check
 

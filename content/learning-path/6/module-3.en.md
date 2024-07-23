@@ -2,11 +2,12 @@
 style = "module"
 weight = 3
 title = "Denial of Service Incident Response"
+description = "If a website comes under a sustained denial of service attack, it may be vital to act quickly to get the site back up and running. This subtopic describes some practices to allow site owners to recover from a DoS attack"
 +++
 
 ## Use Case
 
-If a website comes under a sustained denial of service attack, it may be vital to act quickly to get the site back up and running. This Learning Path describes some practices to allow site owners to recover from a DoS attack.
+If a website comes under a sustained denial of service attack, it may be vital to act quickly to get the site back up and running. This subtopic describes some practices to allow site owners to recover from a DoS attack.
 
 ## Objectives
 

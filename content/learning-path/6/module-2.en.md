@@ -2,6 +2,7 @@
 style = "module"
 weight = 2
 title = "Website Logging for Security"
+description = "Website logs can be crucial in identifying potential attacks and attackers. We look at how to effectively use them"
 +++
 
 ## Use Case

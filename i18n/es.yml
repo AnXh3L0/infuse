@@ -39,7 +39,7 @@ key:
   - id: learning-paths-subtitle
     translation:
       one: null
-      other: "Lorem ipsum dolor sit amet blah blah."
+      other: " "
   - id: create-account
     translation:
       one: null
@@ -231,7 +231,7 @@ key:
   - id: modules-description
     translation:
       one: null
-      other: "Lorem ipsum dolor sit amet blah blah."
+      other: " "
   - id: visit-site
     translation:
       one: null

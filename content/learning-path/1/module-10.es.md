@@ -1,7 +1,7 @@
 ---
 style: module
 title: Ejercicio de captura de bandera
-description: 
+description: También hemos diseñado un ejercicio de captura de banderas en el que los alumnos pueden analizar un correo electrónico de phishing y la infraestructura a la que se vincula. El ejercicio se puede utilizar como práctica adicional o como ejercicio de verificación de habilidades y se puede encontrar aquí.
 weight: 10
 ---
 

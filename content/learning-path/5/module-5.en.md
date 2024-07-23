@@ -2,11 +2,12 @@
 style = "module"
 weight = 5
 title = "Finding Web Application Vulnerabilities"
+description = "Once you have learned about different types of vulnerabilities, it's time to look for them in the web applications you are testing! To start with and get some initial practice, you will test a deliberately vulnerable web application"
 +++
 
 ## Use Case
 
-One way or another, every web application accepts and processes untrusted input. This input usually comes from end users and their browsers but may also come from other websites or backend systems. Depending on where this information flows, the processing of the data may have undesirable effects on the website or its users.
+Once you have learned about different types of vulnerabilities, it's time to look for them in the web applications you are testing! To start with and get some initial practice, you will test a deliberately vulnerable web application.
 
 ## Objectives
 

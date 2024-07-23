@@ -2,6 +2,7 @@
 style = "module"
 weight = 6
 title = "Refining Your Web Application Testing Process"
+description = "Once you’ve figured out the fundamentals of finding vulnerabilities in websites, this subtopic will teach you a process to find those vulnerabilities more quickly and efficiently"
 +++
 
 ## Use Case

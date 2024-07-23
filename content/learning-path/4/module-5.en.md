@@ -2,6 +2,7 @@
 style = "module"
 weight = 5
 title = "Application Logic"
+description = "Here we learn about application logic vulnerabilities, what they are, and how to protect our website against them"
 +++
 
 ## Use Case

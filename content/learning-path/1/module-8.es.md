@@ -1,7 +1,7 @@
 ---
 style: module
 title: Documentación de los hallazgos
-description: 
+description: Este módulo le enseña cómo escribir y compartir los resultados de su investigación e incluya indicadores de compromiso (IoC) apropiados.
 weight: 8
 ---
 

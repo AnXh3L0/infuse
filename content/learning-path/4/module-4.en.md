@@ -2,6 +2,7 @@
 style = "module"
 weight = 4
 title = "Authorization"
+description = "Logged in users do not have access to all other users' data. Here we look at how to make sure no user exceeds their level of access or capability"
 +++
 
 ## Use Case

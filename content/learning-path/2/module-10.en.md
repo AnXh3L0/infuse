@@ -2,6 +2,7 @@
 style = "module"
 weight = 10
 title = "Discovering where the malware came from"
+description = "We look at how we can use timestamps and metadata to figure out where malware originated"
 +++
 
 ## Use Case

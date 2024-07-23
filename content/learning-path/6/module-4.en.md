@@ -2,11 +2,12 @@
 style = "module"
 weight = 4
 title = "Hacking Incident Response"
+description = "We look at some ways in which we can investigate and recover from an attack that targeted our website"
 +++
 
 ## Use Case
 
-If a website is hacked, understanding the actions and methods of the attacker is vital. At the very least, the site owners need to identify how the site was initially compromised so that they can fix any vulnerabilities that enabled that. It may also be important to know what data the attackers may have accessed or modified. This learning path describes some practices to help investigate and recover from a website hacking incident.
+If a website is hacked, understanding the actions and methods of the attacker is vital. At the very least, the site owners need to identify how the site was initially compromised so that they can fix any vulnerabilities that enabled that. It may also be important to know what data the attackers may have accessed or modified. This subtopic describes some practices to help investigate and recover from a website hacking incident.
 
 ## Objectives
 

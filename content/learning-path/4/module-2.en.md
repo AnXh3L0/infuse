@@ -2,6 +2,7 @@
 style = "module"
 weight = 2
 title = "Data Validation"
+description = "We look at a very common class of vulnerabilities, in which a website parses maliciously crafted data submitted by a user"
 +++
 
 ## Use Case
