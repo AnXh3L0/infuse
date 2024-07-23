@@ -248,13 +248,13 @@ key:
     other: "Table des matières"
   - id: faq
     one: null
-    other: " "
+    other: "Questions fréquemment posées"
   - id: faq-description
     one: null
-    other: " "
+    other: "Vous ne trouvez pas la réponse que vous cherchez? Contactez notre"
   - id: faq-link
     one: null
-    other: " "
+    other: "équipe de support client"
   - id: aria-language
     one: null
     other: "La langue actuelle est "

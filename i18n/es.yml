@@ -330,15 +330,15 @@ key:
   - id: faq
     translation:
       one: null
-      other: " "
+      other: "Preguntas Frecuentes"
   - id: faq-description
     translation:
       one: null
-      other: " "
+      other: "¿No encuentras la respuesta que buscas? Comunícate con nuestro"
   - id: faq-link
     translation:
       one: null
-      other: " "
+      other: "equipo de soporte al cliente"
   - id: aria-language
     translation:
       one: null

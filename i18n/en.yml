@@ -342,15 +342,16 @@ key:
   - id: faq
     translation:
       one: null
-      other: " "
+      other: Frequently Asked Questions
   - id: faq-description
     translation:
       one: null
-      other: " "
+      other: Can't find the answer you're looking for? Reach out to our customer
+        support team
   - id: faq-link
     translation:
       one: null
-      other: " "
+      other: customer support team
   - id: aria-language
     translation:
       one: null
