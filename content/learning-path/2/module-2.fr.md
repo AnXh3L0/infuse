@@ -34,7 +34,7 @@ Dans de nombreux cas, nous vous demanderons d'inspecter un appareil à la recher
 
 Sachez que si l'appareil est compromis, vos activités peuvent être surveillées, ce qui peut avoir un impact sur le risque et la sécurité de votre client. Toute saisie d'information, y compris l’accès aux comptes en ligne ou aux communications, peut être saisie. Les périphériques de stockage externes tels que les disques durs ou les clés USB peuvent devenir des cibles de transfert de code malveillant, et toute connexion réseau peut être utilisée pour propager ou exfiltrer le code malveillant.
 
-Notez également que l'introduction d'outils d'analyse peut déclencher un « kill switch » sur certains logiciels malveillants qui a été conçu pour échapper à la détection et à l'analyse. Dans de tels cas, la capture d'une image disque et d'autres enregistrements d'investigation peut être nécessaire pour assurer une analyse plus approfondie. Cela n'est pas abordé dans ce parcours d'apprentissage, mais dans le parcours [Analyse des logiciels malveillants](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Notez également que l'introduction d'outils d'analyse peut déclencher un « kill switch » sur certains logiciels malveillants qui a été conçu pour échapper à la détection et à l'analyse. Dans de tels cas, la capture d'une image disque et d'autres enregistrements d'investigation peut être nécessaire pour assurer une analyse plus approfondie. Cela n'est pas abordé dans ce parcours d'apprentissage, mais dans le parcours [Analyse des logiciels malveillants](/fr/learning-path/3/).
 
 ### Utilisation d'un appareil distinct pendant le processus de détection des logiciels malveillants
 
