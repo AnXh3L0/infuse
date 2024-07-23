@@ -2,7 +2,7 @@
 style: introduction
 title: Introduction
 description: START HERE. Read the learning path overview, objectives, associated
-  threats, and prerequisites.
+  threats, and prerequisites
 weight: 1
 ---
 
@@ -84,7 +84,7 @@ Skills in investigating, tacking, and detecting malicious infrastructure can hel
 
 ## Related learning paths
 
-This learning path offers a fantastic introduction to other ones. After completing this one, we would recommend that learners work on either [Detecting Malware](/en/learning-path/2/) or [Web Security Fundamentals](/en/learning-path/2/).
+This learning path offers a fantastic introduction to other ones. After completing this one, we would recommend that learners work on either [Detecting Malware](/en/learning-path/2/) or [Web Security Fundamentals](/en/learning-path/4/).
 
 ## Other resources and links
 

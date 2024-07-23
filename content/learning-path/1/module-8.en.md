@@ -2,7 +2,7 @@
 style: module
 title: Documenting Findings
 description: This module teaches you how to write up and share the results of
-  your investigation and include appropriate indicators of compromise (IoCs).
+  your investigation and include appropriate indicators of compromise (IoCs)
 weight: 8
 ---
 

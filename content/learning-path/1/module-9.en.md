@@ -3,7 +3,7 @@ style: module
 title: Response - Infrastructure takedown
 description: Here, we cover abuse-reporting and other safe browsing and sinkhole
   mechanisms. This includes contacting the infrastructure provider to report
-  malicious infrastructure so that it can be taken down.
+  malicious infrastructure so that it can be taken down
 weight: 9
 ---
 

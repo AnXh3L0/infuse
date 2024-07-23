@@ -2,7 +2,7 @@
 style = "module"
 weight = 2
 title = "Basic file analysis"
-description = "When evaluating malware files, we need to perform a deeper analysis of file types and contents. Beyond basic file extensions, we’ll examine file headers and signatures, as well as string contents."
+description = "When evaluating malware files, we need to perform a deeper analysis of file types and contents. Beyond basic file extensions, we’ll examine file headers and signatures, as well as string contents"
 +++
 
 ## Use Case

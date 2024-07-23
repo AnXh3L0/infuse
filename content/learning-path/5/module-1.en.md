@@ -2,6 +2,7 @@
 style = "module"
 weight = 1
 title = "Setup"
+description = "We introduce and set up some key web security assessment tools"
 +++
 
 ## Use Case

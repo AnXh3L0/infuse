@@ -2,6 +2,7 @@
 style = "module"
 weight = 1
 title = "Infrastructure Vulnerabilities"
+description = "We introduce different types of infrastructure vulnerabilities and what impact they could have"
 +++
 
 ## Use Case

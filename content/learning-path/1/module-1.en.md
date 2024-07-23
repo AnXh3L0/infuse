@@ -6,7 +6,7 @@ description: When you receive or are forwarded a suspicious message, conduct
   the best rapid response for the targeted recipient(s) if it is, and to
   determine if further investigation is needed. For most messages, it’s enough
   to conduct basic heuristics to separate untargeted from targeted threats and
-  to identify harm-reducing actions.
+  to identify harm-reducing actions
 weight: 1
 ---
 ## Use Case
