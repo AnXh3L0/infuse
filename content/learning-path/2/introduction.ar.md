@@ -68,8 +68,8 @@ Depending on the scenario, you may be implementing detection steps directly on t
 
 Like all of security, this learning path benefits and is benefited by knowledge in related areas. Notably, the following learning paths synergize well with this one:
 
-- [Analyzing Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit): Taking malware apart to understand how it functions and what it does. In addition, this learning path contains beginner-to-intermediate approaches to static, dynamic, and network-based determination of whether a given sample is malicious; in cases such methods are not sufficient for a determination, additional analysis skills are covered in this subsequent learning path.
-- [Detecting, Investigating and Tracking Malicious Infrastructure](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit): Targeted malware generally communicates with command & control, exfiltration, or delivery infrastructure. This learning path will help with investigating and understanding this infrastructure.
+- [Analyzing Malware](/en/learning-path/3/): Taking malware apart to understand how it functions and what it does. In addition, this learning path contains beginner-to-intermediate approaches to static, dynamic, and network-based determination of whether a given sample is malicious; in cases such methods are not sufficient for a determination, additional analysis skills are covered in this subsequent learning path.
+- [Detecting, Investigating and Tracking Malicious Infrastructure](/en/learning-path/1/): Targeted malware generally communicates with command & control, exfiltration, or delivery infrastructure. This learning path will help with investigating and understanding this infrastructure.
 
 Web Application Security Fundamentals: Some malware is delivered as a web application or a browser exploit. Some of the skills covered in this learning path will help you with browser-based malware detection and analysis.
 

@@ -6,7 +6,7 @@ title = "Detección y determinación basadas en muestras"
 
 ## Caso de Uso
 
-Tienes una muestra de un archivo y necesita determinar si es malicioso. Esto puede haber sido enviado al objetivo por correo electrónico, redes sociales o mensajería instantánea, o transferido a través de medios extraíbles o de otro modo. El archivo en sí puede ser binario, un archivo comprimido, una página web capturada u otros formatos de archivo. El objetivo principal es determinar si el archivo es malicioso. Además, es posible que puedas determinar información adicional útil para caracterizar el archivo, sin embargo, para obtener más orientación, revisa el [Análisis de Malware en la Ruta de Aprendizaje](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Tienes una muestra de un archivo y necesita determinar si es malicioso. Esto puede haber sido enviado al objetivo por correo electrónico, redes sociales o mensajería instantánea, o transferido a través de medios extraíbles o de otro modo. El archivo en sí puede ser binario, un archivo comprimido, una página web capturada u otros formatos de archivo. El objetivo principal es determinar si el archivo es malicioso. Además, es posible que puedas determinar información adicional útil para caracterizar el archivo, sin embargo, para obtener más orientación, revisa el [Análisis de Malware en la Ruta de Aprendizaje](/es/learning-path/3/).
 
 ## Objetivos
 
