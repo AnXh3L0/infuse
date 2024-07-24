@@ -33,7 +33,7 @@ Learn how to locate and utilize these abuse reporting mechanisms. Abuse contacts
 - WHOIS records for a domain will provide an Abuse contact email and phone number.
 - Search for the abuse contact relevant to a given IP at [RIPEstat](https://stat.ripe.net/app/launchpad).
 - For a programmatic utility, see the Abusix Abuse Contacts Database’s [Getting Started](https://docs.abusix.com/abuse-contact-db/5BScLdS3SxHV1giQYpXpKm/getting-started/rGzH6UQZpzjXBhqtjNqRee) page which explains how to use a Python utility or a simple host lookup to obtain abuse contacts.
-- Use web search to obtain abuse reporting details for other types of service providers which may not be available through the above methods, such as abuse on platforms such as [Twilio ](https://www.twilio.com/help/abuse)and [Mailchimp](https://mailchimp.com/contact/abuse/).
+- Use web search to obtain abuse reporting details for other types of service providers which may not be available through the above methods, such as abuse on platforms such as [Twilio](https://www.twilio.com/help/abuse) and [Mailchimp](https://mailchimp.com/contact/abuse/).
 
 Remember there may be multiple service providers involved. For instance, a phishing landing page can be reported both to the web hosting provider and to the domain registrar.
 
@@ -79,7 +79,7 @@ Learn about some of these blocklists, where they are integrated, and how to repo
 
 ## Practice
 
-- Find the abuse contacts for 3 web hosting companies, including at least one major platform (use as AWS, GCP, Azure, Oracle Cloud, and Alibaba Cloud. Look for any additional information they offer on their abuse reporting process.
+- Find the abuse contacts for 3 web hosting companies, including at least one major platform (use as AWS, GCP, Azure, Oracle Cloud, and Alibaba Cloud). Look for any additional information they offer on their abuse reporting process.
 - Investigate how abuse databases and Google Safe Browsing work. Lists several tools and services that they are integrated with.
 - Build your own incident-response flowchart and checklist containing relevant links and actions to take in case of an incident of malicious online infrastructure.
 

@@ -32,7 +32,7 @@ After completing the guided activities, you should be able to:
 - Read and filter results from SysInternals Autoruns tools to identify only non-Microsoft, unsigned binaries, and how to check file hashes against VirusTotal
 - Know how to read and understand results from Process Explorer, including how to check for running processes with unverified file signatures and how to check process hashes against VirusTotal.
 
-Microsoft’s SysInternal tools are widely used and you will be able to find additional tutorials using them around the web, however the [Guide to Quick Forensics ](https://pellaeon.gitbook.io/mobile-forensics/)gives a good targeted introduction.
+Microsoft’s SysInternal tools are widely used and you will be able to find additional tutorials using them around the web, however the [Guide to Quick Forensics](https://pellaeon.gitbook.io/mobile-forensics/) gives a good targeted introduction.
 
 ### MacOS
 
