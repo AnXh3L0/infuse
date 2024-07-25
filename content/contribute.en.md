@@ -34,3 +34,9 @@ while i < len(target):
 		i = i+1
 
 {{< / highlight >}}
+
+{{< highlight shell-session >}}
+
+awk '$3 > 10 {print $1, $3}' example.txt
+
+{{< / highlight >}}
