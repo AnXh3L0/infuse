@@ -1,145 +1,141 @@
 +++
 style = "module"
 weight = 5
-title = "Creating and sharing IoCs"
+title = "Création et partage d'IoC"
+description = "Nous examinons comment créer et partager des Indicateurs de Compromission (IoC) et informer les autres membres de la communauté sur les logiciels malveillants que vous avez trouvés ou analysés."
 +++
 
-## Use Case
+## Cas d'utilisation
 
-Once you have analyzed a piece of malware, you can help the community (and also yourself and the rest of the world) by sharing your findings. Novel malware is reasonably rare, and once used, it tends to be re-used extensively. By sharing your findings, you can help everyone in several ways:
+Une fois que vous avez analysé un logiciel malveillant, vous pouvez aider la communauté (ainsi que vous-même et le reste du monde) en partageant vos résultats. Les nouveaux logiciels malveillants sont relativement rares et, une fois qu'ils sont utilisés, ils ont tendance à être largement réutilisés. En partageant vos conclusions, vous pouvez aider tout le monde de plusieurs façons :
 
-- If a member of the community has been targeted by a threat actor, it’s quite possible that the threat actor is targeting other members of the community. By sharing your findings, you can help raise awareness and hopefully help digital defenders prevent or mitigate other attacks.
-- Analyzing a novel piece of malware is a significant achievement. You should be proud of it and also be rewarded for your efforts. By sharing your process and findings, you are more likely to be recognized for your expertise, increasing your opportunities for interesting work and collaboration in the field.
-- Finally, by creating and sharing IoCs, you can help automatic detection of the malware in question. If makers of detection and prevention software integrate those IoCs into their databases, that renders the malware significantly less useful to threat actors and enhances the security of people all over the world.
+- Si un membre de la communauté a été ciblé par un auteur de menaces, il est fort possible que celui-ci cible d'autres membres de la communauté. En partageant vos découvertes, vous pouvez contribuer à sensibiliser et, espérons-le, à aider les défenseurs du monde numérique à prévenir ou à atténuer d'autres attaques.
+- L'analyse d'un nouveau logiciel malveillant est une réalisation significative. Vous devriez en tirer de la fierté et recevoir des récompenses pour vos efforts. En partageant votre processus et vos conclusions, vous êtes plus susceptible d'être reconnu(e) pour votre expertise, ce qui augmentera vos possibilités d'obtenir des postes intéressants et des collaborations dans le domaine.
+- Enfin, en créant et en partageant des IoC, vous pouvez contribuer à la détection automatique du logiciel malveillant en question. Si les fabricants de logiciels de détection et de prévention intègrent ces IoC dans leurs bases de données, le logiciel malveillant devient beaucoup moins utile pour les acteurs de la menace, en améliorant ainsi la sécurité des utilisateurs partout dans le monde.
 
-## Objectives
+## Objectifs
 
-After completing this subtopic, practitioners should be able to do the following:
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-- Understand different types of IoCs and how to share them
-- Understand YARA and Snort rules
-- Create and share out a brief report on malware they found
+- Comprendre les différents types d'IoC et comment les partager
+- Comprendre les règles YARA et Snort
+- Créer et partager un bref rapport sur les logiciels malveillants trouvés
 
 ---
+## Section Principale
 
-## IoC Types
+### Types d'IoC
 
-We can break IoCs down broadly into human-readable and machine-readable. Machine-readable IoCs can be anything that a computer could use to detect malware, and there are many formats that attempt to richly represent the complexity of malware behavior. However, there are several simple formats that are easy to create and use and which are quite popular:
+Nous pouvons décomposer largement les IoC en classes lisibles par l'humain et lisibles par machine. Les IoC lisibles par machine peuvent être tout ce qu'un ordinateur pourrait utiliser pour détecter les logiciels malveillants, et il existe de nombreux formats qui tentent de représenter en détail la complexité du comportement des logiciels malveillants. Cependant, il existe plusieurs formats simples et faciles à créer et à utiliser qui sont très populaires :
 
-- MD5 or SHA hashes of malware files
-- YARA rules identifying malware files. YARA rules identify specific binary sequences or strings within a file
-- Server specifications (IP addresses or host names, with or without port numbers, URLs, etc.) for identifying malware’s network traffic
-- Snort rules for identifying malware’s network traffic
+- Hachages MD5 ou SHA des fichiers malveillants
+- Règles YARA identifiant les fichiers malveillants. Les règles YARA identifient des séquences ou des chaînes binaires spécifiques dans un fichier
+- Spécifications du serveur (adresses IP ou noms d'hôtes, avec ou sans numéros de port, URL, etc.) pour identifier le trafic réseau des logiciels malveillants
+- Règles Snort pour identifier le trafic réseau des logiciels malveillants
 
-File hashes and server specifications are the simplest to create and use. However, sometimes the additional complexity of YARA or Snort rules are required to identify malware. For example, malware might communicate to its C&C server on any host and port, but sends a specific message to the server; for that, you need something like a Snort rule. Likewise, a malware file might contain different content with every infection but always contain a specific unique string. For that, you need something like a YARA rule.
+Les hachages de fichiers et les spécifications du serveur sont les plus simples à créer et à utiliser. Cependant, la complexité supplémentaire des règles YARA ou Snort est parfois nécessaire pour identifier les logiciels malveillants. Par exemple, un logiciel malveillant peut communiquer avec son serveur C&C sur n'importe quel hôte et port, mais envoie un message spécifique au serveur. Dans une telle situation, vous avez besoin d'un outil tel qu'une règle Snort. De même, un fichier malveillant peut contenir un contenu différent à chaque infection, mais contient toujours une chaîne unique spécifique. Dans une telle situation, vous avez besoin d'un outil tel qu'une règle YARA.
 
-Human-readable IoCs are descriptions of things that the malware does that are useful for people investigating a possible compromise, but less so for computers. These take the form of narrative descriptions of the malware’s activities. These have the advantage of usually being easier to create and understand, and can be turned into machine-readable IoCs for a variety of detection systems.
+Les IoC lisibles par l'homme sont des descriptions de choses que le logiciel malveillant effectue, qui sont utiles pour les personnes qui enquêtent sur une possibilité de compromission, mais moins utiles pour les ordinateurs. Ces IoC prennent la forme de descriptions narratives des activités du logiciel malveillant. Ils ont l'avantage d'être généralement plus faciles à créer et à comprendre, et peuvent être transformés en IoC lisibles par machine pour une variété de systèmes de détection.
 
-A good malware analysis report will generally contain a human readable description of the malware and its capabilities, along with some machine-readable IoCs in an appendix. This ensures that the report is useful to the widest audience.
+Un bon rapport d'analyse de logiciels malveillants contient généralement une description lisible par l'humain du logiciel malveillant et de ses capacités, ainsi que quelques IoC lisibles par machine dans une annexe. Cela garantit que le rapport est utile au public le plus large.
 
-## Creating IoCs
+### Création d'IoC
 
-A good IoC will minimize both false positives and false negatives. Especially since malware is hopefully rare on most systems, detecting good files as malicious (false positives) can create a false sense of risk and lead to the deletion of legitimate files. Similarly, an IoC that fails to detect a significant portion of that malware (false negatives) can be dangerous, luring defenders into a false sense of security.
+Un bon IoC minimisera à la fois les faux positifs et les faux négatifs. Surtout que les logiciels malveillants sont rares sur la plupart des systèmes, la détection de fichiers inoffensifs comme étant malveillants (faux positifs) peut créer un faux sentiment de risque et conduire à la suppression de fichiers légitimes. De même, un IoC qui ne parvient pas à détecter une partie importante d'un logiciel malveillant (faux négatifs) peut s'avérer dangereux et procurer aux défenseurs un faux sentiment de sécurité.
 
-With that in mind, let’s go through some of the common IoC simple formats.
+Dans cette optique, passons en revue certains des formats simples d'IoC courants.
 
-## File Hashes
+#### Hachages des fichiers
 
-File hashes are among the simplest IoCs. You compute a [cryptographic hash](https://www.sentinelone.com/cybersecurity-101/hashing/) (or two) of a file that is unique to the malware, and that’s it. Conventionally, MD5 and SHA256 hashes are provided. Although there are numerous weaknesses with MD5, they are generally not significant in the context of IoCs. The main downsides to file hashes is that any change to the file will allow malware to bypass IoC based detection. It is trivial in most cases to just append a byte to the file, causing a completely different hash. However, file hashes continue to be surprisingly effective in detecting malware.
+Les hachages de fichiers sont parmi les IoC les plus simples. Vous calculez un [hachage cryptographique](https://www.sentinelone.com/cybersecurity-101/hashing/) (ou deux) d'un fichier qui est exclusif au logiciel malveillant, et c'est tout. En règle générale, les hachages MD5 et SHA256 sont fournis. Bien qu'il existe de nombreuses faiblesses avec MD5, elles ne sont généralement pas significatives dans le contexte des IoC. Les principaux inconvénients des hachages de fichiers reposent sur le fait que toute modification du fichier permettra aux logiciels malveillants de contourner la détection basée sur l'IoC. Il est futile dans la plupart des cas de simplement ajouter un octet au fichier, pour provoquer un hachage complètement différent. Cependant, les hachages de fichiers continuent d'être étonnamment efficaces pour détecter les logiciels malveillants.
 
-## YARA Rules
+#### Règles YARA
 
-A step up in complexity from file hashes is YARA rules. YARA rules package together information about the malware, a list of binary sequences or strings in the file and rules about which strings/sequences need to be in the file (e.g. string 1 or string 2, and also string 3). YARA keeps a good balance between simplicity and flexibility. For more information on YARA, see [the official website](https://virustotal.github.io/yara/), and also [this blog post walking through creating YARA rules for a malware file](https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674).
+Les règles YARA constituent une étape supplémentaire dans la complexité des hachages de fichiers. Les règles YARA regroupent des informations sur le logiciel malveillant, une liste de séquences binaires ou de chaînes dans le fichier et des règles sur les chaînes/séquences qui doivent se trouver dans le fichier (par ex., chaîne 1 ou chaîne 2, et aussi chaîne 3). YARA maintient un bon équilibre entre simplicité et flexibilité. Pour obtenir plus d'informations sur YARA, consultez [le site Web officiel](https://virustotal.github.io/yara/), et aussi [cet article de blog en passant par la création de règles YARA pour un fichier de logiciels malveillants](https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674).
 
-One thing to bear in mind when working with YARA is to be sure that your rule is free of false positives. For example, a rule matching “This program cannot be run in DOS mode” would match every executable in a Windows system. After you create your YARA rules for some malware, it’s a good idea to run them against a couple of (hopefully) non-infected systems to make sure they don’t identify non-malicious files. There are tools to help create YARA rules, for example [yarGen](https://github.com/Neo23x0/yarGen) will analyze a malware file and create a starting point for a YARA rule that doesn’t include known-good strings. Be sure to read the README and attached blog posts before using the tool.
+Il convient de garder à l'esprit, lorsque vous travaillez avec YARA, que vous devez vous assurer que votre règle est exempte de faux positifs. Par exemple, une règle correspondant à « Ce programme ne peut pas être exécuté en mode DOS » correspondrait à tous les exécutables d'un système Windows. Après avoir créé vos règles YARA pour certains logiciels malveillants, il peut être judicieux de les exécuter dans quelques systèmes (espérons-le) non infectés pour vous assurer qu'ils n'identifient pas les fichiers non malveillants. Il existe des outils permettant de créer des règles YARA, par exemple [yarGen](https://github.com/Neo23x0/yarGen) analysera un fichier de logiciel malveillant et créera un point de départ pour une règle YARA qui n'inclura pas de chaînes connues. Assurez-vous de lire le fichier README et les articles de blog joints avant d'utiliser l'outil.
 
-Server Identifiers
+#### Identifiants de serveur
 
-Often malware will contact a remote command and control server to receive instructions, download later malware stages, etc. If it’s possible to predict what servers the malware will contact (for example, it’s coded into the binary), then it’s possible to create IoCs that identify malicious network traffic. Some examples might be:
+Souvent, les logiciels malveillants contactent un serveur de commande et de contrôle à distance pour recevoir des instructions, télécharger les étapes ultérieures du logiciel malveillant, etc. S'il est possible de prédire quels serveurs le logiciel malveillant contactera (p. ex., il est codé en binaire), il est alors possible de créer des IoC qui identifient le trafic réseau malveillant. Voici quelques exemples :
 
-- The IP address of a server or of some servers
-- One or more server hostnames
-- Port numbers that the malware uses when connecting to the server (eight by themselves or in conjunction with IP addresses or host names)
-- URLs or URL fragments that the malware requests
+- L'adresse IP d'un serveur ou de certains serveurs
+- Un ou plusieurs noms d'hôtes de serveur
+- Numéros de port utilisés par le logiciel malveillant lors de la connexion au serveur (huit par lui-même ou en conjonction avec des adresses IP ou des noms d'hôtes)
+- URL ou fragments d'URL demandés par le logiciel malveillant
 
-Server identifiers are similar to file hashes in that they’re quite simple but also quite brittle. However, like file hashes, they’re also surprisingly effective.
+Les identifiants de serveur sont similaires aux hachages de fichiers en ce sens qu'ils sont assez simples, mais également fragiles. Cependant, au même titre que les hachages de fichiers, ils sont également étonnamment efficaces.
 
-## Snort Rules
+#### Règles Snort
 
-If server identifiers are like file hashes for network traffic, then Snort rules are like YARA rules for traffic. Snort is an open-source intrusion detection system, and has a mature and widely used rules engine. Snort rules are more complicated than YARA rules, but are still fairly manageable. [The official documentation](https://docs.snort.org/start/rules) can be fairly daunting, but most rules are fairly simple. [This page](https://www.sapphire.net/security/snort-rules-examples/) describes the structure of Snort rules and provides some simple examples. Finally, [here’s a set of Snort rules](https://github.com/abhinavbom/Snort-Rules/blob/master/malware.rules) for some real malware.
+Si les identifiants de serveur sont comme des hachages de fichiers pour le trafic réseau, alors les règles Snort sont comme les règles YARA pour le trafic. Snort est un système de détection d'intrusion open source qui dispose d'un moteur de règles mature et largement utilisé. Les règles Snort sont plus compliquées que les règles YARA, mais sont toujours assez gérables. La [documentation officielle](https://docs.snort.org/start/rules) peut être assez intimidante, mais la plupart des règles sont assez simples. [Cette page](https://www.sapphire.net/security/snort-rules-examples/) décrit la structure des règles Snort et fournit quelques exemples simples. Enfin, [voici un ensemble de règles Snort](https://github.com/abhinavbom/Snort-Rules/blob/master/malware.rules) pour certains vrais logiciels malveillants.
 
-As with YARA rules, it can be quite easy to accidentally create false positives. Consider capturing a few days worth of your network traffic and running any Snort rules you create against those packet captures.
+Comme avec les règles YARA, il peut être assez facile de créer accidentellement de faux positifs. Envisagez de capturer quelques jours de votre trafic réseau et d'exécuter toutes les règles Snort que vous créez par rapport à ces captures de paquets.
 
-## Choosing appropriate IoCs
+### Choisir les IoC appropriés
 
-When thinking about creating IoCs, you want to consider what’s intrinsic to the malware in general, versus what’s specific to the sample that you analyzed. Here are a few examples:
+Lorsque vous envisagez de créer des IoC, vous devez considérer ce qui est intrinsèque au logiciel malveillant en général, par rapport à ce qui est spécifique à l'échantillon que vous avez analysé. Voici quelques exemples :
 
-- If the stage 1 of the malware is a PDF that contains personalized content for the victim but then also an exploit that downloads and installs a second stage, then it would be inappropriate to use a file hash of the PDF. Instead, you’d want to create a YARA rule that identifies the exploit code in the PDF.
-- If a piece of malware re-uses parts of some existing, well-known malware but then also has a novel component, you’d want to create your IoCs including the new component. This will prevent misclassification.
-- If the malware ships with a configuration setting for what server it connects to, it would be inappropriate to create an IoC using that server, as different campaigns will likely use different servers.
-- If the malware’s C&C server is identified by hostname in the malware, then creating a network detection rule based on an IP address would lead to both false positives and false negatives. Instead, the network rule should use the hostname.
+- Si l'étape 1 du logiciel malveillant est un PDF qui contient du contenu personnalisé pour la victime, mais aussi une exploitation de faille qui télécharge et installe une deuxième étape, il serait inapproprié d'utiliser un hachage de fichier du PDF. Au lieu de cela, vous pourriez créer une règle YARA qui identifie le code d'exploitation dans le PDF.
+- Si un logiciel malveillant réutilise des parties de certains logiciels malveillants existants bien connus, mais possède également un nouveau composant, vous devez créer vos IoC, y compris le nouveau composant. Cela évitera les erreurs de classification.
+- Si le logiciel malveillant est livré avec un paramètre de configuration pour le serveur auquel il se connecte, il serait inapproprié de créer un IoC à l'aide de ce serveur, car différentes campagnes utiliseront probablement des serveurs différents.
+- Si le serveur C&C du logiciel malveillant est identifié par le nom d'hôte dans le logiciel malveillant, la création d'une règle de détection réseau basée sur une adresse IP entraînerait à la fois des faux positifs et des faux négatifs. Au lieu de cela, la règle réseau doit utiliser le nom d'hôte.
 
-## Creating a Report
+### Créer un rapport
 
-At this point, you should know how you acquired the malware, what it does, and how to detect it. [This article](https://zeltser.com/malware-analysis-report/) breaks down some of the things that a great malware analysis report should contain, and [this blog post by a SANS instructor](https://www.sans.org/blog/writing-malware-reports/) provides some advice for the overall report. Also, it’s great to explain your thought process in narrative sections. This can both be both educational for folks getting started in malware analysis, and also help more experienced malware investigators help you in case you missed something.
+À ce stade, vous devez savoir comment vous avez acquis le logiciel malveillant, ce qu'il fait et comment le détecter. [Cet article](https://zeltser.com/malware-analysis-report/) détaille certaines des choses qu'un excellent rapport d'analyse de logiciels malveillants devrait contenir, et [cet article de blog par un instructeur SANS](https://www.sans.org/blog/writing-malware-reports/) fournit quelques conseils pour le rapport global. En outre, il est bon d'expliquer votre processus de pensée dans des sections narratives. Cela peut être à la fois éducatif pour les gens qui commencent à analyser les logiciels malveillants, et également aider les enquêteurs de logiciels malveillants plus expérimentés à vous aider au cas où vous auriez manqué quelque chose.
 
-Attributing malware to a particular threat actor is a popular activity among malware analysts. However, it is difficult to get accurate results. Don’t feel as if you need to perform attribution if you’re not sure, the most important thing is publishing IoCs.
+L'attribution de logiciels malveillants à un acteur de menace particulier est une activité populaire parmi les analystes de logiciels malveillants. Cependant, il est difficile d'obtenir des résultats précis. Ne vous obligez pas à effectuer l'attribution si vous avez des doutes, la chose la plus importante est la publication des IoC.
 
-In the Detecting, Investigating and Tracking Malicious Infrastructure learning path, we’ve also[ created a section on write-ups and reports](https://docs.google.com/document/d/1Qhka7uQYCBye-EQRQrrETo-ptik2yDAGDZg5DrncYF4/edit) that could be of help.
+Dans le parcours d'apprentissage Détection, enquête et suivi des infrastructures malveillantes, nous avons également [créé une section sur les articles et les rapports](https://docs.google.com/document/d/1Qhka7uQYCBye-EQRQrrETo-ptik2yDAGDZg5DrncYF4/edit) qui pourraient être utiles.
 
-The following public blog posts might give you some inspiration for your own reports. All of them use different tones and formats but all also contain IoCs.
+Les articles de blog publics suivants pourraient vous inspirer pour vos propres rapports. Tous utilisent des tons et des formats différents, mais tous contiennent également des IoC.
 
-- [Amnesty Tech's IoCs for novel Android malware](https://github.com/AmnestyTech/investigations/tree/master/2023-03-29_android_campaign)
-- [Citizen Lab's post on QuaDream’s Exploits](https://citizenlab.ca/2023/04/spyware-vendor-quadream-exploits-victims-customers/)
-- [Human Rights Watch's investigation report of a phishing campaign](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians)
-- [Bellingcat's investigation into a phishing campaign targeting ProtonMail users](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/)
-- [EFF's report on a new Bandook version](https://www.eff.org/deeplinks/2023/02/uncle-sow-dark-caracal-latin-america)
-- [Analysis of the MirageFox ransomware](https://github.com/saasthavasan/Malware-Analysis-Reports/tree/master/MirageFox/Report)
-- [Analysis of the Windows data stealer called Krown](https://github.com/albertzsigovits/malware-notes/tree/master/Stealer-Windows-Krown)
+- [Les IoC d'Amnesty Tech pour les nouveaux logiciels malveillants Android](https://github.com/AmnestyTech/investigations/tree/master/2023-03-29_android_campaign)
+- [Article de Citizen Lab sur les exploitations de failles de QuaDream](https://citizenlab.ca/2023/04/spyware-vendor-quadream-exploits-victims-customers/)
+- [Rapport d'enquête de Human Rights Watch sur une campagne d'hameçonnage](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians)
+- [L'enquête de Bellingcat sur une campagne d'hameçonnage ciblant les utilisateurs de ProtonMail](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/)
+- [Rapport de l'EFF sur une nouvelle version de Bandook](https://www.eff.org/deeplinks/2023/02/uncle-sow-dark-caracal-latin-america)
+- [Analyse du rançongiciel MirageFox](https://github.com/saasthavasan/Malware-Analysis-Reports/tree/master/MirageFox/Report)
+- [Analyse du voleur de données Windows appelé Krown](https://github.com/albertzsigovits/malware-notes/tree/master/Stealer-Windows-Krown)
 
-## Sharing the Report
+### Partage du rapport
 
-Once you’ve created a report, there are a few things you can do with it:
+Une fois que vous avez créé un rapport, vous pouvez en faire plusieurs choses :
 
-- Share it with your fellow civil society digital defenders
-- Publish it to the world
-- Share malware samples with anti-malware companies
+- Le partager avec vos collègues défenseurs numériques de la société civile
+- Le publier dans le domaine public
+- Partager des échantillons du logiciel malveillant avec des sociétés de lutte contre les logiciels malveillants
 
-You can do any, all, or even none of these things. If you were working with a client whose device was compromised, you will of course need to ensure that they’re comfortable with you sharing the report. It is best to get their approval in writing.
+Vous pouvez faire tout, partie ou même aucune de ces choses. Si vous travaillez avec un client dont l'appareil a été compromis, vous devez bien sûr vous assurer qu'il est d'accord avec le partage du rapport. Il est préférable d'obtenir son approbation écrite.
 
-If you are a member of an organization like [CiviCERT](https://www.civicert.org/), that’s a great place to share your findings. The other members are likely to read your report, provide feedback, and take action on it.
+Si vous êtes membre d'une organisation comme [CiviCERT](https://www.civicert.org/), c'est un excellent endroit pour partager vos conclusions. Les autres membres pourront ainsi lire votre rapport, fournir des commentaires et prendre des mesures.
 
-You can also publish your findings on your blog or somewhere like GitHub. This requires little effort, but also can be limited in its impact. However, your report may be invaluable to someone who searches the internet for a file’s SHA hash or a server identifier.
+Vous pouvez également publier vos résultats sur votre blog ou sur un autre site comme GitHub. Cela demande peu d'efforts, mais peut aussi être limité dans son impact. Cependant, votre rapport peut s'avérer précieux pour ceux qui cherchent sur Internet le hachage SHA d'un fichier ou d'un identifiant de serveur.
 
-Lastly, if you have malware samples, you can submit them to the major antivirus companies. They are unlikely to read a report, but they may analyze the malware and include signatures in their product. For more information on submitting malware, [this page provides links to the submission information for various companies](https://www.thewindowsclub.com/malware-submission-where-to-submit-malware-and-suspicious-files-to-microsoft).
+Enfin, si vous avez des échantillons de logiciels malveillants, vous pouvez les soumettre aux principales sociétés d'antivirus. Il est peu probable qu'elles lisent le rapport, mais elles pourront analyser le logiciel malveillant et inclure des signatures dans leurs produits. Pour obtenir plus d'informations sur la soumission de logiciels malveillants, [cette page fournit des liens vers les informations de soumission de diverses entreprises](https://www.thewindowsclub.com/malware-submission-where-to-submit-malware-and-suspicious-files-to-microsoft).
 
-## Learning Resources
+## Exercice pratique
 
-{{% resource title="What is hashing and how does it work?" languages="English" cost="Free" description="Introduction to file hashes and their role in malware detection." url="https://www.sentinelone.com/cybersecurity-101/hashing/" %}}
+Répondez à la question 7.3 et complétez l'exercice 7.3 du [guide d'intervention sur le terrain](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf).
 
-{{% resource title="YARA" languages="English" cost="Free" description="Official homepage of YARA, used for pattern matching in malware research." url="https://virustotal.github.io/yara/" %}}
+## Contrôle de compétence
 
-{{% resource title="Threat hunting 101 with Yara rules" languages="English" cost="Free" description="Using YARA rules to detect malicious files." url="https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674" %}}
+Discutez avec votre mentor ou votre pair de la façon dont vous traiteriez chacune de ces adresses IP dans vos rapports sur les logiciels malveillants. Certains d'entre eux font-ils de meilleures IoC que d'autres ?
 
-{{% resource title="yarGen" languages="English" cost="Free" description="Tool to automate string generation for YARA rules." url="https://github.com/Neo23x0/yarGen" %}}
+- Une adresse IP sur Amazon Web Services hébergeant des logiciels malveillants
+- Une adresse IP d'un nœud de sortie Tor
+- Une adresse IP résidentielle sondant un site Web à la recherche de vulnérabilités
+- Une adresse IP sur un réseau de diffusion de contenu (CDN), tel que Cloudflare
 
-{{% resource title="Snort rules" languages="English" cost="Free" description="Introduction to Snort rules for network intrusion detection." url="https://docs.snort.org/start/rules" %}}
+## Ressources d'apprentissage
 
-{{% resource title="Snort rules examples and usage" languages="English" cost="Free" description="Examples of Snort rules for beginners." url="https://www.sapphire.net/security/snort-rules-examples/" %}}
+{{% resource title="Qu'est-ce que le hachage et comment fonctionne-t-il ?" description="Une brève introduction au sujet des hachages de fichiers et du rôle qu'ils jouent dans la détection et l'investigation des logiciels malveillants" languages="Anglais" cost="Gratuit" url="https://www.sentinelone.com/cybersecurity-101/hashing/" %}}
+{{% resource title="YARA" description="La page d'accueil officielle de l'outil YARA, qui est utilisé pour la correspondance des modèles, principalement lors de la recherche de logiciels malveillants" languages="Anglais" cost="Gratuit" url="https://virustotal.github.io/yara/" %}}
+{{% resource title="Détection des menaces 101 avec les règles Yara" description="Cet article explique comment créer et utiliser les règles YARA pour détecter les fichiers malveillants." languages="Anglais" cost="Gratuit" url="https://medium.com/@laroshkhanpk/threat-hunting-101-hunting-with-yara-rules-82aff0898674" %}}
+{{% resource title="yarGen" description="Un outil qui peut automatiser la génération de chaînes pour les règles YARA" languages="Anglais" cost="Gratuit" url="https://github.com/Neo23x0/yarGen" %}}
+{{% resource title="Règles Snort" description="La meilleure façon d'envisager Snort est de le décrire comme étant similaire à YARA, mais pour les réseaux, en utilisant des modèles pour détecter et arrêter les intrusions. Cet article introduit quelques règles de base à ce sujet." languages="Anglais" cost="Gratuit" url="https://docs.snort.org/start/rules" %}}
+{{% resource title="Exemples et utilisation des règles Snort" description="Quelques bonnes règles pour ceux qui débutent avec Snort" languages="Anglais" cost="Gratuit" url="https://www.sapphire.net/security/snort-rules-examples/" %}}
+{{% resource title="Éléments à inclure dans un rapport d'analyse de logiciel malveillant" description="Une liste des principales choses à faire que vous devez garder à l'esprit et noter lors de la création d'un rapport d'analyse de logiciel malveillant en vue de son partage avec d'autres utilisateurs" languages="Anglais" cost="Gratuit" url="https://zeltser.com/malware-analysis-report/" %}}
+{{% resource title="Rédaction de rapports sur les logiciels malveillants" description="Un guide plus ancien (2012), mais toujours très utile par SANS sur les meilleures pratiques lors de la rédaction de rapports sur les logiciels malveillants" languages="Anglais" cost="Gratuit" url="https://www.sans.org/blog/writing-malware-reports/" %}}
 
-{{% resource title="What to include in a malware analysis report" languages="English" cost="Free" description="Guide on essential elements for a malware analysis report." url="https://zeltser.com/malware-analysis-report/" %}}
-
-{{% resource title="Writing malware reports" languages="English" cost="Free" description="Guide on best practices for writing malware reports." url="https://www.sans.org/blog/writing-malware-reports/" %}}
-
-## Practice
-
-Answer question 7.3 and complete exercise 7.3 from [the field guide to incident response](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf).
-
-## Skill Check
-
-Discuss with your mentor or peer how you would handle each of those IP addresses in your malware reports. Do some of them make for better IoCs than others?
-
-- An IP address on Amazon Web Services hosting malware
-- An IP address of a Tor exit node
-- A residential IP address probing a website for vulnerabilities
-- An IP address on a content-delivery network (CDN), such as Cloudflare
