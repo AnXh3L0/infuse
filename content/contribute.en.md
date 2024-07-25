@@ -35,7 +35,7 @@ while i < len(target):
 
 {{< / highlight >}}
 
-{{< highlight shell-session >}}
+{{< highlight awk >}}
 
 awk '$3 > 10 {print $1, $3}' example.txt
 

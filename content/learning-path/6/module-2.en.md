@@ -220,7 +220,7 @@ Logging the identity of a logged-in user can be dangerous, but there are steps t
 
 ## Practice
 
-Read through the following example commands which use common Unix tools like `awk`, `sort`, `uniq`, and `grep `to perform the analysis on Apache and Nginx logs.
+Read through the following example commands which use common Unix tools like `awk`, `sort`, `uniq`, and `grep` to perform the analysis on Apache and Nginx logs.
 
 ### A brief introduction to Unix text analysis tools
 
@@ -447,7 +447,7 @@ We will use the `grep` command to search for the specified pattern in text. For 
 
 `grep 'abcd'` will filter all lines containing the string “abcd”.
 
-The “`-E`” option in the `grep `command enables the use of extended regular expressions for pattern matching `grep -E 'abcd\[0-9]{2}'` for filtering text like `abcd\34, abcd\47` etc.
+The “`-E`” option in the `grep` command enables the use of extended regular expressions for pattern matching `grep -E 'abcd\[0-9]{2}'` for filtering text like `abcd\34, abcd\47` etc.
 
 ### Practice exercise 4: using regular expressions (regexes)
 
