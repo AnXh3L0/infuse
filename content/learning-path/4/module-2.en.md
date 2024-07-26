@@ -34,7 +34,7 @@ Mechanically, this attack works by a web application receiving user data, and th
 
 This rather un-fancy web page has the following HTML code:
 
-{{ highlight html}}
+{{ highlight html }}
 <html><body><form>
   Name: <input name="disp_name"><br>
   <input type="submit">
@@ -47,7 +47,7 @@ When it receives a name from the user, it displays it in the form:
 
 using the following HTML:
 
-{{ highlight html}}
+{{ highlight html }}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><br>
   <input type="submit">
@@ -56,7 +56,7 @@ using the following HTML:
 
 So far so good. Now, what happens if the user enters some more tricky input, like:
 
-{{ highlight html}}
+{{ highlight html }}
 Alice"><script>alert("Owned by Alice")</script><i q="
 {{ / highlight }}
 
@@ -66,13 +66,13 @@ When the web page is generated, it looks a bit different:
 
 How did this happen? Let’s use some color to highlight what’s going on. Remember, the web application is just treating the user input as text, it has no idea about the colors.
 
-{{ highlight html}}
+{{ highlight html }}
 Alice"><script>alert("Owned by Alice")</script><i q="
 {{ / highlight }}
 
 The application simply takes the input from the user and places it verbatim into the HTML it generates, from the point of the view of the web application, and the web browser, it’s all just undifferentiated text.
 
-{{ highlight html}}
+{{ highlight html }}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><script>alert("Owned by
     Alice")</script><i q=""><br>
@@ -82,7 +82,7 @@ The application simply takes the input from the user and places it verbatim into
 
 Note the `">` in red. That tells the browser that the HTML input’s value attribute is completed, and then that the input tag is completed. Next, the text in blue is a script tag that runs the JavaScript that pops up an alert box. Finally, the `&lt;i q="` is just some cleanup that prevents the web page from displaying the remnants of the original input tag. We can use different color highlighting and formatting to show how the browser interprets the generated web page:
 
-{{ highlight html}}
+{{ highlight html }}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><script>alert("Owned by
     Alice")</script>
@@ -103,7 +103,7 @@ Log into your DVWA and make sure the security level is set to low (see the “Se
 
 To prevent XSS, the best technique to use is called output encoding. Note that in the above example, the attack was enabled through the use of the `"` and `>` characters. In the context of a web page, those characters control the structure of the page. In HTML, all such characters can be encoded, so that the web browser knows to display a double-quote or angle bracket, as opposed to modifying the structure of the page. In this case, if Alice’s data was output encoded before being integrated into the web page, it would generate the following HTML
 
-{{ highlight html}}
+{{ highlight html }}
 <html><body><form>
   Name: <input name="disp_name" value="Alice&quot;&gt;&lt;script&gt;alert(&quot;Owned by Alice&quot;)&lt;/script&gt;&lt;i q=&quot;"><br>
   <input type="submit">
@@ -126,13 +126,13 @@ Since the attacker-controlled SQL is run in the server environment, SQL injectio
 
 How does SQL injection work? Consider a web application, where there’s a ticketing platform that lists the name, description, and version of each tool in a category. The user would also be submitting an id parameter; this might even be contained in the URL of the page making the request. Perhaps the code that generates the SQL that retrieves this data looks something like:
 
-{{ highlight sql}}
+{{ highlight sql }}
 $sql = 'select productid, name, description, version from products where categoryid='+request_params['id']
 {{ / highlight }}
 
 When a user sends an `id` parameter like 1 or 32, all is well, we get a query like:
 
-{{ highlight sql}}
+{{ highlight sql }}
  select toolid, name, description, version
    from tools
   where categoryid=32
@@ -140,7 +140,7 @@ When a user sends an `id` parameter like 1 or 32, all is well, we get a query li
 
 However, the trouble starts when a curious user sends an `id` of 2-1, and notes that they get the same results as for an `id` of 1:
 
-{{ highlight sql}}
+{{ highlight sql }}
  select toolid, name, description, version
    from tools
   where categoryid=2-1
@@ -148,7 +148,7 @@ However, the trouble starts when a curious user sends an `id` of 2-1, and notes 
 
 This shows the attacker that the application is vulnerable to SQL injection. It is interpreting their input as code (executing the expression 2-1) instead of data (looking for a category whose ID is literally “2-1”). After a bit of digging around, they send an `id` of `-1 union all select 1, username, password, 1.0 from admin_users`. This results in a SQL query of
 
-{{ highlight sql}}
+{{ highlight sql }}
  select toolid, name, description, version
    from tools
   where toolid=-1
@@ -179,7 +179,7 @@ Consider an application that keeps some data on the filesystem instead of a data
 
 `&lt;?`
 
-{{ highlight html}}
+{{ highlight html }}
 function localize($content, $lang) {
 	return fread("../config/lang/"+$lang+"/"+$content);
 }
@@ -194,7 +194,7 @@ Note that it takes parameters from the URL string and uses them to read files of
 
 When you load up [http://www.example.com/?hl=en-us&pg=main](http://www.example.com/?hl=en-us&pg=main), the server looks for `../config/lang/en-us/main.title` and `../config/lang/en-us/main`. Perhaps the resulting HTML looks like this:
 
-{{ highlight html}}
+{{ highlight html }}
 <html>
 <head><title>Cool site: Main</title></head>
 <body><h1>Hello, world!</h1></body>
@@ -203,7 +203,7 @@ When you load up [http://www.example.com/?hl=en-us&pg=main](http://www.example.c
 
 Now, what happens if instead, we visit [http://www.example.com/?hl=../../../../../../../../&pg=../etc/passwd](http://www.example.com/?hl=../../../../../../../../&pg=../etc/passwd)? The site will look for `../config/lang/../../../../../../../../&pg=../etc/passwd.title` and `../config/lang/../../../../../../../../&pg=../etc/passwd`. It’s unlikely to find the first one, but assuming the server ignored the error, we might get a web page that looks like:
 
-{{ highlight html}}
+{{ highlight html }}
 <html>
 <head><title></title></head>
 <body>nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false
@@ -266,7 +266,7 @@ Shell injection is similar to path injection, in that it involves the applicatio
 
 Consider an application that allows users to check network connectivity to other systems from the web server. Here’s some code for a minimal PHP page that does this:
 
-{{ highlight html}}
+{{ highlight html }}
 <html>
 <head><title>Network connectivity check</title></head>
 <body>
@@ -282,12 +282,12 @@ Consider an application that allows users to check network connectivity to other
 ?>
 </body>
 </html>
-{{ / highlight}}
+{{ / highlight }}
 
 
 If the users enters “8.8.8.8”, the page uses the shell_exec function to run the command `ping -c 3 8.8.8.8`, and the resulting HTML looks something like this:
 
-{{ highlight html}}
+{{ highlight html }}
 <html>
 <head><title>Network connectivity check</title></head>
 <body>
@@ -307,11 +307,11 @@ If the users enters “8.8.8.8”, the page uses the shell_exec function to run 
 round-trip min/avg/max/stddev = 7.266/9.476/12.481/2.202 ms</pre>
 </body>
 </html>
-{{ / highlight}}
+{{ / highlight }}
 
 Super handy! However, what will happen if the user enters “`8.8.8.8; ls -1 /`” instead? The shell command run will be `ping -c 3 8.8.8.8; ls -1 /`, and the resulting web page will look something like:
 
-{{ highlight html}}
+{{ highlight html }}
 <html>
 <head><title>Network connectivity check</title></head>
 <body>
@@ -347,7 +347,7 @@ usr
 var</pre>
 </body>
 </html>
-{{ / highlight}}
+{{ / highlight }}
 
 What happened? The shell saw the command to ping 8.8.8.8, and then a semicolon. In most Unix-like shells, the semicolon command separates individual commands that are run together on one line. So, the shell ran the ping command, then ran the next command, to list the root directory contents. It gathered the output of both commands, and then returned those results to the web server.
 
