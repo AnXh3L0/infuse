@@ -1,55 +1,53 @@
 ---
 style: introduction
 title: Introduction
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: COMMENCEZ ICI. Lisez la présentation du parcours d'apprentissage, les objectifs, les menaces associées et les prérequis.
 weight: 1
 ---
 
-## Overview
+## Présentation
 
-This learning path will prepare you to start on the journey of analyzing malware. Note that this is one of the hardest areas of security to master, but incremental progress will give results. The general goal of malware analysis is to characterize new malware, both brand new malware and variants of existing ones. The desired end result is a characterization of the capabilities of the malware, a guess at what threat actor(s) is using it, and a set of IoCs (indicators of compromise) that will allow others to detect the malware.
+Ce parcours d'apprentissage vous préparera à vous lancer dans l'aventure de l'analyse des logiciels malveillants. Notez qu'il s'agit de l'un des domaines de sécurité les plus difficiles à maîtriser, mais où vos avancées progressives donneront des résultats. L'objectif général de l'analyse des logiciels malveillants est de caractériser les nouveaux logiciels malveillants et les variantes existantes. Le résultat final souhaité est une caractérisation des capacités du logiciel malveillant, une estimation de l'utilisation qu'en font les acteurs des menaces, et un ensemble d'IoC (indicateurs de compromission) qui permettront aux autres intervenants de détecter le logiciel malveillant.
 
-A few things to keep in mind as you go through this learning path:
+Voici quelques points à garder à l'esprit au cours de votre parcours d'apprentissage :
 
-- Take the prerequisites seriously. You must have a solid base of knowledge to build on.
-- This learning path covers two platforms (Windows, Android). It’s probably best to focus on one platform at once. Although the general concepts apply across all platforms, the specific techniques and tools can differ greatly. If you don’t have much reverse engineering and low-level debugging experience, we recommend getting started with Windows, because there are many more resources for Windows program analysis.
-- Don’t be afraid to ask for help. Organizations like CiviCERT can help you connect with others who can collaborate with you in analyzing novel malware.
+- Ne négligez pas les prérequis. Vous devez avoir une base de connaissances solide sur laquelle vous développer.
+- Ce parcours d'apprentissage couvre deux plateformes (Windows et Android). Il est probablement préférable de vous concentrer sur une plateforme à la fois. Bien que les concepts généraux s'appliquent à toutes les plateformes, les techniques et les outils spécifiques peuvent différer considérablement. Si vous n'avez pas beaucoup d'expérience en rétro-ingénierie et en débogage de bas niveau, nous vous recommandons de commencer avec Windows, car un plus grand nombre de ressources sont disponibles pour l'analyse de programmes Windows.
+- N'ayez pas peur de demander de l'aide. Des organisations comme CiviCERT peuvent vous aider à communiquer avec d'autres personnes qui peuvent collaborer avec vous pour analyser de nouveaux logiciels malveillants.
 
-## Objective
+## Objectif
 
-Practitioners will learn how to:
+Les participants apprendront à :
 
-- Set up a malware analysis environment
-- Distinguish between different types of files
-- Conduct basic dynamic analysis in a sandbox
-- Conduct basic static analysis
-- Write up findings and share indicators of compromise
+- Configurer un environnement d'analyse de logiciels malveillants
+- Distinguer les différents types de fichiers
+- Effectuer une analyse dynamique de base dans un bac à sable
+- Effectuer une analyse statique de base
+- Rédiger les conclusions et partager les indicateurs de compromission
 
-## What threats does this skill mitigate or respond to?
+## Quelles menaces cette compétence permet-elle d'atténuer ou de gérer ?
 
-Device compromises and data exfiltration through desktop and mobile malware
+Compromission de l'appareil et exfiltration des données via des logiciels malveillants d'ordinateurs et appareils mobiles
 
-## What are the prerequisites?
+## Quels sont les prérequis ?
 
-This learning path is an advanced one. Prior to undertaking it, learners should:
+Ce parcours d'apprentissage est avancé. Avant de l'entreprendre, les apprenants doivent :
 
-- Complete the _Detecting Malware_ learning path, which covers the fundamentals of malware. Typically, you would only use the information you will learn below to perform further analysis on suspected malware that was not detected using existing IoCs, so this learning path can be viewed as a continuation of Detecting Malware.
-- Complete the _[Investigating, Tracking, Detecting Malicious Infrastructure](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit) learning path_, which teaches fundamentals about DNS, email, and HTTP that you will need to understand malware behavior
-- Based on both the platform and malware you’re analyzing, you are likely to need some programming and operating system knowledge. In addition to basic command line skills, you will need to know a bit about the programming languages and security architectures present on major operating systems. Examples may include C/C++ and x86 assembly for Windows, Java or Kotlin for Android, etc.
-- (optional) Depending on the malware, you might also need to be able to read scripting languages such as Perl, PowerShell, bash, etc. The sections for each platform should include links to some resources to support this, but you may need to do research and study outside of the learning path depending on what you’re analyzing.
+- Terminer le parcours d'apprentissage sur la _Détection des logiciels malveillants_, qui présente les principes fondamentaux des logiciels malveillants. En règle générale, vous utiliserez uniquement les informations que vous apprendrez ci-dessous pour effectuer une analyse plus approfondie des logiciels malveillants suspects qui n'ont pas été détectés à l'aide d'IoC existants, de sorte que ce parcours d'apprentissage peut être considéré comme une continuation de la détection des logiciels malveillants.
+- Terminer le parcours d'apprentissage [_Détection, enquête et suivi des infrastructures malveillantes_](https://docs.google.com/document/d/13if8JvR_TsGxja0Il48NBM-S1LKs29w_R_3LxxiLxS4/edit), qui enseigne les bases du DNS, du courrier électronique et du HTTP dont vous aurez besoin pour comprendre le comportement des logiciels malveillants.
+- En fonction de la plateforme et des logiciels malveillants que vous analysez, vous aurez probablement besoin de connaissances en programmation et en système d'exploitation. En plus des compétences de base en ligne de commande, vous devrez avoir certaines connaissances concernant les langages de programmation et les architectures de sécurité utilisées par les principaux systèmes d'exploitation. Les exemples peuvent inclure C/C++ et l'assemblage x86 pour Windows, Java ou Kotlin pour Android, etc.
+- (facultatif) Selon le logiciel malveillant, vous devrez peut-être également pouvoir lire des langages de script tels que Perl, PowerShell, bash, etc. Les sections pour chaque plateforme devraient inclure des liens vers certaines ressources de soutien, mais vous devrez peut-être effectuer des recherches et des examens en dehors du cadre du parcours d'apprentissage selon ce que vous analysez.
 
-## What devices or software do you need for the exercises?
+## De quels appareils ou logiciels avez-vous besoin pour réaliser les exercices ?
 
-You will require a device which is powerful enough to run a virtual machine. We recommend using a machine with an x86 processor and at least 8GB of RAM.
+Vous aurez besoin d'un appareil suffisamment puissant pour exécuter une machine virtuelle. Nous vous recommandons d'utiliser une machine avec un processeur x86 et au moins 8 Go de mémoire RAM.
 
-You will require sufficient free disk space and bandwidth to be able to run and install a Linux virtual machine. While REMNux and Kali Linux are ideal, other distributions could also work, though they might require additional work with manually installing tools.
+Vous aurez besoin de suffisamment d'espace disque libre et de bande passante pour pouvoir exécuter et installer une machine virtuelle Linux. Bien que REMNux et Kali Linux soient des outils idéaux, d'autres distributions pourraient également fonctionner, même si elles peuvent nécessiter un travail supplémentaire avec des outils d'installation manuelle.
 
-If you already have your own malware analysis virtual machine environment set up, you can use it. If not, we will guide you through the setup process in subtopic 1.
+Si vous avez déjà configuré votre propre environnement de machine virtuelle pour l'analyse des logiciels malveillants, vous pouvez l'utiliser. Si ce n'est pas le cas, nous vous guiderons à travers le processus de configuration dans le sous-thème 1.
 
-## Related learning paths
+## Parcours d'apprentissage connexes
 
-We strongly recommend treating the Detecting Malware and Detecting, Tracking, Investigating Malicious Infrastructure learning paths as prerequisites to this one.
-Some malware is delivered as a web application or a browser exploit. Some of the skills covered in the Web Security Fundamentals learning path will help you with web-based malware analysis.
+Nous recommandons fortement de terminer les parcours d'apprentissage _Détection des logiciels malveillants_ et _Détection, enquête et suivi des infrastructures malveillantes_ à titre de conditions préalables à ce parcours.
+
+Certains logiciels malveillants sont livrés comme une application Web ou une exploitation de faille de navigateur. Certaines des compétences couvertes dans le parcours d'apprentissage _Principes fondamentaux de la sécurité sur le Web_ vous aideront à analyser les logiciels malveillants sur le Web.
