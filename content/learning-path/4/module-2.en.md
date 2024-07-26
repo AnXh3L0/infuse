@@ -33,7 +33,6 @@ Mechanically, this attack works by a web application receiving user data, and th
 ![alt_text](/media/uploads/image1.png "image_tooltip")
 
 This rather un-fancy web page has the following HTML code:
-
 {{< highlight html >}}
 <html><body><form>
   Name: <input name="disp_name"><br>
@@ -46,7 +45,6 @@ When it receives a name from the user, it displays it in the form:
 ![alt_text](/media/uploads/image2.png "image_tooltip")
 
 using the following HTML:
-
 {{< highlight html >}}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><br>
@@ -55,7 +53,6 @@ using the following HTML:
 {{< / highlight >}}
 
 So far so good. Now, what happens if the user enters some more tricky input, like:
-
 {{< highlight html >}}
 Alice"><script>alert("Owned by Alice")</script><i q="
 {{< / highlight >}}
@@ -65,13 +62,11 @@ When the web page is generated, it looks a bit different:
 ![alt_text](/media/uploads/image3.png "image_tooltip")
 
 How did this happen? Let’s use some color to highlight what’s going on. Remember, the web application is just treating the user input as text, it has no idea about the colors.
-
 {{< highlight html >}}
 Alice"><script>alert("Owned by Alice")</script><i q="
 {{< / highlight >}}
 
 The application simply takes the input from the user and places it verbatim into the HTML it generates, from the point of the view of the web application, and the web browser, it’s all just undifferentiated text.
-
 {{< highlight html >}}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><script>alert("Owned by
@@ -81,7 +76,6 @@ The application simply takes the input from the user and places it verbatim into
 {{< / highlight >}}
 
 Note the `">` in red. That tells the browser that the HTML input’s value attribute is completed, and then that the input tag is completed. Next, the text in blue is a script tag that runs the JavaScript that pops up an alert box. Finally, the `&lt;i q="` is just some cleanup that prevents the web page from displaying the remnants of the original input tag. We can use different color highlighting and formatting to show how the browser interprets the generated web page:
-
 {{< highlight html >}}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><script>alert("Owned by
@@ -102,7 +96,6 @@ Log into your DVWA and make sure the security level is set to low (see the “Se
 ### XSS Prevention
 
 To prevent XSS, the best technique to use is called output encoding. Note that in the above example, the attack was enabled through the use of the `"` and `>` characters. In the context of a web page, those characters control the structure of the page. In HTML, all such characters can be encoded, so that the web browser knows to display a double-quote or angle bracket, as opposed to modifying the structure of the page. In this case, if Alice’s data was output encoded before being integrated into the web page, it would generate the following HTML
-
 {{< highlight html >}}
 <html><body><form>
   Name: <input name="disp_name" value="Alice&quot;&gt;&lt;script&gt;alert(&quot;Owned by Alice&quot;)&lt;/script&gt;&lt;i q=&quot;"><br>
@@ -111,7 +104,6 @@ To prevent XSS, the best technique to use is called output encoding. Note that i
 {{< / highlight >}}
 
 which would display like this
-
 ![alt_text](/media/uploads/image5.png "image_tooltip")
 
 Output encoding is dependent on the context that the data will be used in. For HTML, you would encode HTML entities in the data. For data that was going to be included into a block of JavaScript, a different encoding would be used. If user data was going to be used in a database query yet another type of encoding would be used. Web frameworks and libraries should have functions to perform output encoding for you; it’s better to use those (hopefully) mature functions than to try to write them yourself from first principles.
@@ -125,13 +117,11 @@ Where XSS allows user data to escape from its context and be interpreted as HTML
 Since the attacker-controlled SQL is run in the server environment, SQL injection vulnerabilities are generally much more dangerous than XSS. While an XSS vulnerability allows an attacker to target other users, perhaps through some sort of social engineering, SQL injection can give the attacker read-write access to all user data on the site. The attacker can also read and write any other data stored in the database that the web application can assess. Frequently, the attacker can use the SQL access to gain the ability to run commands on the database server itself, gaining full remote access to the website’s back-end infrastructure.
 
 How does SQL injection work? Consider a web application, where there’s a ticketing platform that lists the name, description, and version of each tool in a category. The user would also be submitting an id parameter; this might even be contained in the URL of the page making the request. Perhaps the code that generates the SQL that retrieves this data looks something like:
-
 {{< highlight sql >}}
 $sql = 'select productid, name, description, version from products where categoryid='+request_params['id']
 {{< / highlight >}}
 
 When a user sends an `id` parameter like 1 or 32, all is well, we get a query like:
-
 {{< highlight sql >}}
  select toolid, name, description, version
    from tools
@@ -139,7 +129,6 @@ When a user sends an `id` parameter like 1 or 32, all is well, we get a query li
 {{< / highlight >}}
 
 However, the trouble starts when a curious user sends an `id` of 2-1, and notes that they get the same results as for an `id` of 1:
-
 {{< highlight sql >}}
  select toolid, name, description, version
    from tools
@@ -147,7 +136,6 @@ However, the trouble starts when a curious user sends an `id` of 2-1, and notes 
 {{< / highlight >}}
 
 This shows the attacker that the application is vulnerable to SQL injection. It is interpreting their input as code (executing the expression 2-1) instead of data (looking for a category whose ID is literally “2-1”). After a bit of digging around, they send an `id` of `-1 union all select 1, username, password, 1.0 from admin_users`. This results in a SQL query of
-
 {{< highlight sql >}}
  select toolid, name, description, version
    from tools
@@ -176,10 +164,8 @@ For a bit more on SQL injection, see [the OWASP guide on it](https://owasp.org/w
 This class of vulnerabilities involves the user sending a web application that subverts the application’s interactions with the filesystem. With this type of vulnerability, the attacker can influence or control the pathname of a file that the web application is reading from or writing to, potentially giving the attacker full access to any file that the web server can read or write. Depending on what’s stored on the web server, this may give different abilities to an attacker. However, popular targets are configuration files, which often contain credentials for databases and other external network services, and the source code to the application itself.
 
 Consider an application that keeps some data on the filesystem instead of a database. For example, a multilingual site that keeps localizations in files. Perhaps the home page code looks like this:
-
-`&lt;?`
-
 {{< highlight html >}}
+<?
 function localize($content, $lang) {
 	return fread("../config/lang/"+$lang+"/"+$content);
 }
@@ -193,7 +179,6 @@ function localize($content, $lang) {
 Note that it takes parameters from the URL string and uses them to read files off the filesystem, including their content in the page.
 
 When you load up [http://www.example.com/?hl=en-us&pg=main](http://www.example.com/?hl=en-us&pg=main), the server looks for `../config/lang/en-us/main.title` and `../config/lang/en-us/main`. Perhaps the resulting HTML looks like this:
-
 {{< highlight html >}}
 <html>
 <head><title>Cool site: Main</title></head>
@@ -202,7 +187,6 @@ When you load up [http://www.example.com/?hl=en-us&pg=main](http://www.example.c
 {{< / highlight >}}
 
 Now, what happens if instead, we visit [http://www.example.com/?hl=../../../../../../../../&pg=../etc/passwd](http://www.example.com/?hl=../../../../../../../../&pg=../etc/passwd)? The site will look for `../config/lang/../../../../../../../../&pg=../etc/passwd.title` and `../config/lang/../../../../../../../../&pg=../etc/passwd`. It’s unlikely to find the first one, but assuming the server ignored the error, we might get a web page that looks like:
-
 {{< highlight html >}}
 <html>
 <head><title></title></head>
@@ -265,7 +249,6 @@ For a bit more on path injection, see [the OWASP guide on it](https://owasp.org/
 Shell injection is similar to path injection, in that it involves the application’s interactions with the operating system. In this case, though, the application is directly executing a shell command or several commands, and it’s possible for an attacker to change what commands are executed. The impact of a shell injection is extremely high, allowing the attacker to run their own commands on the underlying web server hardware. Complete compromise of the web application is almost assured. Given time, compromise of other infrastructure in the server environment is likely.
 
 Consider an application that allows users to check network connectivity to other systems from the web server. Here’s some code for a minimal PHP page that does this:
-
 {{< highlight html >}}
 <html>
 <head><title>Network connectivity check</title></head>
@@ -286,7 +269,6 @@ Consider an application that allows users to check network connectivity to other
 
 
 If the users enters “8.8.8.8”, the page uses the shell_exec function to run the command `ping -c 3 8.8.8.8`, and the resulting HTML looks something like this:
-
 {{< highlight html >}}
 <html>
 <head><title>Network connectivity check</title></head>
@@ -310,7 +292,6 @@ round-trip min/avg/max/stddev = 7.266/9.476/12.481/2.202 ms</pre>
 {{< / highlight >}}
 
 Super handy! However, what will happen if the user enters “`8.8.8.8; ls -1 /`” instead? The shell command run will be `ping -c 3 8.8.8.8; ls -1 /`, and the resulting web page will look something like:
-
 {{< highlight html >}}
 <html>
 <head><title>Network connectivity check</title></head>

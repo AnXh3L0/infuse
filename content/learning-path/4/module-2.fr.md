@@ -176,9 +176,9 @@ This class of vulnerabilities involves the user sending a web application that s
 
 Consider an application that keeps some data on the filesystem instead of a database. For example, a multilingual site that keeps localizations in files. Perhaps the home page code looks like this:
 
-`&lt;?`
 
 ```
+<?
 function localize($content, $lang) {
 	return fread("../config/lang/"+$lang+"/"+$content);
 }
