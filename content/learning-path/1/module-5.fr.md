@@ -1,10 +1,11 @@
 ---
 style: module
 title: "Enquête passive : analyser les en-têtes d'e-mail"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Le sous-thème vous apprendra comment analyser les métadonnées
+  détaillées qui documentent l'origine d'un e-mail, les serveurs qu'il a
+  parcourus, les informations sur les contrôles de spam possibles et bien plus
+  encore. Ces métadonnées peuvent constituer un élément crucial de toute enquête
+  approfondie sur les e-mails potentiellement malveillants.
 weight: 5
 ---
 
@@ -53,41 +54,14 @@ Lisez les ressources et documents ci-dessous pour vous familiariser avec (ou ré
 - **(Avancé) **Familiarisez-vous avec les diverses techniques et mécanismes que les filtres antispam utilisent pour repérer les courriers indésirables et les adresses e-mail falsifiées.
   - Consultez la liste des modules disponibles (et des sélecteurs) pris en charge par RSPAMD [https://rspamd.com/doc/modules/](https://rspamd.com/doc/modules/)
 
-## Analyse des en-têtes
+## Section Principale
+###  Analyse des en-têtes
 
 [L'équipe GenCyber du Nebraska a créé un cours rapide et relativement complet sur les en-têtes d'e-mails](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers) : nous le recommandons à tous ceux qui veulent en savoir plus sur le sujet.
 
 En analysant les en-têtes, vous en apprendrez beaucoup sur les différents domaines impliqués dans la configuration de l'e-mail. Une fois que vous avez une liste de ces domaines, vous pouvez utiliser les mêmes outils que nous avons utilisés dans la section précédente (dig, whois, geoIP et autres) pour en savoir plus à leur sujet.
 
 Les administrateurs de systèmes qui utilisent des domaines de travail tels que Google Workspace et Microsoft 365 ont souvent accès à de puissants outils de journalisation et de recherche de journaux : ils peuvent les utiliser pour rechercher dans leurs systèmes des identifiants trouvés dans les en-têtes d'e-mails (tels que des domaines suspects), ce qui peut les aider à déterminer qui, le cas échéant, a été ciblé au sein de leur organisation. Consultez la documentation de [Google](https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA) et de [Microsoft](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring) sur la recherche dans les journaux. Notez que ces fonctionnalités de recherche sont généralement limitées aux comptes professionnels ou d'entreprise.
-
-## Learning Resources
-
-{{% resource title="Que sont les en-têtes d'e-mails?" description="Une bonne introduction aux en-têtes d'e-mails. Met en évidence trois groupes importants d'en-têtes d'e-mails. Comprend une liste de guides étape par étape pour différents MUA (agent utilisateur de messagerie)" languages="Anglais" cost="Gratuit\n[https://mailtrap.io/blog/email-headers/](https://mailtrap.io/blog/email-headers/)" %}}
-
-{{% resource title="Affichage des en-têtes d'e-mails complets" description="Comment afficher les en-têtes d'e-mails dans plusieurs systèmes de messagerie (Gmail, Outlook, Apple Mail, Thunderbird, etc.)" languages="Multiple" cost="Gratuit\n[https://support.google.com/mail/answer/29436?hl=en](https://support.google.com/mail/answer/29436?hl=en)" %}}
-
-{{% resource title="Vérification des en-têtes SPF à l'aide de l'outil dig" description="Cet article offre un guide rapide sur la façon de vérifier les en-têtes SPF à l'aide de dig, un outil installé sur la plupart des systèmes de type Unix." languages="Anglais" cost="Gratuit\n[https://easydmarc.com/tools/spf-lookup#how-to-check-spf-record-via-command-line-via-dig-tool](https://easydmarc.com/tools/spf-lookup#how-to-check-spf-record-via-command-line-via-dig-tool)" %}}
-
-{{% resource title="Comment consulter et lire un enregistrement Sender Policy Framework pour un domaine" description="Cet article montre comment consulter les en-têtes SPF en utilisant nslookup, un outil alternatif à dig, et décrit comment interpréter les résultats." languages="Anglais" cost="Gratuit\n[https://support.mailessentials.gfi.com/hc/en-us/articles/360015116520-How-to-check-and-read-a-Sender-Policy-Framework-record-for-a-domain](https://support.mailessentials.gfi.com/hc/en-us/articles/360015116520-How-to-check-and-read-a-Sender-Policy-Framework-record-for-a-domain)" %}}
-
-{{% resource title="Cours de l'équipe GenCyber du Nebraska sur les en-têtes d'e-mails" description="Un cours complet sur la façon d'analyser les en-têtes d'e-mails lors des enquêtes sur les cas potentiels d'hameçonnage" languages="Anglais" cost="Gratuit\nDes exemples d'exercices sont également présentés ici : [https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers](https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers)" %}}
-
-{{% resource title="Vérification des en-têtes d'e-mails dans Proton Mail" languages="Anglais" cost="Gratuit" url="[https://proton.me/support/check-email-headers](https://proton.me/support/check-email-headers)" %}}
-
-{{% resource title="Affichage des en-têtes d'e-mails sur Zoho" languages="Anglais" cost="Gratuit" url="[https://www.zoho.com/mail/help/mail-options.html#alink1](https://www.zoho.com/mail/help/mail-options.html#alink1)" %}}
-
-{{% resource title="Outils pour analyser les en-têtes d'e-mails" description="Nous établissons des liens vers quelques outils qui peuvent extraire et disséquer les en-têtes d'e-mails, ce qui s'avère essentiel pour toute analyse des e-mails potentiellement malveillants." languages="Anglais" cost="Gratuit\n[https://mxtoolbox.com/EmailHeaders.aspx](https://mxtoolbox.com/EmailHeaders.aspx)\n[https://github.com/keraattin/EmailAnalyzer](https://github.com/keraattin/EmailAnalyzer)\n[https://github.com/umair9747/headmail](https://github.com/umair9747/headmail)\n[https://github.com/cyberdefenders/email-header-analyzer](https://github.com/cyberdefenders/email-header-analyzer)" %}}
-
-{{% resource title="Introduction à l'usurpation d'adresses e-mail" description="Plusieurs articles décrivant les bases de l'usurpation d'adresses e-mail" languages="Multiple" cost="Gratuit\n[https://en.wikipedia.org/wiki/Email_spoofing](https://en.wikipedia.org/wiki/Email_spoofing)\n[https://docs.sendgrid.com/glossary/spoofing](https://docs.sendgrid.com/glossary/spoofing)\n[https://www.fortinet.com/resources/cyberglossary/email-spoofing](https://www.fortinet.com/resources/cyberglossary/email-spoofing)" %}}
-
-{{% resource title="Évaluation des en-têtes « reçus »" description="Comment utiliser les en-têtes d'e-mails pour trouver le serveur qui a envoyé l'e-mail" languages="Anglais" cost="Gratuit\n[https://www.techlicious.com/how-to/how-to-tell-if-email-has-been-spoofed/](https://www.techlicious.com/how-to/how-to-tell-if-email-has-been-spoofed/)" %}}
-
-{{% resource title="Analyse des en-têtes « reçus » potentiellement falsifiés" description="Comment repérer les faux en-têtes « reçus »" languages="Anglais" cost="Gratuit\n[https://luxsci.com/blog/analyzing-forged-email-message.html](https://luxsci.com/blog/analyzing-forged-email-message.html)\n[https://www.linkedin.com/pulse/anatomy-phishing-email-whats-header-penelope-raquel-bise-](https://www.linkedin.com/pulse/anatomy-phishing-email-whats-header-penelope-raquel-bise-)" %}}
-
-{{% resource title="Trouver des messages avec Email Log Search" description="Décrit comment les administrateurs de comptes d'entreprise et d'entreprise Google peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels et d'entreprise" url="[https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA](https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA)" %}}
-
-{{% resource title="Surveillance, rapports et suivi des messages dans Exchange Online" description="Décrit comment les administrateurs de comptes d'entreprise Microsoft peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels" url="[https://learn.microsoft.com/en-us/exchange/monitoring/monitoring](https://learn.microsoft.com/en-us/exchange/monitoring/monitoring)" %}}
 
 ## Pratique
 
@@ -96,3 +70,19 @@ Après avoir lu tous les documents du cours d'[analyse des en-têtes d'e-mails d
 ## Contrôle de compétence
 
 Cherchez un e-mail dans votre boîte de réception ou dossier spam. Vous pouvez également demander à un pair ou à un mentor de vous envoyer les en-têtes d'e-mails qu'il a récemment reçus. Analysez les en-têtes de l'e-mail en utilisant les mêmes techniques que celles décrites dans l'exercice pratique, y compris en les chargeant dans l'[outil d'en-tête d'e-mail Google Admin Toolbox](https://toolbox.googleapps.com/apps/messageheader/). Ensuite, répondez aux questions 1, 2, 3 et 5 décrites dans la [section d'enquête](https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#investigation) du cours d'analyse des en-têtes d'e-mails de l'équipe GenCyber du Nebraska, cette fois en utilisant les en-têtes de l'e-mail que vous avez trouvé, plutôt que l'e-mail joint au cours.
+
+## Ressources d'apprentissage
+
+{{% resource title="Que sont les en-têtes d'e-mails ?" description="Une bonne introduction aux en-têtes d'e-mails. Met en évidence trois groupes importants d'en-têtes d'e-mails. Comprend une liste de guides étape par étape pour différents MUA (agent utilisateur de messagerie)" languages="Anglais" cost="Gratuit" url="https://mailtrap.io/blog/email-headers/" %}}
+{{% resource title="Affichage des en-têtes d'e-mails complets" description="Comment afficher les en-têtes d'e-mails dans plusieurs systèmes de messagerie (Gmail, Outlook, Apple Mail, Thunderbird, etc.)" languages="Multiple" cost="Gratuit" url="https://support.google.com/mail/answer/29436?hl=en" %}}
+{{% resource title="Vérification des en-têtes SPF à l'aide de l'outil dig" description="Cet article offre un guide rapide sur la façon de vérifier les en-têtes SPF à l'aide de dig, un outil installé sur la plupart des systèmes de type Unix." languages="Anglais" cost="Gratuit" url="https://easydmarc.com/tools/spf-lookup#how-to-check-spf-record-via-command-line-via-dig-tool" %}}
+{{% resource title="Comment consulter et lire un enregistrement Sender Policy Framework pour un domaine" description="Cet article montre comment consulter les en-têtes SPF en utilisant nslookup, un outil alternatif à dig, et décrit comment interpréter les résultats." languages="Anglais" cost="Gratuit" url="https://support.mailessentials.gfi.com/hc/en-us/articles/360015116520-How-to-check-and-read-a-Sender-Policy-Framework-record-for-a-domain" %}}
+{{% resource title="Cours de l'équipe GenCyber du Nebraska sur les en-têtes d'e-mails" description="Un cours complet sur la façon d'analyser les en-têtes d'e-mails lors des enquêtes sur les cas potentiels d'hameçonnage" languages="Anglais" cost="Gratuit" url="https://mlhale.github.io/nebraska-gencyber-modules/phishing/email-headeranalysis/#email-headers <br> Des exemples d'exercices sont également présentés ici : https://github.com/MLHale/nebraska-gencyber-modules/tree/master/phishing/email-headers" %}}
+{{% resource title="Vérification des en-têtes d'e-mails dans Proton Mail" description="Anglais" languages="Anglais" cost="Gratuit" url="https://proton.me/support/check-email-headers" %}}
+{{% resource title="Affichage des en-têtes d'e-mails sur Zoho" description="Anglais" languages="Anglais" cost="Gratuit" url="https://www.zoho.com/mail/help/mail-options.html#alink1" %}}
+{{% resource title="Outils pour analyser les en-têtes d'e-mails" description="Nous établissons des liens vers quelques outils qui peuvent extraire et disséquer les en-têtes d'e-mails, ce qui s'avère essentiel pour toute analyse des e-mails potentiellement malveillants." languages="Anglais" cost="Gratuit" url="https://mxtoolbox.com/EmailHeaders.aspx <br> https://github.com/keraattin/EmailAnalyzer <br> https://github.com/umair9747/headmail <br> https://github.com/cyberdefenders/email-header-analyzer" %}}
+{{% resource title="Introduction à l'usurpation d'adresses e-mail" description="Plusieurs articles décrivant les bases de l'usurpation d'adresses e-mail" languages="Multiple" cost="Gratuit" url="https://en.wikipedia.org/wiki/Email_spoofing <br> https://docs.sendgrid.com/glossary/spoofing <br> https://www.fortinet.com/resources/cyberglossary/email-spoofing" %}}
+{{% resource title="Évaluation des en-têtes « reçus »" description="Comment utiliser les en-têtes d'e-mails pour trouver le serveur qui a envoyé l'e-mail" languages="Anglais" cost="Gratuit" url="https://www.techlicious.com/how-to/how-to-tell-if-email-has-been-spoofed/" %}}
+{{% resource title="Analyse des en-têtes « reçus » potentiellement falsifiés" description="Comment repérer les faux en-têtes « reçus »" languages="Anglais" cost="Gratuit" url="https://luxsci.com/blog/analyzing-forged-email-message.html <br> https://www.linkedin.com/pulse/anatomy-phishing-email-whats-header-penelope-raquel-bise-" %}}
+{{% resource title="Trouver des messages avec Email Log Search" description="Décrit comment les administrateurs de comptes d'entreprise et d'entreprise Google peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels et d'entreprise" url="https://support.google.com/a/answer/2618874?hl=en&fl=1&sjid=3562339787569460230-NA" %}}
+{{% resource title="Surveillance, rapports et suivi des messages dans Exchange Online" description="Décrit comment les administrateurs de comptes d'entreprise Microsoft peuvent surveiller les journaux de messagerie" languages="Anglais" cost="Documentation gratuite, outils uniquement disponibles pour les utilisateurs professionnels" url="https://learn.microsoft.com/en-us/exchange/monitoring/monitoring" %}}

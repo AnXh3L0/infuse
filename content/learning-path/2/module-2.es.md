@@ -1,81 +1,79 @@
-+++
-style = "module"
-weight = 2
-title = "OPSEC prerequisites for detecting malware"
-+++
-
-## Use Case
-
-This subtopic will allow the practitioner to ensure the security of the process and the individuals involved and implement a security policy within the computing environment the practitioner uses for malware detection.
-
-## Objectives
-
-After completing this subtopic, the practitioner should be able to ensure the confidentiality and integrity of data, which includes:
-
-- Encryption during storage and transfer
-- Doing checksums after data acquisitions
-- Not using devices suspected of being compromised
-- Using air-gapped environments
-- Ensuring security of the devices and servers used in the process
-- Threat modeling and risk assessment
-- Conducting backups and disk imaging
-
+---
+style: module
+title: Prerrequisitos OPSEC para detectar malware
+weight: 2
 ---
 
-Operational security for detecting malware can be divided into concerns related to specific scenarios:
+## Caso de Uso
 
-- Directly interacting with a device of unknown status
-- Using a separate ‘good’ device to interact with a device of unknown status
-- Interacting with files or links of unknown status
+Este subtema permitirá al profesional garantizar la seguridad del proceso y de las personas involucradas e implementar una política de seguridad dentro del entorno informático que el profesional utiliza para la detección de malware.
 
-## Using a device of unknown status
+## Objetivos
 
-In many cases you will be handed a device and asked to inspect it for malware (or you may need to do this to your own device).
+Después de completar este subtema, el profesional debe ser capaz de garantizar la confidencialidad e integridad de los datos, lo que incluye:
 
-Be aware that in case the device is compromised, your activities may be monitored, which may impact risk and safety for your client. Any keystrokes including access to online accounts or communications may be captured. External storage devices such as hard drives or USB flash drives may become targets for transfer of malicious code, and any network connections may be used to further spread or exfiltrate malicious code.
+- Cifrado durante el almacenamiento y la transferencia.
+- Hacer sumas de comprobación después de la adquisición de datos.
+- No utilizar dispositivos sospechosos de estar comprometidos.
+- Uso de entornos air-gapped (sin conexión física o inalámbrica).
+- Garantizar la seguridad de los dispositivos y servidores utilizados en el proceso.
+- Modelado de amenazas y evaluación de riesgos.
+- Realización de copias de seguridad e imágenes de disco.
 
-Note as well that introducing analysis tools can trigger a ‘kill switch’ on some malware which has been designed to evade detection and analysis. In such cases, capturing a disk image and other forensic records may be necessary for further analysis. This is not covered in this learning path but is covered in [Analyzing Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+---
+## Sección Principal
 
-## Using a separate ‘good’ device during the malware detection process
+La seguridad operativa para detectar malware se puede dividir en preocupaciones relacionadas con escenarios específicos:
 
-If you suspect that a device is infected with malware, you should do as little as possible with it until you learn more about its status. For this reason, you should always use a device where you do not suspect any malware infections to handle any sensitive information.
+- Interactuar directamente con un dispositivo de estado desconocido.
+- Usar un dispositivo "bueno" separado para interactuar con un dispositivo de estado desconocido.
+- Interactuar con archivos o enlaces de estado desconocido.
 
-If, for example, a person you are supporting suspects that their laptop or desktop might have been compromised, ask them to just use their mobile phone to communicate with you. It’s usually a good idea to shut down the potentially compromised laptop or desktop or at least disconnect it from the internet. If your beneficiary has tied their Signal, WhatsApp, and other accounts to the potentially compromised device, it might be a good idea to unlink those (doing so from a device that you do not suspect to be compromised) while the detection process is ongoing.
+### Usando un dispositivo de estado desconocido
 
-## Interacting with files or links of unknown status
+En muchos casos, te entregarán un dispositivo y te pedirán que lo inspecciones en busca de malware (o es posible que necesites hacerlo en tu propio dispositivo).
 
-When going through the malware detection process, you might encounter links or files (either ordinary files or executable files) you are unsure about and which you suspect might be delivering malware payloads. If you are copying those links or files from a potentially compromised device to an analysis device, there’s always a risk that they could also infect your analysis device. In order to reduce the chances of this happening, we recommend:
+Ten en cuenta que en caso de que el dispositivo esté comprometido, tus actividades pueden ser monitoreadas, lo que puede afectar el riesgo y la seguridad de tu cliente. Se pueden capturar todas las pulsaciones de teclas, incluido el acceso a cuentas en línea o comunicaciones. Los dispositivos de almacenamiento externos, como discos duros o memorias USB, pueden convertirse en objetivos para la transferencia de código malicioso, y cualquier conexión a la red puede ser utilizada para propagar o exfiltrar código malicioso.
 
-- Using a virtual machine on your analysis device and only opening the files there. This way, even if you open a malicious link or file and it infects your system, the damage will be contained to your virtual machine
-- Using web-based services and sandboxes (we will cover them more later on in this learning path)
-- Defanging all URLs (see the relevant section under Subtopic 3 in the malicious infrastructure learning path)
-- Storing all potentially suspicious files in compressed and password protected folders. This prevents them from being opened by accident or scanned by operating system tools when they, for example, index folders. The password does not need to be complex; it can literally be “ABC.” All it needs to do is prevent automated or accidental opens of the file.
+También ten en cuenta que la introducción de herramientas de análisis puede activar un 'kill switch' (interruptor de apagado) en algunos malware que ha sido diseñado para evadir la detección y el análisis. En tales casos, puede ser necesario capturar una imagen de disco y otros registros forenses para un análisis más profundo. No se cubre en esta ruta de aprendizaje, pero se cubre en el [Análisis de Malware](/es/learning-path/3/).
 
-For a deeper look at the topic, review the guide by Defensive Lab Agency on how to [handle a potentially compromised device](https://pts-project.org/guides/g6/), in particular:
+### Usar un dispositivo "bueno" separado durante el proceso de detección de malware
 
-- Isolating Android and iOS devices
-- Procedures for physically sending and receiving compromised devices for analysis in case you are working with (or yourself serving as) a remote technical analysis team
-- Introductory tips on chain of custody during device analysis
+Si sospechas que un dispositivo está infectado con malware, debes hacer lo menos posible con él hasta conocer más sobre su estado. Por esta razón, siempre debes usar un dispositivo en el que no sospeches ninguna infección por malware para manejar cualquier información sensible.
 
-This last term on chain of custody refers to best practice in digital forensics and incident response to record the handling of a device in order to preserve evidence and allow evidence collected to be used in any potential legal proceedings. The linked article provides a good introduction to general-purpose best practices you can follow in case you are in a position to be handling evidence which might be used in a scenario with a higher burden of proof on evidence.
+Si, por ejemplo, una persona a la que estás dando soporte sospecha que su computadora portátil o de escritorio podría haber sido comprometida, pídeles que utilicen solo su teléfono móvil para comunicarse contigo. Por lo general, es una buena idea apagar la computadora portátil o de escritorio potencialmente comprometida o, al menos, desconectarla de Internet. Si tu beneficiario ha vinculado sus cuentas de Signal, WhatsApp y otras a la computadora potencialmente comprometida, podría ser una buena idea desvincularlas (hacerlo desde un dispositivo que no sospeches que esté comprometido) mientras el proceso de detección está en curso.
 
-## Learning Resources
+### Interactuar con archivos o enlaces de estado desconocido
 
-{{% resource title="Intermediate guide - How to handle a potentially compromised device" languages="English" cost="Free" description="A step-by-step guide on how to handle devices with iOS or Android which you suspect might have malware on them prior to starting detection work" url="https://pts-project.org/guides/g6/" %}}
+Al realizar el proceso de detección de malware, es posible que te encuentres con enlaces o archivos (ya sean archivos normales o ejecutables) sobre los que no estés seguro y que sospeches que podrían estar entregando payloads (cargas útiles) de malware. Si estás copiando esos enlaces o archivos desde un dispositivo potencialmente comprometido a un dispositivo de análisis, siempre existe el riesgo de que también infecten tu dispositivo de análisis. Para reducir las posibilidades de que esto ocurra, te recomendamos lo siguiente:
 
-{{% resource title="Virtual machine chapter of the Field Guide to incident response for civil society and media (chapter 6)" languages="English" cost="Free" description="An introductory overview of how malware analysts can start working with virtual machines and an installation of the Linux distribution" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+- Utilizar una máquina virtual en tu dispositivo de análisis y solo abrir los archivos allí. De esta manera, incluso si abres un enlace o archivo malicioso e infecta tu sistema, el daño estará contenido en tu máquina virtual.
+- Usar servicios basados ​​en web y sandbox (los cubriremos más adelante en esta ruta de aprendizaje).
+- Neutralizar todas las URL (consulta la sección relevante en el Subtema 3 en la ruta de aprendizaje sobre infraestructura maliciosa).
+- Almacenar todos los archivos potencialmente sospechosos en carpetas comprimidas y protegidas con contraseña. Esto evita que se abran por accidente o sean escaneados por herramientas del sistema operativo cuando, por ejemplo, indexan carpetas. La contraseña no necesita ser compleja; literalmente puede ser "ABC". Todo lo que necesitas hacer es evitar la apertura automática o accidental del archivo.
 
-{{% resource title="Technical simulation with canary tokens" languages="English" cost="Free" description="A guide on how to use canary tokens, an offensive security tool, to simulate malware trackers. Can be very useful in teaching defenders what data can be easily exfiltrated" url="https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/" %}}
+Para obtener más información sobre el tema, revisa la guía de Defensive Lab Agency sobre cómo [manejar un dispositivo potencialmente comprometido](https://pts-project.org/guides/g6/), en particular:
 
+- Aislar dispositivos Android y iOS.
+- Procedimientos para enviar y recibir físicamente dispositivos comprometidos para su análisis en caso de que estés trabajando con (o tú mismo sirvas como) un equipo de análisis técnico remoto.
+- Consejos introductorios sobre la cadena de custodia durante el análisis de dispositivos.
 
-## Practice
+Este último término cadena de custodia se refiere a las mejores prácticas en análisis forense digital y respuesta a incidentes para registrar el manejo de un dispositivo con el fin de preservar la evidencia y permitir que la evidencia recopilada se utilice en cualquier posible procedimiento legal. El artículo vinculado proporciona una buena introducción a las mejores prácticas de uso general que puedes seguir en caso de que te encuentres en una posición de manejar evidencia que podría ser utilizada en un escenario con una mayor responsabilidad de prueba sobre la evidencia.
 
-Set up a VM running REmnux, with [the steps outlined in the Field Guide to incident response for civil society and media (chapter 6, starting on page 30).](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf)
+## Práctica
 
-## Skill Check
+Configura una máquina virtual que ejecute REmnux, siguiendo [los pasos descritos en la Guía de Campo para respuesta a incidentes para la sociedad civil y medios (capítulo 6, comienza en la página 30).](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf)
 
-After you have set up your REmnux VM, install and then connect to a reputable VPN. Make sure that your main system is either not connected to a VPN or to a different server than your REmnux instance. Ask your peer or mentor to send you a web bug canary token which will be opened just in REmnux, through a web browser of your choice. (If you are not yet familiar with canary tokens, [check out this guide](https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/) we created on how you could use them in security trainings.)
+## Verificación de habilidades
 
-Which IP address did it trigger? What user agent?
+Después de haber configurado tu REmnux VM, instala y luego conéctate a una VPN confiable. Asegúrate de que tu sistema principal no esté conectado a una VPN o conectado a un servidor diferente al de tu instancia de REmnux. Pídele a tu colega o mentor que te envíe un canary token de web bug, el cual será abierto únicamente en REmnux, a través de un navegador web de tu elección. (Si aún no estás familiarizado con los canary tokens, [consulta esta guía](https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/) que creamos sobre cómo podrías usarlos en entrenamientos de seguridad.)
 
-Talk to your peer / mentor about what data stays on your VM and what doesn’t. If you ran a piece of malware in your VM which contacted a server, would this go through your VPN or home/ office network connection?
+¿Qué dirección IP activó? ¿Qué agente de usuario?
+
+Habla con tu colega/mentor sobre qué datos permanecen en tu VM y cuáles no. Si ejecutas una pieza de malware en tu VM que contacta a un servidor, ¿pasará esto a través de tu VPN o conexión de red doméstica/oficina?
+
+## Recursos Educativos
+
+{{% resource title="Guía intermedia - Cómo manejar un dispositivo potencialmente comprometido" description="Una guía paso a paso sobre cómo manejar dispositivos con iOS o Android que sospechas que pueden tener malware antes de comenzar el trabajo de detección" languages="Inglés" cost="Gratis" url="https://pts-project.org/guides/g6/" %}}
+{{% resource title="Capítulo de máquina virtual de la Guía de Campo para respuesta a incidentes para la sociedad civil y medios (capítulo 6)" description="Una visión general introductoria de cómo los analistas de malware pueden comenzar a trabajar con máquinas virtuales y una instalación de la distribución de Linux" languages="Inglés" cost="Gratis" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+{{% resource title="Simulación técnica con canary tokens." description="Una guía sobre cómo utilizar tokens canary, una herramienta de seguridad ofensiva, para simular rastreadores de malware. Puede resultar muy útil para enseñar a los defensores qué datos se pueden exfiltrar fácilmente" languages="Inglés" cost="Gratis" url="https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/" %}}

@@ -1,10 +1,7 @@
 ---
 style: module
 title: "Enquête passive : analyser les URL, les noms d'hôtes et les adresses IP"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: "Un praticien peut utiliser les compétences décrites dans ce sous-thème pour commencer une enquête passive contre des serveurs sur Internet. Une enquête passive est une enquête qui ne charge aucun site Web et ne recherche que les données publiquement disponibles à leur sujet. Elle utilise des outils et des ressources de renseignement open source (OSINT) qui peuvent nous donner de nombreux détails sur l'empreinte numérique de l'infrastructure d'attaque sans que l'attaquant ne remarque que nous enquêtons."
 weight: 4
 ---
 
@@ -26,9 +23,11 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 
 ---
 
+## Section Principale
+
 L'enquête passive utilise des outils et des ressources de renseignement open source (OSINT) qui peuvent nous donner de nombreux détails sur l'empreinte numérique de l'infrastructure malveillante sans que le cybercriminel remarque que nous enquêtons.
 
-## Connaissances de base
+### Connaissances de base
 
 Cela nous oriente vers les bases des URL, DNS et IPv4/IPv6. Si vous vous sentez à l'aise avec ces concepts, c'est une très bonne chose ! Vous pouvez poursuivre et passer directement à la section « Flux de travail ». Dans le cas contraire, consultez les documents et les ressources ci-dessous :
 
@@ -53,11 +52,11 @@ Cela nous oriente vers les bases des URL, DNS et IPv4/IPv6. Si vous vous sentez 
 
 - En plus des adresses IP, il est utile de lire les [numéros de port](https://www.techtarget.com/searchnetworking/definition/port-number).
 
-Flux de travail : outils et capacités
+### Flux de travail : outils et capacités
 
 Les enquêtes IP/DNS passives peuvent être divisées en plusieurs catégories.
 
-Obtenir des informations IP/DNS essentielles
+#### Obtenir des informations IP/DNS essentielles
 
 L'une des premières choses que nous devrions faire dans notre enquête est d'obtenir des informations initiales sur les domaines et les hôtes. Plusieurs outils et catégories d'outils peuvent nous y aider.
 
@@ -79,7 +78,7 @@ L'une des premières choses que nous devrions faire dans notre enquête est d'ob
 
 🛠️ Prenez un moment pour vous exercer à utiliser ces services. Vous pouvez, par exemple, les utiliser pour rechercher votre propre site Web ou celui de votre organisation.
 
-Découvrir les informations DNS/IP cachées
+#### Découvrir les informations DNS/IP cachées
 
 Il existe différentes façons d'obtenir des informations supplémentaires sur les hôtes d'un domaine. Notez toutefois que la plupart de ces techniques ne fonctionnent que dans certains cas et échouent souvent. Si l'une d'elles ne fonctionne pas, ne vous découragez pas. Voici quelques-unes de ces méthodes :
 
@@ -89,7 +88,7 @@ Il existe différentes façons d'obtenir des informations supplémentaires sur l
 
 Il existe des outils qui utilisent ces techniques et d'autres pour essayer de découvrir des ressources réseau supplémentaires. L'un de ces outils, encore en cours de développement, s'appelle [Fierce](https://www.kali.org/tools/fierce/). [DNS Recon](https://securitytrails.com/blog/dnsrecon-tool) est un autre outil populaire. Cet [article de blog décrivant DNSRecon](https://securitytrails.com/blog/dnsrecon-tool#content-alternatives-to-dnsrecon) inclut également une liste d'autres outils d'énumération DNS populaires.
 
-Enrichir les informations IP/DNS à l'aide des services Internet Scanner
+#### Enrichir les informations IP/DNS à l'aide des services Internet Scanner
 
 Une fois que vous avez obtenu des informations d'identification (domaines et adresses IP), vous pouvez rechercher ces données plus en profondeur en utilisant certains services qui vous permettent d'enquêter sur des informations supplémentaires concernant l'hôte et toute activité qui lui est associée.
 
@@ -106,14 +105,14 @@ D'autres services de scanner recueillent également l'**historique DNS**, ce qui
 - [Traces de sécurité](https://securitytrails.com/)
 - [Microsoft Defender Threat Intelligence ](https://ti.defender.microsoft.com/)(anciennement RiskIQ) fournit des données d'historique et de résolution DNS limitées aux clients de niveau libre.
 
-Enrichir les informations IP/DNS à l'aide de bases de données de renseignements sur les menaces
+#### Enrichir les informations IP/DNS à l'aide de bases de données de renseignements sur les menaces
 
 Plusieurs services recueilleront des indicateurs de menaces et d'antécédents de comportement malveillant. Si vous devez vous assurer qu'aucune nouvelle activité d'analyse n'est amorcée (ce qui constituerait une enquête active), assurez-vous de ne pas effectuer de nouvelle analyse avec votre recherche (p. ex., alors que VirusTotal vous permet de vérifier une URL, il lancera une nouvelle analyse contre l'URL, en lançant ainsi une activité qui pourrait être détectée comme une enquête).
 
 - [Alienvault OTX](https://otx.alienvault.com/) est une ressource ouverte axée sur la communauté pour les indicateurs malveillants. La recherche d'une adresse IP ou d'un nom d'hôte affichera des informations OSINT utiles ainsi que des enregistrements de toute activité malveillante précédemment obtenue.
 - [Mandiant Advantage](https://www.mandiant.com/multi-vendor-security-platform-free-access) (propriété de Google) fournit des fonctionnalités de recherche limitées avec son offre gratuite.
 
-Utilisation de la recherche de certificats
+#### Utilisation de la recherche de certificats
 
 Presque tous les sites Web qu'un utilisateur rencontrera utilisent maintenant le protocole HTTPS, qui utilise une technologie connue sous le nom de TLS (Transport Layer Security). Les sites Web malveillants l'utilisent également, en partie parce que les utilisateurs croient que HTTPS et un verrou apparaissant dans la barre d'URL du navigateur pour signifier que le site Web est sûr, indépendamment d'autres facteurs.
 
@@ -141,64 +140,6 @@ Censys propose une lecture plus approfondie sur les techniques avancées de suiv
 - De nombreuses URL malveillantes utilisées dans les e-mails d'hameçonnage utilisent (parfois plusieurs) redirections, ce qui signifie que l'URL initiale peut être moins pertinente pour l'analyse. L'identification des redirections et des autres adresses IP impliquées nécessitera une interaction active avec l'URL, ce qui est couvert dans la compétence d'Enquête active.
 - Les cybercriminels peuvent héberger leur propre serveur DNS et suivre les demandes. Dans ce cas, les requêtes DNS peuvent ne pas être « passives » et alerter le cybercriminel au sujet de l'enquête. Faites particulièrement attention aux noms d'hôtes qui pourraient contenir des identificateurs, comme r2378r233yr39wjwr.exemple.com.
 
-## Ressources d'apprentissage
-
-{{% resource title="Qu'est-ce qu'une URL?" languages="Chinois, anglais, français, japonais, coréen, russe, espagnol" cost="Gratuit" description="Un bref aperçu de ce que sont les URL, comment elles sont construites, et quelles fonctionnalités supplémentaires (ancres et similaires) elles peuvent avoir." url="[https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL)" %}}
-
-{{% resource title="Introduction au DNS" languages="Vidéo en anglais, texte en arabe, bahasa indonésien, allemand, espagnol, français, italien, portugais, vietnamien, turc, russe, thaï, japonais, coréen, chinois, taïwanais" cost="Gratuit" description="Une présentation de base du fonctionnement des DNS." url="[https://aws.amazon.com/route53/what-is-dns/](https://aws.amazon.com/route53/what-is-dns/)" %}}
-
-{{% resource title="Aperçu des types d'enregistrements DNS" languages="Anglais, allemand, espagnol, français, italien, japonais, coréen, portugais, taïwanais, mandarin" cost="Gratuit" description="Comprend les types d'enregistrements les plus courants et certains moins courants." url="[https://www.cloudflare.com/learning/dns/dns-records/](https://www.cloudflare.com/learning/dns/dns-records/)" %}}
-
-{{% resource title="Utilisation de la commande dig" languages="Anglais" cost="Gratuit" description="Comment rechercher des informations sur les adresses IP." url="[https://phoenixnap.com/kb/linux-dig-command-examples](https://phoenixnap.com/kb/linux-dig-command-examples)" %}}
-
-{{% resource title="doggo" languages="Anglais" cost="Gratuit" description="Une alternative à la commande dig, avec des fonctionnalités très similaires, mais une sortie au format différent." url="[https://github.com/mr-karan/doggo](https://github.com/mr-karan/doggo)" %}}
-
-{{% resource title="Commande host sous Linux avec exemples" languages="Anglais" cost="Gratuit" description="Un guide sur l'utilisation de la commande host sous Linux, un autre outil couramment utilisé pour analyser les serveurs et autres types d'infrastructure." url="[https://www.geeksforgeeks.org/host-command-in-linux-with-examples/](https://www.geeksforgeeks.org/host-command-in-linux-with-examples/)" %}}
-
-{{% resource title="Poursuite de la reconnaissance DNS" languages="Anglais" cost="Gratuit" description="Divers outils pour automatiser la recherche de serveurs associés." url="DNSRecon : [https://securitytrails.com/blog/dnsrecon-tool](https://securitytrails.com/blog/dnsrecon-tool) Fierce : [https://www.kali.org/tools/fierce/](https://www.kali.org/tools/fierce/) et [https://salsa.debian.org/pkg-security-team/fierce](https://salsa.debian.org/pkg-security-team/fierce) Vous pouvez également utiliser VirusTotal pour [rechercher manuellement](https://support.virustotal.com/hc/en-us/articles/115002739245-Searching) des noms d'URL et de serveurs." %}}
-
-{{% resource title="geoIP" languages="Anglais" cost="Gratuit pour des quantités limitées" description="Rechercher l'emplacement physique (probable) d'un serveur par adresse IP." url="[https://www.maxmind.com/en/geoip-demo](https://www.maxmind.com/en/geoip-demo)" %}}
-
-{{% resource title="whois/RDAP" languages="Anglais" cost="Gratuit" description="Affiche les informations de propriété pour un domaine ou une adresse IP. Outil : [https://who.is/](https://who.is/) [https://search.arin.net/rdap/](https://search.arin.net/rdap/) et [https://lookup.icann.org/en](https://lookup.icann.org/en)" %}}
-
-{{% resource title="Qu'est-ce que l'enregistrement whois et comment il est utilisé" languages="Anglais" cost="Gratuit" description="Un résumé rapide de ce qu'est une base de données whois et de ses limites potentielles." url="[https://www.domain.com/blog/what-is-whois-and-how-is-it-used/](https://www.domain.com/blog/what-is-whois-and-how-is-it-used/)" %}}
-
-{{% resource title="Le guide ultime de la base de données whois" languages="Anglais" cost="Gratuit" description="Offre un aperçu de ce que whois peut (et ne peut pas) faire pour." url="[https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database](https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database)" %}}
-
-{{% resource title="Qu'est-ce qu'une adresse IPv4?" languages="Anglais" cost="Gratuit" description="Il existe deux types d'adresses IP : IPv4 et IPv6. Ce guide fournit une introduction à cette dernière." url="[https://bluecatnetworks.com/glossary/what-is-ipv4/](https://bluecatnetworks.com/glossary/what-is-ipv4/)" %}}
-
-{{% resource title="Différences entre IPv4 et IPv6" languages="Anglais" cost="Gratuit" description="Décrit les principales différences entre les deux types d'adresses IP." url="[https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/](https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/)" %}}
-
-{{% resource title="Comprendre les adresses IP" languages="Anglais" cost="Gratuit" description="Une brève introduction à ce que sont les adresses IP, et quels en sont les différents types." url="[https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/](https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/)" %}}
-
-{{% resource title="Que sont les numéros de port et comment fonctionnent-ils?" languages="Anglais" cost="Gratuit" description="Une introduction rapide aux numéros de port, qui comprend une liste de certains ports principaux." url="[https://www.techtarget.com/searchnetworking/definition/port-number](https://www.techtarget.com/searchnetworking/definition/port-number)" %}}
-
-{{% resource title="Énumération de sous-domaines : le guide ultime" languages="Anglais" cost="Gratuit" description="Un guide qui contient plusieurs techniques d'énumération (détermination) que les sous-domaines d'un domaine spécifique contiennent." url="[https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/](https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/)" %}}
-
-{{% resource title="Services de renseignement sur les menaces avec historique DNS" languages="Anglais" cost="Gratuit avec des fonctionnalités Premium (suivis de sécurité) Gratuit (Microsoft Defender)" description="Ces services effectuent des analyses DNS et ajoutent un historique ; les analystes qui les utilisent peuvent donc voir si certains sites Web ou adresses ont été déplacées ou modifiées. SecurityTrails : [https://securitytrails.com/](https://securitytrails.com/) Microsoft Defender : [https://ti.defender.microsoft.com/](https://ti.defender.microsoft.com/)" %}}
-
-{{% resource title="Alienvault OTX" languages="Anglais" cost="Gratuit" description="Un service qui compile les renseignements sur les menaces et les indicateurs mis en avant par la communauté." url="[https://otx.alienvault.com/](https://otx.alienvault.com/)" %}}
-
-{{% resource title="Mandiant Advantage" languages="Anglais" cost="Certaines fonctionnalités sont disponibles avec l'abonnement gratuit" description="Un autre service de renseignement sur les menaces, actuellement détenu par Google." url="[https://www.mandiant.com/multi-vendor-security-platform-free-access](https://www.mandiant.com/multi-vendor-security-platform-free-access)" %}}
-
-{{% resource title="Shodan" description="Affiche des informations sur les services exécutés sur un serveur par adresse IP, peut également rechercher tous les serveurs exécutant un service avec une bannière particulière" languages="Anglais" cost="Forfait gratuit\nBasic 49 USD\nPlus de volume disponible sous forme d'abonnements mensuels\n(Les services de base gratuits pour les e-mails universitaires offrent parfois d'excellentes remises, p. ex., l'abonnement pour 5 USD s'ils obtiennent 5 millions d'utilisateurs en juillet 2022 et 4 USD s'ils atteignent 4 millions d'utilisateurs en mars 2021)" url="[https://en.wikipedia.org/wiki/Banner_grabbing](https://en.wikipedia.org/wiki/Banner_grabbing)\n[https://www.shodan.io/](https://www.shodan.io/)\n[https://help.shodan.io/](https://help.shodan.io/)" %}}
-
-{{% resource title="Censys Search" description="Un outil qui peut observer les ports ouverts, les services en cours d'exécution, les certificats TLS et plus pour une adresse IP donnée" languages="Anglais" cost="Gratuit" url="[https://search.censys.io/](https://search.censys.io/)" %}}
-
-{{% resource title="DNS Dumpster" description="Un outil utilisé pour rechercher les surfaces d'attaque potentielles des services Internet" languages="Anglais" cost="Gratuit" url="[https://dnsdumpster.com/](https://dnsdumpster.com/)" %}}
-
-{{% resource title="DNS Checker et MX ToolBox" description="Le « couteau suisse » des recherches DNS et IP : permet diverses recherches rapides sur les enregistrements de domaine/DNS, IP et e-mail" languages="Anglais" cost="Gratuit" url="[Outils réseau : DNS, IP, e-mail (mxtoolbox.com)](https://mxtoolbox.com/SuperTool.aspx)\n[Outils DNS et IP, outils pour développeurs et webmasters, outils de productivité, outils SEO (dnschecker.org)](https://dnschecker.org/all-tools.php)" %}}
-
-{{% resource title="Fonctionnement de la transparence des certificats" description="Une brève introduction à ce qu'est la transparence des certificats, aux questions qu'elle aborde et à leur fonctionnement" languages="Anglais" cost="Gratuit" url="[https://certificate.transparency.dev/howctworks/](https://certificate.transparency.dev/howctworks/)" %}}
-
-{{% resource title="Certificats : le cadeau OSINT qui continue à porter ses fruits" description="Un guide pour les analystes sur la façon d'utiliser des outils comme Shodan pour rechercher des certificats et obtenir de bonnes données sur les serveurs Web sur lesquels ils enquêtent" languages="Anglais" cost="Gratuit" url="Version texte : [https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/](https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/)\nVersion vidéo : [https://www.youtube.com/watch?v=XHltHamQVoA](https://www.youtube.com/watch?v=XHltHamQVoA)" %}}
-
-{{% resource title="crt.sh" description="Un moteur de recherche qui se concentre spécifiquement sur la recherche de certificats" languages="Anglais" cost="Gratuit" url="[https://crt.sh/](https://crt.sh/)" %}}
-
-{{% resource title="massdns" description="Un outil qui peut être utilisé pour la recherche de sous-domaine par force brute" languages="Anglais" cost="Gratuit" url="[https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains](https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains)" %}}
-
-{{% resource title="Suivi avancé de l'infrastructure persistante" description="Un guide sur les différentes méthodes qui pourraient être utilisées pour suivre l'infrastructure malveillante, et qui aborde également les recherches de certificats" languages="Anglais" cost="Gratuit" url="[https://censys.com/advanced-persistent-infrastructure-tracking/](https://censys.com/advanced-persistent-infrastructure-tracking/)" %}}
-
 ## Pratique
 
 Choisissez un nom de domaine plus ou moins aléatoire, en vous assurant qu'il n'est pas hébergé derrière un service de distribution de contenu/reverse-proxy tel que Cloudflare (vous pouvez le déterminer en le recherchant rapidement à l'aide d'un outil tel que dig et en utilisant l'option NS pour rechercher des serveurs de noms). À l'aide des catégories d'outils ci-dessus, examinez le domaine et essayez d'expliquer :
@@ -218,3 +159,35 @@ Asseyez-vous avec un pair ou un mentor qui a une expérience significative dans 
 - Complétez la [salle de reconnaissance passive](https://tryhackme.com/room/passiverecon) sur TryHackMe.
 - Effectuez les exercices ci-dessus, idéalement dans un domaine différent, et passez en revue votre processus et vos conclusions avec votre pair ou votre mentor. Demandez-lui d'examiner votre travail et de fournir des commentaires sur le processus et les résultats. Il pourrait être utile de discuter spécifiquement de la façon de trouver des sous-domaines en cours d'exécution sur ce domaine et pour discuter de l'exactitude des recherches de geoIP concernant ces domaines. En option, asseyez-vous avec votre mentor ou pair pour exécuter certains paramètres d'examen avancés et configurer ensemble une automatisation de base, par exemple en demandant à dig de charger une liste de domaines à partir d'un fichier texte et de fournir des informations à leur sujet.
 - Si vous avez un message d'hameçonnage réel (ou, alternativement, prenez un domaine d'hameçonnage de [PhishTank](https://phishtank.org/) et analysez-le, notez que le site Web recueille des domaines plutôt que des messages), effectuez l'enquête passive décrite dans l'exercice pratique (avec prudence !) en discutant avec un pair ou un mentor. Documentez vos conclusions et votre processus. Demandez-lui d'examiner votre travail et de fournir des commentaires sur le processus et les résultats.
+
+
+## Ressources d'apprentissage
+
+{{% resource title="Qu'est-ce qu'une URL ?" description="Un bref aperçu de ce que sont les URL, comment elles sont construites, et quelles fonctionnalités supplémentaires (ancres et similaires) elles peuvent avoir" languages="Chinois, anglais, français, japonais, coréen, russe, espagnol" cost="Gratuit" url="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" %}}
+{{% resource title="Introduction au DNS" description="Une présentation de base du fonctionnement des DNS" languages="Vidéo en anglais, texte en arabe, bahasa indonésien, allemand, espagnol, français, italien, portugais, vietnamien, turc, russe, thaï, japonais, coréen, chinois, taïwanais" cost="Gratuit" url="https://aws.amazon.com/route53/what-is-dns/" %}}
+{{% resource title="Aperçu des types d'enregistrements DNS" description="Comprend les types d'enregistrements les plus courants et certains moins courants." languages="Anglais, allemand, espagnol, français, italien, japonais, coréen, portugais, taïwanais, mandarin" cost="Gratuit" url="https://www.cloudflare.com/learning/dns/dns-records/" %}}
+{{% resource title="Utilisation de la commande dig" description="Comment rechercher des informations sur les adresses IP" languages="Anglais" cost="Gratuit" url="https://phoenixnap.com/kb/linux-dig-command-examples" %}}
+{{% resource title="doggo" description="Une alternative à la commande dig, avec des fonctionnalités très similaires, mais une sortie au format différent" languages="Anglais" cost="Gratuit" url="https://github.com/mr-karan/doggo" %}}
+{{% resource title="Commande host sous Linux avec exemples" description="Un guide sur l'utilisation de la commande host sous Linux, un autre outil couramment utilisé pour analyser les serveurs et autres types d'infrastructure" languages="Anglais" cost="Gratuit" url="https://www.geeksforgeeks.org/host-command-in-linux-with-examples/" %}}
+{{% resource title="Poursuite de la reconnaissance DNS" description="Divers outils pour automatiser la recherche de serveurs associés" languages="Anglais" cost="Gratuit" url="DNSRecon : https://securitytrails.com/blog/dnsrecon-tool<br>Fierce : https://www.kali.org/tools/fierce/ et https://salsa.debian.org/pkg-security-team/fierce<br>Vous pouvez également utiliser VirusTotal pour rechercher manuellement des noms d'URL et de serveurs" %}}
+{{% resource title="geoIP" description="Rechercher l'emplacement physique (probable) d'un serveur par adresse IP" languages="Anglais" cost="Gratuit pour des quantités limitées" url="https://www.maxmind.com/en/geoip-demo" %}}
+{{% resource title="whois/RDAP" description="Affiche les informations de propriété pour un domaine ou une adresse IP" languages="Anglais" cost="Gratuit" url="Outil : https://who.is/<br>https://search.arin.net/rdap/, https://lookup.icann.org/en" %}}
+{{% resource title="Qu'est-ce que l'enregistrement whois et comment il est utilisé" description="Un résumé rapide de ce qu'est une base de données whois et de ses limites potentielles" languages="Anglais" cost="Gratuit" url="https://www.domain.com/blog/what-is-whois-and-how-is-it-used/" %}}
+{{% resource title="Le guide ultime de la base de données whois" description="Offre un aperçu de ce que whois peut (et ne peut pas) faire pour" languages="Anglais" cost="Gratuit" url="https://domainnamestat.com/blog/the-ultimate-guide-to-the-whois-database" %}}
+{{% resource title="Qu'est-ce qu'une adresse IPv4 ?" description="Il existe deux types d'adresses IP : IPv4 et IPv6. Ce guide fournit une introduction à cette dernière" languages="Anglais" cost="Gratuit" url="https://bluecatnetworks.com/glossary/what-is-ipv4/" %}}
+{{% resource title="Différences entre IPv4 et IPv6" description="Décrit les principales différences entre les deux types d'adresses IP" languages="Anglais" cost="Gratuit" url="https://www.geeksforgeeks.org/differences-between-ipv4-and-ipv6/" %}}
+{{% resource title="Comprendre les adresses IP" description="Une brève introduction à ce que sont les adresses IP, et quels en sont les différents types" languages="Anglais" cost="Gratuit" url="https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/" %}}
+{{% resource title="Que sont les numéros de port et comment fonctionnent-ils ?" description="Une introduction rapide aux numéros de port, qui comprend une liste de certains ports principaux" languages="Anglais" cost="Gratuit" url="https://www.techtarget.com/searchnetworking/definition/port-number" %}}
+{{% resource title="Énumération de sous-domaines : le guide ultime" description="Un guide qui contient plusieurs techniques d'énumération (détermination) que les sous-domaines d'un domaine spécifique contiennent. Il convient de rappeler que toutes les techniques ne fonctionneront pas sur tous les domaines/serveurs." languages="Anglais" cost="Gratuit" url="https://0xffsec.com/handbook/information-gathering/subdomain-enumeration/" %}}
+{{% resource title="Services de renseignement sur les menaces avec historique DNS" description="Ces services effectuent des analyses DNS et ajoutent un historique ; les analystes qui les utilisent peuvent donc voir si certains sites Web ou adresses ont été déplacées ou modifiées" languages="Anglais" cost="Gratuit avec des fonctionnalités Premium (suivis de sécurité)<br>Gratuit (Microsoft Defender)" url="https://securitytrails.com/ <br> https://ti.defender.microsoft.com/" %}}
+{{% resource title="Alienvault OTX" description="Un service qui compile les renseignements sur les menaces et les indicateurs mis en avant par la communauté" languages="Anglais" cost="Gratuit" url="https://otx.alienvault.com/" %}}
+{{% resource title="Mandiant Advantage" description="Un autre service de renseignement sur les menaces, actuellement détenu par Google" languages="Anglais" cost="Certaines fonctionnalités sont disponibles avec l'abonnement gratuit" url="https://www.mandiant.com/multi-vendor-security-platform-free-access" %}}
+{{% resource title="Shodan" description="Affiche des informations sur les services exécutés sur un serveur par adresse IP, peut également rechercher tous les serveurs exécutant un service avec une bannière particulière" languages="Anglais" cost="Forfait gratuit<br>Basic 49 USD<br>Plus de volume disponible sous forme d'abonnements mensuels<br>(Les services de base gratuits pour les e-mails universitaires offrent parfois d'excellentes remises, p. ex., l'abonnement pour 5 USD s'ils obtiennent 5 millions d'utilisateurs en juillet 2022 et 4 USD s'ils atteignent 4 millions d'utilisateurs en mars 2021)" url="Contexte : https://en.wikipedia.org/wiki/Banner_grabbing <br> Outil : https://www.shodan.io/ <br> Documentation : https://help.shodan.io/" %}}
+{{% resource title="Censys Search" description="Un outil qui peut observer les ports ouverts, les services en cours d'exécution, les certificats TLS et plus pour une adresse IP donnée" languages="Anglais" cost="Gratuit" url="https://search.censys.io/" %}}
+{{% resource title="DNS Dumpster" description="Un outil utilisé pour rechercher les surfaces d'attaque potentielles des services Internet" languages="Anglais" cost="Gratuit" url="https://dnsdumpster.com/" %}}
+{{% resource title="DNS Checker et MX ToolBox" description="Le « couteau suisse » des recherches DNS et IP : permet diverses recherches rapides sur les enregistrements de domaine/DNS, IP et e-mail" languages="Anglais" cost="Gratuit" url="https://mxtoolbox.com/SuperTool.aspx <br> https://dnschecker.org/all-tools.php" %}}
+{{% resource title="Fonctionnement de la transparence des certificats" description="Une brève introduction à ce qu'est la transparence des certificats, aux questions qu'elle aborde et à leur fonctionnement" languages="Anglais" cost="Gratuit" url="https://certificate.transparency.dev/howctworks/" %}}
+{{% resource title="Certificats : le cadeau OSINT qui continue à porter ses fruits" description="Un guide pour les analystes sur la façon d'utiliser des outils comme Shodan pour rechercher des certificats et obtenir de bonnes données sur les serveurs Web sur lesquels ils enquêtent" languages="Anglais" cost="Gratuit" url="Version texte : https://www.osintcurio.us/2019/03/12/certificates-the-osint-gift-that-keeps-on-giving/ <br> Version vidéo : https://www.youtube.com/watch?v=XHltHamQVoA" %}}
+{{% resource title="crt.sh" description="Un moteur de recherche qui se concentre spécifiquement sur la recherche de certificats" languages="Anglais" cost="Gratuit" url="https://crt.sh/" %}}
+{{% resource title="massdns" description="Un outil qui peut être utilisé pour la recherche de sous-domaine par force brute" languages="Anglais" cost="Gratuit" url="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains" %}}
+{{% resource title="Suivi avancé de l'infrastructure persistante" description="Un guide sur les différentes méthodes qui pourraient être utilisées pour suivre l'infrastructure malveillante, et qui aborde également les recherches de certificats" languages="Anglais" cost="Gratuit" url="https://censys.com/advanced-persistent-infrastructure-tracking/" %}}

@@ -1,85 +1,80 @@
 +++
 style = "module"
 weight = 8
-title = "Sample-based detection and determination"
+title = "Détection et détermination sur la base d'un échantillon"
 +++
 
-## Use Case
+## Cas d'utilisation
 
-You have a sample of a file and need to determine if it is malicious. This may have been sent to the target by email, social media, or instant messenger, or transferred over removable media or otherwise. The file itself may be a binary, a compressed archive, a captured web page, or other file formats. The primary objective is to determine whether the file is malicious. In addition, you may be able to determine some additional useful characterizing information about the file, however for more guidance see the [Malware Analysis Learning Path](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Vous avez l'échantillon d'un fichier et vous devez déterminer s'il est malveillant. Il peut avoir été envoyé à la cible par e-mail, via les réseaux sociaux ou une messagerie instantanée, ou transféré à partir d'un support amovible ou autre. Le fichier lui-même peut être un binaire, une archive compressée, une page Web capturée ou d'autres formats de fichiers. L'objectif principal est de déterminer si le fichier est malveillant. En outre, vous êtes peut-être en mesure de déterminer des informations de caractérisation supplémentaires utiles sur le fichier, mais pour en savoir plus, consultez le [parcours d'apprentissage consacré à l'analyse des logiciels malveillants](fr/learning-path/3/).
 
-## Objectives
+## Objectifs
 
-After completing this subtopic, practitioners should be able to do the following:
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-- Investigate suspicious files using malware platforms
-- Utilize sandboxes to assist in determining whether a sample is malicious and what it does
+- Enquêter sur les fichiers suspects à l'aide de plateformes de logiciels malveillants
+- Utiliser des bacs à sable pour contribuer à déterminer si un échantillon est malveillant et ce qu'il fait
 
 ---
+## Section Principale
 
-If you require more in-depth evaluation of a few specific files, there are online services that will scan a specific file or set of files for malware. If you have a file that you suspect to be malicious, you can upload the file to the scanning service. Note that these services do not keep confidential the contents of the files you upload. You should not upload any files that contain sensitive information. These files may come from email attachments, or be recently downloaded files on the victim’s device. Note that in many cases, the initial download may be a dropper (executable that installs the actual malware, often easier to customize than the “real” malware), and may not be known to anti-malware software. If possible, analyze file creation/modification/download dates to identify files that might have been downloaded by the initial dropper.
+Si vous avez besoin d'une évaluation plus approfondie de quelques fichiers spécifiques, il existe des services en ligne qui permettant d'analyser un fichier ou un ensemble de fichiers spécifiques à la recherche de logiciels malveillants. Si vous avez un fichier que vous soupçonnez d'être malveillant, vous pouvez l'importer dans le service d'analyse. Notez que ces services n'assurent pas la confidentialité du contenu des fichiers que vous y importez. Vous ne devez pas envoyer de fichiers contenant des informations sensibles. Ces fichiers peuvent provenir de pièces jointes à des e-mails ou être des fichiers récemment téléchargés sur l'appareil de la victime. Notez que dans de nombreux cas, le téléchargement initial peut être un injecteur (un fichier exécutable qui installe le logiciel malveillant réel, souvent plus facile à personnaliser que le « véritable » logiciel malveillant) et peut ne pas être reconnu par les logiciels anti-malware. Si possible, analysez les dates de création/modification/téléchargement des fichiers pour identifier les fichiers qui ont pu être téléchargés par l'injecteur initial.
 
-If you would prefer not to share a full file with an online service but still want to check if it has ever been submitted, you can simply upload a hash of the file. A hash is like a short fingerprint of a file—it can be used to identify a unique file without revealing its contents. For more information on hashes, go through the “Hashes” section in Chapter 7 of the [Field Guide to Incident Response for Civil Society and Media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/). The guide activity assumes the user is learning on a Linux operating system, so you will need to look up the command line utility to use to obtain a SHA sum on your chosen platform, for instance using \_shasum \_or \_openssl \_on MacOS or using Get-FileHash or certutil in PowerShell.
+Si vous préférez ne pas partager l'entièreté du fichier avec le service en ligne, mais que vous souhaitez tout de même vérifier s'il a déjà été envoyé, vous pouvez simplement téléverser un hachage du fichier. Un hachage est comme une courte empreinte digitale d'un fichier, il peut être utilisé pour identifier un fichier unique sans révéler son contenu. Pour en savoir plus sur les hachages, consultez la section « Hachages » du chapitre 7 du [Guide d'intervention sur le terrain pour la société civile et les médias](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/). L'activité du guide suppose que l'utilisateur apprend sur un système d'exploitation Linux, vous devrez donc rechercher l'utilitaire de ligne de commande à utiliser pour obtenir une somme SHA sur la plateforme choisie, par exemple en utilisant _shasum_ ou _openssl_ sur MacOS ou en utilisant Get-FileHash ou certutil dans PowerShell.
 
-A popular malware intelligence service is Google’s [VirusTotal](https://www.virustotal.com/). VirusTotal will scan a file with a number of antimalware scanners, and report the results back. It can also scan for file hashes or URLs. VirusTotal is free to use, subject to volume constraints. For a detailed description and activity, complete the “Using VirusTotal” section in Chapter 7 of Internews’ [Field Guide to Incident Response for Civil Society and Media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/).
+[VirusTotal](https://www.virustotal.com/) de Google est un service populaire de renseignements sur les logiciels malveillants. VirusTotal analysera un fichier avec un certain nombre de scanners anti-malware et vous fournira les résultats. Il peut également rechercher des hachages de fichiers ou des URL. L'utilisation de VirusTotal est gratuite, sous réserve de contraintes de volume. Pour obtenir une description et une activité détaillées, veuillez parcourir la section « Utilisation de VirusTotal » du chapitre 7 du [Guide d'intervention sur le terrain pour la société civile et les médias](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/) d'Internews.
 
-‼️ After reading the above chapter, you should be able to:
+‼️ Après avoir lu le chapitre ci-dessus, vous devriez être en mesure de faire ce qui suit :
 
-- Understand what uploading a sample to VirusTotal does (shares your sample with paying VirusTotal customers), and be able to decide if it is appropriate to do so
-- Submit a file or check a record by hash and read the Detections, Details, Relations, Behavior, and Community tabs on VirusTotal
+- Comprendre en quoi consiste le téléversement d'un échantillon sur VirusTotal (partage de votre échantillon avec les clients payants de VirusTotal), et être en mesure de décider s'il est approprié de le faire
+- Soumettre un fichier ou vérifier un enregistrement par hachage et lire les onglets Détections, Détails, Relations, Comportement et Communauté sur VirusTotal
 
-## Sandboxes
+### Bacs à sable
 
-Sandboxes provide a virtual environment simulating an ordinary computer which captures detailed logs of activities which occur in memory and on disk. This generally allows a safe and automated way to bootstrap malware analysis and understand the actions and intentions of a file.
+Les bacs à sable fournissent un environnement virtuel simulant un ordinateur ordinaire qui consigne en mémoire et sur disque des journaux détaillés concernant les activités qui se produisent. Cela procure généralement un moyen sûr et automatisé de démarrer l'analyse des logiciels malveillants et de comprendre les actions et les intentions des fichiers.
 
-Several freely available commercial sandbox services include [Hybrid Analysis](https://www.hybrid-analysis.com/), [Any.Run](https://any.run/), [Joe Sandbox](https://www.joesandbox.com/), and [Triage](https://tria.ge/). These services run files that you send it and perform dynamic analysis. This has great advantages in being able to heuristically detect new malware, and also being able to evaluate multiple malware stages. Note that samples submitted will be collected and become available to paying customers and analysts.
+Il existe plusieurs services de bacs à sable commerciaux disponibles gratuitement, notamment [Hybrid Analysis](https://www.hybrid-analysis.com/), [Any.Run](https://any.run/), [Joe Sandbox](https://www.joesandbox.com/) et [Triage](https://tria.ge/). Ces services exécutent les fichiers que vous envoyez et effectuent une analyse dynamique. Cela offre le grand avantage d'être en mesure de détecter heuristiquement de nouveaux logiciels malveillants, et également d'être en mesure d'évaluer les différentes étapes des logiciels malveillants. Notez que les échantillons soumis seront recueillis et mis à la disposition des clients payants et des analystes.
 
-Cuckoo Sandbox is a free and open source malware analysis sandbox tool which you can self-host. CERT-EE in Estonia offers a free hosted version online: [Cuckoo V2](https://cuckoo.cert.ee/), [Cuckoo V3 (Beta)](https://cuckoo-hatch.cert.ee/).
+Cuckoo Sandbox est un outil gratuit et open source d'analyse de malware en bac à sable que vous pouvez autohéberger. CERT-EE en Estonie propose une version gratuite hébergée en ligne : [Cuckoo V2](https://cuckoo.cert.ee/), [Cuckoo V3 (Bêta)](https://cuckoo-hatch.cert.ee/).
 
-To learn more about using Sandboxes for detection of samples, complete the “Sandboxes” section in Chapter 10 of Internews’ [Field Guide to Incident Response for Civil Society and Media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/), which uses the Triage sandbox as an example
+Pour en savoir plus sur l'utilisation des bacs à sable pour la détection d'échantillons, parcourez la section « Bacs à sable » du chapitre 10 du [Guide d'intervention sur le terrain pour la société civile et les médias](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/) d'Internews, qui utilise le bac à sable Triage à titre d'exemple.
 
-After completing the activity, you should be able to:
+Après avoir terminé l'activité, vous devriez être en mesure de :
 
-- Submit a file into a sandbox
-- Selecting or configure an appropriate operating environment for the sandbox
-- Decide whether networking should be disabled or emulated
-- Read the overview of results including automated detections
-- Have a general understanding of the other categories of information being presented in the sandbox analysis. For the purpose of detection detailed understanding is not necessary but for Malware Analysis or threat hunting you will need to understand these further.
+- Soumettre un fichier dans un bac à sable
+- Sélectionner ou configurer un environnement d'exploitation approprié pour le bac à sable
+- Décider si le réseau doit être désactivé ou émulé
+- Lire l'aperçu des résultats, y compris les détections automatisées
+- Avoir une compréhension générale des autres catégories d'information présentées dans l'analyse du bac à sable. Pour les besoins de la détection, une compréhension détaillée n'est pas nécessaire, mais pour l'analyse des logiciels malveillants ou la détection des menaces, vous devrez en avoir une compréhension approfondie.
 
-You can find a deeper dive on Sandboxes in the Infuse Malware Analysis learning path.
+Vous pouvez obtenir plus de détails sur les bacs à sable dans le parcours d'apprentissage sur l'analyse des logiciels malveillants d'Infuse.
 
-Note that advanced malware may initiate checks to discover if it is in a virtualized/sandboxed environment thus may behave differently depending on the environment, therefore no sandbox environment will be 100% reliable.
+Notez que certains logiciels malveillants avancés peuvent lancer des vérifications pour découvrir s'ils se trouvent dans un environnement virtualisé ou bac à sable, afin de se comporter différemment en fonction de l'environnement en question. Aucun environnement de bac à sable n'est donc fiable à 100 %.
 
-To learn more about the kinds of techniques that Hybrid Analysis uses, you can learn to do your own hybrid (static and dynamic) malware analysis in the Malware Analysis learning path.
+Pour en savoir plus sur les types de techniques utilisées par Hybrid Analysis, vous pouvez apprendre à effectuer votre propre analyse hybride (statique et dynamique) des logiciels malveillants dans le parcours d'apprentissage sur l'analyse des logiciels malveillants.
 
-## Learning Resources
+## Pratique
 
-{{% resource title="Verify SHA256 checksum" languages="English" cost="Free" description="Quick guide on using the command line to verify sha256 checksums for files." url="https://techdocs.akamai.com/download-ctr/docs/verify-checksum" %}}
+1. Cherchez ou créez un fichier texte brut sur votre système, puis calculez son hachage sha256. Ensuite, modifiez le fichier dans un éditeur de texte brut en y ajoutant un seul caractère. Calculez à nouveau son hachage sha256.
+2. Prenez un fichier exécutable Windows obscur d'un endroit tel que download.cnet.com. Téléversez-le sur VirusTotal ou analysez-le avec Hybrid Analysis. Notez que les installateurs peuvent être incorrectement signalés comme étant malveillants en raison de la nature de leur fonctionnement. Réfléchissez aux raisons pour lesquelles cela pourrait se produire et, si possible, discutez-en avec un pair ou un mentor.
+3. Cherchez le hachage d'un logiciel malveillant bien connu (vous pouvez le faire en parcourant un site qui contient des hachages de logiciels malveillants, pas besoin de télécharger l'échantillon et de le hacher vous-même) et téléversez-le sur VirusTotal. Expliquez ce que vous voyez et ce qui s'est passé.
 
-{{% resource title="VirusTotal" languages="English" cost="Free, with rate limits" description="Web service to check files or hashes against known malware using multiple detection engines." url="https://www.virustotal.com/gui/home/upload" %}}
+## Contrôle de compétence
 
-{{% resource title="Hybrid Analysis" languages="English" cost="Free, with premium features" description="Service similar to VirusTotal, offering dynamic analysis capabilities." url="https://www.hybrid-analysis.com/" %}}
+Par vous-même (ou avec un mentor)
 
-{{% resource title="Any.run" languages="English" cost="Free for non-commercial use" description="Commercial sandbox service for analyzing malware behavior." url="https://any.run/" %}}
+1. Parcourez les échantillons de logiciels malveillants récemment soumis sur Malware Bazaar. Copiez les hachages de 3 à 5 échantillons que vous avez détectés et collez-les dans la recherche de VirusTotal. Quels sont les résultats ? Chacun de ces hachages doit être détecté comme étant malveillant par au moins deux moteurs de détection de logiciels malveillants VirusTotal. Si aucun des hachages n'est détecté comme étant malveillant ou reconnu par VirusTotal, il est probable que vous avez commis une erreur quelque part et il peut être judicieux de prendre le temps de revenir sur vos pas !
 
-{{% resource title="Joe Sandbox" languages="English" cost="Free for public accounts (results published)" description="Commercial sandbox service for analyzing malware." url="https://www.joesandbox.com/#windows" %}}
+Avec un pair ou un mentor
 
-{{% resource title="Cuckoo Sandbox" languages="English" cost="Free" description="Sandbox service provided by the Estonian CERT for malware analysis." url="https://cuckoo.cert.ee/" %}}
+1. Demandez à un pair ou à un mentor de sélectionner environ 10 fichiers aléatoires, qui pourraient, par exemple, être des images. Il prendra alors le hachage sha256 de 3 fichiers sélectionnés au hasard et vous enverra à la fois les fichiers et les hachages. Déterminez parmi ces 10 fichiers ceux qui correspondent aux hachages et demandez au pair ou au mentor de vérifier votre travail.
 
-{{% resource title="Windows Sandbox" languages="Requires Windows Pro, Education, or Enterprise" cost="Free" description="Built-in sandbox tool in Windows for safely running applications." url="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview" %}}
+## Ressources d'apprentissage
 
-## Practice
-
-1. Find or create a plain text file on your system, and then calculate its sha256 hash. After you have done that, change the file by editing it in a plain text editor and appending a single character to it. Calculate its sha256 hash again.
-2. Grab an obscure Windows executable from something like download.cnet.com. Upload it to VirusTotal or analyze it with Hybrid Analysis. Note that installers may be incorrectly flagged as malicious due to the nature of their operation. Think about why this might be happening, and, if possible, discuss it with a peer or mentor.
-3. Find the hash of a well-known piece of malware (you can do so by browsing a site that contains malware hashes, no need to download the sample and hash it yourself!) and upload it to VirusTotal. Explain what you see and what happened.
-
-## Skill Check
-
-Independently (or with a mentor)
-
-1. Browse through recently submitted malware samples on Malware Bazaar. Copy the hashes of 3-5 samples you detected and paste them into VirusTotal search. What are the results? Each one of those hashes should be detected as malicious by at least a couple of VirusTotal malware detection engines. If none of the hashes are detected as malicious or recognized by VirusTotal, then it’s likely you’ve made a mistake somewhere and it’s worth taking a moment to retrace your steps!
-
-With a Peer or a Mentor
-
-1. Ask a peer or mentor to select around 10 random files, which could, for example, be images. They will then take the sha256 hash of 3 randomly selected files and send you both the files and the hashes. Figure out which of those 10 files map to the hashes, and ask the peer or mentor to check your work.
+{{% resource title="Vérifier la somme de contrôle SHA256" description="Un guide rapide sur la façon d'utiliser la ligne de commande afin de vérifier les sommes de contrôle sha256 des fichiers" languages="Anglais" cost="Gratuit" url="https://techdocs.akamai.com/download-ctr/docs/verify-checksum" %}}
+{{% resource title="VirusTotal" description="Un service Web permettant aux utilisateurs de téléverser des fichiers ou des hachages pour les vérifier face aux logiciels malveillants connus d'un large éventail de moteurs de détection de logiciels malveillants. Propriété d'Alphabet/Google" languages="Anglais" cost="Gratuit, avec limites de volume" url="https://www.virustotal.com/gui/home/upload" %}}
+{{% resource title="Hybrid Analysis" description="Un service similaire à celui de VirusTotal, mais qui peut également effectuer une analyse dynamique (exécution du fichier et observation de ce qui se passe)" languages="Anglais" cost="Gratuit, avec des fonctionnalités Premium" url="https://www.hybrid-analysis.com/" %}}
+{{% resource title="Any.run" description="Un bac à sable commercial" languages="Gratuit uniquement pour un usage non commercial" cost="Anglais" url="https://any.run/" %}}
+{{% resource title="Joe Sandbox" description="Un bac à sable commercial" languages="Gratuit pour les comptes publics (les résultats de l'analyse seront publiés sur le site Web)" cost="Anglais" url="https://www.joesandbox.com/#windows" %}}
+{{% resource title="Cuckoo Sandbox" description="Un service de bac à sable géré par le CERT (Computer Emergency Response Team) estonien" languages="Gratuit" cost="Anglais" url="https://cuckoo.cert.ee/" %}}
+{{% resource title="Windows Sandbox" description="Un puissant outil de bac à sable intégré à Windows" languages="Nécessite la version Pro, Education ou Enterprise de Windows" cost="Nombreuses langues" url="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview" %}}

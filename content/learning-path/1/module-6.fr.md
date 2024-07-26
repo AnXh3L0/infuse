@@ -1,10 +1,10 @@
 ---
 style: module
 title: "Enquête active : analyse des e-mails malveillants"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Qu'il s'agisse de pure ingénierie sociale, de phishing ou de
+  livraison de logiciels malveillants, les e-mails malveillants peuvent être
+  assez complexes. Ce module vous apprendra à les interpréter et à les
+  comprendre, ainsi qu'à trouver l'infrastructure à laquelle ils sont liés.
 weight: 6
 ---
 
@@ -16,9 +16,7 @@ Notez que pendant l'enquête active, vous devrez peut-être effectuer des action
 
 Il est préférable d'effectuer ce type d'analyse à partir d'une machine virtuelle ou d'un appareil dédié. Pour assurer une protection supplémentaire, il peut être judicieux d'utiliser un VPN de bonne réputation afin que votre adresse IP ne fuie pas lorsque vous effectuez une enquête active.
 
-Ce module traite de l'analyse du _corps_ d'un e-mail malveillant, tandis que le module
-
-Investigation passive : analyser les en-têtes des e-mails traite des _en-têtes_ des e-mails. Pour effectuer des enquêtes appropriées, vous pourriez utiliser les deux compétences. Notez que l'analyse du contenu et des comportements des pièces jointes est couverte dans le parcours d'apprentissage Analyse des logiciels malveillants.
+Ce module traite de l'analyse du _corps_ d'un e-mail malveillant, tandis que le module Investigation passive : analyser les en-têtes des e-mails (/fr/learning-path/1/module-5/) traite des _en-têtes_ des e-mails. Pour effectuer des enquêtes appropriées, vous pourriez utiliser les deux compétences. Notez que l'analyse du contenu et des comportements des pièces jointes est couverte dans le parcours d'apprentissage Analyse des logiciels malveillants.
 
 ## Objectifs
 
@@ -29,66 +27,57 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 - Utiliser des outils tels que VirusTotal et URLScan pour évaluer les pièces jointes et les URL de contenus malveillants.
 
 ---
+## Section Principale
+### Connaissances de base : HTML Emails et MIME
 
-## Foundation Knowledge: HTML Emails and MIME
+Afin de pratiquer cela, vous devez comprendre les bases des courriels HTML et MIME. Si vous pensez qu'il est nécessaire de revenir un peu sur ce sujet, consultez certaines des ressources sur les sujets clés ci-dessous :
 
-In order to practice this , you need to understand the basics of HTML emails and MIME. If you feel it’s necessary to brush up on this topic a bit, see some of the resources on key topics below:
+- La majorité des e-mails sont envoyés au format HTML, ce qui permet l'utilisation de diverses méthodes intelligentes de présentation et de tromperie par les hameçonneurs.
+- Bien qu'il ne soit pas nécessaire d'avoir la capacité d'écrire du code HTML ou de concevoir des pages Web, les participants doivent être familiers avec l'ouverture et l'examen du code source d'un e-mail HTML et comprendre les éléments essentiels présents. Pour ce faire, lisez cette introduction aux e-mails [MIME](https://learn.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/aa494197%28v=exchg.140%29) et HTML.
+- L'apprentissage des bases du HTML est inévitable et des ressources comme [W3Schools](https://www.w3schools.com/html/) peuvent fournir un bon point de départ. Notez également que certains clients de messagerie (par exemple Outlook) ne vous permettent pas de télécharger tout le corps des e-mails.
+- MIME est une norme Internet qui étend le format des e-mails au-delà des e-mails en texte brut et permet le texte dans des jeux de caractères autres que ASCII, des pièces jointes non textuelles, des corps de messages avec plusieurs parties et des informations d'en-tête dans des jeux de caractères non-ASCII. Les fonctionnalités MIME peuvent être utilisées à mauvais escient pour masquer du contenu et attacher du contenu malveillant. [Cet article de Wikipédia](https://en.wikipedia.org/wiki/MIME) fournit une bonne introduction initiale.
 
-- The majority of emails are sent in HTML format, which allows the use of various clever methods of presentation and deception by phishers.
-- While it is not necessary to have the ability to write HTML or design webpages, practitioners should be comfortable opening and reviewing the source code of an HTML email and understanding the essential elements present. In order to do so, read through this introduction to [MIME ](<https://learn.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/aa494197(v=exchg.140)>)and HTML emails.
-- Learning some HTML is inevitable, and resources like [W3Schools](https://www.w3schools.com/html/) can provide a good starting point. Do also note that some mail clients (for example Outlook) do not allow you to download the whole email body.
-- MIME is an Internet standard that extends the format of emails beyond plaintext emails and allows for text in character sets other than ASCII, non-text attachments, message bodies with multiple parts, and header information in non-ASCII character sets. MIME features can be abused to hide content and attach malicious content. [This Wikipedia article](https://en.wikipedia.org/wiki/MIME) gives a good initial introduction.
+### Identification des menaces potentielles : images intégrées et pixels de suivi
 
-## Identifying Potential Threats: Embedded Images and Tracking Pixels
+Lorsque vous enquêtez sur des e-mails potentiellement malveillants pour découvrir une infrastructure malveillante, ne cherchez pas seulement des liens et des pièces jointes. Les cybercriminels peuvent inclure des traqueurs dans leurs e-mails, tout comme les spécialistes du marketing. [Cet article pour les spécialistes du marketing](https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work) explique comment fonctionne le suivi des e-mails. Notez que n'importe quelle ressource chargée à partir du Web, pas seulement des images, peut être utilisée pour le suivi. Examinez les types d'informations qui peuvent être obtenues par un pixel de suivi ou un élément de suivi, y compris l'adresse IP (géolocalisation) et les informations d'empreintes digitales du navigateur. Internews a créé un exercice de formation (décrit dans la section pratique ci-dessous) qui vous aidera à vous familiariser avec les traqueurs et certaines des informations qu'ils peuvent repérer.
 
-When investigating potentially malicious emails to discover attacker infrastructure, don’t just look for links and attachments. Attackers may include trackers in their emails, just like marketers do.[ This article for marketers](https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work) explains how email tracking works. Note that any resource loaded from the web, not just images, can be used for tracking. Review the types of information which can be obtained through a tracking pixel or a tracking element, including IP (geolocation) and browser fingerprinting information. Internews created a training exercise (described in the practice section below) which will help you become more familiar with trackers and some of the information they can spot.
+### Outils et flux de travail pour l'analyse des e-mails malveillants
 
-## Tools and Workflow for Malicious Email Analysis
+Une fois que vous avez compris les concepts fondamentaux et les menaces potentielles, vous avez besoin d'un flux de travail et d'outils d’analyse.
 
-Once you understand the foundational concepts and potential threats, you need a workflow and tools for analysis.
+- Le flux de travail [Suspicious Phishing Email](https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html) d'Access Now fournit une approche systématique pour évaluer les e-mails suspects. Il comprend une liste d'étapes allant de l'observation initiale à la catégorisation et au signalement des menaces.
+- [VirusTotal](https://virustotal.com/) peut être utilisé pour évaluer les URL et les pièces jointes pour le contenu malveillant connu. Notez cependant que les URL et les fichiers soumis peuvent être consultés par d'autres utilisateurs et peuvent conduire à ce que le cybercriminel soit alerté de l'analyse effectuée. Ce n'est généralement qu'un risque lors de campagnes très ciblées ; dans d'autres cas, les cybercriminels supposent généralement que quelqu'un a détecté et analysé leurs modèles d'attaque.
+- Consultez [quelques-uns des outils d'analyse des e-mails décrits dans cet article](https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/). Ils peuvent examiner le contenu des e-mails et les pièces jointes, et plusieurs d'entre eux sont basés sur la ligne de commande, ce qui est particulièrement utile pour les analystes qui examinent le contenu créé par des acteurs sophistiqués, qui pourraient essayer de créer des messages de manière à exploiter les failles de sécurité des programmes de messagerie. L'article détaille également certaines techniques utilisées par les auteurs de menaces pour entraver l'analyse. [Cet article](https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91) examine également la façon de convertir des fichiers Outlook en texte brut et de les analyser via un bloc-notes ou une ligne de commande, afin de réduire la surface d'attaque des e-mails malveillants qui exploitent les bugs d'Outlook.
 
-- The[ Suspicious Phishing Email](https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html) workflow by Access Now provides a systematic approach to evaluating suspicious emails. It includes a list of steps from initial observation to threat categorization and reporting.
-- [VirusTotal](https://virustotal.com/) can be used to evaluate URLs and attachments for known malicious content. Note though that submitted URLs and files can be accessed by other users, and may lead to the attacker being alerted to the analysis being performed on them. This is usually only a risk during very targeted campaigns; in others, adversaries generally assume that someone detected and is analyzing their attack patterns.
-- Check out [some of the email analysis tools outlined in this article](https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/). They can investigate email content and attachments and several of them are command line based, which is of particular help to analysts who are looking into content created by sophisticated actors, who might try to craft messages in ways that exploit security holes within email programs. The article also details some techniques threat actors use to frustrate analysis. [This article](https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91) similarly looks at how to convert Outlook files to plain text ones and analyze them through a notepad or command line, so as to reduce the attack surface of malicious email which exploit Outlook bugs.
+## Pratique
 
-## Learning Resources
+- Lisez attentivement les deux études de cas ci-dessous, en notant tous les éléments qui sont nouveaux pour vous et qui nécessitent une pratique supplémentaire :
+  - [Analyser les fichiers d'e-mails malveillants | par Josh Lemon | Medium](https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91)
+  - [Analyser les e-mails malveillants. Une introduction à l'analyse d'un e-mail d'hameçonnage | par Kyle Bubp | Medium](https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e)
+- Un projet Internews qui se concentre sur la sécurité des journalistes [a créé un exercice de simulation](https://docs.google.com/document/d/1QZWSERCexs8uGEyVzUZ9-9Ep-Z7XJle_/edit#heading=h.xc3zfaqq1a2o) pour aider les utilisateurs à mieux comprendre et à pratiquer le travail avec les traqueurs. Parcourez le projet et faites quelques exercices.
 
-{{% resource title="Introduction to HTML email" languages="Multiple" cost="Free" description="A brief introduction to the concept of sending emails that contain HTML." url="https://en.wikipedia.org/wiki/HTML_email" %}}
+## Contrôle de compétence
 
-{{% resource title="Introduction to MIME" languages="Multiple" cost="Free" description="A brief introduction to the MIME format for messages." url="https://en.wikipedia.org/wiki/MIME" %}}
+Demandez à un pair ou à un mentor de vous envoyer un e-mail. Idéalement, l'e-mail contiendra plusieurs éléments tels que des pixels de suivi, des pièces jointes et des liens qui nécessiteraient une analyse approfondie. Sinon, accédez à votre propre boîte de réception et choisissez un e-mail non malveillant (espérons-le). Utilisez les compétences utilisées dans ce module pour l'analyser :
 
-{{% resource title="How to include images in email" languages="English" cost="Free" description="Although this page is oriented towards email senders, it goes over the ways that attackers may embed images in their email." url="https://mailchimp.com/resources/embed-image-in-email/" %}}
+- Pouvez-vous lire les en-têtes de l'e-mail pour déterminer l'adresse de l'expéditeur ?
+- Pouvez-vous confirmer l'authenticité de l'expéditeur ? Est-il probable que l'e-mail ait été falsifié ?
+- Quelle infrastructure a été utilisée pour transmettre le message ?
+- Quel contenu actif (MIME, pixels de suivi) est inclus dans l'e-mail ?
+- Quelles données pourraient être divulguées en ouvrant et en interagissant avec l'e-mail ?
+- Qu'est-ce que l'expéditeur veut que vous fassiez à la réception de l'e-mail ?
 
-{{% resource title="Learn HTML" languages="Multiple (auto-translated)" cost="Free" description="Most phishing malicious emails use HTML to deceive users. In order to extract URLs (and thus server addresses) from emails, you will have to learn some HTML." url="https://www.w3schools.com/html/" %}}
+Discutez de vos réponses aux questions ci-dessus avec votre pair ou votre mentor.
 
-{{% resource title="Intro to tracking pixels" languages="English" cost="Free" description="When investigating potentially malicious emails to discover attacker infrastructure, don’t just look for links and attachments. Attackers may include trackers in their emails, just like marketers do. This article for marketers explains how email tracking works. Note that any resource loaded from the web can be used for tracking." url="https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work" %}}
+## Ressources d'apprentissage
 
-{{% resource title="VirusTotal" languages="Main interface is in English" cost="Free, with some rate limitations and additional pro features" description="A tool to evaluate URLs and attachments for known malice. Note that submitted URLs and files can be accessed by other users." url="https://www.virustotal.com/gui/home/url" %}}
-
-{{% resource title="Malicious email workflow" languages="Multiple" cost="Free" description="A playbook for what to do when evaluating a suspicious email." url="https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html" %}}
-
-{{% resource title="Exchange malicious email investigation playbook" languages="English" cost="Free" description="A playbook for investigating malicious emails in a Microsoft Exchange environment (where the investigator has admin access)." url="https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing" %}}
-
-{{% resource title="Example analyses of phishing emails" languages="English" cost="Free" description="Analyses of sample phishing emails. Includes a look at HTML files with embedded malicious scripts and encoded content." url="https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e" additional_urls="https://www.vadesecure.com/en/blog/m365-phishing-email-analysis-eevilcorp" %}}
-
-{{% resource title="Example analyses of malware emails" languages="English" cost="Free" description="Since malicious emails could exploit security holes within email programs, this guide shows how best to analyze them using command line tools and text editors." url="https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/" additional_urls="https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91" %}}
-
-## Practice
-
-- Read the two case studies below completely, noting all elements which are new to you and require further practice:
-  - [Analyzing Malicious Email Files | by Josh Lemon | Medium](https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91)
-  - [Analyzing Malicious Emails. An intro to analyzing a phishing email | by Kyle Bubp | Medium](https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e)
-- An Internews project which focuses on journalist security [created a simulation exercise](https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/) to help people better understand and practice working with trackers. Read through the project and complete some of the exercises.
-
-## Skill Check
-
-Ask a peer or mentor to send you an email. Ideally, the email would contain several elements such as tracking pixels, attachments, and links which would benefit from an in depth analysis. Alternatively, go into your own inbox and pick out a (hopefully) non-malicious email. Use the skills used in this module to analyze it:
-
-- Can you read through the email headers to figure out the address of the sender?
-- Can you confirm the authenticity of the sender? Is it likely that the email was spoofed?
-- What infrastructure was used in the delivery of the message?
-- What active content (MIME, tracking pixels) is included in the email?
-- What data could be leaked by opening and interacting with the email?
-- What does the sender want you to do upon receiving the email?
-
-Discuss your answers to the above questions with your peer or mentor.
+{{% resource title="Introduction aux e-mails HTML" description="Une brève introduction au concept d'envoi d'e-mails contenant du code HTML" languages="Multiple" cost="Gratuit" url="https://en.wikipedia.org/wiki/HTML_email" %}}
+{{% resource title="Introduction à MIME" description="Une brève introduction au format MIME pour les messages" languages="Multiple" cost="Gratuit" url="https://en.wikipedia.org/wiki/MIME" %}}
+{{% resource title="Comment inclure des images dans les e-mails" description="Bien que cette page soit orientée vers les expéditeurs d'e-mails, elle explique comment les cybercriminels peuvent intégrer des images dans leurs e-mails." languages="Anglais" cost="Gratuit" url="https://mailchimp.com/resources/embed-image-in-email/" %}}
+{{% resource title="Apprendre HTML" description="La plupart des e-mails malveillants d'hameçonnage utilisent HTML pour tromper les utilisateurs. Afin d'extraire les URL (et donc les adresses de serveur) des e-mails, vous devrez apprendre HTML." languages="Multiple (traduit automatiquement)" cost="Gratuit" url="https://www.w3schools.com/html/" %}}
+{{% resource title="Introduction aux pixels de suivi" description="Lorsque vous enquêtez sur des e-mails potentiellement malveillants pour découvrir une infrastructure malveillante, ne cherchez pas seulement des liens et des pièces jointes. Les cybercriminels peuvent inclure des traqueurs dans leurs e-mails, tout comme les spécialistes du marketing. Cet article pour les spécialistes du marketing explique comment fonctionne le suivi des e-mails. Notez que toute ressource chargée à partir du Web peut être utilisée pour le suivi." languages="Anglais" cost="Gratuit" url="https://www.nutshell.com/blog/email-tracking-pixels-101-how-do-tracking-pixels-work" %}}
+{{% resource title="VirusTotal" description="Un outil pour évaluer les URL et les pièces jointes pour les pratiques malveillantes connues. Notez que les URL et les fichiers soumis peuvent être consultés par d'autres utilisateurs." languages="L'interface principale est en anglais" cost="Gratuit, avec certaines limitations de taux et des fonctionnalités professionnelles supplémentaires" url="https://www.virustotal.com/gui/home/url" %}}
+{{% resource title="Flux de travail des e-mails malveillants" description="Un guide pour savoir quoi faire lors de l'évaluation d'un e-mail suspect" languages="Multiple" cost="Gratuit" url="https://communitydocs.accessnow.org/58-Suspicious_Phishing_Email.html" %}}
+{{% resource title="Guide d'enquête sur les e-mails malveillants Exchange" description="Un guide pour enquêter sur les e-mails malveillants dans un environnement Microsoft Exchange (où l'enquêteur a un accès administrateur)" languages="Anglais" cost="Gratuit" url="https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing" %}}
+{{% resource title="Exemples d'analyses d'e-mails d'hameçonnage" description="Analyses d'exemples d'e-mails d'hameçonnage. Inclut un examen des fichiers HTML comprenant des scripts malveillants intégrés et du contenu codé" languages="Anglais" cost="Gratuit" url="https://medium.com/@kylebubp/analyzing-malicious-emails-fb4ddcf0663e <br> https://www.vadesecure.com/en/blog/m365-phishing-email-analysis-eevilcorp" %}}
+{{% resource title="Exemples d'analyses d'e-mails malveillants" description="Étant donné que les e-mails malveillants pourraient exploiter des failles de sécurité dans les programmes de messagerie, ce guide montre comment les analyser au mieux à l'aide d'outils en ligne de commande et d'éditeurs de texte." languages="Anglais" cost="Gratuit" url="https://intezer.com/blog/incident-response/automate-analysis-phishing-email-files/ <br> https://blog.joshlemon.com.au/analysing-malicious-email-files-d85d8ff76a91" %}}

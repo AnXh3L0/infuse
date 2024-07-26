@@ -1,11 +1,7 @@
 ---
 style: module
-title: "Sécurité opérationnelle : manipulation sécuritaire des liens et de
-  l'infrastructure"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: "Sécurité opérationnelle : manipulation sécuritaire des liens et de l'infrastructure"
+description: "Lorsque vous enquêtez sur des e-mails d'hameçonnage, des pièces jointes, des sites Web et d'autres infrastructures malveillantes, vous devez prendre des mesures proactives pour vous assurer que vous et les personnes que vous soutenez demeurez en sécurité. Assurez-vous d'étudier cette compétence et, si nécessaire, de mettre en place un environnement sûr avant d'interagir avec des e-mails ou des pages Web suspectes et malveillantes."
 weight: 3
 ---
 
@@ -26,9 +22,11 @@ Après avoir terminé ce sous-thème, les participants devraient être en mesure
 
 ---
 
+## Main Section
+
 De nombreux e-mails d'hameçonnage et messages similaires n'essaient pas seulement d'obtenir que la personne ciblée clique sur un lien, mais peuvent également tenter de collecter des données à son sujet (nous en discutons plus en détail dans le sous-thème 6). Lors d'une enquête, il est important de gérer les messages et autres infrastructures avec précaution, afin de ne pas révéler trop d'informations sur votre identité, votre travail et votre organisation à un cybercriminel, ainsi que de protéger les appareils et les comptes.
 
-## Précautions de base
+### Précautions de base
 
 Nous divisons généralement l'analyse en deux composantes : passive (sous-thèmes 4 et 5) et active (sous-thèmes 6 et 7). L'analyse passive ne doit pas inclure les contacts avec les serveurs d'un cybercriminel, contrairement à l'analyse active.
 
@@ -36,7 +34,7 @@ Il est important que les analystes comprennent quels types d'activités interagi
 
 Nous vous recommandons de tenir compte des mesures de sécurité opérationnelles suivantes lorsque vous effectuez vos analyses :
 
-Environnement sécurisé
+### Environnement sécurisé
 
 Selon la sophistication des attaques auxquelles vous faites face, la sensibilité de la machine, des données et des comptes que vous utilisez, et même la sensibilité de vos activités d'enquête et votre identité personnelle, vous devrez peut-être adopter un environnement sécurisé approprié pour effectuer des travaux d'enquête. Tenez compte des suggestions suivantes lorsque vous élaborez votre solution de sécurité :
 
@@ -46,7 +44,7 @@ Selon la sophistication des attaques auxquelles vous faites face, la sensibilit�
 - Configurez une adresse e-mail spéciale à laquelle les personnes ciblées peuvent transmettre les e-mails suspects qu'elles reçoivent. (Si ces personnes reçoivent des messages suspects d'une plateforme comme WhatsApp, elles peuvent envoyer une capture d'écran du message par e-mail). Cette adresse e-mail n'a pas besoin d'être unique pour chaque personne ciblée. Assurez-vous que ce compte est protégé par un mot de passe unique et une authentification à deux facteurs et empêchez votre client de messagerie de charger automatiquement du contenu externe tel que des images. En effet, les images chargées à partir d'un serveur peuvent alerter le cybercriminel qu'elles font l'objet d'une enquête et transformer une enquête passive en enquête active (voir le sous-thème 6 pour obtenir plus de détails) ;
 - Assurez-vous d'avoir un PC protégé avec une protection anti-malware à jour pour protéger votre ordinateur traitant l'analyse des logiciels malveillants contre tout débordement potentiel d'infection de logiciels malveillants sur votre ordinateur.
 
-Neutraliser les URL
+### Neutraliser les URL
 
 Lorsque vous documentez des URL potentiellement malveillantes, il est pratique courante de « neutraliser » l'URL afin que les applications que vous utilisez pour les notes ou la documentation ne génèrent pas automatiquement des liens cliquables qui risqueraient de vous mener (ou qui que ce soit avec qui vous collaborez) à cliquer involontairement sur le lien ou à générer du trafic vers l'URL à partir de votre machine de travail. Certaines applications, par exemple les messageries, prévisualisent également automatiquement les liens (et extraient le contenu d'un serveur pour le faire). La neutralisation des URL les empêche de le faire.
 
@@ -59,21 +57,13 @@ Ceci est généralement réalisé en remplaçant la section de protocole de l'UR
 
 Cela peut être fait manuellement en utilisant un éditeur de texte comme NotePad, Textedit ou Gedit. Consultez également les utilitaires comme [https://defang.me/](https://defang.me/) ou recherchez des outils de neutralisation (Defang) dans [CyberChef](https://gchq.github.io/CyberChef).
 
-Communiquer avec les personnes ciblées et déterminer les prochaines étapes immédiates lors d'un incident
+### Communiquer avec les personnes ciblées et déterminer les prochaines étapes immédiates lors d'un incident
 
 Si vous soupçonnez qu'un cybercriminel a pu accéder au compte de messagerie ou à la boîte de réception de la personne ciblée ou surveille sa machine (la première situation peut être le résultat d'une attaque d'hameçonnage réussie, tandis que la seconde peut être causée par un logiciel malveillant, par exemple en exécutant une pièce jointe malveillante), demandez à la personne ciblée de ne pas utiliser la machine et le compte concernés jusqu'à ce que vous puissiez examiner la situation. Si possible, communiquez avec la personne ciblée au moyen d'un autre compte et d'un autre appareil, par exemple, Signal ou WhatsApp sur son appareil personnel.
 
 Si vous soupçonnez que les comptes d'une personne ciblée ont été compromis, demandez-lui de changer immédiatement ses mots de passe et de forcer le compte à se déconnecter de tous les autres emplacements (la plupart des principaux services ont un paramètre qui le permet). Cela devrait empêcher le cybercriminel d'avoir accès au compte. Il sera toutefois informé que la personne ciblée a réalisé une opération indiquant que quelque chose ne va pas. Le cybercriminel a peut-être déjà téléchargé une quantité importante de données du compte.
 
 Si vous soupçonnez que l'appareil d'une personne ciblée a été compromis, demandez-lui de modifier les mots de passe de son compte sur un autre appareil et d'éviter d'utiliser cet appareil jusqu'à ce qu'une enquête soit effectuée. Suivez les étapes décrites dans le parcours d'apprentissage Détection des logiciels malveillants.
-
-## Ressources d'apprentissage
-
-{{% resource title="NoScript" languages="Anglais" cost="Gratuit" description="Une extension de navigateur pour les navigateurs Firefox et Chromium, qui vous permet de bloquer ou de permettre l'exécution de JavaScript de manière sélective. Lorsque vous consultez des sites Web potentiellement malveillants, elle vous permet de charger le site tout en neutralisant une grande partie de ses fonctionnalités potentiellement dommageables." url="[https://noscript.net/](https://noscript.net/)" %}}
-
-{{% resource title="Defang.me" languages="Anglais" cost="Gratuit" description="Un outil qui neutralise automatiquement les URL et les adresses IP." url="[https://defang.me/](https://defang.me/)" %}}
-
-{{% resource title="CyberChef" languages="Anglais" cost="Gratuit" description="Un outil complet pour convertir différents formats, qui permet également de neutraliser automatiquement les URL et les adresses IP." url="[https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/)" %}}
 
 ## Pratique
 
@@ -85,3 +75,11 @@ Si vous soupçonnez que l'appareil d'une personne ciblée a été compromis, dem
 ## Contrôle de compétence
 
 - Travaillez avec un pair ou un mentor qui vous enverra un jeton de bug Web généré [ici](https://canarytokens.org/generate). Ouvrez ce bug Web sur votre machine d'analyse. Une fois que vous le faites, votre pair ou votre mentor recevra des informations sur l'adresse e-mail avec laquelle il a enregistré le bug Web, y compris votre adresse IP et une brève description de votre navigateur Web appelé agent utilisateur. Discutez de ces résultats avec votre pair ou votre mentor : si vous effectuiez une analyse active, le cybercriminel verrait probablement ces détails également, puisque vous utiliseriez cette machine pour vous connecter aux serveurs qu'il contrôle.
+
+## Ressources d'apprentissage
+
+{{% resource title="NoScript" description="Une extension de navigateur pour les navigateurs Firefox et Chromium, qui vous permet de bloquer ou de permettre l'exécution de JavaScript de manière sélective. Lorsque vous consultez des sites Web potentiellement malveillants, elle vous permet de charger le site tout en neutralisant une grande partie de ses fonctionnalités potentiellement dommageables." languages="Anglais" cost="Gratuit" url="https://noscript.net/" %}}
+{{% resource title="Defang.me" description="Un outil qui neutralise automatiquement les URL et les adresses IP" languages="Anglais" cost="Gratuit" url="https://defang.me/" %}}
+{{% resource title="CyberChef" description="Un outil complet pour convertir différents formats, qui permet également de neutraliser automatiquement les URL et les adresses IP" languages="Anglais" cost="Gratuit" url="https://gchq.github.io/CyberChef/" %}}
+
+

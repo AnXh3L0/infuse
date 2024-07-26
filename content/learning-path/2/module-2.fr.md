@@ -1,81 +1,78 @@
-+++
-style = "module"
-weight = 2
-title = "OPSEC prerequisites for detecting malware"
-+++
+---
+style: module
+title: Conditions préalables de l'OPSEC pour détecter les logiciels malveillants
+weight: 2
+---
+## Cas d'utilisation
 
-## Use Case
+Ce sous-thème permettra au participant d'assurer la sécurité du processus et des personnes impliquées, et de mettre en œuvre une politique de sécurité dans l'environnement informatique que le participant utilise pour la détection de logiciels malveillants.
 
-This subtopic will allow the practitioner to ensure the security of the process and the individuals involved and implement a security policy within the computing environment the practitioner uses for malware detection.
+## Objectifs
 
-## Objectives
+Après avoir terminé ce sous-thème, le participant devrait être en mesure d'assurer la confidentialité et l'intégrité des données, ce qui comprend :
 
-After completing this subtopic, the practitioner should be able to ensure the confidentiality and integrity of data, which includes:
-
-- Encryption during storage and transfer
-- Doing checksums after data acquisitions
-- Not using devices suspected of being compromised
-- Using air-gapped environments
-- Ensuring security of the devices and servers used in the process
-- Threat modeling and risk assessment
-- Conducting backups and disk imaging
+- Chiffrement pendant le stockage et le transfert
+- Effectuer des sommes de contrôle après les acquisitions de données
+- Ne pas utiliser d'appareils soupçonnés d'être compromis
+- Utiliser des environnements fragilisés
+- Assurer la sécurité des appareils et des serveurs utilisés dans le processus
+- Modélisation des menaces et évaluation des risques
+- Effectuer des sauvegardes et l'image du disque
 
 ---
+## Section Principale
 
-Operational security for detecting malware can be divided into concerns related to specific scenarios:
+La sécurité opérationnelle pour la détection des logiciels malveillants peut être divisée en préoccupations liées à des scénarios spécifiques :
 
-- Directly interacting with a device of unknown status
-- Using a separate ‘good’ device to interact with a device of unknown status
-- Interacting with files or links of unknown status
+- Interaction directe avec un appareil de statut inconnu
+- Utilisation d'un dispositif « correct » distinct pour interagir avec un dispositif dont le statut est inconnu
+- Interaction avec des fichiers ou des liens de statut inconnu
 
-## Using a device of unknown status
+### Utilisation d'un appareil dont le statut est inconnu
 
-In many cases you will be handed a device and asked to inspect it for malware (or you may need to do this to your own device).
+Dans de nombreux cas, nous vous demanderons d'inspecter un appareil à la recherche de logiciels malveillants (ou vous devrez peut-être le faire sur votre propre appareil).
 
-Be aware that in case the device is compromised, your activities may be monitored, which may impact risk and safety for your client. Any keystrokes including access to online accounts or communications may be captured. External storage devices such as hard drives or USB flash drives may become targets for transfer of malicious code, and any network connections may be used to further spread or exfiltrate malicious code.
+Sachez que si l'appareil est compromis, vos activités peuvent être surveillées, ce qui peut avoir un impact sur le risque et la sécurité de votre client. Toute saisie d'information, y compris l’accès aux comptes en ligne ou aux communications, peut être saisie. Les périphériques de stockage externes tels que les disques durs ou les clés USB peuvent devenir des cibles de transfert de code malveillant, et toute connexion réseau peut être utilisée pour propager ou exfiltrer le code malveillant.
 
-Note as well that introducing analysis tools can trigger a ‘kill switch’ on some malware which has been designed to evade detection and analysis. In such cases, capturing a disk image and other forensic records may be necessary for further analysis. This is not covered in this learning path but is covered in [Analyzing Malware](https://docs.google.com/document/d/1tgvDPn7FXoaZVrdULKYu8HeOrfDaoelKJLzojDDA6mg/edit).
+Notez également que l'introduction d'outils d'analyse peut déclencher un « kill switch » sur certains logiciels malveillants qui a été conçu pour échapper à la détection et à l'analyse. Dans de tels cas, la capture d'une image disque et d'autres enregistrements d'investigation peut être nécessaire pour assurer une analyse plus approfondie. Cela n'est pas abordé dans ce parcours d'apprentissage, mais dans le parcours [Analyse des logiciels malveillants](/fr/learning-path/3/).
 
-## Using a separate ‘good’ device during the malware detection process
+### Utilisation d'un appareil distinct pendant le processus de détection des logiciels malveillants
 
-If you suspect that a device is infected with malware, you should do as little as possible with it until you learn more about its status. For this reason, you should always use a device where you do not suspect any malware infections to handle any sensitive information.
+Si vous soupçonnez qu'un appareil est infecté par des logiciels malveillants, vous devez en faire le moins possible jusqu'à ce que vous en sachiez plus sur son statut. Pour cette raison, vous devez toujours utiliser un appareil sur lequel vous ne soupçonnez aucune infection de logiciels malveillants pour traiter toute information sensible.
 
-If, for example, a person you are supporting suspects that their laptop or desktop might have been compromised, ask them to just use their mobile phone to communicate with you. It’s usually a good idea to shut down the potentially compromised laptop or desktop or at least disconnect it from the internet. If your beneficiary has tied their Signal, WhatsApp, and other accounts to the potentially compromised device, it might be a good idea to unlink those (doing so from a device that you do not suspect to be compromised) while the detection process is ongoing.
+Si, par exemple, une personne que vous assistez soupçonne que son ordinateur portable ou de bureau a été compromis, demandez-lui d'utiliser son téléphone mobile pour communiquer avec vous. Il est généralement judicieux d'éteindre l'ordinateur portable ou de bureau potentiellement compromis ou au moins de le déconnecter d'Internet. Si la personne concernée a lié son compte Signal, WhatsApp ou d'autres comptes à l'appareil potentiellement compromis, il peut être judicieux de les dissocier (à partir d'un appareil que vous ne soupçonnez pas d'être compromis) pendant le processus de détection.
 
-## Interacting with files or links of unknown status
+### Interaction avec des fichiers ou des liens de statut inconnu
 
-When going through the malware detection process, you might encounter links or files (either ordinary files or executable files) you are unsure about and which you suspect might be delivering malware payloads. If you are copying those links or files from a potentially compromised device to an analysis device, there’s always a risk that they could also infect your analysis device. In order to reduce the chances of this happening, we recommend:
+Lorsque vous passez par le processus de détection de logiciels malveillants, vous pouvez rencontrer des liens ou des fichiers (soit des fichiers ordinaires ou des fichiers exécutables) concernant lesquels vous avez des doutes et que vous soupçonnez de fournir des charges utiles de logiciels malveillants. Si vous copiez ces liens ou fichiers d'un appareil potentiellement compromis vers un appareil d'analyse, il y a toujours un risque qu'ils puissent également infecter votre appareil d'analyse. Afin de réduire les risques, nous recommandons ce qui suit :
 
-- Using a virtual machine on your analysis device and only opening the files there. This way, even if you open a malicious link or file and it infects your system, the damage will be contained to your virtual machine
-- Using web-based services and sandboxes (we will cover them more later on in this learning path)
-- Defanging all URLs (see the relevant section under Subtopic 3 in the malicious infrastructure learning path)
-- Storing all potentially suspicious files in compressed and password protected folders. This prevents them from being opened by accident or scanned by operating system tools when they, for example, index folders. The password does not need to be complex; it can literally be “ABC.” All it needs to do is prevent automated or accidental opens of the file.
+- Utiliser une machine virtuelle sur votre appareil d'analyse pour y ouvrir les fichiers. De cette façon, même si vous ouvrez un lien ou un fichier malveillant et qu'il infecte votre système, les dommages seront contenus dans votre machine virtuelle
+- Utiliser des services Web et de bacs à sable (nous en parlerons plus tard dans ce parcours d'apprentissage)
+- Neutraliser (defang) toutes les URL (voir la section correspondante sous le sous-thème 3 dans le parcours d'apprentissage sur les infrastructures malveillantes)
+- Stocker tous les fichiers potentiellement suspects dans des dossiers compressés et protégés par mot de passe. Cela empêche leur ouverture accidentelle ou leur analyse par les outils du système d'exploitation, par exemple, lorsqu'il indexe les dossiers. Le mot de passe n'a pas besoin d'être complexe. Il peut littéralement être de type « ABC ». L'objectif est d'empêcher les ouvertures automatiques ou accidentelles du fichier.
 
-For a deeper look at the topic, review the guide by Defensive Lab Agency on how to [handle a potentially compromised device](https://pts-project.org/guides/g6/), in particular:
+Pour obtenir un examen plus approfondi du sujet, consultez le guide de la Defensive Lab Agency sur la [façon de traiter un appareil potentiellement compromis](https://pts-project.org/guides/g6/), en particulier :
 
-- Isolating Android and iOS devices
-- Procedures for physically sending and receiving compromised devices for analysis in case you are working with (or yourself serving as) a remote technical analysis team
-- Introductory tips on chain of custody during device analysis
+- Isoler les appareils Android et iOS
+- Procédures pour envoyer et recevoir physiquement des appareils compromis à des fins d'analyse si vous travaillez avec (ou êtes vous-même) une équipe d'analyse technique à distance
+- Conseils d'introduction sur la chaîne de contrôle lors de l'analyse des appareils
 
-This last term on chain of custody refers to best practice in digital forensics and incident response to record the handling of a device in order to preserve evidence and allow evidence collected to be used in any potential legal proceedings. The linked article provides a good introduction to general-purpose best practices you can follow in case you are in a position to be handling evidence which might be used in a scenario with a higher burden of proof on evidence.
+Ce dernier terme sur la chaîne de contrôle fait référence aux meilleures pratiques en matière de criminalistique numérique et de réponse aux incidents pour enregistrer la manipulation d'un appareil afin de préserver les preuves et de permettre aux preuves recueillies d'être utilisées dans toute procédure judiciaire potentielle. L'article lié fournit une bonne introduction aux meilleures pratiques générales que vous pouvez suivre au cas où vous devriez traiter des preuves qui pourraient être utilisées dans un scénario ayant un fardeau de la preuve plus élevé.
 
-## Learning Resources
+## Pratique
 
-{{% resource title="Intermediate guide - How to handle a potentially compromised device" languages="English" cost="Free" description="A step-by-step guide on how to handle devices with iOS or Android which you suspect might have malware on them prior to starting detection work" url="https://pts-project.org/guides/g6/" %}}
+Mettre en place une machine virtuelle exécutant REmnux, avec [les étapes décrites dans le Guide d'intervention sur le terrain pour la société civile et les médias (chapitre 6, à partir de la page 30).](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf)
 
-{{% resource title="Virtual machine chapter of the Field Guide to incident response for civil society and media (chapter 6)" languages="English" cost="Free" description="An introductory overview of how malware analysts can start working with virtual machines and an installation of the Linux distribution" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+## Contrôle de compétence
 
-{{% resource title="Technical simulation with canary tokens" languages="English" cost="Free" description="A guide on how to use canary tokens, an offensive security tool, to simulate malware trackers. Can be very useful in teaching defenders what data can be easily exfiltrated" url="https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/" %}}
+Après avoir configuré votre MV REmnux, installez et connectez-vous à un VPN de bonne réputation. Assurez-vous que votre système principal n'est pas connecté à un VPN ou à un serveur différent de votre instance REmnux. Demandez à votre pair ou mentor de vous envoyer un jeton canari de bug Web qui sera ouvert uniquement dans REmnux, via un navigateur Web de votre choix. (Si vous ne connaissez pas encore les jetons canaris, [consultez ce guide](https://docs.google.com/document/d/14YViryXq2id2PaLeT91KxS-u67-26BDuLPTP_O5BHTM/edit?usp=sharing) que nous avons créé sur la façon dont vous pouvez les utiliser dans les formations de sécurité.)
 
+Quelle adresse IP a-t-il déclenchée ? Quel agent utilisateur ?
 
-## Practice
+Parlez à votre pair ou mentor des données qui restent dans votre machine virtuelle et de celles qui ne s'y trouvent pas. Si vous avez lancé un logiciel malveillant dans votre machine virtuelle et qu'il a contacté un serveur, cela passera-t-il par votre VPN ou votre connexion réseau résidentielle/de bureau ?
 
-Set up a VM running REmnux, with [the steps outlined in the Field Guide to incident response for civil society and media (chapter 6, starting on page 30).](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf)
+## Ressources d'apprentisage
 
-## Skill Check
-
-After you have set up your REmnux VM, install and then connect to a reputable VPN. Make sure that your main system is either not connected to a VPN or to a different server than your REmnux instance. Ask your peer or mentor to send you a web bug canary token which will be opened just in REmnux, through a web browser of your choice. (If you are not yet familiar with canary tokens, [check out this guide](https://internews.org/resource/guide-to-facilitating-a-technical-simulation-with-canary-tokens/) we created on how you could use them in security trainings.)
-
-Which IP address did it trigger? What user agent?
-
-Talk to your peer / mentor about what data stays on your VM and what doesn’t. If you ran a piece of malware in your VM which contacted a server, would this go through your VPN or home/ office network connection?
+{{% resource title="Guide intermédiaire : Comment gérer un appareil potentiellement compromis" description="Un guide étape par étape sur la façon de gérer les appareils avec iOS ou Android qui, selon vous, pourraient contenir des logiciels malveillants avant de commencer le travail de détection" languages="Anglais" cost="Gratuit" url="https://pts-project.org/guides/g6/" %}}
+{{% resource title="Chapitre sur les machines virtuelles du Guide d'intervention sur le terrain pour la société civile et les médias (chapitre 6)" description="Une introduction générale à la façon dont les analystes de logiciels malveillants peuvent travailler avec des machines virtuelles et une installation de la distribution Linux" languages="Anglais" cost="Gratuit" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+{{% resource title="Simulation technique avec des jetons canaris" description="Un guide sur l'utilisation des jetons canaris, un outil de sécurité offensif, pour simuler les traqueurs de logiciels malveillants. Peut être très utile pour enseigner aux défenseurs quelles données peuvent être facilement exfiltrées" languages="Anglais" cost="Gratuit" url="https://docs.google.com/document/d/14YViryXq2id2PaLeT91KxS-u67-26BDuLPTP_O5BHTM/edit?usp=sharing" %}}

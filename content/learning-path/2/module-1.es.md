@@ -1,126 +1,128 @@
-+++
-style = "module"
-weight = 1
-title = "Interpersonal skills for detecting malware"
-+++
-
-## Use Case
-
-Before you start analyzing any malware, you need to set up a safe environment to do so. Definitionally, malware does bad things to the systems it runs on. You do not want to run it on your primary system. Additionally, you likely will want to prevent the malware from actually making connections to the threat actor’s C&C (command and control) servers. Both of these mean that you should set up a virtual machine to use when performing malware analysis.
-
-## Objectives
-
-After completing this subtopic, practitioners will be able to support those who might have received or clicked on malicious links or emails in a more responsible way.
-
-Practitioners should also be able to do the following:
-
-- Explain the scope of the work and what information they would gather
-- Provide assurance to the client on their safety and the safety of their data
-- Prepare a simple confidentiality agreement with a client, if necessary
-- Navigate a triage discussion to help identify when further investigation and detection work is necessary
-
+---
+style: "module"
+weight: 1
+title: "Habilidades interpersonales para detectar malware"
+description: "Antes de comenzar a analizar cualquier malware, debe configurar un entorno seguro para hacerlo. El malware daña los sistemas en los que se ejecuta. No desea ejecutarlo en su sistema principal."
 ---
 
-## Foundation knowledge
+## Caso de Uso
 
-The Security Education Companion contains a multitude of advice on thoughtful, careful, harm-reducing ways to interact as a technology helper. If you are not already familiar with this type of content, we highly advise a review at [Security Education 101](https://www.securityeducationcompanion.org/articles).
+Antes de comenzar a analizar cualquier malware, debes configurar un entorno seguro para hacerlo. Definitivamente, el malware daña los sistemas en los que se ejecuta. No deseas ejecutarlo en tu sistema principal. Además, probablemente querrás evitar que el malware realmente establezca conexiones con los servidores de C&C (comando y control) del autor de amenazas. Ambos significan que debes configurar una máquina virtual para utilizarla al realizar análisis de malware.
 
-After reading through the above resources, you should be able to:
+## Objetivos
 
-- Understand how risk assessment is important in every interaction
-- Understand the risks of touching people’s devices or gaining access to their accounts;
-- Understand the risks of engaging in fear-mongering discourse
-- Understand your own limitations, both in terms of technical ability but also your suitability to support a given person or community and any risks inherent in doing so
-- Avoid injecting preferences for platforms, technology, open-source vs closed-source, etc, into helper interactions.
+Después de completar este subtema, los profesionales podrán ofrecer soporte a aquellos que pueden haber recibido o hecho clic en enlaces o correos electrónicos maliciosos de una manera más responsable.
 
-## 📋 Path-specific Knowledge
+Los profesionales también deberán ser capaces de hacer lo siguiente:
 
-Once you are familiar with the above foundational knowledge, take some time to think about particular interpersonal skills which might be needed for this specific learning path. Every learning path and intervention are slightly different; each one might bring with it different narratives or concerns by learners.
+- Explicar el alcance del trabajo y qué información recopilarían.
+- Proporcionar garantías al cliente sobre su seguridad y la seguridad de sus datos.
+- Elaborar un acuerdo de confidencialidad simple con un cliente, si es necesario.
+- Navega por una discusión sobre triage para ayudar a identificar cuándo es necesario realizar más investigaciones y detección.
 
-You should be able to:
+---
+## Sección Principal
 
-- Remember how those who create malware aim not just to obtain data but also scare people into thinking that they are perpetually surveilled. Malware attacks targeting civil society often serve the purpose of both data collection and intimidation
-- Recognize that many targeted people will have very sensitive data on their devices, which could pertain to both their personal and professional lives. Malware detection and investigation will be a stressful process for them because they both need to worry about what information about them might have been leaked to adversaries and they need to hand over control of devices to digital protectors who support them, which could make them feel even more vulnerable. Be ready to discuss your data handling practices, including the ways in which you encrypt the drive on which you are doing the detection and how you plan to handle and delete their data once the process is complete;
-- Understand that many people working in civil society are aware of the risks they personally face, but are extremely concerned about family, friends, and sources whose data might have been leaked or who might be targeted
-- Talk to people about any potential risks involved in the malware detection process (adversaries could find out about it, they might lose access to their devices, the process might not yield any satisfying results)
-- Understand that technical knowledge, skill levels, and resources vary widely between people. One civil society group might find it easy to lock down devices and reduce the chances of malware infections, while others might struggle to even find devices which still receive software updates
-- Be ready to explain how the same method of analysis can sometimes yield lots of data and sometimes very little, be able to manage expectations accordingly;
-- Appreciate that some civil society groups would like to sign an NDA or similar agreement prior to sharing much of their data or devices.
+### Conocimiento Básico
 
-Note that the other subtopics in this learning path also contain advice on developing interpersonal skills in order to deliver thoughtful, harm-reducing support on this subject.
+_Security Education Companion_ ofrece una gran cantidad de consejos sobre cómo interactuar como asistente tecnológico de manera ponderada, cuidadosa y con el objetivo de reducir los riesgos Si aún no estás familiarizado con este tipo de contenido, te recomendamos mucho que revises [Security Education 101](https://www.securityeducationcompanion.org/articles).
 
-## Understand: Harm Reduction & Operational Security
+Después de leer los recursos anteriores, deberías poder:
 
-By the time a malware sample has been shared with you, it is possible that harm has been caused to the targeted person. The malware might have captured data, and the targeted person may also be impacted by the psychosocial impact of being targeted or watched. It’s important to support the intended targeted person while, at the same time, avoiding causing harm to yourself during active interaction with malicious content.
+- Comprender cómo la evaluación de riesgos es importante en cada interacción.
+- Comprender los riesgos de tener contacto con los dispositivos de las personas o tener acceso a sus cuentas.
+- Comprender los riesgos de participar en un discurso que infunde miedo.
+- Comprender sus propias limitaciones, tanto en términos de capacidad técnica como de su competencia para ofrecer soporte a una persona o comunidad y los riesgos inherentes al hacerlo.
+- Evita la inyección de preferencias de plataformas, tecnología, código abierto versus código cerrado, etc., en las interacciones de ayuda.
 
-Harm reduction for the targeted person should start with collecting some information on the actions they took and the circumstances in which they interacted with their devices. You might ask different sets of questions for people you know well, such as colleagues, versus beneficiaries whom you know less about. Some questions worth asking include: What is their threat model? Are they an anonymous blogger? A dissident in exile attempting to hide their location?
+### 📋Conocimiento específico de la ruta
 
-The answers to these questions will both help provide useful harm reduction support and aid in your investigations. As you progress in analysis and understanding of the malicious content, update the targeted person especially insofar as is relevant to harm reduction.
+Una vez que estés familiarizado con los conocimientos básicos anteriores, tómate un tiempo para pensar en habilidades interpersonales particulares que podrían ser necesarias para esta ruta de aprendizaje específica. Cada ruta de aprendizaje e intervención son ligeramente diferentes; cada uno puede traer consigo diferentes narrativas o preocupaciones por los aprendices.
 
-For operational security to protect yourself while working with malicious emails, complete subtopic 3 (Safe Handling of Links and Infrastructure) of the learning path on detecting, tracking, and investigating malicious infrastructure.
+Deberías ser capaz de:
 
-## Understand: Detection, Negative Findings, and Paranoia
+- Recordar que quienes crean malware no sólo pretenden obtener datos, pero también asustar a las personas haciéndoles creer que están perpetuamente vigilados. Los ataques de malware dirigidos a la sociedad civil a menudo tienen como propósito tanto la recopilación de datos como la intimidación.
+- Reconocer que muchas personas objetivo tendrán datos muy confidenciales en sus dispositivos, que pueden estar relacionados tanto a su vida personal como profesional. La detección e investigación de malware será un proceso estresante para ellos porque, en ambos casos, deben preocuparse por qué información sobre ellos puede haberse filtrado a los atacantes. Además deben entregar el control de los dispositivos a los protectores digitales que los respaldan, lo que podría hacerlos sentir incluso más vulnerable. Debes estar preparado para debatir tus prácticas de manejo de datos, incluidas las formas en que cifras la unidad en la que estás realizando la detección y cómo planeas manejar y eliminar sus datos una vez que se complete el proceso.
+- Comprender que muchas personas que trabajan en la sociedad civil son conscientes de los riesgos que enfrentan personalmente, pero están extremadamente preocupadas por su familia, amigos y fuentes cuyos datos pueden haberse filtrado o que podrían ser atacados.
+- Hable con las personas sobre los riesgos potenciales involucrados en el proceso de detección de malware (los atacantes pueden descubrirlo, pueden perder el acceso a sus dispositivos y el proceso puede no arrojar ningún resultado satisfactorio).
+- Comprender que el conocimiento técnico, los niveles de habilidad y los recursos varían ampliamente entre las personas. A un grupo de la sociedad civil podría resultarle fácil bloquear dispositivos y reducir las posibilidades de infecciones de malware, mientras que otros podrían tener dificultades para incluso encontrar dispositivos que aún reciban actualizaciones de software.
+- Debes estar preparado para explicar cómo el mismo método de análisis a veces puede producir muchos datos y otras muy pocos; ser capaz de gestionar las expectativas en consecuencia.
+- Entender que a algunos grupos de la sociedad civil les gustaría firmar un acuerdo de confidencialidad o un acuerdo similar antes de compartir gran parte de sus datos o dispositivos.
 
-Spyware is an extremely invasive attack against individuals, families, communities, and movements. Understand that the information and analysis - whether positive or negative - which you provide to a client may be extremely consequential and inform risk decisions which they take with their devices. As such, it is important to be clear about the true scope and significance of any detection work and determination which you provide to them.
+Ten en cuenta que los otros subtemas de esta ruta de aprendizaje también contienen consejos sobre el desarrollo de habilidades interpersonales para proporcionar un apoyo ponderado y que reduzca los daños sobre este tema.
 
-Outside of highly controlled and monitored device environments, modern OS platforms remain difficult to fully assess for compromise and infections especially in case sophisticated zero-day attacks may be utilized. As such, you are never able to make a 100% definitive determination of the absence of malware on a device. You can only state that using the technique you have deployed, and with the skills you have, you were unable to find malware. This does not mean malware is absent, only that the tests used did not identify any.
+### Entender: Reducción de Daños y Seguridad Operativa
 
-At the same time, we know that paranoia is a common phenomenon in which the feeling of surveillance (warranted or not) is a persistent negative mental experience for public-facing activists, journalists, leaders, or other clients you may be working with. It is necessary to walk a fine line in determining a balance between providing useful technical evidence to update on the odds and probabilities that surveillance is occuring, while neither stoking a sense of false confidence nor an unfounded fear of personalized surveillance.
+Cuando se haya compartido contigo una muestra de malware, es posible que se haya causado daño a la persona objetivo. Es posible que el malware haya capturado datos y la persona objetivo también puede verse afectada por el impacto psicosocial de ser atacado u observado. Es importante ofrece soporte a la persona objetivo y, al mismo tiempo, evitar causarse daño durante la interacción activa con contenido malicioso.
 
-## Triage the situation as well as the device
+La reducción de daños para la persona objetivo debe comenzar con la recopilación de información sobre las acciones que tomó y las circunstancias en las que interactuó con sus dispositivos. Puedes hacer diferentes conjuntos de preguntas a personas que conoces bien, como colegas, en contraste con los beneficiarios sobre los que sabes menos. A continuación, algunas preguntas que vale la pena hacer: ¿Cuál es su modelado de amenaza? ¿Es un bloguero anónimo? ¿Un disidente en el exilio que intenta ocultar su localización?
 
-Triage is the necessary step in which you gather information and use it to decide when to invest time in further investigation. While effective triage relies on technical knowledge and instincts, it also requires interpersonal skills to empathetically engage a client, take their concerns seriously, listen actively, and understand the situation they are in.
+Las respuestas a estas preguntas te ayudarán a proporcionar soporte útil para reducir los daños y te ayudarán en tus investigaciones. A medida que avances en el análisis y la comprensión del contenido malicioso, actualiza a la persona objetivo, especialmente en lo que respecta a la reducción de daños.
 
-During initial conversations, seek to ascertain:
+Para la seguridad operativa y protegerte mientras trabajas con correos electrónicos maliciosos, completa el subtema 3 (Manejo Seguro de Enlaces e Infraestructura) de la ruta de aprendizaje sobre la detección, seguimiento e investigación de la infraestructura maliciosa.
 
-- Is there a particular reason they want their device checked, or is it a general fear, curiosity, suspicion, or act of prudence?
-- Specific reasons and explanations will help you target your search, for instance:
-  - Change in device performance
-  - A physical incident, such as a device being handled by someone else, or being seized and returned by law enforcement
-  - A digital incident, such as software or an application being installed, or a suspicious link being clicked
-  - A warning, indicator, or security alert
+### Entender: Detección, Hallazgos Negativos y Paranoia
 
-There are many alternative explanations for device misperformance, such as old or faulty hardware, software bugs, lack of updates, undesirable configurations. Of course, malware infection and compromise can also exist alongside these explanations. So finding misconfigurations, noting out of date software or low device resources is not sufficient to reject the malware hypothesis.
+El spyware es un ataque extremadamente invasivo contra individuos, familias, comunidades y movimientos. Comprende que la información y el análisis, ya sea positivo o negativo, que proporcionas a un cliente puede ser extremadamente significativo e informar las decisiones de riesgo que toman con sus dispositivos. Como tal, es importante tener claro el verdadero alcance y significado de cualquier trabajo de detección y determinación que les proporcione.
 
-Use a combination of interpersonal questioning and interaction with your client as well as access to the device (where possible and appropriate) to determine when detailed follow-up is necessary. And when it is not possible for you to conduct investigations yourself either due to your own limited time, resources, and ability, it is always desirable to share resources which will allow your contact to take steps to investigate and secure their devices themselves.
+Fuera de entornos de dispositivos altamente controlados y monitoreados, las modernas plataformas de OS siguen siendo difíciles de evaluar completamente en busca de compromisos e infecciones, especialmente en el caso de ataques sofisticados zero-day que puedan ser utilizados. Por lo tanto, nunca podrás hacer una determinación definitiva del 100% sobre la ausencia de malware en un dispositivo. Solo puedes afirmar que, utilizando la técnica que has implementado y con las habilidades que tienes, no pudiste encontrar malware. Esto no significa que no existe malware, sólo que las pruebas utilizadas no identificaron ninguno.
 
-The exact setup you need depends on your analysis method and the operating system of the malware you’re analyzing. In most cases you can start with a pre-build linux VM like [REMnux](https://remnux.org/). See [Chapter 6 of the Field Guide to Incident Response for Civil Society and Media](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) for step-by-step instructions on how to configure it. For specific things (for example, dynamic analysis of iOS malware) you will need additional tools (for example, a jailbroken iPhone or iPad). VMs occasionally have vulnerabilities that allow software running in the VM to attack the host operating system. Most malware doesn’t even come close to this level of sophistication, but if in doubt, it’s safest to analyze malware on a separate physical device that is wiped afterwards.
+Al mismo tiempo, sabemos que la paranoia es un fenómeno común en el que la sensación de vigilancia (justificada o no) es una experiencia mental negativa persistente para activistas, periodistas, líderes u otros clientes con los que puedas estar trabajando. Es necesario caminar sobre la delgada línea para determinar un equilibrio entre proporcionar evidencia técnica útil para actualizar las hipótesis y probabilidades de que se esté produciendo vigilancia, sin fomentar una sensación de falsa confianza ni un temor infundado a la vigilancia personalizada.
 
-To set up REMnux, we recommend that you follow the steps outlined in [Chapter 6 of the Field Guide to Incident Response for Civil Society and Media](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) and [download the VM](https://docs.remnux.org/install-distro/get-virtual-appliance)[^1]. This is an easy way to start which provides excellent isolation between your host system and the REMnux environment. Be careful not to share sensitive data from your host OS into the VM. Per the instructions linked above, take a snapshot of your VM once it’s been set up, and before you start working on any malware. You can use snapshots to return your VM to a known-good state before analyzing different pieces of malware and to isolate different clients from each other. For more information on VM snapshots in general, see [this article](https://www.nakivo.com/blog/vm-snapshot-vs-backup/).
+### Hacer un triage de la situación, así como del dispositivo
 
-While performing malware analysis, you may find that you want additional tools in your analysis VM. Go ahead and install and configure them, but note what you did. After you’re done with your analysis, you can load up your “clean” VM snapshot, install and configure the tool, and then make a new “clean” snapshot for your next malware analysis adventure.
+El triage es el paso necesario en el que se recopila información y se utiliza para decidir cuándo invertir tiempo en una investigación más amplia. Si bien el triage eficaz se basa en conocimientos técnicos e instintos, también requiere habilidades interpersonales para involucrar al cliente con empatía, tomar en serio sus inquietudes, escuchar activamente y comprender la situación en la que se encuentra.
 
-In order to move malware files around, the standard practice is to put them in encrypted ZIP files. In this case, the encryption quality doesn’t matter. The point is not to keep the malware secret, so much as to prevent inadvertently unleashing it on other systems and to prevent anti-malware systems from detecting or deleting it. Feel free to include the password in the ZIP file name.
+Durante las conversaciones iniciales, trata de determinar:
 
-## Learning Resources
+- ¿Existe una razón particular por la que quieren que se revise su dispositivo, o es un miedo general, curiosidad, suposición o acto de prudencia?
+- Las razones y las explicaciones específicas te ayudarán a enfocar tu búsqueda, por ejemplo:
+  - Cambio en el rendimiento del dispositivo.
+  - Un incidente físico, como que alguien más manipule el dispositivo o que sea confiscado y devuelto por las autoridades.
+  - Un incidente digital, como un software o una aplicación que se está instalando, o se hace clic en un enlace sospechoso.
+  - Una advertencia, indicador o alerta de seguridad.
 
-{{% resource title="Security Education 101" languages="English" cost="Free" description="A popular community resource on how to teach and talk about digital security" url="https://www.securityeducationcompanion.org/articles" %}}
+Hay muchas explicaciones alternativas para el rendimiento deficiente del dispositivo, como hardware antiguo o defectuoso, errores de software, falta de actualizaciones y configuraciones no deseadas. Por supuesto, la infección y el comprometido por malware también pueden existir junto con estas explicaciones. Por lo tanto, encontrar configuraciones incorrectas, notar software desactualizado o bajos recursos del dispositivo no es suficiente para rechazar la hipótesis del malware.
 
-## Practice
+Utilice una combinación de preguntas interpersonales e interacción con su cliente, así como acceso al dispositivo (cuando sea posible y apropiado) para determinar cuándo es necesario un seguimiento detallado. Y cuando no sea posible para ti realizar investigaciones por tu cuenta debido a tu tiempo limitado, recursos y habilidades, siempre es deseable compartir recursos que permitan a tu contacto tomar medidas para investigar y asegurar sus dispositivos por sí mismos.
 
-Reflect on and answer/discuss the following with peers, colleagues, friends, or a mentor. If available and if appropriate, talk to a ‘client’ you have worked with before to ask their input and experiences on some of these questions.
+La configuración exacta que necesitas depende de tu método de análisis y del sistema operativo del malware que estés analizando. En la mayoría de los casos, puedes comenzar con una máquina virtual Linux preconfigurada como [REMnux](https://remnux.org/). Consulta el [Capítulo 6 de la Guía de Campo para Respuesta a Incidente para la Sociedad Civil y Medios](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) para obtener instrucciones paso a paso sobre cómo realizar la configuración. Para cosas específicas (por ejemplo, análisis dinámico de malware de iOS) necesitarás herramientas adicionales (por ejemplo, un iPhone o iPad con jailbreak). En ocasiones, las VM tienen vulnerabilidades que permiten que el software que se ejecuta en la VM ataque el sistema operativo host. La mayoría del malware ni siquiera se acerca a este nivel de sofisticación, pero en caso de duda, lo más seguro es analizar el malware en un dispositivo físico separado que se borre posteriormente.
 
-- Describe how touching and gaining access to someone's device might present unforeseen risks.
-- Imagine you are assisting someone with sensitive data on their device. How would you approach a discussion with this person regarding your access and data handling.
-- Why is it impossible to say that a device is free from malware?
-- How does understanding a person’s specific threat model impact your harm-reduction efforts, for instance if they are an anonymous blogger or dissident in exile?
-- How do you navigate providing factual technical evidence according to your ability, while balancing the need not to provide false confidence while also not fostering paranoia?
-- Describe your own abilities and limitations in conducting malware detection work. After making a first attempt at this description, attempt to add further nuance and accuracy to your description.
-  - What might be the risks if you proceed without this recognition of your limitations?
-- Role Play an interaction in which you report to a client on finding active malware on a device.
+Para configurar REMnux, recomendamos que sigas los pasos descritos en el [Capítulo 6 de la Guía de Campo para Respuesta a Incidentes para la Sociedad Civil y Medios](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) y [descargues la VM](https://docs.remnux.org/install-distro/get-virtual-appliance)[^1]. Esta es una manera fácil de comenzar que proporciona un excelente aislamiento entre su sistema host y el entorno REMnux. Ten cuidado de no compartir datos confidenciales de su sistema operativo host en la VM. Según las instrucciones vinculadas anteriormente, toma un snapshot de tu VM una vez que esté configurada y antes de comenzar a trabajar con cualquier malware. Puedes utilizar snapshots para volver a tu máquina virtual válida conocida antes de analizar diferentes piezas de malware y aislar diferentes clientes entre sí. Para obtener más información sobre VM snapshots en general, revisa [este artículo](https://www.nakivo.com/blog/vm-snapshot-vs-backup/).
 
-## Skill check
+Mientras realizas un análisis de malware, es posible que desees herramientas adicionales en tu VM de análisis. Adelante e instálalos y configúralos, pero ten en cuenta lo que hiciste. Después de que hayas terminado tu análisis, puedes subir tu snapshot "limpio" de la VM , instalar y configurar la herramienta, y luego crear un nuevo snapshot "limpio" para tu próxima aventura de análisis de malware.
 
-With a Mentor or Peer
+Para mover archivos de malware, la práctica estándar es colocarlos en archivos ZIP cifrados. En este caso, la calidad del cifrado no importa. El objetivo no es tanto mantener en secreto el malware, sino más bien evitar liberarlo involuntariamente en otros sistemas y prevenir que los sistemas antimalware lo detecten o lo eliminen. Tomate la libertad de incluir la contraseña en el nombre del archivo ZIP.
 
-- Explain to your mentor/peer or peer group your responses to the above Practice questions.
-- Role play some of the interactions described in the above Practice questions:
-  - Initial discussion with a client
-  - Discussing their threat model
-  - Describing a negative finding (no malware) including an explanation of the limitations of the assessment
-  - Informing of a positive finding (malware found)
-- If available, have someone watch your actual interactions and incident response process with a client and provide feedback on how you navigate the interpersonal elements of the interaction
+## Práctica
 
-## Notes
+Reflexiona y responde/discute lo siguiente con tus compañeros, colegas, amigos o un mentor. Si está disponible y es apropiado, habla con un "cliente" con el que hayas trabajado antes para pedirle su contribución y sus experiencias sobre algunas de estas cuestiones.
 
-[^1]: At time of writing, there was no easy way to run this virtual machine on ARM-based processors, such as Raspberry Pi devices or Macs with an Apple Silicon chip
+- Describe cómo hacer contacto y obtener acceso al dispositivo de alguien puede presentar riesgos inesperados.
+- Imagina que estás ayudando a alguien con datos sensibles en su dispositivo. ¿Cómo abordarías una conversación con esta persona sobre tu acceso y manejo de datos?
+- ¿Por qué es imposible decir que un dispositivo está libre de malware?
+- ¿Cómo afecta la comprensión del perfil de amenazas específico de una persona en tus esfuerzos de reducción de daños, por ejemplo, si es un bloguero anónimo o un disidente en el exilio?
+- ¿Cómo conduces la entrega de evidencias técnicas factuales según tu capacidad, al mismo tiempo que equilibras la necesidad de no proporcionar una falsa confianza y tampoco promocionar la paranoia?
+- Describe tus propias habilidades y limitaciones al realizar trabajos de detección de malware. Después de hacer un primer intento de esta descripción, intenta agregar más matices y precisión a tu descripción.
+  - ¿Cuáles podrían ser los riesgos si procedes sin reconocer tus limitaciones?
+- Representa un escenario en el que informas a un cliente sobre el hallazgo de malware activo en un dispositivo.
+
+## Verificación de habilidades
+
+Con un Mentor o Colega
+
+- Explícale a tu mentora/colega o grupo de colegas tus respuestas a las preguntas de la Práctica anterior.
+- Representa algunas de las interacciones descritas en las preguntas de la Práctica anterior.
+  - Discusión inicial con un cliente.
+  - Discutiendo su modelado de amenaza.
+  - Describe un hallazgo negativo (no malware), incluida una explicación de las limitaciones de la evaluación.
+  - Informa un hallazgo positivo (malware encontrado).
+- Si es posible, pide a alguien que observe tus interacciones reales y tu proceso de respuesta ante incidentes con un cliente, y que te de retroalimentación sobre cómo manejas los aspectos interpersonales de la interacción.
+
+## Recursos Educativos
+
+{{% resource title="Security Education 101" description="Un recurso comunitario popular sobre cómo enseñar y hablar sobre seguridad digital" languages="Inglés" cost="Gratis" url="https://www.securityeducationcompanion.org/articles" %}}
+
+## Notas
+
+[^1]: REMnux no está disponible en procesadores ARM, como las computadoras Apple Silicon. Aunque es posible virtualizar entre arquitecturas de CPU usando emuladores como QEMU o UTM (VirtualBox no admite actualmente arquitecturas ARM), el rendimiento será lento y no se recomienda. Sería más sensato seleccionar otra distribución de Linux que sea compatible con su hardware e instalar los paquetes de software necesarios para completar las actividades, si no vienen ya con el sistema operativo. Kali Linux es una distribución de Linux popular que incluye o admite muchas herramientas también encontradas en REMnux. Si tiene un dispositivo Apple Silicon, puede usar [UTM](https://mac.getutm.app/) para ejecutar la imagen del instalador de Kali para Apple Silicon (ARM64). Guías paso a paso están disponibles tanto de UTM como de Kali. En el momento de escribir esto, un error que afecta el proceso de instalación requiere un paso adicional durante la instalación que consiste en adjuntar una pantalla de terminal serial virtual: ambas guías describen este proceso. También puede obtener una versión ARM de Kali para el Raspberry Pi, con la mayoría de los modelos de Raspberry Pi compatibles.

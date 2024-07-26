@@ -1,105 +1,89 @@
-+++
-style = "module"
-weight = 3
-title = "Sandboxes and dynamic analysis"
-+++
+---
+style: module
+title: Bac à sable et analyse dynamique
+description: "L'analyse dynamique est le processus d'exécution d'un programme malveillant et d'observation de son comportement. La manière la plus simple de le faire est de faire fonctionner le logiciel dans un environnement sécurisé et isolé appelé bac à sable."
+weight: 3
+---
+## Cas d'utilisation
 
-## Use Case
+L'analyse dynamique consiste à exécuter un logiciel malveillant et à observer ce qu'il permet d'effectuer. La façon la plus simple d'effectuer une analyse dynamique consiste à exécuter un logiciel dans un bac à sable. Un bac à sable est un environnement sûr et isolé qui permet d'ouvrir un fichier, une URL ou un programme potentiellement malveillant et de générer une énorme quantité de données. Ce sous-thème examine l'analyse du bac à sable, ce que le programme peut et ne peut pas faire, et comment le faire.
 
-Dynamic analysis is the process of running a piece of malware and observing what it does. The easiest way of doing dynamic analysis is by running a piece of software in a sandbox. A sandbox is a safe, isolated environment which opens a potentially malicious file, URL, or program and generates a huge amount of data on it. This subtopic looks at sandbox analysis, what it can and cannot do, and how to do it.
+## Objectifs
 
-## Objectives
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-After completing this subtopic, practitioners should be able to do the following:
-
-- Understand the use case for and limitations of dynamic analysis
-- Understand the advantages and limitations of sandboxes
-- Open a suspicious file, URL, or program in a sandbox
-- Be able to perform some basic dynamic analysis on either Windows or Android binaries using off-the-shelf tools
+- Comprendre le cas d'utilisation et les limites de l'analyse dynamique
+- Comprendre les avantages et les limites des bacs à sable
+- Ouvrir un fichier, une URL ou un programme suspect dans un bac à sable
+- Effectuer une analyse dynamique de base sur les binaires Windows ou Android à l'aide d'outils standard
 
 ---
+## Section Principale
 
-## Dynamic analysis
+### Analyse dynamique
 
-When you conduct dynamic analysis on a potentially suspicious file, you will open and execute the file in a specialized tool and observe what this file does, whether it tries to access other files, if it makes network connections, and the like. Static analysis, outlined in subtopic 4, on the other hand, disassembles the file rather than opening or executing it.
+Lorsque vous effectuez une analyse dynamique d'un fichier potentiellement suspect, vous ouvrez et exécutez le fichier dans un outil spécialisé et observez ce que fait ce fichier, s'il tente d'accéder à d'autres fichiers, s'il établit des connexions réseau, etc. L'analyse statique, décrite dans le sous-thème 4, désassemble le fichier plutôt que de l'ouvrir ou de l'exécuter.
 
-Depending on the situation, dynamic analysis can be easier or harder than static analysis, and it can also be more or less accurate. In practice, a combination of static and dynamic analysis will likely produce the best results. Most dynamic analysis will also involve some static analysis, so the line between the two techniques is often blurred.
+Selon la situation, l'analyse dynamique peut s'avérer plus facile ou plus difficile que l'analyse statique, et elle peut également être plus ou moins précise. En pratique, une combinaison de l'analyse statique et de l'analyse dynamique produira probablement les meilleurs résultats. La plupart des analyses dynamiques impliquent également une analyse statique, de sorte que la ligne qui sépare les deux techniques est souvent floue.
 
-The general setup for dynamic analysis includes a sandbox in which the malware is run, a debugger to control and monitor program execution, system monitoring to watch for changes to the sandbox system’s state, and something to mediate internet access to block, observe, and/or modify network traffic. These might all exist on one system, or they might be separate virtual or physical devices. For example, you may use a jailbroken iPhone as your sandbox, one tool for remote debugging and system monitoring, and another tool for internet mediation. Not all systems may be used in every situation, for example you might just capture network traffic and monitor system changes without using a debugger.
+La configuration générale pour l'analyse dynamique comprend un bac à sable dans lequel le logiciel malveillant est exécuté, un débogueur pour contrôler et surveiller l'exécution du programme, une surveillance du système pour surveiller les modifications apportées à l'état du système du bac à sable, et un élément permettant de faciliter l'accès à Internet pour bloquer, observer et/ou modifier le trafic réseau. Ceux-ci peuvent tous exister sur un même système, ou ils peuvent être des périphériques virtuels ou physiques séparés. Par exemple, vous pouvez utiliser un iPhone débridé comme bac à sable, un outil pour le débogage à distance et la surveillance du système, et un autre outil pour la médiation Internet. Tous les systèmes ne peuvent pas être utilisés dans toutes les situations, par exemple, vous pouvez simplement capturer le trafic réseau et surveiller les modifications du système sans utiliser de débogueur.
 
-There are many different methods in which we could conduct dynamic analysis, including by opening up the executable in a sandbox and checking the network connections it makes. For a great resource on detecting malware through the network traffic it generates, check out [this guide](https://malware-traffic-analysis.net/).
+Il existe de nombreuses méthodes différentes pour effectuer une analyse dynamique, notamment en ouvrant l'exécutable dans un bac à sable et en vérifiant les connexions réseau qu'il établit. Pour obtenir une excellente ressource sur la détection des logiciels malveillants à travers le trafic réseau qu'il génère, consultez [ce guide](https://malware-traffic-analysis.net/).
 
-In theory, dynamic analysis could tip off a threat actor that you are analyzing their malware. In practice, adversaries often expect their malware to be analyzed and it is very rare to encounter completely novel malware in your career. With the exception of some very sensitive cases, we would not worry about this risk.
+En théorie, l'analyse dynamique pourrait indiquer à un auteur de menaces que vous analysez son logiciel malveillant. En pratique, les cybercriminels s'attendent souvent à ce que leurs logiciels malveillants soient analysés et il sera très rare de rencontrer des logiciels malveillants complètement nouveaux au fil de votre carrière. À l'exception de certains cas très sensibles, nous ne nous inquiéterions pas de ce risque.
 
-## Sandboxes
+### Bacs à sable
 
-A (malware) sandbox is a safe environment in which you can open and run a file or an URL. It is essentially a custom-designed virtual machine that is launched before the file or URL is opened, and is then shut down after a certain amount of time.
+Un bac à sable (pour logiciels malveillants) est un environnement sûr dans lequel vous pouvez ouvrir et exécuter des fichiers ou des URL. Il s'agit essentiellement d'une machine virtuelle conçue sur mesure qui est lancée avant l'ouverture du fichier ou de l'URL, puis arrêtée après un certain temps.
 
-All the activities in the sandbox, such as files that are opened or created as well as network connections made, are recorded and accessible through an activity report. The activity report can help you understand whether the file or URL was malicious. It can also help you link malware to previously seen activities, for example based on specific network connections or files that are created.
+Toutes les activités dans le bac à sable, telles que les fichiers ouverts ou créés ainsi que les connexions réseau effectuées, sont enregistrées et accessibles via un rapport d'activité. Le rapport d'activité peut vous aider à comprendre si le fichier ou l'URL était malveillant. Il peut également vous aider à lier des logiciels malveillants à des activités précédemment vues, par exemple en fonction de connexions réseau spécifiques ou des fichiers créés.
 
-Running known malware inside a sandbox can also be very helpful as you are learning more about malware. It helps you understand what malware does and what changes it makes on the system. For example, a lot of malware when initially run tries to ensure persistence so that it will still run following a reboot. These persistence methods are something you can look for when you perform manual forensics on a possible infected device.
+L'exécution de logiciels malveillants connus dans un bac à sable peut également être très utile, car cela vous permet d'en apprendre plus sur les logiciels malveillants. Cela vous aide à comprendre ce que font les logiciels malveillants et les changements qu'ils apportent au système. Par exemple, de nombreux logiciels malveillants lors de leur exécution initiale tentent de garantir leur persistance afin de toujours s'exécuter après un redémarrage. Ces méthodes de persistance sont un élément que vous pouvez rechercher lorsque vous effectuez une investigation manuelle sur un dispositif éventuellement infecté.
 
-A lot of malware has anti-sandbox features built in: when the malware detects it is running inside a sandbox environment, it will terminate or sometimes do something harmless to confuse the analysis. Moreover, some malware is designed to only run if specific conditions are met, for example a specific version of the operating system, or an IP address located in a specific country. Sandboxes are often updated to respond to anti-sandbox methods and many sandboxes let you choose the certain properties.
+De nombreux logiciels malveillants disposent de fonctionnalités anti-bac à sable intégrées : lorsque le logiciel malveillant détecte qu'il fonctionne dans un environnement de bac à sable, il s'arrête ou exécute parfois quelque chose d'inoffensif pour brouiller l'analyse. De plus, certains logiciels malveillants sont conçus pour fonctionner uniquement si des conditions spécifiques sont remplies, par exemple une version spécifique du système d'exploitation ou une adresse IP située dans un pays spécifique. Les bacs à sable sont souvent mis à jour pour répondre aux méthodes anti-bac à sable et de nombreux bacs à sable vous permettent de choisir certaines propriétés.
 
-This is important to keep in mind when reading a sandbox report: a lack of malicious activity doesn’t automatically mean the file or URL isn’t malicious. On the other hand, if malicious activity was shown, you can be certain that the file or URL was malicious.
+Il est important de garder à l'esprit lors de la lecture d'un rapport de bac à sable qu'un manque d'activité malveillante ne signifie pas automatiquement que le fichier ou l'URL n'est pas malveillant. D'autre part, si une activité malveillante est détectée, vous pouvez être certain que le fichier ou l'URL est de nature malveillante.
 
-Check out [Chapter 10 of the Field Guide to incident response for civil society and media](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) for a more in-depth introduction to sandboxes.
+Consultez le [chapitre 10 du Guide d'intervention sur le terrain pour la société civile et les médias](https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf) pour obtenir une introduction plus approfondie aux bacs à sable.
 
-It is possible to run a sandbox locally. [Cuckoo](https://cuckoosandbox.org/) is an open source sandbox that has been around for many years. A [new version](https://github.com/cert-ee/cuckoo3) is being developed but is not yet available at the time of writing (February 2024).
+Il est possible d'exécuter un bac à sable localement. [Cuckoo](https://cuckoosandbox.org/) est un bac à sable open source qui existe depuis de nombreuses années. Une [nouvelle version](https://github.com/cert-ee/cuckoo3) est en cours de développement, mais n'est pas encore disponible au moment de la rédaction (février 2024).
 
-While running a sandbox locally gives you full control of the environment and means you can keep your files and URLs fully private, it can be quite a lot of work to set up and maintain. Thankfully, there are many online sandboxes available, such as [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [Joe Sandbox](https://www.joesandbox.com/), [Triage](https://tria.ge/) and even an online version of [Cuckoo](https://cuckoo.cert.ee/). All of them have free versions that allow you to upload malware and URLs, though some do require registration. Do keep in mind that if you use a free version, anything you run inside a sandbox will be publicly available. This can be a concern if you don’t want to tip off an adversary or are dealing with very private data, such as potentially infected confidential documents.
+Bien que l'exécution d'un bac à sable au niveau local vous donne un contrôle total de l'environnement et signifie que vous pouvez garder vos fichiers et URL entièrement privés, elle peut être laborieuse et compliquée à maintenir. Heureusement, il existe de nombreux bacs à sable en ligne tels que [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [Joe Sandbox](https://www.joesandbox.com/), [Triage](https://tria.ge/) et même une version en ligne de [Cuckoo](https://cuckoo.cert.ee/). Tous ces outils ont des versions gratuites qui vous permettent de télécharger des logiciels malveillants et des URL, bien que certains nécessitent une inscription. Gardez à l'esprit que si vous utilisez une version gratuite, tout ce que vous exécutez dans un bac à sable sera accessible au public. Cela peut être préoccupant si vous ne voulez pas alerter un cybercriminel ou si vous traitez avec des données très privées, telles que des documents confidentiels potentiellement infectés.
 
-## Dynamic analysis of Windows binaries
+### Analyse dynamique des binaires Windows
 
-We recommend starting out with an overview class, this time from [OpenSecurityTraining](https://opensecuritytraining.info/Training.html). Their [Malware Dynamic Analysis](https://opensecuritytraining.info/MalwareDynamicAnalysis.html) class includes slides, lab materials, and videos, and it covers setup, analysis, and creating IoCs.
+Nous vous recommandons de commencer avec une classe d'aperçu, cette fois à partir d'[OpenSecurityTraining](https://opensecuritytraining.info/Training.html). Leur classe [Malware Dynamic Analysis](https://opensecuritytraining.info/MalwareDynamicAnalysis.html) comprend des diapositives, du matériel d'exercice et des vidéos, et couvre la configuration, l'analyse et la création d'IoC.
 
-## Dynamic analysis of Android binaries
+### Analyse dynamique des binaires Android
 
-Many tools can be used to dynamically analyze Android binaries. Those include some of the sandboxes outlined above and [Frida](https://frida.re/docs/android/) (check out [this tool](https://github.com/nccgroup/house) for a GUI frontend to Frida).
+De nombreux outils peuvent être utilisés pour analyser dynamiquement les binaires Android. Ceux-ci incluent certains des bacs à sable décrits ci-dessus et [Frida](https://frida.re/docs/android/) (consultez [cet outil](https://github.com/nccgroup/house) pour obtenir une interface graphique pour Frida).
 
-PiRogue Tool Suite (outlined in the detecting malware learning path) can also [do excellent dynamic analysis](https://pts-project.org/guides/g8/) of Android binaries, though some of those analysis methods require you to first root your device.
+PiRogue Tool Suite (décrit dans le parcours d'apprentissage de détection des logiciels malveillants) peut également [effectuer une excellente analyse](https://pts-project.org/guides/g8/) dynamique des binaires Android, bien que certaines de ces méthodes d'analyse nécessitent que vous rootiez d'abord votre appareil.
 
-## Learning Resources
+## Contrôle de compétence
 
-{{% resource title="Chapter 10, Field Guide to incident response for civil society and media" languages="English" cost="Free" description="In-depth look at using sandboxes to analyze email payloads." url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+### Général
 
-{{% resource title="Any.run" languages="English" cost="Free only for non-commercial use" description="Commercial sandbox for analyzing malware." url="https://any.run/" %}}
+1. Accédez à la section « Bac à sable » du chapitre 10 du [Guide d'intervention sur le terrain pour la société civile et les médias](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/) et faites les exercices 10.2 à 10.4. Lors du dernier exercice, assurez-vous d'exécuter au moins un exemple de logiciel malveillant macOS et Android.
+2. Dans le même chapitre, passez à la sous-section « Analyse des liens » et faites l'exercice 10.12.
 
-{{% resource title="Joe Sandbox" languages="English" cost="Free for public accounts (results published on website)" description="Commercial sandbox service for malware analysis." url="https://www.joesandbox.com/#windows" %}}
+#### Spécifique à Windows
 
-{{% resource title="Cuckoo Sandbox" languages="English" cost="Free" description="Sandbox service by Estonian CERT for malware analysis." url="https://cuckoo.cert.ee/" %}}
+Effectuez une analyse dynamique sur un morceau de logiciel Windows non malveillant. Il comprend probablement un programme d'installation, qui effectuera des actions similaires aux logiciels malveillants. Quels fichiers crée-t-il ? Quelles clés de registre crée-t-il ? Quel trafic réseau envoie-t-il ?
 
-{{% resource title="Hybrid Analysis" languages="English" cost="Free" description="Sandbox service by CrowdStrike mixing static and dynamic analysis." url="https://www.hybrid-analysis.com/" %}}
+## Ressources d'apprentissage
 
-{{% resource title="Triage sandbox" languages="English" cost="Registration required" description="Community-driven sandbox for analyzing malware." url="https://tria.ge/" %}}
-
-{{% resource title="Online class on malware dynamic analysis" languages="English" cost="Free" description="Three-day class on dynamic malware analysis." url="https://opensecuritytraining.info/MalwareDynamicAnalysis.html" %}}
-
-{{% resource title="Case study 1: Dynamic Analysis of a Windows Malicious Self-Propagating Binary" languages="English" cost="Free" description="Blogpost demonstrating dynamic analysis of a Windows binary." url="https://www.keysight.com/blogs/tech/nwvs/2022/06/10/dynamic-analysis-of-a-windows-malicious-self-propagating-binary" %}}
-
-{{% resource title="Case study 2: Configuring a Windows Domain to Dynamically Analyze an Obfuscated Lateral Movement Tool" languages="English" cost="Free" description="Case study on dynamic analysis of obfuscated malware in a Windows domain." url="https://www.real-sec.com/2020/07/configuring-a-windows-domain-to-dynamically-analyze-an-obfuscatedlateral-movement-tool/" %}}
-
-{{% resource title="Case study 3: Starting dynamic analysis on a Windows x64 rootkit" languages="English" cost="Free" description="In-depth look at dynamic analysis of Windows rootkits." url="https://medium.com/@0x4ndr3/starting-dynamic-analysis-on-a-windows-x64-rootkit-8c7a74871fda" %}}
-
-{{% resource title="Malware traffic analysis" languages="English" cost="Free" description="Guide on using captured network packets to analyze malware." url="https://malware-traffic-analysis.net/" %}}
-
-{{% resource title="Hack The Box course on mobile penetration testing" languages="English" cost="Free" description="Introduction to mobile malware dynamic analysis." url="https://www.hackthebox.com/blog/intro-to-mobile-pentesting" %}}
-
-{{% resource title="Hack The Box: Intro to Android Exploitation" languages="English" cost="Free" description="Exercises on mobile application penetration testing." url="https://app.hackthebox.com/tracks/Intro-to-Android-Exploitation" %}}
-
-{{% resource title="Frida and House for Android" languages="English" cost="Free" description="Tools for dynamic monitoring and debugging of Android apps." url="https://frida.re/docs/android/" %}}
-
-{{% resource title="House" languages="English" cost="Free" description="Interface to Frida for Android app analysis." url="https://github.com/nccgroup/house" %}}
-
-{{% resource title="Advanced guide - How to use PiRogue to intercept the TLS traffic of a mobile app" languages="English" cost="Free" description="Instructions on using PiRogue Tool Suite for dynamic analysis of Android binaries." url="https://pts-project.org/guides/g8/" %}}
-
-## Skill Check
-
-### General
-
-1. Go to the ‘Sandbox’ section in Chapter 10 of the [Field Guide to incident response for civil society and media](https://internews.org/resource/field-guide-to-incident-response-for-civil-society-and-media/) and do exercises 10.2 to 10.4. In the last exercise, make sure you run at least one macOS and Android malware sample each.
-2. In the same chapter, skip to the ‘Analyzing links’ subsection and do exercise 10.12.
-
-### Windows-specific
-
-Perform dynamic analysis on a piece of non-malicious Windows software. It probably includes an installer, which will perform similar actions to malware. What files does it create? What registry keys does it create? What network traffic does it send?
+{{% resource title="Chapitre 10, Guide d'intervention sur le terrain pour la société civile et les médias" description="Les premières pages de ce chapitre fournissent un aperçu détaillé de la façon dont nous pouvons utiliser des bacs à sable pour analyser les charges utiles des e-mails." languages="Anglais" cost="Gratuit" url="https://internews.org/wp-content/uploads/2023/11/Field-Guide-to-Threat-Labs.pdf" %}}
+{{% resource title="Any.run" description="Un bac à sable commercial" languages="Anglais" cost="Gratuit uniquement pour un usage non commercial" url="https://any.run/" %}}
+{{% resource title="Joe Sandbox" description="Un autre bac à sable commercial" languages="Anglais" cost="Gratuit pour les comptes publics (les résultats de l'analyse seront publiés sur le site Web)" url="https://www.joesandbox.com/#windows" %}}
+{{% resource title="Cuckoo Sandbox" description="Un service de bac à sable géré par le CERT (Computer Emergency Response Team) estonien" languages="Anglais" cost="Gratuit" url="https://cuckoo.cert.ee/<br>https://cuckoo-hatch.cert.ee/" %}}
+{{% resource title="Hybrid Analysis" description="Un service de bac à sable de CrowdStrike qui mélange analyse statique et analyse dynamique" languages="Anglais" cost="Gratuit" url="https://www.hybrid-analysis.com/" %}}
+{{% resource title="Bac à sable de triage" description="Bac à sable orienté par la communauté" languages="Anglais" cost="Inscription obligatoire" url="https://tria.ge/" %}}
+{{% resource title="Cours en ligne sur l'analyse dynamique des logiciels malveillants" description="Un cours de trois jours qui fournit une entrevue de l'analyse dynamique des logiciels malveillants.<br>Bien que la classe puisse être basée sur Windows XP, tout ce qui compte à ce stade de l'analyse des logiciels malveillants est le format binaire du programme. Les bases de celui-ci n'ont pas changé au cours de la dernière décennie, ce qui rend la classe toujours pertinente." languages="Anglais" cost="Gratuit" url="https://opensecuritytraining.info/MalwareDynamicAnalysis.html" %}}
+{{% resource title="Étude de cas 1 : analyse dynamique d'un binaire malveillant à propagation automatique dans Windows" description="Cet article de blog, d'une durée de 15 minutes, démontre l'analyse dynamique d'un binaire Windows, y compris le trafic réseau, et le trafic de commande et de contrôle." languages="Anglais" cost="Gratuit" url="https://www.keysight.com/blogs/tech/nwvs/2022/06/10/dynamic-analysis-of-a-windows-malicious-self-propagating-binary" %}}
+{{% resource title="Étude de cas 2 : configuration d'un domaine Windows pour analyser dynamiquement un outil de mouvement latéral brouillé" description="Étudie les logiciels malveillants qui ont des mécanismes de dissimulation assez puissants et explique comment les analystes de sécurité peuvent utiliser l'analyse dynamique pour en savoir plus à ce sujet. Il comprend des éléments sur la façon de construire un environnement de test et de procéder à une analyse dynamique sur un domaine spécifique." languages="Anglais" cost="Gratuit" url="https://www.real-sec.com/2020/07/configuring-a-windows-domain-to-dynamically-analyze-an-obfuscatedlateral-movement-tool/" %}}
+{{% resource title="Étude de cas 3 : démarrage de l'analyse dynamique sur un rootkit Windows x64" description="Un examen approfondi de l'analyse dynamique des rootkits Windows, y compris un aperçu de la façon de configurer une machine virtuelle spécifiquement pour collecter des données à son sujet. Montre également comment combiner l'analyse statique et l'analyse dynamique." languages="Anglais" cost="Gratuit" url="https://medium.com/@0x4ndr3/starting-dynamic-analysis-on-a-windows-x64-rootkit-8c7a74871fda" %}}
+{{% resource title="Analyse du trafic de logiciels malveillants" description="Une excellente ressource qui examine comment utiliser les paquets réseau capturés pour détecter et analyser les logiciels malveillants." languages="Anglais" cost="Gratuit" url="https://malware-traffic-analysis.net/" %}}
+{{% resource title="Cours Hack The Box sur les tests d'intrusion mobile" description="Les outils et techniques utilisés pour l'analyse dynamique des logiciels malveillants mobiles sont en grande partie les mêmes que ceux utilisés pour les tests d'intrusion des applications mobiles. Cet article (et les exercices associés) fournit une solide introduction à la pratique." languages="Anglais" cost="Gratuit" url="https://www.hackthebox.com/blog/intro-to-mobile-pentesting et https://app.hackthebox.com/tracks/Intro-to-Android-Exploitation" %}}
+{{% resource title="Frida et House pour Android" description="Frida est un framework de débogage multiplateforme et open source. Bien qu'il n'ait pas d'interface graphique, il est assez puissant et vous permet de surveiller dynamiquement le comportement de l'application. Pour le rendre un peu plus facile à utiliser, il existe un outil appelé House qui est une interface pour Frida." languages="Anglais" cost="Gratuit" url="https://frida.re/docs/android/ et https://github.com/nccgroup/house" %}}
+{{% resource title="Guide avancé : comment utiliser PiRogue pour intercepter le trafic TLS d'une application mobile" description="Une série d'instructions sur la façon d'utiliser PiRogue Tool Suite afin d'effectuer une analyse dynamique sur les binaires Android potentiellement malveillants" languages="Anglais" cost="Gratuit" url="https://pts-project.org/guides/g8/" %}}

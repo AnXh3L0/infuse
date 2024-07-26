@@ -1,66 +1,57 @@
 ---
 style: module
 title: Triage - Deciding when to investigate
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: Clasificación - Decidir cuándo investigar
 weight: 1
 ---
 
-## Use Case
+## Estudios de caso
 
-When you receive or are forwarded a suspicious message, conduct initial triage in order to determine if it is indeed malicious, to figure out the best rapid response for the targeted recipient(s) if it is, and to determine if further investigation is needed. For most messages, it’s enough to conduct basic heuristics to separate untargeted from targeted threats and to identify harm-reducing actions.
+Cuando reciba o le reenvíen un mensaje sospechoso, realice una clasificación inicial para determinar si es realmente malicioso, averiguar cuál es la mejor respuesta rápida para el destinatario o destinatarios en caso afirmativo y determinar si es necesario seguir investigando. Para la mayoría de los mensajes, basta con realizar una heurística básica para separar las amenazas no dirigidas de las dirigidas e identificar las acciones que reducen el daño.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, the practitioner should be able to differentiate between legitimate emails, untargeted spam or phishing emails, and targeted ones based on several heuristic indicators.
+Después de completar esta subhabilidad, el profesional debe ser capaz de diferenciar entre correos electrónicos legítimos, spam no dirigido o correos electrónicos de phishing, y los dirigidos en función de varios indicadores heurísticos.
 
 ---
+## Sección Principal
 
-## Foundation Knowledge
+#### Conocimiento Fundamental
 
-The practitioner should be able to recognize common phishing email techniques and attacker objectives. They should be able to spot common telltale signs of a phishing message. If you need to brush up on this topic, check out Jigsaw’s [Phishing Quiz](https://phishingquiz.withgoogle.com/).
+El profesional debe ser capaz de reconocer las técnicas comunes de correo electrónico de phishing y los objetivos del atacante. Deben ser capaces de detectar signos reveladores comunes de un mensaje de phishing. Si necesita repasar este tema, consulte el [Phishing Quizde](https://phishingquiz.withgoogle.com/) Jigsaw.
 
-Low-tech approaches to determining if a message was actually sent by a person you know are often the simplest and fastest way to determine if that message is authentic. A great example of such a low tech approach is following up with the sender of a potentially suspicious email (assuming you know them) on another communication medium like an instant messenger to make sure that it was indeed them who sent the email and that it’s legitimate.
+La forma más sencilla y rápida de determinar si un mensaje ha sido enviado por una persona conocida es utilizar métodos de baja tecnología. Un buen ejemplo de un enfoque de baja tecnología es hacer un seguimiento del remitente de un correo electrónico potencialmente sospechoso (suponiendo que lo conozca) en otro medio de comunicación como una mensajería instantánea para asegurarse de que fue él quien envió el correo electrónico y que es legítimo.
 
-Also check out these two articles with examples of tactics and deceptive techniques commonly used in phishing messages: [6 Common Phishing Attacks and How to Protect Against Them ](https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them)and [5 Common Phishing Techniques (vadesecure.com)](https://www.vadesecure.com/en/blog/5-common-phishing-techniques).
+También eche un vistazo a estos dos artículos con ejemplos de tácticas y técnicas engañosas comúnmente utilizadas en los mensajes de phishing: [6 Common Phishing Attacks and How to Protect Against Them](https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them) and [5 Common Phishing Techniques (vadesecure.com)](https://www.vadesecure.com/en/blog/5-common-phishing-techniques).
 
-## Practical Triage Criteria
+#### Criterios Prácticos de Clasificación
 
-Spam and non targeted phishing messages are an unfortunate reality of the internet. Investigating messages and related malicious infrastructure is only a practical and useful exercise in a small set of cases. Consider the following criteria when deciding if it is worth spending time investigating the message and related infrastructure:
+El spam y los mensajes de phishing no dirigidos son una desafortunada realidad de Internet. Investigar los mensajes y la infraestructura maliciosa relacionada es solo un ejercicio práctico y útil en un pequeño conjunto de casos. Tenga en cuenta los siguientes criterios al decidir si vale la pena dedicar tiempo a investigar el mensaje y la infraestructura relacionada:
 
-- Targeting: Has the message been customized (displaying social engineering and foreknowledge of the identity of the targeted person) to increase likelihood that they carry out the intended action (for example clicking on a link, downloading a malicious attachment)?
-- Threat: What is the intended objective of the message/campaign? What is the risk/threat context of the targeted person, organization, or community?
-- Value of Intervention: What is the value of investigating and intervening further? Would interrupting the attackers’ infrastructure have a worthwhile impact on stemming current or future attacks? What is the likelihood that the same malicious infrastructure will be reused? Would public exposure/attribution make them less likely to conduct further attacks? Would public exposure help alert other targets who may be compromised?
-- Investment: How much time and how many resources did an attacker need to create that message? Did they for example spin up new domains and infrastructure?
-- Uniqueness: Is the message unique? Can the same text be found by looking up quotes from the message on search engines?
+- Focalización: ¿Se ha personalizado el mensaje (mostrando la ingeniería social y el conocimiento previo de la identidad de la persona objetivo) para aumentar la probabilidad de que lleve a cabo la acción prevista (por ejemplo, hacer clic en un enlace, descargar un archivo adjunto malicioso)?
+- Amenaza: ¿Cuál es el objetivo previsto del mensaje/campaña? ¿Cuál es el contexto de riesgo/amenaza de la persona, organización o comunidad objetivo?
+- Valor de la Intervención: ¿Cuál es el valor de investigar e intervenir más a fondo? ¿Interrumpir la infraestructura de los atacantes tendría un impacto valioso para detener los ataques actuales o futuros? ¿Cuál es la probabilidad de que se reutilice la misma infraestructura maliciosa? ¿La exposición/atribución pública los haría menos propensos a realizar más ataques? ¿La exposición pública ayudaría a alertar a otros objetivos que pueden verse comprometidos?
+- Inversión: ¿Cuánto tiempo y cuántos recursos ha necesitado un atacante para crear ese mensaje? ¿Han creado, por ejemplo, nuevos dominios e infraestructuras?
+- Singularidad: ¿El mensaje es único? ¿Se puede encontrar el mismo texto buscando citas del mensaje en los motores de búsqueda?
 
-A general rule is that _only targeted messages are usually worth investigating_. Many spam or phishing emails end up being quite low quality or sent en masse. Those are usually sent by adversaries who might have some financial motive but have not targeted the organization specifically due to its human rights or civil society work. They are therefore less likely to attack NGOs in the future, and a write-up of their activities would be of less benefit to the community.
+Una regla general es que _sólo merece la pena investigar los mensajes dirigidos._ Muchos correos electrónicos de spam o phishing terminan siendo de muy baja calidad o enviados en masa. Por lo general, son enviados por adversarios que podrían tener algún motivo financiero pero que no se han dirigido específicamente a la organización debido a su trabajo de derechos humanos o de la sociedad civil. Por lo tanto, es menos probable que ataquen a las ONG en el futuro, y una reseña de sus actividades sería de menos beneficio para la comunidad.
 
-Attackers who use lower quality or mass messaging are also likely to be caught by automated testing and rules and simply change messaging, in contrast to those who pursue targeted attacks which require a far greater investment. Adversaries who send targeted messages often have (geo)political motivations, and might use phishing as part of a wider hybrid campaign, which could also be directed at other NGOs. Investigating targeted messages can therefore often help uncover such broader campaigns.
+También es probable que los atacantes que usan mensajes masivos o de menor calidad sean atrapados por pruebas y reglas automatizadas y simplemente cambien los mensajes, en contraste con aquellos que persiguen ataques dirigidos que requieren una inversión mucho mayor. Y pueden utilizar el phishing como parte de una campaña híbrida más amplia, que también podría estar dirigida a otras ONG. Por lo tanto, investigar los mensajes dirigidos a menudo puede ayudar a descubrir estas campañas más amplias.
 
-⚠️ Remember, if you need additional help and do not feel confident that you are able to respond to the level of risk or analysis needs of a malicious message, reach out for help for instance to [CiviCERT Members ](https://www.civicert.org/)or through support providers listed at the [Digital First Aid Kit](https://digitalfirstaid.org/).
+⚠️Recuerde, si necesita ayuda adicional y no se siente seguro de poder responder al nivel de riesgo o a las necesidades de análisis de un mensaje malicioso, pida ayuda, por ejemplo, a los miembros de [CiviCERT](https://www.civicert.org/) o a través de los proveedores de apoyo que figuran en el Botiquín [Digital de Primeros Auxilios](https://digitalfirstaid.org/).
 
-⚠️ While considering or conducting an investigation, ensure you balance harm reduction needs and support any targets to implement timely harm reduction actions, such as those listed at [Recover from possible account compromise (securityinabox.org)](https://securityinabox.org/en/communication/account-compromise/).
+⚠️Al considerar o llevar a cabo una investigación, asegúrese de sopesar las necesidades de reducción de daños y apoye cualquier objetivo para aplicar acciones oportunas de reducción de daños, como las enumeradas en [Recover from possible account compromise (securityinabox.org)](https://securityinabox.org/en/communication/account-compromise/).
 
-### Learning Resources
+## Comprobación de Habilidades
 
-{{% resource title="Shira by Horizontal" languages="English, Spanish, Mandarin" cost="Free" description="An online quiz with sample emails, where the user must decide whether they are malicious" url="https://shira.app" %}}
+Dedique algo de tiempo al cuestionario de phishing de [Shira](https://shira.app/) hasta que sienta que puede pasar cómodamente las pruebas y reconocer con precisión el phishing en varias categorías de aplicaciones.
 
-{{% resource title="Phishing Quiz by Jigsaw" languages="27 Languages" cost="Free" description="An online quiz with sample emails, where the user must decide whether they are malicious" url="https://phishingquiz.withgoogle.com/" %}}
+## Recursos de Aprendizaje
 
-{{% resource title="6 Common phishing attacks and how to protect against them" languages="English" cost="Free" description="A summary of some common phishing attacks, which also includes some more sophisticated methods used by attackers" url="https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them" %}}
-
-{{% resource title="5 Common phishing techniques" languages="English" cost="Free" description="A look at some techniques attackers use to make phishing emails more convincing and occasionally escape detection" url="https://www.vadesecure.com/en/blog/5-common-phishing-techniques" %}}
-
-{{% resource title="CiviCERT" languages="English" cost="Free" description="A network of civil society organizations and rapid response groups which focus on cyberattacks and similar threats" url="https://www.civicert.org/" %}}
-
-{{% resource title="Digital First Aid Kit" languages="Arabic, Spanish, Farsi, French, Indonesian, Armenian, Kyrgyz, Burmese, Portuguese, Russian, Albanian, Thai, Ukrainian" cost="Free" description="A comprehensive guide supporting digital protectors who deal with a variety of different issues" url="https://digitalfirstaid.org/en/index.html" %}}
-
-{{% resource title="Recover from possible account compromise" languages="Arabic, Indonesian, English, Spanish, Farsi, French, Portuguese, Russian, Thai, Turkish, Vietnamese, Chinese, Tibetan, Khmer, Burmese" cost="Free" description="A guide on what immediate and long-term steps to take when an account has been compromised" url="https://securityinabox.org/en/communication/account-compromise/" %}}
-
-
-### Skill Check
-
-Spend some time on the phishing quiz by [Shira](https://shira.app/) until you feel like you can comfortably pass the tests and accurately recognize phishing on several app categories.
+{{% resource title="Shira by Horizontal" description="Un cuestionario en línea con correos electrónicos de muestra, donde el usuario debe decidir si son maliciosos" languages="Inglés, Español, Mandarín" cost="Gratis" url="https://shira.app" %}}
+{{% resource title="Phishing Quiz by Jigsaw" description="Un cuestionario en línea con correos electrónicos de muestra, donde el usuario debe decidir si son maliciosos" languages="27 idiomas" cost="Gratis" url="Jigsaw | Phishing Quiz" %}}
+{{% resource title="6 ataques de phishing comunes y cómo protegerse contra ellos" description="Un resumen de algunos ataques de phishing comunes, que también incluye algunos métodos más sofisticados utilizados por los atacantes" languages="Inglés" cost="Gratis" url="https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them" %}}
+{{% resource title="5 técnicas comunes de phishing" description="Un vistazo a algunas técnicas que utilizan los atacantes para hacer que los correos electrónicos de phishing sean más convincentes y, ocasionalmente, escapen a la detección" languages="Inglés" cost="Gratis" url="https://www.vadesecure.com/en/blog/5-common-phishing-techniques" %}}
+{{% resource title="CiviCERT" description="Una red de organizaciones de la sociedad civil y grupos de respuesta rápida que se centran en ciberataques y amenazas similares" languages="Inglés" cost="Gratis" url="https://www.civicert.org/" %}}
+{{% resource title="Botiquín Digital de Primeros Auxilios" description="Una guía completa de apoyo a los protectores digitales que se ocupan de una variedad de cuestiones diferentes" languages="Árabe, Español, Farsi, Francés, Indonesio Armenio Kirguís, Birmano, Portugués, Ruso, Albanés, Tailandés, Ucraniano" cost="Gratis" url="https://digitalfirstaid.org/" %}}
+{{% resource title="Recuperarse de un posible compromiso de cuenta" description="Una guía sobre qué medidas inmediatas y a largo plazo tomar cuando una cuenta ha sido comprometida" languages="Árabe, Indonesio Inglés, Español, Farsi, Francés, Portugués, Ruso, Tailandés Turco, Vietnamita, Chino, Tibetano, Jemer, Birmano" cost="Gratis" url="https://securityinabox.org/en/communication/account-compromise/" %}}

@@ -1,106 +1,99 @@
 +++
 style = "module"
 weight = 11
-title = "Clean-up, after-care, post-incident risk management, and information sharing"
+title = "Limpieza, cuidados posteriores, gestión de riesgos posteriores al incidente e intercambio de información"
 +++
 
-## Use Case
+## Caso de Uso
 
-If malware or malicious traffic is found on a targeted person’s device, we need to either provide remedial after-care or targeted recommendations to allow a client to determine appropriate next steps.
+Si se encuentra malware o tráfico malicioso en el dispositivo de una persona objetivo, necesitamos proporcionar cuidado posterior correctivo o recomendaciones específicas para permitir que un cliente determine los próximos pasos apropiados.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, practitioners should be able to do the following:
+Después de completar este subtema, el profesional debe ser capaz de realizar lo siguiente:
 
-- Determine the appropriate clean-up method for the type of malware or indicator of compromise discovered
-- Carry out or guide on remedial clean-up steps, including removal of persistence mechanisms, malware removal tools, reboots, factory resets
-- Identify situations in which clean-up may not be possible and further advice or action may be necessary
-- Document and share findings
+- Determinar el método adecuado de limpieza para el tipo de malware o indicador de compromiso encontrado.
+- Realizar o guiar sobre los pasos de limpieza correctivos, incluyendo la eliminación de mecanismos de persistencia, herramientas de eliminación de malware, reinicios, restablecimientos de fábrica.
+- Identificar situaciones en las que la limpieza puede no ser posible y pueden ser necesarios más consejos o acciones.
+- Documentar y compartir los hallazgos .
 
 ---
+## Sección Principal
 
-## Malware removal
+Cuando descubras una infección de malware u otro indicador de compromiso en un dispositivo, querrás trabajar con el propietario del dispositivo afectado para devolver su dispositivo a un estado óptimo. Proporcionar el mejor soporte requiere considerar los objetivos de la persona y comprender la naturaleza de la amenaza encontrada en su dispositivo. La persona afectada puede estar interesada en deshacerse del malware lo más rápido posible para poder volver a su vida y trabajo, o, alternativamente, podría preferir usar otro dispositivo mientras mantiene el infectado para investigar qué sucedió y posiblemente quién fue el responsable.
 
-### Re-enabling operating system security features
+### Volver a habilitar las funciones de seguridad del sistema operativo
 
-Earlier in this learning path we mentioned [some built-in operating system protections](https://docs.google.com/document/d/1ss1nH6RuNscC_3HtySZ-i1W8DI3yEgTf-KB1iArfx1w/edit#heading=h.wgdfkz8hzz6i). If malware was able to run on a targeted person’s system just because some of those protections were disabled, then re-enabling them may help prevent malware from executing or doing any further damage. Some less sophisticated pieces of malware could therefore stop running or even be removed just by going into operating system settings and re-enabling protections. In case you are unable to re-enable these protections or if they are disabled again after some time, this is an indication that the malicious process is preventing the proper functioning of the operating system and further clean-up work or factory reset are required. Do note that in some instances you may find instances that OS protections have been disabled in order to install pirated software, which the user may not immediately communicate to you. It is helpful to know this scenario and to guide the client in risk-management decisions and find safer alternatives which preserve operating system integrity.
+Anteriormente en esta ruta de aprendizaje mencionamos [algunas protecciones integradas del sistema operativo](/es/learning-path/2/module-4/#triagelistas-de-verificación-para-verificar-si-faltan-protecciones). Si el malware pudo ejecutarse en el sistema de una persona objetivo solo porque algunas de esas protecciones estaban deshabilitadas, volver a habilitarlas puede ayudar a evitar que el malware se ejecute o cause más daños. Por lo tanto, algunas piezas de malware menos sofisticadas podrían dejar de ejecutarse o incluso eliminarse simplemente accediendo a la configuración del sistema operativo y volviendo a habilitar las protecciones. En caso de que no puedas volver a habilitar estas protecciones o si se desactivan nuevamente después de algún tiempo, esto indica que el proceso malicioso está impidiendo el funcionamiento adecuado del sistema operativo y se requiere un trabajo de limpieza adicional o un restablecimiento de fábrica. Ten en cuenta que en algunos casos puedes encontrar instancias en las que las protecciones del sistema operativo se hayan desactivado para instalar software pirata, lo cual el usuario puede no comunicarte de inmediato. Es útil conocer este escenario y guiar al cliente en decisiones de gestión de riesgos y encontrar alternativas más seguras que preserven la integridad del sistema operativo.
 
-### Factory resets
+### Restablecimientos de fábrica
 
-Factory resets are often the simplest, cleanest way to clear up malware on a given device. If the user has backed up all data they want to keep in a cloud location or a backup drive and is able to reinstall their most-used applications after a factory reset, this is a preferable option for dealing with malware. If they are not certain of having backed up important data, you might assist them in completing a local or cloud backup. Note that malicious files may be found in backed up files (though they would be inert until executed), thus scanning backup folders with a reputable antivirus engine is advisable. Note that oftentimes application and other device configurations are not backed up, depending on the backup utility used. It’s always a good idea to test backups, for example by trying to restore the whole system or some key files from them, before doing a factory reset.
+Los restablecimientos de fábrica son a menudo la forma más simple y limpia de eliminar el malware en un dispositivo determinado. Si el usuario ha realizado el respaldo de todos los datos que desea conservar en un lugar en la nube o en una unidad de respaldo y puede reinstalar sus aplicaciones más utilizadas después de un restablecimiento de fábrica, esta es una opción preferible para tratar con el malware. Si no están seguros de haber realizado el respaldo de los datos importantes, puedes ayudarles a completar un respaldo local o en la nube. Ten en cuenta que los archivos maliciosos pueden encontrarse en archivos respaldados (aunque estarían inactivos hasta que se ejecuten), por lo que se recomienda escanear las carpetas de respaldo con un motor antivirus de reputación. Ten en cuenta que, a menudo, no se respalda las configuraciones de aplicaciones y otros dispositivos, dependiendo de la utilidad de respaldo utilizada. Siempre es buena idea probar los respaldos, por ejemplo, intentando restaurar todo el sistema o algunos archivos clave de ellos, antes de realizar un restablecimiento de fábrica.
 
-Many malware analysts prefer to use factory resets over other types of removal, since this gives them a far greater certainty that no traces of the malware remained on the targeted person’s systems. There always remains the risk that antivirus programs or operating systems’ built-in protections will not remove all malware, especially if it’s novel or rare; a factory reset will be far more effective at this. The only exception to this might be UEFI rootkits and malware which affects the device’s firmware rather than operating system; we’ve linked to some articles about this below.
+Muchos analistas de malware prefieren usar restablecimientos de fábrica sobre en lugar de otros tipos de eliminación, ya que esto les proporciona una mayor certeza de que no quedaron rastros del malware en los sistemas de la persona objetivo. Siempre existe el riesgo de que los programas antivirus o las protecciones integradas del sistema operativo no eliminen todo el malware, especialmente si es novedoso o raro; un restablecimiento de fábrica será mucho más efectivo en este sentido. La única excepción a esto podría ser los rootkits UEFI y el malware que afecta el firmware del dispositivo en lugar del sistema operativo; hemos vinculado algunos artículos sobre esto más abajo.
 
-### Malware removal (and when it is not possible)
+### Eliminación de malware (y cuándo no es posible)
 
-Sometimes a factory reset is not feasible due to time constraints, technology constraints, or user comfort with the action. Depending on the nature of the malware, and how well understood it is, it may be feasible to remove it through automated or manual means. See the list of platform-specific advice below for general guidance.
+A veces, un restablecimiento de fábrica no es factible debido a limitaciones de tiempo, limitaciones tecnológicas o la comodidad del usuario con la acción. Dependiendo de la naturaleza del malware y de qué tan bien se comprenda, puede ser factible eliminarlo mediante medios automatizados o manuales. Revisa la lista de consejos específicos de la plataforma a continuación para obtener orientación general.
 
-In some cases, malware removal efforts may be ineffective. Built-in Android malware or cracked or jailbroken versions of an operating system are one example (see Android section below for more details). Hardware/firmware attacks are another class of malware which would be resistant to clean-up or factory reset efforts. These are relatively rare however they do occur, mainly only on PCs (Windows/Linux), thus are worth knowing about. Some are detectable by antiviruses, for instance see [ESET on the topic of a UEFI Rootkit discovered in the wild in 2018](https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/). Additional tips and advice from Microsoft on UEFI rootkit threat hunting is available from [BleepingComputer here](https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/).
+En algunos casos, los esfuerzos de eliminación de malware pueden resultar ineficaces. Un ejemplo es el malware integrado en Android o las versiones crackeadas o con jailbreak de un sistema operativo (consulte la sección de Android a continuación para obtener más detalles). Los ataques de hardware/firmware son otra clase de malware que sería resistente a los esfuerzos de limpieza o restablecimiento de fábrica. Estos son relativamente raros, sin embargo ocurren, principalmente sólo en PC (Windows/Linux), por lo que vale la pena conocerlos. Algunos son detectables por los antivirus; consulta [ESET sobre el tema de Rootkit UEFI descubierto por primera vez en 2018](https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/). Consejos y sugerencias adicionales de Microsoft sobre la caza de amenazas de rootkit UEFI están disponibles en [BleepingComputer aquí](https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/).
 
-## Platform-Specific Advice
+### Asesoramiento Específico de la Plataforma
 
-### Android
+#### Android
 
-- Factory reset is available from the Settings menu or from recovery boot mode.
-- Some malware/adware/spyware is embedded within the factory-provided Android operating system, as in the case of some low-cost and off-brand Android devices. An example of this is detailed in the technical report by [HUMAN Security on the BADBOX ad fraud botnet](https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf). Unfortunately, in most cases these devices cannot be cleaned by factory reset and are unredeemable by the average user and should be replaced with reputable brand devices, alas at a higher price point.
-- Check if unprotected app sources were enabled by checking if any apps were granted permission to install APKs from ‘Unknown Sources’ in the Settings section. If yes, look for suspicious/unknown applications.
-- Suspicious or malicious applications can be removed.
-- Secure any Google accounts used to access the device.
-- Ensure Google Play Protect is enabled and check scan results (from Google Play -> Menu -> Play Protect).
-- Ensure that system components are up to date and security updates are installed. You can check the date of the device's security updates by looking in Settings -> About Phone -> Software Information (or Android Version) -> Android Security Patch Level. Check for updates by tapping on Google Play System Update. Note that older devices may receive limited security updates.
+- El restablecimiento de fábrica está disponible desde el menú Configuración o desde iniciar en modo de recuperación.
+- Parte del malware/adware/spyware está integrado en el sistema operativo Android proporcionado de fábrica, como en el caso de algunos dispositivos Android de bajo costo y sin marca. Un ejemplo de esto se detalla en el informe técnico de [HUMAN Security sobre la botnet de fraude publicitario BADBOX](https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf). Desafortunadamente, en la mayoría de los casos, estos dispositivos no pueden ser limpiados mediante un restablecimiento de fábrica y son irreparables para el usuario promedio, por lo que deberían ser reemplazados con dispositivos de marcas reconocidas, desgraciadamente a un precio más elevado.
+- Verifica si se habilitaron fuentes de aplicaciones no protegidas verificando si alguna aplicación recibió permiso para instalar APK de "Fuentes Desconocidas" en la sección Configuración. En caso afirmativo, busca aplicaciones sospechosas o desconocidas.
+- Las aplicaciones sospechosas o maliciosas pueden ser eliminadas.
+- Protege cualquier cuenta de Google utilizada para acceder al dispositivo.
+- Asegúrate de que Google Play Protect esté habilitado y verifica los resultados del escaneo (desde Google Play -> Menú -> Play Protect).
+- Asegúrate de que los componentes del sistema estén actualizados y de que se instalen las actualizaciones de seguridad. Puedes verificar la fecha de las actualizaciones de seguridad del dispositivo buscando en Configuración -> Acerca del Teléfono -> Información del Software (o Versión de Android) -> Nivel de Parche de Seguridad de Android. Busca actualizaciones tocando en Actualización del Sistema de Google Play. Ten en cuenta que los dispositivos más antiguos pueden recibir actualizaciones de seguridad limitadas.
 
-### iOS/iPadOS
+#### iOS/iPadOS
 
-- Published research indicates that exploits against iOS live systems (including cases such as Pegasus) do not survive a device reboot (not a factory restart, but a simple power cycling on/off), so conducting a reboot is a good idea. As the threat actor may re-infect the device if using a zero-click exploit, regular rebooting is possibly prudent, as is Lockdown Mode, linked below. Keep in mind that this level of attack is still rare and high-cost. Note that maliciously configured or installed applications (e.g. stalkerware, find my phone functionality) or a compromised Apple ID account would still affect the device safety, so read on for further actions below.
-- Uninstall suspicious or malicious apps.
-- Consider enabling [Lockdown Mode](https://support.apple.com/en-us/105120).
-- Ensure Apple iCloud account is private and not accessed by any other person. Any iOS user can use [Apple’s Safety Check](https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0) to audit whether others have access to any of their accounts.
-- Check if the device is jailbroken. [Some advice provided](https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/) by Certo Software includes checking for Cydia or Sileo or to utilize their free Certo Mobile Security app.
-- Check for (unwanted) enrollment in Mobile Device Management (check under Settings -> General -> Profiles).
-- Conduct a factory reset following [this guide](https://support.apple.com/en-gb/HT201274) (This will remove all photos, messages, and files on the phone. Unless backed up, they will be irretrievably lost).
+- Las investigaciones publicadas indican que los exploits contra sistemas en vivo iOS (incluidos casos como Pegasus) no sobreviven al reinicio del dispositivo (no a un restablecimiento de fábrica, sino a un simple ciclo de encendido/apagado), por lo que realizar un reinicio es una buena idea. Como el autor de la amenaza puede volver a infectar el dispositivo si utiliza un exploit sin clic, posiblemente sea prudente reiniciar periódicamente, al igual que el Modo de Bloqueo, vinculado a continuación. Ten en cuenta que este nivel de ataque sigue siendo poco común y costoso. Ten en cuenta que las aplicaciones configuradas o instaladas maliciosamente (por ejemplo, stalkerware, funcionalidades de encontrar mi teléfono) o una cuenta de Apple ID comprometida aún podrían afectar la seguridad del dispositivo, por lo tanto, sigue leyendo para obtener más acciones a continuación.
+- Desinstala aplicaciones sospechosas o maliciosas.
+- Considera habilitar el [Modo de Bloqueo](https://support.apple.com/en-us/105120).
+- Asegúrate de que la cuenta de Apple iCloud sea privada y que ninguna otra persona pueda acceder a ella. Cualquier usuario de iOS puede utilizar [Comprobación de Seguridad de Apple](https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0) para auditar si otros tienen acceso a alguna de tus cuentas.
+- Verifica si el dispositivo tiene jailbreak. [Algunos consejos proporcionados](https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/) por Certo Software incluyen buscar Cydia o Sileo o utilizar su aplicación gratuita Certo Mobile Security.
+- Verificar (no deseada) registro en Administración de Dispositivos Móviles (verificar en Configuraciones -> General -> Perfiles).
+- Realice un restablecimiento de fábrica siguiendo [esta guía](https://support.apple.com/en-gb/HT201274) (Esto eliminará todas las fotos, mensajes y archivos del teléfono. A menos que se haya hecho un respaldo, se perderán irremediablemente).
 
-### Windows
+#### Windows
 
-- Factory reset is the preferable solution. Most devices which were purchased with Windows preinstalled will have a recovery partition from which you can perform a factory reset or a ‘refresh’ of the Operating System
-- Running Antivirus in Windows ‘Safe Mode’ can be more effective at quarantining discovered infections. However, it may also miss ‘fileless’ malware which is in effect during normal OS operation.
-- Check for persistence mechanisms of malware using SysInternals AutoRuns, disable them and confirm after cleanup activities that they have not-enabled.
-- Some Antivirus creators provide a ‘rescue disk’ which allows you to boot into a temporary live system from which to carry out scans and malware removal activities. A list of reputable options is [provided here by TechRadar](https://www.techradar.com/best/best-antivirus-rescue-disk).
-- Beware the many Windows ‘malware removal’ guides found online which appear to be customized for specific malware variants. Many of them are generic guides promoting the use of a proprietary tool which may itself be an unwanted software.
+- El restablecimiento de fábrica es la solución preferible. La mayoría de los dispositivos que se compraron con Windows preinstalado tendrán una partición de recuperación desde la cual podrá realizar un restablecimiento de fábrica o una "actualización" del sistema operativo.
+- Ejecutar Antivirus en el "Modo seguro" de Windows puede ser más eficaz para poner en cuarentena las infecciones descubiertas. Sin embargo, también puede pasar por alto el malware "fileless" que está activo durante el funcionamiento normal del sistema operativo.
+- Verifica los mecanismos de persistencia del malware utilizando _SysInternals AutoRuns_, desactívalos y confirma después de las actividades de limpieza que no se hayan vuelto a habilitar.
+- Algunos creadores de antivirus entregan un "disco de rescate" que te permite arrancar en un sistema temporal en vivo desde el cual realizar escaneos y actividades de eliminación de malware. Una lista de opciones renombradas es [proporcionada aquí por TechRadar](https://www.techradar.com/best/best-antivirus-rescue-disk).
+- Ten cuidado con las numerosas guías de "eliminación de malware" de Windows que se encuentran en línea y que parecen estar personalizadas para variantes específicas de malware. Muchas de ellas son guías genéricas que promueven el uso de una herramienta propietaria que puede ser en sí misma un software no deseado.
 
-### MacOS
+#### Mac OS
 
-- Factory reset is advisable, see [instructions from Apple here](https://support.apple.com/en-ug/HT212749).
-- Commercial antivirus will have a clean-up and quarantine feature.
-- Utilize [Objective-See tools ](https://objective-see.org/tools.html)such as Knock Knock and Kext Viewer to check for and disable unknown and persistent processes and kernel extensions.
+- Se recomienda el restablecimiento de fábrica; revisa las [instrucciones de Apple aquí](https://support.apple.com/en-ug/HT212749).
+- Los antivirus comerciales tendrán una función de limpieza y cuarentena.
+- Utilice herramientas [Objective-See tools](https://objective-see.org/tools.html) como _Knock Knock_ y _Kext Viewer_ para buscar y deshabilitar procesos y extensiones del kernel desconocidos y persistentes.
 
-## Post-Incident Risk Management and Information Sharing
+### Gestión de Riesgos Posteriores al Incidente e Intercambio de Información
 
-Sharing your findings with your client and working with them to understand how malware infection may have occurred is an important step which allows them to update their risk management approach and understand the significance (or lack of significance) of the security incident.
+Compartir tus hallazgos con tu cliente y trabajar con ellos para comprender cómo pudo haber ocurrido la infección por malware es un paso importante que les permite actualizar su enfoque de gestión de riesgos y comprender la importancia (o insignificancia) del incidente de seguridad.
 
-Take as many detailed technical notes, screenshots, and samples (or, more likely, hashes thereof) and talk to your client about their threat model and to what degree you could share your findings with the wider community. Sharing your findings is particularly valuable if you found a novel threat or one that targets community members specifically based on certain work that they do; in this case, talking to others about malware hashes, infection vectors, and mitigation mechanisms will help protect those at highest risk from it. You can use some of the information from the [Documenting Findings](https://docs.google.com/document/d/1Qhka7uQYCBye-EQRQrrETo-ptik2yDAGDZg5DrncYF4/edit#heading=h.v971z46vfx88) section of the _Detecting, Investigating and Tracking Malicious Infrastructure_ learning path when authoring a brief report and when you consider disseminating it.
+Toma notas técnicas detalladas, capturas de pantalla y muestras (o, más probable, _hashes_ de estas) y habla con tu cliente sobre su modelado de amenazas y en qué medida podrías compartir tus hallazgos con la comunidad en general. Compartir tus hallazgos es particularmente valioso si encontraste una amenaza novedosa o una que específicamente apunta a miembros de la comunidad basándose en cierto trabajo que realizan. en este caso, hablar con otras personas sobre los _hashes_ de malware, los vectores de infección y los mecanismos de mitigación ayudará a proteger a quienes corren mayor riesgo. Puedes utilizar parte de la información de la sección [Documentación de Hallazgos](/es/learning-path/1/module-8/) de la sección Detección, Investigación y Seguimiento de Infraestructura Maliciosa de la ruta de aprendizaje cuando elabores un informe breve y cuando consideres su difusión.
 
-## Learning Resources
+## Verificación de habilidades
 
-{{% resource title="UEFI rootkit cyber attack discovered" languages="English" cost="Free" description="Analysis of a UEFI rootkit malware discovered in 2018, designed to persist even after OS reinstall." url="https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/" %}}
+Elabora un diagrama de flujo o una lista de verificación que pueda ayudarte a eliminar malware de un dispositivo y garantizar que no omitas ningún paso. Discute este diagrama de flujo o lista de verificación con un compañero o mentor para asegurarte de que sea preciso y de que no se haya perdido nada.  
 
-{{% resource title="Microsoft shares guidance to detect BlackLotus UEFI bootkit attacks" languages="English" cost="Free" description="Overview of the BlackLotus UEFI bootkit malware and steps to detect it, provided by Microsoft." url="https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/" %}}
+Escribe un breve párrafo explicando en qué situaciones recomendarías que las personas que fueron objetivo de una infección de malware exitosa cambien las contraseñas de sus cuentas principales (correo electrónico, iCloud, redes sociales, trabajo) posteriormente, cómo se lo explicaría a una persona a la que está proporcionándole soporte. Presenta este párrafo a un compañero o mentor que comprobará si tu explicación es precisa.
 
-{{% resource title="Trojans All the Way Down: BADBOX and PEACHPIT" languages="English" cost="Free" description="In-depth report on BADBOX and PEACHPIT, malware pre-installed at factories, emphasizing the importance of devices from reputable manufacturers." url="https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf" %}}
+## Recursos Educativos
 
-{{% resource title="How Safety Check on iPhone works to keep you safe" languages="English" cost="Free" description="Explanation of the iPhone Safety Check feature, allowing users to review and control shared information." url="https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0" %}}
-
-{{% resource title="How to tell if your iPhone is jailbroken" languages="English" cost="Free" description="Guide to detecting whether an iOS device has been jailbroken using initial heuristics." url="https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/" %}}
-
-{{% resource title="How to factory reset your iPhone, iPad or iPod touch" languages="English" cost="Free" description="Guide on how to completely wipe an iOS device, ensuring removal of malware or malicious profiles." url="https://support.apple.com/en-gb/HT201274" %}}
-
-{{% resource title="Best antivirus rescue disks of 2024" languages="English" cost="Free" description="List of tools for scanning and cleaning infected operating systems using external bootable drives." url="https://www.techradar.com/best/best-antivirus-rescue-disk" %}}
-
-{{% resource title="Erase your Mac and reset it to factory settings" languages="English" cost="Free" description="Guide on how to completely wipe a macOS device to remove malware or malicious profiles." url="https://support.apple.com/en-ug/102664" %}}
-
-{{% resource title="Objective-See Tools" languages="English" cost="Free" description="Collection of security tools for macOS developed by a reputable security researcher, used for detecting malware." url="https://objective-see.org/tools.html" %}}
-
-## Skill Check
-
-Build either a flowchart or a checklist which could assist you in removing malware from a device and ensuring that you do not miss any steps. Discuss this flowchart or checklist with a peer or mentor to make sure that it’s accurate and you didn’t miss anything.
-
-Write a brief paragraph explaining in what situations you would recommend that persons who were targeted by a successful malware infection change passwords to their main accounts (email, iCloud, social media, work) afterwards and how you would explain this to a person you are supporting. Run this paragraph by a peer or mentor who will check if your explanation is accurate.
+{{% resource title="Se descubre un ciberataque de rootkit UEFI" description="En 2018 un análisis realizado por una empresa de seguridad que describe un rootkit UEFI: una pieza de malware incrustada en un nivel inferior al del sistema operativo, por lo que no sería destruida con una simple reinstalación del sistema operativo" languages="Inglés" cost="Gratis" url="https://www.eset.com/int/uefi-rootkit-cyber-attack-discovered/" %}}
+{{% resource title="Microsoft comparte orientación para detectar ataques de bootkit BlackLotus UEFI" description="Una visión general de otro, más reciente, pieza de malware que opera a un nivel inferior al sistema operativo, junto con los pasos que un analista podría tomar para detectarlo" languages="Inglés" cost="Gratis" url="https://www.bleepingcomputer.com/news/security/microsoft-shares-guidance-to-detect-blacklotus-uefi-bootkit-attacks/" %}}
+{{% resource title="Troyanos Una Amena Persistente: BADBOX y PEACHPIT" description="Un informe detallado que examina el malware que está preinstalado en dispositivos, muy probablemente de fábrica, y por lo tanto es extremadamente difícil de eliminar. Buen ejemplo de por qué los dispositivos utilizados para trabajos sensibles deben provenir de fabricantes acreditados" languages="Inglés" cost="Gratis" url="https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf" %}}
+{{% resource title="Cómo funciona Safety Check en iPhone para mantenerte seguro" description="Una característica de iOS que permite a cualquier usuario revisar qué información están compartiendo con otros y, si es necesario, evitar que se comparta." languages="Inglés" cost="Gratis" url="https://support.apple.com/guide/personal-safety/how-safety-check-works-ips2aad835e1/1.0/web/1.0" %}}
+{{% resource title="Cómo saber si tu iPhone tiene jailbreak" description="Un vistazo rápido a algunas heurísticas iniciales que puedes realizar para comprobar si tu dispositivo iOS tiene jailbreak" languages="Inglés" cost="Gratis" url="https://www.certosoftware.com/insights/how-to-tell-if-your-iphone-is-jailbroken/" %}}
+{{% resource title="Cómo realizar el restablecimiento de fábrica de tu iPhone, iPad o iPod touch" description="Una guía rápida sobre cómo borrar completamente un dispositivo iOS, que debería proporcionar una reconfirmación adicional de que se eliminó cualquier malware o perfil malicioso" languages="Inglés" cost="Gratis" url="https://support.apple.com/en-gb/HT201274" %}}
+{{% resource title="Los mejores discos de rescate antivirus de 2024" description="Una lista de herramientas que puedes utilizar para escanear y limpiar un sistema operativo infectado mientras arranca desde una unidad externa" languages="Inglés" cost="Gratis" url="https://www.techradar.com/best/best-antivirus-rescue-disk" %}}
+{{% resource title="Borra tu Mac y restablécela a la configuración de fábrica" description="Una guía rápida sobre cómo borrar completamente un dispositivo macOS, que debería proporcionar una reconfirmación adicional de que se eliminó cualquier malware o perfil malicioso" languages="Inglés" cost="Gratis" url="https://support.apple.com/en-ug/102664" %}}
+{{% resource title="Herramientas Objective-see" description="Una serie de herramientas de seguridad para macOS, desarrolladas por un investigador de seguridad de gran reputación, que pueden utilizarse para detectar malware" languages="Inglés" cost="Gratis" url="https://objective-see.org/tools.html" %}}

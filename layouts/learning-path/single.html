@@ -6,7 +6,7 @@
 </head>
 
 <body class="flex flex-col">
-    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "skip-link" }}</a>
+    <a class="sr-only focus:not-sr-only" href="#content">{{ i18n "key.skip-link" }}</a>
 
     {{ partial "header.html" . }}
 
@@ -20,7 +20,7 @@
                 <article class="flex w-full flex-col items-start justify-between border-b border-gray-300">
                     {{ if eq .Page.Params.style "introduction" }}
                     {{ else }}
-                    <p class="mb-1 text-sm text-gray-500">{{ i18n "modules" 1 }} {{ .Page.Params.weight }}</p>
+                    <p class="mb-1 text-sm text-gray-500">{{ i18n "key.modules" 1 }} {{ .Page.Params.weight }}</p>
                     {{ end }}
                     <h1 class="mb-0 text-3xl font-semibold text-gray-900">
                         {{ .Page.Params.title }}
@@ -31,10 +31,10 @@
                         {{ $day := .GitInfo.AuthorDate.Day }}
                         {{ $month := .GitInfo.AuthorDate.Month }}
                         {{ $year := .GitInfo.AuthorDate.Year }}
-                        {{ $localizedMonth := i18n (printf "%s" $month) }}
-                        <p class="me-2 inline-block text-sm font-semibold text-green-900">{{ i18n "updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
+                        {{ $localizedMonth := i18n (printf "key.%s" $month) }}
+                        <p class="me-2 inline-flex text-sm font-semibold text-green-900">{{ i18n "key.updated-on" }}: {{ printf "%d %s %d" $day $localizedMonth $year }}</p>
                         {{ else }}
-                        <p class="text-sm text-green-900">{{ i18n "git-unavailable" }}</p>
+                        <p class="text-sm text-green-900">{{ i18n "key.git-unavailable" }}</p>
                         {{ end }}
                         {{ partial "github.html" . }}
                     </div>
@@ -54,59 +54,70 @@
                     {{ $content | safeHTML }}
 
                     <!-- Table of Contents (ToC) Panel -->
-                    <div class="absolute mt-8 hidden h-full xl:-left-96 xl:block">
-                        <div class="sticky top-0 px-4 py-2">
-                            <h2 class="mb-4 mt-3 text-xl font-bold">{{ i18n "table-of-contents" }}</h2>
-                            <div class="max-w-72 space-y-2">
-                                {{ .TableOfContents }}
+                    <div class="absolute mt-8 hidden h-full -left-64 2xl:max-w-full xl:max-w-64 2xl:-left-96 xl:block">
+                        <div class="h-full">
+                            <div class="sticky top-0 px-4 py-2">
+                                <h2 class="mb-4 mt-3 text-xl font-bold">{{ i18n "key.table-of-contents" }}</h2>
+                                <div class="max-w-72 space-y-2 h-svh overflow-y-auto toc-container toc-scrollbar">
+                                    {{ .TableOfContents }}
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            const tocLinks = document.querySelectorAll('#TableOfContents a');
-                            const tocItems = Array.from(tocLinks);
-    
-                            const scrollOffsets = tocItems.map(link => {
-                                const target = document.getElementById(link.getAttribute('href').slice(1));
-                                return target.offsetTop - 50; // Adjust offset as needed
-                            });
-    
-                            // Smooth scrolling and setting active state on click
-                            tocItems.forEach((item, index) => {
-                                item.addEventListener('click', function (event) {
-                                    event.preventDefault();
-                                    document.getElementById(item.getAttribute('href').slice(1)).scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'start'
-                                    });
-                                    tocItems.forEach(link => link.classList.remove('active-element'));
-                                    item.classList.add('active-element');
-                                });
-                            });
-    
-                            window.addEventListener('scroll', function () {
-                                const currentScroll = window.scrollY;
-                                let currentIndex = scrollOffsets.findIndex(offset => offset > currentScroll);
-    
-                                if (currentIndex === -1) {
-                                    currentIndex = tocLinks.length - 1;
-                                } else if (currentIndex > 0) {
-                                    currentIndex--;
-                                }
-    
-                                tocItems.forEach(item => {
-                                    item.classList.remove('active-element');
-                                });
-    
-                                if (currentIndex !== -1) {
-                                    tocItems[currentIndex].classList.add('active-element');
-                                }
-                            });
-                        });
-                    </script>
                 </article>
+
+                <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                const tocLinks = document.querySelectorAll('#TableOfContents a');
+                const tocItems = Array.from(tocLinks);
+
+                const scrollOffsets = tocItems.map(link => {
+                    const target = document.getElementById(link.getAttribute('href').slice(1));
+                    return target ? target.offsetTop - 30 : 0; // Adjust offset as needed
+                });
+
+                // Smooth scrolling and setting active state on click
+                tocItems.forEach((item, index) => {
+                    item.addEventListener('click', function (event) {
+                        // event.preventDefault();
+                        const targetId = item.getAttribute('href').slice(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            tocItems.forEach(link => link.classList.remove('active-element'));
+                            item.classList.add('active-element');
+                        }
+                    });
+                });
+
+                window.addEventListener('scroll', function () {
+                        const currentScroll = window.scrollY;
+                        let currentIndex = scrollOffsets.findIndex(offset => offset > currentScroll);
+
+                        if (currentIndex === -1) {
+                            currentIndex = tocLinks.length - 1;
+                        } else if (currentIndex > 0) {
+                            currentIndex--;
+                        }
+
+                        tocItems.forEach(item => item.classList.remove('active-element'));
+
+                        if (currentIndex !== -1) {
+                            tocItems[currentIndex].classList.add('active-element');
+
+                            // Scroll the toc-container to make the active item visible
+                            const tocContainer = document.querySelector('.toc-container');
+                            const activeItem = tocItems[currentIndex];
+
+                            tocContainer.scrollTop = activeItem.offsetTop - tocContainer.offsetTop - tocContainer.clientHeight / 2 + activeItem.clientHeight / 2;
+                        }
+                    });
+                });
+                </script>
 
                 <section id="mark-complete" class="hidden w-full flex-col items-start justify-between">
                     <div class="mx-auto w-full rounded-xl border border-green-400 bg-white shadow-lg">
@@ -114,19 +125,19 @@
                             <div class="bg-green-100 px-10 py-3">
                                 {{ if eq .Page.Params.style "introduction" }}
                                 <p class="m-0 text-lg font-semibold text-green-700">{{ i18n
-                                    "congratulations-introduction" }}</p>
+                                    "key.congratulations-introduction" }}</p>
                                 {{ else }}
-                                <p class="m-0 text-lg font-semibold text-green-700">{{ i18n "congratulations-module" }}
-                                    {{ i18n "modules" 1 }} {{ .Page.Params.weight }}!</p>
+                                <p class="m-0 text-lg font-semibold text-green-700">{{ i18n "key.congratulations-module" }}
+                                    {{ i18n "key.modules" 1 }} {{ .Page.Params.weight }}!</p>
                                 {{ end }}
                             </div>
                         </div>
                         <div class="px-10 py-4">
 
                             {{ if eq .Page.Params.style "introduction" }}
-                            <p class="text-md mb-4 mt-0 text-gray-700">{{ i18n "mark-intro-complete" }}</p>
+                            <p class="text-md mb-4 mt-0 text-gray-700">{{ i18n "key.mark-intro-complete" }}</p>
                             {{ else }}
-                            <p class="text-md mb-4 mt-0 text-gray-700">{{ i18n "mark-module-complete" }}</p>
+                            <p class="text-md mb-4 mt-0 text-gray-700">{{ i18n "key.mark-module-complete" }}</p>
                             {{ end }}
                             <div
                                 class="relative mb-4 flex w-full items-center gap-x-2 space-x-1 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3">
@@ -139,16 +150,16 @@
                                     {{ if eq .Page.Params.style "introduction" }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
-                                        "mark-intro-as-complete" }}</label>
+                                        "key.mark-intro-as-complete" }}</label>
                                     <p id="checkbox-description" class="sr-only text-gray-500">{{ i18n
-                                        "mark-intro-as-complete-aria"
+                                        "key.mark-intro-as-complete-aria"
                                         }}</p>
                                     {{ else }}
                                     <label for="{{ .Page.Params.title }}Checkbox"
                                         class="block cursor-pointer font-medium text-gray-900">{{ i18n
-                                        "mark-as-complete" }}</label>
+                                        "key.mark-as-complete" }}</label>
                                     <p id="checkbox-description" class="sr-only text-gray-500">{{ i18n
-                                        "mark-as-complete-aria"
+                                        "key.mark-as-complete-aria"
                                         }}</p>
                                     {{ end }}
                                 </div>
@@ -169,14 +180,14 @@
                                     d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                             </svg>
                             {{
-                            i18n "previous-module" }}</span>
+                            i18n "key.previous-module" }}</span>
                     </a>
                     {{ end }}
                     {{ with .PrevInSection }}
                     <a href="{{ .Permalink }}"
                         class="relative flex items-center justify-end rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 no-underline ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
                         <span class="flex items-center">
-                            {{ i18n "next-module" }}
+                            {{ i18n "key.next-module" }}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="ms-2 size-4" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"

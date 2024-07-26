@@ -1,70 +1,63 @@
 ---
 style: module
-title: Documenting Findings
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: Documentation des constatations
+description: Ce module vous apprend à rédiger et à partager les résultats de
+  votre enquête en incluant des indicateurs de compromission (IoC) appropriés.
 weight: 8
 ---
 
-## Use Case
+## Cas d'utilisation
 
-There can be several reasons why civil society organizations do not report or share their findings. They might lack the time to do so, they might be concerned about sharing malware samples or indicators of compromise, or they might simply lack the expertise on how to responsibly document the findings of a malware investigation. This subtopic addresses the last point.
+Il peut y avoir plusieurs raisons pour lesquelles les organisations de la société civile ne communiquent pas leurs conclusions. Elles pourraient manquer de temps pour le faire, elles pourraient être préoccupées par le partage d'échantillons de logiciels malveillants ou d'indicateurs de failles, ou elles pourraient simplement manquer d'expertise sur la façon de documenter de manière responsable les conclusions d'une enquête sur les logiciels malveillants. Ce sous-thème aborde le dernier point.
 
-Prior to completing this subtopic, make sure that you’ve thoroughly read through and understood the two writeups (by Amnesty/HRW and by Bellingcat) outlined in Subtopic 7.
+Avant de terminer ce sous-thème, assurez-vous d'avoir bien lu et compris les deux articles (par Amnesty/HRW et Bellingcat) décrits dans le sous-thème 7.
 
-## Objectives
+## Objectifs
 
-After completing this subtopic, practitioners should be able to do the following:
+Après avoir terminé ce sous-thème, les participants devraient être en mesure de faire ce qui suit :
 
-- Perform a quick write-up of an investigation
-- Select appropriate indicators of compromise and share them responsibly
-- Understand how best to disseminate the findings of a write-up
+- Rédiger un bref résumé au sujet d'une enquête
+- Sélectionner les indicateurs appropriés de faille et les partager de manière responsable
+- Comprendre la meilleure façon de diffuser les conclusions d'un article
 
 ---
+## Section Principale
+Lorsque vous enquêtez sur l'infrastructure malveillante associée à une campagne d'hameçonnage ou à une autre menace, il est impératif de prendre des notes détaillées. Vous pouvez oublier les petits détails qui s'avèrent importants. De plus, les auteurs des menaces sont susceptibles de modifier leur infrastructure (p. ex., désactiver les serveurs) pendant votre enquête ! Par conséquent, vous devriez prendre des notes sur ce que vous faites et ce que vous découvrez. Incluez toutes les informations que vous collectez, y compris les résultats de requêtes DNS/whois, les e-mails et les pages Web des cybercriminels (source complète et captures d'écran), etc. Le format exact de ces notes n'est pas important, mais celles-ci devraient être complètes.
 
-As you investigate the malicious infrastructure associated with a particular phishing campaign or other threat, it is imperative that you keep detailed notes. You may forget small details that turn out to be important. Furthermore, the threat actors are likely to change their infrastructure (e.g. turn off servers) during your investigation! Therefore, you should keep notes on both what you’re doing and what you discover. Include all information you collect, including things like DNS/whois query results, attacker emails and web pages (full source and screenshots), etc. The exact format of these notes isn’t important, but they should be comprehensive.
+Au fur et à mesure que votre enquête avance, vous devriez commencer à tenir davantage de notes d'analyse distillées afin d'assurer le suivi de vos conclusions importantes. Vous pouvez également les documenter dans vos notes détaillées, mais il est également bon de les suivre séparément, car vos notes détaillées risquent de devenir très longues et encombrantes. Vos notes de conclusions importantes devraient contenir vos conclusions sur les divers éléments de l'infrastructure et les liens qui les relient. Pensez-y en prenant en compte les éléments importants que vous voudrez probablement conserver dans votre rapport final. Comme pour vos notes non filtrées, le format de ces notes n'est pas significatif, mais beaucoup d'analystes aiment utiliser [Maltego](https://www.maltego.com/) pour documenter les connexions.
 
-As your investigation proceeds, you’ll want to start keeping more distilled analysis notes keeping track of your significant findings. You can also document these in your detailed notes, but it’s good to also track them separately, as your detailed notes are likely to get very long and unwieldy. Your significant findings notes should contain your conclusions about various pieces of infrastructure and the connections between them. Think of it as containing things that you’re likely going to want to keep in your final report. As with your unfiltered notes, the format of these notes isn’t significant, but many people like to use [Maltego](https://www.maltego.com/) to document connections.
+Enfin, une fois votre enquête terminée, il est temps de rédiger votre rapport.
 
-Your report should also contain specific technical indicators: those might include URLs, IP addresses, email addresses, phone numbers, and other identifiers which are used by or which describe the attackers. Those indicators are here to support other analysts or targets: if they come across a campaign with the same or similar indicators, it's likely that it was conducted by the same threat actor or could be used to identify whether they were also targeted. These indicators are usually listed within or at the end of a threat report or compiled in an online repository.
+Le rapport devrait contenir un compte rendu factuel de ce qui s'est passé et de l'infrastructure utilisée, ainsi que vos impressions et conclusions. Généralement, cette enquête sera déclenchée par une sorte d'attaque d'ingénierie sociale (par e-mail, SMS, WhatsApp, etc.). Dans ce cas, vous voudrez noter toutes les conclusions que vous avez faites sur la nature de l'attaque. Quelle en est la cible ? Si possible, pouvez-vous identifier d'autres personnes qui ont reçu le message ? Quelles techniques le cybercriminel a-t-il utilisées pour tromper la personne ciblée ?
 
-Your indicators should be specific enough to be helpful to other analysts: if an attacker used Google Drive to host files, then using "Google Drive" as an indicator might be too vague (instead, you could talk about how the attacker used third party services in the more descriptive parts of your report). Don't forget that indicator lists are rarely comprehensive: they only capture the URLs and IP addresses that you have observed during your investigation. It's very likely that attackers will be using many more which you have not seen.
+Selon le public, vous pouvez également noter les actions de la personne ciblée et les conclusions que vous avez tirées sur la connaissance de la situation par le cybercriminel. La personne ciblée a-t-elle suivi des liens, saisi des informations sensibles sur des sites Web contrôlés par les cybercriminels, téléchargé des pièces jointes, ouvert des pièces jointes, etc. ? Quelle est la probabilité que vos actions et celles de la personne ciblée aient été suivies ? Notez que si la victime a saisi des informations d'identification ou ouvert un logiciel malveillant, un effort d'enquête et de correction plus approfondi (en dehors de la portée de ce parcours d'apprentissage) est justifié.
 
-In some places analysts will distinguish between indicators of attack (IoAs), which suggest that an attack is being attempted, and indicators of compromise (IoCs), which suggest an attack was successful. Much of the industry, however, including the human rights space, uses the term 'indicators of compromise' (IoCs) to describe both situations.
+Une fois que vous avez créé un rapport et que vous l'avez partagé avec votre client (le cas échéant), vous pouvez l'utiliser pour :
 
-Finally, when you’ve concluded your investigation, it’s time to write your report.
+- Le partager avec vos collègues défenseurs numériques de la société civile
+- Le publier dans le domaine public
 
-The report should contain a factual account of what happened and what infrastructure was used, as well as your impressions and conclusions. Generally, this investigation will be triggered by some sort of social engineering attack (via email, SMS, WhatsApp, etc). In that case, you’ll want to note any conclusions you’ve made about the nature of the attack. Was it targeted? If possible, can you identify others who received the message? What techniques did the attacker use to try to trick the targeted person?
+Vous pouvez également faire les deux. Si vous travaillez avec un client dont l'appareil a été compromis, vous devez bien sûr vous assurer qu'il est d'accord avec le partage du rapport. Mieux vaut obtenir son approbation écrite.
 
-Depending on the audience, you might also want to note the targeted person’s actions and any conclusions you’ve made about the attacker’s awareness of the situation. Did they follow links, enter sensitive information into attacker-controlled websites, download attachments, open attachments, etc.? How likely is it that the actions of you and the targeted person were tracked? Note that if the targeted person entered credentials or opened malware, a deeper investigation and remediation effort (outside the scope of this learning path) is warranted.
+Si vous êtes membre d'une organisation comme [CiviCERT](https://www.civicert.org/), c'est un excellent endroit pour partager vos conclusions. Les autres membres pourront ainsi lire votre rapport, fournir des commentaires et prendre des mesures.
 
-Once you’ve created a report and shared it with your client (if applicable), there are a couple things you can do with it:
+Vous pouvez également publier vos résultats sur un blog ou sur un autre site comme GitHub. Cela demande peu d'efforts, mais peut aussi être limité dans son impact. Cependant, votre rapport peut être précieux pour quelqu'un qui enquête sur un ensemble similaire d'infrastructures.
 
-- Share it with your fellow civil society digital defenders
-- Publish it to the world
+## Contrôle de compétence
 
-You can do either or both of these things. If you were working with a client whose device was compromised, you will of course need to ensure that they’re comfortable with you sharing the report. Best to get their approval in writing.
+Prenez l'un des e-mails d'hameçonnage ou des e-mails malveillants ciblés dont vous avez parlé dans le sous-thème 2 ou un domaine que vous avez trouvé sur [PhishTank](https://phishtank.org/) (faites attention lorsque vous analysez ce dernier, supposez que tous les domaines répertoriés sont malveillants). Vous pouvez également utiliser un e-mail ou un domaine que vous avez analysé dans un sous-thème précédent. Imaginez et planifiez à quoi ressemblerait un rapport décrivant la campagne plus large derrière ces e-mails. Puisque le rapport ne sera partagé avec personne, n'hésitez pas à inventer quelques détails. Ensuite, écrivez quelques notes qui résumeraient/décriraient ce rapport.
 
-If you are a member of an organization like [CiviCERT](https://www.civicert.org/), that’s a great place to share your findings. The other members are likely to read your report, provide feedback, and take action on it.
+Si vous travaillez avec un pair ou un mentor, discutez-en avec lui. Il devrait vérifier certaines choses :
 
-You can also publish your findings on a blog or somewhere like GitHub. This requires little effort, but also can be limited in its impact. However, your report may be invaluable to someone who is investigating a similar set of infrastructure.
+- Les notes décrivent-elles avec précision le type d'attaque ?
+- Le rapport contient-il et présente-t-il des informations d'une manière qui pourrait être utile à d'autres intervenants dans l'espace de la société civile, par exemple en incluant des indicateurs de failles (IoC) ?
+- Le rapport résume-t-il ses conclusions de manière responsable, par exemple en neutralisant des URL et en caviardant les données sensibles concernant les personnes ciblées ?
 
-## Learning Resources
 
-{{% resource title="Maltego" languages="English" cost="There is a community version free for non-commercial use, Pro versions cost 999 USD a year" description="Maltego can be used for visual representation of findings and make it easier to identify connections between different indicators." url="https://www.maltego.com/" %}}
+## Ressources d'apprentissage
 
-{{% resource title="Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs" languages="English" cost="Free" description="This is a very thorough report on a major phishing campaign. Don’t feel the need to make yours this complete, but feel free to take inspiration from it." url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
+{{% resource title="Maltego" description="Maltego peut être utilisé pour la représentation visuelle des résultats et faciliter l'identification des liens entre les différents indicateurs." languages="Anglais" cost="Il existe une version communautaire gratuite pour une utilisation non commerciale, les versions Pro coûtent 999 USD par an" url="https://www.maltego.com/" %}}
+{{% resource title="Ascension de Guccifer ? Une campagne d'hameçonnage de plusieurs mois sur ProtonMail cible des dizaines de journalistes et d'ONG russes" description="(Partagé précédemment dans ce parcours d'apprentissage) Il s'agit d'un rapport très complet sur une campagne d'hameçonnage majeure. Vous n'avez pas l'obligation de créer un rapport aussi complet, mais n'hésitez pas à vous en inspirer." languages="Anglais" cost="Gratuit" url="https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/" %}}
+{{% resource title="Iran : piratage d'activistes, de journalistes et de politiciens soutenu par l'État" description="(Partagé précédemment dans ce parcours d'apprentissage) Un autre excellent article écrit et un résumé d'une enquête. Encore une fois, le vôtre sera probablement moins approfondi, mais celui-ci constitue un excellent modèle." languages="Anglais" cost="Gratuit" url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
 
-{{% resource title="Iran: State-Backed Hacking of Activists, Journalists, Politicians" languages="English" cost="Free" description="Another great write-up and a summary of an investigation. Once again, yours will likely be less thorough but this one is a great example." url="https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians" %}}
 
-## Skill Check
-
-Take either one of the phishing emails or targeted malicious emails which you discussed in Subtopic 2 or a domain you found on [PhishTank](https://phishtank.org/) (be careful when analyzing the latter, assume that all domains listed there are malicious). You could also use an email or domain you analyzed in a prior subtopic. Imagine and plan out what a report describing the wider campaign behind those emails would look like. Since the report will not be shared with anyone, feel free to make up some details. Afterwards, write down some notes which would summarize/ outline that report.
-
-If you are working with a peer or a mentor, discuss those notes with them. They should check for a few things:
-
-- Do the notes accurately describe the type of attack?
-- Does the report contain and present information in a way which could be useful for others in the civil society space, for example by including indicators of compromise (IoC)?
-- Does the report summarize its findings in a responsible way, for example by defanging URLs and redacting sensitive data about targeted persons?

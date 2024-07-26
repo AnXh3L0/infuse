@@ -1,50 +1,49 @@
 +++
 style = "module"
 weight = 9
-title = "Malicious document analysis"
+title = "Análisis de documentos maliciosos"
 +++
 
-## Use Case
+## Caso de Uso
 
-While many people know to be suspicious of executable binary files, office document formats such as PDF, DOC, DOCX, XLSX, and ODT, which are used on a daily basis, are unfortunately known to be weaponized with malicious dynamic content or application exploits.
+Si bien muchas personas saben que deben sospechar de los archivos binarios ejecutables, los formatos de documentos de office como PDF, DOC, DOCX, XLSX y ODT, que se utilizan a diario, desafortunadamente son conocidos por ser manipulados para contener contenido dinámico malicioso o exploits de aplicaciones.
 
-This subtopic teaches learners how they can triage and analyze potentially malicious documents.
+Este subtema enseña a los aprendices cómo pueden hacer un triage y analizar documentos potencialmente maliciosos.
 
-## Objectives
+## Objetivos
 
-After completing this subtopic, practitioners should be able to do the following:
+Después de completar este subtema, el profesional debe ser capaz de realizar lo siguiente:
 
-- Set up a REMNux virtual machine for document analysis
-- Disassemble and analyze PDF documents
-- Disassemble and analyze Microsoft Office documents
+- Configura una máquina virtual REMNux para el análisis del documento.
+- Desensamblar y analizar documentos PDF.
+- Desmontar y analizar documentos de Microsoft Office.
 
 ---
+## Sección Principal
 
-Many threat actors can use documents with malicious payloads as an attack vector. Read through [this page](https://cyberhub.am/en/blog/2023/10/25/technical-writeup-malware-campaigns-targeting-armenian-infrastructure-and-users/) for a case study thereof.
+Muchos autores de amenazas pueden utilizar documentos con payloads como vector de ataque. Lee toda [esta página](https://cyberhub.am/en/blog/2023/10/25/technical-writeup-malware-campaigns-targeting-armenian-infrastructure-and-users/) para conocer un estudio de caso al respecto.
 
-_Greater Internet Freedom_, an Internews Project, recently created a small course on analyzing malicious documents. Read through all four parts of the course (listed below) in order to complete this subtopic.
+_Greater Internet Freedom_, un proyecto de Internews, creó recientemente un pequeño curso sobre análisis de documentos maliciosos. Lee las cuatro partes del curso (relacionadas a continuación) para completar este subtema.
 
-Please note that some of the tools included in this guide require Python to be installed on your system. MacOS and Linux systems may have Python installed by default. If you are running Windows, we recommend setting up [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) and running the tools from there.
+Ten en cuenta que algunas de las herramientas incluidas en esta guía requieren que Python esté instalado en tu sistema. Los sistemas MacOS y Linux pueden tener Python instalado de forma predeterminada. Si estás ejecutando Windows, te recomendamos configurar [WSL (Windows Subsystem para Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) y ejecutar las herramientas desde allí.
 
-[Part 1 - Introduction and VMs - Internews Greater Internet Freedom](https://greaterinternetfreedom.org/course/part01-intro-and-vms/)\
-[Part 2 - PDF Documents](https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-02-pdf-documents/)\
-[Part 3 - Microsoft Office Documents](https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-03-microsoft-office-documents/)\
-[Part 4 - Defensive Measures and Next Steps](https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-04-defensive-measures-next-steps-and-closure/)
+[Parte 1 - Introducción y las VM - Internews Greater Internet Freedom](https://greaterinternetfreedom.org/course/part01-intro-and-vms/)
 
-## Learning Resources
+[Parte 2 - PDF Documents](https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-02-pdf-documents/)
 
-{{% resource title="Analysis of malicious documents – Part 01 – Introduction and VMs" languages="English" cost="Free" description="Introduces the topic of malicious document analysis and guides learners on setting up a VM for the task." url="https://greaterinternetfreedom.org/course/part01-intro-and-vms/" %}}
+[Parte 3 - Documentos de Microsoft Office](https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-03-microsoft-office-documents/)
 
-{{% resource title="Analysis of malicious documents – Part 02 – PDF documents" languages="English" cost="Free" description="Covers tools like text editors and PDF disassemblers for analyzing PDF files and detecting executable scripts." url="https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-02-pdf-documents/" %}}
+[Parte 4 Medidas Defensivas y Próximos Pasos](https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-04-defensive-measures-next-steps-and-closure/)
 
-{{% resource title="Analysis of malicious documents – Part 03 – Microsoft Office documents" languages="English" cost="Free" description="Explores the structure of Microsoft Office documents and their potential for embedding active content." url="https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-03-microsoft-office-documents/" %}}
+## Verificación de habilidades
 
-{{% resource title="Analysis of malicious documents – Part 04 – Defensive measures, next steps, and closure" languages="English" cost="Free" description="Demonstrates steps and defensive measures when handling documents from unknown or potentially malicious sources." url="https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-04-defensive-measures-next-steps-and-closure/" %}}
+Completa todos los desafíos en el curso vinculado arriba.
 
-{{% resource title="Analyzing malicious PDFs" languages="English" cost="Free" description="Discusses various tools for in-depth analysis of malicious PDF files." url="https://resources.infosecinstitute.com/topics/hacking/analyzing-malicious-pdf/" %}}
+## Recursos Educativos
 
-{{% resource title="How to analyze malicious Microsoft Office files" languages="English" cost="Free" description="Provides insights into detecting malicious payloads in Microsoft Office files and methods for analysis." url="https://intezer.com/blog/malware-analysis/analyze-malicious-microsoft-office-files/" %}}
-
-## Skill Check
-
-Complete all of the challenges in the course linked above.
+{{% resource title="Análisis de documentos maliciosos – Parte 01 – Introducción y VM" description="Introduce el tema del análisis de documentos maliciosos y muestra a los aprendices cómo configurar una VM adecuada para la tarea" languages="Inglés" cost="Gratis" url="https://greaterinternetfreedom.org/course/part01-intro-and-vms/" %}}
+{{% resource title="Análisis de documentos maliciosos – Parte 02 – Documentos PDF" description="Muestra cómo se pueden utilizar herramientas como editores de texto y desensambladores de PDF especializados para analizar archivos en ese formato para buscar elementos como scripts ejecutables." languages="Inglés" cost="Gratis" url="https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-02-pdf-documents/" %}}
+{{% resource title="Análisis de documentos maliciosos – Parte 03 – Documentos de Microsoft Office" description="Analiza la estructura de los documentos de Microsoft Office y cómo pueden integrar contenido activo" languages="Inglés" cost="Gratis" url="https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-03-microsoft-office-documents/" %}}
+{{% resource title="Análisis de documentos maliciosos – Parte 04 – Medidas defensivas, próximos pasos y cierre" description="Demuestra algunos pasos y contramedidas que podemos tomar cuando trabajamos con documentos de fuentes desconocidas o archivos potencialmente maliciosos" languages="Inglés" cost="Gratis" url="https://greaterinternetfreedom.org/course/analysis-of-malicious-documents-part-04-defensive-measures-next-steps-and-closure/" %}}
+{{% resource title="Análisis de archivos PDF maliciosos" description="Una serie de herramientas que podríamos usar para un análisis aún más profundo de archivos PDF" languages="Inglés" cost="Gratis" url="https://resources.infosecinstitute.com/topics/hacking/analyzing-malicious-pdf/" %}}
+{{% resource title="Cómo analizar archivos maliciosos de Microsoft Office" description="Un recurso adicional que analiza cómo los archivos de Microsoft Office podrían servir como payloads maliciosos y cómo podemos detectarlos" languages="Inglés" cost="Gratis" url="https://intezer.com/blog/malware-analysis/analyze-malicious-microsoft-office-files/" %}}

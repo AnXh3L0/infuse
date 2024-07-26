@@ -54,7 +54,7 @@
   }
 
   ::file-selector-button {
-    display: none;
+    @apply hidden;
   }
 }
 
@@ -78,18 +78,13 @@ body {
 .prose h4,
 .prose h5,
 .prose h6 {
-  position: relative;
+  @apply relative;
 }
 
 .anchor-link {
-  position: absolute;
   top: 0.2em;
   left: -2rem;
-  display: flex;
-  margin: auto;
-  opacity: 0;
-  justify-content: center;
-  align-items: center;
+  @apply absolute m-auto flex items-center justify-center opacity-0;
 }
 
 .prose h1:hover .anchor-link,
@@ -98,45 +93,73 @@ body {
 .prose h4:hover .anchor-link,
 .prose h5:hover .anchor-link,
 .prose h6:hover .anchor-link {
-  opacity: 1;
+  @apply opacity-100;
 }
 
 .anchor-link:hover {
-  visibility: visible;
+  @apply visible;
 }
 
 nav#TableOfContents ul {
-  list-style: none;
+  @apply list-none;
 }
 
 nav#TableOfContents li {
-  padding-inline-start: 0;
-  margin-block: 0;
+  @apply my-0 ps-0;
 }
 
 nav#TableOfContents li a {
-  padding: 0.5rem 1rem;
-  display: block;
-  text-decoration: none;
-  border-width: 2px 2px 2px 8px;
-  border-color: transparent;
+  @apply block border-b-2 border-l-8 border-r-2 border-t-2 border-transparent px-3 py-1 no-underline;
 }
 
 nav#TableOfContents li a.active-element {
-  border-color: #087443;
-  background-color: #edfcf2;
-  color: #087443;
-  border-radius: 0.5rem;
+  @apply rounded-lg border-green-700 bg-green-50 text-green-700;
 }
 
 nav#TableOfContents ul:first-child {
-  padding-inline-start: 0;
+  @apply ps-0;
+}
+
+.prose
+  nav#TableOfContents
+  :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  @apply ps-4;
+}
+
+.prose :where(pre):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  @apply max-w-full overflow-x-auto;
 }
 
 details summary::-webkit-details-marker {
-  display: none;
+  @apply hidden;
 }
 
 details summary::marker {
-  display: none;
+  @apply hidden;
+}
+
+.prose article {
+  * + * {
+   @apply mt-0.5;
+  }
+}
+
+.prose
+  :where(ul > li):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::marker {
+  @apply text-gray-700;
+}
+
+.toc-container {
+  max-height: calc(100vh - 5rem);
+}
+
+.toc-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.toc-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
 }

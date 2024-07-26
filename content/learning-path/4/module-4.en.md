@@ -2,6 +2,7 @@
 style = "module"
 weight = 4
 title = "Authorization"
+description = "Logged in users do not have access to all other users' data. Here we look at how to make sure no user exceeds their level of access or capability"
 +++
 
 ## Use Case
@@ -18,8 +19,8 @@ After completing this subtopic, practitioners should be able to do the following
 - Understand, in broad strokes, how those vulnerabilities can be prevented
 
 ---
-
-## Foundation Knowledge
+## Main Section
+### Foundation Knowledge
 
 Authorization is the process of making sure that a user of a system has permission to perform an action or create/read/edit/delete a piece of data in that system, and preventing these actions if the user doesn’t have permission. Generally, these are the simplest types of security controls to implement, and the simplest type of vulnerability to find. However, even though they are conceptually simple, both securing and breaking the controls are generally very tedious and error-prone.
 
@@ -27,7 +28,7 @@ Every time a web application loads an access-controlled page or performs an acce
 
 To ease communication about vulnerabilities, authorization vulnerabilities are generally broken down into three categories.
 
-## Missing authentication
+### Missing authentication
 
 Sometimes developers will fail to even check that a user is logged in on a page or set of pages. Any user on the internet can view the post-authentication pages or perform post-authentication actions. This class of vulnerability has sometimes been called “forced browsing” or “direct object reference.” There are several ways this kind of vulnerability manifests.
 
@@ -37,7 +38,7 @@ Another common pattern is that pages that render data in the browser have authen
 
 A third common pattern is that individual pages or actions, or perhaps sections of the site, will just fail to check for authentication. Generally this is a result of developer oversight.
 
-## Vertical Privilege Escalation
+### Vertical Privilege Escalation
 
 Vertical privilege escalation happens when less powerful users can perform more powerful actions on the website. This is commonly caused by the site checking authentication status but fails to check permissions. It was mentioned above that frameworks generally don’t include built-in functions for authorization, but many perform checks for authentication. If a page (or entire site) properly performs authentication checks but does not perform permissions checks, this usually results in vertical privilege escalation.
 
@@ -45,13 +46,13 @@ An example of vertical privilege escalation might be in an online forum that has
 
 The patterns that lead to vertical privilege escalation are essentially the same as those that lead to missing authentication, except that users must be logged in.
 
-## Try it yourself!
+#### Try it yourself!
 
 Log into your DVWA and make sure the security level is set to low and that you are signed in as the admin (it’s best to log out and log back in using the credentials “admin:password”. Navigate to the “Authorisation Bypass” page. If you cannot see this page in the left bar and have the most up to date version of DVWA, it means that you are not logged in as the admin.
 
 After that, open a private browsing window or another browser and log into your DVWA as the “gordonb” user and note that the Authorisation Bypass does not appear in gordonb’s navigation bar. Can you figure out how to access the Authorisation Bypass as gordonb? (If you're having trouble, remember that authorization vulnerabilities are generally very straightforward. Don’t overthink it.)
 
-## Horizontal Privilege Escalation
+### Horizontal Privilege Escalation
 
 Horizontal privilege escalation happens when users can view or perform actions on other users’ data, when those other users have the same access level.
 
@@ -68,12 +69,6 @@ As noted above, the two root causes for authorization vulnerabilities tend to be
 - For data-level permissions checks, having consistent developer guidelines can reduce errors. For instance, a rule that all data access must go through API calls, every API function must include a user id parameter, and every API that takes a user ID must use it in database calls. Having consistent rules like this makes it easier to avoid, and to find, authorization errors.
 
 For a bit more authentication, see [the OWASP authorization cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html). For an in-depth exploration, see the [Web Application Security Assessment learning path](https://docs.google.com/document/d/19v34droskAFgkp_qqcwiQLpc1hI1W-FjzHNV2QRBsaA/edit?usp=sharing).
-
-## Learning Resources
-
-{{% resource title="Authorization cheat sheet" languages="English" cost="Free" description="Best practices for authorization in web applications." url="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" %}}
-
-{{% resource title="Honda eCommerce hack" languages="English" cost="Free" description="Demonstration of vulnerabilities in websites with poor authentication or authorization practices." url="https://eaton-works.com/2023/06/06/honda-ecommerce-hack/" %}}
 
 
 ## Practice
@@ -158,7 +153,7 @@ B) Vertical Privilege Escalation\
 C) Horizontal Privilege Escalation\
 D) Forced Browsing\
 
-### Answer key
+#### Answer key
 
 Question 1: C) Verifying user permissions\
 Question 2: C) Missing Authentication\
@@ -216,7 +211,7 @@ print(result)
 
 **Find and fix the vulnerability in the `delete_profile` function.**
 
-### Answer key and explanation
+#### Answer key and explanation
 
 The vulnerability lies in the fact that the `delete_profile` function only checks for the current user's write permission but does not verify that the current user is authorized to delete other users' profiles. This allows any user with write permission to delete any other user's profile, regardless of their own permissions.
 
@@ -225,3 +220,9 @@ The vulnerability lies in the fact that the `delete_profile` function only check
 1. Check if the current user has the "delete" permission specifically.
 2. Implement role-based access control (RBAC) to restrict deletion based on user roles.
 3. Add additional checks to verify the legitimacy of the deletion request.
+
+## Learning Resources
+
+{{% resource title="Authorization cheat sheet" languages="English" cost="Free" description="Best practices for authorization in web applications." url="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" %}}
+
+{{% resource title="Honda eCommerce hack" languages="English" cost="Free" description="Demonstration of vulnerabilities in websites with poor authentication or authorization practices." url="https://eaton-works.com/2023/06/06/honda-ecommerce-hack/" %}}

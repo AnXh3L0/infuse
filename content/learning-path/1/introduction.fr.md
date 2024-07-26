@@ -1,9 +1,10 @@
-+++
-style = "introduction"
-weight = 1
-title = "Introduction"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: introduction
+title: Introduction
+description: COMMENCEZ ICI. Lisez la présentation du parcours d'apprentissage,
+  les objectifs, les menaces associées et les prérequis.
+weight: 1
+---
 
 ## Présentation
 
@@ -81,4 +82,10 @@ Vous n'avez pas besoin de matériel spécialisé ou puissant pour ce parcours d'
 
 ## Parcours d'apprentissage connexes
 
-Ce parcours d'apprentissage constitue une introduction fantastique aux autres parcours. Après avoir terminé celui-ci, nous recommandons aux apprenants de travailler sur la _détection de logiciels malveillants_ ou sur _les principes fondamentaux de la sécurité Web_.
+Ce parcours d'apprentissage constitue une introduction fantastique aux autres parcours. Après avoir terminé celui-ci, nous recommandons aux apprenants de travailler sur la [détection de logiciels malveillants](/fr/learning-path/2/) ou sur [les principes fondamentaux de la sécurité Web](/fr/learning-path/4/).
+
+## Autres ressources et liens
+
+{{% resource title="Flux de travail du service d'assistance : le client reçoit un e-mail suspect ou d'hameçonnage" description="Documentation communautaire de la ligne d'assistance Access Now pour répondre aux e-mails suspects / d'hameçonnage" languages="Anglais" cost="Gratuit" url="https://accessnowhelpline.gitlab.io/community-documentation/58-Suspicious_Phishing_Email.html" %}}
+{{% resource title="Liste de tous les types d'enregistrements DNS" description="Inclut (presque ?) tous les types d'enregistrements DNS." languages="Anglais, chinois, japonais, coréen, russe, serbe, ukrainien, espéranto, hongrois, vietnamien, italien, espagnol, français" cost="Gratuit" url="https://en.wikipedia.org/wiki/List_of_DNS_record_types" %}}
+{{% resource title="Rapports d'Amnesty sur les campagnes d'hameçonnage" description="Une liste d'exemples illustrant une campagne d'hameçonnage ciblée contre les défenseurs des droits de l'homme, les militants et les journalistes" languages="Multiple, selon le rapport" cost="Gratuit" url="https://www.amnesty.org/en/search/phishing/" %}}

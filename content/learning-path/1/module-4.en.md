@@ -1,13 +1,7 @@
 ---
 style: module
-title: Passive Investigation - Analyze URLs, hostnames, and IP addresses
-description: A practitioner can use the skills outlined in this subtopic to
-  begin a passive investigation against servers on the internet. A passive
-  investigation is one that does not load any websites, but only looks up
-  publicly available data on them. It utilizes open source intelligence (OSINT)
-  tools and resources which can give us many details about the digital footprint
-  of attack infrastructure without an attacker noticing that we are
-  investigating.
+title: "Passive Investigation - Analyze URLs, hostnames, and IP addresses"
+description: "A practitioner can use the skills outlined in this subtopic to begin a passive investigation against servers on the internet. A passive investigation is one that does not load any websites, but only looks up publicly available data on them. It utilizes open source intelligence (OSINT) tools and resources which can give us many details about the digital footprint of attack infrastructure without an attacker noticing that we are investigating"
 weight: 4
 ---
 
@@ -29,9 +23,11 @@ After completing this subtopic, practitioners should be able to do the following
 
 ---
 
+## Main Section
+
 Passive investigation utilizes open source intelligence (OSINT) tools and resources which can give us many details about the digital footprint of attack infrastructure without an attacker noticing that we are investigating.
 
-## Foundation Knowledge
+### Foundation Knowledge
 
 This dives into the basics of URLs, DNS, and IPv4/IPv6. If you feel comfortable with those concepts, excellent! Go and jump to the ‘workflows’ section. Otherwise, check out the documents and resources below:
 
@@ -52,11 +48,11 @@ This dives into the basics of URLs, DNS, and IPv4/IPv6. If you feel comfortable 
       [https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/](https://www.enterprisenetworkingplanet.com/standards-protocols/understanding-ip-addresses/)
 - In addition to IP addresses, it’s useful to read up on [port numbers](https://www.techtarget.com/searchnetworking/definition/port-number).
 
-## Workflows: Tools & Capabilities
+### Workflows: Tools & Capabilities
 
 Passive IP/DNS investigations can be divided into several categories.
 
-## Obtain Essential IP/DNS Information
+#### Obtain Essential IP/DNS Information
 
 One of the first things we should do in our investigation is gain some initial information on domains and hosts. Several tools and tool categories that can help with that.
 
@@ -73,11 +69,12 @@ One of the first things we should do in our investigation is gain some initial i
   Look out for common content distribution reverse-proxy name servers such as those offered by Akamai (e.g. a1-64.akam.net), CloudFlare (e.g. eve.ns.cloudflare.com), Fastly (e.g. ns3.fastly.net), as these will obscure the actual origin server IP. After spending some time looking up name servers, you will easily be able to recognize many of those proxies. If you, for example, run the dig command to look up theguardian.com, you will see that it resolves to Fastly servers (at least at time of writing).
 
 - geoIP
+
   IP addresses are roughly tied to physical geographies. This means that, if you know an IP address, [you can figure out](https://www.maxmind.com/en/geoip-demo) (MaxMind GeoIP lookup demo linked)) with some degree of certainty where in the world (country, region) the device that uses this address is located. There are many databases, known as geoIP, which allow you to look that up. Do note that the accuracy of IP-based lookups can be extremely varied: sometimes, it’s possible to track down an IP address to a specific organization, while at other times you only get country-level granularity.
 
 🛠️ Take a moment to practice using these services. You could, for example, use them to look up your own website or that of your organization.
 
-### Discovering Hidden DNS/IP Information
+#### Discovering Hidden DNS/IP Information
 
 There are a variety of ways that one can obtain additional information about hosts in a domain. Do note, however, that most of those techniques only work some of the time and often fail. If one of them does not work, do not be discouraged. Some of these methods include:
 
@@ -87,7 +84,7 @@ There are a variety of ways that one can obtain additional information about hos
 
 There exist tools that use these and other techniques to try to discover additional network resources. One of the first of these, still under development, is called [Fierce](https://www.kali.org/tools/fierce/). Another popular tool is [DNS Recon](https://securitytrails.com/blog/dnsrecon-tool). This [blog post describing DNSRecon](https://securitytrails.com/blog/dnsrecon-tool#content-alternatives-to-dnsrecon) also includes a list of other popular DNS enumeration tools.
 
-### Enriching IP/DNS information using Internet Scanner Services
+#### Enriching IP/DNS information using Internet Scanner Services
 
 Once you have obtained identifier information (domains and IPs) you can search this data in greater depth using some services which allow you to investigate additional information about the host and any associated activity around it.
 
@@ -104,14 +101,14 @@ Other scanner services also collect **DNS history**, allowing you to peer back i
 - [Security Trails](https://securitytrails.com/)
 - [Microsoft Defender Threat Intelligence ](https://ti.defender.microsoft.com/)(formerly RiskIQ) provides limited DNS history and resolutions data to free-tier customers.
 
-### Enriching IP/DNS information using threat intelligence databases
+#### Enriching IP/DNS information using threat intelligence databases
 
 Several services will collect indicators of threats and history of malicious behavior. If you need to ensure that no new scanning activity is initiated (which would be active investigation), ensure that you are not initiating a new scan with your search (for instance, while VirusTotal allows you to check a URL, it will launch a new scan against the URL, thereby initiating activity which could be detected as an investigation).
 
 - [Alienvault OTX](https://otx.alienvault.com/) is a community-driven open resource for malicious indicators. Searching for an IP or host name will display useful OSINT information as well as records of any malicious activity previously obtained.
 - [Mandiant Advantage](https://www.mandiant.com/multi-vendor-security-platform-free-access) (owned by Google) provides search limited functionality on their free tier.
 
-### Using Certificate Search
+#### Using Certificate Search
 
 Almost every website a user will encounter now uses HTTPS, which uses a technology known as TLS (Transport Layer Security). Malicious websites use it too, in part playing on users' beliefs that HTTPS and a lock appearing in the browser's URL bar means that the website is therefore safe, regardless of other factors.
 
@@ -140,6 +137,27 @@ When you use a tool such as WHOIS, you will find many addresses which are hidden
 Many malicious URLs used in phishing emails utilize (sometimes multiple) redirects, meaning the initial URL may be less relevant for analysis. Identifying redirects and other IPs involved will require active interaction with the URL, which is covered in Active Investigation skill.
 
 Attackers can host their own DNS server and track requests. In this case, DNS requests may not be "passive" and may alert the attacker of the investigation. Especially look out for hostnames that might have identifiers in them, like r2378r233yr39wjwr.example.com.
+
+
+## Practice
+
+Choose a random-ish domain name, making sure that it is not hosted behind a content distribution/reverse-proxy service such as Cloudflare (you can figure it out by quickly searching for it using a tool such as dig and using the NS option to look for name servers). Using the above tool categories, investigate the domain and try to explain:
+
+- Where is the domain registered, and if available, who registered the domain?
+- What is the domain’s IP address?
+- Who manages that IP address?
+- Where is that server located?
+- (If practitioners have access to Shodan or Censys) What services are running on that server?
+- What other domains are hosted at the same IP?
+- Can you find any sub-domains for that domain?
+
+## Skill Check
+
+Sit down with a peer or a mentor who has significant experience in passive investigation against servers on the internet. Then:
+
+- Complete the [passive reconnaissance room](https://tryhackme.com/room/passiverecon) on TryHackMe.
+- Carry out the above Practice Exercises, ideally on a different domain, and go through your process and findings with your peer or mentor. Have them review your work and provide feedback on both the process and results. It might be a good exercise to discuss specifically how to find subdomains running on that domain and to discuss the accuracy of geoIP lookups concerning those domains. As an optional extra, sit down with the mentor or peer to run through some advanced dig settings and set up a basic automation together, for example asking dig to load a list of domains from a text file and provide information on them.
+- If you have a real-world phishing message (or alternatively, take a phishing domain from [PhishTank](https://phishtank.org/) and analyze that, note that the website collects domains rather than messages), carry out the passive investigation outlined in the practice exercise (carefully!) while conferring with a peer or mentor. Document your findings and your process. Have them review your work and provide feedback on both the process and results.
 
 ## Learning Resources
 
@@ -198,24 +216,3 @@ Attackers can host their own DNS server and track requests. In this case, DNS re
 {{% resource title="massdns" languages="English" cost="Free" description="A tool which can be used to brute force searches for subdomains." url="https://github.com/blechschmidt/massdns#reconnaissance-by-brute-forcing-subdomains" %}}
 
 {{% resource title="Advanced Persistent Infrastructure Tracking" languages="English" cost="Free" description="A guide on various methods which could be used to track attacker infrastructure, which also looks at certificate searches." url="https://cobaltstrike.com/downloads/csmanual38.pdf" %}}
-
-
-## Practice
-
-Choose a random-ish domain name, making sure that it is not hosted behind a content distribution/reverse-proxy service such as Cloudflare (you can figure it out by quickly searching for it using a tool such as dig and using the NS option to look for name servers). Using the above tool categories, investigate the domain and try to explain:
-
-- Where is the domain registered, and if available, who registered the domain?
-- What is the domain’s IP address?
-- Who manages that IP address?
-- Where is that server located?
-- (If practitioners have access to Shodan or Censys) What services are running on that server?
-- What other domains are hosted at the same IP?
-- Can you find any sub-domains for that domain?
-
-## Skill Check
-
-Sit down with a peer or a mentor who has significant experience in passive investigation against servers on the internet. Then:
-
-- Complete the [passive reconnaissance room](https://tryhackme.com/room/passiverecon) on TryHackMe.
-- Carry out the above Practice Exercises, ideally on a different domain, and go through your process and findings with your peer or mentor. Have them review your work and provide feedback on both the process and results. It might be a good exercise to discuss specifically how to find subdomains running on that domain and to discuss the accuracy of geoIP lookups concerning those domains. As an optional extra, sit down with the mentor or peer to run through some advanced dig settings and set up a basic automation together, for example asking dig to load a list of domains from a text file and provide information on them.
-- If you have a real-world phishing message (or alternatively, take a phishing domain from [PhishTank](https://phishtank.org/) and analyze that, note that the website collects domains rather than messages), carry out the passive investigation outlined in the practice exercise (carefully!) while conferring with a peer or mentor. Document your findings and your process. Have them review your work and provide feedback on both the process and results.

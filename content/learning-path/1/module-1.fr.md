@@ -1,10 +1,7 @@
 ---
 style: module
 title: "Triage : décider quand enquêter"
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+description: "Lorsque vous recevez un message suspect, effectuez un triage initial afin de déterminer s'il est effectivement alveillant, de déterminer la meilleure réponse rapide pour le ou les destinataires ciblés, le cas échéant, et de déterminer si une enquête plus approfondie est nécessaire. Pour la plupart des messages, il suffit de mener des heuristiques de base pour séparer les menaces non iblées des menaces ciblées et identifier les actions de réduction des risques."
 weight: 1
 ---
 
@@ -44,22 +41,6 @@ Les cybercriminels qui utilisent des messages de moindre qualité ou envoyés en
 
 ⚠️ Lorsque vous envisagez ou menez une enquête, assurez-vous de trouver un équilibre entre les besoins en matière de réduction des dommages et de soutenir tout objectif visant à mettre en œuvre des mesures de réduction des dommages en temps opportun, comme celles énumérées dans la section [Récupérer un compte éventuellement compromis (securityinabox.org)](https://securityinabox.org/en/communication/account-compromise/).
 
-### Ressources d'apprentissage
-
-{{% resource title="Shira par Horizontal" languages="Anglais, espagnol, mandarin" cost="Gratuit" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" url="[https://shira.app](https://shira.app)" %}}
-
-{{% resource title="Questionnaire d'hameçonnage par Jigsaw" languages="27 langues" cost="Gratuit" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" url="[Jigsaw | Questionnaire d'hameçonnage](https://phishingquiz.withgoogle.com/)" %}}
-
-{{% resource title="6 attaques d'hameçonnage courantes et comment s'en protéger" languages="Anglais" cost="Gratuit" description="Un résumé de certaines attaques d'hameçonnage courantes, qui comprend également des méthodes plus sophistiquées utilisées par les cybercriminels" url="[https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them](https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them)" %}}
-
-{{% resource title="5 techniques courantes d'hameçonnage" languages="Anglais" cost="Gratuit" description="Quelques techniques utilisées par les cybercriminels pour rendre les e-mails d'hameçonnage plus convaincants et échapper occasionnellement à la détection" url="[https://www.vadesecure.com/en/blog/5-common-phishing-techniques](https://www.vadesecure.com/en/blog/5-common-phishing-techniques)" %}}
-
-{{% resource title="CiviCERT" languages="Anglais" cost="Gratuit" description="Un réseau d'organisations de la société civile et de groupes d'intervention rapide qui se concentrent sur les cyberattaques et les menaces similaires" url="[https://www.civicert.org/](https://www.civicert.org/)" %}}
-
-{{% resource title="Trousse à outils numérique" languages="Arabe, espagnol, farsi, français, indonésien, arménien, kirghize, birman, portugais, russe, albanais, thaï, ukrainien" cost="Gratuit" description="Un guide complet de soutien des protecteurs numériques qui aborde divers sujets" url="[https://digitalfirstaid.org/en/index.html](https://digitalfirstaid.org/en/index.html)" %}}
-
-{{% resource title="Récupérer un compte éventuellement compromis" languages="Arabe, indonésien, anglais, espagnol, farsi, français, portugais, russe, thaï, turc, vietnamien, chinois, tibétain, khmer, birman" cost="Gratuit" description="Un guide concernant les mesures immédiates et à long terme à prendre lorsqu'un compte s'avère compromis" url="[https://securityinabox.org/en/communication/account-compromise/](https://securityinabox.org/en/communication/account-compromise/)" %}}
-
 ### Contrôle de compétence
 
 Passez du temps sur le questionnaire d'hameçonnage de [Shira](https://shira.app/) jusqu'à ce que vous ayez l'impression de pouvoir réussir les tests et de reconnaître avec précision l'hameçonnage dans plusieurs catégories d'applications. \
@@ -70,3 +51,13 @@ Discutez des deux situations suivantes avec un pair ou un mentor :
 - Réponse possible : la base de données des clients de cette boutique a pu être piratée, ce qui aurait permis aux cybercriminels d'envoyer des e-mails « personnalisés » à tous les clients.
 - Un utilisateur reçoit un e-mail et vous concluez que l'expéditeur est un acteur malveillant connu qui peut avoir une raison de le cibler. Cependant, l'e-mail ne contient pas de lien ou de pièce jointe. Discutez-en avec votre pair ou mentor et donnez deux raisons pour lesquelles cela pourrait être le cas.
   - Réponses possibles : l'expéditeur peut avoir fait une erreur. Ou l'expéditeur peut attendre que le destinataire envoie une réponse et seulement ensuite envoyer un fichier malveillant ou un lien, après qu'une relation de confiance a été construite. (Ce scénario peut se produire.)
+
+### Ressources d'apprentissage
+
+{{% resource title="Shira par Horizontal" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" languages="Anglais, espagnol, mandarin" cost="Gratuit" url="https://shira.app" %}}
+{{% resource title="Questionnaire d'hameçonnage par Jigsaw" description="Un questionnaire en ligne comprenant des exemples d'e-mails, où l'utilisateur doit déterminer s'ils sont malveillants ou non" languages="27 langues" cost="Gratuit" url="Jigsaw | Questionnaire d'hameçonnage" %}}
+{{% resource title="6 attaques d'hameçonnage courantes et comment s'en protéger" description="Un résumé de certaines attaques d'hameçonnage courantes, qui comprend également des méthodes plus sophistiquées utilisées par les cybercriminels" languages="Anglais" cost="Gratuit" url="https://www.tripwire.com/state-of-security/6-common-phishing-attacks-and-how-to-protect-against-them" %}}
+{{% resource title="5 techniques courantes d'hameçonnage" description="Quelques techniques utilisées par les cybercriminels pour rendre les e-mails d'hameçonnage plus convaincants et échapper occasionnellement à la détection" languages="Anglais" cost="Gratuit" url="https://www.vadesecure.com/en/blog/5-common-phishing-techniques" %}}
+{{% resource title="CiviCERT" description="Un réseau d'organisations de la société civile et de groupes d'intervention rapide qui se concentrent sur les cyberattaques et les menaces similaires" languages="Anglais" cost="Gratuit" url="https://www.civicert.org/" %}}
+{{% resource title="Trousse à outils numérique" description="Un guide complet de soutien des protecteurs numériques qui aborde divers sujets" languages="Arabe, espagnol, farsi, français, indonésien, arménien, kirghize, birman, portugais, russe, albanais, thaï, ukrainien" cost="Gratuit" url="https://digitalfirstaid.org/en/index.html" %}}
+{{% resource title="Récupérer un compte éventuellement compromis" description="Un guide concernant les mesures immédiates et à long terme à prendre lorsqu'un compte s'avère compromis" languages="Arabe, indonésien, anglais, espagnol, farsi, français, portugais, russe, thaï, turc, vietnamien, chinois, tibétain, khmer, birman" cost="Gratuit" url="https://securityinabox.org/en/communication/account-compromise/" %}}

@@ -1,11 +1,7 @@
 ---
 style: module
-title: Compétences interpersonnelles pour la réponse à l'infrastructure
-  malveillante/hameçonnage
-description: Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-  turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-  fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
-  risus.
+title: "Compétences interpersonnelles pour la réponse à l'infrastructure malveillante/hameçonnage"
+description: "Après avoir terminé ce sous-thème, les praticiens seront en mesure de soutenir ceux qui pourraient avoir reçu ou cliqué sur des e-mails ou des liens malveillants de manière responsable, en faisant preuve d'empathie et en se concentrant sur la réduction des dommages, éclairés par le modèle de menace de la personne ciblée."
 weight: 2
 ---
 
@@ -54,10 +50,6 @@ Les réponses à ces questions aideront à la fois à fournir un soutien utile e
 
 Dans un souci de sécurité opérationnelle pour vous protéger lorsque vous travaillez avec des e-mails malveillants, il convient de consulter le sous-thème suivant.
 
-## Ressources d'apprentissage
-
-{{% resource title="Formation en matière de sécurité 101" languages="Anglais" cost="Gratuit" description="Une ressource communautaire populaire sur la façon d'enseigner et de parler de la sécurité numérique" url="https://www.securityeducationcompanion.org/articles" %}}
-
 ## Pratique
 
 Réfléchissez à ce qui suit et discutez-en avec des pairs, des collègues, des amis ou un mentor. Le cas échéant, parlez à un « client » avec qui vous avez déjà travaillé pour lui demander ses commentaires et son expérience sur certaines de ces questions.
@@ -77,3 +69,8 @@ Faites un exercice de jeu de rôle avec un pair ou un mentor, dans lequel vous j
 - Parlez à la personne ciblée du risque auquel elle pourrait être exposée si elle cliquait sur l'e-mail d'hameçonnage.
 - Parlez des cybercriminels potentiels et du nombre d'attaques qui ne sont pas ciblées.
 - Discutez des prochaines étapes que la personne et l'organisation ciblées pourraient prendre pour assurer la sécurité.
+
+## Ressources d'apprentissage
+
+{{% resource title="Formation en matière de sécurité 101" description="Une ressource communautaire populaire sur la façon d'enseigner et de parler de la sécurité numérique" languages="Anglais" cost="Gratuit" url="https://www.securityeducationcompanion.org/articles" %}}
+

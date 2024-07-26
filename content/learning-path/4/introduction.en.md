@@ -1,9 +1,9 @@
----
-style: introduction
-title: Introduction
-description: ""
-weight: 1
----
++++
+style = "introduction"
+weight = 1
+title = "Introduction"
+description = "START HERE. Read the learning path overview, objectives, associated threats, and prerequisites"
++++
 
 ## Overview
 

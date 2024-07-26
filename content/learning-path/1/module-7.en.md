@@ -3,7 +3,7 @@ style: module
 title: Active Investigation - Analyze malicious webpages
 description: This module will teach you to look at attacker-controlled websites
   to understand their actions and potentially uncover further
-  attacker-controlled infrastructure or attack vectors used in the attacks.
+  attacker-controlled infrastructure or attack vectors used in the attacks
 weight: 7
 ---
 
@@ -21,8 +21,8 @@ After completing this subtopic, practitioners should be able to do the following
 - Uncover what further infrastructure such websites could link to by looking for URLs, redirects, linked domains, and other assets or identifiers
 
 ---
-
-## Foundation Knowledge
+## Main Section
+### Foundation Knowledge
 
 This will be significantly easier to practice if you know the basics of JavaScript and HTML, though those are not strictly necessary prerequisites.
 
@@ -34,17 +34,17 @@ It’s worth highlighting some basic differences between an email and a web page
 
 Because of this, we recommend only analyzing web pages in a safe environment specifically designed for opening potentially suspicious files, such as a virtual machine or a sandbox. In addition, discuss the threat model specific to the recipient of the email to ensure it is safe for them for you to conduct further analysis activity which could be visible to the attacker.
 
-## Case studies
+### Case studies
 
 Read through two case studies which analyze phishing attacks that targeted civil society groups. Both of those attacks were partially successful:
 
-- Human Rights Watch: [Iran: State-Backed Hacking of Activists, Journalists, Politicians](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) (The introductory section is useful context on attacker tactics and motivations; however, focus on the _Technical Analysis of the Phishing Campaign_ section for learning purposes.
+- Human Rights Watch: [Iran: State-Backed Hacking of Activists, Journalists, Politicians](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) (The introductory section is useful context on attacker tactics and motivations; however, focus on the _Technical Analysis of the Phishing Campaign_ section for learning purposes.)
 - Bellingcat: [Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/)
 
 Focusing on the[ HRW case study](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) above, note some key features of analysis used in each investigation. Some of these require technical skills to complete, while others require research, critical thinking, and interpersonal skills. Some of the methods identified in the case study include:
 
 - The attackers used an URL shortener service. This is common for legitimate and non-legitimate emails alike. You should be able to recognize URL shorteners and know how to expand these URLs where possible (for instance by using the shortener’s inbuilt mechanism such as adding a + to the end of the URL, or by using an expander tool like [Urlex](https://urlex.org/)) or track stages of HTTP redirects. Notably the attacker created their own URL shortener service in this case which impersonated (through a small typing change in the domain) another known URL shortener.
-- Multiple domains were registered which were intended to confuse the target (e.g. sharefilesonline[.]live, which plays on Microsoft’s product names SharePoint and Live.com.
+- Multiple domains were registered which were intended to confuse the target (e.g. sharefilesonline[.]live, which plays on Microsoft’s product names SharePoint and Live.com)
 - Unique links sent to individual targets with a five-character identifier (this could be achieved by any unique string in an URL, usually within the URL path or passed in a parameter for instance after a ‘?’).
 - By using brute force to try out all possible five character identifiers and URL combinations, the analysts were able to discover several other landing pages used by the phishing campaign. They impersonated popular email providers and used a phishing kit which allows for MFA bypass techniques.
 - The analysts reached out to others who might have been targeted by the same campaign to further share threat intelligence and better understand the adversary’s techniques.
@@ -56,7 +56,7 @@ Focusing on the[ HRW case study](https://www.hrw.org/news/2022/12/05/iran-state-
   - They wrote about other attacker tactics such as impersonating conference/summit organizers or NGO key figures.
 - Finally, the report also shares out technical indicators of compromise.
 
-## Automated sandboxed inspection of a website
+### Automated sandboxed inspection of a website
 
 The first step when you are ready to inspect a website linked to from a phishing message may be to safely look at the website. This entails some degree of interaction with the website. For direct handling of a potentially malicious website, you should have implemented precautions to give yourself a safe working environment, as covered in [Subtopic 3](#subtopic-3-operational-security-safe-handling-of-links-and-infrastructure). However you can also use online tools to inspect a website in a safe remote sandbox:
 
@@ -81,22 +81,39 @@ The first step when you are ready to inspect a website linked to from a phishing
 
 Note that a sophisticated web application could detect that a request comes from the IP ranges of these tools and serve different data or no data to the request, while delivering malicious content to other IPs.
 
-## Manual and specific tools for inspection of a website
+### Manual and specific tools for inspection of a website
 
 One of the easiest ways in which we could analyze a website is by [using our web browser’s built-in inspection tool](https://blog.hubspot.com/website/how-to-inspect), which usually breaks the website down into different sub-parts, can sometimes illustrate what code the website requests from which server, and allows us to modify the site’s code and see how this changes the layout and functionality.
 
-## Brute force
+#### Brute force
 
 As in the Human Rights Watch report linked above, using programmatic approaches to brute forcing URLs is a commonly used technique during OSINT. Several tools and approaches can be learned:
 
 - OWASP [DirBuster](https://gitlab.com/kalilinux/packages/dirbuster)
 - Wordlist Generators: Often used for password cracking, wordlists are also used for brute forcing discovery of folders and sub-domains. These wordlists will work in conjunction with the tools listed in the previous point. See tools such as Crunch ([Tutorial 1](https://www.hackers-arise.com/post/creating-a-custom-wordlist-with-crunch) | [Tutorial 2](https://null-byte.wonderhowto.com/how-to/tutorial-create-wordlists-with-crunch-0165931/))
 
-## Phishing kit analysis
+#### Phishing kit analysis
 
 Most attacks you will encounter will use a pre-made or modified phishing kit, a collection of code and templates that allow attackers to easily build a convincing phishing website. Some phishing kits have tell-tale signs; many of them, for example, use certain mechanisms to avoid being [detected and indexed by search engines](https://arxiv.org/pdf/2210.08273.pdf). They might even refuse to load from [the IP addresses of search engines or security companies](https://blog.sucuri.net/2017/07/protecting-phishing-pages-via-htaccess.html).
 
 Some phishing kits also have the ability to bypass multi-factor authentication, for example by capturing a code that a targeted person typed in and immediately using it to log on to the real web page on their behalf. [This article is a great write-up](https://www.aon.com/cyber-solutions/aon_cyber_labs/bypassing-mfa-a-forensic-look-at-evilginx2-phishing-kit/) on how an open source phishing kit used by security teams who test out security mechanisms can capture and use two-factor authentication data (and what could be done to prevent this). You can also [check out another writeup of a phishing kit](https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/) (this kit was written by cybercriminals rather than security researchers), which used some MFA bypass and fascinating techniques to frustrate detection.
+
+## Practice
+
+- [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
+- [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
+
+## Skill Check
+
+Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/room/walkinganapplication)
+
+- Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
+- Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
+  - Who owns the infrastructure that’s serving the website?
+  - What other domains does this side load or link to? What do they do?
+  - When was this domain registered?
+  - (optional) What software is being used to serve the site?
+  - Have others listed the site as malicious?
 
 ## Learning Resources
 
@@ -124,19 +141,3 @@ Some phishing kits also have the ability to bypass multi-factor authentication, 
 
 {{% resource title="W3LL phishing kit hijacks thousands of Microsoft 365 accounts, bypasses MFA" languages="English" cost="Free" description="This piece analyzes a phishing kit designed and sold by cybercriminals, which contains multiple mechanisms which frustrate analysis and also uses MFA bypass techniques." url="https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/" %}}
 
-## Practice
-
-- [Read through](https://www.linkedin.com/pulse/security-analyst-skills-pt-1-qualifying-domains-craig-smith) the following article, which shows you how to use urlscan.io to analyze a page. Conduct the same searches and analyses as the article, and consider how the author came to the conclusions he did.
-- [Peruse a second analysis](https://www.linkedin.com/pulse/security-analyst-skills-pt-2-techniques-analyzing-web-craig-smith) by the same author. Follow the links he gave to VirusTotal, UrlScan, and Hybrid Analysis, and see if you understand how he reached the conclusions he did.
-
-## Skill Check
-
-Complete this room by TryHackMe: [Walking An Application](https://tryhackme.com/room/walkinganapplication)
-
-- Check out [task two](https://tryhackme.com/room/activerecon) in this TryHackMe room
-- Analyze a malicious website (for example, a domain listed on [PhishTank](https://phishtank.org/)) by using a mix of passive and active analysis, making sure to do the active analysis in a sandbox or using a tool such as UrlScan. Answer the following questions about the site and discuss your answers to the above questions with a peer or a mentor:
-  - Who owns the infrastructure that’s serving the website?
-  - What other domains does this side load or link to? What do they do?
-  - When was this domain registered?
-  - (optional) What software is being used to serve the site?
-  - Have others listed the site as malicious?

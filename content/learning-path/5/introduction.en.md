@@ -1,9 +1,9 @@
-+++
-style = "introduction"
-weight = 1
-title = "Introduction"
-description = "Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
-+++
+---
+style: introduction
+title: Introduction
+description: START HERE. Read the learning path overview, objectives, associated threats, and prerequisites
+weight: 1
+---
 
 ## Overview
 
@@ -61,72 +61,72 @@ Web application assessment skills can help respond to hacking threats by:
   _ Open a Windows PowerShell or Command Prompt in administrator mode by right-clicking and selecting "Run as administrator" and run the command \
   `wsl --set-default-version 2` \* The output from this command will look like:
 
-          ```
-          For information on key differences with WSL 2 please visit https://aka.ms/wsl2
-          The operation completed successfully.
-          ```
+  ```
+  For information on key differences with WSL 2 please visit https://aka.ms/wsl2
+  The operation completed successfully.
+  ```
 
-      Once WSL 2 is installed, you can install your preferred Linux distribution from the Microsoft Store or by using the command line. Simply search for "Linux" in the Microsoft Store, select your desired distribution (e.g., Ubuntu, Debian, or others), and click "Install". Alternatively, you can install a Linux distribution using PowerShell or Command Prompt. Open a Windows Powershell or Command Prompt and list the distributions available:
+  Once WSL 2 is installed, you can install your preferred Linux distribution from the Microsoft Store or by using the command line. Simply search for "Linux" in the Microsoft Store, select your desired distribution (e.g., Ubuntu, Debian, or others), and click "Install". Alternatively, you can install a Linux distribution using PowerShell or Command Prompt. Open a Windows Powershell or Command Prompt and list the distributions available:
 
-          ```
-          wsl --list --online
-          ```
-          Install a distribution from this list using wsl --install -d &lt;Distribution Name> command.
+  ```
+  wsl --list --online
+  ```
+  Install a distribution from this list using wsl --install -d &lt;Distribution Name> command.
 
-          ```
-          wsl --install -d Ubuntu
-          ```
-          After installation, each Linux distribution will have an icon on the Windows application menu. Once you have installed WSL, you will need to create a user account and password for your newly installed Linux distribution.
+  ```
+  wsl --install -d Ubuntu
+  ```
+  After installation, each Linux distribution will have an icon on the Windows application menu. Once you have installed WSL, you will need to create a user account and password for your newly installed Linux distribution.
 
-          A new window should open with a Linux shell.
+  A new window should open with a Linux shell.
 
 - Here is a quick review of the WSL command line options.
 
-        Print the usage information and see the command line arguments:
+  Print the usage information and see the command line arguments:
 
 
-        ```
-        wsl --help
-        ```
-        List the installed distributions:
+  ```
+  wsl --help
+  ```
+  List the installed distributions:
 
-        ```
-        wsl --list
-        ```
+  ```
+  wsl --list
+  ```
 
-        List only the running distributions:
+  List only the running distributions:
 
-        ```
-        wsl --list --running
-        ```
-        Terminate a running distribution:
+  ```
+  wsl --list --running
+  ```
+  Terminate a running distribution:
 
-        ```
-        wsl --terminate Ubuntu-22.04
-        ```
+  ```
+  wsl --terminate Ubuntu-22.04
+  ```
 
-        Shutdown all running distributions:
+  Shutdown all running distributions:
 
-        ```
-        wsl --shutdown
-        ```
+  ```
+  wsl --shutdown
+  ```
 
-        Unregister the Linux distribution and delete the filesystem:
+  Unregister the Linux distribution and delete the filesystem:
 
-        ```
-        wsl --unregister Ubuntu-22.04
-        ```
+  ```
+  wsl --unregister Ubuntu-22.04
+  ```
 
-        Update WSL to the latest version:
+  Update WSL to the latest version:
 
 
-        ```
-        wsl --update
-        ```
-        Start the default distribution:
+  ```
+  wsl --update
+  ```
+  Start the default distribution:
 
-        ```
-        wsl
+  ```
+  wsl
 
 ## Related learning paths
 

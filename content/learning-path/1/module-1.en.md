@@ -1,9 +1,12 @@
 ---
 style: module
 title: Triage - Deciding when to investigate
-description: After completing this subtopic, the practitioner should be able to
-  differentiate between legitimate emails, untargeted spam or phishing emails,
-  and targeted ones based on several heuristic indicators.
+description: When you receive or are forwarded a suspicious message, conduct
+  initial triage in order to determine if it is indeed malicious, to figure out
+  the best rapid response for the targeted recipient(s) if it is, and to
+  determine if further investigation is needed. For most messages, it’s enough
+  to conduct basic heuristics to separate untargeted from targeted threats and
+  to identify harm-reducing actions
 weight: 1
 ---
 ## Use Case
@@ -42,6 +45,10 @@ Attackers who use lower quality or mass messaging are also likely to be caught b
 
 ⚠️ While considering or conducting an investigation, ensure you balance harm reduction needs and support any targets to implement timely harm reduction actions, such as those listed at [Recover from possible account compromise (securityinabox.org)](https://securityinabox.org/en/communication/account-compromise/).
 
+## Skill Check
+
+Spend some time on the phishing quiz by [Shira](https://shira.app/) until you feel like you can comfortably pass the tests and accurately recognize phishing on several app categories.
+
 ## Learning Resources
 
 {{% resource title="Shira by Horizontal" languages="English, Spanish, Mandarin" cost="Free" description="An online quiz with sample emails, where the user must decide whether they are malicious" url="https://shira.app" %}}
@@ -58,6 +65,4 @@ Attackers who use lower quality or mass messaging are also likely to be caught b
 
 {{% resource title="Recover from possible account compromise" languages="Arabic, Indonesian, English, Spanish, Farsi, French, Portuguese, Russian, Thai, Turkish, Vietnamese, Chinese, Tibetan, Khmer, Burmese" cost="Free" description="A guide on what immediate and long-term steps to take when an account has been compromised" url="https://securityinabox.org/en/communication/account-compromise/" %}}
 
-## Skill Check
 
-Spend some time on the phishing quiz by [Shira](https://shira.app/) until you feel like you can comfortably pass the tests and accurately recognize phishing on several app categories.
