@@ -61,7 +61,11 @@ When the web page is generated, it looks a bit different:
 
 ![alt_text](/media/uploads/image3.png "image_tooltip")
 
-How did this happen? Let’s use some color to highlight what’s going on. Remember, the web application is just treating the user input as text, it has no idea about the colors.
+How did this happen?
+<! -- 
+We changed the content somewhat from the original learning path, since it used its own highlighting for code colors and not the built-in syntax highlighting
+original text: Let’s use some color to highlight what’s going on. Remember, the web application is just treating the user input as text, it has no idea about the colors.
+-->
 {{< highlight html >}}
 Alice"><script>alert("Owned by Alice")</script><i q="
 {{< / highlight >}}
@@ -75,7 +79,7 @@ The application simply takes the input from the user and places it verbatim into
 </form></html>
 {{< / highlight >}}
 
-Note the `">` in red. That tells the browser that the HTML input’s value attribute is completed, and then that the input tag is completed. Next, the text in blue is a script tag that runs the JavaScript that pops up an alert box. Finally, the `&lt;i q="` is just some cleanup that prevents the web page from displaying the remnants of the original input tag. We can use different color highlighting and formatting to show how the browser interprets the generated web page:
+Note the `">` after `value="Alice"`. That tells the browser that the HTML input’s value attribute is completed, and then that the input tag is completed. Next, the text in blue is a script tag that runs the JavaScript that pops up an alert box. Finally, the `<i q="` is just some cleanup that prevents the web page from displaying the remnants of the original input tag. We can use different color highlighting and formatting to show how the browser interprets the generated web page:
 {{< highlight html >}}
 <html><body><form>
   Name: <input name="disp_name" value="Alice"><script>alert("Owned by
