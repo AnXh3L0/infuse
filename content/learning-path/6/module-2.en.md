@@ -177,7 +177,7 @@ It is a recommended practice to not include sensitive information in GET paramet
 - Certain pages (e.g. the login page) and/or parameters (credit card number, password fields) should be exempted from logging
 - For POST parameters that will be logged, consider redacting them to hide potentially sensitive information, while still being able to identify malicious traffic. The following Python code may give some inspiration:
 
-  ```
+  {{< highlight python >}}
   import re
 
   keep = ['select', 'where', 'from', 'and', 'script', 'on', 'src', '../', '<', '>']
@@ -202,7 +202,7 @@ It is a recommended practice to not include sensitive information in GET paramet
   			output = output + "*"
   		i = i+1
 
-  ```
+  {{< / highlight >}}
 
 ##### Security-related errors
 
@@ -228,9 +228,9 @@ Below are example commands using common Unix tools like `awk`, `sort`, `uniq`, a
 
 `awk` is a powerful command-line tool for manipulating text files in Unix-like operating systems. It has a simple syntax. The basic structure of an `awk `command is as follows:
 
-```
+{{< highlight awk >}}
 awk 'pattern { action }' file
-```
+{{< / highlight >}}
 
 For example let’s consider the following text file (we will call it example.txt):
 
@@ -245,35 +245,35 @@ Orange orange 20
 
 For example to print first column with `awk` command we need to use
 
-```
+{{< highlight awk >}}
 awk '{ print $1 }' example.txt
-```
+{{< / highlight >}}
 
 We can use Conditional Filtering. For example we want to print lines where third column is greater than 10
 
-```
+{{< highlight awk >}}
 awk '$3 > 10 {print $1, $3}' example.txt
-```
+{{< / highlight >}}
 
 To use a custom delimiter with `awk`, use the -F option followed by the delimiter character. For example if we have a comma delimited file we can use -F',' (enclose the delimiter character in single quotes ) to specify a comma (,) as the delimiter.
 
-```
+{{< highlight awk >}}
 awk -F',' '{print $1, $3}' comma-delimited.txt
-```
+{{< / highlight >}}
 
 We can do calculations using `awk`. This command calculates the sum of values in the third field across all lines and prints the total at the end. "END" is a special pattern used to execute statements after the last record is processed
 
-```
+{{< highlight awk >}}
 awk '{total += $3} END {print "Total:", total}' example.txt
-```
+{{< / highlight >}}
 
 There are some built in variables in `awk`. For example NR is a built-in variable in awk that represents the current record number. NR increments by one for each line read from the input file(s).
 
 If you want to print line numbers in addition to line content, you could use the following:
 
-```
+{{< highlight awk >}}
 awk '{print NR, $0}' example.txt
-```
+{{< / highlight >}}
 
 ### Practice exercise 1: Apache Access Log Analysis
 
@@ -281,49 +281,50 @@ Spend some time playing around with the following awk commands. You can use a lo
 
 Identify the total number of requests recorded in the access log.
 
-```
+{{< highlight bash >}}
 cat apache_access.log | wc -l
-```
+{{< / highlight >}}
+
 
 Determine the most frequently requested URLs.
 
-```
+{{< highlight bash >}}
 awk '{print $7}' apache_access.log | sort | uniq -c | sort -nr | head -5
-```
+{{< / highlight >}}
 
 This awk command will print the seventh column from each line of the log then pipe the output of the previous awk command into the sort command. sort is used to sort the lines of text alphabetically or numerically. By default, it sorts in ascending order. After sorting the output with sort, the uniq -c command is used to count the occurrences of each unique line in the sorted output. The sort -nr command is used to sort the output numerically (-n) in reverse order (-r). This means that the lines are sorted based on their numerical values, with the highest values appearing first. The head -5 command is used to display the first 5 lines of the input.
 
 Find out the top 5 IP addresses making requests to the server.
 
-```
+{{< highlight bash >}}
 awk '{print $1}' apache_access.log | sort | uniq -c | sort -nr | head -5
-```
+{{< / highlight >}}
 
 Analyze the distribution of request methods.
 
-```
+{{< highlight bash >}}
 awk '{print $6}' apache_access.log | sort | uniq -c
-```
+{{< / highlight >}}
 
 ### Practice exercise 2: Nginx Access Log Analysis
 
 Count the total number of requests in an Nginx access log.
 
-```
+{{< highlight bash >}}
 cat nginx_access.log | wc -l
-```
+{{< / highlight >}}
 
 Identify the most requested URLs and their corresponding status codes.
 
-```
+{{< highlight bash >}}
 awk '{print $7, $9}' nginx_access.log | sort | uniq -c | sort -nr | head -5
-```
+{{< / highlight >}}
 
 Calculate the average size of requests (in bytes).
 
-```
+{{< highlight awk >}}
 awk '{sum+=$10} END {print "Average request size:", sum/NR, "bytes"}' nginx_access.log
-```
+{{< / highlight >}}
 
 This AWK command calculates the average request size by summing up the values in the 10th column (presumably representing request sizes) for all lines in the nginx_access.log file. Then, it divides the total sum by the number of lines (NR), representing the average request size in bytes. Finally, it prints out the result along with a descriptive message.
 
@@ -331,9 +332,9 @@ Make sure that the 10th column actually represents the request size in bytes in 
 
 Determine the top 5 user agents accessing the server.
 
-```
+{{< highlight bash >}}
 awk -F'"' '{print $6}' nginx_access.log | sort | uniq -c | sort -nr | head -5
-```
+{{< / highlight >}}
 
 This command uses `awk` to set the field separator (-F) to double quotes ("), then extracts the 6th field from each line of the` nginx_access.log` file. This assumes that the log entries are formatted in such a way that the URL or request path is enclosed within double quotes. The extracted URLs or request paths are then piped to sort them alphabetically. `uniq -c` is used to count the occurrences of each unique URL or request path. The output is piped again to `sort -nr` to sort the results numerically in descending order based on the count.
 
@@ -341,9 +342,9 @@ Finally, head -5 is used to display the top 5 URLs or request paths with the hig
 
 Analyze the distribution of requests by hour of the day.
 
-```
+{{< highlight bash >}}
 awk '{print $4}' nginx_access.log | cut -c 14-15 | sort | uniq -c
-```
+{{< / highlight >}}
 
 `awk` is used to extract the 4th field ($4) from each line of the `access.log` file, which typically contains the timestamp.
 
@@ -357,16 +358,18 @@ The output will display the count of log entries for each hour in the log file.
 
 Apache and nginx: Count the total number of error entries in the log.
 
-```
+{{< highlight bash >}}
 cat apache_error.log | grep 'error' | wc -l
 cat nginx_error.log | grep 'error' | wc -l
-```
+{{< / highlight >}}
+
 
 Apache: Identify the most common types of errors. awk '{print $NF}' reads each line of input data, splits it into fields (separated by whitespace by default), and then prints the value of the last field from each line.
 
-```
+{{< highlight bash >}}
 cat apache_error.log | grep 'error' | awk '{print $NF}' | sort | uniq -c | sort -nr | head -5
-```
+{{< / highlight >}}
+
 
 The number at the beginning of each line shows how many times a particular error occurred in the log. In this case, “`2047`” means that the error with the last field “`757`” occurred 2047 times.
 
@@ -374,21 +377,23 @@ The last field represents different things in each line. It could be a file path
 
 nginx: Determine the top 5 IP addresses, domains, or file paths generating errors.
 
-```
+{{< highlight bash >}}
 cat nginx_error.log | grep 'error' | awk '{print $NF}' | sort | uniq -c | sort -nr | head -5
-```
+{{< / highlight >}}
+
 
 Apache: Analyze the distribution of errors by date or time.
 
-```
+{{< highlight bash >}}
 cat apache_error.log | grep 'error' | awk '{print $1}' | sort | uniq -c
-```
+{{< / highlight >}}
+
 
 Apache: Investigate any recurring error patterns and propose potential solutions. {$1=""; $2=""; $3="";}: This part of the awk command sets the first three fields (date, time, and timezone information) to empty strings.
 
-```
+{{< highlight bash >}}
 cat apache_error.log | grep 'error' | awk '{$1=""; $2=""; $3=""; print}' | sort | uniq -c | sort -nr | head -10
-```
+{{< / highlight >}}
 
 ### An introduction to regular expressions and using them to analyze a log
 
@@ -477,10 +482,10 @@ Correct answer: SSL handshaking errors
 
 Command(s) to execute:
 
-```
+{{< highlight bash >}}
 more nginx_error.log
 cat nginx_error.log|grep -v "PHP"|grep crit
-```
+{{< / highlight >}}
 
 Exercise 4:
 

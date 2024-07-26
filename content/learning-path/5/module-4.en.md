@@ -59,13 +59,14 @@ This subtopic covers the case where an attacker can upload files to a website, p
 
 If you are testing a site and wish to upload a web shell, it is very important that you put a password on it. Just because you can upload a file to the server, does not mean you can delete that file. You may find yourself in a situation of having to rely on the site owner to delete the file. Adding a password can be simple. There are [web shells available in many languages](https://www.kali.org/tools/webshells/), but here’s a simple PHP example:
 
-```
+{{< highlight php >}}
+
 <?php echo system($_GET['command']);?>
-```
+{{< / highlight >}}
 
 To add a password to this, we merely change it to this:
 
-```
+{{< highlight php >}}
 <?php
 _if_ (_$\_GET_['password'] _==_ 'A super-secret password only I know.') {
     _echo_ system(_$_GET_['command']);
@@ -73,7 +74,7 @@ _if_ (_$\_GET_['password'] _==_ 'A super-secret password only I know.') {
     http_response_code(404);
 }
 ?>
-```
+{{< / highlight >}}
 This will ensure that anyone who stumbles upon your testing-focused web shell won’t be able to use it for their own nefarious purposes.
 
 Make sure to read and understand how a web shell works before you upload it. You want to be sure that the shell is only going to execute what you ask it to, and won’t talk to any other servers.

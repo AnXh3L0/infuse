@@ -33,7 +33,7 @@ Sometimes web applications will put constraints on what users can do in the appl
 
 #### Input size
 
-HTML input elements have an attribute maxlength that purports to limit the number of characters typed into an input field, e.g. `&lt;input type="text" name="firstname" maxlength="20">`. In this example, if a user tries to put more than 20 characters into the input field, the browser will prevent them from doing so. However, this is really just a polite request, as opposed to a real restriction. For example:
+HTML input elements have an attribute maxlength that purports to limit the number of characters typed into an input field, e.g. `<input type="text" name="firstname" maxlength="20">`. In this example, if a user tries to put more than 20 characters into the input field, the browser will prevent them from doing so. However, this is really just a polite request, as opposed to a real restriction. For example:
 
 - The user could use the web inspector feature of their browser to modify the DOM to remove the length restriction.
 - The user could save the web page locally, modify the HTML to remove the restriction, then load the page back into their browser.

@@ -65,35 +65,35 @@ Once you’ve completed the labs, here are a few tips for safely and reliably id
 
 A common way to test for SQLi is to go through a site adding `' or 1=1;--` to the ends of parameters. This is suboptimal for a number of reasons. The first is update statements. Consider the following SQL:
 
-```
+{{< highlight sql >}}
 update users set password='Password1!' where username='alice'
-```
+{{< / highlight >}}
 
 What happens if, for the username, you pass `alice' or 1=1;--` instead of `alice'`?
 
-```
+{{< highlight sql >}}
 update users set password='Password1!' where username='alice' or 1=1;--'
-```
+{{< / highlight >}}
 
 Oh no! Now every user in the database has the same password. You can never know (unless you’ve _very_ carefully reviewed the source code) where your inputs are going to go, so using <code><em>or</em></code> statements when trying to find SQLi can be quite dangerous.
 
 Even if you don’t overwrite the database with this testing string, it can have other problems. Consider a multi-line query:
 
-```
+{{< highlight sql >}}
 select *
   from comments
  where username = 'alice'
    and draft=0
-```
+{{< / highlight >}}
 
 When you pass in a username parameter of `alice' or 1=1;--`, the resulting query will be:
 
-```
+{{< highlight sql >}}
 select *
   from comments
  where username = 'alice' or 1=1;--'
    and draft=0
-```
+{{< / highlight >}}
 
 Note the pesky semicolon in there. It causes the database to interpret the query as first a select query (<code><em>select</em> <em>\*</em> <em>from</em> comments <em>where</em> username <em>=</em> 'alice' <em>or</em> 1<em>=</em>1;</code>), and then an <code><em>and</em></code> query (<code><em>and</em> draft<em>=</em>0</code>). The problem with this is that there is no such thing as an and query, so this will result in an error. It might result in an error for other reasons as well, depending on the database. If the web application gives the same response for a database error as it does for no data (it should), then you won’t know that there is SQLi in the username parameter.
 
@@ -105,30 +105,30 @@ For test 2, append the following to the parameter: `' and 'a' like '%b`
 
 Here are some example queries with these parameters:
 
-```
+{{< highlight sql >}}
 select * from comments where username = 'alice' and 'a' like '%a'
 select * from comments where username = 'alice' and 'a' like '%b'
-```
+{{< / highlight >}}
 
 Note that the first query will return the same results as if alice was passed as the parameter, and the second will return no rows. Thus there’s no risk of disaster if there's an injectable update or delete statement. Also note that the structure of the query is minimally perturbed, the tests will work even in multi-line queries.
 
 You may be wondering why the examples use the <code><em>like</em></code> operation instead of <code><em>=</em></code>. That’s because the query you’re injecting into may use the like operation. Consider a document search query:
 
-```
+{{< highlight sql >}}
 select * from documents where title like '%user text%'
-```
+{{< / highlight >}}
 
 The like operation allows wildcard operators, usually the percent sign. The above query will match any documents that contain the string “user text” anywhere in their title; the start, middle, or end. If we just used something like `' and 'a'='a` in our injection, then the test 1 query would be:
 
-```
+{{< highlight sql >}}
 select * from documents where title like '%user text' and 'a'='a%'
-```
+{{< / highlight >}}
 
 This will return no rows, since “a” is never _equal to_ “a%”. If we use test 1 above, though, the query would be:
 
-```
+{{< highlight sql >}}
 select * from documents where title like '%user text' and 'a' like 'a%'
-```
+{{< / highlight >}}
 
 Although they are not equal, “a” is _like_ “a%”. Thus, the above test 1 and test 2 should work in almost any string-based situation. Note that if you are testing a search feature, you might also want to try an additional test 1 string: `%' and 'a' like '%a`. Note that in the above queries the original search is slightly changed; it’s missing the % after the user text. If you suspect a like operation is in use, this test 1 string should make up for that.
 
@@ -136,15 +136,15 @@ Although they are not equal, “a” is _like_ “a%”. Thus, the above test 1 
 
 Sometimes, when the browser passes a numeric value to the web server, the server includes it in a SQL query as a string. However, sometimes, it’s included as a numeric value. Typically, the SQL for a simple lookup of a numeric parameter will be something like:
 
-```
+{{< highlight sql >}}
 select * from stories where story_id=5
-```
+{{< / highlight >}}
 
 Obviously, sending a story_id of `5' and '1' like '1` isn’t going to work, due to a syntax error. Instead, try sending two requests, one with a story_id of `5`, and another with a story_id of `6-1`. If the second one gives no result, an error, or a different story than the request with a story_id of 5, then there’s no evidence of SQLi. However, if passing a story_id of 6-1 results in the same response as a story_id of 5, then that is strong evidence of SQLi. The query is likely to look like:
 
-```
+{{< highlight sql >}}
 select * from stories where story_id=6-1
-```
+{{< / highlight >}}
 
 In this example, the database engine is evaluating 6-1 as code, and retrieving the story whose ID is 5. From there, you can proceed to exploitation.
 

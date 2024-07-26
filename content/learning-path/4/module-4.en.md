@@ -170,7 +170,7 @@ Question 10: C) Horizontal Privilege Escalation
 
 The code simulates a vulnerable web application with a horizontal privilege escalation vulnerability. The vulnerability lies in the fact that the delete_profile function only checks for the current user's write permission but does not verify that the current user is authorized to delete other users' profiles. This allows any user with write permission to delete any other user's profile, regardless of their own permissions.
 
-```
+{{< highlight python >}}
 # Import statement for print function (Python 3.x)
 from __future__ import print_function
 
@@ -207,7 +207,7 @@ result = delete_profile(target_username, current_user)
 
 # Print the result (expected output: "Permission denied: You do not have permission to delete users.")
 print(result)
-```
+{{< / highlight >}}
 
 **Find and fix the vulnerability in the `delete_profile` function.**
 
