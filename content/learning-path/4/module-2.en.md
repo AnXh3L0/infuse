@@ -126,13 +126,13 @@ Since the attacker-controlled SQL is run in the server environment, SQL injectio
 
 How does SQL injection work? Consider a web application, where there’s a ticketing platform that lists the name, description, and version of each tool in a category. The user would also be submitting an id parameter; this might even be contained in the URL of the page making the request. Perhaps the code that generates the SQL that retrieves this data looks something like:
 
-{{ highlight sql }}
+{{< highlight sql >}}
 $sql = 'select productid, name, description, version from products where categoryid='+request_params['id']
 {{< / highlight >}}
 
 When a user sends an `id` parameter like 1 or 32, all is well, we get a query like:
 
-{{ highlight sql }}
+{{< highlight sql >}}
  select toolid, name, description, version
    from tools
   where categoryid=32
@@ -140,7 +140,7 @@ When a user sends an `id` parameter like 1 or 32, all is well, we get a query li
 
 However, the trouble starts when a curious user sends an `id` of 2-1, and notes that they get the same results as for an `id` of 1:
 
-{{ highlight sql }}
+{{< highlight sql >}}
  select toolid, name, description, version
    from tools
   where categoryid=2-1
@@ -148,7 +148,7 @@ However, the trouble starts when a curious user sends an `id` of 2-1, and notes 
 
 This shows the attacker that the application is vulnerable to SQL injection. It is interpreting their input as code (executing the expression 2-1) instead of data (looking for a category whose ID is literally “2-1”). After a bit of digging around, they send an `id` of `-1 union all select 1, username, password, 1.0 from admin_users`. This results in a SQL query of
 
-{{ highlight sql }}
+{{< highlight sql >}}
  select toolid, name, description, version
    from tools
   where toolid=-1
@@ -407,7 +407,7 @@ D) Disabling HTTPS encryption
 Which technique is effective in preventing SQL injection attacks in web applications?
 
 A) Using dynamic SQL queries\
-B ) Employing input sanitization and parameterized queries\
+B) Employing input sanitization and parameterized queries\
 C) Storing sensitive data in plain text\
 D) Disabling error messages
 
