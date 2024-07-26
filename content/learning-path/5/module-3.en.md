@@ -2,7 +2,7 @@
 style = "module"
 weight = 3
 title = "Authentication and Authorization"
-description = "Many web apps will only allow particular users to view certain pieces of content and require them to log in or prove their identity in other ways. This subtopic looks into authentication and authorization, and possible vulnerabilities therein."
+description = "Many web apps will only allow particular users to view certain pieces of content and require them to log in or prove their identity in other ways. This subtopic looks into authentication and authorization, and possible vulnerabilities therein"
 +++
 
 ## Use Case

@@ -3,7 +3,7 @@ style: module
 title: Active Investigation - Analyze malicious webpages
 description: This module will teach you to look at attacker-controlled websites
   to understand their actions and potentially uncover further
-  attacker-controlled infrastructure or attack vectors used in the attacks.
+  attacker-controlled infrastructure or attack vectors used in the attacks
 weight: 7
 ---
 
@@ -38,13 +38,13 @@ Because of this, we recommend only analyzing web pages in a safe environment spe
 
 Read through two case studies which analyze phishing attacks that targeted civil society groups. Both of those attacks were partially successful:
 
-- Human Rights Watch: [Iran: State-Backed Hacking of Activists, Journalists, Politicians](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) (The introductory section is useful context on attacker tactics and motivations; however, focus on the _Technical Analysis of the Phishing Campaign_ section for learning purposes.
+- Human Rights Watch: [Iran: State-Backed Hacking of Activists, Journalists, Politicians](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) (The introductory section is useful context on attacker tactics and motivations; however, focus on the _Technical Analysis of the Phishing Campaign_ section for learning purposes.)
 - Bellingcat: [Guccifer Rising? Months-Long Phishing Campaign on ProtonMail Targets Dozens of Russia-Focused Journalists and NGOs](https://www.bellingcat.com/news/uk-and-europe/2019/08/10/guccifer-rising-months-long-phishing-campaign-on-protonmail-targets-dozens-of-russia-focused-journalists-and-ngos/)
 
 Focusing on the[ HRW case study](https://www.hrw.org/news/2022/12/05/iran-state-backed-hacking-activists-journalists-politicians) above, note some key features of analysis used in each investigation. Some of these require technical skills to complete, while others require research, critical thinking, and interpersonal skills. Some of the methods identified in the case study include:
 
 - The attackers used an URL shortener service. This is common for legitimate and non-legitimate emails alike. You should be able to recognize URL shorteners and know how to expand these URLs where possible (for instance by using the shortener’s inbuilt mechanism such as adding a + to the end of the URL, or by using an expander tool like [Urlex](https://urlex.org/)) or track stages of HTTP redirects. Notably the attacker created their own URL shortener service in this case which impersonated (through a small typing change in the domain) another known URL shortener.
-- Multiple domains were registered which were intended to confuse the target (e.g. sharefilesonline[.]live, which plays on Microsoft’s product names SharePoint and Live.com.
+- Multiple domains were registered which were intended to confuse the target (e.g. sharefilesonline[.]live, which plays on Microsoft’s product names SharePoint and Live.com)
 - Unique links sent to individual targets with a five-character identifier (this could be achieved by any unique string in an URL, usually within the URL path or passed in a parameter for instance after a ‘?’).
 - By using brute force to try out all possible five character identifiers and URL combinations, the analysts were able to discover several other landing pages used by the phishing campaign. They impersonated popular email providers and used a phishing kit which allows for MFA bypass techniques.
 - The analysts reached out to others who might have been targeted by the same campaign to further share threat intelligence and better understand the adversary’s techniques.

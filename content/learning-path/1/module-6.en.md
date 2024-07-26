@@ -4,7 +4,7 @@ title: Active Investigation - Analyze malicious emails
 description: Whether they be pure social engineering, phishing, or malware
   delivery, malicious emails can be quite complex. This module will teach you
   how to interpret and understand them and find the infrastructure that they
-  link to.
+  link to
 weight: 6
 ---
 

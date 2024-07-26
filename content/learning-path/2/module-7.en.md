@@ -2,7 +2,7 @@
 style = "module"
 weight = 7
 title = "Detecting malware through image acquisition (iOS, Android)"
-description = "Sometimes, we need to take data from the device itself and analyze it in a different environment."
+description = "Sometimes, we need to take data from the device itself and analyze it in a different environment"
 +++
 
 ## Use Case

@@ -2,7 +2,7 @@
 style = "module"
 weight = 1
 title = "Setting up a malware analysis environment"
-description = "Before you analyzing any malware, you need to set up a safe environment to do so. Since malware does bad things to the systems it runs on, you do not want to run it on your primary system."
+description = "Before you analyzing any malware, you need to set up a safe environment to do so. Since malware does bad things to the systems it runs on, you do not want to run it on your primary system"
 +++
 
 ## Use Case

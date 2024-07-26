@@ -78,7 +78,7 @@ Conozca algunas de estas listas de bloqueo, dónde están integradas y cómo inf
 
 ## Practique
 
-- Encuentre los contactos de abuso para 3 empresas de alojamiento web, incluida al menos una plataforma importante (use como AWS, GCP, Azure, Oracle Cloud y Alibaba Cloud. Busque cualquier información adicional que ofrezan sobre su proceso de denuncia de abuso.
+- Encuentre los contactos de abuso para 3 empresas de alojamiento web, incluida al menos una plataforma importante (use como AWS, GCP, Azure, Oracle Cloud y Alibaba Cloud). Busque cualquier información adicional que ofrezan sobre su proceso de denuncia de abuso.
 - Investigue cómo funcionan las bases de datos sobre abusos y Google Safe Browsing. Enumere varias herramientas y servicios con los que están integrados.
 - Cree su propio diagrama de flujo de respuesta a incidentes y una lista de verificación que contenga enlaces relevantes y acciones a tomar en caso de un incidente de infraestructura maliciosa en línea.
 
