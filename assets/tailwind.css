@@ -163,3 +163,7 @@ details summary::marker {
   -ms-overflow-style: none; 
   scrollbar-width: none;
 }
+
+.highlight {
+  @apply max-w-full;
+}
